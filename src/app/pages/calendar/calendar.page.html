@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calendario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+
+        <div class="app-calendar">
+          <full-calendar 
+            #calendar
+            defaultView="dayGridMonth"
+            (dateClick)="handleDateClick($event)"
+            (eventClick)="handleEventClick($event)"
+            (eventDrop)="handleEventDrop($event)"
+            (eventResize)="handleEventResize($event)"
+            editable= "true"
+            [events]="calendarEvents" 
+            [plugins]="calendarPlugins"
+            [weekends]="calendarWeekends"
+            [header]="calendarHeader"
+          ></full-calendar>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

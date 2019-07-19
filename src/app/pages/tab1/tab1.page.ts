@@ -1,6 +1,7 @@
 import { AyudaPage } from './../ayuda/ayuda.page';
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
+import { CalendarPage } from '../calendar/calendar.page';
 
 
 @Component({
@@ -10,7 +11,10 @@ import { ModalController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(
+    private modalCtrl: ModalController,
+    private navCtlr: NavController
+  ) {}
 
   segmentChanged(event){
     console.log(event);
@@ -22,6 +26,10 @@ export class Tab1Page {
       component: AyudaPage
     });
     return await modal.present();
+  }
+
+  openCalendar() {
+    this.navCtlr.navigateForward('/calendar')
   }
 
 }
