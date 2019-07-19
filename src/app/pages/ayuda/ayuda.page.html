@@ -1,0 +1,18 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="start" name="close-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Ayuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+
+  <form (ngSubmit)="enviar()">
+    <ion-input type="text" placeholder="Mensaje..."   autofocus autocomplete="off"></ion-input>
+  </form>
+</ion-content>
