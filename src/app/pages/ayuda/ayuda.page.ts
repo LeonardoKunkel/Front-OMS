@@ -1,5 +1,7 @@
-import { ModalController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
+import { ChatServiceService } from './../../services/chat-service.service';
+import { ModalController, IonCard } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-ayuda',
@@ -8,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AyudaPage implements OnInit {
 
+  @ViewChild('card') card: IonCard;
+
+  mensajes: any = [];
+  mensajesSubscription: Subscription;
+
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
+   
   }
 
   dismiss() {
@@ -18,5 +26,7 @@ export class AyudaPage implements OnInit {
       'dismissed' : true
     });
   }
+
+  enviar() {}
 
 }
