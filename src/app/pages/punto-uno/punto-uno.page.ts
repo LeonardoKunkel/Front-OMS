@@ -81,7 +81,7 @@ export class PuntoUnoPage implements OnInit {
       pageSize: 'LETTER',
       pageMargins: [72,150]
     };
-    this.pdfMakerService.generate(dd, 'I. Política');
+    this.pdfMakerService.generate(dd, 'I. Política.pdf');
   }
 
 }
