@@ -1,0 +1,52 @@
+<ion-header no-border>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    <ion-title>I. Política</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>La política de Seguridad Industrial, Seguridad Operativa y protección al medio ambiente</ion-card-subtitle>
+            <ion-card-title>POLÍTICA</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              En la Estación Servicio “Servicio El Carril S.A. de C.V.”
+              conscientes con la naturaleza de los peligros y aspectos
+              ambientales asociados a las actividades propias de la
+              instalación, trabajadores y contratistas estamos
+              comprometidos en mejorar nuestro desempeño en materia de
+              Seguridad Industrial, Seguridad Operativa y Protección del
+              medio ambiente, en todos los niveles de la organización,
+              juntos orientamos nuestros esfuerzos para la evaluación,
+              reducción y control de los riesgos e impactos ambientales, el
+              cumplimiento normativo, mediante un proceso de mejora
+              continua.
+            </p>
+            <ion-row>
+              <ion-col size="12" sizeMd="4">
+                <ion-button expand="full" (click)="showEdit()">
+                  <ion-icon slot="start" name="create"></ion-icon>
+                  Editar
+                </ion-button>
+              </ion-col>
+              <ion-col size="12" sizeMd="4">
+                <ion-button expand="full" (click)="downloadPolitica()">
+                  <ion-icon slot="start" name="download"></ion-icon>
+                  Descargar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

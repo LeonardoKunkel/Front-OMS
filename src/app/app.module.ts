@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpClientModule } from '@angular/common/http'
+import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http'
     IonicModule.forRoot(), 
     AppRoutingModule,AyudaPageModule,
     FullCalendarModule,
+    EditPoliticaPageModule,
     HttpClientModule
   ],
   providers: [

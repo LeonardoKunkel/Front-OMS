@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Editar Política</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #formulario="ngForm" (ngSubmit)="submitForm(formulario)">
+    <ion-item>
+      <ion-label position="stacked">Nombre de la razon social <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" placeholder="Nombre" name="NRS" ngModel ></ion-input>
+    </ion-item>
+        
+    <ion-item>  
+      <ion-label position="stacked">Nombre del Representante legal <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" placeholder="Representante legal" name='NR' ngModel ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Escriba la redaccion de su nueva politica" name="redaccion" ngModel  ></ion-textarea>
+    </ion-item>
+    <ion-button type="submit" color="primary" class="ion-margin">
+      <ion-icon slot="start" name="save"></ion-icon>
+      Envia a revisión
+    </ion-button>
+  </form>
+</ion-content>
