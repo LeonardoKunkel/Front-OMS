@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EditPoliticaPage } from '../edit-politica/edit-politica.page';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { AlertController, IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-uno',
@@ -10,12 +11,18 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class PuntoUnoPage implements OnInit {
 
+  @ViewChild('slider') slider: IonSlides
+  @ViewChild('slider1') slider2: IonSlides
+
   constructor(
     private modalCtrl: ModalController,
+    private alertCtrl: AlertController,
     private pdfMakerService: PdfMakerService
   ) { }
 
   ngOnInit() {
+    this.slider.lockSwipes(true);
+    this.slider2.lockSwipes(true);
   }
 
   async showEdit() {
@@ -24,6 +31,56 @@ export class PuntoUnoPage implements OnInit {
     });
 
     modal.present();
+  }
+
+  goNext(){
+    this.slider2.lockSwipes(false)
+    this.slider2.slideNext();
+    this.slider2.lockSwipes(true)
+  }
+
+  goBack() {
+    this.slider2.lockSwipes(false)
+    this.slider2.slidePrev();
+    this.slider2.lockSwipes(true)
+  }
+
+  async elegirPolitica() {
+    const alert = await this.alertCtrl.create({
+      header: 'Importante',
+      message: '<strong>Esta es la política que estará en tu sistema</strong>',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Aceptar',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  segmentChanged(event) {
+    const value = event.detail.value;
+    
+    if(value === "form") {
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(1);
+      this.slider.lockSwipes(true);
+    } else if(value === "proced"){
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(0);
+      this.slider.lockSwipes(true);
+    }
   }
 
   downloadPolitica(){

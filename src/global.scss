@@ -14,3 +14,17 @@
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 @import '~@fullcalendar/timegrid/main.css';
+
+
+.btn-rounded {
+    border-radius: 50% !important;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.aling-start {
+    justify-content: start;
+}
