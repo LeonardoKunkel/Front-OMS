@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'calendar', loadChildren: './pages/calendar/calendar.module#CalendarPageModule' },
   { path: 'menu-sasisopa', loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule' },
   { path: 'punto-cinco', loadChildren: './pages/punto-cinco/punto-cinco.module#PuntoCincoPageModule' },
-  { path: 'punto-uno', loadChildren: './pages/punto-uno/punto-uno.module#PuntoUnoPageModule' }
+  { path: 'punto-uno', loadChildren: './pages/punto-uno/punto-uno.module#PuntoUnoPageModule' },  { path: 'punto-seis', loadChildren: './pages/punto-seis/punto-seis.module#PuntoSeisPageModule' }
+
 
 ];
 @NgModule({
