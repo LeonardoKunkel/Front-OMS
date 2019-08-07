@@ -8,6 +8,137 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="proced">
+      <ion-label>Procedimiento</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="form">
+      <ion-label>Fromulario</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+          <ion-slides #slider>
+
+            <ion-slide>
+              <embed src="assets/docs/P-SA-01 POLÍTICA.pdf" width="100%" height="600px" alt="pdf">
+            </ion-slide>
+        
+            <ion-slide>
+              <ion-slides #slider1>
+                <ion-slide>
+                  <ion-card mode="ios">
+                    <ion-card-header>
+                      <ion-card-title>Política 1</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      En la Estación Servicio <strong>“Super Servicio La Concha S.A. de C.V.”</strong> conscientes 
+                      con la naturaleza de los peligros y aspectos ambientales asociados a las actividades 
+                      propias de la instalación, trabajadores y contratistas  estamos comprometidos en mejorar 
+                      nuestro desempeño en materia de Seguridad Industrial, Seguridad Operativa y Protección del 
+                      medio ambiente,  en todos los niveles de la organización, juntos orientamos nuestros 
+                      esfuerzos para la evaluación, reducción y control de los riesgos e impactos ambientales, 
+                      el cumplimiento normativo, mediante un proceso de mejora continua.
+                    </ion-card-content>
+                    <ion-row>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button class="btn-rounded"  (click)="goBack()">
+                          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button (click)="elegirPolitica()">
+                          Elegir está política
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button class="btn-rounded"  (click)="goNext()">
+                          <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card>
+                </ion-slide>
+        
+                <ion-slide>
+                  <ion-card mode="ios">
+                    <ion-card-header>
+                      <ion-card-title>Política 2</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        En <strong>“Super Servicio La Concha S.A. de C.V.”</strong> estamos comprometidos en todos 
+                        los niveles de la organización con la seguridad de las instalaciones, los 
+                        trabajadores, contratistas y medio ambiente, controlando los peligros, riesgos 
+                        e impactos ambientales derivados de la operación normal de la estación, enfocándonos
+                        en el cumplimento de la normatividad y la mejora continua en materia Seguridad 
+                        Industrial, Seguridad Operativa y Protección del medio ambiente.
+                    </ion-card-content>
+                    <ion-row>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button class="btn-rounded"  (click)="goBack()">
+                          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button (click)="elegirPolitica()">
+                          Elegir está política
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button class="btn-rounded"  (click)="goNext()">
+                          <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card>
+                </ion-slide>
+
+                <ion-slide>
+                  <ion-card mode="ios">
+                    <ion-card-header>
+                      <ion-card-title>Política 3</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      Considerando los peligros, riesgos e impactos ambientales que se generan 
+                      en la operación de esta estación de servicio, en 
+                      <strong>“Super Servicio La Concha S.A. de C.V.”</strong> estamos 
+                      comprometidos en todos los niveles de la organización en establecer los 
+                      controles necesarios y buscar continuamente su mejora en materia de Seguridad 
+                      Industrial, Seguridad Operativa y Protección del medio ambiente.
+                    </ion-card-content>
+                    <ion-row>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button class="btn-rounded"  (click)="goBack()">
+                          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button (click)="elegirPolitica()">
+                          Elegir está política
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4" class="justify-center">
+                        <ion-button class="btn-rounded"  (click)="goNext()">
+                          <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card>
+                </ion-slide>
+              </ion-slides>
+              
+            </ion-slide>
+          </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!-- <ion-content>
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
@@ -49,4 +180,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
+</ion-content> -->

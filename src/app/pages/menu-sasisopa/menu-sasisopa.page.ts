@@ -19,6 +19,10 @@ export class MenuSasisopaPage implements OnInit {
     this.navCtrl.navigateForward('/punto-uno')
   }
 
+  goPuntoDos() {
+    this.navCtrl.navigateForward('/punto-dos')
+  }
+
   goPuntoCinco() {
     this.navCtrl.navigateForward('/punto-cinco')
   }
