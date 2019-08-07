@@ -1,10 +1,16 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>FUNCIONES DE FUNCIONALIDAD Y RESPONSABILIDAD</ion-title>
+    <ion-title>FUNCIONALIDAD...</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="pdf()">
+        <ion-icon slot="icon-only" name="download"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+ 
 </ion-header>
 
 <ion-content>
@@ -17,7 +23,7 @@
         
               <ion-item-divider color="secondary" class="ion-text-center">
                 <ion-label >
-                  Datos del encargado de la estacion
+                  Datos del Representante Tecnico
                 </ion-label>
               </ion-item-divider>
         
@@ -79,15 +85,23 @@
             </ion-list>
 
             <ion-button type="submit">
-              Enviar Form
+              Guardar Datos
             </ion-button>  
 
-            <ion-button (click)="pdf()">
-              DEscargar 
-            </ion-button>
           </form>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="hand"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button color="add"><ion-icon name="folder"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  
+  </ion-fab>
 
 </ion-content>
