@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { EditPoliticaPage } from '../edit-politica/edit-politica.page';
-import { PdfMakerService } from 'src/app/services/pdf-maker.service';
-import { AlertController, IonSlides } from '@ionic/angular';
+import { AlertController, IonSlides, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-dos',
@@ -14,13 +11,12 @@ export class PuntoDosPage implements OnInit {
   @ViewChild('slider') slider: IonSlides
 
   constructor(
-    private modalCtrl: ModalController,
     private alertCtrl: AlertController,
-    private pdfMakerService: PdfMakerService
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
-  
+    this.slider.lockSwipes(true);
   }
 
   segmentChanged(event) {
@@ -35,5 +31,29 @@ export class PuntoDosPage implements OnInit {
       this.slider.slideTo(0);
       this.slider.lockSwipes(true);
     }
+  }
+
+  async send() {
+    const alert = await this.alertCtrl.create({
+      header: 'Importante',
+      message: '<strong>¿Quieres continuar?</strong>',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Aceptar',
+          handler: () => {
+            this.navCtrl.navigateForward('/punto-dos-riesgos');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }
