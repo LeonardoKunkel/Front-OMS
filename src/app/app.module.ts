@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpClientModule } from '@angular/common/http'
 import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.module';
+import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-modal.module'
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.modu
     AppRoutingModule,AyudaPageModule,
     FullCalendarModule,
     EditPoliticaPageModule,
+    OnbjetivoModalPageModule,
     HttpClientModule
   ],
   providers: [
