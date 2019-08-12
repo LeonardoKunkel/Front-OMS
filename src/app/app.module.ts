@@ -1,3 +1,4 @@
+import { ProcedimientoCincoPageModule } from './pages/procedimiento-cinco/procedimiento-cinco.module';
 import { AyudaPageModule } from './pages/ayuda/ayuda.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.modu
 import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-modal.module'
 
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,6 +24,7 @@ import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-moda
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,AyudaPageModule,
+    ProcedimientoCincoPageModule,
     FullCalendarModule,
     EditPoliticaPageModule,
     OnbjetivoModalPageModule,
