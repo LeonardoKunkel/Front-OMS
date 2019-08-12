@@ -1,0 +1,42 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>III. Requisitos legales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="proced">
+      <ion-label>Procedimiento</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="form">
+      <ion-label>Fromulario</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides #slider>
+          <ion-slide>
+            <embed src="assets/docs/P-SA-03 REQUISITOS LEGALES.pdf" width="100%" height="600px" alt="pdf">
+          </ion-slide>
+
+          <ion-slide>
+
+            <ion-button id="btn-down-req" (click)="downloadListReqLeg()">
+              <ion-icon slot="end" name="arrow-round-down"></ion-icon>
+              Descargar lista de requisitos legales
+            </ion-button>
+
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
