@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>FUNCIONALIDAD...</ion-title>
+    <ion-title>FUNCIONES RESPONSABILIDADES Y AUTORIDAD</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="pdf()">
         <ion-icon slot="icon-only" name="download"></ion-icon>
@@ -93,13 +93,13 @@
     </ion-row>
   </ion-grid>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button color="secondary">
       <ion-icon name="hand"></ion-icon>
     </ion-fab-button>
 
     <ion-fab-list side="top">
-      <ion-fab-button color="add"><ion-icon name="folder"></ion-icon></ion-fab-button>
+      <ion-fab-button color="add" (click)="abriAyuda()"><ion-icon name="folder"></ion-icon></ion-fab-button>
     </ion-fab-list>
   
   </ion-fab>

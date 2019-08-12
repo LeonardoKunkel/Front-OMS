@@ -1,3 +1,5 @@
+import { ProcedimientoCincoPage } from './../procedimiento-cinco/procedimiento-cinco.page';
+import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { CpService } from 'src/app/services/cp.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
@@ -14,7 +16,8 @@ export class PuntoCincoPage implements OnInit {
 
   constructor(
     private cpService: CpService,
-    private pdfMaker: PdfMakerService
+    private pdfMaker: PdfMakerService,
+    private modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
@@ -35,6 +38,13 @@ export class PuntoCincoPage implements OnInit {
 
   enviarForm(formulario) {
     console.log(formulario);
+  }
+
+  async abriAyuda() {
+    const modal = await this.modalCtrl.create({
+      component: ProcedimientoCincoPage
+    });
+    return await modal.present();
   }
 
   pdf(){

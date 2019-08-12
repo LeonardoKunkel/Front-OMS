@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'punto-seis', loadChildren: './pages/punto-seis/punto-seis.module#PuntoSeisPageModule' },
   { path: 'punto-uno', loadChildren: './pages/punto-uno/punto-uno.module#PuntoUnoPageModule' },
   { path: 'punto-dos', loadChildren: './pages/punto-dos/punto-dos.module#PuntoDosPageModule' }
+  
+
 
 
 ];
