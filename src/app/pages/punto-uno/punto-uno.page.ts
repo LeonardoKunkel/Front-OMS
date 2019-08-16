@@ -47,7 +47,7 @@ export class PuntoUnoPage implements OnInit {
 
   async elegirPolitica() {
     const alert = await this.alertCtrl.create({
-      header: 'Importante',
+      header: '¡Importante!',
       message: '<strong>Esta es la política que estará en tu sistema</strong>',
       buttons: [
         {
