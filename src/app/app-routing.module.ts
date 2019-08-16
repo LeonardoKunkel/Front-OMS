@@ -72,6 +72,11 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'login'
   },
+  { path: 'punto-siete', 
+    loadChildren: './pages/punto-siete/punto-siete.module#PuntoSietePageModule',
+    canLoad: [AuthGuard]
+  },
+
 
 
 

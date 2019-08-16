@@ -1,0 +1,181 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>VII. Comunicacion, Participacion y Consulta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="procedimiento" checked>
+      <ion-label>Procedimiento</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="listaComunicacion">
+      <ion-label>Lista de Comunicacíon</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Quejas">
+      <ion-label>Quejas y Sujerencias</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="registro">
+      <ion-label>Registro y Control de Quejas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides mode="ios" pager="ios" scrollbar="ios" #slider>
+          <ion-slide>
+              <embed src="assets/docs/P-SA-07 COMUNICACION, PARTICIPACION Y CONSULTA.pdf" width="100%" height="600px" alt="pdf">
+          </ion-slide>
+          <ion-slide>
+            <ion-card size="12">
+              <ion-card-header>
+                <ion-card-title>Datos de Comunicacion</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <form (ngSubmit)="enviarLista(form)" #form="ngForm">
+                  <ion-list>
+                    <ion-item>
+                      <ion-label>Curso</ion-label>
+                      <ion-checkbox color="danger"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Difusión</ion-label>
+                      <ion-checkbox color="danger"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label>Interno</ion-label>
+                      <ion-checkbox color="success"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Externo</ion-label>
+                      <ion-checkbox color="success"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">Nombre del Curso</ion-label>
+                      <ion-input type="text" name="nombre" ngModel required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">Lugar:</ion-label>
+                      <ion-input type="text" name="lugar" ngModel required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">Facilitador</ion-label>
+                      <ion-input type="text" name="facilitador" ngModel required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">Empresa</ion-label>
+                      <ion-input type="text" name="empresa" ngModel required></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-button type="submit" expand="full">
+                    Guardar Datos
+                  </ion-button>
+                </form>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+          <ion-slide>
+            <form  (ngSubmit)="submitMethod(refForm)" #refForm="ngForm">
+              <div>
+                <ion-list>
+                  <ion-item-divider color="primary">
+                    <ion-label>Solicitud de la información</ion-label>
+                  </ion-item-divider>
+                  <ion-item>
+                    <ion-checkbox color="success"></ion-checkbox>
+                    <ion-label>Queja</ion-label>
+                    <ion-checkbox color="success"></ion-checkbox>
+                    <ion-label>Sugerencia</ion-label> 
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="success"></ion-checkbox>
+                    <ion-label>Condición de Riesgo</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="success"></ion-checkbox>
+                    <ion-label>Solicitud de Informacion</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="success"></ion-checkbox>
+                    <ion-label>Impacto al Medio Ambiente</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Descripcion o Motivo:</ion-label>
+                    <ion-textarea name="motivo" ngModel required></ion-textarea>
+                  </ion-item>
+                </ion-list>
+              </div>
+              <ion-button type="submit" expand="full">
+                Enviar
+              </ion-button>
+            </form>
+          </ion-slide>
+          <ion-slide>
+            <form (ngSubmit)="enviarRegistro(formR)" #formR="ngForm">
+              <ion-list>
+                <ion-item-divider color="primary" class="ion-text-center">
+                  <ion-label>
+                    Registro y Control de Quejas y Sugerencias
+                  </ion-label>
+                </ion-item-divider>
+                <ion-item>
+                  <ion-label position="floating">Numero de Quejas</ion-label>
+                  <ion-input type="number" name="numero" ngModel required></ion-input>
+                </ion-item>
+                <ion-item-divider color="primary" class="ion-text-center">
+                  <ion-label>
+                      Asunto
+                  </ion-label>
+                </ion-item-divider>
+                <ion-item>
+                  <ion-checkbox color="success"></ion-checkbox>
+                  <ion-label>Queja</ion-label>
+                  <ion-checkbox color="success"></ion-checkbox>
+                  <ion-label>Sugerencia</ion-label>
+                  <ion-checkbox color="success"></ion-checkbox>
+                  <ion-label>Otro</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Descripción</ion-label>
+                  <ion-textarea placeholder="Describa el Asunto" name="descripcion" ngModel required></ion-textarea>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Contacto</ion-label>
+                  <ion-input type="text" ></ion-input>
+                </ion-item>
+                <ion-item-divider color="primary" class="ion-text-center">
+                  <ion-label>
+                      Prioridad
+                  </ion-label>
+                </ion-item-divider>
+                <ion-item>
+                  <ion-checkbox color="success"></ion-checkbox>
+                  <ion-label>Alta</ion-label>
+                  <ion-checkbox color="success"></ion-checkbox>
+                  <ion-label>Media</ion-label>
+                  <ion-checkbox color="success"></ion-checkbox>
+                  <ion-label>Baja</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Fecha Inicio</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Fecha de Termino</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Evidencia</ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-button type="submit" expand="full">
+                Enviar Registro
+              </ion-button>
+            </form>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
