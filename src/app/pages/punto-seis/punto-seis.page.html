@@ -15,7 +15,7 @@
                  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)" >
                    <ion-list>
                         <ion-item color="danger" >
-                          <ion-label>SASISOPA </ion-label>
+                          <ion-label>Perfil de puesto de trabajo </ion-label>
                         </ion-item>
 
                         <ion-item>
@@ -43,40 +43,16 @@
                                   <ion-input type="text" placeholder="Tipos" name="tipos" ngModel required ></ion-input>
                                 </ion-item>
 
+                                <ion-item-divider color="primary">
+                                  Perfil de puesto de trabajo
+                                </ion-item-divider>
+
                                 <ion-item>
                                     <ion-label position="floating">Nivel academico requerido</ion-label>
                                     <ion-input type="text" placeholder="Especificar" name="nivel" ngModel required></ion-input>
                                   </ion-item>
 
-                                  <ion-button type="submit" color="danger" (click)="ver()" >
-                                      Guardar
-                                    </ion-button>
-
-                                    <ion-button [disabled]="disabled" (click)="action()">
-                                      Imprimir
-                                    </ion-button>
-
-                                    <ion-button (click)="ver()">
-                                      Ver Procedimiento
-                                    </ion-button>
-                                   
-                                    
-                                
-                   </ion-list>
-                 </form>
-               </ion-col>
-             </ion-row>
-           </ion-slide>
-           <ion-slide>
-              <ion-row>
-                <ion-col size="12">
-
-                  <form #formulario2="ngForm" (ngSubmit)="enviarForm2(formulario2)">
-                      <ion-item color="secondary">
-                          <ion-label >SASISOPA</ion-label>
-                      </ion-item>
-                      
-                      <ion-item>
+                                  <ion-item>
                           <ion-label position="floating">Objetivo de puesto</ion-label>
                           <ion-input type="text" placeholder="Especificar" name="objetivo" ngModel required></ion-input>
                         </ion-item>
@@ -101,110 +77,104 @@
                                   <ion-input type="text" placeholder="Especificar" name="proteccion" ngModel required></ion-input>
                                 </ion-item>
                                 
-                                <ion-button type="submit">
-                                  Guardar
-                                </ion-button>
-                  </form>
-                </ion-col>
-              </ion-row>
-           </ion-slide>
-           <ion-slide>
-             <ion-row>
-               <ion-col size="12">
-                 <form #formulario3="ngForm" (ngSubmit)="enviarForm3(formulario3)">
-                    <ion-item color="secondary">
-                        <ion-label>Desarrollo laboral</ion-label>
-                      </ion-item>           
-                       <ion-list>
-                           <ion-item>
-                             <ion-label>Nuevo Ingreso</ion-label>
-                             <ion-radio value="cord"  ></ion-radio>
-                           </ion-item>
-                       
-                           <ion-item>
-                             <ion-label>Promocion</ion-label>
-                             <ion-radio value="duesenberg" ></ion-radio>
-                           </ion-item>
-                       
-                           <ion-item>
-                             <ion-label>Reentrenamiento</ion-label>
-                             <ion-radio value="hudson" ></ion-radio>
-                           </ion-item>
-                       
-                           <ion-item>
-                             <ion-label>Actualizacion Trianual</ion-label>
-                             <ion-radio value="packard" ></ion-radio>
-                           </ion-item>
-                       </ion-list>
-                       <ion-button type="submit">
-                           Guardar
-                         </ion-button>
+                      
+
+                                  <ion-button type="submit" color="danger" (click)="ver()" >
+                                      Guardar
+                                    </ion-button>
+
+                                     <ion-button [disabled]="disabled" (click)="action()" fill='clear' >
+                                        <ion-icon  slot="icon-only" ios="ios-print" md="md-print"></ion-icon>
+                                    </ion-button> 
+
+                                    
+                                    
+                                
+                   </ion-list>
                  </form>
                </ion-col>
              </ion-row>
            </ion-slide>
+           
            <ion-slide>
              <ion-row>
                <ion-col size="12">
-                  <ion-item color="secondary">
-                      <ion-label>Queja de clientes</ion-label>
-                    </ion-item>           
-   
-                     <ion-list>
+                 <form #formulario2="ngForm" (ngSubmit)="enviarForm2(formulario2)">
+                    <ion-item color="secondary">
+                        <ion-label>Desarrollo laboral</ion-label>
+                      </ion-item>           
+                       <ion-list radio-group >
                          <ion-item>
-                           <ion-label>Inconformidad de auditoria</ion-label>
-                           <ion-radio value="cord"></ion-radio>
-                         </ion-item>
-                     
-                         <ion-item>
-                           <ion-label>Bajo desempeño</ion-label>
-                           <ion-radio value="duesenberg"></ion-radio>
-                         </ion-item>
-                     
-                         <ion-item>
-                           <ion-label>Recomendacion ICR</ion-label>
-                           <ion-radio value="hudson"></ion-radio>
-                         </ion-item>
-                     
-                         <ion-item>
-                           <ion-label>No se cumplieron objetivos</ion-label>
-                           <ion-radio value="packard"></ion-radio>
-                         </ion-item>
-                     </ion-list>
-                     <ion-button type="submit">
-                        Guardar
-                      </ion-button>
-               </ion-col>
-             </ion-row>
-           </ion-slide>
-           <ion-slide>
-             <ion-row>
-               <ion-col size="12">
-                  <ion-item color="secondary">
-                      <ion-label>Situacion actual</ion-label>
-                    </ion-item>           
-   
-                     <ion-list>
-                         <ion-item>
-                           <ion-label>Situacion deseada</ion-label>
-                           <ion-radio value="cord"></ion-radio>
-                         </ion-item>
-                     
-                         <ion-item>
-                           <ion-label>Objetivos de la necesidad</ion-label>
-                           <ion-radio value="duesenberg"></ion-radio>
-                         </ion-item>
-                     
-                         <ion-item>
-                           <ion-label>Temas para capacitacion</ion-label>
-                           <ion-radio value="hudson"></ion-radio>
-                         </ion-item>
-                     
-                         
-                     </ion-list>
-                     <ion-button type="submit">
-                        Guardar
-                      </ion-button>
+                            <ion-checkbox color="primary" slot="start" name='R1' value="Eduardo" checked="true" ngModel></ion-checkbox>
+                            <ion-label>Nuevo ingreso</ion-label>
+                          </ion-item>
+                          
+                          <ion-item>
+                          <ion-checkbox color="primary" slot="start" ></ion-checkbox>
+                          <ion-label>Promocion</ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                        <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                        <ion-label>Reentrenamiento</ion-label>
+                      </ion-item>
+                   
+                      <ion-item>
+                      <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                      <ion-label>Actualizacion trianual</ion-label>
+                    </ion-item>
+
+                           <ion-item color="secondary">
+                            <ion-label>Queja de clientes</ion-label>
+                          </ion-item>           
+         
+                           <ion-list>
+                               <ion-item>
+                                 <ion-label>Inconformidad de auditoria</ion-label>
+                                 <ion-radio name='ra2'></ion-radio>
+                               </ion-item>
+                           
+                               <ion-item>
+                                 <ion-label>Bajo desempeño</ion-label>
+                                 <ion-radio name='ra2'></ion-radio>
+                               </ion-item>
+                           
+                               <ion-item>
+                                 <ion-label>Recomendacion ICR</ion-label>
+                                 <ion-radio name='ra2'></ion-radio>
+                               </ion-item>
+                           
+                               <ion-item>
+                                 <ion-label>No se cumplieron objetivos</ion-label>
+                                 <ion-radio name='ra2'></ion-radio>
+                               </ion-item>
+                           </ion-list>
+                            
+                           <ion-item color="secondary">
+                            <ion-label>Situacion actual</ion-label>
+                          </ion-item>           
+         
+                           <ion-list>
+                               <ion-item>
+                                 <ion-label>Situacion deseada</ion-label>
+                                 <ion-radio name='ra3'></ion-radio>
+                               </ion-item>
+                           
+                               <ion-item>
+                                 <ion-label>Objetivos de la necesidad</ion-label>
+                                 <ion-radio name='ra3'></ion-radio>
+                               </ion-item>
+                           
+                               <ion-item>
+                                 <ion-label>Temas para capacitacion</ion-label>
+                                 <ion-radio name='ra3'></ion-radio>
+                               </ion-item>
+                           </ion-list>
+                       
+                       <ion-button type="submit">
+                           Guardar
+                         </ion-button>
+                 </form>
                </ion-col>
              </ion-row>
            </ion-slide>
