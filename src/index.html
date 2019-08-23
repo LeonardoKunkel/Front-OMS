@@ -17,12 +17,29 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-  <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+  <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' /> -->
 </head>
 
 <body>
   <app-root></app-root>
+  <script>
+     let length = 0;
+    const list = document.getElementById('list');
+    const infiniteScroll = document.getElementById('infinite-scroll');
+    infiniteScroll.addEventListener('ionInfinite', async function () {
+      if (length < users.length) {
+        console.log('Loading data...');
+        await wait(500);
+        infiniteScroll.complete();
+        appendItems(10);
+        console.log('Done');
+      } else {
+        console.log('No More Data');
+        infiniteScroll.disabled = true;
+      }
+    });
+  </script>
 </body>
 
 </html>

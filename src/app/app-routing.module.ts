@@ -76,6 +76,11 @@ const routes: Routes = [
     loadChildren: './pages/punto-siete/punto-siete.module#PuntoSietePageModule',
     canLoad: [AuthGuard]
   },
+  { path: 'punto-ocho', 
+    loadChildren: './pages/punto-ocho/punto-ocho.module#PuntoOchoPageModule',
+    canLoad: [AuthGuard] 
+  },
+
 
 
 
