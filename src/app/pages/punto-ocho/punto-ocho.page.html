@@ -1,0 +1,521 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Control de Documentos y Registros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment scrollable mode="md" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="procedimiento" checked>
+      <ion-label>Procedimiento</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="procedimientoSistema">
+      <ion-label>Procedimiento de Sistema o Especifico</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="lista">
+      <ion-label>Lista Maestra de Documentos Internos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="cambios">
+      <ion-label>Solicitud de Cambios</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="listaDistribucion">
+      <ion-label>Lista de Distribucion de Documentos</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides mode="ios" pager="ios" scrollbar="ios" #slider>
+          <ion-slide>
+            <embed src="assets/docs/P-SA-08 CONTROL DE DOCUMENTOS Y REGISTROS.pdf" width="100%" height="600px" alt="pdf">
+          </ion-slide>
+          <ion-slide>
+            <embed src="assets/docs/FS-01 PROCEDIMIENTOS, INSTRUCTIVOS O METODOLOGIAS.pdf" width="100%" height="600px" alt="pdf">
+          </ion-slide>
+          <ion-slide>
+            <ion-list>
+              <form>
+                <ion-item-divider color="secondary">
+                  <ion-label>Lista Maestra</ion-label>
+                </ion-item-divider>
+                <ion-item>
+                  <ion-label>Politica</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <p>Identificacion de Peligros y de Aspectos ambientales Para la evaluación de riesgos y de impactos ambientales</p>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Requisitos legales</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Objetivos,Metas e Indicadores</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Funciones Responsabilidades y Autoridad</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Copetencia del personal, Capacitacion y Entretenimiento</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Comunicacion, Participacion y Consulta</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Control de Documentos y Registros</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Mejores Practicas y Estandares</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Control de Actividades y Procesos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Integridad Mecánica y aseguramiento de la Calidad</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Seguridad de Contratistas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Preparacion y Respuestas a Emergencias</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Monitoreo, Verificacion y Evaluación</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Auditorías</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Investigacion de Incidentes y Accidentes</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Revisíon de Resultados</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Informes de Desempeño</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Recepcion de autotanque y descarga de productos a Tanques de Alamacenamiento</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Despacho de Productos Inflamables y Combustibles a Vehículos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Etiqueta, Candadeo y Bloqueo Para interrupcíon de líneas eléctricas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Etiqueta, Candadeo y Bloqueo para Interrupcíon de lineas con Producto</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Trabajo con Herramientas que Generen fuentes de Ignicion</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Trabajo en Escaleras o Plataformas en alturas mayores a 1.5m</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Trabajos en Areas confinadas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Permiso de Trabajos Peligrosos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Administracion de Cambios de Tecnologia</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Mantenimiento a Dispensarios</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Mantenimientos a Tanques</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Manteniento a Instalaciones electricas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Manteniento a Edificios</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Mantenimiento a Drenajes</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Mantenimiento a Maquinas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Planes de Respuesta a Emergencias</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>               
+                <ion-item>
+                  <ion-label>Metodología del arbol de Fallas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Procedimientos, Practicas, Instructivo, Metodología </ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Lista Maestra de documentos internos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Solicitud de Cambios</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Lista de Distribucion de Documentos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Lista de Comunicación</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Quejas y sujerencias</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Evaluacion de Aspectos ambientales</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Evaluacion de riesgos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Resultado de Analisis de Riesgos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Listado de Riesgos y Aspectos ambientales</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Objetivos y Metas e Indicadores</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Matriz de Responsabilidades</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Perfil de Puesto de Trabajo</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Deteccion de Necesidades de Capacitacion</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Programa de Capacitación</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Listado de Codigos y Estandares</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Administracion de Cambio de Tecnologia </ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Programa de Mantenimientos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Listado de Equipo Critico</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Listado de Requisitos Legales</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Anexo de Seguridad de Congtratistas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Acta de Integracion de las Brigadas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Programa de Simulacros</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Planacion de Simulacros</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Evaluación de Simulacros</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Programa de Monitoreo y Medición de Parámetros de Desempeño</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>                
+                <ion-item>
+                  <ion-label>Resultados del Monitoreo de Parámetros del Desempeño</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>                
+                <ion-item>
+                  <ion-label>Evaluación del Cumplimiento de los Requisitos Legales</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Plan de Atención de Hallazgos derivados del movimiento del SA</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Programa de Auditorias</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Plan de Auditoria</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Informe de Auditoria </ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Plan de Atencion de Hallazgos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Revision por la Dirección</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Inspeccion de Tanques y Registros</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Prueba Operativa de Dispositivos de Seguridad</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Inspeccion de Dispensarios</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Inspeccion de Accesorios de Descarga y tubos de vento</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Inspeccion de Instalaciones Electricas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Programa de Limpieza y Verificacion de Trampa de Combustible</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Inspeccion mensual de Extintores</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Inspeccion de señalamientos</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Permiso de Trabajo Peligroso</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Formato para ACR</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Entrevista de Personal</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Comprobacion de Hipotesis</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Recomendaciones de la ICR</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Estadística de Incidentes</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+                <ion-button type="submit">
+                  Guardar
+                </ion-button>          
+              </form>
+            </ion-list>
+            <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+              <ion-infinite-scroll-content
+                loadingSpinner="crescent"
+                loadingText="Cargando...">
+              </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+          </ion-slide>
+          <ion-slide>
+            <ion-list>
+              <form>
+                <ion-item-divider color="secondary">
+                  <ion-label>Lista Maestra</ion-label>
+                </ion-item-divider>
+                <ion-item>
+                  <ion-label position="floating">Codificacíon</ion-label>
+                  <ion-input type="text" name="codificacion"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Nombre del Documento</ion-label>
+                  <ion-input type="text" name="codificacion"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Elemento del Sistema</ion-label>
+                  <ion-input type="text" name="codificacion"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Nombre del Solicitante</ion-label>
+                  <ion-input type="text" name="codificacion"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Date</ion-label>
+                  <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                </ion-item>
+                <ion-item-divider color="secondary">
+                  <ion-label>Lista Maestra</ion-label>
+                </ion-item-divider>
+              <ion-item>
+                  <ion-label position="floating">Procedimiento de Sistema </ion-label>
+                  <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Formato de Sistema</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Procedimiento especifico</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Fomato operativo &nbsp;</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item-divider color="secondary">
+                <ion-label position="floating">Origen del Cambio</ion-label>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label position="floating">Sugerencia</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Recomendación ICR</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Cambio de Tecnologia</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Hallazgo de Auditoria</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Accíon de Mejora</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>              
+              <ion-item>
+                <ion-label position="floating">Cammbio en el proceso</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item> 
+              <ion-item>
+                <ion-label position="floating">Estado Actual</ion-label>
+              </ion-item>   
+              <ion-item>
+                <ion-label position="floating">Cambio Propuesto</ion-label>
+              </ion-item>
+              <ion-item-divider color="secondary">
+                <ion-label>Resultado de la Evaluación</ion-label>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label>Aceptada</ion-label>
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Rechazada</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+              <ion-button type="submit">
+                Guardar
+              </ion-button> 
+              </form>
+            </ion-list>
+          </ion-slide>
+          <ion-slide>
+            <ion-list>
+              <form>
+                <ion-item-divider color="secondary">
+                  <ion-label>Lista Maestra</ion-label>
+                </ion-item-divider>
+                <ion-item>
+                    <ion-label>Fecha Entrega</ion-label>
+                  <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Nombre Documento</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Código</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Fecha del Documento</ion-label>
+                  <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Fecha del Documento que Sustituye</ion-label>
+                  <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Nombre de Cada Persona que firma de Acuse de Recibo</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-button type="submit">
+                  Guardar
+                </ion-button>
+              </form>
+            </ion-list>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
