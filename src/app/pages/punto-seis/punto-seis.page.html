@@ -14,21 +14,21 @@
                <ion-col size="12">
                  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)" >
                    <ion-list>
-                        <ion-item color="danger" >
-                          <ion-label>Perfil de puesto de trabajo </ion-label>
-                        </ion-item>
+                           <ion-item color="danger" >
+                             <ion-label>Perfil de puesto de trabajo </ion-label>
+                           </ion-item>
 
-                        <ion-item>
-                          <ion-label position="floating">Jefe inmediato</ion-label>
-                          <ion-input type="text" placeholder="Nombre"  name='nombre' ngModel required ></ion-input>
-                        </ion-item>
+                            <ion-item>
+                              <ion-label position="floating">Jefe inmediato</ion-label>
+                              <ion-input type="text" placeholder="Nombre"  name='nombre' ngModel required ></ion-input>
+                            </ion-item>
 
-                        <ion-item>
-                            <ion-label position="floating">Caracteristicas personales</ion-label>
-                            <ion-input type="text" placeholder="Especificar" name='caracteristicas' ngModel required ></ion-input>
-                          </ion-item>
+                            <ion-item>
+                              <ion-label position="floating">Caracteristicas personales</ion-label>
+                              <ion-input type="text" placeholder="Especificar" name='caracteristicas' ngModel required ></ion-input>
+                            </ion-item>
 
-                          <ion-item>
+                            <ion-item>
                               <ion-label position="floating">Requerimientos fisicos</ion-label>
                               <ion-input type="text" placeholder="Especificar" name='requerimientos' ngModel required  ></ion-input>
                             </ion-item>
@@ -36,148 +36,143 @@
                             <ion-item>
                                 <ion-label position="floating">Conocimientos especificos</ion-label>
                                 <ion-input type="text" placeholder="Caracteristicas" name='conocimientos' ngModel required ></ion-input>
-                              </ion-item>
+                            </ion-item>
 
-                              <ion-item>
-                                  <ion-label position="floating">Deztrezas tecnicas</ion-label>
-                                  <ion-input type="text" placeholder="Tipos" name="tipos" ngModel required ></ion-input>
-                                </ion-item>
+                            <ion-item>
+                                <ion-label position="floating">Deztrezas tecnicas</ion-label>
+                                <ion-input type="text" placeholder="Tipos" name="tipos" ngModel required ></ion-input>
+                            </ion-item>
 
-                                <ion-item-divider color="primary">
-                                  Perfil de puesto de trabajo
-                                </ion-item-divider>
+                            <ion-item-divider color="primary">
+                                Perfil de puesto de trabajo
+                            </ion-item-divider>
 
-                                <ion-item>
-                                    <ion-label position="floating">Nivel academico requerido</ion-label>
-                                    <ion-input type="text" placeholder="Especificar" name="nivel" ngModel required></ion-input>
-                                  </ion-item>
+                            <ion-item>
+                                <ion-label position="floating">Nivel academico requerido</ion-label>
+                                <ion-input type="text" placeholder="Especificar" name="nivel" ngModel required></ion-input>
+                            </ion-item>
 
-                                  <ion-item>
-                          <ion-label position="floating">Objetivo de puesto</ion-label>
-                          <ion-input type="text" placeholder="Especificar" name="objetivo" ngModel required></ion-input>
-                        </ion-item>
+                            <ion-item>
+                                <ion-label position="floating">Objetivo de puesto</ion-label>
+                                <ion-input type="text" placeholder="Especificar" name="objetivo" ngModel required></ion-input>
+                            </ion-item>
 
-                        <ion-item>
-                            <ion-label position="floating">Funciones especificas</ion-label>
-                            <ion-input type="text" placeholder="Especificar" name="funciones" ngModel required></ion-input>
-                          </ion-item>
+                            <ion-item>
+                                <ion-label position="floating">Funciones especificas</ion-label>
+                                <ion-input type="text" placeholder="Especificar" name="funciones" ngModel required></ion-input>
+                            </ion-item>
 
-                          <ion-item>
-                              <ion-label position="floating">Personal a cargo</ion-label>
-                              <ion-input type="text" placeholder="Especificar" name="personal" ngModel required></ion-input>
+                            <ion-item>
+                                <ion-label position="floating">Personal a cargo</ion-label>
+                                <ion-input type="text" placeholder="Especificar" name="personal" ngModel required></ion-input>
                             </ion-item>
 
                             <ion-item>
                                 <ion-label position="floating">Herramientas Y/O equiós</ion-label>
                                 <ion-input type="text" placeholder="Especificar" name="herramientas" ngModel required></ion-input>
-                              </ion-item> 
+                            </ion-item> 
                             
-                              <ion-item>
-                                  <ion-label position="floating">Equipos de protecion personal</ion-label>
-                                  <ion-input type="text" placeholder="Especificar" name="proteccion" ngModel required></ion-input>
-                                </ion-item>
+                            <ion-item>
+                                <ion-label position="floating">Equipos de protecion personal</ion-label>
+                                <ion-input type="text" placeholder="Especificar" name="proteccion" ngModel required></ion-input>
+                            </ion-item>
                                 
-                      
+                            <ion-button type="submit" color="danger" (click)="ver()" >
+                                 Guardar
+                            </ion-button>
 
-                                  <ion-button type="submit" color="danger" (click)="ver()" >
-                                      Guardar
-                                    </ion-button>
-
-                                     <ion-button [disabled]="disabled" (click)="action()" fill='clear' >
-                                        <ion-icon  slot="icon-only" ios="ios-print" md="md-print"></ion-icon>
-                                    </ion-button> 
-
-                                    
-                                    
+                            <ion-button [disabled]="disabled" (click)="action()" fill='clear' >
+                                 <ion-icon  slot="icon-only" ios="ios-print" md="md-print"></ion-icon>
+                            </ion-button>     
                                 
                    </ion-list>
                  </form>
                </ion-col>
              </ion-row>
            </ion-slide>
-           
+
            <ion-slide>
              <ion-row>
-               <ion-col size="12">
-                 <form #formulario2="ngForm" (ngSubmit)="enviarForm2(formulario2)">
+               <form >
                     <ion-item color="secondary">
-                        <ion-label>Desarrollo laboral</ion-label>
-                      </ion-item>           
-                       <ion-list radio-group >
-                         <ion-item>
-                            <ion-checkbox color="primary" slot="start" name='R1' value="Eduardo" checked="true" ngModel></ion-checkbox>
-                            <ion-label>Nuevo ingreso</ion-label>
-                          </ion-item>
-                          
-                          <ion-item>
-                          <ion-checkbox color="primary" slot="start" ></ion-checkbox>
-                          <ion-label>Promocion</ion-label>
-                        </ion-item>
+                      <ion-label>Desarrollo laboral</ion-label>
+                    </ion-item>           
+                    
+                    <ion-item>
+                       <ion-checkbox color="primary" slot="start" name='R1' value="Eduardo" checked="true" ngModel></ion-checkbox>
+                       <ion-label>Nuevo ingreso</ion-label>
+                    </ion-item>
+                        
+                    <ion-item>
+                      <ion-checkbox color="primary" slot="start" ></ion-checkbox>
+                      <ion-label>Promocion</ion-label>
+                    </ion-item>
 
-                        <ion-item>
-                        <ion-checkbox color="primary" slot="start"></ion-checkbox>
-                        <ion-label>Reentrenamiento</ion-label>
-                      </ion-item>
-                   
-                      <ion-item>
+                    <ion-item>
+                      <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                      <ion-label>Reentrenamiento</ion-label>
+                    </ion-item>
+                 
+                    <ion-item>
                       <ion-checkbox color="primary" slot="start"></ion-checkbox>
                       <ion-label>Actualizacion trianual</ion-label>
                     </ion-item>
 
-                           <ion-item color="secondary">
-                            <ion-label>Queja de clientes</ion-label>
-                          </ion-item>           
-         
-                           <ion-list>
-                               <ion-item>
-                                 <ion-label>Inconformidad de auditoria</ion-label>
-                                 <ion-radio name='ra2'></ion-radio>
-                               </ion-item>
-                           
-                               <ion-item>
-                                 <ion-label>Bajo desempeño</ion-label>
-                                 <ion-radio name='ra2'></ion-radio>
-                               </ion-item>
-                           
-                               <ion-item>
-                                 <ion-label>Recomendacion ICR</ion-label>
-                                 <ion-radio name='ra2'></ion-radio>
-                               </ion-item>
-                           
-                               <ion-item>
-                                 <ion-label>No se cumplieron objetivos</ion-label>
-                                 <ion-radio name='ra2'></ion-radio>
-                               </ion-item>
-                           </ion-list>
-                            
-                           <ion-item color="secondary">
-                            <ion-label>Situacion actual</ion-label>
-                          </ion-item>           
-         
-                           <ion-list>
-                               <ion-item>
-                                 <ion-label>Situacion deseada</ion-label>
-                                 <ion-radio name='ra3'></ion-radio>
-                               </ion-item>
-                           
-                               <ion-item>
-                                 <ion-label>Objetivos de la necesidad</ion-label>
-                                 <ion-radio name='ra3'></ion-radio>
-                               </ion-item>
-                           
-                               <ion-item>
-                                 <ion-label>Temas para capacitacion</ion-label>
-                                 <ion-radio name='ra3'></ion-radio>
-                               </ion-item>
-                           </ion-list>
-                       
-                       <ion-button type="submit">
-                           Guardar
-                         </ion-button>
-                 </form>
-               </ion-col>
+                    <ion-item color="secondary">
+                        <ion-label>Queja de clientes</ion-label>
+                    </ion-item>           
+       
+                    <ion-item>
+                        <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                        <ion-label>Inconformidad de auditoria</ion-label>
+                    </ion-item>
+                         
+                    <ion-item>
+                       <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                       <ion-label>Bajo desempeño</ion-label>
+                    </ion-item>
+                         
+                    <ion-item>
+                       <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                       <ion-label>Recomendacion ICR</ion-label>
+                    </ion-item>
+                         
+                    <ion-item>
+                        <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                        <ion-label>No se cumplieron objetivos</ion-label>        
+                     </ion-item>
+                          
+                     <ion-item color="secondary">
+                        <ion-label>Situacion actual</ion-label>
+                      </ion-item>           
+       
+                     <ion-item>
+                        <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                        <ion-label>Situacion deseada</ion-label>         
+                      </ion-item>
+                         
+                      <ion-item>
+                          <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                          <ion-label>Objetivos de la necesidad</ion-label>        
+                      </ion-item>
+                         
+                      <ion-item>
+                          <ion-checkbox color="primary" slot="start"></ion-checkbox>
+                          <ion-label>Temas para capacitacion</ion-label>         
+                      </ion-item>
+                         
+                      <ion-button type='submit' (click)="onClick()">
+                        Click me
+                      </ion-button>
+                    
+
+               </form>
              </ion-row>
            </ion-slide>
+
+           
+           
+           
        </ion-slides>
      </ion-row>
    </ion-grid>

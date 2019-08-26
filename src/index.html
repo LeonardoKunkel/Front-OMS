@@ -23,23 +23,7 @@
 
 <body>
   <app-root></app-root>
-  <script>
-     let length = 0;
-    const list = document.getElementById('list');
-    const infiniteScroll = document.getElementById('infinite-scroll');
-    infiniteScroll.addEventListener('ionInfinite', async function () {
-      if (length < users.length) {
-        console.log('Loading data...');
-        await wait(500);
-        infiniteScroll.complete();
-        appendItems(10);
-        console.log('Done');
-      } else {
-        console.log('No More Data');
-        infiniteScroll.disabled = true;
-      }
-    });
-  </script>
+ 
 </body>
 
 </html>

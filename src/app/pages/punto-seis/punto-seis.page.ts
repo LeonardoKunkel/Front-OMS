@@ -27,10 +27,9 @@ export class PuntoSeisPage implements OnInit {
   @ViewChild('formulario') formulario: Form
 
   constructor(public alertController: AlertController) { }
-
+  
   ngOnInit() {
   }
-
     async ver() {
      
     const alert = await this.alertController.create({
