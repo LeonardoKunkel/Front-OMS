@@ -14,59 +14,58 @@
       <ion-label>Procedimiento</ion-label>
     </ion-segment-button>
     <ion-segment-button value="form">
-      <ion-label>Fromulario</ion-label>
+      <ion-label>Formulario</ion-label>
     </ion-segment-button>
   </ion-segment>
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12"  >
         <ion-slides #slider>
           <ion-slide>
             <embed src="assets/docs/P-SA-02 IDENTIFICACION DE ASPECTOS AMBIENTALES.pdf" width="100%" height="600px" alt="pdf">
           </ion-slide>
-          <ion-slide>
-            <form action="">
+          <ion-slide >
+             <form  (ngSubmit)="enviarPuntoDos()" #refForm="ngForm"  >
               <ion-list>
               <ion-item>
                 <ion-label>Compresor</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="compresor" required value="puntoDos.compresor"></ion-checkbox>
               </ion-item>
               <ion-item>
-                <ion-label>Hidroneumático</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>Hidroneumatico</ion-label>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.hidroneumatico" name="hidroneumatico" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Planta de Emergencia</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.palantaEmergencia" name="palantaEmergencia" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Pararayos</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.pararayos" name="pararayos" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Cisterna</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.cisterna" name="cisterna" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Bomba de agua</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.bombaAgua" name="bombaAgua" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Área cambio de aceite</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.cambioAceite" name="cambioAceite" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Bodega de lubricantes</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.bodegaLubricantes" name="bodegaLubricantes" required></ion-checkbox>
               </ion-item>
               <ion-item>
                 <ion-label>Almacen de residuos peligrosos</ion-label>
-                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-checkbox slot="start" [(ngModel)]="puntodos.almacenResiduosPeligrosos" name="almacenResiduosPeligrosos" required></ion-checkbox>
               </ion-item>
               </ion-list>
-              <ion-button expand="full" (click)="send()">
-                <ion-icon slot="start" name="send"></ion-icon>
+              <ion-button expand="full" type="submit" [disabled]="refForm.invalid"s>
                 Enviar
               </ion-button>
             </form>
