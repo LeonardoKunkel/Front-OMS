@@ -26,17 +26,33 @@ export class PuntoDosPage implements OnInit {
 
   @ViewChild('slider') slider: IonSlides
 
-  constructor(private alertCtrl: AlertController,private navCtrl: NavController, private PuntodosService: PuntodosService, private location: Location) {
-    this.cargarPuntoDos();
+  constructor(private navCtrl: NavController) {
+    //this.cargarPuntoDos();
     console.log(this.puntoDos);
-    
+    //private alertCtrl: AlertController,private navCtrl: NavController, private PuntodosService: PuntodosService, private location: Location
    }
 
   ngOnInit() {
-    this.slider.lockSwipes(true);
+    //this.slider.lockSwipes(true);
   }
 
-  async enviarPuntoDos() {
+  goEvaluacionesAspectos() {
+    this.navCtrl.navigateForward('/menu-punto2');
+  }
+
+  goEvaluacionRiesgos() {
+    this.navCtrl.navigateForward('/punto-dos-riesgos');
+  }
+
+  goResultadosAnalisisRiesgos() {
+    this.navCtrl.navigateForward('/resultados-riesgos');
+  }
+
+  goListadoPeligros() {
+    this.navCtrl.navigateForward('/listado-peligros');
+  }
+
+  /* async enviarPuntoDos() {
     const alert = await this.alertCtrl.create({
       header: 'Importante',
       message: '<strong>Guardar Estos elementos</strong>',
@@ -94,5 +110,5 @@ export class PuntoDosPage implements OnInit {
       
     })
   }
- 
+  */
 }
