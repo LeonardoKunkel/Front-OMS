@@ -80,6 +80,20 @@ const routes: Routes = [
     loadChildren: './pages/punto-ocho/punto-ocho.module#PuntoOchoPageModule',
     canLoad: [AuthGuard] 
   },
+  { path: 'menu-punto2', 
+    loadChildren: './menu-punto2/menu-punto2.module#MenuPunto2PageModule',
+    canLoad: [AuthGuard]
+  },
+  { path: 'resultados-riesgos', 
+    loadChildren: './pages/resultados-riesgos/resultados-riesgos.module#ResultadosRiesgosPageModule',
+    canLoad: [AuthGuard] 
+  },
+  { path: 'listado-peligros', 
+    loadChildren: './pages/listado-peligros/listado-peligros.module#ListadoPeligrosPageModule',
+    canLoad: [AuthGuard] 
+  },
+
+
 
 
 

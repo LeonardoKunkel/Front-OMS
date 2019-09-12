@@ -113,4 +113,5 @@ export class PuntoSietePage implements OnInit {
     await alert.present();
   }
 
+  datosComunicacion() {}
 }

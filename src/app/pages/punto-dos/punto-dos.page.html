@@ -8,269 +8,40 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-segment (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="proced">
-      <ion-label>Procedimiento</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="form">
-      <ion-label>Formulario</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  
-
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12"  >
-        <ion-slides #slider>
-          <ion-slide>
-            <embed src="assets/docs/P-SA-02 IDENTIFICACION DE ASPECTOS AMBIENTALES.pdf" width="100%" height="600px" alt="pdf">
-          </ion-slide>
-          <ion-slide >
-            <ion-card>
-              <ion-card-title>EVALUACIÓN DE ASPECTOS AMBIENTALES</ion-card-title>
-              <ion-card-content>
-                  <ion-item>
-                      <ion-label>Entrada maniobra de autotanque(Recepció AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="entradaManiobra" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Toma muestra de producto(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="tomaMuestra" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Descarga de hidrocarburo(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Derrame durante en llenado(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Desconexión de Mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Escurrimiento de autotanque(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Salida maniobra de autotanque(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Almacenamiento derrame</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Venteo</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Venteo incendio</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Retiro de aguas aceitosas(purgado de agua)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Retiro de lodos(limpieza interiorde tanque)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Retiro de aguas aceitosas y materiales impregnados(limpieza de bocatomas)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Generación de aguas aceitosas y materiales impregnados(limpieza del área)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item-divider color="secondary">
-                      <ion-label>
-                          AREA: MODULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHICULOS
-                      </ion-label>
-                    </ion-item-divider>
-                  <ion-item>
-                      <ion-label>Colocación de la pistola en el vehículo</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Carga de hidrocarburo</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Termino del despacho y retiro de pistola del vehículo</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Suministro de lubricantes,aditivos.</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Limpieza de dispensarios</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Limpieza de contenedores</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Cambio de filtros</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Cambio de mangueras,conexiones o pistolas.</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-
-                  <ion-item-divider color="secondary">
-                      <ion-label>
-                          ÁREA: DRENAJES Y TRAMPA DE COMBUSTIBLES
-                      </ion-label>
-                  </ion-item-divider>
-                                   
-                  <ion-item>
-                      <ion-label>Limpieza(Registros, tubería y trampa)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Limpieza Rejillas</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Separación de hidrocarburo</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-
-                  <ion-item-divider color="secondary">
-                      <ion-label>
-                          ÁREA: OFICINAS Y BAÑOS
-                      </ion-label>
-                  </ion-item-divider> 
-
-                  <ion-item>
-                      <ion-label>Actividades cotidianas sin riesgo</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Actividades cotidianas sin riesgos(Electricas)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Actividades cotidianas sin riesgos(Sanitario)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Actividades cotidianas sin riesgos(Consumo de papel)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-                  
-                  <ion-item-divider color="secondary">
-                      <ion-label>
-                          ÁREA: CUARTO DE CONTROL ELÉCTRICO
-                      </ion-label>
-                  </ion-item-divider>
-
-                  <ion-item>
-                      <ion-label>Operación normal(Tableros eléctricos)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Mantenimiento (Tableros eléctricos)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Operación normal (Planta de emergencia)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Mantenimiento (Planta de emergencia)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>                  
-                  <ion-item>
-                      <ion-label>Conexión de mangueras(Recepción AT)</ion-label>
-                      <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="conexionManguera" required value="puntoDos.compresor"></ion-checkbox>
-                  </ion-item>
-              </ion-card-content>
-            </ion-card>
-
-             <!-- <form  (ngSubmit)="enviarPuntoDos()" #refForm="ngForm"  >
-              <ion-list>
-              <ion-item>
-                <ion-label>Compresor</ion-label>
-                <ion-checkbox slot="start"  [(ngModel)]="puntodos.compresor" name="compresor" required value="puntoDos.compresor"></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Hidroneumatico</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.hidroneumatico" name="hidroneumatico" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Planta de Emergencia</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.palantaEmergencia" name="palantaEmergencia" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Pararayos</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.pararayos" name="pararayos" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Cisterna</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.cisterna" name="cisterna" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Bomba de agua</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.bombaAgua" name="bombaAgua" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Área cambio de aceite</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.cambioAceite" name="cambioAceite" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Bodega de lubricantes</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.bodegaLubricantes" name="bodegaLubricantes" required></ion-checkbox>
-              </ion-item>
-              <ion-item>
-                <ion-label>Almacen de residuos peligrosos</ion-label>
-                <ion-checkbox slot="start" [(ngModel)]="puntodos.almacenResiduosPeligrosos" name="almacenResiduosPeligrosos" required></ion-checkbox>
-              </ion-item>
-              </ion-list>
-              <ion-button expand="full" type="submit" [disabled]="refForm.invalid"s>
-                Enviar
-              </ion-button>
-            </form> -->
-          </ion-slide>
-        </ion-slides>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goEvaluacionesAspectos()">
+          <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg" />
+          <ion-card-header>
+            <ion-card-title>Evaluacion De Aspectos Ambientales</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goEvaluacionRiesgos()">
+          <img height="100px" class="ion-padding" src="/assets/imagenes/riesgo.svg" />
+          <ion-card-header>
+            <ion-card-title>Evaluacion de Riesgos</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goResultadosAnalisisRiesgos()">
+          <img height="100px" class="ion-padding" src="/assets/imagenes/resultados.svg" />
+          <ion-card-header>
+            <ion-card-title>Resultados De Analisis de Riesgos</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goListadoPeligros()">
+          <img height="100px" class="ion-padding" src="/assets/imagenes/riesgo.svg" />
+          <ion-card-header>
+            <ion-card-title>Listado de Peligros y Aspectos Ambientales</ion-card-title>
+          </ion-card-header>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

@@ -4,8 +4,6 @@ import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import { AlertController } from '@ionic/angular';
-import { Button } from 'protractor';
-import { bloomHasToken } from '@angular/core/src/render3/di';
 import { FormsModule, Form } from '@angular/forms';
 
 
@@ -16,12 +14,7 @@ import { FormsModule, Form } from '@angular/forms';
 })
 export class PuntoSeisPage implements OnInit {
   pdfObj=null;
-  //  nombre=null
-  // caracteristicas=null;
-  // requerimientos=null;
-  // conocimientos=null;
-  // tipos=null;
-  // nivel=null;
+  
 
   @ViewChild('slider') slider: IonSlides
   @ViewChild('formulario') formulario: Form
@@ -29,7 +22,39 @@ export class PuntoSeisPage implements OnInit {
   constructor(public alertController: AlertController) { }
   
   ngOnInit() {
+    this.slider.lockSwipes(true);
   }
+
+  segmentChanged(event) {
+    const value = event.detail.value;
+    if (value == "perfilPuesto") {
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(1);
+      this.slider.lockSwipes(true);
+    }
+    else if (value == "procedimiento") {
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(0);
+      this.slider.lockSwipes(true);
+    }
+    else if (value == "deteccionNecesidades") {
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(2);
+      this.slider.lockSwipes(true);
+    }
+    else if (value == "programaCapacitacion") {
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(3);
+      this.slider.lockSwipes(true);
+    }
+    else if (value == "seguimientoPrograma") {
+      this.slider.lockSwipes(false);
+      this.slider.slideTo(4);
+      this.slider.lockSwipes(true);
+    }
+  }
+
+
     async ver() {
      
     const alert = await this.alertController.create({
@@ -55,18 +80,15 @@ export class PuntoSeisPage implements OnInit {
   
   public disabled = true;
 
-  public action() {
+   action() {
     console.log('action triggered');
     this.Pdf(this.formulario);
     
 
   }
 
-  public change() {
+   change() {
     this.disabled = false;
-   // console.log(nombre);
-    //console.log('Prueba para el pdf');
-    //console.log(nombre);
   }
 
 

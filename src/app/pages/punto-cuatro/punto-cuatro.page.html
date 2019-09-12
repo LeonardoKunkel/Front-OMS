@@ -4,6 +4,11 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>IV. Objetivos metas e indicadores</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="pdf()">
+        <ion-icon slot="icon-only" name="download"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +18,7 @@
       <ion-label>Procedimiento</ion-label>
     </ion-segment-button>
     <ion-segment-button value="form">
-      <ion-label>Fromulario</ion-label>
+      <ion-label>Formulario</ion-label>
     </ion-segment-button>
   </ion-segment>
 
