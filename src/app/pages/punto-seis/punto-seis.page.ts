@@ -26,6 +26,7 @@ export class PuntoSeisPage implements OnInit {
   }
 
   segmentChanged(event) {
+    console.log(event);
     const value = event.detail.value;
     if (value == "perfilPuesto") {
       this.slider.lockSwipes(false);

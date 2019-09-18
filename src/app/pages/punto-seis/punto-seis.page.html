@@ -1,5 +1,8 @@
 <ion-header no-border>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>COMPETENCIA DEL PERSONAL, CAPACITACION Y ENTRETENIMIENTO </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,19 +11,19 @@
  <ion-content>
   <ion-segment (ionChange)="segmentChanged($event)">
     <ion-segment-button value="procedimiento" checked>
-      <ion-label>procedimiento</ion-label>
+      <ion-label>Procedimiento</ion-label>
     </ion-segment-button>
     <ion-segment-button value="perfilPuesto">
       <ion-label>Perfil de Puesto</ion-label>
     </ion-segment-button>
     <ion-segment-button value="deteccionNecesidades">
-      <ion-label>Deteccion de Necesidades</ion-label>
+      <ion-label>Detección de Necesidades</ion-label>
     </ion-segment-button>
     <ion-segment-button value="programaCapacitacion">
-      <ion-label>Programa de Capacitacion</ion-label>
+      <ion-label>Programa de Capacitación</ion-label>
     </ion-segment-button>
     <ion-segment-button value="seguimientoPrograma">
-      <ion-label>Seguimiento del Programa Capacitacion</ion-label>
+      <ion-label>Seguimiento del Programa Capacitación</ion-label>
     </ion-segment-button>
   </ion-segment>
 
@@ -33,7 +36,7 @@
             </ion-slide>
             <ion-slide>
               <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)" >
-                <ion-list>
+                <ion-list>|
                   <ion-item color="danger" >
                     <ion-label>Perfil de puesto de trabajo </ion-label>
                   </ion-item>
@@ -44,22 +47,22 @@
                     </ion-item>
 
                     <ion-item>
-                      <ion-label position="floating">Caracteristicas personales</ion-label>
+                      <ion-label position="floating">Características personales</ion-label>
                       <ion-input type="text" placeholder="Especificar" name='caracteristicas' ngModel required ></ion-input>
                     </ion-item>
 
                     <ion-item>
-                      <ion-label position="floating">Requerimientos fisicos</ion-label>
+                      <ion-label position="floating">Requerimientos físicos</ion-label>
                       <ion-input type="text" placeholder="Especificar" name='requerimientos' ngModel required  ></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label position="floating">Conocimientos especificos</ion-label>
+                        <ion-label position="floating">Conocimientos específicos</ion-label>
                         <ion-input type="text" placeholder="Caracteristicas" name='conocimientos' ngModel required ></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label position="floating">Deztrezas tecnicas</ion-label>
+                        <ion-label position="floating">Destrezas técnicas</ion-label>
                         <ion-input type="text" placeholder="Tipos" name="tipos" ngModel required ></ion-input>
                     </ion-item>
 
@@ -68,7 +71,7 @@
                     </ion-item-divider>
 
                     <ion-item>
-                        <ion-label position="floating">Nivel academico requerido</ion-label>
+                        <ion-label position="floating">Nivel académico requerido</ion-label>
                         <ion-input type="text" placeholder="Especificar" name="nivel" ngModel required></ion-input>
                     </ion-item>
 
@@ -78,7 +81,7 @@
                     </ion-item>
 
                     <ion-item>
-                        <ion-label position="floating">Funciones especificas</ion-label>
+                        <ion-label position="floating">Funciones específicas</ion-label>
                         <ion-input type="text" placeholder="Especificar" name="funciones" ngModel required></ion-input>
                     </ion-item>
 
@@ -88,12 +91,12 @@
                     </ion-item>
 
                     <ion-item>
-                        <ion-label position="floating">Herramientas Y/O equiós</ion-label>
+                        <ion-label position="floating">Herramientas Y/O equipos</ion-label>
                         <ion-input type="text" placeholder="Especificar" name="herramientas" ngModel required></ion-input>
                     </ion-item> 
                     
                     <ion-item>
-                        <ion-label position="floating">Equipos de protecion personal</ion-label>
+                        <ion-label position="floating">Equipos de protección personal</ion-label>
                         <ion-input type="text" placeholder="Especificar" name="proteccion" ngModel required></ion-input>
                     </ion-item>
                         
@@ -121,7 +124,7 @@
                     
                 <ion-item>
                   <ion-checkbox color="primary" slot="start" ></ion-checkbox>
-                  <ion-label>Promocion</ion-label>
+                  <ion-label>Promoción</ion-label>
                 </ion-item>
 
                 <ion-item>
@@ -131,16 +134,16 @@
             
                 <ion-item>
                   <ion-checkbox color="primary" slot="start"></ion-checkbox>
-                  <ion-label>Actualizacion trianual</ion-label>
+                  <ion-label>Actualización trianual</ion-label>
                 </ion-item>
 
                 <ion-item color="secondary">
-                    <ion-label>Queja de clientes</ion-label>
+                    <ion-label>Quejas de clientes</ion-label>
                 </ion-item>           
   
                 <ion-item>
                     <ion-checkbox color="primary" slot="start"></ion-checkbox>
-                    <ion-label>Inconformidad de auditoria</ion-label>
+                    <ion-label>Inconformidad de auditoría</ion-label>
                 </ion-item>
                     
                 <ion-item>
@@ -150,7 +153,7 @@
                     
                 <ion-item>
                   <ion-checkbox color="primary" slot="start"></ion-checkbox>
-                  <ion-label>Recomendacion ICR</ion-label>
+                  <ion-label>Recomendación ICR</ion-label>
                 </ion-item>
                     
                 <ion-item>
@@ -159,12 +162,12 @@
                 </ion-item>
                       
                 <ion-item color="secondary">
-                    <ion-label>Situacion actual</ion-label>
+                    <ion-label>Situación actual</ion-label>
                   </ion-item>           
   
                 <ion-item>
                     <ion-checkbox color="primary" slot="start"></ion-checkbox>
-                    <ion-label>Situacion deseada</ion-label>         
+                    <ion-label>Situación deseada</ion-label>         
                   </ion-item>
                     
                   <ion-item>
@@ -174,11 +177,11 @@
                     
                   <ion-item>
                       <ion-checkbox color="primary" slot="start"></ion-checkbox>
-                      <ion-label>Temas para capacitacion</ion-label>         
+                      <ion-label>Temas para capacitación</ion-label>         
                   </ion-item>
                     
-                  <ion-button type='submit' (click)="onClick()">
-                    Click me
+                  <ion-button type='submit'>
+                    Guardar
                   </ion-button>
                 </form>
             </ion-slide>
@@ -186,48 +189,88 @@
             <ion-slide>
               <form>
                 <ion-list>
-                  <ion-item-divider>
+                  <ion-item-divider color="secondary">
                     <ion-label>Capacitaciones</ion-label>
                   </ion-item-divider>
                   <ion-item>
-                    <ion-label>Nombre del Curso</ion-label>
+                    <ion-label position="floating">Nombre del Curso</ion-label>
                     <ion-input type="text" name="nombreCurso" [(ngModel)]="nombreCurso" required></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label>Objetivo</ion-label>
+                    <ion-label position="floating">Objetivo</ion-label>
                     <ion-input type="text" name="objetivo" [(ngModel)]="objetivo" required></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label>Contenido</ion-label>
+                    <ion-label position="floating">Contenido</ion-label>
                     <ion-input type="text" name="contenido" [(ngModel)]="contenido" required></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label>Duracion</ion-label>
+                    <ion-label >Duración</ion-label>
                     <ion-icon name="clock"></ion-icon><ion-input type="number" value=1 min="0"></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label>Modalidad</ion-label>
+                    <ion-label position="floating">Modalidad</ion-label>
                     <ion-input type="text" placeholder="interna/externa"></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label>Metodologia</ion-label>
+                    <ion-label position="floating">Metodología</ion-label>
                     <ion-input type="text" placeholder="Curso,taller,etc"></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label>Costo</ion-label>
                     <ion-icon name="card"></ion-icon><ion-input type="number"  min="0"></ion-input>
                   </ion-item>
-                  <ion-item-divider>
+                  <ion-item-divider color="secondary">
                     <ion-label>Cronograma</ion-label>
                   </ion-item-divider>
                   <ion-item>
-                    <ion-label>Nombre del Curso</ion-label>
-                    <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                    <ion-label position="floating">Nombre del Curso</ion-label>
+                    <ion-input type="text"></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label>Instructor</ion-label>
+                    <ion-label position="floating">Instructor</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Mes de la Capacitación</ion-label>
+                    <ion-input type="text" ></ion-input>
                   </ion-item>
                 </ion-list>
+                <ion-button type='submit'>
+                    Guardar
+                  </ion-button>
+              </form>
+            </ion-slide>
+            <ion-slide>
+              <form>
+                <ion-list>
+                <ion-item-divider color=secondary>
+                    <ion-label>Seguimiento del Programa de Capacitación</ion-label>
+                  </ion-item-divider>
+                  <ion-item>
+                    <ion-label>Fecha</ion-label>
+                    <ion-datetime displayFormat="DD-MM-YYYY" value="2000-12-15T13:47:20.789"></ion-datetime>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Puesto</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Personal</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Nombre del Curso</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Seguimiento se Aplicación</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-button type='submit'>
+                    Guardar
+                  </ion-button>
               </form>
             </ion-slide>
           </ion-slides>
