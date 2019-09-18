@@ -91,7 +91,8 @@ const routes: Routes = [
   { path: 'listado-peligros', 
     loadChildren: './pages/listado-peligros/listado-peligros.module#ListadoPeligrosPageModule',
     canLoad: [AuthGuard] 
-  },
+  },  { path: 'punto-nueve', loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule' },
+
 
 
 
