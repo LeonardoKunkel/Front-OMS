@@ -100,9 +100,11 @@ const routes: Routes = [
   },
 
   
-  { path: 'punto-once', loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule' },  { path: 'fo01', loadChildren: './pages/fo01/fo01.module#FO01PageModule' },
+  { path: 'punto-once', loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule' },
+  { path: 'fo01', loadChildren: './pages/fo01/fo01.module#FO01PageModule' },
   { path: 'fo08', loadChildren: './pages/fo08/fo08.module#Fo08PageModule' },
   { path: 'fo05', loadChildren: './pages/fo05/fo05.module#Fo05PageModule' },
+
 
   
 
@@ -115,11 +117,4 @@ const routes: Routes = [
 
 
 
-];
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}
+

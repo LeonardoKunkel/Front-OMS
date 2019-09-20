@@ -5,10 +5,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
+    NgxChartsModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],

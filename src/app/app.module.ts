@@ -14,7 +14,12 @@ import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpClientModule } from '@angular/common/http'
 import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.module';
-import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-modal.module'
+import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-modal.module';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 
 
@@ -29,7 +34,9 @@ import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-moda
     FullCalendarModule,
     EditPoliticaPageModule,
     OnbjetivoModalPageModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [
     StatusBar,
