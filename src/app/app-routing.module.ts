@@ -99,17 +99,9 @@ const routes: Routes = [
     canLoad: [AuthGuard] 
   },
 
+  { path: 'punto-once', 
+    loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule' 
   },
-  { path: 'punto-once', loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule' },
-
-
-
-
-
-
-
-
-
 
 ];
 @NgModule({
