@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-once',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuntoOncePage implements OnInit {
 
-  constructor() { }
+  constructor( private navCtrl: NavController) { }
 
   ngOnInit() {
   }
+  goPuntoOnce01(){
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fo01')
+  }
 
+  goPuntoOnce08(){
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fo08')
+  }
+
+  goPuntoOnce05(){
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fo05')
+  }
 }
