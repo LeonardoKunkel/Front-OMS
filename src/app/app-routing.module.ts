@@ -106,9 +106,14 @@ const routes: Routes = [
   { path: 'fo05', loadChildren: './pages/fo05/fo05.module#Fo05PageModule' },
 
 
-  
-
-
+];
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
 
 
 
