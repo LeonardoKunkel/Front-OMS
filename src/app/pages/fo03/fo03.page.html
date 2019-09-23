@@ -1,0 +1,202 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-once"></ion-back-button>
+    </ion-buttons>
+    <ion-title>FO03</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="6" class="justify-center">
+      <ion-button (click)="goBack()" fill="clear">
+        <ion-icon slot="icon-only" name="arrow-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="justify-center">
+      <ion-button (click)="goNext()" fill="clear">
+        <ion-icon slot="icon-only" name="arrow-forward" color="dark"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-slides mode="ios" pager="ios" scrollbar="ios" #slider>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Dispensarios</ion-card-subtitle>
+          <ion-card-title>Dispensarios</ion-card-title>
+        </ion-card-header>
+        <h1>EL DISPENSARIO CUMPLE CON: </h1>
+        <h2>Válvula shut-off(corte rápido)</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Libre de fugas y de óxido</ion-label>
+            <ion-radio value="1"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Filtros</ion-label>
+            <ion-radio value="2"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Saturados y limpios (sin manchas)</ion-label>
+            <ion-radio value="3"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Dispensarios</ion-card-subtitle>
+          <ion-card-title>Dispensarios</ion-card-title>
+        </ion-card-header>
+        <h1>EL DISPENSARIO CUMPLE CON: </h1>
+        <h2>Mangueras(producto, vapores)</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Buen estado ( sin cuarteaduas)</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Libre de fugas ( producto, vapores)</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Limpias</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Conexiones buen estado</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Destorcedores buen estado</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Dispensarios</ion-card-subtitle>
+          <ion-card-title>Dispensarios</ion-card-title>
+        </ion-card-header>
+        <h1>EL DISPENSARIO CUMPLE CON: </h1>
+        <h2>Válvula break-away(corte rápido)</h2>
+        <ion-item>
+          <ion-label>Libre de fugas</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Buen estado</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Dispensarios</ion-card-subtitle>
+          <ion-card-title>Dispensarios</ion-card-title>
+        </ion-card-header>
+        <h1>EL DISPENSARIO CUMPLE CON: </h1>
+        <h2>Pistolas para despacho de combustible</h2>
+        <ion-item>
+          <ion-label>Libre de fuga al suspender despacho</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Buen estado</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Dispensarios</ion-card-subtitle>
+          <ion-card-title>Dispensarios</ion-card-title>
+        </ion-card-header>
+        <h1>EL DISPENSARIO CUMPLE CON: </h1>
+        <h2>Anclaje a basamento</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Tornillería firme (libre de óxido)</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Anclado sin movimiento</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Conexión a tierra</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Elemento protector</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>      
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Dispensarios</ion-card-subtitle>
+          <ion-card-title>Dispensarios</ion-card-title>
+        </ion-card-header>
+        <h1>EL DISPENSARIO CUMPLE CON: </h1>
+        <h2>Contenedor</h2>
+        <ion-item>
+          <ion-label>Tubería, buen estado y sin fugas</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>        
+        <ion-item>
+          <ion-label>Válvulas de corte libres de fugas</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mangueras metálicas flexiles, buen estado</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Cajas de conexiones y sellos EYs</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Sensor de líquidos</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contenedor buen estado, sn fracturas</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Botas ( sello flexible) en buen estado</ion-label>
+          <ion-radio value="ford"></ion-radio>
+        </ion-item>        
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

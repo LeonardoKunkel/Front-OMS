@@ -1,0 +1,184 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-once"></ion-back-button>
+    </ion-buttons>
+    <ion-title>fo04</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="6" class="justify-center">
+      <ion-button (click)="goBack()" fill="clear">
+        <ion-icon slot="icon-only" name="arrow-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="justify-center">
+      <ion-button (click)="goNext()" fill="clear">
+        <ion-icon slot="icon-only" name="arrow-forward" color="dark"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-slides mode="ios" pager="ios" scrollbar="ios" #slider>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Accesorios de Descarga</ion-card-subtitle>
+          <ion-card-title>Accesorios</ion-card-title>
+        </ion-card-header>
+        <h1>LOS ACCESORIOS CUMPLEN CON: </h1>
+        <h2>Accesorios de descarga</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Codo de descarga buen estado, hermético(empaque)</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Manguera de descarga, buen estado, conectores y empaques</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Codo de recuperación de vapores buen etado y hermético</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Manguera de Rec. Vapores en buen estado y hermética</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Cable de tierra fisica, con pinzas y en buen estado</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Biomos de descarga completos</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Accesorios de Descarga</ion-card-subtitle>
+          <ion-card-title>Accesorios</ion-card-title>
+        </ion-card-header>
+        <h1>LOS ACCESORIOS CUMPLEN CON: </h1>
+        <h2>Tuberías de venteo</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Integridad mecánica(libres de corrosión)</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Elementos de sujeción firmes</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Conectores y cable de tierra, bien conectado sin pintura</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Accesorios de Descarga</ion-card-subtitle>
+          <ion-card-title>Accesorios</ion-card-title>
+        </ion-card-header>
+        <h1>LOS ACCESORIOS CUMPLEN CON: </h1>
+        <h2>Válvulas de venteo o presión vacío</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Limpia y libre obstrucciones.</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Integridad mecánica</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Accesorios de Descarga</ion-card-subtitle>
+          <ion-card-title>Accesorios</ion-card-title>
+        </ion-card-header>
+        <h1>LOS ACCESORIOS CUMPLEN CON: </h1>
+        <h2>Arrestador de flama</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>integridad mecánica</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Limpio y libre de obstrucciones</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Accesorios de Descarga</ion-card-subtitle>
+          <ion-card-title>Accesorios</ion-card-title>
+        </ion-card-header>
+        <h1>LOS ACCESORIOS CUMPLEN CON: </h1>
+        <h2>Área de Almacenamiento</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Orden y Limpieza general</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Drenajes Limpios, libres de obstruccíon</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Fisuras en los pisos</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-item>
+          <ion-icon name="save" size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-subtitle>Inspeccíon de Accesorios de Descarga</ion-card-subtitle>
+          <ion-card-title>Accesorios</ion-card-title>
+        </ion-card-header>
+        <h1>LOS ACCESORIOS CUMPLEN CON: </h1>
+        <h2>Pozos de observación y monitoreo</h2>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Libre de agua hidrocarburos</ion-label>
+            <ion-radio value="ford"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

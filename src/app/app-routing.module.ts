@@ -98,12 +98,33 @@ const routes: Routes = [
     loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule',
     canLoad: [AuthGuard] 
   },
+  { 
+    path: 'punto-once', 
+    loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule',
+    canLoad: [AuthGuard]  
+  },
+  { 
+    path: 'fo01', 
+    loadChildren: './pages/fo01/fo01.module#FO01PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { 
+    path: 'fo08', 
+    loadChildren: './pages/fo08/fo08.module#Fo08PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { 
+    path: 'fo05', 
+    loadChildren: './pages/fo05/fo05.module#Fo05PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { 
+    path: 'fo03', 
+    loadChildren: './pages/fo03/fo03.module#FO03PageModule',
+    canLoad: [AuthGuard] 
+  },  { path: 'fo04', loadChildren: './pages/fo04/fo04.module#Fo04PageModule' },
 
-  
-  { path: 'punto-once', loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule' },
-  { path: 'fo01', loadChildren: './pages/fo01/fo01.module#FO01PageModule' },
-  { path: 'fo08', loadChildren: './pages/fo08/fo08.module#Fo08PageModule' },
-  { path: 'fo05', loadChildren: './pages/fo05/fo05.module#Fo05PageModule' },
+
 
 
 ];
