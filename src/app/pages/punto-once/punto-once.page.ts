@@ -29,4 +29,10 @@ export class PuntoOncePage implements OnInit {
     
      this.navCtrl.navigateForward('/fo05')
   }
+
+  goPuntoOnce20(){
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fs20')
+  }
 }
