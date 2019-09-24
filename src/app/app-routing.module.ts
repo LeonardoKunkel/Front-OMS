@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
@@ -11,7 +12,7 @@ const routes: Routes = [
   { 
     path: 'mapa', 
     loadChildren: './pages/mapa/mapa.module#MapaPageModule',
-    canLoad: [AuthGuard]
+    canLoad: [AuthGuard]  
   },
   { 
     path: 'calendar', 
@@ -122,7 +123,16 @@ const routes: Routes = [
     path: 'fo03', 
     loadChildren: './pages/fo03/fo03.module#FO03PageModule',
     canLoad: [AuthGuard] 
-  },  { path: 'fo04', loadChildren: './pages/fo04/fo04.module#Fo04PageModule' },
+  },
+  { path: 'fo04', loadChildren: './pages/fo04/fo04.module#Fo04PageModule' },
+  
+  { path: 'fs20', loadChildren: './pages/fs20/fs20.module#Fs20PageModule' },
+  { path: 'fs20-tanques', loadChildren: './pages/fs20-tanques/fs20-tanques.module#Fs20TanquesPageModule' },
+  { path: 'fs20-dispensarios', loadChildren: './pages/fs20-dispensarios/fs20-dispensarios.module#Fs20DispensariosPageModule' },
+  { path: 'fs20-drenajes', loadChildren: './pages/fs20-drenajes/fs20-drenajes.module#Fs20DrenajesPageModule' },
+  { path: 'fs20-electricas', loadChildren: './pages/fs20-electricas/fs20-electricas.module#Fs20ElectricasPageModule' },
+  { path: 'fs20-pozos', loadChildren: './pages/fs20-pozos/fs20-pozos.module#Fs20PozosPageModule' },
+  { path: 'fs20-edificios', loadChildren: './pages/fs20-edificios/fs20-edificios.module#Fs20EdificiosPageModule' },
 
 
 
