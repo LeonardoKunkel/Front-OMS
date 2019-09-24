@@ -12,22 +12,30 @@ export class PuntoOncePage implements OnInit {
 
   ngOnInit() {
   }
-  goPuntoOnce01(){
+  goPuntoOnce01() {
     console.log('Hola mundo');
     
-     this.navCtrl.navigateForward('/fo01')
+     this.navCtrl.navigateForward('/fo01');
   }
 
-  goPuntoOnce08(){
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fo08')
+  goPuntoOnce03() {
+    this.navCtrl.navigateForward('/fo03');
   }
 
-  goPuntoOnce05(){
+  goPuntoOnce04() {
+    this.navCtrl.navigateForward('/fo04');
+  }
+
+  goPuntoOnce08() {
     console.log('Hola mundo');
     
-     this.navCtrl.navigateForward('/fo05')
+     this.navCtrl.navigateForward('/fo08');
+  }
+
+  goPuntoOnce05() {
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fo05');
   }
 
   goPuntoOnce20(){

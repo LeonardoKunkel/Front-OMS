@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
@@ -11,7 +12,7 @@ const routes: Routes = [
   { 
     path: 'mapa', 
     loadChildren: './pages/mapa/mapa.module#MapaPageModule',
-    canLoad: [AuthGuard]
+    canLoad: [AuthGuard]  
   },
   { 
     path: 'calendar', 
@@ -98,12 +99,33 @@ const routes: Routes = [
     loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule',
     canLoad: [AuthGuard] 
   },
-
+  { 
+    path: 'punto-once', 
+    loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule',
+    canLoad: [AuthGuard]  
+  },
+  { 
+    path: 'fo01', 
+    loadChildren: './pages/fo01/fo01.module#FO01PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { 
+    path: 'fo08', 
+    loadChildren: './pages/fo08/fo08.module#Fo08PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { 
+    path: 'fo05', 
+    loadChildren: './pages/fo05/fo05.module#Fo05PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { 
+    path: 'fo03', 
+    loadChildren: './pages/fo03/fo03.module#FO03PageModule',
+    canLoad: [AuthGuard] 
+  },
+  { path: 'fo04', loadChildren: './pages/fo04/fo04.module#Fo04PageModule' },
   
-  { path: 'punto-once', loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule' },
-  { path: 'fo01', loadChildren: './pages/fo01/fo01.module#FO01PageModule' },
-  { path: 'fo08', loadChildren: './pages/fo08/fo08.module#Fo08PageModule' },
-  { path: 'fo05', loadChildren: './pages/fo05/fo05.module#Fo05PageModule' },
   { path: 'fs20', loadChildren: './pages/fs20/fs20.module#Fs20PageModule' },
   { path: 'fs20-tanques', loadChildren: './pages/fs20-tanques/fs20-tanques.module#Fs20TanquesPageModule' },
   { path: 'fs20-dispensarios', loadChildren: './pages/fs20-dispensarios/fs20-dispensarios.module#Fs20DispensariosPageModule' },
@@ -111,6 +133,7 @@ const routes: Routes = [
   { path: 'fs20-electricas', loadChildren: './pages/fs20-electricas/fs20-electricas.module#Fs20ElectricasPageModule' },
   { path: 'fs20-pozos', loadChildren: './pages/fs20-pozos/fs20-pozos.module#Fs20PozosPageModule' },
   { path: 'fs20-edificios', loadChildren: './pages/fs20-edificios/fs20-edificios.module#Fs20EdificiosPageModule' },
+
 
 
 
