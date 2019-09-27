@@ -19,6 +19,7 @@ import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-moda
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 
 
 
@@ -44,6 +45,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     File,
     FileOpener,
+    DocumentViewer
   ],
   bootstrap: [AppComponent]
 })

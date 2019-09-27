@@ -1,5 +1,6 @@
 import { Component, OnInit ,ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-fo01',
   templateUrl: './fo01.page.html',
@@ -7,10 +8,14 @@ import { IonSlides } from '@ionic/angular';
 })
 export class FO01Page implements OnInit {
   @ViewChild('slider') slider: IonSlides
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
     this.slider.lockSwipes(true);
+  }
+  goPuntoOnce(){
+    console.log('esta vivo');
+    this.navCtrl.navigateForward('/punto-once')
   }
 
   goBack(){

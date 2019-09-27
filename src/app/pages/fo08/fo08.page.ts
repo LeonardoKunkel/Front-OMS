@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-fo08',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Fo08Page implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  goPuntoOnce(){
+    console.log('esta vivo');
+    this.navCtrl.navigateForward('/punto-once')
   }
 
 }
