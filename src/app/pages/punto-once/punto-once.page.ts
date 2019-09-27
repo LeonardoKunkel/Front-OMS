@@ -17,6 +17,11 @@ export class PuntoOncePage implements OnInit {
     
      this.navCtrl.navigateForward('/fo01');
   }
+  goPuntoOnce02() {
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fso02');
+  }
 
   goPuntoOnce03() {
     this.navCtrl.navigateForward('/fo03');
@@ -37,10 +42,53 @@ export class PuntoOncePage implements OnInit {
     
      this.navCtrl.navigateForward('/fo05');
   }
-
+  goPuntoOnce06() {
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fo06');
+  }
+  goPuntoOnce07() {
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fo07');
+  }
   goPuntoOnce20(){
     console.log('Hola mundo');
     
      this.navCtrl.navigateForward('/fs20')
+  }
+  goPuntoOnce21(){
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fs21')
+  }
+  goPuntoOnce22(){
+    console.log('Hola mundo');
+    
+     this.navCtrl.navigateForward('/fs22')
+  }
+  goPuntoOnceIm01(){
+    console.log('Hola mundo');
+    this.navCtrl.navigateForward('/pdf-im01')
+  }
+  goPuntoOnceIm02(){
+    console.log('Hola mundo');
+    this.navCtrl.navigateForward('/pdf-im02')
+  }
+  goPuntoOnceIm03(){
+    console.log('Hola mundo');
+    this.navCtrl.navigateForward('/pdf-im03')
+  }
+  goPuntoOnceIm04(){
+    console.log('Hola mundo');
+    this.navCtrl.navigateForward('/pdf-im04')
+  }
+  goPuntoOnceIm05(){
+    console.log('Hola mundo');
+    this.navCtrl.navigateForward('/pdf-im05')
+  }
+  goPuntoOnceIm11(){
+    console.log('Hola mundo');
+    this.navCtrl.navigateForward('/pdf-im11')
   }
 }
