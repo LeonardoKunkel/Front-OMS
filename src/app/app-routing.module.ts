@@ -144,6 +144,7 @@ const routes: Routes = [
   { path: 'fso06', loadChildren: './pages/fso06/fso06.module#Fso06PageModule' },
   { path: 'fo06', loadChildren: './pages/fo06/fo06.module#Fo06PageModule' },
   { path: 'fo07', loadChildren: './pages/fo07/fo07.module#Fo07PageModule' },
+  { path: 'procedimiento-punto-dos', loadChildren: './pages/procedimiento-punto-dos/procedimiento-punto-dos.module#ProcedimientoPuntoDosPageModule' },
 
 
 
