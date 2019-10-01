@@ -1,7 +1,453 @@
-  <ion-header no-border>
-    <h1>HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
-  </ion-header>
+<ion-header>
+  <ion-toolbar>
+      <ion-title class="ion-text-center">RESULTADO DEL ANÁLISIS DE RIESGOS</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/punto-dos"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
-
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>1.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>2.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>3.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>4.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>5.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>6.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>7.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>8.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>9.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>RESULTADO DEL ANÁLISIS DE RIESGOS</ion-card-subtitle>
+          <ion-card-title>Descripciones de las fallas</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>10.Falla</ion-label>
+            <ion-input type="text" placeholder="Tipo" color="primary"></ion-input>
+          </ion-item><br><br>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Causas de la falla</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la causa" color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Consecuencias</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la consecuencia"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <ion-label class="ion-text-center">Medidas de Control</ion-label>
+          </ion-item-divider>
+            <ion-textarea placeholder="Describir la medidas de control"color="primary"></ion-textarea>
+          <ion-item-divider>
+            <h5>Selecciona la opcion depende a la falla</h5>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>F</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>R</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-card-content>
+        <ion-button (click)="onClick()">
+          Guardar y enviar
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

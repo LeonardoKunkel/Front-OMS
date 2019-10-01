@@ -51,6 +51,9 @@ export class PuntoDosPage implements OnInit {
   goListadoPeligros() {
     this.navCtrl.navigateForward('/listado-peligros');
   }
+  goProcedimiento(){
+    this.navCtrl.navigateForward('/procedimiento-punto-dos');
+  }
 
   /* async enviarPuntoDos() {
     const alert = await this.alertCtrl.create({
