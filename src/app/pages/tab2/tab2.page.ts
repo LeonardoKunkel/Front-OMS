@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+
 import { Component } from '@angular/core';
 
 import { single, multi } from '../../data/data';
@@ -11,7 +13,9 @@ import { single, multi } from '../../data/data';
 export class Tab2Page {
 
   single: any[];
-  multi: any[];
+  multi: any[]; 
+
+  
 
 
   showXAxis = true;
@@ -34,8 +38,17 @@ export class Tab2Page {
   
   autoScale = true;
 
-  constructor() {
-    Object.assign(this, {single, multi});
+  constructor(private http:HttpClient) {
+     Object.assign(this, {single, multi});
+    this.getData();
+  }
+
+  getData() {
+    this.http.get('http://localhost:3000/grafica').subscribe( (data:any) => {
+      console.log(data);
+      this.single = data;
+      Object.assign(this.single);
+    });
   }
 
   ionViewWillEnter() {
@@ -62,6 +75,7 @@ export class Tab2Page {
     this.autoScale = true;
 
     Object.assign(this, {single, multi});
+   // Object.assign(this.single);
   }
 
   onSelect(event) {
@@ -82,6 +96,7 @@ export class Tab2Page {
     this.doughnut = false;
 
     Object.assign(this, { single, multi });
+   // Object.assign(this.single);
   }
 
 }
