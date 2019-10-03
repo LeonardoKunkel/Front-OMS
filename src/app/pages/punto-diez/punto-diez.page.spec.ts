@@ -1,23 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { PuntoDiezPage } from './punto-diez.page';
 
-import { Fso02Page } from './fso02.page';
-
-describe('Fso02Page', () => {
-  let component: Fso02Page;
-  let fixture: ComponentFixture<Fso02Page>;
+describe('PuntoDiezPage', () => {
+  let component: PuntoDiezPage;
+  let fixture: ComponentFixture<PuntoDiezPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Fso02Page ],
+      declarations: [ PuntoDiezPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Fso02Page);
+    fixture = TestBed.createComponent(PuntoDiezPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
