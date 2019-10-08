@@ -29,7 +29,6 @@ export class PuntodosService {
         resolve(true)
       });
     });
-    
   }
 
   getPuntoDos() {

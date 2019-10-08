@@ -28,9 +28,9 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule,AyudaPageModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule, AyudaPageModule,
     ProcedimientoCincoPageModule,
     FullCalendarModule,
     EditPoliticaPageModule,
