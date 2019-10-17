@@ -1,1015 +1,1553 @@
 <ion-header no-border>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
-      <ion-title>Evaluación de Riesgos</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="12">
-          <div>
-            <h3>
-              Favor de llenar la frecuencia, naturaleza y magnitud de cada una de las tarjetas. En 
-              caso de que estás ya tengas valores, es porque identificamos que en dichos elementos
-              esos valores no deben cambiar. (Sugerimos no los cambies).
-            </h3>
-            <P>F =jjjjddd <br> C =jjfjfjf <br> R = dkdjdj</P>
-            <ion-button (click)="pdf()">
-              Prueba pdf
-            </ion-button>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Evaluación de Riesgos</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-    <ion-row>
-        <ion-col size="6" class="justify-center">
-          <ion-button (click)="goBack()">
-            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="6" class="justify-center">
-          <ion-button (click)="goNext()">
-            <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-  
-  
-  
-  <ion-slides #slider>
+<ion-content>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
       <ion-slide>
-      <ion-card>
+        <ion-card class="fondo">
           <ion-item>
-              <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
           </ion-item>
-        <ion-card-header>
-          <ion-card-title><b>Actividad:</b> Arribo de autotanque a la Estación de servicio.</ion-card-title>
-          <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO  </ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <ol>
-            <li><p class="ion-text-justify"><b>Peligro:</b> <br> a. Maniobra dentro de la estación <br> b. Falta de conocimiento o de conciencia del personal.</p></li>
-            <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Golpe a instalaciones u otros vehículos o atropellamiento a personas.</p></li>
-            <li><p class="ion-text-justify"><b>Causas:</b><br> a. Falta o mal estado de señalamiento
-                de circulación dentro de la estación
-                de servicio.
-               <br> b. Personal no sigue los
-                procedimientos.</p></li>
-          </ol>
-          <ion-row>
-            <ion-col size="4">
-              <ion-item>
-                <ion-label>F</ion-label>
-                <ion-input type="number" value=10 min="0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col size="4">
-              <ion-item>
-                <ion-label>C</ion-label>
-                <ion-input type="number" value=3 min="0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col size="4">
-              <ion-item>
-                <ion-label>R</ion-label>
-                <ion-input type="number" value=1 min="0"></ion-input>
-              </ion-item>
-              <br><br>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-
-    <ion-slide>
-        <ion-card>
-            <ion-item>
-                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-            </ion-item>
           <ion-card-header>
-            <ion-card-title><b>Actividad:</b>Conexión e inicio de la descarga de producto.</ion-card-title>
-            <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle>
+            <ion-card-title
+              ><b>Actividad:</b> Arribo de autotanque a la Estación de
+              servicio.</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO
+            </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ol>
-              <li><p class="ion-text-justify"><b>Peligro:</b> <br> a. Equipos en mal
-                estado
-                <br> b. Falta de
-                conocimiento o de
-                conciencia del
-                personal.</p></li>
-              <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Derrame o fuga
-                durante la conexión
-                y/o operación de
-                llenado de tanque de
-                almacenamiento.</p></li>
-              <li><p class="ion-text-justify"><b>Causas:</b><br> a. Conexión deficiente o equipo en
-                mal estado.
-                <br>b. Conexiones o manguera en mal
-                estado, o falta de juntas.
-                <br>c. No se conecta la manguera de
-                recuperación de vapores y la válvula
-                de presión vacío no opera.
-                <br>d. Falta de válvula de sobrellenado.
-                <br>e. Falta de hermeticidad en las
-                conexiones de las boquillas del
-                tanque.
-                <br>f. No se cumple el procedimiento..</p></li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />
+                  a. Maniobra dentro de la estación <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Golpe a instalaciones u otros vehículos o atropellamiento a
+                  personas.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />
+                  a. Falta o mal estado de señalamiento de circulación dentro de
+                  la estación de servicio. <br />
+                  b. Personal no sigue los procedimientos.
+                </p>
+              </li>
             </ol>
             <ion-row>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>F</ion-label>
-                    <ion-input type="number" value=10 min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>C</ion-label>
-                    <ion-input type="number" value=3 min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>R</ion-label>
-                    <ion-input type="number" value=1 min="0"></ion-input>
-                  </ion-item>
-                  <br><br>
-                  </ion-col>
-              </ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F:</ion-label>
+                  <ion-input
+                    type="number"
+                    min="0"
+                    ngModel
+                    name="n1c1"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C:</ion-label>
+                  <ion-input
+                    type="number"
+                    min="0"
+                    ngModel
+                    name="n2c1"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R:</ion-label>
+                  <ion-input
+                    type="number"
+                    min="0"
+                    ngModel
+                    name="n3c1"
+                  ></ion-input>
+                </ion-item>
+                <br /><br />
+              </ion-col>
+            </ion-row>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-      
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Conexión e inicio de la descarga de
+              producto.</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />
+                  a. Equipos en mal estado <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Derrame o fuga durante la conexión y/o operación de llenado de
+                  tanque de almacenamiento.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />
+                  a. Conexión deficiente o equipo en mal estado. <br />b.
+                  Conexiones o manguera en mal estado, o falta de juntas.
+                  <br />c. No se conecta la manguera de recuperación de vapores
+                  y la válvula de presión vacío no opera. <br />d. Falta de
+                  válvula de sobrellenado. <br />e. Falta de hermeticidad en las
+                  conexiones de las boquillas del tanque. <br />f. No se cumple
+                  el procedimiento..
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c2"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c2"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c2"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+                <br /><br />
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Descarga de producto por
+              autotanque.</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />
+                  a. Deslizamiento de autotanque, con desprendimiento de la
+                  manguera de descarga en ambos extremos.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Derrame de producto.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />
+                  a. No se colocan las calzas al autotanque antes de iniciar la
+                  descarga de producto. b. Distracción del personal.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c3"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c3"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c3"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+                <br /><br />
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><h1><b>Actividad:</b>Descarga de producto.</h1></ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Incendio durante el llenado del tanque de almacenamiento.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />
+                  Previamente ocurre fuga o derrame y la presencia de una fuente
+                  de ignición entre otras: <br />
+                  a. Uso de celular. <br />
+                  b. Portar ropa sintética. <br />
+                  c. Fumar, encender fuego. <br />
+                  d. Corto circuito en instalación <br />
+                  eléctrica. <br />
+                  e. Tormenta eléctrica. <br />
+                  f. Corto circuito en instalación <br />
+                  eléctrica del autotanque. <br />
+                  g. Personal no sigue los procedimientos.<br />
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c4"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c4"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c4"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+                <br /><br />
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Descarga de producto.</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Incendio en tubos de venteo durante el llenado del tanque de
+                  almacenamiento.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. Presencia de tormenta eléctrica. <br />
+                  b. Líneas eléctricas cerca hacen emisión de fuego o chispas.
+                  <br />
+                  c. Ausencia de mantenimiento a válvulas de presión vacío.
+                  <br />
+                  d. Personal no sigue los procedimientos
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c5"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c5"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c5"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+                <br /><br />
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Descarga de producto.</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Nivel de producto en tanque es
+                  erróneo.
+                  <br />
+                  b. Conexión a tanque diferente.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  a. Sobrellenado de tanque de almacenamiento. <br />
+                  b. Derrame de producto al realizar la desconexión.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. No se verifica la capacidad de recibo
+                  del autotanque previo al llenado. <br />
+                  b. Distracción de la persona al conectar la manguera de
+                  descarga.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c6"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c6"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c6"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Termino de la descarga de producto y
+              desconexión..</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado. b. Falta de
+                  <br />
+                  conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Derrame o fuga durante la desconexión al término de la
+                  descarga.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />Desconexión deficiente o equipo en mal
+                  estado. <br />
+                  a. Conexiones o manguera en mal estado, o falta de juntas.
+                  <br />
+                  b. Falta de válvula de sobrellenado. <br />
+                  c. Falta de hermeticidad en la conexión de la boquilla de
+                  llenado de tanque. <br />
+                  d. Personal no sigue los procedimientos.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c7"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c7"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c7"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Salida de autotanque a la Estación de
+              servicio.</ion-card-title
+            >
+            <ion-card-subtitle
+              >RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />Maniobra dentro de la estación.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Golpe a instalaciones u otros vehículos o atropellamiento a
+                  personas.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. Falta o mal estado de señalamiento de
+                  circulación dentro de la estación de servicio. b. Personal no
+                  sigue los procedimientos.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    vngModel
+                    name="n1c8"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c8"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c8"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card color="success" class="fondo">
+          <ion-card-title>PROCESO:</ion-card-title>
+          <ion-card-content>
+            DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Despacho de producto.</ion-card-title
+            >
+            <ion-card-subtitle
+              >DESPACHO DE PRODUCTOS INFLAMABLES Y
+              COMBUSTIBLES</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado. <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Derrame de producto o fuga durante el despacho de producto a
+                  vehículos.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. La pistola no para en automático y no
+                  detiene el despacho cuando el tanque ya se llenó. <br />
+                  b. La pistola no contiene el producto al 100% cuando no hay
+                  despacho. <br />
+                  c. El tanque del vehículo se “ahoga” durante la carga y se
+                  derrama el producto. <br />
+                  d. Se retira la pistola sin que termine aún la carga de
+                  producto. <br />
+                  e. Personal no sigue los procedimientos. <br />
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    vngModel
+                    name="n1c9"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c9"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c9"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Despacho de producto</ion-card-title
+            >
+            <ion-card-subtitle
+              >DESPACHO DE PRODUCTOS INFLAMABLES Y
+              COMBUSTIBLES</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />Distracción o mala intención del
+                  conductor del vehículo.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados: </b> <br />
+                  Derrame por desprendimiento de manguera de despacho de
+                  combustible por desplazamiento del vehículo.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. No se retira inmediatamente la pistola
+                  al término del llenado. <br />
+                  b. El despachador no acomoda bien la manguera después de
+                  retirar la pistola y el vehículo avanza y desprende la
+                  manguera porque se atoró con alguna parte del vehículo. <br />
+                  c. El conductor avanza con su vehículo en forma intencionada
+                  para no pagar o por distracción. <br />
+                  d. Personal no cumple los procedimientos<br />
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    vngModel
+                    name="n1c10"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c10"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c10"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Despacho de producto</ion-card-title
+            >
+            <ion-card-subtitle
+              >DESPACHO DE PRODUCTOS INFLAMABLES Y
+              COMBUSTIBLES</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />Distracción o mala intención del
+                  conductor del vehículo.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b><br />
+                  Derrame por derribo del dispensario por automóvil o camión y
+                  no opera la válvula shut-off.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />No depende relativamente de la estación de
+                  servicio, sin embargo, se puede considerar: <br />
+                  a. Falta de carril de desaceleración. <br />
+                  b. Falta de señalamientos. <br />
+                  c. Falta de vibradores o topes.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    vngModel
+                    name="n1c11"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c11"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c11"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Despacho de producto</ion-card-title
+            >
+            <ion-card-subtitle
+              >DESPACHO DE PRODUCTOS INFLAMABLES Y
+              COMBUSTIBLES</ion-card-subtitle
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado. <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Incendio en el área de despacho, por derribo de dispensario o
+                  desprendimiento de manguera.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />Previamente, debe ocurrir una fuga o
+                  derrame y posterior el contacto con una fuente de ignición.
+                  <br />
+                  a. Uso de teléfono celular. <br />
+                  b. Pasar corriente a otro vehículo en el área de despacho.
+                  <br />
+                  c. Fumar, encender fósforos. <br />
+                  d. Contacto de los vapores con una parte caliente del
+                  vehículo.
+                  <br />
+                  e. Falta de integridad eléctrica en instalaciones. <br />
+                  f. Personal no sigue los procedimientos.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c12"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c12"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c12"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card color="success" class="fondo">
+          <ion-card-title>PROCESO:</ion-card-title>
+          <ion-card-content>
+            ACTIVIDADES DE APOYO
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Ejecución de trabajos de
+              mantenimiento.</ion-card-title
+            >
+            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado. <br />
+                  b. Falta de conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />
+                  Derrame o fuga durante la ejecución de trabajos de
+                  mantenimiento.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. No se realiza permiso de trabajo
+                  peligroso. <br />
+                  b. No se identifican los riesgos de hacer un trabajo
+                  peligroso.
+                  <br />
+                  c. No se vacía o de presiona la tubería. <br />
+                  d. No se colocan bloqueos en válvulas y tablero de control
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c13"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c13"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c13"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title><b>Actividad:</b>Operación normal</ion-card-title>
+            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />Trampa de combustibles con
+                  hidrocarburos.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />Incendio en Trampa de
+                  Combustibles.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. No se limpia el drenaje y trampa
+                  después de un derrame. b. Cultura deficiente en materia
+                  Ambiental y de seguridad. <br />c.Desconocimiento de las
+                  instalaciones.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c14"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c14"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c14"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title
+              ><b>Actividad:</b>Instalaciones eléctricas en
+              operación.</ion-card-title
+            >
+            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />a. Equipos en mal estado. b. Falta de
+                  conocimiento o de conciencia del personal.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />Incendio en área de despacho.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />No depende de la estación de servicio, si
+                  se trata de una manifestación social.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c15"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c15"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c15"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title><b>Actividad:</b>Operación normal</ion-card-title>
+            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify"><b>Peligro:</b> <br />Vandalismo</p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />Incendio en Instalaciones
+                  eléctricas.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />Mantenimiento deficiente.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c16"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c16"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c16"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title><b>Actividad:</b>Operación normal</ion-card-title>
+            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Peligro:</b> <br />Sismo de magnitud considerable.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />Contaminación de subsuelo y
+                  mantos freáticos por fuga o derrame de combustible.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />a. Ruptura de tuberías interconectadas a
+                  los tanques de almacenamiento. b. Fenómeno geológico que no
+                  depende de la estación de servicio.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c17"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c17"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c17"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="fondo">
+          <ion-item>
+            <ion-icon
+              name="save"
+              size="large"
+              ios="ios-save"
+              color="secondary"
+              type="submit"
+              slot="end"
+            ></ion-icon>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title><b>Actividad:</b>Operación normal</ion-card-title>
+            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ol>
+              <li>
+                <p class="ion-text-justify"><b>Peligro:</b> <br />Inundación</p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Riesgos asociados:</b> <br />Contaminación de subsuelo y
+                  mantos freáticos por fuga o derrame de combustible.
+                </p>
+              </li>
+              <li>
+                <p class="ion-text-justify">
+                  <b>Causas:</b><br />Fenómeno geológico que no depende de la
+                  estación de servicio.
+                </p>
+              </li>
+            </ol>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>F</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n1c18"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>C</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n2c18"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>R</ion-label>
+                  <ion-input
+                    type="number"
+                    ngModel
+                    name="n3c18"
+                    min="0"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
       <ion-slide>
           <ion-card>
-              <ion-item>
-                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-              </ion-item>
-            <ion-card-header>
-              <ion-card-title><b>Actividad:</b>Descarga de producto por autotanque.</ion-card-title>
-              <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle>
-            </ion-card-header>
             <ion-card-content>
-              <ol>
-                <li><p class="ion-text-justify"><b>Peligro:</b> <br> a. Deslizamiento de
-                  autotanque, con
-                  desprendimiento de
-                  la manguera de
-                  descarga en ambos
-                  extremos.</p></li>
-                <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Derrame de
-                  producto.</p></li>
-                <li><p class="ion-text-justify"><b>Causas:</b><br> a. No se colocan las calzas al
-                  autotanque antes de iniciar la
-                  descarga de producto.
-                  b. Distracción del personal.</p></li>
-              </ol>
-              <ion-row>
-                  <ion-col size="4">
-                    <ion-item>
-                      <ion-label>F</ion-label>
-                      <ion-input type="number" value=10 min="0"></ion-input>
-                    </ion-item>
-                  </ion-col>
-                  <ion-col size="4">
-                    <ion-item>
-                      <ion-label>C</ion-label>
-                      <ion-input type="number" value=3 min="0"></ion-input>
-                    </ion-item>
-                  </ion-col>
-                  <ion-col size="4">
-                    <ion-item>
-                      <ion-label>R</ion-label>
-                      <ion-input type="number" value=1 min="0"></ion-input>
-                    </ion-item>
-                    <br><br>
-                    </ion-col>
-                </ion-row>
+              <ion-button type="submit">
+                Guardar y enviar
+              </ion-button>
+              <ion-button (click)="pdf()">
+                Descargar documento
+              </ion-button>
             </ion-card-content>
           </ion-card>
-        </ion-slide>
-    
-        <ion-slide>
-            <ion-card>
-                <ion-item>
-                    <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                </ion-item>
-              <ion-card-header>
-                <ion-card-title><h1><b>Actividad:</b>Descarga de producto.</h1></ion-card-title>
-                <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO </ion-card-subtitle>
-              </ion-card-header>
-              <ion-card-content>
-                <ol>
-                  <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                    estado <br>
-                    b. Falta de
-                    conocimiento o de
-                    conciencia del
-                    personal.</p></li>
-                  <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Incendio durante el
-                    llenado del tanque
-                    de almacenamiento.</p></li>
-                  <li><p class="ion-text-justify"><b>Causas:</b><br> Previamente ocurre fuga o derrame y la
-                    presencia de una fuente de ignición
-                    entre otras:
-                    <br> a. Uso de celular.
-                    <br> b. Portar ropa sintética.
-                    <br> c. Fumar, encender fuego.
-                    <br> d. Corto circuito en instalación
-                    <br> eléctrica.
-                    <br> e. Tormenta eléctrica.
-                    <br> f. Corto circuito en instalación
-                    <br> eléctrica del autotanque.
-                    <br> g. Personal no sigue los
-                    procedimientos.<br> </p></li>
-                </ol>
-                <ion-row>
-                    <ion-col size="4">
-                      <ion-item>
-                        <ion-label>F</ion-label>
-                        <ion-input type="number" value=10 min="0"></ion-input>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size="4">
-                      <ion-item>
-                        <ion-label>C</ion-label>
-                        <ion-input type="number" value=3 min="0"></ion-input>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size="4">
-                      <ion-item>
-                        <ion-label>R</ion-label>
-                        <ion-input type="number" value=1 min="0"></ion-input>
-                      </ion-item>
-                      <br><br>
-                      </ion-col>
-                  </ion-row>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-              <ion-card>
-                  <ion-item>
-                      <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                  </ion-item>
-                <ion-card-header>
-                  <ion-card-title><b>Actividad:</b>Descarga de producto.</ion-card-title>
-                  <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle>
-                </ion-card-header>
-                <ion-card-content>
-                  <ol>
-                    <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                      estado <br>
-                      b. Falta de
-                      conocimiento o de
-                      conciencia del
-                      personal.</p></li>
-                    <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Incendio en tubos de
-                      venteo durante el
-                      llenado del tanque
-                      de almacenamiento.</p></li>
-                    <li><p class="ion-text-justify"><b>Causas:</b><br>a. Presencia de tormenta eléctrica.
-                     <br> b. Líneas eléctricas cerca hacen
-                      emisión de fuego o chispas.
-                     <br> c. Ausencia de mantenimiento a
-                      válvulas de presión vacío.
-                     <br> d. Personal no sigue los
-                      procedimientos</p></li>
-                  </ol>
-                  <ion-row>
-                      <ion-col size="4">
-                        <ion-item>
-                          <ion-label>F</ion-label>
-                          <ion-input type="number" value=10 min="0"></ion-input>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size="4">
-                        <ion-item>
-                          <ion-label>C</ion-label>
-                          <ion-input type="number" value=3 min="0"></ion-input>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size="4">
-                        <ion-item>
-                          <ion-label>R</ion-label>
-                          <ion-input type="number" value=1 min="0"></ion-input>
-                        </ion-item>
-                        <br><br>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-              </ion-card>
-            </ion-slide>
-
-            <ion-slide>
-                <ion-card>
-                    <ion-item>
-                        <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                    </ion-item>
-                  <ion-card-header>
-                    <ion-card-title><b>Actividad:</b>Descarga de producto.</ion-card-title>
-                    <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle>
-                  </ion-card-header>
-                  <ion-card-content>
-                    <ol>
-                      <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Nivel de producto
-                        en tanque es
-                        erróneo. <br>
-                        b. Conexión a tanque
-                        diferente.</p></li>
-                      <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> a. Sobrellenado de
-                        tanque de
-                        almacenamiento. <br>
-                        b. Derrame de
-                        producto al
-                        realizar la
-                        desconexión.</p></li>
-                      <li><p class="ion-text-justify"><b>Causas:</b><br>a. No se verifica la capacidad de
-                        recibo del autotanque previo al
-                        llenado. <br>
-                        b. Distracción de la persona al
-                        conectar la manguera de
-                        descarga.</p></li>
-                    </ol>
-                    <ion-row>
-                        <ion-col size="4">
-                          <ion-item>
-                            <ion-label>F</ion-label>
-                            <ion-input type="number" value=10 min="0"></ion-input>
-                          </ion-item>
-                        </ion-col>
-                        <ion-col size="4">
-                          <ion-item>
-                            <ion-label>C</ion-label>
-                            <ion-input type="number" value=3 min="0"></ion-input>
-                          </ion-item>
-                        </ion-col>
-                        <ion-col size="4">
-                          <ion-item>
-                            <ion-label>R</ion-label>
-                            <ion-input type="number" value=1 min="0"></ion-input>
-                          </ion-item>
-                          </ion-col>
-                      </ion-row>
-                  </ion-card-content>
-                </ion-card>
-              </ion-slide>
-
-              <ion-slide>
-                  <ion-card>
-                      <ion-item>
-                          <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                      </ion-item>
-                    <ion-card-header>
-                      <ion-card-title><b>Actividad:</b>Termino de la
-                        descarga de
-                        producto y
-                        desconexión..</ion-card-title>
-                      <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle>
-                    </ion-card-header>
-                    <ion-card-content>
-                      <ol>
-                        <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                          estado.
-                          b. Falta de <br>
-                          conocimiento o de
-                          conciencia del
-                          personal.</p></li>
-                        <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Derrame o fuga
-                          durante la
-                          desconexión al
-                          término de la
-                          descarga.</p></li>
-                        <li><p class="ion-text-justify"><b>Causas:</b><br>Desconexión deficiente o equipo en mal
-                          estado.
-                          <br> a. Conexiones o manguera en mal
-                               estado, o falta de juntas.
-                          <br> b. Falta de válvula de sobrellenado.
-                          <br> c. Falta de hermeticidad en la
-                               conexión de la boquilla de llenado de tanque.
-                          <br> d. Personal no sigue los
-                          procedimientos. </p></li>
-                      </ol>
-                      <ion-row>
-                          <ion-col size="4">
-                            <ion-item>
-                              <ion-label>F</ion-label>
-                              <ion-input type="number" value=10 min="0"></ion-input>
-                            </ion-item>
-                          </ion-col>
-                          <ion-col size="4">
-                            <ion-item>
-                              <ion-label>C</ion-label>
-                              <ion-input type="number" value=3 min="0"></ion-input>
-                            </ion-item>
-                          </ion-col>
-                          <ion-col size="4">
-                            <ion-item>
-                              <ion-label>R</ion-label>
-                              <ion-input type="number" value=1 min="0"></ion-input>
-                            </ion-item>
-                            </ion-col>
-                        </ion-row>
-                    </ion-card-content>
-                  </ion-card>
-                </ion-slide>
-
-                <ion-slide>
-                    <ion-card>
-                        <ion-item>
-                            <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                        </ion-item>
-                      <ion-card-header>
-                        <ion-card-title><b>Actividad:</b>Salida de
-                          autotanque a la
-                          Estación de
-                          servicio.</ion-card-title>
-                        <ion-card-subtitle>RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO</ion-card-subtitle>
-                      </ion-card-header>
-                      <ion-card-content>
-                        <ol>
-                          <li><p class="ion-text-justify"><b>Peligro:</b> <br>Maniobra dentro de la
-                            estación.</p></li>
-                          <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Golpe a instalaciones
-                            u otros vehículos o
-                            atropellamiento a
-                            personas.</p></li>
-                          <li><p class="ion-text-justify"><b>Causas:</b><br>a. Falta o mal estado de señalamiento
-                            de circulación dentro de la estación
-                            de servicio.
-                            b. Personal no sigue los
-                            procedimientos.</p></li>
-                        </ol>
-                        <ion-row>
-                            <ion-col size="4">
-                              <ion-item>
-                                <ion-label>F</ion-label>
-                                <ion-input type="number" value=10 min="0"></ion-input>
-                              </ion-item>
-                            </ion-col>
-                            <ion-col size="4">
-                              <ion-item>
-                                <ion-label>C</ion-label>
-                                <ion-input type="number" value=3 min="0"></ion-input>
-                              </ion-item>
-                            </ion-col>
-                            <ion-col size="4">
-                              <ion-item>
-                                <ion-label>R</ion-label>
-                                <ion-input type="number" value=1 min="0"></ion-input>
-                              </ion-item>
-                              </ion-col>
-                          </ion-row>
-                      </ion-card-content>
-                    </ion-card>
-                  </ion-slide>
-
-                  <ion-slide >
-                      <ion-card color="success">
-                          <ion-card-title>PROCESO:</ion-card-title>
-                          <ion-card-content>
-                             DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES
-                          </ion-card-content>
-                      </ion-card>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <ion-card>
-                            <ion-item>
-                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                            </ion-item>
-                          <ion-card-header>
-                            <ion-card-title><b>Actividad:</b>Despacho de
-                              producto.</ion-card-title>
-                            <ion-card-subtitle>DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES</ion-card-subtitle>
-                          </ion-card-header>
-                          <ion-card-content>
-                            <ol>
-                              <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                                estado. <br>
-                                b. Falta de
-                                conocimiento o de
-                                conciencia del
-                                personal.</p></li>
-                              <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Derrame de
-                                producto o fuga
-                                durante el despacho
-                                de producto a
-                                vehículos.</p></li>
-                              <li><p class="ion-text-justify"><b>Causas:</b><br>a. La pistola no para en automático y
-                                no detiene el despacho cuando el
-                                tanque ya se llenó.
-                                 <br> b. La pistola no contiene el producto al
-                                100% cuando no hay despacho.
-                                 <br> c. El tanque del vehículo se “ahoga”
-                                durante la carga y se derrama el
-                                producto.
-                                 <br> d. Se retira la pistola sin que termine
-                                aún la carga de producto.
-                                 <br> e. Personal no sigue los
-                                procedimientos. <br> </p></li>
-                            </ol>
-                            <ion-row>
-                                <ion-col size="4">
-                                  <ion-item>
-                                    <ion-label>F</ion-label>
-                                    <ion-input type="number" value=10 min="0"></ion-input>
-                                  </ion-item>
-                                </ion-col>
-                                <ion-col size="4">
-                                  <ion-item>
-                                    <ion-label>C</ion-label>
-                                    <ion-input type="number" value=3 min="0"></ion-input>
-                                  </ion-item>
-                                </ion-col>
-                                <ion-col size="4">
-                                  <ion-item>
-                                    <ion-label>R</ion-label>
-                                    <ion-input type="number" value=1 min="0"></ion-input>
-                                  </ion-item>
-                                  </ion-col>
-                              </ion-row>
-                          </ion-card-content>
-                        </ion-card>
-                      </ion-slide>
-
-                      <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title><b>Actividad:</b>Despacho de
-                                producto</ion-card-title>
-                              <ion-card-subtitle>DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ol>
-                                <li><p class="ion-text-justify"><b>Peligro:</b> <br>Distracción o mala
-                                  intención del
-                                  conductor del vehículo.</p></li>
-                                <li><p class="ion-text-justify"><b>Riesgos asociados: </b> <br> Derrame por
-                                  desprendimiento de
-                                  manguera de
-                                  despacho de
-                                  combustible por
-                                  desplazamiento del
-                                  vehículo.</p></li>
-                                <li><p class="ion-text-justify"><b>Causas:</b><br>a. No se retira inmediatamente la
-                                  pistola al término del llenado.
-                                  <br> b. El despachador no acomoda bien la
-                                  manguera después de retirar la
-                                  pistola y el vehículo avanza y
-                                  desprende la manguera porque se
-                                  atoró con alguna parte del vehículo.
-                                  <br> c. El conductor avanza con su vehículo
-                                  en forma intencionada para no
-                                  pagar o por distracción.
-                                  <br> d. Personal no cumple los procedimientos<br> </p></li>
-                              </ol>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" value=10 min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>C</ion-label>
-                                      <ion-input type="number" value=3 min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>R</ion-label>
-                                      <ion-input type="number" value=1 min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                                </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-
-                        <ion-slide>
-                            <ion-card>
-                                <ion-item>
-                                    <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                </ion-item>
-                              <ion-card-header>
-                                <ion-card-title><b>Actividad:</b>Despacho de
-                                  producto</ion-card-title>
-                                <ion-card-subtitle>DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES</ion-card-subtitle>
-                              </ion-card-header>
-                              <ion-card-content>
-                                <ol>
-                                  <li><p class="ion-text-justify"><b>Peligro:</b> <br>Distracción o mala
-                                    intención del
-                                    conductor del vehículo.</p></li>
-                                  <li><p class="ion-text-justify"><b>Riesgos asociados:</b><br> Derrame por derribo
-                                    del dispensario por
-                                    automóvil o camión
-                                    y no opera la válvula
-                                    shut-off.</p></li>
-                                  <li><p class="ion-text-justify"><b>Causas:</b><br>No depende relativamente de la
-                                    estación de servicio, sin embargo, se
-                                    puede considerar:
-                                    <br> a. Falta de carril de desaceleración.
-                                    <br> b. Falta de señalamientos.
-                                    <br> c. Falta de vibradores o topes. </p></li>
-                                </ol>
-                                <ion-row>
-                                    <ion-col size="4">
-                                      <ion-item>
-                                        <ion-label>F</ion-label>
-                                        <ion-input type="number" value=10 min="0"></ion-input>
-                                      </ion-item>
-                                    </ion-col>
-                                    <ion-col size="4">
-                                      <ion-item>
-                                        <ion-label>C</ion-label>
-                                        <ion-input type="number" value=3 min="0"></ion-input>
-                                      </ion-item>
-                                    </ion-col>
-                                    <ion-col size="4">
-                                      <ion-item>
-                                        <ion-label>R</ion-label>
-                                        <ion-input type="number" value=1 min="0"></ion-input>
-                                      </ion-item>
-                                    </ion-col>
-                                  </ion-row>
-                              </ion-card-content>
-                            </ion-card>
-                          </ion-slide>
-
-                          <ion-slide>
-                              <ion-card>
-                                  <ion-item>
-                                      <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                  </ion-item>
-                                <ion-card-header>
-                                  <ion-card-title><b>Actividad:</b>Despacho de
-                                    producto</ion-card-title>
-                                  <ion-card-subtitle>DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES</ion-card-subtitle>
-                                </ion-card-header>
-                                <ion-card-content>
-                                  <ol>
-                                    <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                                      estado. <br>
-                                      b. Falta de
-                                      conocimiento o de
-                                      conciencia del
-                                      personal.</p></li>
-                                    <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Incendio en el área
-                                      de despacho, por
-                                      derribo de
-                                      dispensario o
-                                      desprendimiento de
-                                      manguera.</p></li>
-                                    <li><p class="ion-text-justify"><b>Causas:</b><br>Previamente, debe ocurrir una fuga o
-                                      derrame y posterior el contacto con una
-                                      fuente de ignición.
-                                       <br> a. Uso de teléfono celular.
-                                       <br> b. Pasar corriente a otro vehículo en el
-                                      área de despacho.
-                                       <br> c. Fumar, encender fósforos.
-                                       <br> d. Contacto de los vapores con una
-                                      parte caliente del vehículo.
-                                       <br> e. Falta de integridad eléctrica en
-                                      instalaciones.
-                                       <br> f. Personal no sigue los
-                                      procedimientos.</p></li>
-                                  </ol>
-                                  <ion-row>
-                                      <ion-col size="4">
-                                        <ion-item>
-                                          <ion-label>F</ion-label>
-                                          <ion-input type="number" value=10 min="0"></ion-input>
-                                        </ion-item>
-                                      </ion-col>
-                                      <ion-col size="4">
-                                        <ion-item>
-                                          <ion-label>C</ion-label>
-                                          <ion-input type="number" value=3 min="0"></ion-input>
-                                        </ion-item>
-                                      </ion-col>
-                                      <ion-col size="4">
-                                        <ion-item>
-                                          <ion-label>R</ion-label>
-                                          <ion-input type="number" value=1 min="0"></ion-input>
-                                        </ion-item>
-                                      </ion-col>
-                                    </ion-row>
-                                </ion-card-content>
-                              </ion-card>
-                            </ion-slide>
-
-                            <ion-slide >
-                                <ion-card color="success">
-                                    <ion-card-title>PROCESO:</ion-card-title>
-                                    <ion-card-content>
-                                        ACTIVIDADES DE APOYO
-                                    </ion-card-content>
-                                </ion-card>
-                              </ion-slide>
-
-                            <ion-slide>
-                                <ion-card>
-                                    <ion-item>
-                                        <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                    </ion-item>
-                                  <ion-card-header>
-                                    <ion-card-title><b>Actividad:</b>Ejecución de
-                                      trabajos de
-                                      mantenimiento.</ion-card-title>
-                                    <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
-                                  </ion-card-header>
-                                  <ion-card-content>
-                                    <ol>
-                                      <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                                        estado. <br>
-                                        b. Falta de
-                                        conocimiento o de
-                                        conciencia del
-                                        personal.</p></li>
-                                      <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br> Derrame o fuga
-                                        durante la ejecución
-                                        de trabajos de
-                                        mantenimiento.</p></li>
-                                      <li><p class="ion-text-justify"><b>Causas:</b><br>a. No se realiza permiso de trabajo
-                                        peligroso. <br>
-                                        b. No se identifican los riesgos de
-                                        hacer un trabajo peligroso.
-                                       <br>  c. No se vacía o de presiona la tubería.
-                                       <br>  d. No se colocan bloqueos en válvulas
-                                        y tablero de control</p></li>
-                                    </ol>
-                                    <ion-row>
-                                        <ion-col size="4">
-                                          <ion-item>
-                                            <ion-label>F</ion-label>
-                                            <ion-input type="number" value=10 min="0"></ion-input>
-                                          </ion-item>
-                                        </ion-col>
-                                        <ion-col size="4">
-                                          <ion-item>
-                                            <ion-label>C</ion-label>
-                                            <ion-input type="number" value=3 min="0"></ion-input>
-                                          </ion-item>
-                                        </ion-col>
-                                        <ion-col size="4">
-                                          <ion-item>
-                                            <ion-label>R</ion-label>
-                                            <ion-input type="number" value=1 min="0"></ion-input>
-                                          </ion-item>
-                                        </ion-col>
-                                      </ion-row>
-                                  </ion-card-content>
-                                </ion-card>
-                              </ion-slide>
-
-                              
-                            <ion-slide>
-                                <ion-card>
-                                    <ion-item>
-                                        <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                    </ion-item>
-                                  <ion-card-header>
-                                    <ion-card-title><b>Actividad:</b>Operación
-                                      normal</ion-card-title>
-                                    <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
-                                  </ion-card-header>
-                                  <ion-card-content>
-                                    <ol>
-                                      <li><p class="ion-text-justify"><b>Peligro:</b> <br>Trampa de
-                                        combustibles con
-                                        hidrocarburos.</p></li>
-                                      <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br>Incendio en Trampa
-                                        de Combustibles.</p></li>
-                                      <li><p class="ion-text-justify"><b>Causas:</b><br>a. No se limpia el drenaje y trampa
-                                        después de un derrame.
-                                        b. Cultura deficiente en materia
-                                        Ambiental y de seguridad.
-                                      <br>c.Desconocimiento de las
-                                      instalaciones.</p></li>
-                                    </ol>
-                                    <ion-row>
-                                        <ion-col size="4">
-                                          <ion-item>
-                                            <ion-label>F</ion-label>
-                                            <ion-input type="number" value=10 min="0"></ion-input>
-                                          </ion-item>
-                                        </ion-col>
-                                        <ion-col size="4">
-                                          <ion-item>
-                                            <ion-label>C</ion-label>
-                                            <ion-input type="number" value=3 min="0"></ion-input>
-                                          </ion-item>
-                                        </ion-col>
-                                        <ion-col size="4">
-                                          <ion-item>
-                                            <ion-label>R</ion-label>
-                                            <ion-input type="number" value=1 min="0"></ion-input>
-                                          </ion-item>
-                                        </ion-col>
-                                      </ion-row>
-                                  </ion-card-content>
-                                </ion-card>
-                              </ion-slide>
-
-                              <ion-slide>
-                                  <ion-card>
-                                      <ion-item>
-                                          <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                      </ion-item>
-                                    <ion-card-header>
-                                      <ion-card-title><b>Actividad:</b>Instalaciones
-                                        eléctricas en
-                                        operación.</ion-card-title>
-                                      <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
-                                    </ion-card-header>
-                                    <ion-card-content>
-                                      <ol>
-                                        <li><p class="ion-text-justify"><b>Peligro:</b> <br>a. Equipos en mal
-                                          estado.
-                                          b. Falta de
-                                          conocimiento o de
-                                          conciencia del
-                                          personal.</p></li>
-                                        <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br>Incendio en área de
-                                          despacho.</p></li>
-                                        <li><p class="ion-text-justify"><b>Causas:</b><br>No depende de la estación de servicio,
-                                          si se trata de una manifestación social.</p></li>
-                                      </ol>
-                                      <ion-row>
-                                          <ion-col size="4">
-                                            <ion-item>
-                                              <ion-label>F</ion-label>
-                                              <ion-input type="number" value=10 min="0"></ion-input>
-                                            </ion-item>
-                                          </ion-col>
-                                          <ion-col size="4">
-                                            <ion-item>
-                                              <ion-label>C</ion-label>
-                                              <ion-input type="number" value=3 min="0"></ion-input>
-                                            </ion-item>
-                                          </ion-col>
-                                          <ion-col size="4">
-                                            <ion-item>
-                                              <ion-label>R</ion-label>
-                                              <ion-input type="number" value=1 min="0"></ion-input>
-                                            </ion-item>
-                                          </ion-col>
-                                        </ion-row>
-                                    </ion-card-content>
-                                  </ion-card>
-                                </ion-slide>
-                    
-                                <ion-slide>
-                                    <ion-card>
-                                        <ion-item>
-                                            <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                        </ion-item>
-                                      <ion-card-header>
-                                        <ion-card-title><b>Actividad:</b>Operación
-                                          normal</ion-card-title>
-                                        <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
-                                      </ion-card-header>
-                                      <ion-card-content>
-                                        <ol>
-                                          <li><p class="ion-text-justify"><b>Peligro:</b> <br>Vandalismo</p></li>
-                                          <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br>Incendio en
-                                            Instalaciones
-                                            eléctricas.</p></li>
-                                          <li><p class="ion-text-justify"><b>Causas:</b><br>Mantenimiento deficiente.</p></li>
-                                        </ol>
-                                        <ion-row>
-                                            <ion-col size="4">
-                                              <ion-item>
-                                                <ion-label>F</ion-label>
-                                                <ion-input type="number" value=10 min="0"></ion-input>
-                                              </ion-item>
-                                            </ion-col>
-                                            <ion-col size="4">
-                                              <ion-item>
-                                                <ion-label>C</ion-label>
-                                                <ion-input type="number" value=3 min="0"></ion-input>
-                                              </ion-item>
-                                            </ion-col>
-                                            <ion-col size="4">
-                                              <ion-item>
-                                                <ion-label>R</ion-label>
-                                                <ion-input type="number" value=1 min="0"></ion-input>
-                                              </ion-item>
-                                            </ion-col>
-                                          </ion-row>
-                                      </ion-card-content>
-                                    </ion-card>
-                                  </ion-slide>
-
-                                  <ion-slide>
-                                      <ion-card>
-                                          <ion-item>
-                                              <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                          </ion-item>
-                                        <ion-card-header>
-                                          <ion-card-title><b>Actividad:</b>Operación
-                                            normal</ion-card-title>
-                                          <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
-                                        </ion-card-header>
-                                        <ion-card-content>
-                                          <ol>
-                                            <li><p class="ion-text-justify"><b>Peligro:</b> <br>Sismo de magnitud
-                                              considerable.</p></li>
-                                            <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br>Contaminación de
-                                              subsuelo y mantos
-                                              freáticos por fuga o
-                                              derrame de
-                                              combustible.</p></li>
-                                            <li><p class="ion-text-justify"><b>Causas:</b><br>a. Ruptura de tuberías interconectadas
-                                              a los tanques de almacenamiento.
-                                              b. Fenómeno geológico que no
-                                              depende de la estación de servicio.</p></li>
-                                          </ol>
-                                          <ion-row>
-                                              <ion-col size="4">
-                                                <ion-item>
-                                                  <ion-label>F</ion-label>
-                                                  <ion-input type="number" value=10 min="0"></ion-input>
-                                                </ion-item>
-                                              </ion-col>
-                                              <ion-col size="4">
-                                                <ion-item>
-                                                  <ion-label>C</ion-label>
-                                                  <ion-input type="number" value=3 min="0"></ion-input>
-                                                </ion-item>
-                                              </ion-col>
-                                              <ion-col size="4">
-                                                <ion-item>
-                                                  <ion-label>R</ion-label>
-                                                  <ion-input type="number" value=1 min="0"></ion-input>
-                                                </ion-item>
-                                              </ion-col>
-                                            </ion-row>
-                                        </ion-card-content>
-                                      </ion-card>
-                                    </ion-slide>
-
-                                    <ion-slide>
-                                        <ion-card>
-                                            <ion-item>
-                                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                                            </ion-item>
-                                          <ion-card-header>
-                                            <ion-card-title><b>Actividad:</b>Operación
-                                              normal</ion-card-title>
-                                            <ion-card-subtitle> ACTIVIDADES DE APOYO</ion-card-subtitle>
-                                          </ion-card-header>
-                                          <ion-card-content>
-                                            <ol>
-                                              <li><p class="ion-text-justify"><b>Peligro:</b> <br>Inundación</p></li>
-                                              <li><p class="ion-text-justify"><b>Riesgos asociados:</b> <br>Contaminación de
-                                                subsuelo y mantos
-                                                freáticos por fuga o
-                                                derrame de
-                                                combustible.</p></li>
-                                              <li><p class="ion-text-justify"><b>Causas:</b><br>Fenómeno geológico que no depende
-                                                de la estación de servicio.</p></li>
-                                            </ol>
-                                            <ion-row>
-                                                <ion-col size="4">
-                                                  <ion-item>
-                                                    <ion-label>F</ion-label>
-                                                    <ion-input type="number" value=10 min="0"></ion-input>
-                                                  </ion-item>
-                                                </ion-col>
-                                                <ion-col size="4">
-                                                  <ion-item>
-                                                    <ion-label>C</ion-label>
-                                                    <ion-input type="number" value=3 min="0"></ion-input>
-                                                  </ion-item>
-                                                </ion-col>
-                                                <ion-col size="4">
-                                                  <ion-item>
-                                                    <ion-label>R</ion-label>
-                                                    <ion-input type="number" value=1 min="0"></ion-input>
-                                                  </ion-item>
-                                                </ion-col>
-                                              </ion-row>
-                                          </ion-card-content>
-                                        </ion-card>
-                                      </ion-slide>  
-                                      
-                                      
-  </ion-slides>
-  
-  
-  
-  </ion-content>
+      </ion-slide>
+    </ion-slides>
+  </form>
+</ion-content>

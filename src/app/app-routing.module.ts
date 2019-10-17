@@ -124,111 +124,48 @@ const routes: Routes = [
     loadChildren: './pages/fo03/fo03.module#FO03PageModule',
     canLoad: [AuthGuard] 
   },
-  { 
-    path: 'fs20', 
-    loadChildren: './pages/fs20/fs20.module#Fs20PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fo04', 
-    loadChildren: './pages/fo04/fo04.module#Fo04PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs20-tanques', 
-    loadChildren: './pages/fs20-tanques/fs20-tanques.module#Fs20TanquesPageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs20-dispensarios', 
-    loadChildren: './pages/fs20-dispensarios/fs20-dispensarios.module#Fs20DispensariosPageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs20-drenajes', 
-    loadChildren: './pages/fs20-drenajes/fs20-drenajes.module#Fs20DrenajesPageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs20-electricas', 
-    loadChildren: './pages/fs20-electricas/fs20-electricas.module#Fs20ElectricasPageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs20-pozos', 
-    loadChildren: './pages/fs20-pozos/fs20-pozos.module#Fs20PozosPageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs20-edificios', 
-    loadChildren: './pages/fs20-edificios/fs20-edificios.module#Fs20EdificiosPageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'pdf-im01', 
-    loadChildren: './pages/pdf-im01/pdf-im01.module#PdfIM01PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'pdf-im02', 
-    loadChildren: './pages/pdf-im02/pdf-im02.module#PdfIM02PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'pdf-im03', 
-    loadChildren: './pages/pdf-im03/pdf-im03.module#PdfIM03PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'pdf-im04', 
-    loadChildren: './pages/pdf-im04/pdf-im04.module#PdfIM04PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'pdf-im05', 
-    loadChildren: './pages/pdf-im05/pdf-im05.module#PdfIM05PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'pdf-im11', 
-    loadChildren: './pages/pdf-im11/pdf-im11.module#PdfIM11PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs21', 
-    loadChildren: './pages/fs21/fs21.module#Fs21PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fs22', 
-    loadChildren: './pages/fs22/fs22.module#Fs22PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fso02', 
-    loadChildren: './pages/fso02/fso02.module#Fso02PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fso06', 
-    loadChildren: './pages/fso06/fso06.module#Fso06PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fo06', 
-    loadChildren: './pages/fo06/fo06.module#Fo06PageModule' ,
-    canLoad: [AuthGuard]
-  },
-  { 
-    path: 'fo07', 
-    loadChildren: './pages/fo07/fo07.module#Fo07PageModule',
-    canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'procedimiento-punto-dos', 
-    loadChildren: './pages/procedimiento-punto-dos/procedimiento-punto-dos.module#ProcedimientoPuntoDosPageModule',
-    canLoad: [AuthGuard] 
-  },
+  { path: 'fo04', loadChildren: './pages/fo04/fo04.module#Fo04PageModule' },
+  
+  { path: 'fs20', loadChildren: './pages/fs20/fs20.module#Fs20PageModule' },
+  { path: 'fs20-tanques', loadChildren: './pages/fs20-tanques/fs20-tanques.module#Fs20TanquesPageModule' },
+  { path: 'fs20-dispensarios', loadChildren: './pages/fs20-dispensarios/fs20-dispensarios.module#Fs20DispensariosPageModule' },
+  { path: 'fs20-drenajes', loadChildren: './pages/fs20-drenajes/fs20-drenajes.module#Fs20DrenajesPageModule' },
+  { path: 'fs20-electricas', loadChildren: './pages/fs20-electricas/fs20-electricas.module#Fs20ElectricasPageModule' },
+  { path: 'fs20-pozos', loadChildren: './pages/fs20-pozos/fs20-pozos.module#Fs20PozosPageModule' },
+  { path: 'fs20-edificios', loadChildren: './pages/fs20-edificios/fs20-edificios.module#Fs20EdificiosPageModule' },
+  { path: 'pdf-im01', loadChildren: './pages/pdf-im01/pdf-im01.module#PdfIM01PageModule' },
+  { path: 'pdf-im02', loadChildren: './pages/pdf-im02/pdf-im02.module#PdfIM02PageModule' },
+  { path: 'pdf-im03', loadChildren: './pages/pdf-im03/pdf-im03.module#PdfIM03PageModule' },
+  { path: 'pdf-im04', loadChildren: './pages/pdf-im04/pdf-im04.module#PdfIM04PageModule' },
+  { path: 'pdf-im05', loadChildren: './pages/pdf-im05/pdf-im05.module#PdfIM05PageModule' },
+  { path: 'pdf-im11', loadChildren: './pages/pdf-im11/pdf-im11.module#PdfIM11PageModule' },
+  { path: 'fs21', loadChildren: './pages/fs21/fs21.module#Fs21PageModule' },
+  { path: 'fs22', loadChildren: './pages/fs22/fs22.module#Fs22PageModule' },
+  { path: 'fso02', loadChildren: './pages/fso02/fso02.module#Fso02PageModule' },
+  { path: 'fso06', loadChildren: './pages/fso06/fso06.module#Fso06PageModule' },
+  { path: 'fo06', loadChildren: './pages/fo06/fo06.module#Fo06PageModule' },
+  { path: 'fo07', loadChildren: './pages/fo07/fo07.module#Fo07PageModule' },
+  { path: 'procedimiento-punto-dos', loadChildren: './pages/procedimiento-punto-dos/procedimiento-punto-dos.module#ProcedimientoPuntoDosPageModule' },
+  { path: 'punto-catorce', loadChildren: './pages/punto-catorce/punto-catorce.module#PuntoCatorcePageModule' },
+  { path: 'punto-quince', loadChildren: './pages/punto-quince/punto-quince.module#PuntoQuincePageModule' },
+  { path: 'punto-diez-seis', loadChildren: './pages/punto-diez-seis/punto-diez-seis.module#PuntoDiezSeisPageModule' },
+  { path: 'punto-diez-siete', loadChildren: './pages/punto-diez-siete/punto-diez-siete.module#PuntoDiezSietePageModule' },
+  { path: 'punto-diez-ocho', loadChildren: './pages/punto-diez-ocho/punto-diez-ocho.module#PuntoDiezOchoPageModule' },
+  { path: 'punto-doce', loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule' },
+  { path: 'p12-carta-responsiva', loadChildren: './pages/p12-carta-responsiva/p12-carta-responsiva.module#P12CartaResponsivaPageModule' },
+  { path: 'p12-anexo-seguridad', loadChildren: './pages/p12-anexo-seguridad/p12-anexo-seguridad.module#P12AnexoSeguridadPageModule' },
+  { path: 'p12-seguridad-contratista', loadChildren: './pages/p12-seguridad-contratista/p12-seguridad-contratista.module#P12SeguridadContratistaPageModule' },
+  { path: 'punto-trece', loadChildren: './pages/punto-trece/punto-trece.module#PuntoTrecePageModule' },
+  { path: 'p13-acta-conformacion', loadChildren: './pages/p13-acta-conformacion/p13-acta-conformacion.module#P13ActaConformacionPageModule' },
+  { path: 'p13-programa-simulacros', loadChildren: './pages/p13-programa-simulacros/p13-programa-simulacros.module#P13ProgramaSimulacrosPageModule' },
+  { path: 'p13-planeacion-simulacros', loadChildren: './pages/p13-planeacion-simulacros/p13-planeacion-simulacros.module#P13PlaneacionSimulacrosPageModule' },
+  { path: 'p13-evaluacion-simulacros', loadChildren: './pages/p13-evaluacion-simulacros/p13-evaluacion-simulacros.module#P13EvaluacionSimulacrosPageModule' },
+  { path: 'p13-planes-respuesta-emergencia', loadChildren: './pages/p13-planes-respuesta-emergencia/p13-planes-respuesta-emergencia.module#P13PlanesRespuestaEmergenciaPageModule' },
+  { path: 'p13-reparacion-respuesta-emergencia', loadChildren: './pages/p13-reparacion-respuesta-emergencia/p13-reparacion-respuesta-emergencia.module#P13ReparacionRespuestaEmergenciaPageModule' },
+  { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
+  { path: 'punto-uno-procedimiento', loadChildren: './pages/punto-uno-procedimiento/punto-uno-procedimiento.module#PuntoUnoProcedimientoPageModule' },
+  { path: 'punto-uno-evidencia', loadChildren: './pages/punto-uno-evidencia/punto-uno-evidencia.module#PuntoUnoEvidenciaPageModule' },
+  { path: 'punto-dos-evidencia', loadChildren: './pages/punto-dos-evidencia/punto-dos-evidencia.module#PuntoDosEvidenciaPageModule' },
 
 
 
@@ -242,12 +179,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
-
-
-
-
-
-
-
-
