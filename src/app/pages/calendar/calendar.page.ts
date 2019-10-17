@@ -1,3 +1,5 @@
+import { CalendarServiceService } from 'src/app/services/calendar-service.service';
+import { PuntodosService } from './../../services/puntodos.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -22,9 +24,9 @@ export class CalendarPage implements OnInit {
   timeZone: "America/Mexico_City"
 
   calendarPlugins: any[] = [
-    dayGridPlugin, 
-    timeGridPlugin, 
-    listPlugin, 
+    dayGridPlugin,
+    timeGridPlugin,
+    listPlugin,
     interactionPlugin
   ];
 
@@ -32,23 +34,24 @@ export class CalendarPage implements OnInit {
     left: 'prev,next',
     center: 'title',
     right: 'dayGridMonth,timeGridWeek,timeGridDay'
-  }
+  };
 
   calendarEvents: EventInput[] = [
-    {"start": "2019-07-19", "title": "Auditoria SASISOPA"},
-    {"start": "2019-07-01", "title": "Capacitación de personal"},
-    {"start": "2019-07-19", "title": "Pago de Impuestos"},
-    {"start": "2019-07-19", "title": "Acreditación ante la CRE"}
+    {"start": "2019-10-19", "title": "Auditoria SASISOPA"},
+    {"start": "2019-10-01", "title": "Capacitación de personal"},
+    {"start": "2019-10-19", "title": "Pago de Impuestos"},
+    {"start": "2019-10-19", "title": "Acreditación ante la CRE"}
   ];
 
-  constructor(
-    private modalCtrl: ModalController
-  ) { }
+  constructor(private modalCtrl: ModalController, private calendarService: CalendarServiceService) { }
 
   ngOnInit() {}
 
+  getEventos() {
 
-  handleDateClick(event){
+  }
+
+  handleDateClick(event) {
     console.log(event);
   }
 

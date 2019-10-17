@@ -30,9 +30,9 @@ import { Camera } from '@ionic-native/camera/ngx'
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule,AyudaPageModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule, AyudaPageModule,
     ProcedimientoCincoPageModule,
     FullCalendarModule,
     EditPoliticaPageModule,
