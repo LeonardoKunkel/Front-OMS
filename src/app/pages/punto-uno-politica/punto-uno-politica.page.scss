@@ -1,0 +1,15 @@
+.politica1{
+    font-size: 40px;
+}
+.lineaS{
+    background-color:rgb(68, 68, 177);
+    height: 3px;
+}
+.carta{
+    background-image: url('../../../assets/Fondos/Dots2_100.png');
+}
+@media(max-width:1000px){
+    .politica1{
+        font-size: 20px;
+    }
+}

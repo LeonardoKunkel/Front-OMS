@@ -1,0 +1,222 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-trece"></ion-back-button>
+    </ion-buttons>
+    <ion-title>XIII. PREPARACIÓN Y RESPUESTA A EMERGENCIAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>PLANEACIÓN DE SIMULACROS</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item-divider color="medium">
+            <h3>INFORMACIÓN GENERAL DEL SIMULACRO</h3>
+          </ion-item-divider>
+          <ion-item-divider>
+            <h3>OBJETIVOS DEL SIMULACRO DE EMERGENCIA:</h3>
+          </ion-item-divider>
+          <ion-item>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="6">
+                  <h5>1.Descripcion</h5>
+                  <ion-input type="text" placeholder="Descripcion"></ion-input>
+                  <h5>2.Descripcion</h5>
+                  <ion-input type="text" placeholder="Descripcion"></ion-input>
+                </ion-col>
+                <ion-col size="6">
+                  <h5>Responsable de la atencion</h5>
+                  <ion-input type="text" placeholder="Responsable"></ion-input>
+                  <h5>Responsable de la atencion</h5>
+                  <ion-input type="text" placeholder="Responsable"></ion-input>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+          <ion-item-divider color="light">
+            <h5>Caracteristicas del simulacro</h5>
+          </ion-item-divider>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="6">
+                <ion-label>Area</ion-label>
+                <ion-input type="text" placeholder="especifique"></ion-input>
+                <ion-label>Equipo</ion-label>
+                <ion-input type="text" placeholder="equipo"></ion-input>
+                <h5>Clases de simulacro</h5>
+                <ion-input type="text" placeholder="clases"></ion-input>
+              </ion-col>
+              <ion-col size="6">
+                <h5>Fecha y hora programada</h5>
+                <ion-datetime
+                  display-format="DD.MM.YYYY HH:mm"
+                  placeholder="selecciona"
+                ></ion-datetime>
+
+                <ion-label>Con aviso previo</ion-label>
+                <ion-input type="text" placeholder="avisos"></ion-input>
+                <ion-label>Agente perturbador</ion-label>
+                <ion-input type="text" placeholder="agente"></ion-input>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-item-divider>
+            <h5>DESCRIPCIÓN DEL ESCENARIO DE EMERGENCIA:</h5>
+          </ion-item-divider>
+          <ion-textarea placeholder="escribe tus descripciones"></ion-textarea
+          ><br /><br />
+          <ion-button (click)="onClick()">
+            Guardar y enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle
+            >2. EQUIPO DE PROTECCIÓN PERSONAL Y DISPOSITIVOS DE SEGURIDAD
+            REQUERIDOS:</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-card-content>
+          <ol>
+            <li>
+              <ion-label>Equipo de proteccion personal</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              <ion-label>Dispositivo de seguridad requerido</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Equipo de proteccion personal</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              <ion-label>Dispositivo de seguridad requerido</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Equipo de proteccion personal</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              <ion-label>Dispositivo de seguridad requerido</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Equipo de proteccion personal</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              <ion-label>Dispositivo de seguridad requerido</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Equipo de proteccion personal</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              <ion-label>Dispositivo de seguridad requerido</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+          </ol>
+          <ion-button (click)="onClick()">
+            Guardar y enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle
+            >3. SECUENCIA DE ACCIONES DEL SIMULACRO</ion-card-subtitle
+          >
+          <h2>Que acciones ocurrieron descriva la actividad</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" (click)="presentAlert()"
+            >Actividad 1</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert2()"
+            >Actividad 2</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert3()"
+            >Actividad 3</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert4()"
+            >Actividad 4</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert5()"
+            >Actividad 5</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert6()"
+            >Actividad 6</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert7()"
+            >Actividad 7</ion-button
+          >
+          <ion-button expand="block" (click)="presentAlert8()"
+            >Actividad 8</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle
+            >4. UBICACIÓN DE LOS RECURSOS EN EL SITIO</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-card-content>
+          <ol>
+            <li>
+              <ion-label>Extintores</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Paros de emergencia</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Válvulas de cierre</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+            <li>
+              <ion-label>Interruptores</ion-label>
+              <ion-input type="text" placeholder="Awesome Input"></ion-input>
+            </li>
+          </ol>
+          <ion-item-divider color="light">
+            <ion-label>Observadores</ion-label> </ion-item-divider
+          ><br />
+          <ol>
+            <li>
+              <ion-item>
+                <ion-label>Nombre</ion-label>
+                <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Ubicacion</ion-label>
+                <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              </ion-item>
+            </li>
+            <li>
+              <ion-item>
+                <ion-label>Nombre</ion-label>
+                <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Ubicacion</ion-label>
+                <ion-input type="text" placeholder="Awesome Input"></ion-input>
+              </ion-item>
+            </li>
+          </ol>
+          <br />
+          <ion-button (click)="onClick()">
+            Guardar y enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

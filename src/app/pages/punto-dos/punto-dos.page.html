@@ -1,53 +1,92 @@
 <ion-header no-border>
   <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/"></ion-back-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>II. Identificación de aspectos ambientales y riesgos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="light">
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goEvaluacionesAspectos()">
-          <img  class="ion-padding image" src="../../../assets/imagenes/punto2/2-09.png" width="100" height="300" />
+        <ion-card mode="ios" (click)="goEvaluacionesAspectos()" class="fondo">
+          <img
+            class="ion-padding image"
+            src="../../../assets/imagenes/punto2/2-09.png"
+            width="100"
+            height="300"
+          />
           <ion-card-header>
-
             <ion-card-title>Evaluacion De Riesgos</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goEvaluacionRiesgos()">
-          <img  class="ion-padding image" src="../../../assets/imagenes/punto2/2-08.png" width="100" height="300" />
+        <ion-card mode="ios" (click)="goEvaluacionRiesgos()" class="fondo">
+          <img
+            class="ion-padding image"
+            src="../../../assets/imagenes/punto2/2-08.png"
+            width="100"
+            height="300"
+          />
           <ion-card-header>
             <ion-card-title>Evaluacion de Aspectos Ambientales</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goResultadosAnalisisRiesgos()">
-          <img  class="ion-padding image" src="../../../assets/imagenes/punto2/2-10.png" width="100" height="300" />
+        <ion-card mode="ios" (click)="goResultadosAnalisisRiesgos()" class="fondo">
+          <img
+            class="ion-padding image"
+            src="../../../assets/imagenes/punto2/2-10.png"
+            width="100"
+            height="300"
+          />
           <ion-card-header>
             <ion-card-title>Resultados De Análisis de Riesgos</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goListadoPeligros()">
-          <img  class="ion-padding image" src="../../../assets/imagenes/punto2/2-11.png" width="100" height="300" />
+        <ion-card mode="ios" (click)="goListadoPeligros()" class="fondo">
+          <img
+            class="ion-padding image"
+            src="../../../assets/imagenes/punto2/2-11.png"
+            width="100"
+            height="300"
+          />
           <ion-card-header>
-            <ion-card-title>Listado de Peligros y Aspectos Ambientales</ion-card-title>
+            <ion-card-title
+              >Listado de Peligros y Aspectos Ambientales</ion-card-title
+            >
           </ion-card-header>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goProcedimiento()">
-          <img  class="ion-padding image" src="../../../assets/imagenes/punto2/2-11.png" width="100" height="300" />
+        <ion-card mode="ios" (click)="goProcedimiento()"class="fondo">
+          <img
+            class="ion-padding image"
+            src="../../../assets/imagenes/punto2/2-11.png"
+            width="100"
+            height="300"
+          />
           <ion-card-header>
             <ion-card-title>PROCEDIMIENTO DEL SISTEMA</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goEvidencia()"class="fondo">
+          <img
+            class="ion-padding image"
+            src="../../../assets/imagenes/punto2/2-11.png"
+            width="100"
+            height="300"
+          /> 
+          <ion-card-header>
+            <ion-card-title>Subir evidencia</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>

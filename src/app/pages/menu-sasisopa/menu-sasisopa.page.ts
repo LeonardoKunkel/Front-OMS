@@ -51,4 +51,25 @@ export class MenuSasisopaPage implements OnInit {
   goPuntoOnce() {
     this.navCtrl.navigateForward('/punto-once');
   }
+  goPuntoDoce() {
+    this.navCtrl.navigateForward('/punto-doce');
+  }
+  goPuntoTrece() {
+    this.navCtrl.navigateForward('/punto-trece');
+  }
+ goPuntoCatorce(){
+  this.navCtrl.navigateForward('/punto-catorce');
+ }
+ goPuntoQuince(){
+  this.navCtrl.navigateForward('/punto-quince');
+ }
+ goPuntoDiezSeis(){
+  this.navCtrl.navigateForward('/punto-diez-seis');
+ }
+ goPuntoDiezSiete(){
+  this.navCtrl.navigateForward('/punto-diez-siete');
+ }
+ goPuntoDiezOcho(){
+  this.navCtrl.navigateForward('/punto-diez-ocho');
+ }
 }
