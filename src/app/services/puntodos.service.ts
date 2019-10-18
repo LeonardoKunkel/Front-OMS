@@ -38,4 +38,20 @@ export class PuntodosService {
     });
     return this.http.get<any>(`${URL}/puntodos/`, {headers});
   }
+
+  getEvents() {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.http.get<any>(`${URL}/evento`, {headers});
+  }
+
+  createEvent(body) {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.http.post<any>(`${URL}/evento/create`, body, {headers});
+  }
 }
