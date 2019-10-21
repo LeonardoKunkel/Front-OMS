@@ -8,7 +8,7 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./menu-punto2.page.scss'],
 })
 export class MenuPunto2Page implements OnInit {
-  
+  respuesta : any={};
   imagen: any= 'Mision.png';
 
   @ViewChild('slider') slider: IonSlides
@@ -20,9 +20,7 @@ export class MenuPunto2Page implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.slider.lockSwipes(true);
   }
-
   goBack() {
     this.slider.lockSwipes(false);
     this.slider.slidePrev();
@@ -35,16 +33,192 @@ export class MenuPunto2Page implements OnInit {
     this.slider.lockSwipes(true);
   }
 
+  enviarForm(formulario){
+    console.log('submit');
+
+    var n1c1= formulario.value.n1c1
+    var n2c1= formulario.value.n2c1
+    var n3c1= formulario.value.n3c1
+    var n1c2= formulario.value.n1c2
+    var n2c2= formulario.value.n2c2
+    var n3c2= formulario.value.n3c2
+    var n1c3= formulario.value.n1c3
+    var n2c3= formulario.value.n2c3
+    var n3c3= formulario.value.n3c3
+    var n1c4= formulario.value.n1c4
+    var n2c4= formulario.value.n2c4
+    var n3c4= formulario.value.n3c4
+    var n1c5= formulario.value.n1c5
+    var n2c5= formulario.value.n2c5
+    var n3c5= formulario.value.n3c5
+    var n1c6= formulario.value.n1c6
+    var n2c6= formulario.value.n2c6
+    var n3c6= formulario.value.n3c6
+    var n1c7= formulario.value.n1c7
+    var n2c7= formulario.value.n2c7
+    var n3c7= formulario.value.n3c7
+    var n1c8= formulario.value.n1c8
+    var n2c8= formulario.value.n2c8
+    var n3c8= formulario.value.n3c8
+    var n1c9= formulario.value.n1c9
+    var n2c9= formulario.value.n2c9
+    var n3c9= formulario.value.n3c9
+    var n1c10= formulario.value.n1c10
+    var n2c10= formulario.value.n2c10
+    var n3c10= formulario.value.n3c10
+    var n1c11= formulario.value.n1c11
+    var n2c11= formulario.value.n2c11
+    var n3c11= formulario.value.n3c11
+    var n1c12= formulario.value.n1c12
+    var n2c12= formulario.value.n2c12
+    var n3c12= formulario.value.n3c12
+    var n1c13= formulario.value.n1c13
+    var n2c13= formulario.value.n2c13
+    var n3c13= formulario.value.n3c13
+    var n1c14= formulario.value.n1c14
+    var n2c14= formulario.value.n2c14
+    var n3c14= formulario.value.n3c14
+    var n1c15= formulario.value.n1c15
+    var n2c15= formulario.value.n2c15
+    var n3c15= formulario.value.n3c15
+    var n1c16= formulario.value.n1c16
+    var n2c16= formulario.value.n2c16
+    var n3c16= formulario.value.n3c16
+    var n1c17= formulario.value.n1c17
+    var n2c17= formulario.value.n2c17
+    var n3c17= formulario.value.n3c17
+    var n1c18= formulario.value.n1c18
+    var n2c18= formulario.value.n2c18
+    var n3c18= formulario.value.n3c18
+
+    this.respuesta={  n1c1,
+      n2c1,
+      n3c1,
+      n1c2,
+      n2c2,
+      n3c2,
+      n1c3,
+      n2c3,
+      n3c3,
+      n1c4,
+      n2c4,
+      n3c4,
+      n1c5,
+      n2c5,
+      n3c5,
+      n1c6,
+      n2c6,
+      n3c6,
+      n1c7,
+      n2c7,
+      n3c7,
+      n1c8,
+      n2c8,
+      n3c8,
+      n1c9,
+      n2c9,
+      n3c9,
+      n1c10,
+      n2c10,
+      n3c10,
+      n1c11,
+      n2c11,
+      n3c11,
+      n1c12,
+      n2c12,
+      n3c12,
+      n1c13,
+      n2c13,
+      n3c13,
+      n1c14,
+      n2c14,
+      n3c14,
+      n1c15,
+      n2c15,
+      n3c15,
+      n1c16,
+      n2c16,
+      n3c16,
+      n1c17,
+      n2c17,
+      n3c17,
+      n1c18,
+      n2c18,
+      n3c18,}
+
+      console.log('respuesta',this.respuesta);
+      
+
+   console.log(
+    n1c1,
+    n2c1,
+    n3c1,
+    n1c2,
+    n2c2,
+    n3c2,
+    n1c3,
+    n2c3,
+    n3c3,
+    n1c4,
+    n2c4,
+    n3c4,
+    n1c5,
+    n2c5,
+    n3c5,
+    n1c6,
+    n2c6,
+    n3c6,
+    n1c7,
+    n2c7,
+    n3c7,
+    n1c8,
+    n2c8,
+    n3c8,
+    n1c9,
+    n2c9,
+    n3c9,
+    n1c10,
+    n2c10,
+    n3c10,
+    n1c11,
+    n2c11,
+    n3c11,
+    n1c12,
+    n2c12,
+    n3c12,
+    n1c13,
+    n2c13,
+    n3c13,
+    n1c14,
+    n2c14,
+    n3c14,
+    n1c15,
+    n2c15,
+    n3c15,
+    n1c16,
+    n2c16,
+    n3c16,
+    n1c17,
+    n2c17,
+    n3c17,
+    n1c18,
+    n2c18,
+    n3c18,
+    );
+   
+    
+    
+  }
+
+
+
+
   pdf(){
     console.log('hola mundo');
-   //
     var dd = {
-      background: function(currentPage, pageSize) {
-      // return{fillColor:'#ddd'} 
-      //return { image :magen, width: 750, absolutePosition: {x: 10, y: 80} ,opacity:0.3}
-     //return{ svg: '../../assets/imagenes/riesgo.svg'}
-     //return {image: this.imagen, width: 750, absolutePosition: {x: 10, y: 80} ,opacity:0.3}
-    },
+     // background: function(currentPage, pageSize) {
+      //return {image: 'sampleImage.jpg', width: 750, absolutePosition: {x: 10, y: 80} ,opacity:0.3}
+    //},
       header: function(){
         return {
             table: { widths: [740],heights:[50,15,15],
@@ -82,7 +256,7 @@ export class MenuPunto2Page implements OnInit {
               body:[
                   [{text:'NO',bold:true,fillColor:'#ddd'},{text:'Actividades',bold:true,fillColor:'#ddd'},{text:'Peligro',bold:true,fillColor:'#ddd'},{text:'Riesgo asociado',bold:true,fillColor:'#ddd'},{text:'Causas',bold:true,fillColor:'#ddd'},{text:'Salvaguardas',bold:true,fillColor:'#ddd'},{text:'F',bold:true,fillColor:'#ddd'},{text:'C',bold:true,fillColor:'#ddd'},{text:'R',bold:true,fillColor:'#ddd'},{text:'Recomendación',bold:true,fillColor:'#ddd'}],
                   [{text:'PROCESO: RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO',bold:true,fillColor:'#ddd',colSpan:10},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},],
-                  [{text:'1'},{text:'Arribo de autotanque a la Estación de servicio.',fontSize:8},{text:'a. Maniobra dentro de la estación \n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Golpe a instalaciones u otros vehículos o atropellamiento a personas.',fontSize:8},{text:'a. Falta o mal estado de señalamiento de circulación dentro de la estación de servicio.\n b. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Abanderar al Autotanque al ingresar a la Estación de Servicio.\n b. Respetar el señalamiento de circulación, dentro de la estación.\n c. Procedimiento de descarga en estaciones de servicio.\n d. Protecciones en las islas de llenado.\n e. Válvulas Shut Off.\n f. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:''},{text:''},{text:''},{text:'a. Cumplir programa de mantenimiento de señalamientos, y procedimiento P-IM-04 \n b. Cumplir procedimiento P-OP-01.',fontSize:8},],
+                  [{text:'1'},{text:'Arribo de autotanque a la Estación de servicio.',fontSize:8},{text:'a. Maniobra dentro de la estación \n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Golpe a instalaciones u otros vehículos o atropellamiento a personas.',fontSize:8},{text:'a. Falta o mal estado de señalamiento de circulación dentro de la estación de servicio.\n b. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Abanderar al Autotanque al ingresar a la Estación de Servicio.\n b. Respetar el señalamiento de circulación, dentro de la estación.\n c. Procedimiento de descarga en estaciones de servicio.\n d. Protecciones en las islas de llenado.\n e. Válvulas Shut Off.\n f. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:`${this.respuesta.n1c1}`},{text:`${this.respuesta.n2c1}`},{text:`${this.respuesta.n3c1}`},{text:'a. Cumplir programa de mantenimiento de señalamientos, y procedimiento P-IM-04 \n b. Cumplir procedimiento P-OP-01.',fontSize:8},],
                   [{text:'2',fontSize:8},{text:'Conexión e inicio de la descarga de producto.',fontSize:8},{text:'a. Equipos en mal estado \n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Derrame o fuga durante la conexión y/o operación de llenado de tanque de almacenamiento.',fontSize:8},{text:'a. Conexión deficiente o equipo en mal estado.\n b. Conexiones o manguera en mal estado, o falta de juntas. \n c. No se conecta la manguera de recuperación de vapores y la válvula de presión vacío no opera. \n d. Falta de válvula de sobrellenado. \n e. Falta de hermeticidad en las conexiones de las boquillas del tanque. \n f. No se cumple el procedimiento.',fontSize:8},{text:'a. Mangueras, conexiones, accesorios,válvulas de sobrellenado, accesorios de tanques en buen estado. \n b. Alarma de alto nivel. \n c. Pisos impermeables con pendiente del 1% a registros de drenaje. \n d. Procedimiento de descarga en estaciones de servicio \n e. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir programa de mantenimiento de mangueras, conexiones, accesorios, válvulas de sobrellenado, así como de accesorios de tanques y contenedores.P-IM-01 \n b. Cumplir procedimiento de P-0P-01.',fontSize:8},],
                   [{text:'3',fontSize:8},{text:'Descarga de producto por autotanque.',fontSize:8},{text:'a. Deslizamiento de autotanque, con desprendimiento de la manguera de descarga en ambos extremos.',fontSize:8},{text:'Derrame de producto.',fontSize:8},{text:'a. No se colocan las calzas al autotanque antes de iniciar la descarga de producto. \n b. Distracción del personal.',fontSize:8},{text:'a. Accesorios de descarga para el autotanque.\n  b. Válvula de 3 vías del autotanque.\n c. Personal capacitado.\n d. Plan de Respuesta a emergencias',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Capacitar al personal en el procedimiento P-OP-01.\n b. Cumplir procedimiento p-OP-01.\n c. Verificar estado de accesorios de descarga (calzas).\n d. Verificar la operación de la válvula de 3 vías del autotanque.',fontSize:8,pageBreak:'after'},],
                   [{text:'4',fontSize:8},{text:'Descarga de producto.',fontSize:8},{text:'a. Equipos en mal estado \nb. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Incendio durante el llenado del tanque de almacenamiento.',fontSize:8},{text:'Previamente ocurre fuga o derrame y la presencia de una fuente de ignición entre otras:a. Uso de celular.\n b. Portar ropa sintética.\n c. Fumar, encender fuego.\nd. Corto circuito en instalación eléctrica.\n e. Tormenta eléctrica.\n f. Corto circuito en instalación eléctrica del autotanque.\n g. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Mangueras, conexiones, accesorios,válvulas de sobrellenado, accesorios de tanques en buen estado.\nb. Alarma de alto nivel.\n c. Pisos impermeables con pendiente del 1% a registros de drenaje. \n d. Procedimiento de descarga en estaciones de servicio.\n e. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir procedimiento de P-OP-01.\n b. Cumplir programa de mantenimiento de instalaciones eléctricas.P-IM-03.',fontSize:8},],
@@ -128,12 +302,15 @@ export class MenuPunto2Page implements OnInit {
       pageSize: 'LETTER',
       pageMargins: [22,120]
   };
+  
 
-    this.pdfMaker.generate(dd, 'V. Funciones de funcionalidad y responsabilidad.pdf');
+    this.pdfMaker.generate(dd,'V. Funciones de funcionalidad y responsabilidad.pdf');
     
     
-  }
+  };
 
 }
+
+
 
 

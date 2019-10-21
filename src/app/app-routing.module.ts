@@ -159,6 +159,9 @@ const routes: Routes = [
   { path: 'catorce31semarnat', loadChildren: './pages/catorce31semarnat/catorce31semarnat.module#Catorce31semarnatPageModule' },
   { path: 'catorce31legestatal', loadChildren: './pages/catorce31legestatal/catorce31legestatal.module#Catorce31legestatalPageModule' },
   { path: 'catorce31leglocal', loadChildren: './pages/catorce31leglocal/catorce31leglocal.module#Catorce31leglocalPageModule' },
+  { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
+  { path: 'punto-uno-procedimiento', loadChildren: './pages/punto-uno-procedimiento/punto-uno-procedimiento.module#PuntoUnoProcedimientoPageModule' },
+  { path: 'punto-uno-evidencia', loadChildren: './pages/punto-uno-evidencia/punto-uno-evidencia.module#PuntoUnoEvidenciaPageModule' },
 
   
   
