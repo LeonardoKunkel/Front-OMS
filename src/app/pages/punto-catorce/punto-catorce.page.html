@@ -1,25 +1,43 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/"></ion-back-button>
-      </ion-buttons>
-    <ion-title class="ion-text-center">punto-catorce</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios">
-    <ion-slide>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-          <ion-card-title>Awesome Title</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
-
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goPuntoCatorce01()">
+          <ion-card-header>
+            <ion-card-title>FS-32 PLAN DE HALLAZGOS DERIVADOS DEL MONITOREO</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goPuntoCatorce02()">
+          <ion-card-header>
+            <ion-card-title>FS-31 EVALUACIÓN REQUISITOS LEGALES</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goPuntoCatorce03()">
+          <ion-card-header>
+            <ion-card-title>FS-30 RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goPuntoCatorce04()">
+          <ion-card-header>
+            <ion-card-title>FS-29 PROGRAMA DE MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

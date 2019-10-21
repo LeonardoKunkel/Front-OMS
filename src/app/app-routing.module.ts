@@ -146,26 +146,26 @@ const routes: Routes = [
   { path: 'fo06', loadChildren: './pages/fo06/fo06.module#Fo06PageModule' },
   { path: 'fo07', loadChildren: './pages/fo07/fo07.module#Fo07PageModule' },
   { path: 'procedimiento-punto-dos', loadChildren: './pages/procedimiento-punto-dos/procedimiento-punto-dos.module#ProcedimientoPuntoDosPageModule' },
+  { path: 'punto-diez', loadChildren: './pages/punto-diez/punto-diez.module#PuntoDiezPageModule' },
+  { path: 'punto-diezfs19', loadChildren: './pages/punto-diezfs19/punto-diezfs19.module#PuntoDiezfs19PageModule' },
+  { path: 'punto-diezfo09', loadChildren: './pages/punto-diezfo09/punto-diezfo09.module#PuntoDiezfo09PageModule' },
   { path: 'punto-catorce', loadChildren: './pages/punto-catorce/punto-catorce.module#PuntoCatorcePageModule' },
-  { path: 'punto-quince', loadChildren: './pages/punto-quince/punto-quince.module#PuntoQuincePageModule' },
-  { path: 'punto-diez-seis', loadChildren: './pages/punto-diez-seis/punto-diez-seis.module#PuntoDiezSeisPageModule' },
-  { path: 'punto-diez-siete', loadChildren: './pages/punto-diez-siete/punto-diez-siete.module#PuntoDiezSietePageModule' },
-  { path: 'punto-diez-ocho', loadChildren: './pages/punto-diez-ocho/punto-diez-ocho.module#PuntoDiezOchoPageModule' },
-  { path: 'punto-doce', loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule' },
-  { path: 'p12-carta-responsiva', loadChildren: './pages/p12-carta-responsiva/p12-carta-responsiva.module#P12CartaResponsivaPageModule' },
-  { path: 'p12-anexo-seguridad', loadChildren: './pages/p12-anexo-seguridad/p12-anexo-seguridad.module#P12AnexoSeguridadPageModule' },
-  { path: 'p12-seguridad-contratista', loadChildren: './pages/p12-seguridad-contratista/p12-seguridad-contratista.module#P12SeguridadContratistaPageModule' },
-  { path: 'punto-trece', loadChildren: './pages/punto-trece/punto-trece.module#PuntoTrecePageModule' },
-  { path: 'p13-acta-conformacion', loadChildren: './pages/p13-acta-conformacion/p13-acta-conformacion.module#P13ActaConformacionPageModule' },
-  { path: 'p13-programa-simulacros', loadChildren: './pages/p13-programa-simulacros/p13-programa-simulacros.module#P13ProgramaSimulacrosPageModule' },
-  { path: 'p13-planeacion-simulacros', loadChildren: './pages/p13-planeacion-simulacros/p13-planeacion-simulacros.module#P13PlaneacionSimulacrosPageModule' },
-  { path: 'p13-evaluacion-simulacros', loadChildren: './pages/p13-evaluacion-simulacros/p13-evaluacion-simulacros.module#P13EvaluacionSimulacrosPageModule' },
-  { path: 'p13-planes-respuesta-emergencia', loadChildren: './pages/p13-planes-respuesta-emergencia/p13-planes-respuesta-emergencia.module#P13PlanesRespuestaEmergenciaPageModule' },
-  { path: 'p13-reparacion-respuesta-emergencia', loadChildren: './pages/p13-reparacion-respuesta-emergencia/p13-reparacion-respuesta-emergencia.module#P13ReparacionRespuestaEmergenciaPageModule' },
-  { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
-  { path: 'punto-uno-procedimiento', loadChildren: './pages/punto-uno-procedimiento/punto-uno-procedimiento.module#PuntoUnoProcedimientoPageModule' },
-  { path: 'punto-uno-evidencia', loadChildren: './pages/punto-uno-evidencia/punto-uno-evidencia.module#PuntoUnoEvidenciaPageModule' },
-  { path: 'punto-dos-evidencia', loadChildren: './pages/punto-dos-evidencia/punto-dos-evidencia.module#PuntoDosEvidenciaPageModule' },
+  { path: 'puntocatorcefs29', loadChildren: './pages/puntocatorcefs29/puntocatorcefs29.module#Puntocatorcefs29PageModule' },
+  { path: 'puntocatorce30', loadChildren: './pages/puntocatorce30/puntocatorce30.module#Puntocatorce30PageModule' },
+  { path: 'puntocatorce31', loadChildren: './pages/puntocatorce31/puntocatorce31.module#Puntocatorce31PageModule' },
+  { path: 'puntocatorce32', loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule' },  { path: 'catorce31asea', loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule' },
+  { path: 'catorce31comision', loadChildren: './pages/catorce31comision/catorce31comision.module#Catorce31comisionPageModule' },
+  { path: 'catorce31secretaria', loadChildren: './pages/catorce31secretaria/catorce31secretaria.module#Catorce31secretariaPageModule' },
+  { path: 'catorce31semarnat', loadChildren: './pages/catorce31semarnat/catorce31semarnat.module#Catorce31semarnatPageModule' },
+  { path: 'catorce31legestatal', loadChildren: './pages/catorce31legestatal/catorce31legestatal.module#Catorce31legestatalPageModule' },
+  { path: 'catorce31leglocal', loadChildren: './pages/catorce31leglocal/catorce31leglocal.module#Catorce31leglocalPageModule' },
+
+  
+  
+
+
+
+
 
 
 
@@ -179,3 +179,12 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
+
+
+
+
+
+
+
+

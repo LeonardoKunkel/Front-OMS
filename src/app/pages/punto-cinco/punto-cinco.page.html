@@ -13,86 +13,81 @@
  
 </ion-header>
 
-<ion-content>
-
+<ion-content>  
   <ion-grid fixed>
     <ion-row>
-      <ion-card class="fondo">
-          <ion-col size="12">
-              <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-                  <ion-list>
+      <ion-col size="12">
+        <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+          <ion-list>
+            <ion-item-divider color="secondary" class="ion-text-center">
+              <ion-label >
+                Datos del Representante Técnico
+              </ion-label>
+            </ion-item-divider>
+      
+            
+              <ion-label>Fecha</ion-label>
+              <ion-datetime name='fecha' value="2019-07-04" placeholder="Selecione la Fecha" ngModel></ion-datetime>
               
-                    <ion-item-divider color="secondary" class="ion-text-center">
-                      <ion-label >
-                        Datos del Representante Técnico
-                      </ion-label>
-                    </ion-item-divider>
-              
-                    <ion-item>
-                      <ion-label>Fecha</ion-label>
-                      <ion-datetime name='fecha' value="2019-07-04" placeholder="Selecione la Fecha" ngModel></ion-datetime>
-                    </ion-item> 
-              
-                    <ion-item>
-                      <ion-label position="floating" >Nombre del encargado</ion-label>
-                      <ion-input name='nombreEncargado' ngModel required></ion-input>
-                    </ion-item>
-              
-                    <ion-item>
-                      <ion-label position="floating" >Correo Electrónico</ion-label>
-                      <ion-input name='correo' ngModel required></ion-input>
-                    </ion-item>
-              
-                    <ion-item>
-                      <ion-label position="floating" >Teléfono</ion-label>
-                      <ion-input name='telefono' ngModel required></ion-input>
-                    </ion-item>
-              
-                    <ion-item-divider color="secondary" class="ion-text-center">
-                      <ion-label >
-                        Datos de la estación
-                      </ion-label>
-                    </ion-item-divider>
       
-                    <ion-item>
-                      <ion-label position="floating" >Razón Social</ion-label>
-                      <ion-input name='razonSocial' ngModel required ></ion-input>
-                    </ion-item>
+            <ion-item>
+              <ion-label position="floating" >Nombre del encargado</ion-label>
+              <ion-input name='nombreEncargado' ngModel required></ion-input>
+            </ion-item>
       
-                    <ion-item>
-                      <ion-label position="floating" >Calle y número</ion-label>
-                      <ion-input name='direccion'  required  ngModel></ion-input>
-                    </ion-item>
+            <ion-item>
+              <ion-label position="floating" >Correo Electrónico</ion-label>
+              <ion-input name='correo' ngModel required></ion-input>
+            </ion-item>
       
-                    <ion-item>
-                      <ion-label position="floating">Ingresa tu CP</ion-label>
-                      <ion-input name="cp"  required ngModel (ionChange)="cambio($event)" ></ion-input>
-                    </ion-item>
+            <ion-item>
+              <ion-label position="floating" >Teléfono</ion-label>
+              <ion-input name='telefono' ngModel required></ion-input>
+            </ion-item>
       
-                    <ion-item>
-                      <ion-label position="floating">Estado</ion-label>
-                      <ion-input name="estado" autocomplete="false" [value]="respuestaCP.estado" ngModel required></ion-input>
-                    </ion-item>
-      
-                    <ion-item>
-                      <ion-label>Colonia</ion-label>
-                      <ion-select name="colonia" placeholder="Selecciona una colonia" ngModel required>
-                        <ion-select-option 
-                          *ngFor="let colonia of respuestaCP.colonias" 
-                          value="{{colonia}}"
-                        >{{colonia}}</ion-select-option>
-                      </ion-select>
-                    </ion-item>
-                  </ion-list>
-      
-                  <ion-button type="submit">
-                    Guardar Datos
-                  </ion-button>  
-      
-                </form>
-            </ion-col>
-      </ion-card>
-   
+            <ion-item-divider color="secondary" class="ion-text-center">
+              <ion-label >
+                Datos de la estación
+              </ion-label>
+            </ion-item-divider>
+
+            <ion-item>
+              <ion-label position="floating" >Razón Social</ion-label>
+              <ion-input name='razonSocial' ngModel required ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" >Calle y número</ion-label>
+              <ion-input name='direccion'  required  ngModel></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Ingresa tu CP</ion-label>
+              <ion-input name="cp"  required ngModel (ionChange)="cambio($event)" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Estado</ion-label>
+              <ion-input name="estado" autocomplete="false" [value]="respuestaCP.estado" ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Colonia</ion-label>
+              <ion-select name="colonia" placeholder="Selecciona una colonia" ngModel required>
+                <ion-select-option 
+                  *ngFor="let colonia of respuestaCP.colonias" 
+                  value="{{colonia}}"
+                >{{colonia}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+            <ion-button type="submit">
+              Guardar Datos
+            </ion-button>  
+
+          </form>
+      </ion-col>
     </ion-row>
   </ion-grid>
 
@@ -106,5 +101,4 @@
     </ion-fab-list>
   
   </ion-fab>
-
 </ion-content>

@@ -47,29 +47,17 @@ export class MenuSasisopaPage implements OnInit {
     this.navCtrl.navigateForward('/punto-ocho');
   }
 
+  goPuntoDiez(){
+    this.navCtrl.navigateForward('/punto-diez');
+    console.log('entraste a la página X')
+  }
   
   goPuntoOnce() {
     this.navCtrl.navigateForward('/punto-once');
   }
-  goPuntoDoce() {
-    this.navCtrl.navigateForward('/punto-doce');
+
+  goPuntoCatorce() {
+    this.navCtrl.navigateForward('/punto-catorce');
+    console.log('entraste a la página XIV')
   }
-  goPuntoTrece() {
-    this.navCtrl.navigateForward('/punto-trece');
-  }
- goPuntoCatorce(){
-  this.navCtrl.navigateForward('/punto-catorce');
- }
- goPuntoQuince(){
-  this.navCtrl.navigateForward('/punto-quince');
- }
- goPuntoDiezSeis(){
-  this.navCtrl.navigateForward('/punto-diez-seis');
- }
- goPuntoDiezSiete(){
-  this.navCtrl.navigateForward('/punto-diez-siete');
- }
- goPuntoDiezOcho(){
-  this.navCtrl.navigateForward('/punto-diez-ocho');
- }
 }

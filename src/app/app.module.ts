@@ -1,4 +1,4 @@
-  import { ProcedimientoCincoPageModule } from './pages/procedimiento-cinco/procedimiento-cinco.module';
+import { ProcedimientoCincoPageModule } from './pages/procedimiento-cinco/procedimiento-cinco.module';
 import { AyudaPageModule } from './pages/ayuda/ayuda.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 
-import { Camera } from '@ionic-native/camera/ngx'
 
 
 
@@ -30,9 +29,9 @@ import { Camera } from '@ionic-native/camera/ngx'
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule, AyudaPageModule,
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,AyudaPageModule,
     ProcedimientoCincoPageModule,
     FullCalendarModule,
     EditPoliticaPageModule,
@@ -47,8 +46,7 @@ import { Camera } from '@ionic-native/camera/ngx'
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     File,
     FileOpener,
-    DocumentViewer,
-    Camera
+    DocumentViewer
   ],
   bootstrap: [AppComponent]
 })
