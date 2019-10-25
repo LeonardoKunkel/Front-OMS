@@ -8,25 +8,259 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./punto-dos-riesgos.page.scss'],
 })
 export class PuntoDosRiesgosPage implements OnInit {
-
+  respuesta : any={};
   @ViewChild('slider') slider: IonSlides
 
   constructor(private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
-    this.slider.lockSwipes(true);
+    //this.slider.lockSwipes(true);
   }
 
-  goBack() {
-    this.slider.lockSwipes(false);
-    this.slider.slidePrev();
-    this.slider.lockSwipes(true);
-  }
+  
 
-  goNext(){
-    this.slider.lockSwipes(false);
-    this.slider.slideNext();
-    this.slider.lockSwipes(true);
+  enviarForm(formulario){
+    console.log('Enviado');
+    var n1c1= formulario.value.n1c1
+    var n2c1= formulario.value.n2c1
+    var n3c1= formulario.value.n3c1
+    var n1c2= formulario.value.n1c2
+    var n2c2= formulario.value.n2c2
+    var n3c2= formulario.value.n3c2
+    var n1c3= formulario.value.n1c3
+    var n2c3= formulario.value.n2c3
+    var n3c3= formulario.value.n3c3
+    var n1c4= formulario.value.n1c4
+    var n2c4= formulario.value.n2c4
+    var n3c4= formulario.value.n3c4
+    var n1c5= formulario.value.n1c5
+    var n2c5= formulario.value.n2c5
+    var n3c5= formulario.value.n3c5
+    var n1c6= formulario.value.n1c6
+    var n2c6= formulario.value.n2c6
+    var n3c6= formulario.value.n3c6
+    var n1c7= formulario.value.n1c7
+    var n2c7= formulario.value.n2c7
+    var n3c7= formulario.value.n3c7
+    var n1c8= formulario.value.n1c8
+    var n2c8= formulario.value.n2c8
+    var n3c8= formulario.value.n3c8
+    var n1c9= formulario.value.n1c9
+    var n2c9= formulario.value.n2c9
+    var n3c9= formulario.value.n3c9
+    var n1c10= formulario.value.n1c10
+    var n2c10= formulario.value.n2c10
+    var n3c10= formulario.value.n3c10
+    var n1c11= formulario.value.n1c11
+    var n2c11= formulario.value.n2c11
+    var n3c11= formulario.value.n3c11
+    var n1c12= formulario.value.n1c12
+    var n2c12= formulario.value.n2c12
+    var n3c12= formulario.value.n3c12
+    var n1c13= formulario.value.n1c13
+    var n2c13= formulario.value.n2c13
+    var n3c13= formulario.value.n3c13
+    var n1c14= formulario.value.n1c14
+    var n2c14= formulario.value.n2c14
+    var n3c14= formulario.value.n3c14
+    var n1c15= formulario.value.n1c15
+    var n2c15= formulario.value.n2c15
+    var n3c15= formulario.value.n3c15
+    var n1c16= formulario.value.n1c16
+    var n2c16= formulario.value.n2c16
+    var n3c16= formulario.value.n3c16
+    var n1c17= formulario.value.n1c17
+    var n2c17= formulario.value.n2c17
+    var n3c17= formulario.value.n3c17
+    var n1c18= formulario.value.n1c18
+    var n2c18= formulario.value.n2c18
+    var n3c18= formulario.value.n3c18
+    var n1c19= formulario.value.n1c19
+    var n2c19= formulario.value.n2c19
+    var n3c19= formulario.value.n3c19
+    var n1c20= formulario.value.n1c20
+    var n2c20= formulario.value.n2c20
+    var n3c20= formulario.value.n3c20
+    var n1c21= formulario.value.n1c21
+    var n2c21= formulario.value.n2c21
+    var n3c21= formulario.value.n3c21
+    var n1c22= formulario.value.n1c22
+    var n2c22= formulario.value.n2c22
+    var n3c22= formulario.value.n3c22
+    var n1c23= formulario.value.n1c23
+    var n2c23= formulario.value.n2c23
+    var n3c23= formulario.value.n3c23
+    var n1c24= formulario.value.n1c24
+    var n2c24= formulario.value.n2c24
+    var n3c24= formulario.value.n3c24
+    var n1c25= formulario.value.n1c25
+    var n2c25= formulario.value.n2c25
+    var n3c25= formulario.value.n3c25
+    var n1c26= formulario.value.n1c26
+    var n2c26= formulario.value.n2c26
+    var n3c26= formulario.value.n3c26
+    var n1c27= formulario.value.n1c27
+    var n2c27= formulario.value.n2c27
+    var n3c27= formulario.value.n3c27
+    var n1c28= formulario.value.n1c28
+    var n2c28= formulario.value.n2c28
+    var n3c28= formulario.value.n3c28
+    var n1c29= formulario.value.n1c29
+    var n2c29= formulario.value.n2c29
+    var n3c29= formulario.value.n3c29
+    var n1c30= formulario.value.n1c30
+    var n2c30= formulario.value.n2c30
+    var n3c30= formulario.value.n3c30
+    var n1c31= formulario.value.n1c31
+    var n2c31= formulario.value.n2c31
+    var n3c31= formulario.value.n3c31
+    var n1c32= formulario.value.n1c32
+    var n2c32= formulario.value.n2c32
+    var n3c32= formulario.value.n3c32
+    var n1c33= formulario.value.n1c33
+    var n2c33= formulario.value.n2c33
+    var n3c33= formulario.value.n3c33
+    var n1c34= formulario.value.n1c34
+    var n2c34= formulario.value.n2c34
+    var n3c34= formulario.value.n3c34
+    var n1c35= formulario.value.n1c35
+    var n2c35= formulario.value.n2c35
+    var n3c35= formulario.value.n3c35
+    var n1c36= formulario.value.n1c36
+    var n2c36= formulario.value.n2c36
+    var n3c36= formulario.value.n3c36
+    var n1c37= formulario.value.n1c37
+    var n2c37= formulario.value.n2c37
+    var n3c37= formulario.value.n3c37
+    var n1c38= formulario.value.n1c38
+    var n2c38= formulario.value.n2c38
+    var n3c38= formulario.value.n3c38
+    var n1c39= formulario.value.n1c39
+    var n2c39= formulario.value.n2c39
+    var n3c39= formulario.value.n3c39
+
+    this.respuesta={
+      n1c1,
+n2c1,
+n3c1,
+n1c2,
+n2c2,
+n3c2,
+n1c3,
+n2c3,
+n3c3,
+n1c4,
+n2c4,
+n3c4,
+n1c5,
+n2c5,
+n3c5,
+n1c6,
+n2c6,
+n3c6,
+n1c7,
+n2c7,
+n3c7,
+n1c8,
+n2c8,
+n3c8,
+n1c9,
+n2c9,
+n3c9,
+n1c10,
+n2c10,
+n3c10,
+n1c11,
+n2c11,
+n3c11,
+n1c12,
+n2c12,
+n3c12,
+n1c13,
+n2c13,
+n3c13,
+n1c14,
+n2c14,
+n3c14,
+n1c15,
+n2c15,
+n3c15,
+n1c16,
+n2c16,
+n3c16,
+n1c17,
+n2c17,
+n3c17,
+n1c18,
+n2c18,
+n3c18,
+n1c19,
+n2c19,
+n3c19,
+n1c20,
+n2c20,
+n3c20,
+n1c21,
+n2c21,
+n3c21,
+n1c22,
+n2c22,
+n3c22,
+n1c23,
+n2c23,
+n3c23,
+n1c24,
+n2c24,
+n3c24,
+n1c25,
+n2c25,
+n3c25,
+n1c26,
+n2c26,
+n3c26,
+n1c27,
+n2c27,
+n3c27,
+n1c28,
+n2c28,
+n3c28,
+n1c29,
+n2c29,
+n3c29,
+n1c30,
+n2c30,
+n3c30,
+n1c31,
+n2c31,
+n3c31,
+n1c32,
+n2c32,
+n3c32,
+n1c33,
+n2c33,
+n3c33,
+n1c34,
+n2c34,
+n3c34,
+n1c35,
+n2c35,
+n3c35,
+n1c36,
+n2c36,
+n3c36,
+n1c37,
+n2c37,
+n3c37,
+n1c38,
+n2c38,
+n3c38,
+n1c39,
+n2c39,
+n3c39,
+    }
+
+    console.log(this.respuesta);
+    
   }
   
   pdf(){

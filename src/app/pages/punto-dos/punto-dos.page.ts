@@ -54,6 +54,9 @@ export class PuntoDosPage implements OnInit {
   goProcedimiento(){
     this.navCtrl.navigateForward('/procedimiento-punto-dos');
   }
+  goEvidencia(){
+    this.navCtrl.navigateForward('/punto-dos-evidencia');
+  }
 
   /* async enviarPuntoDos() {
     const alert = await this.alertCtrl.create({
