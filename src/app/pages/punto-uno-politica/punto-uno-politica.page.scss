@@ -8,11 +8,15 @@
     height: 3px;
 }
 .carta{
-    background-color: yellow;
-    // background-image: url('../../../assets/Fondos/Dots2_100.png');
+    background-image: url('../../../assets/FondosEstilos/Dots2_100.png');
+}
+.lineaN{
+    background-color:#D79043 ;
+    height: 5px;
 }
 @media(max-width:1000px){
     .politica1{
         font-size: 20px;
+
     }
 }

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Lista </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="punto-tres"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios"><ion-slide>
+      <ion-button id="btn-down-req" (click)="downloadListReqLeg()">
+        <ion-icon slot="end" name="arrow-round-down"></ion-icon>
+        Descargar lista de requisitos legales
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,78 +1,74 @@
 <ion-header no-border>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="openCalendar()">
+  <ion-toolbar >
+    <ion-buttons slot="end">
+      <ion-button (click)="openCalendar()" color="primary">
         <ion-icon slot="start" name="calendar"></ion-icon>
         Calendario
       </ion-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title class="ion-text-center">
       Procesos
     </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-toolbar>
-    <ion-segment (ionChange)="segmentChanged($event)">
+  </ion-toolbar> <hr class="lineaN">
+  <ion-toolbar color="light">
+    <ion-segment (ionChange)="segmentChanged($event)" >
       <ion-segment-button value="camera">
+        <label for="">Camara</label>
         <ion-icon name="camera"></ion-icon>
       </ion-segment-button>
-      <ion-segment-button value="help" (click)="abriAyuda()">
+      <label for="Ayuda"></label>
+      <ion-segment-button value="help" (click)="abriAyuda()" checked>
         <ion-icon name="help-circle"></ion-icon>
       </ion-segment-button>
       <ion-segment-button value="mapa" routerLink="/mapa">
+        <label for="Mapa"></label>
         <ion-icon name="map"></ion-icon>
       </ion-segment-button>
     </ion-segment>
-  </ion-toolbar>
-  
+  </ion-toolbar> 
+</ion-header><br>
 
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size=12>
-        <ion-button><ion-icon slot="icon-only" name="clipboard"></ion-icon> SASISOPA</ion-button>
-        <ion-button><ion-icon slot="icon-only" name="list"></ion-icon> NOM-005</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12" sizeMd="6">
-        <ion-card mode="ios">
-          <img src="../../../assets/imagenes/despacho.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>Despacho</ion-card-subtitle>
-            <ion-card-title>Litro por Litro</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6">
-        <ion-card mode="ios">
-          <img src="../../../assets/imagenes/banner1-08.png" />
-          <ion-card-header>
-            <ion-card-subtitle>Consejo</ion-card-subtitle>
-            <ion-card-title>Obten tu SASISOPA</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6">
-        <ion-card mode="ios">
-          <img src="../../../assets/imagenes/sasisopa.png" />
-          <ion-card-header>
-            <ion-card-subtitle>Introduccion</ion-card-subtitle>
-            <ion-card-title>SASISOPA</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-    
+<ion-content padding>
+  <div class="fondo">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12" sizeMd="6">
+            <ion-card mode="ios">
+              <img src="../../../assets/imagenes/despacho.jpg" />
+              <ion-card-header>
+                <ion-card-subtitle>Despacho</ion-card-subtitle>
+                <ion-card-title>Litro por Litro</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6">
+            <ion-card mode="ios">
+              <img src="../../../assets/imagenes/banner1-08.png" />
+              <ion-card-header>
+                <ion-card-subtitle>Consejo</ion-card-subtitle>
+                <ion-card-title>Obten tu SASISOPA</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6">
+            <ion-card mode="ios">
+              <img src="../../../assets/imagenes/sasisopa.png" />
+              <ion-card-header>
+                <ion-card-subtitle>Introduccion</ion-card-subtitle>
+                <ion-card-title>SASISOPA</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
 </ion-content>

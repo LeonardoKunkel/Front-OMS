@@ -162,6 +162,10 @@ const routes: Routes = [
   { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
   { path: 'punto-uno-procedimiento', loadChildren: './pages/punto-uno-procedimiento/punto-uno-procedimiento.module#PuntoUnoProcedimientoPageModule' },
   { path: 'punto-uno-evidencia', loadChildren: './pages/punto-uno-evidencia/punto-uno-evidencia.module#PuntoUnoEvidenciaPageModule' },
+  { path: 'punto-dos-evidencia', loadChildren: './pages/punto-dos-evidencia/punto-dos-evidencia.module#PuntoDosEvidenciaPageModule' },
+  { path: 'punto-tres-procedimiento', loadChildren: './pages/punto-tres-procedimiento/punto-tres-procedimiento.module#PuntoTresProcedimientoPageModule' },
+  { path: 'punto-tres-lista', loadChildren: './pages/punto-tres-lista/punto-tres-lista.module#PuntoTresListaPageModule' },
+  { path: 'punto-tres-evidencia', loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule' },
 
   
   
