@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/punto-dos"></ion-back-button>
     </ion-buttons>
     <ion-title>Evaluación de aspectos ambientales</ion-title>
   </ion-toolbar>
@@ -12,7 +12,7 @@
     <ion-row>
       <ion-col size="12">
         <div>
-          <h3>
+          <h3 class="ion-text-justify">
             Favor de llenar la frecuencia, naturaleza y magnitud de cada una de las tarjetas. En 
             caso de que estás ya tengas valores, es porque identificamos que en dichos elementos
             esos valores no deben cambiar. (Sugerimos no los cambies).
@@ -44,192 +44,233 @@
           <ion-row>
             <ion-col size="4">
               <ion-item>
-                <ion-label>F</ion-label>
-                <ion-input type="number"  min="0" ngModel name="n1c1"></ion-input>
+                <ion-label>F:</ion-label>
+                <ion-input type="number"  min="0" name="F1" [(ngModel)]="datos.F1"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col size="4">
               <ion-item>
-                <ion-label>N</ion-label>
-                <ion-input type="number" min="0" ngModel name="n2c1"></ion-input>
+                <ion-label>N:</ion-label>
+                <ion-input type="number" min="0" name="N1" [(ngModel)]="datos.N1" ></ion-input>
               </ion-item>
             </ion-col>
             <ion-col size="4">
               <ion-item>
-                <ion-label>M</ion-label>
-                <ion-input type="number"  min="0" ngModel name="n3c1"></ion-input>
+                <ion-label>M:</ion-label>
+                <ion-input type="number"  min="0" name="M1" [(ngModel)]="datos.M1"></ion-input>
               </ion-item>
               </ion-col>
           </ion-row>
         </ion-card-content>
       </ion-card>
-    </ion-slide><ion-slide>
-        <ion-card>
-            <ion-item>
-                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-            </ion-item>
-          <ion-card-header>
-            <ion-card-title>2. Toma muestra de producto (Recepción AT)</ion-card-title>
-            <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ul>
-              <li><p>Equipo/Lugar: Autotanque</p></li>
-              <li><p>Impacto ambiental: Aire</p></li>
-              <li><p>Real o Potencial: Real</p></li>
-              <li><p>Condición de operación: Rutinaria</p></li>
-            </ul>
-            <ion-row>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>Fa</ion-label>
-                    <ion-input type="number" ngModel name="n1c2" min="0"></ion-input>
-                  </ion-item>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+          <ion-item>
+              <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+          </ion-item>
+        <ion-card-header>
+          <ion-card-title>2. Toma muestra de producto (Recepción AT)</ion-card-title>
+          <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ul>
+            <li><p>Equipo/Lugar: Autotanque</p></li>
+            <li><p>Impacto ambiental: Aire</p></li>
+            <li><p>Real o Potencial: Real</p></li>
+            <li><p>Condición de operación: Rutinaria</p></li>
+          </ul>
+          <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>Fa</ion-label>
+                  <ion-input type="number"  min="0" name="F2" [(ngModel)]="datos.F2"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>N</ion-label>
+                  <ion-input type="number" min="0" name="N2" [(ngModel)]="datos.N2"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>M</ion-label>
+                  <ion-input type="number" min="0" name="M2" [(ngModel)]="datos.M2"></ion-input>
+                </ion-item>
                 </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>N</ion-label>
-                    <ion-input type="number"ngModel name="n2c2" min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>M</ion-label>
-                    <ion-input type="number"ngModel name="n3c2" min="0"></ion-input>
-                  </ion-item>
-                  </ion-col>
-              </ion-row>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
+            </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
     
-      <ion-slide>
+    <ion-slide>
+      <ion-card>
+          <ion-item>
+              <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+          </ion-item>
+        <ion-card-header>
+          <ion-card-title>3. Conexión de mangueras (Recepción AT)</ion-card-title>
+          <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ul>
+            <li><p>Equipo/Lugar: Autotanque y tanque de almacenamiento</p></li>
+            <li><p>Impacto ambiental: Aire</p></li>
+            <li><p>Real o Potencial: Real</p></li>
+            <li><p>Condición de operación: Rutinaria</p></li>
+          </ul>
+          <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>Fa</ion-label>
+                  <ion-input type="number"  min="0" name="F3" [(ngModel)]="datos.F3"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>N</ion-label>
+                  <ion-input type="number" min="0" name="N3" [(ngModel)]="datos.N3"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>M</ion-label>
+                  <ion-input type="number" min="0" name="M3" [(ngModel)]="datos.M3"></ion-input>
+                </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  
+    <ion-slide>
+      <ion-card>
+          <ion-item>
+              <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+          </ion-item>
+        <ion-card-header>
+          <ion-card-title>4. Descarga de hidrocarburo (Recepción AT)</ion-card-title>
+          <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ul>
+            <li><p>Equipo/Lugar: Autotanque y tanque de almacenamiento</p></li>
+            <li><p>Impacto ambiental: Aire</p></li>
+            <li><p>Real o Potencial: Real</p></li>
+            <li><p>Condición de operación: Rutinaria</p></li>
+          </ul>
+          <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>Fa</ion-label>
+                  <ion-input type="number"  min="0" name="F4" [(ngModel)]="datos.F4"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>N</ion-label>
+                  <ion-input type="number" min="0" name="N4" [(ngModel)]="datos.N4"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>M</ion-label>
+                  <ion-input type="number" min="0" name="M4" [(ngModel)]="datos.M4"></ion-input>
+                </ion-item>
+                </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  
+    <ion-slide>
+      <ion-card>
+          <ion-item>
+              <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+          </ion-item>
+        <ion-card-header>
+          <ion-card-title>5.Derrame durante en llenado (Recepción AT)</ion-card-title>
+          <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ul>
+            <li><p>Equipo/Lugar:Lugar: Autotanque y tanque de almacenamiento</p></li>
+            <li><p>Impacto ambiental: Aire</p></li>
+            <li><p>Real o Potencial: Real</p></li>
+            <li><p>Condición de operación: Emergencia</p></li>
+          </ul>
+          <ion-row>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>Fa</ion-label>
+                  <ion-input type="number"  min="0" name="F5" [(ngModel)]="datos.F5"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>N</ion-label>
+                  <ion-input type="number" min="0" name="N5" [(ngModel)]="datos.N5"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item>
+                  <ion-label>M</ion-label>
+                  <ion-input type="number" min="0" name="M5" [(ngModel)]="datos.M5"></ion-input>
+                </ion-item>
+                </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  
+    <ion-slide>
         <ion-card>
             <ion-item>
                 <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
             </ion-item>
           <ion-card-header>
-            <ion-card-title>3. Conexión de mangueras (Recepción AT)</ion-card-title>
+            <ion-card-title>6.Desconexión de Mangueras (Recepción AT)</ion-card-title>
             <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ul>
-              <li><p>Equipo/Lugar: Autotanque y tanque de almacenamiento</p></li>
+              <li><p>Equipo/Lugar:Autotanque y tanque de almacenamiento</p></li>
               <li><p>Impacto ambiental: Aire</p></li>
               <li><p>Real o Potencial: Real</p></li>
-              <li><p>Condición de operación: Rutinaria</p></li>
+              <li><p>Condición de operación:Rutinaria</p></li>
             </ul>
             <ion-row>
                 <ion-col size="4">
                   <ion-item>
                     <ion-label>Fa</ion-label>
-                    <ion-input type="number" vngModel name="n1c3" min="0"></ion-input>
+                    <ion-input type="number" min="0" name="F6" [(ngModel)]="datos.F6"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col size="4">
                   <ion-item>
                     <ion-label>N</ion-label>
-                    <ion-input type="number" ngModel name="n2c3" min="0"></ion-input>
+                    <ion-input type="number" min="0" name="N6" [(ngModel)]="datos.N6"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col size="4">
                   <ion-item>
                     <ion-label>M</ion-label>
-                    <ion-input type="number" ngModel name="n3c3" min="0"></ion-input>
-                  </ion-item>
-                  </ion-col>
-              </ion-row>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    
-      <ion-slide>
-        <ion-card>
-            <ion-item>
-                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-            </ion-item>
-          <ion-card-header>
-            <ion-card-title>4. Descarga de hidrocarburo (Recepción AT)</ion-card-title>
-            <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ul>
-              <li><p>Equipo/Lugar: Autotanque y tanque de almacenamiento</p></li>
-              <li><p>Impacto ambiental: Aire</p></li>
-              <li><p>Real o Potencial: Real</p></li>
-              <li><p>Condición de operación: Rutinaria</p></li>
-            </ul>
-            <ion-row>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>Fa</ion-label>
-                    <ion-input type="number" vngModel name="n1c4" min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>N</ion-label>
-                    <ion-input type="number" ngModel name="n2c4" min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>M</ion-label>
-                    <ion-input type="number" ngModel name="n3c4" min="0"></ion-input>
+                    <ion-input type="number" min="0" name="M6" [(ngModel)]="datos.M6"></ion-input>
                   </ion-item>
                   </ion-col>
             </ion-row>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-    
-      <ion-slide>
-        <ion-card>
-            <ion-item>
-                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-            </ion-item>
-          <ion-card-header>
-            <ion-card-title>5.Derrame durante en llenado (Recepción AT)</ion-card-title>
-            <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ul>
-              <li><p>Equipo/Lugar:Lugar: Autotanque y tanque de almacenamiento</p></li>
-              <li><p>Impacto ambiental: Aire</p></li>
-              <li><p>Real o Potencial: Real</p></li>
-              <li><p>Condición de operación: Emergencia</p></li>
-            </ul>
-            <ion-row>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>Fa</ion-label>
-                    <ion-input type="number" ngModel name="n1c5" min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>N</ion-label>
-                    <ion-input type="number"ngModel name="n2c5" min="0"></ion-input>
-                  </ion-item>
-                </ion-col>
-                <ion-col size="4">
-                  <ion-item>
-                    <ion-label>M</ion-label>
-                    <ion-input type="number"ngModel name="n3c5" min="0"></ion-input>
-                  </ion-item>
-                  </ion-col>
-            </ion-row>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    
+  
       <ion-slide>
           <ion-card>
               <ion-item>
                   <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
               </ion-item>
             <ion-card-header>
-              <ion-card-title>6.Desconexión de Mangueras (Recepción AT)</ion-card-title>
+              <ion-card-title>6.Escurrimiento de autotanque(Recepción AT)</ion-card-title>
               <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
@@ -243,38 +284,38 @@
                   <ion-col size="4">
                     <ion-item>
                       <ion-label>Fa</ion-label>
-                      <ion-input type="number" ngModel name="n1c6" min="0"></ion-input>
+                      <ion-input type="number"  min="0" name="F7" [(ngModel)]="datos.F7"></ion-input>
                     </ion-item>
                   </ion-col>
                   <ion-col size="4">
                     <ion-item>
                       <ion-label>N</ion-label>
-                      <ion-input type="number" ngModel name="n2c6" min="0"></ion-input>
+                      <ion-input type="number" min="0" name="N7" [(ngModel)]="datos.N7"></ion-input>
                     </ion-item>
                   </ion-col>
                   <ion-col size="4">
                     <ion-item>
                       <ion-label>M</ion-label>
-                      <ion-input type="number" ngModel name="n3c6" min="0"></ion-input>
+                      <ion-input type="number" min="0" name="M7" [(ngModel)]="datos.M7"></ion-input>
                     </ion-item>
                     </ion-col>
               </ion-row>
             </ion-card-content>
           </ion-card>
         </ion-slide>
-    
+  
         <ion-slide>
             <ion-card>
                 <ion-item>
                     <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                 </ion-item>
               <ion-card-header>
-                <ion-card-title>6.Escurrimiento de autotanque(Recepción AT)</ion-card-title>
+                <ion-card-title>7.Salida maniobra de autotanque(Recepción AT)</ion-card-title>
                 <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
               </ion-card-header>
               <ion-card-content>
                 <ul>
-                  <li><p>Equipo/Lugar:Autotanque y tanque de almacenamiento</p></li>
+                  <li><p>Equipo/Lugar:Autotanque</p></li>
                   <li><p>Impacto ambiental: Aire</p></li>
                   <li><p>Real o Potencial: Real</p></li>
                   <li><p>Condición de operación:Rutinaria</p></li>
@@ -283,114 +324,114 @@
                     <ion-col size="4">
                       <ion-item>
                         <ion-label>Fa</ion-label>
-                        <ion-input type="number"  ngModel name="n1c7" min="0"></ion-input>
+                        <ion-input type="number"  min="0" name="F8" [(ngModel)]="datos.F8"></ion-input>
                       </ion-item>
                     </ion-col>
                     <ion-col size="4">
                       <ion-item>
                         <ion-label>N</ion-label>
-                        <ion-input type="number" ngModel name="n2c7" min="0"></ion-input>
+                        <ion-input type="number" min="0" name="N8" [(ngModel)]="datos.N8"></ion-input>
                       </ion-item>
                     </ion-col>
                     <ion-col size="4">
                       <ion-item>
                         <ion-label>M</ion-label>
-                        <ion-input type="number" ngModel name="n3c7" min="0"></ion-input>
+                        <ion-input type="number" min="0" name="M8" [(ngModel)]="datos.M8"></ion-input>
                       </ion-item>
                       </ion-col>
                 </ion-row>
               </ion-card-content>
             </ion-card>
           </ion-slide>
-    
+         
+         
+        <ion-slide>
+            <ion-card>
+                <ion-item>
+                    <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                </ion-item>
+              <ion-card-header>
+                <ion-card-title>8.Almacenamiento derrame</ion-card-title>
+                <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <ul>
+                  <li><p>Equipo/Lugar:Tanque de almacenamiento</p></li>
+                  <li><p>Impacto ambiental: Aire</p></li>
+                  <li><p>Real o Potencial: Real</p></li>
+                  <li><p>Condición de operación:Emergencia</p></li>
+                </ul>
+                <ion-row>
+                    <ion-col size="4">
+                      <ion-item>
+                        <ion-label>Fa</ion-label>
+                        <ion-input type="number"  min="0" name="F9" [(ngModel)]="datos.F9"></ion-input>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col size="4">
+                      <ion-item>
+                        <ion-label>N</ion-label>
+                        <ion-input type="number" min="0" name="N9" [(ngModel)]="datos.N9"></ion-input>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col size="4">
+                      <ion-item>
+                        <ion-label>M</ion-label>
+                        <ion-input type="number" min="0" name="M9" [(ngModel)]="datos.M9"></ion-input>
+                      </ion-item>
+                      </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+  
           <ion-slide>
               <ion-card>
                   <ion-item>
                       <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                   </ion-item>
                 <ion-card-header>
-                  <ion-card-title>7.Salida maniobra de autotanque(Recepción AT)</ion-card-title>
+                  <ion-card-title>9.Venteo</ion-card-title>
                   <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
                 </ion-card-header>
                 <ion-card-content>
                   <ul>
-                    <li><p>Equipo/Lugar:Autotanque</p></li>
+                    <li><p>Equipo/Lugar:Tuberías de venteo</p></li>
                     <li><p>Impacto ambiental: Aire</p></li>
-                    <li><p>Real o Potencial: Real</p></li>
+                    <li><p>Real o Potencial: Potencial</p></li>
                     <li><p>Condición de operación:Rutinaria</p></li>
                   </ul>
                   <ion-row>
                       <ion-col size="4">
                         <ion-item>
                           <ion-label>Fa</ion-label>
-                          <ion-input type="number" ngModel name="n1c8" min="0"></ion-input>
+                          <ion-input type="number"  min="0" name="F10" [(ngModel)]="datos.F10"></ion-input>
                         </ion-item>
                       </ion-col>
                       <ion-col size="4">
                         <ion-item>
                           <ion-label>N</ion-label>
-                          <ion-input type="number"ngModel name="n2c8" min="0"></ion-input>
+                          <ion-input type="number" min="0" name="N10" [(ngModel)]="datos.N10"></ion-input>
                         </ion-item>
                       </ion-col>
                       <ion-col size="4">
                         <ion-item>
                           <ion-label>M</ion-label>
-                          <ion-input type="number"ngModel name="n3c8" min="0"></ion-input>
+                          <ion-input type="number" min="0" name="M10" [(ngModel)]="datos.M10"></ion-input>
                         </ion-item>
                         </ion-col>
                   </ion-row>
                 </ion-card-content>
               </ion-card>
             </ion-slide>
-           
-           
-          <ion-slide>
-              <ion-card>
-                  <ion-item>
-                      <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                  </ion-item>
-                <ion-card-header>
-                  <ion-card-title>8.Almacenamiento derrame</ion-card-title>
-                  <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
-                </ion-card-header>
-                <ion-card-content>
-                  <ul>
-                    <li><p>Equipo/Lugar:Tanque de almacenamiento</p></li>
-                    <li><p>Impacto ambiental: Aire</p></li>
-                    <li><p>Real o Potencial: Real</p></li>
-                    <li><p>Condición de operación:Emergencia</p></li>
-                  </ul>
-                  <ion-row>
-                      <ion-col size="4">
-                        <ion-item>
-                          <ion-label>Fa</ion-label>
-                          <ion-input type="number" ngModel name="n1c9" min="0"></ion-input>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size="4">
-                        <ion-item>
-                          <ion-label>N</ion-label>
-                          <ion-input type="number"ngModel name="n2c9" min="0"></ion-input>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size="4">
-                        <ion-item>
-                          <ion-label>M</ion-label>
-                          <ion-input type="number"ngModel name="n3c9" min="0"></ion-input>
-                        </ion-item>
-                        </ion-col>
-                  </ion-row>
-                </ion-card-content>
-              </ion-card>
-            </ion-slide>
-    
+  
             <ion-slide>
                 <ion-card>
                     <ion-item>
                         <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                     </ion-item>
                   <ion-card-header>
-                    <ion-card-title>9.Venteo</ion-card-title>
+                    <ion-card-title>10.Venteo incendio</ion-card-title>
                     <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
                   </ion-card-header>
                   <ion-card-content>
@@ -398,79 +439,79 @@
                       <li><p>Equipo/Lugar:Tuberías de venteo</p></li>
                       <li><p>Impacto ambiental: Aire</p></li>
                       <li><p>Real o Potencial: Potencial</p></li>
-                      <li><p>Condición de operación:Rutinaria</p></li>
+                      <li><p>Condición de operación:Emergencia</p></li>
                     </ul>
                     <ion-row>
                         <ion-col size="4">
                           <ion-item>
                             <ion-label>Fa</ion-label>
-                            <ion-input type="number" ngModel name="n1c10" min="0"></ion-input>
+                            <ion-input type="number"  min="0" name="F11" [(ngModel)]="datos.F11"></ion-input>
                           </ion-item>
                         </ion-col>
                         <ion-col size="4">
                           <ion-item>
                             <ion-label>N</ion-label>
-                            <ion-input type="number"ngModel name="n2c10" min="0"></ion-input>
+                            <ion-input type="number" min="0" name="N11" [(ngModel)]="datos.N11"></ion-input>
                           </ion-item>
                         </ion-col>
                         <ion-col size="4">
                           <ion-item>
                             <ion-label>M</ion-label>
-                            <ion-input type="number"ngModel name="n3c10" min="0"></ion-input>
+                            <ion-input type="number" min="0" name="M11" [(ngModel)]="datos.M11"></ion-input>
                           </ion-item>
                           </ion-col>
                     </ion-row>
                   </ion-card-content>
                 </ion-card>
               </ion-slide>
-    
+  
+              <ion-slide>
+                <ion-card>
+                    <ion-item>
+                        <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                    </ion-item>
+                  <ion-card-header>
+                    <ion-card-title>11.Retiro de aguas aceitosas(purgado de agua)</ion-card-title>
+                    <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ul>
+                      <li><p>Equipo/Lugar:Tanque de almacenamiento</p></li>
+                      <li><p>Impacto ambiental: Agua</p></li>
+                      <li><p>Real o Potencial: Real</p></li>
+                      <li><p>Condición de operación:Rutinaria</p></li>
+                    </ul>
+                    <ion-row>
+                        <ion-col size="4">
+                          <ion-item>
+                            <ion-label>F</ion-label>
+                            <ion-input type="number"  min="0" name="F12" [(ngModel)]="datos.F12"></ion-input>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size="4">
+                          <ion-item>
+                            <ion-label>N</ion-label>
+                            <ion-input type="number" min="0" name="N12" [(ngModel)]="datos.N12"></ion-input>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size="4">
+                          <ion-item>
+                            <ion-label>M</ion-label>
+                            <ion-input type="number" min="0" name="M12" [(ngModel)]="datos.M12"></ion-input>
+                          </ion-item>
+                          </ion-col>
+                    </ion-row>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+                           
               <ion-slide>
                   <ion-card>
                       <ion-item>
                           <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                       </ion-item>
                     <ion-card-header>
-                      <ion-card-title>10.Venteo incendio</ion-card-title>
-                      <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
-                    </ion-card-header>
-                    <ion-card-content>
-                      <ul>
-                        <li><p>Equipo/Lugar:Tuberías de venteo</p></li>
-                        <li><p>Impacto ambiental: Aire</p></li>
-                        <li><p>Real o Potencial: Potencial</p></li>
-                        <li><p>Condición de operación:Emergencia</p></li>
-                      </ul>
-                      <ion-row>
-                          <ion-col size="4">
-                            <ion-item>
-                              <ion-label>Fa</ion-label>
-                              <ion-input type="number" ngModel name="n1c11" min="0"></ion-input>
-                            </ion-item>
-                          </ion-col>
-                          <ion-col size="4">
-                            <ion-item>
-                              <ion-label>N</ion-label>
-                              <ion-input type="number"ngModel name="n2c11" min="0"></ion-input>
-                            </ion-item>
-                          </ion-col>
-                          <ion-col size="4">
-                            <ion-item>
-                              <ion-label>M</ion-label>
-                              <ion-input type="number"ngModel name="n3c11" min="0"></ion-input>
-                            </ion-item>
-                            </ion-col>
-                      </ion-row>
-                    </ion-card-content>
-                  </ion-card>
-                </ion-slide>
-    
-                <ion-slide>
-                  <ion-card>
-                      <ion-item>
-                          <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                      </ion-item>
-                    <ion-card-header>
-                      <ion-card-title>11.Retiro de aguas aceitosas(purgado de agua)</ion-card-title>
+                      <ion-card-title>12.Retiro de aguas aceitosas(purgado de agua)</ion-card-title>
                       <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
                     </ion-card-header>
                     <ion-card-content>
@@ -484,39 +525,39 @@
                           <ion-col size="4">
                             <ion-item>
                               <ion-label>F</ion-label>
-                              <ion-input type="number" ngModel name="n1c12" min="0"></ion-input>
+                              <ion-input type="number"  min="0" name="F13" [(ngModel)]="datos.F13"></ion-input>
                             </ion-item>
                           </ion-col>
                           <ion-col size="4">
                             <ion-item>
                               <ion-label>N</ion-label>
-                              <ion-input type="number"ngModel name="n2c12" min="0"></ion-input>
+                              <ion-input type="number" min="0" name="N13" [(ngModel)]="datos.N13"></ion-input>
                             </ion-item>
                           </ion-col>
                           <ion-col size="4">
                             <ion-item>
                               <ion-label>M</ion-label>
-                              <ion-input type="number"ngModel name="n3c12" min="0"></ion-input>
+                              <ion-input type="number" min="0" name="M13" [(ngModel)]="datos.M13"></ion-input>
                             </ion-item>
                             </ion-col>
                       </ion-row>
                     </ion-card-content>
                   </ion-card>
                 </ion-slide>
-                             
+  
                 <ion-slide>
                     <ion-card>
                         <ion-item>
                             <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                         </ion-item>
                       <ion-card-header>
-                        <ion-card-title>12.Retiro de aguas aceitosas(purgado de agua)</ion-card-title>
+                        <ion-card-title>13.Retiro de lodos(limpieza interior de tanque)</ion-card-title>
                         <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
                       </ion-card-header>
                       <ion-card-content>
                         <ul>
                           <li><p>Equipo/Lugar:Tanque de almacenamiento</p></li>
-                          <li><p>Impacto ambiental: Agua</p></li>
+                          <li><p>Impacto ambiental:Residuos Peligrosos</p></li>
                           <li><p>Real o Potencial: Real</p></li>
                           <li><p>Condición de operación:Rutinaria</p></li>
                         </ul>
@@ -524,33 +565,33 @@
                             <ion-col size="4">
                               <ion-item>
                                 <ion-label>F</ion-label>
-                                <ion-input type="number"  ngModel name="n1c13" min="0"></ion-input>
+                                <ion-input type="number"  min="0" name="F14" [(ngModel)]="datos.F14"></ion-input>
                               </ion-item>
                             </ion-col>
                             <ion-col size="4">
                               <ion-item>
                                 <ion-label>N</ion-label>
-                                <ion-input type="number" ngModel name="n2c13" min="0"></ion-input>
+                                <ion-input type="number" min="0" name="N14" [(ngModel)]="datos.N14"></ion-input>
                               </ion-item>
                             </ion-col>
                             <ion-col size="4">
                               <ion-item>
                                 <ion-label>M</ion-label>
-                                <ion-input type="number" ngModel name="n3c13" min="0"></ion-input>
+                                <ion-input type="number" min="0" name="M14" [(ngModel)]="datos.M14"></ion-input>
                               </ion-item>
                               </ion-col>
                         </ion-row>
                       </ion-card-content>
                     </ion-card>
                   </ion-slide>
-    
+  
                   <ion-slide>
                       <ion-card>
                           <ion-item>
                               <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                           </ion-item>
                         <ion-card-header>
-                          <ion-card-title>13.Retiro de lodos(limpieza interior de tanque)</ion-card-title>
+                          <ion-card-title>Retiro de aguas aceitosas y materiales impregnados(limpieza de bocatomas)</ion-card-title>
                           <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
                         </ion-card-header>
                         <ion-card-content>
@@ -564,39 +605,39 @@
                               <ion-col size="4">
                                 <ion-item>
                                   <ion-label>F</ion-label>
-                                  <ion-input type="number" ngModel name="n1c14" min="0"></ion-input>
+                                  <ion-input type="number"  min="0" name="F15" [(ngModel)]="datos.F15"></ion-input>
                                 </ion-item>
                               </ion-col>
                               <ion-col size="4">
                                 <ion-item>
                                   <ion-label>N</ion-label>
-                                  <ion-input type="number"ngModel name="n2c14" min="0"></ion-input>
+                                  <ion-input type="number" min="0" name="N15" [(ngModel)]="datos.N15"></ion-input>
                                 </ion-item>
                               </ion-col>
                               <ion-col size="4">
                                 <ion-item>
                                   <ion-label>M</ion-label>
-                                  <ion-input type="number"ngModel name="n3c14" min="0"></ion-input>
+                                  <ion-input type="number" min="0" name="M15" [(ngModel)]="datos.M15"></ion-input>
                                 </ion-item>
                                 </ion-col>
                           </ion-row>
                         </ion-card-content>
                       </ion-card>
                     </ion-slide>
-    
+  
                     <ion-slide>
                         <ion-card>
                             <ion-item>
                                 <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
                             </ion-item>
                           <ion-card-header>
-                            <ion-card-title>Retiro de aguas aceitosas y materiales impregnados(limpieza de bocatomas)</ion-card-title>
+                            <ion-card-title>Generación de aguas aceitosas y materiales impregnados(limpieza del área)</ion-card-title>
                             <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
                           </ion-card-header>
                           <ion-card-content>
                             <ul>
-                              <li><p>Equipo/Lugar:Tanque de almacenamiento</p></li>
-                              <li><p>Impacto ambiental:Residuos Peligrosos</p></li>
+                              <li><p>Equipo/Lugar:Área de tanque de almacenamiento</p></li>
+                              <li><p>Impacto ambiental:Agua</p></li>
                               <li><p>Real o Potencial: Real</p></li>
                               <li><p>Condición de operación:Rutinaria</p></li>
                             </ul>
@@ -604,1015 +645,976 @@
                                 <ion-col size="4">
                                   <ion-item>
                                     <ion-label>F</ion-label>
-                                    <ion-input type="number" ngModel name="n1c15" min="0"></ion-input>
+                                    <ion-input type="number"  name="F16" [(ngModel)]="datos.F16" min="0"></ion-input>
                                   </ion-item>
                                 </ion-col>
                                 <ion-col size="4">
                                   <ion-item>
                                     <ion-label>N</ion-label>
-                                    <ion-input type="number"ngModel name="n2c15" min="0"></ion-input>
+                                    <ion-input type="number" name="N16" [(ngModel)]="datos.N16" min="0"></ion-input>
                                   </ion-item>
                                 </ion-col>
                                 <ion-col size="4">
                                   <ion-item>
                                     <ion-label>M</ion-label>
-                                    <ion-input type="number"ngModel name="n3c15" min="0"></ion-input>
+                                    <ion-input type="number" name="M16" [(ngModel)]="datos.M16" min="0"></ion-input>
                                   </ion-item>
                                   </ion-col>
                             </ion-row>
                           </ion-card-content>
                         </ion-card>
                       </ion-slide>
-    
+                     
+                      <ion-slide >
+                        <ion-card color="success">
+                            <ion-card-title>ÁREA:</ion-card-title>
+                            <ion-card-content>
+                              MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS
+                            </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
                       <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Generación de aguas aceitosas y materiales impregnados(limpieza del área)</ion-card-title>
-                              <ion-card-subtitle>Almacenamiento de Combustibles</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Área de tanque de almacenamiento</p></li>
-                                <li><p>Impacto ambiental:Agua</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number"  ngModel name="n1c16" min="0"></ion-input>
-                                    </ion-item>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Colocación de la pistola en el vehículo</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Vehículo</p></li>
+                              <li><p>Impacto ambiental:Agua</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F17" [(ngModel)]="datos.F17"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N17" [(ngModel)]="datos.N17"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M17" [(ngModel)]="datos.M17"></ion-input>
+                                  </ion-item>
                                   </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number" ngModel name="n2c16" min="0"></ion-input>
-                                    </ion-item>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Carga de hidrocarburo</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Vehículo</p></li>
+                              <li><p>Impacto ambiental:Aire</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F18" [(ngModel)]="datos.F18"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N18" [(ngModel)]="datos.N18"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M18" [(ngModel)]="datos.M18"></ion-input>
+                                  </ion-item>
                                   </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number" ngModel name="n3c16" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Carga de hidrocarburo</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Vehículo</p></li>
+                              <li><p>Impacto ambiental:Aire</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F19" [(ngModel)]="datos.F19"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N19" [(ngModel)]="datos.N19"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M19" [(ngModel)]="datos.M19"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Término del despacho y retiro de pistola del vehículo</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Vehículo</p></li>
+                              <li><p>Impacto ambiental:Agua</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F20" [(ngModel)]="datos.F20"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N20" [(ngModel)]="datos.N20"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M20" [(ngModel)]="datos.M20"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Suministro de lubricantes,aditivos.</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Vehículo</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F21" [(ngModel)]="datos.F21"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N21" [(ngModel)]="datos.N21"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M21" [(ngModel)]="datos.M21"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Limpieza de dispensarios e islas</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Dispensario</p></li>
+                              <li><p>Impacto ambiental:Agua</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F22" [(ngModel)]="datos.F22"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N22" [(ngModel)]="datos.N22"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M22" [(ngModel)]="datos.M22"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Limpieza de contenedores</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Dispensario</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F23" [(ngModel)]="datos.F23"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N23" [(ngModel)]="datos.N23"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M23" [(ngModel)]="datos.M23"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Cambio de filtros</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Dispensario</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F24" [(ngModel)]="datos.F24"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N24" [(ngModel)]="datos.N24"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M24" [(ngModel)]="datos.M24"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Cambio de mangueras,conexiones o pistolas.</ion-card-title>
+                            <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Dispensario</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F25" [(ngModel)]="datos.F25"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N25" [(ngModel)]="datos.N25"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M25" [(ngModel)]="datos.M25"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
                        
-                        <ion-slide >
-                          <ion-card color="success">
-                              <ion-card-title>ÁREA:</ion-card-title>
-                              <ion-card-content>
-                                MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS
-                              </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Colocación de la pistola en el vehículo</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
+                      <ion-slide >
+                        <ion-card color="success">
+                            <ion-card-title>ÁREA:</ion-card-title>
                             <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Vehículo</p></li>
-                                <li><p>Impacto ambiental:Agua</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c17" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c17" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c17" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
+                              DRENAJES Y TRAMPA DE COMBUSTIBLES
                             </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Carga de hidrocarburo</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Limpieza</ion-card-title>
+                            <ion-card-subtitle>DRENAJES Y TRAMPA DE COMBUSTIBLES</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Registros, tubería y trampa</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F26" [(ngModel)]="datos.F26"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N26" [(ngModel)]="datos.N26"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M26" [(ngModel)]="datos.M26"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Limpieza</ion-card-title>
+                            <ion-card-subtitle>DRENAJES Y TRAMPA DE COMBUSTIBLES</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Rejillas</p></li>
+                              <li><p>Impacto ambiental:Residuos solidos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F27" [(ngModel)]="datos.F27"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N27" [(ngModel)]="datos.N27"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M27" [(ngModel)]="datos.M27"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Separación de hidrocarburo</ion-card-title>
+                            <ion-card-subtitle>DRENAJES Y TRAMPA DE COMBUSTIBLES</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Trampa de gasolina y Diesel</p></li>
+                              <li><p>Impacto ambiental:Aire</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F28" [(ngModel)]="datos.F28"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N28" [(ngModel)]="datos.N28"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M28" [(ngModel)]="datos.M28"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide >
+                        <ion-card color="success">
+                            <ion-card-title>AREA:</ion-card-title>
                             <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Vehículo</p></li>
-                                <li><p>Impacto ambiental:Aire</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" vngModel name="n1c18" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number" ngModel name="n2c18" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number" ngModel name="n3c18" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
+                               OFICINAS Y BAÑOS
                             </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Carga de hidrocarburo</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
+                            <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Contenedores</p></li>
+                              <li><p>Impacto ambiental:Residuos sólidos no peligrosos(basura)</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F29" [(ngModel)]="datos.F29"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N29" [(ngModel)]="datos.N29"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M29" [(ngModel)]="datos.M29"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide >
+                        <ion-card color="success">
+                            <ion-card-title>ÁREA:</ion-card-title>
                             <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Vehículo</p></li>
-                                <li><p>Impacto ambiental:Aire</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c19" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c19" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c19" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>//////////////////////
+                               OFICINAS Y BAÑOS
                             </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Término del despacho y retiro de pistola del vehículo</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
+                            <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Instalaciones eléctricas</p></li>
+                              <li><p>Impacto ambiental:Recursos naturales</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F30" [(ngModel)]="datos.F30"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N30" [(ngModel)]="datos.N30"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M30" [(ngModel)]="datos.M30"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
+                            <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Sanitarios</p></li>
+                              <li><p>Impacto ambiental:Recursos naturales</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F31" [(ngModel)]="datos.F31"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N31" [(ngModel)]="datos.N31"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M31" [(ngModel)]="datos.M31"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
+                            <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Consumo de papel</p></li>
+                              <li><p>Impacto ambiental:Recursos naturales</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F32" [(ngModel)]="datos.F32"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N32" [(ngModel)]="datos.N32"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M32" [(ngModel)]="datos.M32"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                     
+                      <ion-slide >
+                        <ion-card color="success">
+                            <ion-card-title>ÁREA:</ion-card-title>
                             <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Vehículo</p></li>
-                                <li><p>Impacto ambiental:Agua</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c20" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c20" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c20" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
+                              CUARTO DE CONTROL ELÉCTRICO
                             </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Suministro de lubricantes,aditivos.</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Operación normal</ion-card-title>
+                            <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Tableros eléctricos</p></li>
+                              <li><p>Impacto ambiental:Recursos naturales</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F33" [(ngModel)]="datos.F33"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N33" [(ngModel)]="datos.N33"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M33" [(ngModel)]="datos.M33"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Mantenimiento</ion-card-title>
+                            <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Tableros eléctricos</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F34" [(ngModel)]="datos.F34"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N34" [(ngModel)]="datos.N34"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M34" [(ngModel)]="datos.M34"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Operación normal</ion-card-title>
+                            <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Planta de emergencia</p></li>
+                              <li><p>Impacto ambiental:Aire</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F35" [(ngModel)]="datos.F35"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N35" [(ngModel)]="datos.N35"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M35" [(ngModel)]="datos.M35"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Mantenimiento</ion-card-title>
+                            <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Planta de emergencia</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Rutinaria</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F36" [(ngModel)]="datos.F36"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N36" [(ngModel)]="datos.N36"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M36" [(ngModel)]="datos.M36"></ion-input>
+                                  </ion-item>
+                                  </ion-col>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide >
+                        <ion-card color="success">
+                            <ion-card-title>ÁREA:</ion-card-title>
                             <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Vehículo</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c21" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c21" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c21" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
+                              CUARTO DE MÁQUINAS
                             </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Limpieza de dispensarios e islas</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Dispensario</p></li>
-                                <li><p>Impacto ambiental:Agua</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c22" min="0"></ion-input>
-                                    </ion-item>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Operación normal</ion-card-title>
+                            <ion-card-subtitle>CUARTO DE MÁQUINAS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Compresor e hidroneumático</p></li>
+                              <li><p>Impacto ambiental:Recursos naturales</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Normal</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F37" [(ngModel)]="datos.F37"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N37" [(ngModel)]="datos.N37"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M37" [(ngModel)]="datos.M37"></ion-input>
+                                  </ion-item>
                                   </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c22" min="0"></ion-input>
-                                    </ion-item>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
+                      <ion-slide>
+                        <ion-card>
+                            <ion-item>
+                                <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
+                            </ion-item>
+                          <ion-card-header>
+                            <ion-card-title>Mantenimiento</ion-card-title>
+                            <ion-card-subtitle>CUARTO DE MÁQUINAS</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ul>
+                              <li><p>Equipo/Lugar:Compresor e hidroneumático</p></li>
+                              <li><p>Impacto ambiental:Residuos peligrosos</p></li>
+                              <li><p>Real o Potencial: Real</p></li>
+                              <li><p>Condición de operación:Normal</p></li>
+                            </ul>
+                            <ion-row>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>F</ion-label>
+                                    <ion-input type="number"  min="0" name="F38" [(ngModel)]="datos.F38"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>N</ion-label>
+                                    <ion-input type="number" min="0" name="N38" [(ngModel)]="datos.N38"></ion-input>
+                                  </ion-item>
+                                </ion-col>
+                                <ion-col size="4">
+                                  <ion-item>
+                                    <ion-label>M</ion-label>
+                                    <ion-input type="number" min="0" name="M38" [(ngModel)]="datos.M38"></ion-input>
+                                  </ion-item>
                                   </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c22" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Limpieza de contenedores</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Dispensario</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c23" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c23" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c23" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Cambio de filtros</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Dispensario</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c24" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c24" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c24" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Cambio de mangueras,conexiones o pistolas.</ion-card-title>
-                              <ion-card-subtitle>MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Dispensario</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c25" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c25" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c25" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                         
-                        <ion-slide >
-                          <ion-card color="success">
-                              <ion-card-title>ÁREA:</ion-card-title>
-                              <ion-card-content>
-                                DRENAJES Y TRAMPA DE COMBUSTIBLES
-                              </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Limpieza</ion-card-title>
-                              <ion-card-subtitle>DRENAJES Y TRAMPA DE COMBUSTIBLES</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Registros, tubería y trampa</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c26" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c26" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c26" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Limpieza</ion-card-title>
-                              <ion-card-subtitle>DRENAJES Y TRAMPA DE COMBUSTIBLES</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Rejillas</p></li>
-                                <li><p>Impacto ambiental:Residuos solidos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c27" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c27" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c27" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Separación de hidrocarburo</ion-card-title>
-                              <ion-card-subtitle>DRENAJES Y TRAMPA DE COMBUSTIBLES</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Trampa de gasolina y Diesel</p></li>
-                                <li><p>Impacto ambiental:Aire</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c28" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c28" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c28" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide >
-                          <ion-card color="success">
-                              <ion-card-title>AREA:</ion-card-title>
-                              <ion-card-content>
-                                 OFICINAS Y BAÑOS
-                              </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
-                              <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Contenedores</p></li>
-                                <li><p>Impacto ambiental:Residuos sólidos no peligrosos(basura)</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c29" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c29" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c29" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide >
-                          <ion-card color="success">
-                              <ion-card-title>ÁREA:</ion-card-title>
-                              <ion-card-content>
-                                 OFICINAS Y BAÑOS
-                              </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
-                              <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Instalaciones eléctricas</p></li>
-                                <li><p>Impacto ambiental:Recursos naturales</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c30" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c30" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c30" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
-                              <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Sanitarios</p></li>
-                                <li><p>Impacto ambiental:Recursos naturales</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c31" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c31" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c31" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
-                              <ion-card-subtitle>OFICINAS Y BAÑOS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Consumo de papel</p></li>
-                                <li><p>Impacto ambiental:Recursos naturales</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c32" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c32" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c32" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                       
-                        <ion-slide >
-                          <ion-card color="success">
-                              <ion-card-title>ÁREA:</ion-card-title>
-                              <ion-card-content>
-                                CUARTO DE CONTROL ELÉCTRICO
-                              </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Operación normal</ion-card-title>
-                              <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Tableros eléctricos</p></li>
-                                <li><p>Impacto ambiental:Recursos naturales</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c33" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c33" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c33" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Mantenimiento</ion-card-title>
-                              <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Tableros eléctricos</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c34" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c34" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c34" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Operación normal</ion-card-title>
-                              <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Planta de emergencia</p></li>
-                                <li><p>Impacto ambiental:Aire</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c35" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c35" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c35" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Mantenimiento</ion-card-title>
-                              <ion-card-subtitle>CUARTO DE CONTROL ELÉCTRICO</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Planta de emergencia</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Rutinaria</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c36" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c36" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c36" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide >
-                          <ion-card color="success">
-                              <ion-card-title>ÁREA:</ion-card-title>
-                              <ion-card-content>
-                                CUARTO DE MÁQUINAS
-                              </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Operación normal</ion-card-title>
-                              <ion-card-subtitle>CUARTO DE MÁQUINAS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Compresor e hidroneumático</p></li>
-                                <li><p>Impacto ambiental:Recursos naturales</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Normal</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c37" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c37" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c37" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-    
-                        <ion-slide>
-                          <ion-card>
-                              <ion-item>
-                                  <ion-icon name="save"  size="large"  ios="ios-save" color="secondary" type="submit" slot="end"></ion-icon>
-                              </ion-item>
-                            <ion-card-header>
-                              <ion-card-title>Mantenimiento</ion-card-title>
-                              <ion-card-subtitle>CUARTO DE MÁQUINAS</ion-card-subtitle>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ul>
-                                <li><p>Equipo/Lugar:Compresor e hidroneumático</p></li>
-                                <li><p>Impacto ambiental:Residuos peligrosos</p></li>
-                                <li><p>Real o Potencial: Real</p></li>
-                                <li><p>Condición de operación:Normal</p></li>
-                              </ul>
-                              <ion-row>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>F</ion-label>
-                                      <ion-input type="number" ngModel name="n1c38" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>N</ion-label>
-                                      <ion-input type="number"ngModel name="n2c38" min="0"></ion-input>
-                                    </ion-item>
-                                  </ion-col>
-                                  <ion-col size="4">
-                                    <ion-item>
-                                      <ion-label>M</ion-label>
-                                      <ion-input type="number"ngModel name="n3c38" min="0"></ion-input>
-                                    </ion-item>
-                                    </ion-col>
-                              </ion-row>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
-                        <ion-slide>
-                          <ion-card>
-                            <ion-card-header>
-                              <ion-card-subtitle>Descargar pdf</ion-card-subtitle>
-                              <ion-card-title>Descargar pdf</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <ion-button (click)="pdf()">
-                                Descargar
-                                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
-                              </ion-button>
-                            </ion-card-content>
-                          </ion-card>
-                        </ion-slide>
+                            </ion-row>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+                      <ion-slide>
+                        <ion-card>
+                          <ion-card-header>
+                            <ion-card-subtitle>Descargar pdf</ion-card-subtitle>
+                            <ion-card-title>Descargar pdf</ion-card-title>
+                          </ion-card-header>
+                          <ion-card-content>
+                            <ion-button (click)="pdf()">
+                              Descargar
+                              <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                            </ion-button>
+                          </ion-card-content>
+                        </ion-card>
+                      </ion-slide>
+  
     <ion-slide>
         <ion-button type="submit">
           Guardar y enviar

@@ -1,14 +1,14 @@
 <ion-header no-border>
   <ion-toolbar color="light">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/punto-dos"></ion-back-button>
     </ion-buttons>
     <ion-title>Evaluación de Riesgos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
     <ion-slides mode="ios" pager="ios" scrollbar="ios">
       <ion-slide>
         <ion-card class="fondo">
@@ -63,10 +63,11 @@
                   <ion-input
                     type="number"
                     min="0"
-                    ngModel
-                    name="n1c1"
+                    name="F1"
+                    [(ngModel)]="datos.F1"
                   ></ion-input>
                 </ion-item>
+                
               </ion-col>
               <ion-col size="4">
                 <ion-item>
@@ -74,10 +75,11 @@
                   <ion-input
                     type="number"
                     min="0"
-                    ngModel
-                    name="n2c1"
+                    name="C1"
+                    [(ngModel)]="datos.C1"
                   ></ion-input>
                 </ion-item>
+                
               </ion-col>
               <ion-col size="4">
                 <ion-item>
@@ -85,8 +87,8 @@
                   <ion-input
                     type="number"
                     min="0"
-                    ngModel
-                    name="n3c1"
+                    name="R1"
+                    [(ngModel)]="datos.R1"
                   ></ion-input>
                 </ion-item>
                 <br /><br />
@@ -95,7 +97,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -152,8 +153,8 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c2"
+                    name="F2"
+                    [(ngModel)]="datos.F2"
                     min="0"
                   ></ion-input>
                 </ion-item>
@@ -163,9 +164,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c2"
                     min="0"
+                    name="C2"
+                    [(ngModel)]="datos.C2"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -174,9 +175,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c2"
                     min="0"
+                    name="R2"
+                    [(ngModel)]="datos.R2"
                   ></ion-input>
                 </ion-item>
                 <br /><br />
@@ -185,7 +186,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -236,9 +236,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c3"
                     min="0"
+                    name='F3'
+                    [(ngModel)]="datos.F3"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -247,9 +247,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c3"
                     min="0"
+                    name="C3"
+                    [(ngModel)]="datos.C3"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -258,9 +258,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c3"
                     min="0"
+                    name="R3"
+                    [(ngModel)]="datos.R3"
                   ></ion-input>
                 </ion-item>
                 <br /><br />
@@ -269,7 +269,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -327,9 +326,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c4"
                     min="0"
+                    name="F4"
+                    [(ngModel)]="datos.F4"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -338,9 +337,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c4"
                     min="0"
+                    name="C4"
+                    [(ngModel)]="datos.C4"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -349,9 +348,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c4"
                     min="0"
+                    name="R4"
+                    [(ngModel)]="datos.R4"
                   ></ion-input>
                 </ion-item>
                 <br /><br />
@@ -360,7 +359,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -413,9 +411,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c5"
                     min="0"
+                    name="F5"
+                    [(ngModel)]="datos.F5"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -424,9 +422,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c5"
                     min="0"
+                    name="C5"
+                    [(ngModel)]="datos.C5"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -435,9 +433,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c5"
                     min="0"
+                    name="R5"
+                    [(ngModel)]="datos.R5"
                   ></ion-input>
                 </ion-item>
                 <br /><br />
@@ -446,7 +444,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -499,9 +496,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c6"
                     min="0"
+                    name="F6"
+                    [(ngModel)]="datos.F6"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -510,9 +507,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c6"
                     min="0"
+                    name="C6"
+                    [(ngModel)]="datos.C6"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -521,9 +518,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c6"
                     min="0"
+                    name="R6"
+                    [(ngModel)]="datos.R6"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -531,7 +528,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -588,9 +584,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c7"
                     min="0"
+                    name="F7"
+                    [(ngModel)]="datos.F7"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -599,9 +595,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c7"
                     min="0"
+                    name="C7"
+                    [(ngModel)]="datos.C7"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -610,9 +606,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c7"
                     min="0"
+                    name="R7"
+                    [(ngModel)]="datos.R7"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -620,7 +616,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -670,9 +665,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    vngModel
-                    name="n1c8"
                     min="0"
+                    name="F8"
+                    [(ngModel)]="datos.F8"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -681,9 +676,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c8"
                     min="0"
+                    name="C8"
+                    [(ngModel)]="datos.C8"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -692,9 +687,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c8"
                     min="0"
+                    name="R8"
+                    [(ngModel)]="datos.R8"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -702,7 +697,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card color="success" class="fondo">
           <ion-card-title>PROCESO:</ion-card-title>
@@ -711,7 +705,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -768,9 +761,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    vngModel
-                    name="n1c9"
                     min="0"
+                    name="F9"
+                    [(ngModel)]="datos.F9"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -779,9 +772,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c9"
                     min="0"
+                    name="C9"
+                    [(ngModel)]="datos.C9"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -790,9 +783,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c9"
                     min="0"
+                    name="R9"
+                    [(ngModel)]="datos.R9"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -800,7 +793,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -856,9 +848,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    vngModel
-                    name="n1c10"
                     min="0"
+                    name="F10"
+                    [(ngModel)]="datos.F10"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -867,9 +859,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c10"
                     min="0"
+                    name="C10"
+                    [(ngModel)]="datos.C10"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -878,9 +870,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c10"
                     min="0"
+                    name="R10"
+                    [(ngModel)]="datos.R10"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -888,7 +880,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -941,9 +932,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    vngModel
-                    name="n1c11"
                     min="0"
+                    name="F11"
+                    [(ngModel)]="datos.F11"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -952,9 +943,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c11"
                     min="0"
+                    name="C11"
+                    [(ngModel)]="datos.C11"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -963,9 +954,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c11"
                     min="0"
+                    name="R11"
+                    [(ngModel)]="datos.R11"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -973,7 +964,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -1033,9 +1023,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c12"
                     min="0"
+                    name="F12"
+                    [(ngModel)]="datos.F12"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1044,9 +1034,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c12"
                     min="0"
+                    name="C12"
+                    [(ngModel)]="datos.C12"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1055,9 +1045,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c12"
                     min="0"
+                    name="R12"
+                    [(ngModel)]="datos.R12"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1065,7 +1055,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card color="success" class="fondo">
           <ion-card-title>PROCESO:</ion-card-title>
@@ -1074,7 +1063,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -1127,9 +1115,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c13"
                     min="0"
+                    name="F13"
+                    [(ngModel)]="datos.F13"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1138,9 +1126,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c13"
                     min="0"
+                    name="C13"
+                    [(ngModel)]="datos.C13"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1149,9 +1137,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c13"
                     min="0"
+                    name="R13"
+                    [(ngModel)]="datos.R13"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1159,7 +1147,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -1205,9 +1192,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c14"
                     min="0"
+                    name="F14"
+                    [(ngModel)]="datos.F14"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1216,9 +1203,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c14"
                     min="0"
+                    name="C14"
+                    [(ngModel)]="datos.C14"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1227,9 +1214,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c14"
                     min="0"
+                    name="R14"
+                    [(ngModel)]="datos.R14"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1237,7 +1224,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -1283,8 +1269,8 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c15"
+                    name="F15"
+                    [(ngModel)]="datos.F15"
                     min="0"
                   ></ion-input>
                 </ion-item>
@@ -1294,8 +1280,8 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c15"
+                    name="C15"
+                    [(ngModel)]="datos.C15"
                     min="0"
                   ></ion-input>
                 </ion-item>
@@ -1306,7 +1292,8 @@
                   <ion-input
                     type="number"
                     ngModel
-                    name="n3c15"
+                    name="R15"
+                    [(ngModel)]="datos.R15"
                     min="0"
                   ></ion-input>
                 </ion-item>
@@ -1315,7 +1302,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -1355,9 +1341,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c16"
                     min="0"
+                    name="F16"
+                    [(ngModel)]="datos.F16"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1366,9 +1352,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c16"
                     min="0"
+                    name="C16"
+                    [(ngModel)]="datos.C16"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1377,9 +1363,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c16"
                     min="0"
+                    name="R16"
+                    [(ngModel)]="datos.R16"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1387,7 +1373,6 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card class="fondo">
           <ion-item>
@@ -1431,9 +1416,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c17"
                     min="0"
+                    name="F17"
+                    [(ngModel)]="datos.F17"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1442,9 +1427,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c17"
                     min="0"
+                    name="C17"
+                    [(ngModel)]="datos.C17"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1453,18 +1438,16 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c17"
                     min="0"
+                    name="R17"
+                    [(ngModel)]="datos.R17"
                   ></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
           </ion-card-content>
         </ion-card>
-      </ion-slide>
-
-      <ion-slide>
+      </ion-slide><ion-slide>
         <ion-card class="fondo">
           <ion-item>
             <ion-icon
@@ -1504,9 +1487,9 @@
                   <ion-label>F</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n1c18"
                     min="0"
+                    name="F18"
+                    [(ngModel)]="datos.F18"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1515,9 +1498,9 @@
                   <ion-label>C</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n2c18"
                     min="0"
+                    name="C18"
+                    [(ngModel)]="datos.C18"
                   ></ion-input>
                 </ion-item>
               </ion-col>
@@ -1526,9 +1509,9 @@
                   <ion-label>R</ion-label>
                   <ion-input
                     type="number"
-                    ngModel
-                    name="n3c18"
                     min="0"
+                    name="R18"
+                    [(ngModel)]="datos.R18"
                   ></ion-input>
                 </ion-item>
               </ion-col>

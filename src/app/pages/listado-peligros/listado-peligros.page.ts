@@ -8,6 +8,124 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class ListadoPeligrosPage implements OnInit {
   respuesta:any={};
+  datos:any={
+    C1P1:'',
+    C1P2:'',
+    C1P3:'',
+    C1P4:'',
+    C2P1:'',
+    C2P2:'',
+    C2P3:'',
+    C2P4:'',
+    C3P1:'',
+    C3P2:'',
+    C3P3:'',
+    C3P4:'',
+    C4P1:'',
+    C4P2:'',
+    C4P3:'',
+    C4P4:'',
+    C5P1:'',
+    C5P2:'',
+    C5P3:'',
+    C5P4:'',
+    C6P1:'',
+    C6P2:'',
+    C6P3:'',
+    C6P4:'',
+    C7P1:'',
+    C7P2:'',
+    C7P3:'',
+    C7P4:'',
+    C8P1:'',
+    C8P2:'',
+    C8P3:'',
+    C8P4:'',
+    C9P1:'',
+    C9P2:'',
+    C9P3:'',
+    C9P4:'',
+    C10P1:'',
+    C10P2:'',
+    C10P3:'',
+    C10P4:'',
+    C11P1:'',
+    C11P2:'',
+    C11P3:'',
+    C11P4:'',
+    C12P1:'',
+    C12P2:'',
+    C12P3:'',
+    C12P4:'',
+    C13P1:'',
+    C13P2:'',
+    C13P3:'',
+    C13P4:'',
+    C14P1:'',
+    C14P2:'',
+    C14P3:'',
+    C14P4:'',
+    C15P1:'',
+    C15P2:'',
+    C15P3:'',
+    C15P4:'',
+    C16P1:'',
+    C16P2:'',
+    C16P3:'',
+    C16P4:'',
+    C17P1:'',
+    C17P2:'',
+    C17P3:'',
+    C17P4:'',
+    C18P1:'',
+    C18P2:'',
+    C18P3:'',
+    C18P4:'',
+    C19P1:'',
+    C19P2:'',
+    C19P3:'',
+    C19P4:'',
+    C20P1:'',
+    C20P2:'',
+    C20P3:'',
+    C20P4:'',
+    C21P1:'',
+    C21P2:'',
+    C21P3:'',
+    C21P4:'',
+    C22P1:'',
+    C22P2:'',
+    C22P3:'',
+    C22P4:'',
+    C23P1:'',
+    C23P2:'',
+    C23P3:'',
+    C23P4:'',
+    C24P1:'',
+    C24P2:'',
+    C24P3:'',
+    C24P4:'',
+    C25P1:'',
+    C25P2:'',
+    C25P3:'',
+    C25P4:'',
+    C26P1:'',
+    C26P2:'',
+    C26P3:'',
+    C26P4:'',
+    C27P1:'',
+    C27P2:'',
+    C27P3:'',
+    C27P4:'',
+    C28P1:'',
+    C28P2:'',
+    C28P3:'',
+    C28P4:'',
+    C29P1:'',
+    C29P2:'',
+    C29P3:'',
+    C29P4:'',
+  }
   constructor(private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
@@ -15,156 +133,10 @@ export class ListadoPeligrosPage implements OnInit {
 
   enviarForm(formulario){
     console.log('Enviado');
-    var p1c1 = formulario.value.p1c1;
-    var p2c1 = formulario.value.p2c1;
-    var p3c1 = formulario.value.p3c1;
-    var p4c1 = formulario.value.p4c1;
-    var p1c2 = formulario.value.p1c2;
-    var p2c2 = formulario.value.p2c2;
-    var p3c2 = formulario.value.p3c2;
-    var p4c2 = formulario.value.p4c2;
-    var p1c3 = formulario.value.p1c3;
-    var p2c3 = formulario.value.p2c3;
-    var p3c3 = formulario.value.p3c3;
-    var p4c3 = formulario.value.p4c3;
-    var p1c4 = formulario.value.p1c4;
-    var p2c4 = formulario.value.p2c4;
-    var p3c4 = formulario.value.p3c4;
-    var p4c4 = formulario.value.p4c4;
-    var p1c5 = formulario.value.p1c5;
-    var p2c5 = formulario.value.p2c5;
-    var p3c5 = formulario.value.p3c5;
-    var p4c5 = formulario.value.p4c5;
-    var p1c6 = formulario.value.p1c6;
-    var p2c6 = formulario.value.p2c6;
-    var p3c6 = formulario.value.p3c6;
-    var p4c6 = formulario.value.p4c6;
-    var p1c7 = formulario.value.p1c7;
-    var p2c7 = formulario.value.p2c7;
-    var p3c7 = formulario.value.p3c7;
-    var p4c7 = formulario.value.p4c7;
-    var p1c8 = formulario.value.p1c8;
-    var p2c8 = formulario.value.p2c8;
-    var p3c8 = formulario.value.p3c8;
-    var p4c8 = formulario.value.p4c8;
-    var p1c9 = formulario.value.p1c9;
-    var p2c9 = formulario.value.p2c9;
-    var p3c9 = formulario.value.p3c9;
-    var p4c9 = formulario.value.p4c9;
-    var p1c10 = formulario.value.p1c10;
-    var p2c10 = formulario.value.p2c10;
-    var p3c10 = formulario.value.p3c10;
-    var p4c10 = formulario.value.p4c10;
-    var p1c11 = formulario.value.p1c11;
-    var p2c11 = formulario.value.p2c11;
-    var p3c11 = formulario.value.p3c11;
-    var p4c11 = formulario.value.p4c11;
-    var p1c12 = formulario.value.p1c12;
-    var p2c12 = formulario.value.p2c12;
-    var p3c12 = formulario.value.p3c12;
-    var p4c12 = formulario.value.p4c12;
-    var p1c13 = formulario.value.p1c13;
-    var p2c13 = formulario.value.p2c13;
-    var p3c13 = formulario.value.p3c13;
-    var p4c13 = formulario.value.p4c13;
-    var p1c14 = formulario.value.p1c14;
-    var p2c14 = formulario.value.p2c14;
-    var p3c14 = formulario.value.p3c14;
-    var p4c14 = formulario.value.p4c14;
-    var p1c15 = formulario.value.p1c15;
-    var p2c15 = formulario.value.p2c15;
-    var p3c15 = formulario.value.p3c15;
-    var p4c15 = formulario.value.p4c15;
-    var p1c16 = formulario.value.p1c16;
-    var p2c16 = formulario.value.p2c16;
-    var p3c16 = formulario.value.p3c16;
-    var p4c16 = formulario.value.p4c16;
-    var p1c17 = formulario.value.p1c17;
-    var p2c17 = formulario.value.p2c17;
-    var p3c17 = formulario.value.p3c17;
-    var p4c17 = formulario.value.p4c17;
-    var p1c18 = formulario.value.p1c18;
-    var p2c18 = formulario.value.p2c18;
-    var p3c18 = formulario.value.p3c18;
-    var p4c18 = formulario.value.p4c18;
-    var p1c19 = formulario.value.p1c19;
-    var p2c19 = formulario.value.p2c19;
-    var p3c19 = formulario.value.p3c19;
-    var p4c19 = formulario.value.p4c19;
-    var p1c20 = formulario.value.p1c20;
-    var p2c20 = formulario.value.p2c20;
-    var p3c20 = formulario.value.p3c20;
-    var p4c20 = formulario.value.p4c20;
-    var p1c21 = formulario.value.p1c21;
-    var p2c21 = formulario.value.p2c21;
-    var p3c21 = formulario.value.p3c21;
-    var p4c21 = formulario.value.p4c21;
-    var p1c22 = formulario.value.p1c22;
-    var p2c22 = formulario.value.p2c22;
-    var p3c22 = formulario.value.p3c22;
-    var p4c22 = formulario.value.p4c22;
-    var p1c23 = formulario.value.p1c23;
-    var p2c23 = formulario.value.p2c23;
-    var p3c23 = formulario.value.p3c23;
-    var p4c23 = formulario.value.p4c23;
-    var p1c24 = formulario.value.p1c24;
-    var p2c24 = formulario.value.p2c24;
-    var p3c24 = formulario.value.p3c24;
-    var p4c24 = formulario.value.p4c24;
-    var p1c25 = formulario.value.p1c25;
-    var p2c25 = formulario.value.p2c25;
-    var p3c25 = formulario.value.p3c25;
-    var p4c25 = formulario.value.p4c25;
-    var p1c26 = formulario.value.p1c26;
-    var p2c26 = formulario.value.p2c26;
-    var p3c26 = formulario.value.p3c26;
-    var p4c26 = formulario.value.p4c26;
-    var p1c27 = formulario.value.p1c27;
-    var p2c27 = formulario.value.p2c27;
-    var p3c27 = formulario.value.p3c27;
-    var p4c27 = formulario.value.p4c27;
-    var p1c28 = formulario.value.p1c28;
-    var p2c28 = formulario.value.p2c28;
-    var p3c28 = formulario.value.p3c28;
-    var p4c28 = formulario.value.p4c28;
-    this.respuesta={
-      p1c1,p2c1,p3c1,p4c1,
-      p1c2,p2c2,p3c2,p4c2,
-      p1c3,p2c3,p3c3,p4c3,
-      p1c4,p2c4,p3c4,p4c4,
-      p1c5,p2c5,p3c5,p4c5,
-      p1c6,p2c6,p3c6,p4c6,
-      p1c7,p2c7,p3c7,p4c7,
-      p1c8,p2c8,p3c8,p4c8,
-      p1c9,p2c9,p3c9,p4c9,
-      p1c10,p2c10,p3c10,p4c10,
-      p1c11,p2c11,p3c11,p4c11,
-      p1c12,p2c12,p3c12,p4c12,
-      p1c13,p2c13,p3c13,p4c13,
-      p1c14,p2c14,p3c14,p4c14,
-      p1c15,p2c15,p3c15,p4c15,
-      p1c16,p2c16,p3c16,p4c16,
-      p1c17,p2c17,p3c17,p4c17,
-      p1c18,p2c18,p3c18,p4c18,
-      p1c19,p2c19,p3c19,p4c19,
-      p1c20,p2c20,p3c20,p4c20,
-      p1c21,p2c21,p3c21,p4c21,
-      p1c22,p2c22,p3c22,p4c22,
-      p1c23,p2c23,p3c23,p4c23,
-      p1c24,p2c24,p3c24,p4c24,
-      p1c25,p2c25,p3c25,p4c25,
-      p1c26,p2c26,p3c26,p4c26,
-      p1c27,p2c27,p3c27,p4c27,
-      p1c28,p2c28,p3c28,p4c28,
-      
-    }
-    console.log(this.respuesta);
-    
 
-    
+    console.log(this.datos);
   }
   pdf(){
-    console.log('hola mundo');
     var dd = {
       header: function(){
         return {
@@ -205,34 +177,33 @@ export class ListadoPeligrosPage implements OnInit {
                       body:[
                           [{text:'ÁREA, EQUIPO O PROCESO:',fillColor:'#ddd',bold:true,colSpan:5,fontSize:9},{text:''},{text:''},{text:''},{text:''},],
                           [{text:'No°',fillColor:'#ddd',bold:true,fontSize:9},{text:'ACTIVIDAD ASOCIADA',fillColor:'#ddd',bold:true,fontSize:9},{text:'CONDICIÓN DE OPERACIÓN',fillColor:'#ddd',bold:true,fontSize:9},{text:'PELIGRO',fillColor:'#ddd',bold:true,fontSize:9},{text:'ASPECTO AMBIENTAL',fillColor:'#ddd',bold:true,fontSize:9}],
-                          [{text:'1',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'2',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'3',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'4',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'5',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'6',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'7',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'8',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'9',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'9',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'10',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'11',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'12',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'13',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'14',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'15',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'16',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'17',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'18',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'19',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'20',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'21',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'22',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'23',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'24',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'25',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                          [{text:'26',fontSize:9},{text:''},{text:''},{text:''},{text:''},],
-                       
+                          [{text:'1',fontSize:9},{text:`${this.datos.C1P1}`,fontSize:8},{text:`${this.datos.C1P2}`,fontSize:8},{text:`${this.datos.C1P3}`,fontSize:8},{text:`${this.datos.C1P4}`,fontSize:8},],
+                          [{text:'2',fontSize:9},{text:`${this.datos.C2P1}`,fontSize:8},{text:`${this.datos.C2P2}`,fontSize:8},{text:`${this.datos.C2P3}`,fontSize:8},{text:`${this.datos.C2P4}`,fontSize:8},],
+                          [{text:'3',fontSize:9},{text:`${this.datos.C3P1}`,fontSize:8},{text:`${this.datos.C3P2}`,fontSize:8},{text:`${this.datos.C3P3}`,fontSize:8},{text:`${this.datos.C3P4}`,fontSize:8},],
+                          [{text:'4',fontSize:9},{text:`${this.datos.C4P1}`,fontSize:8},{text:`${this.datos.C4P2}`,fontSize:8},{text:`${this.datos.C4P3}`,fontSize:8},{text:`${this.datos.C4P4}`,fontSize:8},],
+                          [{text:'5',fontSize:9},{text:`${this.datos.C5P1}`,fontSize:8},{text:`${this.datos.C5P2}`,fontSize:8},{text:`${this.datos.C5P3}`,fontSize:8},{text:`${this.datos.C5P4}`,fontSize:8},],
+                          [{text:'6',fontSize:9},{text:`${this.datos.C6P1}`,fontSize:8},{text:`${this.datos.C6P2}`,fontSize:8},{text:`${this.datos.C6P3}`,fontSize:8},{text:`${this.datos.C6P4}`,fontSize:8},],
+                          [{text:'7',fontSize:9},{text:`${this.datos.C7P1}`,fontSize:8},{text:`${this.datos.C7P2}`,fontSize:8},{text:`${this.datos.C7P3}`,fontSize:8},{text:`${this.datos.C7P4}`,fontSize:8},],
+                          [{text:'8',fontSize:9},{text:`${this.datos.C8P1}`,fontSize:8},{text:`${this.datos.C8P2}`,fontSize:8},{text:`${this.datos.C8P3}`,fontSize:8},{text:`${this.datos.C8P4}`,fontSize:8},],
+                          [{text:'9',fontSize:9},{text:`${this.datos.C9P1}`,fontSize:8},{text:`${this.datos.C9P2}`,fontSize:8},{text:`${this.datos.C9P3}`,fontSize:8},{text:`${this.datos.C9P4}`,fontSize:8},],
+                          [{text:'9',fontSize:9},{text:`${this.datos.C10P1}`,fontSize:8},{text:`${this.datos.C10P2}`,fontSize:8},{text:`${this.datos.C10P3}`,fontSize:8},{text:`${this.datos.C10P4}`,fontSize:8},],
+                          [{text:'10',fontSize:9},{text:`${this.datos.C11P1}`,fontSize:8},{text:`${this.datos.C11P2}`,fontSize:8},{text:`${this.datos.C11P3}`,fontSize:8},{text:`${this.datos.C11P4}`,fontSize:8},],
+                          [{text:'11',fontSize:9},{text:`${this.datos.C12P1}`,fontSize:8},{text:`${this.datos.C12P2}`,fontSize:8},{text:`${this.datos.C12P3}`,fontSize:8},{text:`${this.datos.C12P4}`,fontSize:8},],
+                          [{text:'12',fontSize:9},{text:`${this.datos.C13P1}`,fontSize:8},{text:`${this.datos.C13P2}`,fontSize:8},{text:`${this.datos.C13P3}`,fontSize:8},{text:`${this.datos.C13P4}`,fontSize:8},],
+                          [{text:'13',fontSize:9},{text:`${this.datos.C14P1}`,fontSize:8},{text:`${this.datos.C14P2}`,fontSize:8},{text:`${this.datos.C14P3}`,fontSize:8},{text:`${this.datos.C14P4}`,fontSize:8},],
+                          [{text:'14',fontSize:9},{text:`${this.datos.C15P1}`,fontSize:8},{text:`${this.datos.C15P2}`,fontSize:8},{text:`${this.datos.C15P3}`,fontSize:8},{text:`${this.datos.C15P4}`,fontSize:8},],
+                          [{text:'15',fontSize:9},{text:`${this.datos.C16P1}`,fontSize:8},{text:`${this.datos.C16P2}`,fontSize:8},{text:`${this.datos.C16P3}`,fontSize:8},{text:`${this.datos.C16P4}`,fontSize:8},],
+                          [{text:'16',fontSize:9},{text:`${this.datos.C17P1}`,fontSize:8},{text:`${this.datos.C17P2}`,fontSize:8},{text:`${this.datos.C17P3}`,fontSize:8},{text:`${this.datos.C17P4}`,fontSize:8},],
+                          [{text:'17',fontSize:9},{text:`${this.datos.C18P1}`,fontSize:8},{text:`${this.datos.C18P2}`,fontSize:8},{text:`${this.datos.C18P3}`,fontSize:8},{text:`${this.datos.C18P4}`,fontSize:8},],
+                          [{text:'18',fontSize:9},{text:`${this.datos.C19P1}`,fontSize:8},{text:`${this.datos.C19P2}`,fontSize:8},{text:`${this.datos.C19P3}`,fontSize:8},{text:`${this.datos.C19P4}`,fontSize:8},],
+                          [{text:'19',fontSize:9},{text:`${this.datos.C20P1}`,fontSize:8},{text:`${this.datos.C20P2}`,fontSize:8},{text:`${this.datos.C20P3}`,fontSize:8},{text:`${this.datos.C20P4}`,fontSize:8},],
+                          [{text:'20',fontSize:9},{text:`${this.datos.C21P1}`,fontSize:8},{text:`${this.datos.C21P2}`,fontSize:8},{text:`${this.datos.C21P3}`,fontSize:8},{text:`${this.datos.C21P4}`,fontSize:8},],
+                          [{text:'21',fontSize:9},{text:`${this.datos.C22P1}`,fontSize:8},{text:`${this.datos.C22P2}`,fontSize:8},{text:`${this.datos.C22P3}`,fontSize:8},{text:`${this.datos.C22P4}`,fontSize:8},],
+                          [{text:'22',fontSize:9},{text:`${this.datos.C23P1}`,fontSize:8},{text:`${this.datos.C23P2}`,fontSize:8},{text:`${this.datos.C23P3}`,fontSize:8},{text:`${this.datos.C23P4}`,fontSize:8},],
+                          [{text:'23',fontSize:9},{text:`${this.datos.C24P1}`,fontSize:8},{text:`${this.datos.C24P2}`,fontSize:8},{text:`${this.datos.C24P3}`,fontSize:8},{text:`${this.datos.C24P4}`,fontSize:8},],
+                          [{text:'24',fontSize:9},{text:`${this.datos.C25P1}`,fontSize:8},{text:`${this.datos.C25P2}`,fontSize:8},{text:`${this.datos.C25P3}`,fontSize:8},{text:`${this.datos.C25P4}`,fontSize:8},],
+                          [{text:'25',fontSize:9},{text:`${this.datos.C26P1}`,fontSize:8},{text:`${this.datos.C26P2}`,fontSize:8},{text:`${this.datos.C26P3}`,fontSize:8},{text:`${this.datos.C26P4}`,fontSize:8},],
+                          [{text:'26',fontSize:9},{text:`${this.datos.C27P1}`,fontSize:8},{text:`${this.datos.C27P2}`,fontSize:8},{text:`${this.datos.C27P3}`,fontSize:8},{text:`${this.datos.C27P4}`,fontSize:8},],
                           
                           
                           ]
@@ -252,10 +223,6 @@ export class ListadoPeligrosPage implements OnInit {
       pageSize: 'LETTER',
       pageMargins: [22,120]
   };
-   
     this.pdfMaker.generate(dd, 'II.Listado-Peligros.pdf');
-    
-    
-  }
-
+}
 }
