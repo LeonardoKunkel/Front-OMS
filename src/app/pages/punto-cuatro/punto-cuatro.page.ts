@@ -20,34 +20,7 @@ export class PuntoCuatroPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.slider.lockSwipes(true);
   }
-
-  segmentChanged(event) {
-    const value = event.detail.value;
-    
-    if(value === "form") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(1);
-      this.slider.lockSwipes(true);
-    } else if(value === "proced"){
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(0);
-      this.slider.lockSwipes(true);
-    }
-  }
-
-  async openModal(event) {
-    const popover = await this.popoverCtrl.create({
-      component: OnbjetivoModalPage,
-      translucent: true,
-      componentProps: {},
-      event
-    });
-
-    popover.present();
-  }
-
   pdf() {
     var dd = {
       header: function(){
