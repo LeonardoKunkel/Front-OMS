@@ -166,6 +166,23 @@ const routes: Routes = [
   { path: 'punto-tres-procedimiento', loadChildren: './pages/punto-tres-procedimiento/punto-tres-procedimiento.module#PuntoTresProcedimientoPageModule' },
   { path: 'punto-tres-lista', loadChildren: './pages/punto-tres-lista/punto-tres-lista.module#PuntoTresListaPageModule' },
   { path: 'punto-tres-evidencia', loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule' },
+  { path: 'menu-punto5', loadChildren: './pages/menu-punto5/menu-punto5.module#MenuPunto5PageModule' },
+  { path: 'punto-cinco-procedimiento', loadChildren: './pages/punto-cinco-procedimiento/punto-cinco-procedimiento.module#PuntoCincoProcedimientoPageModule' },
+  { path: 'punto-cinco-evidencia', loadChildren: './pages/punto-cinco-evidencia/punto-cinco-evidencia.module#PuntoCincoEvidenciaPageModule' },
+  { path: 'punto-seis-menu', loadChildren: './pages/punto-seis-menu/punto-seis-menu.module#PuntoSeisMenuPageModule' },
+  { path: 'punto-seis-deteccion-necesidades', loadChildren: './pages/punto-seis-deteccion-necesidades/punto-seis-deteccion-necesidades.module#PuntoSeisDeteccionNecesidadesPageModule' },
+  { path: 'punto-seis-programa-capacitacion', loadChildren: './pages/punto-seis-programa-capacitacion/punto-seis-programa-capacitacion.module#PuntoSeisProgramaCapacitacionPageModule' },
+  { path: 'punto-seis-seguimiento-programa', loadChildren: './pages/punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.module#PuntoSeisSeguimientoProgramaPageModule' },
+  { path: 'punto-seis-procedimiento', loadChildren: './pages/punto-seis-procedimiento/punto-seis-procedimiento.module#PuntoSeisProcedimientoPageModule' },
+  { path: 'punto-seis-evidencia', loadChildren: './pages/punto-seis-evidencia/punto-seis-evidencia.module#PuntoSeisEvidenciaPageModule' },
+  { path: 'punto-cuatro-menu', loadChildren: './pages/punto-cuatro-menu/punto-cuatro-menu.module#PuntoCuatroMenuPageModule' },
+  { path: 'punto-cuatro-procedimiento', loadChildren: './pages/punto-cuatro-procedimiento/punto-cuatro-procedimiento.module#PuntoCuatroProcedimientoPageModule' },
+  { path: 'punto-cuatro-evidencia', loadChildren: './pages/punto-cuatro-evidencia/punto-cuatro-evidencia.module#PuntoCuatroEvidenciaPageModule' },
+  { path: 'punto-siete-menu', loadChildren: './pages/punto-siete-menu/punto-siete-menu.module#PuntoSieteMenuPageModule' },
+  { path: 'punto-siete-evidencia', loadChildren: './pages/punto-siete-evidencia/punto-siete-evidencia.module#PuntoSieteEvidenciaPageModule' },
+  { path: 'punto-siete-procedimiento', loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule' },
+  { path: 'quejas-sugerencias', loadChildren: './pages/quejas-sugerencias/quejas-sugerencias.module#QuejasSugerenciasPageModule' },
+  { path: 'registros-control', loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule' },
 
   
   

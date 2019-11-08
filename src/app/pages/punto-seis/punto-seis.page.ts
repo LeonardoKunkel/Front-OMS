@@ -14,7 +14,19 @@ import { FormsModule, Form } from '@angular/forms';
 })
 export class PuntoSeisPage implements OnInit {
   pdfObj=null;
-  
+  datos:any={
+    nombre:'',
+    caracteristicasPersonales:'',
+    requerimientosFisicos:'',
+    conocimientosFisiscos:'',
+    deztrezasTecnicas:'',
+    nivelAcademico:'',
+    objetivoPuesto:'',
+    funcionesEspecificas:'',
+    personalCargo:'',
+    herramientasEquipos:'',
+    proteccionPersonal:''
+  }
 
   @ViewChild('slider') slider: IonSlides
   @ViewChild('formulario') formulario: Form
@@ -22,40 +34,10 @@ export class PuntoSeisPage implements OnInit {
   constructor(public alertController: AlertController) { }
   
   ngOnInit() {
-    this.slider.lockSwipes(true);
+   
   }
 
-  segmentChanged(event) {
-    console.log(event);
-    const value = event.detail.value;
-    if (value == "perfilPuesto") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(1);
-      this.slider.lockSwipes(true);
-    }
-    else if (value == "procedimiento") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(0);
-      this.slider.lockSwipes(true);
-    }
-    else if (value == "deteccionNecesidades") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(2);
-      this.slider.lockSwipes(true);
-    }
-    else if (value == "programaCapacitacion") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(3);
-      this.slider.lockSwipes(true);
-    }
-    else if (value == "seguimientoPrograma") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(4);
-      this.slider.lockSwipes(true);
-    }
-  }
-
-
+    
     async ver() {
      
     const alert = await this.alertController.create({
@@ -81,9 +63,8 @@ export class PuntoSeisPage implements OnInit {
   
   public disabled = true;
 
-   action() {
+   pdf() {
     console.log('action triggered');
-    this.Pdf(this.formulario);
     
 
   }
@@ -95,116 +76,96 @@ export class PuntoSeisPage implements OnInit {
 
 
 
-  Pdf(formulario){
-    const nombre=formulario.form.value.nombre
-    const caracteristicas=formulario.form.value.caracteristicas
-    const requerimientos=formulario.form.value.requerimientos
-    const conocimientos=formulario.form.value.conocimientos
-    const tipos=formulario.form.value.tipos
-    const nivel=formulario.form.value.nivel
-    const objetivo=formulario.form.value.objetivo
-    const funciones=formulario.form.value.funciones
-    const personal=formulario.form.value.personal
-    const herramientas=formulario.form.value.herramientas
-    const proteccion=formulario.form.value.proteccion
+//   Pdf(){
 
     
 
-   // playground requires you to assign document definition to a variable called dd
+//    // playground requires you to assign document definition to a variable called dd
 
-var dd = {
-    header: function(){
-      return {
-          table: { widths: [565],heights:[50,15,15],
-body: [
+// var dd = {
+//     header: function(){
+//       return {
+//           table: { widths: [565],heights:[50,15,15],
+// body: [
 
-    [{text:''}],
-    [{text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',alignment:'center',bold:true}],
-    [{text:'PERFIL DE PUESTO DE TRABAJO',alignment:'center',bold:true}],
-]
+//     [{text:''}],
+//     [{text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',alignment:'center',bold:true}],
+//     [{text:'PERFIL DE PUESTO DE TRABAJO',alignment:'center',bold:true}],
+// ]
 
-}, margin: [22,20]
-      };
-    },
-    footer: function(){
-      return {
-          table:{
-   headerRows:1, 
-   widths: [510],
-             body : [
-             [''],
-             [''],
-             ['']
-                 ]
-        }, layout : 'headerLineOnly',
-          margin: [70,90]
-      };
-    },
+// }, margin: [22,20]
+//       };
+//     },
+//     footer: function(){
+//       return {
+//           table:{
+//    headerRows:1, 
+//    widths: [510],
+//              body : [
+//              [''],
+//              [''],
+//              ['']
+//                  ]
+//         }, layout : 'headerLineOnly',
+//           margin: [70,90]
+//       };
+//     },
     
-    content:[
-        {
-            table:{
-                widths: [140,160,100,140],
-                heights:[0,0,0,0,40,40,40,20,20,40,20,40],
-                body:[
-                    [{text:'PUESTO'},{text:'',colSpan:3},{},{}],
-                    [{text:'AREA'},{text:'',colSpan:3},{},{}],
-                    [{text:'JEFE INMEDIATO'},{text:`${nombre}`,colSpan:3},{},{}],
-                    [{text:'OBJETIVO DEL PUESTO'},{text:`${objetivo}`,colSpan:3},{},{}],
-                    [{text:'FUNCIONES ESPECIFÍCAS'},{text:`${funciones}`,colSpan:3},{},{}],
-                    [{text:'CONOCIMIENTOS ESPECIFÍCOS'},{text:`${conocimientos}`,colSpan:3},{},{}],
-                    [{text:'CARACTERÍSTICAS PERSONALES'},{text:`${caracteristicas}`},{text:'DESTREZAS TÉCNICAS'},{text:`${tipos}`}],
-                    [{text:'NIVEL ACADEMICO REQUERIDO'},{text:`${nivel}`,colSpan:3},{},{}],
-                    [{text:'REQUERIMIENTOS FÍSICOS'},{text:`${requerimientos}`,colSpan:3},{},{}],
-                    [{text:'PERSONAL A SU CARGO'},{text:`${personal}`,colSpan:3},{},{}],
-                    [{text:'HERRAMIENTAS Y O EQUIPOS'},{text:`${herramientas}`,colSpan:3},{},{}],
-                    [{text:'EQUIPO DE PROTECCION PERSONAL'},{text:`${proteccion}`,colSpan:3},{},{}],
+//     content:[
+//         {
+//             table:{
+//                 widths: [140,160,100,140],
+//                 heights:[0,0,0,0,40,40,40,20,20,40,20,40],
+//                 body:[
+//                     [{text:'PUESTO'},{text:'',colSpan:3},{},{}],
+//                     [{text:'AREA'},{text:'',colSpan:3},{},{}],
+//                     [{text:'JEFE INMEDIATO'},{text:`${this.datos.nombre}`,colSpan:3},{},{}],
+//                     [{text:'OBJETIVO DEL PUESTO'},{text:`${this.datos.objetivo}`,colSpan:3},{},{}],
+//                     [{text:'FUNCIONES ESPECIFÍCAS'},{text:`${this.datos.funciones}`,colSpan:3},{},{}],
+//                     [{text:'CONOCIMIENTOS ESPECIFÍCOS'},{text:`${this.datos.conocimientos}`,colSpan:3},{},{}],
+//                     [{text:'CARACTERÍSTICAS PERSONALES'},{text:`${this.datos.caracteristicas}`},{text:'DESTREZAS TÉCNICAS'},{text:`${tipos}`}],
+//                     [{text:'NIVEL ACADEMICO REQUERIDO'},{text:`${this.datos.nivel}`,colSpan:3},{},{}],
+//                     [{text:'REQUERIMIENTOS FÍSICOS'},{text:`${this.datos.requerimientos}`,colSpan:3},{},{}],
+//                     [{text:'PERSONAL A SU CARGO'},{text:`${this.datos.personal}`,colSpan:3},{},{}],
+//                     [{text:'HERRAMIENTAS Y O EQUIPOS'},{text:`${this.datos.herramientas}`,colSpan:3},{},{}],
+//                     [{text:'EQUIPO DE PROTECCION PERSONAL'},{text:`${this.datos.proteccion}`,colSpan:3},{},{}],
                     
-                    ]
-            }
-        },{
-            text:'\n\n'
-        },{
-            table:{
-                 widths:[175,185,185],
-                 heights:[50],
+//                     ]
+//             }
+//         },{
+//             text:'\n\n'
+//         },{
+//             table:{
+//                  widths:[175,185,185],
+//                  heights:[50],
                  
-                body:[
-                    ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
-                    ]
-            }
+//                 body:[
+//                     ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
+//                     ]
+//             }
             
             
-        }
+//         }
         
         
-         ]
-   ,
-    pageSize: 'LETTER',
-    pageMargins: [22,130]
-};
-    this.pdfObj = pdfMake.createPdf(dd);
-    this.pdfObj.download();
+//          ]
+//    ,
+//     pageSize: 'LETTER',
+//     pageMargins: [22,130]
+// };
+//     this.pdfObj = pdfMake.createPdf(dd);
+//     this.pdfObj.download();
     
-  }
+//   }
 
   
 
 
 
-  enviarForm2(formulario2){
-      console.log('Hola mundo');
-      //var ddd= document.getElementsByName('R1');
-       const proteccion=formulario2.value.R1;
-       console.log(proteccion);
-      //console.log(ddd);
-      
-      
- 
+//   enviarForm(formulario){
+//     this.Pdf();
     
-    
-
-  }
+//   }
 
  
 

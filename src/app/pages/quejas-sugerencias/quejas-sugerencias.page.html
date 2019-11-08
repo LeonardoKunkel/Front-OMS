@@ -1,0 +1,57 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-siete-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Quejas y sugerencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Registro y control de quejas y sugerencias</ion-card-subtitle>
+            <ion-card-title>Quejas y Sugerencias</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>Numero de quejas</ion-label>
+            <ion-input type="number" placeholder="Ingresa un numero"></ion-input>
+            <ion-item>
+              <ion-label>Queja</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Sugerencia</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Otro</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-label>Descripción</ion-label><br>
+            <textarea name="" id="" cols="30" rows="10" color="success"></textarea><br>
+            <ion-label>Contaco</ion-label>
+            <ion-input type="number" placeholder="Telf.de contacto"></ion-input>
+            <ion-label>Prioridad</ion-label>
+            <ion-item>
+              <ion-label>Alta</ion-label>
+              <ion-radio></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Mediana</ion-label>
+              <ion-radio></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Baja</ion-label>
+              <ion-radio></ion-radio>
+            </ion-item>
+            <ion-button (click)="onClick()">
+              Enviar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
