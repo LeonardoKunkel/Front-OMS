@@ -1,0 +1,635 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="punto15-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Programa Auditorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+      <ion-slides mode="ios" pager="ios" scrollbar="ios">
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle></ion-card-subtitle>
+              <ion-card-title>Llena los campos corespondientes dependiendo al tipo de auditoria</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-label>Tipo de auditoria</ion-label>
+              <ion-input type="text" placeholder="Ingresa el tipo" value="x" name="tipoAuditoria" [(ngModel)]="datos.tipoAuditoria"></ion-input>
+              <ion-item>
+                <ion-label>Interna</ion-label>
+                <ion-checkbox slot="start" name="interna" [(ngModel)]="datos.interna"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Externa</ion-label>
+                <ion-checkbox slot="start" name="externa" [(ngModel)]="datos.externa"></ion-checkbox>
+              </ion-item>
+              <ion-label>Área</ion-label>
+              <ion-input type="text" placeholder="Ingresa el area" name="area" [(ngModel)]="datos.area"></ion-input>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 1</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento1" [(ngModel)]="datos.elemento1"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo1" [(ngModel)]="datos.objetivo1"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance1" [(ngModel)]="datos.alcance1"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20191" [(ngModel)]="datos.enero20191"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20191" [(ngModel)]="datos.julio20191"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20201" [(ngModel)]="datos.enero20201"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20201" [(ngModel)]="datos.julio20201"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20211" [(ngModel)]="datos.enero20211"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20211" [(ngModel)]="datos.julio20211"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 2</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento2" [(ngModel)]="datos.elemento2"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo2" [(ngModel)]="datos.objetivo2"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance2" [(ngModel)]="datos.alcance2"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20192" [(ngModel)]="datos.enero20192"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20192" [(ngModel)]="datos.julio20192"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20202" [(ngModel)]="datos.enero20202"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20202" [(ngModel)]="datos.julio20202"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20212" [(ngModel)]="datos.enero20212"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20212" [(ngModel)]="datos.julio20212"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 3</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento3" [(ngModel)]="datos.elemento3"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo3" [(ngModel)]="datos.objetivo3"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance3" [(ngModel)]="datos.alcance3"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20193" [(ngModel)]="datos.enero20193"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20193" [(ngModel)]="datos.julio20193"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20203" [(ngModel)]="datos.enero20203"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20203" [(ngModel)]="datos.julio20203"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20213" [(ngModel)]="datos.enero20213"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20213" [(ngModel)]="datos.julio20213"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 4</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento4" [(ngModel)]="datos.elemento4"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo4" [(ngModel)]="datos.objetivo4"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance4" [(ngModel)]="datos.alcance4"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20194" [(ngModel)]="datos.enero20194"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20194" [(ngModel)]="datos.julio20194"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20204" [(ngModel)]="datos.enero20204"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20204" [(ngModel)]="datos.julio20204"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20214" [(ngModel)]="datos.enero20214"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20214" [(ngModel)]="datos.julio20214"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 5</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento5" [(ngModel)]="datos.elemento5"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo5" [(ngModel)]="datos.objetivo5"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance5" [(ngModel)]="datos.alcance5"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20195" [(ngModel)]="datos.enero20195"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20195" [(ngModel)]="datos.julio20195"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20205" [(ngModel)]="datos.enero20205"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20205" [(ngModel)]="datos.julio20205"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20215" [(ngModel)]="datos.enero20215"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20215" [(ngModel)]="datos.julio20215"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 6</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento6" [(ngModel)]="datos.elemento6"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo6" [(ngModel)]="datos.objetivo6"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance6" [(ngModel)]="datos.alcance6"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20196" [(ngModel)]="datos.enero20196"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20196" [(ngModel)]="datos.julio20196"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20206" [(ngModel)]="datos.enero20206"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20206" [(ngModel)]="datos.julio20206"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20216" [(ngModel)]="datos.enero20216"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20216" [(ngModel)]="datos.julio20216"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 7</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento7" [(ngModel)]="datos.elemento7"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo7" [(ngModel)]="datos.objetivo7"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance7" [(ngModel)]="datos.alcance7"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20197" [(ngModel)]="datos.enero20197"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20197" [(ngModel)]="datos.julio20197"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20207" [(ngModel)]="datos.enero20207"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20207" [(ngModel)]="datos.julio20207"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20217" [(ngModel)]="datos.enero20217"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20217" [(ngModel)]="datos.julio20217"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 8</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento8" [(ngModel)]="datos.elemento8"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo8" [(ngModel)]="datos.objetivo8"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance8" [(ngModel)]="datos.alcance8"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20198" [(ngModel)]="datos.enero20198"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20198" [(ngModel)]="datos.julio20198"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20208" [(ngModel)]="datos.enero20208"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20208" [(ngModel)]="datos.julio20208"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20218" [(ngModel)]="datos.enero20218"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20218" [(ngModel)]="datos.julio20218"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 9</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento9" [(ngModel)]="datos.elemento9"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo9" [(ngModel)]="datos.objetivo9"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance9" [(ngModel)]="datos.alcance9"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20199" [(ngModel)]="datos.enero20199"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20199" [(ngModel)]="datos.julio20199"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20209" [(ngModel)]="datos.enero20209"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20209" [(ngModel)]="datos.julio20209"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero20219" [(ngModel)]="datos.enero20219"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio20219" [(ngModel)]="datos.julio20219"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>PROGRAMA DE AUDITORÍAS</ion-card-title>
+              <ion-card-subtitle>Elemento 10</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div>
+                  <ion-label>Elemento del sistema</ion-label>
+                  <ion-input type="text" placeholder="Describa" name="elemento10" [(ngModel)]="datos.elemento10"></ion-input>
+              </div>
+              <div>
+                <ion-label>Objetivo</ion-label>
+                <ion-input type="text" placeholder="Describa" name="objetivo10" [(ngModel)]="datos.objetivo10"></ion-input>
+              </div>
+              <div>
+                <ion-label>Alcance</ion-label>
+                <ion-input type="text" placeholder="Describe" name="alcance10" [(ngModel)]="datos.alcance10"></ion-input>
+              </div>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2019</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero201910" [(ngModel)]="datos.enero201910"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio201910" [(ngModel)]="datos.julio201910"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2020</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero202010" [(ngModel)]="datos.enero202010"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio202010" [(ngModel)]="datos.julio202010"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="12" sizeMd="6" sizeMd="4">
+                      <ion-label>2021</ion-label>
+                    <ion-item>
+                        <ion-label>Enero</ion-label>
+                        <ion-checkbox name="enero202110" [(ngModel)]="datos.enero202110"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Julio</ion-label>
+                      <ion-checkbox name="julio202110" [(ngModel)]="datos.julio202110"></ion-checkbox>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-button type="submit">
+            Guardar y enviar
+          </ion-button>
+          <ion-button (click)="pdf()">
+            Imprimir
+          </ion-button>
+        </ion-slide>
+      </ion-slides>
+  </form>
+</ion-content>
