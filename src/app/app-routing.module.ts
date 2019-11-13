@@ -183,6 +183,18 @@ const routes: Routes = [
   { path: 'punto-siete-procedimiento', loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule' },
   { path: 'quejas-sugerencias', loadChildren: './pages/quejas-sugerencias/quejas-sugerencias.module#QuejasSugerenciasPageModule' },
   { path: 'registros-control', loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule' },
+  { path: 'punto-ocho-menu', loadChildren: './pages/punto-ocho-menu/punto-ocho-menu.module#PuntoOchoMenuPageModule' },
+  { path: 'punto-procedimiento', loadChildren: './pages/punto-procedimiento/punto-procedimiento.module#PuntoProcedimientoPageModule' },
+  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
+  { path: 'punto-ocho-solicitud-cambios', loadChildren: './pages/punto-ocho-solicitud-cambios/punto-ocho-solicitud-cambios.module#PuntoOchoSolicitudCambiosPageModule' },
+  { path: 'punto-ocho-lista-distribucion', loadChildren: './pages/punto-ocho-lista-distribucion/punto-ocho-lista-distribucion.module#PuntoOchoListaDistribucionPageModule' },
+  { path: 'punto15-menu', loadChildren: './pages/punto15-menu/punto15-menu.module#Punto15MenuPageModule' },
+  { path: 'punto15-programa-auditorias', loadChildren: './pages/punto15-programa-auditorias/punto15-programa-auditorias.module#Punto15ProgramaAuditoriasPageModule' },
+  { path: 'punto15-plan-auditorias', loadChildren: './pages/punto15-plan-auditorias/punto15-plan-auditorias.module#Punto15PlanAuditoriasPageModule' },
+  { path: 'punto15-informe-auditorias', loadChildren: './pages/punto15-informe-auditorias/punto15-informe-auditorias.module#Punto15InformeAuditoriasPageModule' },
+  { path: 'punto15-procedimiento', loadChildren: './pages/punto15-procedimiento/punto15-procedimiento.module#Punto15ProcedimientoPageModule' },
+  { path: 'punto15-evidencia', loadChildren: './pages/punto15-evidencia/punto15-evidencia.module#Punto15EvidenciaPageModule' },
+  { path: 'punto15-atencion-hallazgos', loadChildren: './pages/punto15-atencion-hallazgos/punto15-atencion-hallazgos.module#Punto15AtencionHallazgosPageModule' },
 
   
   
