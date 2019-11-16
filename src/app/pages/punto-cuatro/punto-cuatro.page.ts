@@ -12,7 +12,7 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class PuntoCuatroPage implements OnInit {
 
-  @ViewChild('slider') slider: IonSlides
+  @ViewChild('slider') slider: IonSlides;
 
   constructor(
     private popoverCtrl: PopoverController,
@@ -142,8 +142,7 @@ export class PuntoCuatroPage implements OnInit {
                       ]
               }
           }
-          
-          ]
+      ]
      ,
       pageSize: 'LETTER',
       pageMargins: [22,130]
