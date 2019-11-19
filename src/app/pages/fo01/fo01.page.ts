@@ -31,6 +31,11 @@ export class FO01Page implements OnInit {
     this.slider.lockSwipes(true);
   }
 
+  enviarForm(formulario){
+    console.log("hola world");
+    
+  }
+
   pdf(){
     console.log('hola mundo');
     var dd = {

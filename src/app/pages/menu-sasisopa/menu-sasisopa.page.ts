@@ -28,26 +28,33 @@ export class MenuSasisopaPage implements OnInit {
   }
 
   goPuntoCuatro() {
-    this.navCtrl.navigateForward('/punto-cuatro');
+
+    this.navCtrl.navigateForward('/punto-cuatro-menu')
   }
 
   goPuntoCinco() {
-    this.navCtrl.navigateForward('/punto-cinco');
+    this.navCtrl.navigateForward('/menu-punto5')
+
   }
 
   goPuntoSeis() {
-    this.navCtrl.navigateForward('/punto-seis');
+    this.navCtrl.navigateForward('/punto-seis-menu');
   }
 
   goPuntoSiete() {
-    this.navCtrl.navigateForward('/punto-siete');
+    this.navCtrl.navigateForward('/punto-siete-menu');
   }
 
   goPuntoOcho() {
     this.navCtrl.navigateForward('/punto-ocho');
   }
 
-  goPuntoDiez() {
+  goPuntoNueve(){
+    this.navCtrl.navigateForward('/punto-nueve');
+    console.log('entraste a la página X')
+  }
+  goPuntoDiez(){
+
     this.navCtrl.navigateForward('/punto-diez');
     console.log('entraste a la página X');
   }
@@ -63,5 +70,8 @@ export class MenuSasisopaPage implements OnInit {
 
   goPuntoDieciseis() {
     this.navCtrl.navigateForward('/punto-dieciseis');
+  }
+  goPuntoQuince(){
+    this.navCtrl.navigateForward('/punto15-menu');
   }
 }

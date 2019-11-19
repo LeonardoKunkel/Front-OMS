@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/punto-cuatro-menu"></ion-back-button>
     </ion-buttons>
     <ion-title>IV. Objetivos, metas e indicadores</ion-title>
     <ion-buttons slot="end">
@@ -13,89 +13,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-segment (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="proced">
-      <ion-label>Procedimiento</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="form">
-      <ion-label>Formulario</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12">
-        <ion-slides #slider>
-  
-            <ion-slide>
-              <embed src="assets/docs/P-SA-04 OBJETIVOS, METAS E INDICADORES.pdf" width="100%" height="600px" alt="pdf">
-            </ion-slide>
-          
-            <ion-slide>
-              <ion-list>
-                <ion-list-header color="primary">
-                  <ion-label>AMBIENTAL</ion-label>
-                </ion-list-header>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 1: Reducir el consumo de agua en la instalación</ion-label>
-                  
-                </ion-item>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 2: Reducir el consumo de energía eléctrica en la instalación</ion-label>
-                  
-                </ion-item>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 3: Reducir la cantidad de reciduos en la instalación</ion-label>
-                  
-                </ion-item>
-        
-                <ion-list-header color="primary">
-                  <ion-label>SEGURIDAD OPERATIVA</ion-label>
-                </ion-list-header>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 1: Minimizar el índice de accidentalidad</ion-label>
-                  
-                </ion-item>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 2: Disminución de los actos inseguros</ion-label>
-                  
-                </ion-item>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 3: Mantenimiento de los sistemas de seguridad</ion-label>
-                  
-                </ion-item>
-        
-                <ion-list-header color="primary">
-                  <ion-label>ADMINISTRACIÓN</ion-label>
-                </ion-list-header>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 1: Implementación del SASISOPA</ion-label>
-                  
-                </ion-item>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 2: Cumplimiento de requisitos legales</ion-label>
-                  
-                </ion-item>
-        
-                <ion-item (click)="openModal($event)">
-                  <ion-label>Objetivo 3: Atención oportuna a las quejas</ion-label>
-                  
-                </ion-item>
-        
-              </ion-list>
-            </ion-slide>
-        
-          </ion-slides>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">OBJETIVOS, METAS E INDICADORES</ion-card-title>
+        <ion-card-subtitle>Llena los campos que se les solicite</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-label>Objetivo 1</ion-label>
+          <ion-textarea  placeholder="Escribe" rows="15"></ion-textarea>
+          <ion-label>Descripcion del proceso</ion-label>
+          <ion-input type="text" placeholder="Describa" required></ion-input>
+      </ion-card-content>
+  </ion-card>
 
 </ion-content>

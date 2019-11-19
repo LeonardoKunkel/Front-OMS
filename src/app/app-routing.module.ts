@@ -153,6 +153,7 @@ const routes: Routes = [
   { path: 'puntocatorcefs29', loadChildren: './pages/puntocatorcefs29/puntocatorcefs29.module#Puntocatorcefs29PageModule' },
   { path: 'puntocatorce30', loadChildren: './pages/puntocatorce30/puntocatorce30.module#Puntocatorce30PageModule' },
   { path: 'puntocatorce31', loadChildren: './pages/puntocatorce31/puntocatorce31.module#Puntocatorce31PageModule' },
+
   { path: 'puntocatorce32', loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule' },
   { path: 'catorce31asea', loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule' },
   { path: 'catorce31comision', loadChildren: './pages/catorce31comision/catorce31comision.module#Catorce31comisionPageModule' },
@@ -166,16 +167,37 @@ const routes: Routes = [
   { path: 'punto-dos-evidencia', loadChildren: './pages/punto-dos-evidencia/punto-dos-evidencia.module#PuntoDosEvidenciaPageModule' },
   { path: 'punto-tres-procedimiento', loadChildren: './pages/punto-tres-procedimiento/punto-tres-procedimiento.module#PuntoTresProcedimientoPageModule' },
   { path: 'punto-tres-lista', loadChildren: './pages/punto-tres-lista/punto-tres-lista.module#PuntoTresListaPageModule' },
-  { path: 'punto-tres-evidencia', loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule' },  { path: 'punto-dieciseis', loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule' },
-  { path: 'simple', loadChildren: './pages/simple/simple.module#SimplePageModule' },
-
-
-
-
-
-
-
-
+  { path: 'punto-tres-evidencia', loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule' },
+  { path: 'menu-punto5', loadChildren: './pages/menu-punto5/menu-punto5.module#MenuPunto5PageModule' },
+  { path: 'punto-cinco-procedimiento', loadChildren: './pages/punto-cinco-procedimiento/punto-cinco-procedimiento.module#PuntoCincoProcedimientoPageModule' },
+  { path: 'punto-cinco-evidencia', loadChildren: './pages/punto-cinco-evidencia/punto-cinco-evidencia.module#PuntoCincoEvidenciaPageModule' },
+  { path: 'punto-seis-menu', loadChildren: './pages/punto-seis-menu/punto-seis-menu.module#PuntoSeisMenuPageModule' },
+  { path: 'punto-seis-deteccion-necesidades', loadChildren: './pages/punto-seis-deteccion-necesidades/punto-seis-deteccion-necesidades.module#PuntoSeisDeteccionNecesidadesPageModule' },
+  { path: 'punto-seis-programa-capacitacion', loadChildren: './pages/punto-seis-programa-capacitacion/punto-seis-programa-capacitacion.module#PuntoSeisProgramaCapacitacionPageModule' },
+  { path: 'punto-seis-seguimiento-programa', loadChildren: './pages/punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.module#PuntoSeisSeguimientoProgramaPageModule' },
+  { path: 'punto-seis-procedimiento', loadChildren: './pages/punto-seis-procedimiento/punto-seis-procedimiento.module#PuntoSeisProcedimientoPageModule' },
+  { path: 'punto-seis-evidencia', loadChildren: './pages/punto-seis-evidencia/punto-seis-evidencia.module#PuntoSeisEvidenciaPageModule' },
+  { path: 'punto-cuatro-menu', loadChildren: './pages/punto-cuatro-menu/punto-cuatro-menu.module#PuntoCuatroMenuPageModule' },
+  { path: 'punto-cuatro-procedimiento', loadChildren: './pages/punto-cuatro-procedimiento/punto-cuatro-procedimiento.module#PuntoCuatroProcedimientoPageModule' },
+  { path: 'punto-cuatro-evidencia', loadChildren: './pages/punto-cuatro-evidencia/punto-cuatro-evidencia.module#PuntoCuatroEvidenciaPageModule' },
+  { path: 'punto-siete-menu', loadChildren: './pages/punto-siete-menu/punto-siete-menu.module#PuntoSieteMenuPageModule' },
+  { path: 'punto-siete-evidencia', loadChildren: './pages/punto-siete-evidencia/punto-siete-evidencia.module#PuntoSieteEvidenciaPageModule' },
+  { path: 'punto-siete-procedimiento', loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule' },
+  { path: 'quejas-sugerencias', loadChildren: './pages/quejas-sugerencias/quejas-sugerencias.module#QuejasSugerenciasPageModule' },
+  { path: 'registros-control', loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule' },
+  { path: 'punto-ocho-menu', loadChildren: './pages/punto-ocho-menu/punto-ocho-menu.module#PuntoOchoMenuPageModule' },
+  { path: 'punto-procedimiento', loadChildren: './pages/punto-procedimiento/punto-procedimiento.module#PuntoProcedimientoPageModule' },
+  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
+  { path: 'punto-ocho-solicitud-cambios', loadChildren: './pages/punto-ocho-solicitud-cambios/punto-ocho-solicitud-cambios.module#PuntoOchoSolicitudCambiosPageModule' },
+  { path: 'punto-ocho-lista-distribucion', loadChildren: './pages/punto-ocho-lista-distribucion/punto-ocho-lista-distribucion.module#PuntoOchoListaDistribucionPageModule' },
+  { path: 'punto15-menu', loadChildren: './pages/punto15-menu/punto15-menu.module#Punto15MenuPageModule' },
+  { path: 'punto15-programa-auditorias', loadChildren: './pages/punto15-programa-auditorias/punto15-programa-auditorias.module#Punto15ProgramaAuditoriasPageModule' },
+  { path: 'punto15-plan-auditorias', loadChildren: './pages/punto15-plan-auditorias/punto15-plan-auditorias.module#Punto15PlanAuditoriasPageModule' },
+  { path: 'punto15-informe-auditorias', loadChildren: './pages/punto15-informe-auditorias/punto15-informe-auditorias.module#Punto15InformeAuditoriasPageModule' },
+  { path: 'punto15-procedimiento', loadChildren: './pages/punto15-procedimiento/punto15-procedimiento.module#Punto15ProcedimientoPageModule' },
+  { path: 'punto15-evidencia', loadChildren: './pages/punto15-evidencia/punto15-evidencia.module#Punto15EvidenciaPageModule' },
+  { path: 'punto15-atencion-hallazgos', loadChildren: './pages/punto15-atencion-hallazgos/punto15-atencion-hallazgos.module#Punto15AtencionHallazgosPageModule' },
+  { path: 'simple', loadChildren: './pages/simple/simple.module#SimplePageModule' }
 
 ];
 @NgModule({

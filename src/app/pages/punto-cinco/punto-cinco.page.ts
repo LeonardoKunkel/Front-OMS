@@ -13,6 +13,16 @@ export class PuntoCincoPage implements OnInit {
 
   cp: number;
   respuestaCP: any= {};
+  datos: any={
+    fecha:'',
+    nombreEncargado:'',
+    correoElectronico:'',
+    telefono:'',
+    razonSocial:'',
+    calleNumero:'',
+    estado:'',
+    colonia:''
+  }
 
   constructor(
     private cpService: CpService,
@@ -23,21 +33,24 @@ export class PuntoCincoPage implements OnInit {
   ngOnInit() {
   }
 
-  cambio(event) {
-    const cambio = event.target.value;
-    this.cp = cambio;
-    this.peticiones(cambio);
-  }
+  // cambio(event) {
+  //    const cambio = event.target.value;
+  //    this.cp = cambio;
+  //    this.peticiones(cambio);
+    
+    
+    
+  // }
 
-  peticiones(cp){
-    this.cpService.getCp(cp).subscribe((data:any) =>{
-      console.log(data);
-      this.respuestaCP = data;
-    })
-  }
+  //  peticiones(cp){
+  //    this.cpService.getCp(cp).subscribe((data:any) =>{
+  //      console.log(data);
+  //      this.respuestaCP = data;
+  //    })
+  //  }
 
   enviarForm(formulario) {
-    console.log(formulario);
+    console.log(this.datos);
   }
 
   async abriAyuda() {
@@ -82,11 +95,11 @@ export class PuntoCincoPage implements OnInit {
               
           },
           {
-              text:'Ciudad, Estado. a días del mes de 2018',alignment:'right'
+              text:`Ciudad, Estado. a ${this.datos.fecha}`,alignment:'right'
               
           },
           {
-              text:'\nC. Cinthya Karime Bedoy DÍaz',fontSize:10
+              text:`\n ${this.datos.nombreEncargado}`,fontSize:10
           },{
               text:'Encargado',fontSize:10
           },{
@@ -104,7 +117,7 @@ export class PuntoCincoPage implements OnInit {
             'Informar a la Agencia de cualquier situación que pudiera poner en riesgo la seguridad Industrial, seguridad Operativa y Protección al Ambiente.'
         ],alignment:'justify',fontSize:10
       },{
-          text:'\nPor lo anterior se le ha asignado el siguiente buzón de correo electrónico estación de handy_elsalto@hotmail.com el número de teléfono: 01(33) 37-32-23-90, y el domicilio ubicado en Gomez Farias #387 , C.P. 45680 El Salto, Jalisco. , para oír y recibir notificaciones.',alignment:'justify',fontSize:10
+          text:`\nPor lo anterior se le ha asignado el siguiente buzón de correo electrónico estación de ${this.datos.correo} el número de teléfono: ${this.datos.telefono}, y el domicilio ubicado en ${this.datos.calleNumero} , ${this.datos.cp} ${this.datos.estado} ${this.datos.colonia} , para oír y recibir notificaciones.`,alignment:'justify',fontSize:10
       },{
           text:'Sin más por el momento, no dudando que realizará las actividades asignadas de acuerdo a su acostumbrado desempeño quedo de usted.',fontSize:10
       },{
