@@ -1,3 +1,4 @@
+import { Geolocation } from '@ionic-native/geolocation';
 import { ProcedimientoCincoPageModule } from './pages/procedimiento-cinco/procedimiento-cinco.module';
 import { AyudaPageModule } from './pages/ayuda/ayuda.module';
 import { NgModule } from '@angular/core';
@@ -20,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+//import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 
@@ -46,7 +48,8 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     File,
     FileOpener,
-    DocumentViewer
+    DocumentViewer,
+    //Geolocation
   ],
   bootstrap: [AppComponent]
 })

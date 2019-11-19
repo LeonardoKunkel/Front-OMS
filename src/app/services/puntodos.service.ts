@@ -39,4 +39,12 @@ export class PuntodosService {
     });
     return this.http.get<any>(`${URL}/puntodos/`, {headers});
   }
+
+  getLocalitation() {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.http.get<any>(`${URL}/location/`, { headers });
+  }
 }

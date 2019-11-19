@@ -153,7 +153,9 @@ const routes: Routes = [
   { path: 'puntocatorcefs29', loadChildren: './pages/puntocatorcefs29/puntocatorcefs29.module#Puntocatorcefs29PageModule' },
   { path: 'puntocatorce30', loadChildren: './pages/puntocatorce30/puntocatorce30.module#Puntocatorce30PageModule' },
   { path: 'puntocatorce31', loadChildren: './pages/puntocatorce31/puntocatorce31.module#Puntocatorce31PageModule' },
-  { path: 'puntocatorce32', loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule' },  { path: 'catorce31asea', loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule' },
+
+  { path: 'puntocatorce32', loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule' },
+  { path: 'catorce31asea', loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule' },
   { path: 'catorce31comision', loadChildren: './pages/catorce31comision/catorce31comision.module#Catorce31comisionPageModule' },
   { path: 'catorce31secretaria', loadChildren: './pages/catorce31secretaria/catorce31secretaria.module#Catorce31secretariaPageModule' },
   { path: 'catorce31semarnat', loadChildren: './pages/catorce31semarnat/catorce31semarnat.module#Catorce31semarnatPageModule' },
@@ -195,17 +197,7 @@ const routes: Routes = [
   { path: 'punto15-procedimiento', loadChildren: './pages/punto15-procedimiento/punto15-procedimiento.module#Punto15ProcedimientoPageModule' },
   { path: 'punto15-evidencia', loadChildren: './pages/punto15-evidencia/punto15-evidencia.module#Punto15EvidenciaPageModule' },
   { path: 'punto15-atencion-hallazgos', loadChildren: './pages/punto15-atencion-hallazgos/punto15-atencion-hallazgos.module#Punto15AtencionHallazgosPageModule' },
-
-  
-  
-
-
-
-
-
-
-
-
+  { path: 'simple', loadChildren: './pages/simple/simple.module#SimplePageModule' }
 
 ];
 @NgModule({
