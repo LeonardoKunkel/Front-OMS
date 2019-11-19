@@ -1,0 +1,100 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Evaluación de Simulacros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-slides>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>1. INFORMACIÓN DEL SIMULACRO</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Área"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Equipo"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Clase de simulacro"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Aviso previo"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Agente perturbador"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Fecha y Hora</ion-label>
+            <ion-datetime display-format="HH:m DD/MM/YYYY"></ion-datetime>
+          </ion-item>
+          <br><br><br>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>ESCENARIO DE EMERGENCIA</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Escribe..." rows="10"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>2. EVALUACIÓN</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Objetivo" rows="8"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Conceptos evaluados" rows="8"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Aciertos y Deficiencias Observadas" rows="8"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>3. OBSERVACIONES</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Escribe" rows="15"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>4. CONCLUSIONES</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Escribe" rows="15"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>5. AUTORIZACIÓN DEL SIMULACRO</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Propone:" rows="7"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Aprobado por:" rows="7"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Autoriza:" rows="7"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+</ion-content>

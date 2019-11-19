@@ -8,9 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class MenuSasisopaPage implements OnInit {
 
-  constructor(
-    private navCtrl: NavController
-  ) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -47,6 +45,11 @@ export class MenuSasisopaPage implements OnInit {
     this.navCtrl.navigateForward('/punto-ocho');
   }
 
+  goPuntoNueve() {
+    this.navCtrl.navigateForward('/punto-nueve');
+    console.log('entraste a la página 9')
+  }
+
   goPuntoDiez(){
     this.navCtrl.navigateForward('/punto-diez');
     console.log('entraste a la página X')
@@ -56,8 +59,21 @@ export class MenuSasisopaPage implements OnInit {
     this.navCtrl.navigateForward('/punto-once');
   }
 
+  goPuntoDoce() {
+    this.navCtrl.navigateForward('/punto-doce');
+  }
+
+  goPuntoTrece() {
+    this.navCtrl.navigateForward('/punto-trece');
+  }
+
   goPuntoCatorce() {
     this.navCtrl.navigateForward('/punto-catorce');
     console.log('entraste a la página XIV')
   }
+
+goPuntoDiecisiete() {
+  this.navCtrl.navigateForward('/punto-diecisiete');
+}
+
 }

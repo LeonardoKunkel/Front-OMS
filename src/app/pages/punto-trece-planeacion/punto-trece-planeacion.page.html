@@ -1,0 +1,130 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-trece"></ion-back-button>
+    </ion-buttons>
+    <ion-title>PLANEACIÓN DE SIMULACROS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>1. INFORMACIÓN GENERAL DEL SIMULACRO</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>Objetivos del simulacro de emergencia</ion-label>
+            <ion-textarea placeholder="Descripción"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Descripción</ion-label>
+            <ion-textarea placeholder="Escribe"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Responsable de la atención</ion-label>
+            <ion-textarea placeholder="Escribe"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Área"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Equipo"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Clase de simulacro"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Aviso previo"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Agente perturbador"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Fecha y Hora</ion-label>
+            <ion-datetime display-format="HH:m DD/MM/YYYY"></ion-datetime>
+          </ion-item>
+          <br><br>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>ESCENARIO DE EMERGENCIA</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Escribe..." rows="10"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>2. EQUIPO Y DISPOSITIVOS REQUERIDOS:</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>3. SECUENCIA DE ACCIONES DEL SIMULACRO</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Descripción"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-button color="secondary">Real/Simulada</ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Responsable"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Recursos requeridos"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Tiempo de respuesta"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>4. UBICACIÓN DE LOS RECURSOS EN EL SITIO</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>Extintores</ion-label>
+            <ion-textarea placeholder="Ubicación"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Paros de Emergencia</ion-label>
+            <ion-textarea placeholder="Ubicación"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Válvulas de cierre</ion-label>
+            <ion-textarea placeholder="Ubicación"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Interruptores</ion-label>
+            <ion-textarea placeholder="Ubicación"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="success" class="ion-text-center">
+            <ion-label>5. OBSERVADORES</ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>Nombres</ion-label>
+            <ion-textarea placeholder="Escribe"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ubicación</ion-label>
+            <ion-textarea placeholder="Escribe"></ion-textarea>
+          </ion-item>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+</ion-content>

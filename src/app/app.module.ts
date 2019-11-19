@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 
+import { Popover1PageModule } from './pages/popover1/popover1.module';
+
 
 
 
@@ -38,7 +40,8 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
     OnbjetivoModalPageModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    Popover1PageModule
   ],
   providers: [
     StatusBar,

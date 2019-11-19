@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/punto-dos"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Evidencia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding ng-controller="MainCtrl">
+  <ion-card class="fondo">
+    <ion-card-header>
+      <ion-card-title class="center">Evidencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <h1 class="center">Subir la evidencia tomada en el punto dos del SASISOPA</h1><br><br><br><br><br><br><br><br>
+        <ion-segment color="secondary">
+            <ion-segment-button>
+              <ion-label>Foto</ion-label>
+              <ion-icon name="camera" size="large"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button checked>
+              <ion-label>Imagen</ion-label>
+              <ion-icon name="images" size="large"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button>
+              <ion-label>Subir</ion-label>
+              <ion-icon name="cloud-upload" size="large"></ion-icon>
+            </ion-segment-button>
+          </ion-segment><br><br><br>
+          <hr class="linea"><br><br><br>
+          <ion-item  class="columnas">
+          <ion-label position="floating">Descriciones</ion-label>
+            <ion-textarea  placeholder="Escribe" rows="15"></ion-textarea>
+          </ion-item>
+    </ion-card-content>
+    <ion-button (click)="onClick()">
+      Enviar comentario
+    </ion-button>
+  </ion-card>
+  
+  </ion-content>

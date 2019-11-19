@@ -1,0 +1,25 @@
+:root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+  .ion-segment {
+    padding: 5px;
+  }
+  .fondo{
+      background-image: url('../../../assets/imagenes/Dots_100.png');
+  }
+  .center{
+      text-align: center;
+  }
+  .linea{
+      background-color: cadetblue;
+  }
+  .columnas{
+      width: 80%;
+      margin: auto;
+      border: solid 4px rgb(96, 206, 240);
+      border-radius: 10px;
+  }
+  .margen{
+    margin: 1cm;
+  }

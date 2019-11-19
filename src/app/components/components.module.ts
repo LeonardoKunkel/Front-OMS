@@ -15,13 +15,13 @@ import { Popover1Component } from './popover1/popover1.component';
     
   ],
   exports:[
-    
+    Popover1Component,
   ],
   imports: [
     CommonModule,
     IonicModule,
     RouterModule,
-    ComponentsModule, 
+    ComponentsModule,
   ]
 })
 export class ComponentsModule { }
