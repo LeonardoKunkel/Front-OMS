@@ -17,7 +17,7 @@ export class PuntoUnoPage implements OnInit {
 
   localizacion: any = {};
 
-  constructor(private navCtrl: NavController, private mapaService:MapaService) { this.getLocalitation(); }
+  constructor(private navCtrl: NavController) {  }
 
   ngOnInit() {
 }
@@ -31,10 +31,10 @@ goPuntoPolitica() {
 goPuntoEvidencia() {
   this.navCtrl.navigateForward('/punto-uno-evidencia')
 }
-getLocalitation() {
-  this.mapaService.getLocalitation().subscribe(( data:any ) => { 
-    this.localizacion = data;
-    console.log(this.localizacion);
-  });
-}
+// getLocalitation() {
+//   this.mapaService.getLocalitation().subscribe(( data:any ) => { 
+//     this.localizacion = data;
+//     console.log(this.localizacion);
+//   });
+// }
 }
