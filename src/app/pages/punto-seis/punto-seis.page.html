@@ -5,8 +5,9 @@
     </ion-buttons>
     <ion-title class="ion-text-center">COMPETENCIA DEL PERSONAL, CAPACITACION Y ENTRETENIMIENTO </ion-title>
   </ion-toolbar>
+  <!-- //[disabled]="disabled" -->
   <ion-fab vertical="center" horizontal="end" >
-    <ion-fab-button [disabled]="disabled" (click)="pdf()" fill='clear'>
+    <ion-fab-button   fill='clear'>
       <ion-icon name="print" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -68,7 +69,7 @@
         <ion-label>Equipos de proteccion personal</ion-label>
         <ion-input type="text" placeholder="Especificar" name="proteccionPersonal" [(ngModel)]="datos.proteccionPersonal"></ion-input>
       </div><br>           
-      <ion-button expand="full" type="submit" color="danger" (click)="ver()" >
+      <ion-button expand="full" type="submit" color="danger"  >
           Guardar
       </ion-button>
     </ion-card>

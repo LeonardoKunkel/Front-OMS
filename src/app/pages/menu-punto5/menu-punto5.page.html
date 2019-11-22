@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/menu-sasisopa"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">V.FUNCIONES RESPONSABILIDADES Y AUTORIDAD</ion-title>
-  </ion-toolbar>
+  </ion-toolbar><hr class="linea">
 </ion-header>
 
 <ion-content>
@@ -12,19 +12,19 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card (click)="goPuntoCinco()">
+          <ion-card (click)="goPuntoCinco()" class="carta">
               <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg" />
               <ion-card-title class="ion-text-justify">CARTA DE DESIGNACION DEL RESPRESENTANTE TECNICO</ion-card-title>
           </ion-card>
         </ion-col>
         <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card (click)="goPuntoCincoProcedimiento()">
+            <ion-card (click)="goPuntoCincoProcedimiento()" class="carta">
                 <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg" />
                 <ion-card-title class="ion-text-justify">Procedimiento</ion-card-title>
             </ion-card>
         </ion-col>
         <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card (click)="goPuntoCincoEvidencia()">
+            <ion-card (click)="goPuntoCincoEvidencia()"class="carta">
                 <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg" />
                 <ion-card-title class="ion-text-justify">Evidencia</ion-card-title>
             </ion-card>
