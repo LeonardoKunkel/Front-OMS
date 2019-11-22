@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-dieciseis',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuntoDieciseisPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  goPuntoProcedimiento() {
+    this.navCtrl.navigateForward('/punto-dieciseis-procedimiento')
+  }
+
+  goPuntoProcedimiento2() {
+    this.navCtrl.navigateForward('/punto-dieciseis-procedimiento2')
+  }
+
+  goPuntoEstadistica() {
+    this.navCtrl.navigateForward('/punto-dieciseis-estadistica')
+  }
+
+  goPuntoRecomendaciones() {
+    this.navCtrl.navigateForward('/punto-dieciseis-comprobacion')
+  }
+
+  goPuntoComprobacion() {
+    this.navCtrl.navigateForward('/punto-dieciseis-comprobacion')
+  }
+
+  goPuntoEntrevista() {
+    this.navCtrl.navigateForward('/punto-dieciseis-entrevista')
+  }
+
+  goPuntoFormato() {
+    this.navCtrl.navigateForward('/punto-dieciseis-formato')
   }
 
 }

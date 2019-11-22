@@ -153,7 +153,7 @@ const routes: Routes = [
   { path: 'puntocatorcefs29', loadChildren: './pages/puntocatorcefs29/puntocatorcefs29.module#Puntocatorcefs29PageModule' },
   { path: 'puntocatorce30', loadChildren: './pages/puntocatorce30/puntocatorce30.module#Puntocatorce30PageModule' },
   { path: 'puntocatorce31', loadChildren: './pages/puntocatorce31/puntocatorce31.module#Puntocatorce31PageModule' },
-
+  
   { path: 'puntocatorce32', loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule' },
   { path: 'catorce31asea', loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule' },
   { path: 'catorce31comision', loadChildren: './pages/catorce31comision/catorce31comision.module#Catorce31comisionPageModule' },
@@ -228,7 +228,16 @@ const routes: Routes = [
   { path: 'punto-trece-planeacion', loadChildren: './pages/punto-trece-planeacion/punto-trece-planeacion.module#PuntoTrecePlaneacionPageModule' },
   { path: 'punto-trece-planes', loadChildren: './pages/punto-trece-planes/punto-trece-planes.module#PuntoTrecePlanesPageModule' },
   { path: 'punto-trece-procedimiento', loadChildren: './pages/punto-trece-procedimiento/punto-trece-procedimiento.module#PuntoTreceProcedimientoPageModule' },
-  { path: 'punto-trece-programa', loadChildren: './pages/punto-trece-programa/punto-trece-programa.module#PuntoTreceProgramaPageModule' }
+  { path: 'punto-trece-programa', loadChildren: './pages/punto-trece-programa/punto-trece-programa.module#PuntoTreceProgramaPageModule' },
+  { path: 'punto-dieciseis-procedimiento', loadChildren: './pages/punto-dieciseis-procedimiento/punto-dieciseis-procedimiento.module#PuntoDieciseisProcedimientoPageModule' },
+  { path: 'punto-dieciseis-procedimiento2', loadChildren: './pages/punto-dieciseis-procedimiento2/punto-dieciseis-procedimiento2.module#PuntoDieciseisProcedimiento2PageModule' },
+  { path: 'punto-dieciseis-formato', loadChildren: './pages/punto-dieciseis-formato/punto-dieciseis-formato.module#PuntoDieciseisFormatoPageModule' },
+  { path: 'punto-dieciseis-entrevista', loadChildren: './pages/punto-dieciseis-entrevista/punto-dieciseis-entrevista.module#PuntoDieciseisEntrevistaPageModule' },
+  { path: 'punto-dieciseis-comprobacion', loadChildren: './pages/punto-dieciseis-comprobacion/punto-dieciseis-comprobacion.module#PuntoDieciseisComprobacionPageModule' },
+  { path: 'punto-dieciseis-recomendaciones', loadChildren: './pages/punto-dieciseis-recomendaciones/punto-dieciseis-recomendaciones.module#PuntoDieciseisRecomendacionesPageModule' },
+  { path: 'punto-dieciseis-estadistica', loadChildren: './pages/punto-dieciseis-estadistica/punto-dieciseis-estadistica.module#PuntoDieciseisEstadisticaPageModule' },  { path: 'punto-dieciseis', loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule' }
+
+
 
 
 ];
