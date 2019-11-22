@@ -1,3 +1,4 @@
+import { EventosService } from './../../services/eventos.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -27,6 +28,7 @@ export class CalendarPage implements OnInit {
     listPlugin, 
     interactionPlugin
   ];
+ 
 
   calendarHeader = {
     left: 'prev,next',
@@ -34,18 +36,31 @@ export class CalendarPage implements OnInit {
     right: 'dayGridMonth,timeGridWeek,timeGridDay'
   }
 
-  calendarEvents: EventInput[] = [
-    {"start": "2019-07-19", "title": "Auditoria SASISOPA"},
-    {"start": "2019-07-01", "title": "Capacitación de personal"},
-    {"start": "2019-07-19", "title": "Pago de Impuestos"},
-    {"start": "2019-07-19", "title": "Acreditación ante la CRE"}
-  ];
 
   constructor(
-    private modalCtrl: ModalController
-  ) { }
+    private modalCtrl: ModalController,
+    private evetoService: EventosService
+  ) { this.traeEventos(); }
 
-  ngOnInit() {}
+  start: '';
+  title: '';
+
+  calendarEvents: EventInput[] = [
+    /* {"start": "2019-07-19", "title": "Auditoria SASISOPA"},
+    {"start": "2019-07-01", "title": "Capacitación de personal"},
+    {"start": "2019-07-19", "title": "Pago de Impuestos"},
+    {"start": "2019-07-19", "title": "Acreditación ante la CRE"},*/
+  ];
+  caevents: any[] = [];
+
+  ceventos:any [] = [];
+
+  oevents:any = {};
+
+
+  ngOnInit() {
+  
+  }
 
 
   handleDateClick(event){
@@ -68,8 +83,23 @@ export class CalendarPage implements OnInit {
     console.log(event);
   }
 
-  closeCalendar(){
+  closeCalendar() {
     this.modalCtrl.dismiss();
+  }
+
+  traeEventos() {
+    this.evetoService.getEventos().subscribe((data:any) => {
+      this.ceventos = data;
+      console.log(this.ceventos);
+      /* this.caevents = this.ceventos.eventos;
+      this.oevents = this.caevents[0];
+      console.log(this.oevents);
+      this.start = this.oevents.start;
+      this.title = this.oevents.title;
+      console.log(this.title); */
+      this.calendarEvents.push({"start": "2019-10-15", "title": "prueba" });
+      console.log(this.calendarEvents);
+    });
   }
 
 }

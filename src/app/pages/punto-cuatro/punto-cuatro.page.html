@@ -1,29 +1,39 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/punto-cuatro-menu"></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>IV. Objetivos, metas e indicadores</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="pdf()">
-        <ion-icon slot="icon-only" name="download"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-      <ion-card-header>
-        <ion-card-title class="ion-text-center">OBJETIVOS, METAS E INDICADORES</ion-card-title>
-        <ion-card-subtitle>Llena los campos que se les solicite</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-          <ion-label>Objetivo 1</ion-label>
-          <ion-textarea  placeholder="Escribe" rows="15"></ion-textarea>
-          <ion-label>Descripcion del proceso</ion-label>
-          <ion-input type="text" placeholder="Describa" required></ion-input>
-      </ion-card-content>
-  </ion-card>
-
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goOpcion1()">
+          <ion-card-content>
+            <img class="ion-padding" src="../../../assets/imagenes/X - control de procesos-01.png" />
+            <ion-card-title>P-SA-04 OBJETIVOS, METAS E INDICADORES</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goOpcion2()">
+          <ion-card-content>
+            <img class="ion-padding" src="../../../assets/imagenes/XV - auditorias-01.png" />
+            <ion-card-title>FS-12 OBJETIVOS, METAS E INDICADORES</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card mode="ios" (click)="goOpcion3()">
+          <ion-card-content>
+            <img class="ion-padding" src="../../../assets/imagenes/X - Administración de cambios de tecnología-01.png" />
+            <ion-card-title>Subir evidencia</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

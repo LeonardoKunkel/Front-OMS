@@ -1,3 +1,4 @@
+import { PuntodosService } from './../../services/puntodos.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EditPoliticaPage } from '../edit-politica/edit-politica.page';
@@ -5,6 +6,8 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { AlertController, IonSlides } from '@ionic/angular';
 
 import { NavController } from '@ionic/angular';
+import { MapaService } from 'src/app/services/mapa.service';
+
 @Component({
   selector: 'app-punto-uno',
   templateUrl: './punto-uno.page.html',
@@ -12,19 +15,26 @@ import { NavController } from '@ionic/angular';
 })
 export class PuntoUnoPage implements OnInit {
 
+  localizacion: any = {};
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) {  }
 
   ngOnInit() {
 }
-goPuntoProcedimiento(){
+goPuntoProcedimiento() {
   this.navCtrl.navigateForward('/punto-uno-procedimiento')
 }
 
-goPuntoPolitica(){
+goPuntoPolitica() {
   this.navCtrl.navigateForward('/punto-uno-politica')
 }
-goPuntoEvidencia(){
+goPuntoEvidencia() {
   this.navCtrl.navigateForward('/punto-uno-evidencia')
 }
+// getLocalitation() {
+//   this.mapaService.getLocalitation().subscribe(( data:any ) => { 
+//     this.localizacion = data;
+//     console.log(this.localizacion);
+//   });
+// }
 }

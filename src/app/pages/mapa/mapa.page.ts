@@ -1,5 +1,7 @@
+import { PuntodosService } from './../../services/puntodos.service';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MapaService } from 'src/app/services/mapa.service';
 
 declare var mapboxgl: any;
 
@@ -13,7 +15,7 @@ export class MapaPage implements OnInit,AfterViewInit {
   lat: number = 20.5931;
   lng: number =  -100.392;
 
-  constructor(private router: ActivatedRoute) { }
+  constructor(private router: ActivatedRoute, private puntoDosService: PuntodosService) { this.getLocalitation(); }
 
   ngOnInit() {
     
@@ -78,6 +80,12 @@ export class MapaPage implements OnInit,AfterViewInit {
           }
           }, labelLayerId);
       });
+  }
+
+  getLocalitation() {
+    this.puntoDosService.getLocalitation().subscribe(( data ) => {
+      console.log(data); 
+    });
   }
 
 
