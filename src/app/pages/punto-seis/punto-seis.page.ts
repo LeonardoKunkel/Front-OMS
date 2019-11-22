@@ -1,8 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { AlertController } from '@ionic/angular';
 import { FormsModule, Form } from '@angular/forms';
 
@@ -31,53 +29,50 @@ export class PuntoSeisPage implements OnInit {
   @ViewChild('slider') slider: IonSlides
   @ViewChild('formulario') formulario: Form
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController,private pdfMaker: PdfMakerService) { }
   
   ngOnInit() {
    
   }
 
     
-    async ver() {
+  //   async ver() {
      
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Importante',
-      message: 'Seguro de realizar esta accion',
-      buttons: [
-        {
-          text: 'Okay',
-          handler: () => {
-            console.log('Confirm Okay');
-           this.change()
+  //   const alert = await this.alertController.create({
+  //     header: 'Alert',
+  //     subHeader: 'Importante',
+  //     message: 'Seguro de realizar esta accion',
+  //     buttons: [
+  //       {
+  //         text: 'Okay',
+  //         handler: () => {
+  //           console.log('Confirm Okay');
+  //          this.change()
 
-          }
-        }
-      ]
-          });
+  //         }
+  //       }
+  //     ]
+  //         });
 
           
 
-    await alert.present();
-  }
+  //   await alert.present();
+  // }
   
-  public disabled = true;
+  // public disabled = true;
 
-   pdf() {
-    console.log('action triggered');
-    
+   
 
-  }
-
-   change() {
-    this.disabled = false;
-  }
+  //  change() {
+  //   this.disabled = false;
+  // }
 
 
 
 
 //   Pdf(){
 
+//     console.log('Entraste a la funcion');
     
 
 //    // playground requires you to assign document definition to a variable called dd
@@ -153,8 +148,7 @@ export class PuntoSeisPage implements OnInit {
 //     pageSize: 'LETTER',
 //     pageMargins: [22,130]
 // };
-//     this.pdfObj = pdfMake.createPdf(dd);
-//     this.pdfObj.download();
+// this.pdfMaker.generate(dd,'Punto 7');
     
 //   }
 
@@ -162,12 +156,13 @@ export class PuntoSeisPage implements OnInit {
 
 
 
-//   enviarForm(formulario){
-//     this.Pdf();
+  enviarForm(formulario){
+    console.log('Enviado');
     
-//   }
+    
+  }
 
- 
+
 
 
  
