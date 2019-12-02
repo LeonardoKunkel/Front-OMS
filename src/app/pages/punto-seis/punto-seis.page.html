@@ -7,11 +7,11 @@
   </ion-toolbar>
 
   <!-- //[disabled]="disabled" -->
-  <ion-fab vertical="center" horizontal="end" >
+  <!-- <ion-fab vertical="center" horizontal="end" >
     <ion-fab-button   fill='clear'>
-      <ion-icon name="print" ></ion-icon>
+      <ion-icon name="print" (click)="pdf()"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-header>
 
 
@@ -29,6 +29,10 @@
       <div>
         <ion-label>Nombre</ion-label><br>
         <ion-input type="text" placeholder="Jefe inmediato/Superior" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
+      </div>
+      <div>
+        <ion-label>Area</ion-label>
+        <ion-input type="text" placeholder="Nombre del area" name="area" [(ngModel)]="datos.area"></ion-input>
       </div>
       <div>
         <ion-label>Caracteristícas personales</ion-label>
@@ -72,6 +76,9 @@
       </div><br>           
       <ion-button expand="full" type="submit" color="danger"  >
           Guardar
+      </ion-button>
+      <ion-button (click)="pdf()">
+        Imprimir 
       </ion-button>
     </ion-card>
   </form>

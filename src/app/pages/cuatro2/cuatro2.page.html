@@ -1,265 +1,84 @@
 <ion-header no-border>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>OBJETIVOS, METAS E INDICADORES</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-grid fixed>
-    <ion-slides mode="ios" pager="ios" scrollbar="ios">
-      <ion-slide>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/punto-cuatro"></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ion-text-center">FS-12 OBJETIVOS, METAS E INDICADORES</ion-title>
+    </ion-toolbar><hr class="linea"> 
+  </ion-header>
+  
+  <ion-content>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+    <ion-grid fixed>
         <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-item>
-                <ion-label>Objetivo 1</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Proceso</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Responsable</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Periodo</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-            </ion-card>
-            <ion-card>
-              <ion-item>
-                <ion-label>METAS</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>ACTIVIDAD</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>INDICADOR</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>SOPORTE</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>FRECUENCIA DE EVALUACIÓN</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>CRITERIO DE ACEPTACIÓN </ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-col>
+            <ion-col size="12">
+                <ion-card >
+                        <ion-card-content>
+                            <ion-label>Objetivo</ion-label>
+                            <ion-textarea placeholder="¿Cual es su objetivo?" name="objetivo" [(ngModel)]="datos.objetivo"></ion-textarea>
+                            <ion-label>Proceso</ion-label>
+                            <ion-input type="text" placeholder="Describe el proceso" name="proceso" [(ngModel)]="datos.proceso"></ion-input>
+                            <ion-label>Responsable/Respresentante tecnico:</ion-label>
+                            <ion-input type="text" placeholder="Juan Emeregildo Peréz" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
+                            <ion-label>Periodo</ion-label>
+                            <ion-input type="text" placeholder="Ingresa periodo" name="periodo" [(ngModel)]="datos.periodo"></ion-input>
+                            <ion-item-divider>
+                                <ion-label>Meta 1</ion-label>
+                            </ion-item-divider>
+                            <ion-label>Meta #1</ion-label>
+                            <ion-textarea placeholder="¿Cual es tu meta?" name="meta" [(ngModel)]="datos.meta1"></ion-textarea>
+                            <ion-label>Actividad a realizar</ion-label>
+                            <ion-textarea placeholder="Describe la actividad" name="actividad1" [(ngModel)]="datos.actividad1"></ion-textarea>
+                            <ion-label>Indicador</ion-label>
+                            <ion-textarea placeholder="¿Cual es tu indicador?" name="indicador1" [(ngModel)]="datos.indicador1"></ion-textarea>
+                            <ion-label>Soporte</ion-label>
+                            <ion-textarea placeholder="Describe el soporte" name="soporte1" [(ngModel)]="datos.soporte1"></ion-textarea>
+                            <ion-label>Frecuencia de evaluacion</ion-label>
+                            <ion-textarea placeholder="Ingresa la frecuencia" name="frecuencia1" [(ngModel)]="datos.frecuencia1"></ion-textarea>
+                            <ion-label>Criterio de evaluacion</ion-label>
+                            <ion-textarea placeholder="¿Cual es el criterio?" name="criterio1" [(ngModel)]="datos.criterio1"></ion-textarea>
+                            <ion-item-divider>
+                                <ion-label>Meta 2</ion-label>
+                            </ion-item-divider>
+                            <ion-label>Meta #2</ion-label>
+                            <ion-textarea placeholder="¿Cual es tu meta?" name="meta2" [(ngModel)]="datos.meta2"></ion-textarea>
+                            <ion-label>Actividad a realizar</ion-label>
+                            <ion-textarea placeholder="Describe la actividad" name="actividad2" [(ngModel)]="datos.actividad2"></ion-textarea>
+                            <ion-label>Indicador</ion-label>
+                            <ion-textarea placeholder="¿Cual es tu indicador?" name="indicador2" [(ngModel)]="datos.indicador2"></ion-textarea>
+                            <ion-label>Soporte</ion-label>
+                            <ion-textarea placeholder="Describe el soporte" name="soporte2" [(ngModel)]="datos.soporte2"></ion-textarea>
+                            <ion-label>Frecuencia de evaluacion</ion-label>
+                            <ion-textarea placeholder="Ingresa la frecuencia" name="frecuencia2" [(ngModel)]="datos.frecuencia2"></ion-textarea>
+                            <ion-label>Criterio de evaluacion</ion-label>
+                            <ion-textarea placeholder="¿Cual es el criterio?" name="criterio2" [(ngModel)]="datos.criterio2"></ion-textarea>
+                            <ion-item-divider>
+                                <ion-label>Meta 3</ion-label>
+                            </ion-item-divider>
+                            <ion-label>Meta #3</ion-label>
+                            <ion-textarea placeholder="¿Cual es tu meta?" name="meta3" [(ngModel)]="datos.meta3"></ion-textarea>
+                            <ion-label>Actividad a realizar</ion-label>
+                            <ion-textarea placeholder="Describe la actividad" name="actividad3" [(ngModel)]="datos.actividad3"></ion-textarea>
+                            <ion-label>Indicador</ion-label>
+                            <ion-textarea placeholder="¿Cual es tu indicador?" name="indicador3" [(ngModel)]="datos.indicador3"></ion-textarea>
+                            <ion-label>Soporte</ion-label>
+                            <ion-textarea placeholder="Describe el soporte" name="soporte3" [(ngModel)]="datos.soporte3"></ion-textarea>
+                            <ion-label>Frecuencia de evaluacion</ion-label>
+                            <ion-textarea placeholder="Ingresa la frecuencia" name="frecuencia3" [(ngModel)]="datos.frecuencia3"></ion-textarea>
+                            <ion-label>Criterio de evaluacion</ion-label>
+                            <ion-textarea placeholder="¿Cual es el criterio?" name="criterio3" [(ngModel)]="datos.criterio3"></ion-textarea>
+    
+                            <ion-button type="submit">
+                                Guardar y enviar
+                            </ion-button>
+                            <ion-button (click)="pdf()">
+                                Imprimir
+                            </ion-button>
+                        </ion-card-content>
+                </ion-card>
+            </ion-col>
         </ion-row>
-      </ion-slide>
-      <ion-slide>
-        <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-item>
-                <ion-label>Objetivo 2</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Proceso</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Responsable</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Periodo</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-            </ion-card>
-            <ion-card>
-              <ion-item>
-                <ion-label>METAS</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>ACTIVIDAD</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>INDICADOR</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>SOPORTE</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>FRECUENCIA DE EVALUACIÓN</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>CRITERIO DE ACEPTACIÓN </ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
-      <ion-slide>
-        <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-item>
-                <ion-label>Objetivo 3</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Proceso</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Responsable</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Periodo</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-            </ion-card>
-            <ion-card>
-              <ion-item>
-                <ion-label>METAS</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>ACTIVIDAD</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>INDICADOR</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>SOPORTE</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>FRECUENCIA DE EVALUACIÓN</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>CRITERIO DE ACEPTACIÓN </ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
-      <ion-slide>
-        <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-item>
-                <ion-label>Objetivo 4</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Proceso</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Responsable</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Periodo</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-            </ion-card>
-            <ion-card>
-              <ion-item>
-                <ion-label>METAS</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>ACTIVIDAD</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>INDICADOR</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>SOPORTE</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>FRECUENCIA DE EVALUACIÓN</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>CRITERIO DE ACEPTACIÓN </ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
-      <ion-slide>
-        <ion-row>
-          <ion-col>
-            <ion-card>
-              <ion-item>
-                <ion-label>Objetivo 5</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Proceso</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Responsable</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Periodo</ion-label>
-                <ion-textarea placeholder="Escribe"></ion-textarea>
-              </ion-item>
-            </ion-card>
-            <ion-card>
-              <ion-item>
-                <ion-label>METAS</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>ACTIVIDAD</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>INDICADOR</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>SOPORTE</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>FRECUENCIA DE EVALUACIÓN</ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>CRITERIO DE ACEPTACIÓN </ion-label>
-                <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
-    </ion-slides>
-  </ion-grid>
-</ion-content>
+    </ion-grid>
+  </form>
+  </ion-content>
+  
