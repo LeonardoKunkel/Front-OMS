@@ -116,7 +116,7 @@ body: [
                   [{text:'OBJETIVO DEL PUESTO'},{text:`${this.datos.funcionesEspecificas}`,colSpan:3},{},{}],
                   [{text:'FUNCIONES ESPECIFÍCAS'},{text:`${this.datos.funcionesEspecificas}`,colSpan:3},{},{}],
                   [{text:'CONOCIMIENTOS ESPECIFÍCOS'},{text:`${this.datos.conocimientosFisiscos}`,colSpan:3},{},{}],
-                  [{text:'CARACTERÍSTICAS PERSONALES'},{text:`${this.datos.caracteristicasPersonales}`},{text:'DESTREZAS TÉCNICAS'},{}],
+                  [{text:'CARACTERÍSTICAS PERSONALES'},{text:`${this.datos.caracteristicasPersonales}`},{text:'DESTREZAS TÉCNICAS'},{text:`${this.datos.deztrezasTecnicas}`}],
                   [{text:'NIVEL ACADEMICO REQUERIDO'},{text:`${this.datos.nivelAcademico}`,colSpan:3},{},{}],
                   [{text:'REQUERIMIENTOS FÍSICOS'},{text:`${this.datos.requerimientosFisicos}`,colSpan:3},{},{}],
                   [{text:'PERSONAL A SU CARGO'},{text:`${this.datos.personalCargo}`,colSpan:3},{},{}],

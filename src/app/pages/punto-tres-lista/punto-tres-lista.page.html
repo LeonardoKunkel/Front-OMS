@@ -1,17 +1,28 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title class="ion-text-center">Lista </ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="punto-tres"></ion-back-button>
+      <ion-back-button defaultHref="/punto-tes"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios"><ion-slide>
-      <ion-button id="btn-down-req" (click)="downloadListReqLeg()">
-        <ion-icon slot="end" name="arrow-round-down"></ion-icon>
-        Descargar lista de requisitos legales
-      </ion-button>
+  <ion-card-header>
+    <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+    <ion-card-title>Lista de requisitos legales</ion-card-title>
+  </ion-card-header>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <ion-item>
+          <ion-button id="btn-down-req" (click)="downloadListReqLeg()">
+            <ion-icon slot="end" name="arrow-round-down"></ion-icon>
+            Descargar lista de requisitos legales
+          </ion-button>
+          <ion-button id="btn-down-req" (click)="pdf2()" color="success">
+            <ion-icon slot="end" name="arrow-round-down"></ion-icon>
+            Descargar Identificacion de requisitos legales
+          </ion-button>
+      </ion-item>
     </ion-slide>
   </ion-slides>
 </ion-content>

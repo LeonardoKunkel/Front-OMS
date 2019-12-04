@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
       <ion-title class="ion-text-center">RESULTADO DEL ANÁLISIS DE RIESGOS</ion-title>
       <ion-buttons slot="start">
@@ -8,6 +8,13 @@
 </ion-header>
 
 <ion-content>
+  <ion-card-header>
+    <ion-card-title class="ion-text-center">Debes de realizar el siguiente formulario, por ende a las fallas que tengas en la estacion de servicio(Maximo 10 fallas)<br><br>
+    F: Frecuencia <br>
+    C: Consecuencia <br>
+    R:Riesgo <br>
+    </ion-card-title>
+  </ion-card-header>
   <form  #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
   <ion-slides mode="ios" pager="ios" scrollbar="ios">
       <ion-slide>

@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-dos"></ion-back-button>
@@ -7,6 +7,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-card-header>
+    <ion-card-title>Debes de realizar el formulario</ion-card-title>
+  </ion-card-header>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
       <ion-slides mode="ios" pager="ios" scrollbar="ios">
           <ion-slide>

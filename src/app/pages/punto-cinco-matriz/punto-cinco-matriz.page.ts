@@ -27,12 +27,12 @@ export class PuntoCincoMatrizPage implements OnInit {
   // }
   
   agregar(){
-    var i;
+    // var i;
 
-    for(i = 0; i<=4; i++ ){
-        console.log(i);
+    // for(i = 0; i<=4; i++ ){
+    //     console.log(i);
         
-    }
+    // }
 
     console.log('Agregar input');
      var txt_01 = document.createTextNode('Ingrese puesto');
