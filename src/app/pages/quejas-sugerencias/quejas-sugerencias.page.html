@@ -3,60 +3,10 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-siete-menu"></ion-back-button>
     </ion-buttons>
-    <ion-title>Quejas y sugerencias</ion-title>
+    <ion-title class="ion-text-center">Quejas y sugerencias</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="enviarLista(form)" #form="ngForm">
-      <ion-slides mode="ios" pager="ios" scrollbar="ios">
-        <ion-slide>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Registro y control de quejas y sugerencias</ion-card-subtitle>
-                <ion-card-title>Quejas y Sugerencias</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <ion-label>Numero de quejas</ion-label>
-                <ion-input type="number" placeholder="Ingresa un numero" name="numeroQueja" [(ngModel)]="datos.numeroQueja"></ion-input>
-                <ion-item>
-                  <ion-label>Queja</ion-label>
-                  <ion-checkbox name="queja" [(ngModel)]="datos.queja"></ion-checkbox>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Sugerencia</ion-label>
-                  <ion-checkbox name="sugerencia" [(ngModel)="datos.sugerencia"]></ion-checkbox>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Otro</ion-label>
-                  <ion-checkbox name="otro" [(ngModel)]="datos.otro"></ion-checkbox>
-                </ion-item>
-                <ion-label>Descripción</ion-label><br>
-                <textarea name="descripcion" id="" cols="30" rows="10" color="success" [(ngModel)]="datos.descripcion"></textarea><br>
-                <ion-label>Contaco</ion-label>
-                <ion-input type="number" placeholder="Telf.de contacto" name="contacto" [(ngModel)]="datos.contacto"></ion-input>
-                <ion-label>Prioridad</ion-label>
-                <ion-item>
-                  <ion-label>Alta</ion-label>
-                  <ion-radio name="alta" [(ngModel)]="datos.alta"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Mediana</ion-label>
-                  <ion-radio name="mediana" [(ngModel)]="datos.mediana"></ion-radio>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Baja</ion-label>
-                  <ion-radio name="baja" [(ngModel)]="datos.baja"></ion-radio>
-                </ion-item>
-                <ion-button (click)="onClick()">
-                  Enviar
-                </ion-button>
-                <ion-button (click)="pdf()">
-                  Guardar y enviar
-                </ion-button>
-              </ion-card-content>
-            </ion-card>
-        </ion-slide>
-      </ion-slides>
-  </form>
+
 </ion-content>

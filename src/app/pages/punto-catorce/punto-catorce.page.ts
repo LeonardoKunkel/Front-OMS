@@ -32,4 +32,7 @@ export class PuntoCatorcePage implements OnInit {
 
       this.navCtrl.navigateForward('/puntocatorcefs29');
   }
+  goPuntoCatorceEvidencia(){
+    this.navCtrl.navigateForward('/punto-catorce-evidencia');
+  }
 }

@@ -24,5 +24,7 @@ export class PuntoDocePage implements OnInit {
   goDoceCarta() {
     this.navCtrl.navigateForward('/punto-doce-carta')
   }
-
+  goEvidencia(){
+    this.navCtrl.navigateForward('/punto-doce-evidencia')
+  }
 }
