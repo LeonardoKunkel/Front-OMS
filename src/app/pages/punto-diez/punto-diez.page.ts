@@ -22,4 +22,7 @@ export class PuntoDiezPage implements OnInit {
 
      this.navCtrl.navigateForward('/punto-diezfo09');
   }
+  goPuntoDiezEvidencia(){
+    this.navCtrl.navigateForward('/punto-diez-evidencia');
+  }
 }

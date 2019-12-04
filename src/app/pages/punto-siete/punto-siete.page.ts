@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertController, IonSlides } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { and } from '@angular/router/src/utils/collection';
 @Component({
   selector: 'app-punto-siete',
   templateUrl: './punto-siete.page.html',
@@ -8,7 +9,7 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class PuntoSietePage implements OnInit {
   datos:any={
-    curso:'',
+    curso:false,
     difusion:false,
     interno:false,
     externo:false,
@@ -26,6 +27,13 @@ export class PuntoSietePage implements OnInit {
     // this.slider.lockSwipes(true);
   }
   pdf(){
+      if(this.datos.curso===true || this.datos.difusion===true ){
+        var curso1="X"
+        console.log(curso1);
+      }else{
+          var curso1=" "
+          console.log(curso1);
+      }
 var dd = {
   //   background: function(currentPage, pageSize) {
   //   return {image: 'sampleImage.jpg', width: 400,height: 500, absolutePosition: {x: 60, y: 100},opacity: 0.5}
@@ -69,7 +77,7 @@ body: [
 				            body:[
 				                [
 				                    {
-				                      text:`${this.datos.curso}`  
+				                      text:`${curso1}`  
 				                    }]
 				                ]
 				        }

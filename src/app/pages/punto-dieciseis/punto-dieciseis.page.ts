@@ -40,5 +40,8 @@ export class PuntoDieciseisPage implements OnInit {
   goPuntoFormato() {
     this.navCtrl.navigateForward('/punto-dieciseis-formato')
   }
+  goEvidencia(){
+    this.navCtrl.navigateForward('/punto-dieciseis-evidencia')
+  }
 
 }

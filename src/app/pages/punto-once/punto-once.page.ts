@@ -91,4 +91,7 @@ export class PuntoOncePage implements OnInit {
     console.log('Hola mundo');
     this.navCtrl.navigateForward('/pdf-im11')
   }
+  goPuntoOnceEvidencia(){
+    this.navCtrl.navigateForward('/punto-once-evidencia')
+  }
 }
