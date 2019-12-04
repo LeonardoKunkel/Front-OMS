@@ -1,9 +1,112 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>puntoOchoSolicitudCambios</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-ocho-menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">FS-03 SOLICITUD DE CAMBIOS</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-card-header>
+  <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+  <ion-card-title>Awesome Title</ion-card-title>
+</ion-card-header>
 <ion-content>
-
+  <form action="">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle class="ion-text-center">Llena los campos requeridos</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid fixed>
+                  <ion-row>
+                    <ion-col size="12" sizeMd="6" sizeLg="12">
+                        <ion-label>Codificacíon:</ion-label>
+                        <ion-input type="text" placeholder="Escribe.."></ion-input>
+                        <ion-label>Nombre del documento:</ion-label>
+                        <ion-input type="text" placeholder="Escribe.."></ion-input>
+                        <ion-label>Elemento del sistema:</ion-label>
+                        <ion-input type="text" placeholder="Escribe.."></ion-input>  
+                        <ion-label>Nombre del solicitante:</ion-label>
+                        <ion-input type="text" placeholder="Escribe.."></ion-input>  
+                        <ion-label>Fecha de solicitud</ion-label>
+                        <ion-input type="text" placeholder="Escribe.."></ion-input>  
+                        <ion-label>Puesto</ion-label>
+                        <ion-input type="text" placeholder="Escribe.."></ion-input>  
+                      </ion-col>
+                  </ion-row>
+                </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide><ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Selecciona los documentos que tienes</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label>Procedimiento de sistema</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Formato de sistema</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Procedimiento especifico</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Formato operativo</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          </ion-card-content>    
+      </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Selecciona la casilla correpondiente</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>Sugerencia</ion-label>
+            <ion-checkbox></ion-checkbox><br>
+            <ion-label>Recomensación ICR</ion-label>
+            <ion-checkbox></ion-checkbox><br>
+            <ion-label>Hallazgo de auditoria</ion-label>
+            <ion-checkbox></ion-checkbox><br>
+            <ion-label>Acción de mejora</ion-label>
+            <ion-checkbox></ion-checkbox><br>
+            <ion-label>Cambio de tecnologia</ion-label>
+            <ion-checkbox></ion-checkbox><br>
+            <ion-label>Cambio en el proceso</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Llena los campos requeridos</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>Estado actual</ion-label>
+            <ion-input type="text" placeholder="Escribe.."></ion-input>
+            <ion-label>Cambio propuesto</ion-label>
+            <ion-input type="text" placeholder="Ingresa el cambio"></ion-input>
+            <ion-label>Resultado de la evaluación</ion-label>
+            <ion-item>
+              <ion-label>Aceptada</ion-label>
+              <ion-checkbox></ion-checkbox>
+              <ion-label>Rechazada</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-label>Motivo de la acpetacion o rechazo</ion-label>
+            <ion-textarea placeholder="Describir"></ion-textarea>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

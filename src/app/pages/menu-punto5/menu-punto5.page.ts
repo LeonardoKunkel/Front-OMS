@@ -15,6 +15,9 @@ export class MenuPunto5Page implements OnInit {
   goPuntoCinco() {
     this.navCtrl.navigateForward('/punto-cinco')
   }
+  goPuntoMatriz() {
+    this.navCtrl.navigateForward('/punto-cinco-matriz')
+  }
   goPuntoCincoProcedimiento() {
     this.navCtrl.navigateForward('/punto-cinco-procedimiento')
   }

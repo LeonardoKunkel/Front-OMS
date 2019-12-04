@@ -13,6 +13,7 @@ import { FormsModule, Form } from '@angular/forms';
 export class PuntoSeisPage implements OnInit {
   pdfObj=null;
   datos:any={
+    area:'',
     nombre:'',
     caracteristicasPersonales:'',
     requerimientosFisicos:'',
@@ -70,87 +71,83 @@ export class PuntoSeisPage implements OnInit {
 
 
 
-//   Pdf(){
+  pdf(){
+    console.log('jkdjddjk');
+    // playground requires you to assign document definition to a variable called dd
 
-//     console.log('Entraste a la funcion');
-    
+var dd = {
+  header: function(){
+    return {
+        table: { widths: [565],heights:[50,15,15],
+body: [
 
-//    // playground requires you to assign document definition to a variable called dd
+  [{text:''}],
+  [{text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',alignment:'center',bold:true}],
+  [{text:'PERFIL DE PUESTO DE TRABAJO',alignment:'center',bold:true}],
+]
 
-// var dd = {
-//     header: function(){
-//       return {
-//           table: { widths: [565],heights:[50,15,15],
-// body: [
-
-//     [{text:''}],
-//     [{text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',alignment:'center',bold:true}],
-//     [{text:'PERFIL DE PUESTO DE TRABAJO',alignment:'center',bold:true}],
-// ]
-
-// }, margin: [22,20]
-//       };
-//     },
-//     footer: function(){
-//       return {
-//           table:{
-//    headerRows:1, 
-//    widths: [510],
-//              body : [
-//              [''],
-//              [''],
-//              ['']
-//                  ]
-//         }, layout : 'headerLineOnly',
-//           margin: [70,90]
-//       };
-//     },
-    
-//     content:[
-//         {
-//             table:{
-//                 widths: [140,160,100,140],
-//                 heights:[0,0,0,0,40,40,40,20,20,40,20,40],
-//                 body:[
-//                     [{text:'PUESTO'},{text:'',colSpan:3},{},{}],
-//                     [{text:'AREA'},{text:'',colSpan:3},{},{}],
-//                     [{text:'JEFE INMEDIATO'},{text:`${this.datos.nombre}`,colSpan:3},{},{}],
-//                     [{text:'OBJETIVO DEL PUESTO'},{text:`${this.datos.objetivo}`,colSpan:3},{},{}],
-//                     [{text:'FUNCIONES ESPECIFÍCAS'},{text:`${this.datos.funciones}`,colSpan:3},{},{}],
-//                     [{text:'CONOCIMIENTOS ESPECIFÍCOS'},{text:`${this.datos.conocimientos}`,colSpan:3},{},{}],
-//                     [{text:'CARACTERÍSTICAS PERSONALES'},{text:`${this.datos.caracteristicas}`},{text:'DESTREZAS TÉCNICAS'},{text:`${tipos}`}],
-//                     [{text:'NIVEL ACADEMICO REQUERIDO'},{text:`${this.datos.nivel}`,colSpan:3},{},{}],
-//                     [{text:'REQUERIMIENTOS FÍSICOS'},{text:`${this.datos.requerimientos}`,colSpan:3},{},{}],
-//                     [{text:'PERSONAL A SU CARGO'},{text:`${this.datos.personal}`,colSpan:3},{},{}],
-//                     [{text:'HERRAMIENTAS Y O EQUIPOS'},{text:`${this.datos.herramientas}`,colSpan:3},{},{}],
-//                     [{text:'EQUIPO DE PROTECCION PERSONAL'},{text:`${this.datos.proteccion}`,colSpan:3},{},{}],
-                    
-//                     ]
-//             }
-//         },{
-//             text:'\n\n'
-//         },{
-//             table:{
-//                  widths:[175,185,185],
-//                  heights:[50],
-                 
-//                 body:[
-//                     ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
-//                     ]
-//             }
-            
-            
-//         }
-        
-        
-//          ]
-//    ,
-//     pageSize: 'LETTER',
-//     pageMargins: [22,130]
-// };
-// this.pdfMaker.generate(dd,'Punto 7');
-    
-//   }
+}, margin: [22,20]
+    };
+  },
+  footer: function(){
+    return {
+        table:{
+ headerRows:1, 
+ widths: [510],
+           body : [
+           [''],
+           [''],
+           ['']
+               ]
+      }, layout : 'headerLineOnly',
+        margin: [70,90]
+    };
+  },
+  
+  content:[
+      {
+          table:{
+              widths: [140,160,100,140],
+              heights:[0,0,0,0,40,40,40,20,20,40,20,40],
+              body:[
+                  [{text:'PUESTO'},{text:`${this.datos.puesto}`,colSpan:3},{},{}],
+                  [{text:'AREA'},{text:`${this.datos.area}`,colSpan:3},{},{}],
+                  [{text:'JEFE INMEDIATO'},{text:`${this.datos.nombre}`,colSpan:3},{},{}],
+                  [{text:'OBJETIVO DEL PUESTO'},{text:`${this.datos.funcionesEspecificas}`,colSpan:3},{},{}],
+                  [{text:'FUNCIONES ESPECIFÍCAS'},{text:`${this.datos.funcionesEspecificas}`,colSpan:3},{},{}],
+                  [{text:'CONOCIMIENTOS ESPECIFÍCOS'},{text:`${this.datos.conocimientosFisiscos}`,colSpan:3},{},{}],
+                  [{text:'CARACTERÍSTICAS PERSONALES'},{text:`${this.datos.caracteristicasPersonales}`},{text:'DESTREZAS TÉCNICAS'},{text:`${this.datos.deztrezasTecnicas}`}],
+                  [{text:'NIVEL ACADEMICO REQUERIDO'},{text:`${this.datos.nivelAcademico}`,colSpan:3},{},{}],
+                  [{text:'REQUERIMIENTOS FÍSICOS'},{text:`${this.datos.requerimientosFisicos}`,colSpan:3},{},{}],
+                  [{text:'PERSONAL A SU CARGO'},{text:`${this.datos.personalCargo}`,colSpan:3},{},{}],
+                  [{text:'HERRAMIENTAS Y O EQUIPOS'},{text:`${this.datos.herramientasEquipos}`,colSpan:3},{},{}],
+                  [{text:'EQUIPO DE PROTECCION PERSONAL'},{text:`${this.datos.proteccionPersonal}`,colSpan:3},{},{}],
+                  
+                  ]
+          }
+      },{
+          text:'\n\n'
+      },{
+          table:{
+               widths:[175,185,185],
+               heights:[50],
+               
+              body:[
+                  ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
+                  ]
+          }
+          
+          
+      }
+      
+      
+       ]
+ ,
+  pageSize: 'LETTER',
+  pageMargins: [22,130]
+};
+this.pdfMaker.generate(dd, 'VI.Perfil de puesto de trabajo.pdf');  
+  }
 
   
 
@@ -158,6 +155,8 @@ export class PuntoSeisPage implements OnInit {
 
   enviarForm(formulario){
     console.log('Enviado');
+    console.log(this.datos);
+    
     
     
   }

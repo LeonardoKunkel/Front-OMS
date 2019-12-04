@@ -30,11 +30,11 @@ export class MenuSasisopaPage implements OnInit {
   }
 
   goPuntoCinco() {
-    this.navCtrl.navigateForward('/punto-cinco')
+    this.navCtrl.navigateForward('/menu-punto5')
   }
 
   goPuntoSeis() {
-    this.navCtrl.navigateForward('/punto-seis');
+    this.navCtrl.navigateForward('/punto-seis-menu');
   }
 
   goPuntoSiete() {
@@ -70,6 +70,10 @@ export class MenuSasisopaPage implements OnInit {
   goPuntoCatorce() {
     this.navCtrl.navigateForward('/punto-catorce');
     console.log('entraste a la página XIV')
+  }
+  goPuntoQuince() {
+    this.navCtrl.navigateForward('/punto15-menu');
+    console.log('entraste a la página XV') 
   }
 
   goPuntoDieciseis() {
