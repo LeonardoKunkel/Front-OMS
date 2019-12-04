@@ -15,13 +15,14 @@
     <ion-card-title class="center">Evidencia</ion-card-title>
   </ion-card-header>
   <ion-card-content>
+    <ion-img [src]="foto" *ngIf="foto"></ion-img>
       <h1 class="center">Subir la evidencia tomada en el punto dos del SASISOPA</h1><br><br><br><br><br><br><br><br>
       <ion-segment color="secondary">
-          <ion-segment-button>
+          <ion-segment-button (click)="capturarFoto()">
             <ion-label>Foto</ion-label>
             <ion-icon name="camera" size="large"></ion-icon>
           </ion-segment-button>
-          <ion-segment-button checked>
+          <ion-segment-button checked (click)="buscarFoto()">
             <ion-label>Imagen</ion-label>
             <ion-icon name="images" size="large"></ion-icon>
           </ion-segment-button>
