@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 // import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
@@ -45,6 +47,8 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
   providers: [
     StatusBar,
     SplashScreen,
+    FileTransfer,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     File,
     FileOpener,
