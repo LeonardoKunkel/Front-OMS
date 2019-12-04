@@ -17,8 +17,11 @@ export class Tab1Page {
   ) {}
 
   segmentChanged(event){
-    console.log(event);
-    
+    console.log(event); 
+  }
+
+  goToMapa() {
+    this.navCtlr.navigateForward('/simple');
   }
 
   async abriAyuda() {
