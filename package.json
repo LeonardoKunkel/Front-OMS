@@ -29,7 +29,7 @@
     "@fullcalendar/timegrid": "^4.2.0",
     "@ionic-native/camera": "^5.17.1",
     "@ionic-native/core": "^5.0.0",
-    "@ionic-native/document-viewer": "^5.14.0",
+    "@ionic-native/document-viewer": "^5.17.1",
     "@ionic-native/file": "^5.14.0",
     "@ionic-native/file-opener": "^5.13.0",
     "@ionic-native/file-transfer": "^5.17.1",
