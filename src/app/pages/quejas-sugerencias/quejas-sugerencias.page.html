@@ -8,5 +8,68 @@
 </ion-header>
 
 <ion-content>
-
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+      <ion-item-divider color="light">
+        <ion-label class="ion-text-center">Quejas/Sugerencias </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Queja</ion-label>
+        <ion-checkbox slot="start" name="queja" [(ngModel)]="datos.queja"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sugerencias</ion-label>
+        <ion-checkbox slot="start" name="sugerencias" [(ngModel)]="datos.sugerencias"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Solicitud de informacion</ion-label>
+        <ion-checkbox slot="start" name="solicitudInformacion" [(ngModel)]="datos.solicitudInformacion"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Condicion de riesgo</ion-label>
+        <ion-checkbox slot="start" name="condicionRiesgo" [(ngModel)]="datos.condicionRiesgo"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Impacto al medio ambiente</ion-label>
+        <ion-checkbox slot="start" name="impactoAmbiente" [(ngModel)]="datos.impactoAmbiente"></ion-checkbox>
+      </ion-item>
+      <ion-item-divider color="light">
+        <ion-label>Descripcion o Motivo</ion-label>
+      </ion-item-divider>
+      <ion-label>Descripcion/Motivo</ion-label>
+      <ion-textarea placeholder="Describe tu descripcion o motivo" name="descripcionMotivo" [(ngModel)]="datos.descripcionMotivo"></ion-textarea>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" placeholder="Juan Lozano" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-datetime display-format="DD.MM.YYYY" name="fecha" [(ngModel)]="datos.fecha"></ion-datetime>
+      </ion-item>
+      <ion-label>Contacto</ion-label>
+      <ion-input type="text" placeholder="Correo/Celular" name="correoCelular" [(ngModel)]="datos.correoCelular"></ion-input>
+      <ion-item-divider color="light">
+        <ion-label>Control interno</ion-label>
+      </ion-item-divider>
+      <ion-label>Consecutivo N°</ion-label>
+      <ion-input type="text" placeholder="#123" name="consecutivo" [(ngModel)]="datos.Consecutivo"></ion-input>
+      <ion-item-divider color="light" >
+        <ion-label>Prioridad</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Alta</ion-label>
+        <ion-checkbox slot="start" name="alta" [(ngModel)]="datos.alta"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Media</ion-label>
+        <ion-checkbox slot="start" name="media" [(ngModel)]="datos.media"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Baja</ion-label>
+        <ion-checkbox slot="start" name="baja" [(ngModel)]="datos.baja"></ion-checkbox>
+      </ion-item>
+      <ion-button type="submit">
+        Guardar y enviar
+      </ion-button>
+      <ion-button (click)="pdf()">
+        Imprimir
+      </ion-button>
+  </form>
 </ion-content>

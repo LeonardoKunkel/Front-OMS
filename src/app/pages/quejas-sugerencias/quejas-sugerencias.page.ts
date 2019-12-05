@@ -8,26 +8,36 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class QuejasSugerenciasPage implements OnInit {
 datos:any={
-  numeroQueja:'',
-  queja:'',
-  sugerencia:'',
-  otro:'',
-  descripcion:'',
-  contacto:'',
-  alta:'',
-  mediana:'',
-  baja:''
+  queja:false,
+  sugerencias:false,
+  SolicitudInformacion:false,
+  condicionRiesgo:false,
+  inpactoAmbiente:'',
+  descripcionMotivo:'',
+  nombre:'',
+  correoCelular:'',
+  consecutivo:'',
+  alta:false,
+  media:false,
+  baja:false,
+  fecha:''
+
 }
   constructor(private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
   }
 
+  enviarForm(formulario){
+      console.log(this.datos);
+  }
+
   pdf(){
+      
     var dd = {
-      background: function(currentPage, pageSize) {
-      return {image: 'sampleImage.jpg', width: 400,height: 500, absolutePosition: {x: 60, y: 100},opacity: 0.5}
-    },
+    //   background: function(currentPage, pageSize) {
+    //   return {image: 'sampleImage.jpg', width: 400,height: 500, absolutePosition: {x: 60, y: 100},opacity: 0.5}
+    // },
       header: function(){
         return {
             table: { widths: [560],heights:[30,0,0],
@@ -67,7 +77,7 @@ datos:any={
                       body:[
                           [
                               {
-                                  
+                                 text:`${this.datos.queja}` 
                               }]
                           ]
                   }
@@ -80,7 +90,7 @@ datos:any={
                       body:[
                           [
                               {
-                                  
+                                text:`${this.datos.sugerencias}`
                               }]
                           ]
                   }
@@ -94,7 +104,7 @@ datos:any={
                       body:[
                           [
                               {
-                                  
+                                  text:`${this.datos.SolicitudInformacion}`
                               }]
                           ]
                   }
@@ -108,7 +118,10 @@ datos:any={
                       
                       body:[
                           [
-                              {text:''}]
+                              {
+                                  text:`${this.datos.fecha}`
+                            
+                            }]
                           ]
                   }
               }],//Linea para la fecha
@@ -125,7 +138,7 @@ datos:any={
                       body:[
                           [
                               {
-                                  
+                                  text:`${this.datos.condicionRiesgo}`
                               }]
                           ]
                   }
@@ -136,7 +149,7 @@ datos:any={
                       body:[
                           [
                               {
-                                  
+                                  text:`${this.datos.inpactoAmbiente}`
                               }]
                           ]
                   }
@@ -150,7 +163,7 @@ datos:any={
                       body:[
                           [{text:'Descripción o Motivo:',bold:true}],
                           [{}],
-                          [{text:''}],
+                          [{text:`${this.datos.descripcionMotivo}`}],
                           [{text:''}],
                           [{text:''}],
                           [{text:''}],
@@ -162,7 +175,7 @@ datos:any={
                   table:{widths: [180,180,180],heights:[10,10],
                       body:[
                           [{text:''},{text:''},{text:''}],
-                          [{text:'Nombre'},{text:''},{text:'Contacto: correo/celula'}]  
+                          [{text:'Nombre'},{text:`${this.datos.nombre}`},{text:`${this.datos.correoCelular}`}]  
                           ]
                   }
                   
@@ -173,7 +186,7 @@ datos:any={
                   table:{widths: [130,120,120,25,10,35,10,25,10,],
                       body:[
                           
-                          [{text:'Control Interno',bold:true,fillColor:'#ddd'},{text:'Consecutivo No:',bold:true,fillColor:'#ddd'},{text:'Prioridad:',bold:true,fillColor:'#ddd'},{text:'Alta',bold:true,fillColor:'#ddd'},{text:'',bold:true},{text:'Media',bold:true,fillColor:'#ddd'},{text:'',bold:true},{text:'Baja',bold:true,fillColor:'#ddd'},{text:'',bold:true}],
+                          [{text:'Control Interno',bold:true,fillColor:'#ddd'},{text:'Consecutivo No:',bold:true,fillColor:'#ddd'},{text:'Prioridad:',bold:true,fillColor:'#ddd'},{text:'Alta',bold:true,fillColor:'#ddd'},{text:`${this.datos.alta}`,bold:true},{text:'Media',bold:true,fillColor:'#ddd'},{text:`${this.datos.media}`,bold:true},{text:'Baja',bold:true,fillColor:'#ddd'},{text:`${this.datos.baja}`,bold:true}],
                           
                           ]
                   

@@ -3,8 +3,9 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/menu-sasisopa"></ion-back-button>
       </ion-buttons>
-      <ion-title>IX. MEJORES PRÁCTICAS Y ESTÁNDARES</ion-title>
+      <ion-title class="ion-text-center">IX. MEJORES PRÁCTICAS Y ESTÁNDARES</ion-title>
     </ion-toolbar>
+    <hr class="linea">
   </ion-header>
   
   <ion-content>
@@ -12,7 +13,7 @@
       <ion-grid fixed>
         <ion-row>
           <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card mode="ios" (click)="goNueveUno()">
+            <ion-card mode="ios" (click)="goNueveUno()" class="carta">
               <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
               <ion-card-header>
                 <ion-card-title>Procedimiento</ion-card-title>
@@ -20,7 +21,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card mode="ios" (click)="goNueveDos()">
+            <ion-card mode="ios" (click)="goNueveDos()" class="carta">
               <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
               <ion-card-header>
                 <ion-card-title>Listado de Códigos y Estándares</ion-card-title>
@@ -28,7 +29,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card mode="ios" (click)="goNueveTres()">
+            <ion-card mode="ios" (click)="goNueveTres()" class="carta">
               <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
               <ion-card-header>
                 <ion-card-title>Evidencia</ion-card-title>
