@@ -20,7 +20,7 @@ export class SimplePage implements OnInit, AfterViewInit {
   constructor(private navCtrl: NavController) {  }
 
   ngOnInit() {
-    //this.puntos = this.puntoDosService.getLocalitation();
+
   }
 
   ngAfterViewInit() {

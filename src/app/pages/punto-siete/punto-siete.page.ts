@@ -26,13 +26,46 @@ export class PuntoSietePage implements OnInit {
   ngOnInit() {
     // this.slider.lockSwipes(true);
   }
+  enviarForm(formulario){
+      console.log(this.datos);
+      
+  }
   pdf(){
-      if(this.datos.curso===true || this.datos.difusion===true ){
+      if(this.datos.curso===true){
         var curso1="X"
         console.log(curso1);
       }else{
           var curso1=" "
           console.log(curso1);
+      }
+      
+      if(this.datos.difusion===true){
+        var curso2="X"
+        console.log(curso2);
+        
+      }else{
+          var curso2=" "
+          console.log(curso2);
+          
+      }
+
+      if(this.datos.interno===true){
+        var curso3="X"
+        console.log(curso3);
+        
+      }else{
+          var curso3=" "
+          console.log(curso3);
+          
+      }
+      if(this.datos.Externo===true){
+        var curso4="X"
+        console.log(curso4);
+        
+      }else{
+          var curso4=" "
+          console.log(curso4);
+          
       }
 var dd = {
   //   background: function(currentPage, pageSize) {
@@ -90,7 +123,7 @@ body: [
 				            body:[
 				                [
 				                    {
-				                      text:`${this.datos.difusion}`  
+				                      text:`${this.datos. curso2}`  
 				                    }]
 				                ]
 				        }
@@ -104,7 +137,7 @@ body: [
 				            body:[
 				                [
 				                    {
-				                       text:`${this.datos.interno}` 
+				                       text:`${this.datos.curso3}` 
 				                    }]
 				                ]
 				        }
@@ -117,7 +150,7 @@ body: [
 				            body:[
 				                [
 				                    {
-				                      text:`${this.datos.externo}`  
+				                      text:`${this.datos.curso4}`  
 				                    }]
 				                ]
 				        }
