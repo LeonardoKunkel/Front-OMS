@@ -38,7 +38,7 @@ export class MenuSasisopaPage implements OnInit {
   }
 
   goPuntoSiete() {
-    this.navCtrl.navigateForward('/punto-siete');
+    this.navCtrl.navigateForward('/punto-seven');
   }
 
   goPuntoOcho() {
@@ -77,8 +77,12 @@ export class MenuSasisopaPage implements OnInit {
     console.log('entraste a la página XVI')
   }
 
-goPuntoDiecisiete() {
-  this.navCtrl.navigateForward('/punto-diecisiete');
-}
+  goPuntoDiecisiete() {
+    this.navCtrl.navigateForward('/punto-diecisiete');
+  }
+
+  goPuntoDieciocho() {
+    this.navCtrl.navigateForward('/punto-dieciocho');
+  }
 
 }

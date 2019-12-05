@@ -3,128 +3,158 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-trece"></ion-back-button>
     </ion-buttons>
-    <ion-title>PLANEACIÓN DE SIMULACROS</ion-title>
+    <ion-title class="ion-text-center">PLANEACIÓN DE SIMULACROS</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-grid fixed>
-    <ion-slides mode="ios" pager="ios" scrollbar="ios">
-      <ion-slide>
-        <ion-card>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>1. INFORMACIÓN GENERAL DEL SIMULACRO</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-label>Objetivos del simulacro de emergencia</ion-label>
-            <ion-textarea placeholder="Descripción"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Descripción</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Responsable de la atención</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Área"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Equipo"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Clase de simulacro"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Aviso previo"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Agente perturbador"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Fecha y Hora</ion-label>
-            <ion-datetime display-format="HH:m DD/MM/YYYY"></ion-datetime>
-          </ion-item>
-          <br><br>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>ESCENARIO DE EMERGENCIA</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-textarea placeholder="Escribe..." rows="10"></ion-textarea>
-          </ion-item>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>2. EQUIPO Y DISPOSITIVOS REQUERIDOS:</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-          </ion-item>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>3. SECUENCIA DE ACCIONES DEL SIMULACRO</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-textarea placeholder="Descripción"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-button color="secondary">Real/Simulada</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Responsable"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Recursos requeridos"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-textarea placeholder="Tiempo de respuesta"></ion-textarea>
-          </ion-item>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>4. UBICACIÓN DE LOS RECURSOS EN EL SITIO</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-label>Extintores</ion-label>
-            <ion-textarea placeholder="Ubicación"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Paros de Emergencia</ion-label>
-            <ion-textarea placeholder="Ubicación"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Válvulas de cierre</ion-label>
-            <ion-textarea placeholder="Ubicación"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Interruptores</ion-label>
-            <ion-textarea placeholder="Ubicación"></ion-textarea>
-          </ion-item>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>5. OBSERVADORES</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-label>Nombres</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-          <ion-item>
-            <ion-label>Ubicación</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  </ion-grid>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-grid fixed>
+      <ion-slides mode="ios" pager="ios" scrollbar="ios">
+        <ion-slide>
+          <ion-card>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>1. INFORMACIÓN GENERAL DEL SIMULACRO</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-label>Objetivos del simulacro de emergencia</ion-label>
+              <ion-textarea placeholder="Descripción" name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Descripción</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Responsable de la atención</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Área" name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Equipo" name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Clase de simulacro" name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Aviso previo" name="texto7" [(ngModel)]="datos.texto7" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Agente perturbador" name="texto8" [(ngModel)]="datos.texto8" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha y Hora</ion-label>
+              <ion-datetime display-format="HH:m DD/MM/YYYY" name="fecha1" [(ngModel)]="datos.fecha1"></ion-datetime>
+            </ion-item>
+            <br><br>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>ESCENARIO DE EMERGENCIA</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..." rows="10" name="texto9" [(ngModel)]="datos.texto9" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>2. EQUIPO Y DISPOSITIVOS REQUERIDOS:</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" rows="5" name="texto10" [(ngModel)]="datos.texto10" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>3. SECUENCIA DE ACCIONES DEL SIMULACRO</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-textarea placeholder="Descripción" name="texto11" [(ngModel)]="datos.texto11" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Clase de simulacro</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Responsable" name="texto12" [(ngModel)]="datos.texto12" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Recursos requeridos" name="texto20" [(ngModel)]="datos.texto20" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-textarea placeholder="Tiempo de respuesta" name="texto13" [(ngModel)]="datos.texto13" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>4. UBICACIÓN DE LOS RECURSOS EN EL SITIO</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-label>Extintores</ion-label>
+              <ion-textarea placeholder="Ubicación" name="texto14" [(ngModel)]="datos.texto14" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Paros de Emergencia</ion-label>
+              <ion-textarea placeholder="Ubicación" name="texto15" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Válvulas de cierre</ion-label>
+              <ion-textarea placeholder="Ubicación" name="texto16" [(ngModel)]="datos.texto16" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Interruptores</ion-label>
+              <ion-textarea placeholder="Ubicación" name="texto17" [(ngModel)]="datos.texto17" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>5. OBSERVADORES</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <ion-label>Nombres</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto18" [(ngModel)]="datos.texto18" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Ubicación</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto19" [(ngModel)]="datos.texto19" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Enviar datos</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" type="submit">
+                Enviar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Descargar PDF</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" expand="block" (click)="pdf()">
+                Descargar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-grid>
+  </form>
 </ion-content>

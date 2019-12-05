@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
 @Component({
   selector: 'app-punto-doce-anexo',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuntoDoceAnexoPage implements OnInit {
 
-  constructor() { }
+  datos:any = {
+    texto1:'',
+    texto2:'',
+  }
+
+  constructor(private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
+  }
+
+  enviarForm(formulario) {
+    console.log(this.datos);
+  }
+
+  pdf() {
+    console.log('documento descargado');
   }
 
 }

@@ -18,7 +18,8 @@ export class LoginPage implements OnInit {
     password: ''
   }
 
-  constructor(private authService: AuthService, 
+  constructor(
+    private authService: AuthService, 
               private navCtrl: NavController,
               private uiService: UiService) { }
 
@@ -44,6 +45,10 @@ export class LoginPage implements OnInit {
     } else {
       this.uiService.alertaInformativa('Usuario o contraseña invalidos');
     }
+  }
+
+   entrar(){
+    this.navCtrl.navigateForward('main/tabs/tab1');
   }
 
 }

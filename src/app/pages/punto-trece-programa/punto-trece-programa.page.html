@@ -3,68 +3,97 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-trece"></ion-back-button>
     </ion-buttons>
-    <ion-title>PROGRAMA ANUAL DE SIMULACROS 2019</ion-title>
+    <ion-title class="ion-text-center">PROGRAMA ANUAL DE SIMULACROS 2019</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-grid fixed>
-    <ion-slides mode="ios" pager="ios" scrollbar="ios">
-      <ion-slide>
-        <ion-card>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>ESCENARIO</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-label>Derrame o fuga durante la operación de descarga de autotanque.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Derrame de producto porque el autotanque se desliza durante el llenado, por falta de calzas, y se desprende la manguera.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Incendio durante el llenado del tanque de almacenamiento.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Incendio en tubos de venteo durante el llenado del tanque de almacenamiento.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Derrame de producto o fuga durante el despacho de producto a vehículos.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Derrame por desprendimiento de manguera de despacho de combustible.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Incendio en el área de despacho por derribo de dispensario o desprendimiento de manguera.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Derrame durante la ejecución de trabajos de mantenimiento.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Incendio en Trampa de Combustibles.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Sismo.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Incendio de dispensario por Vandalismo.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-          <ion-item>
-            <ion-label>Incendio en instalaciones eléctricas.</ion-label>
-            <ion-button color="secondary">Mes de aplicación</ion-button>
-          </ion-item>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  </ion-grid>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-grid fixed>
+      <ion-slides mode="ios" pager="ios" scrollbar="ios">
+        <ion-slide>
+          <ion-card>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>ESCENARIO</ion-label>
+            </ion-item-divider>
+            <ion-item>
+              <h4>Derrame o fuga durante la operación de descarga de autotanque.</h4>
+              <ion-label color="secondary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Derrame de producto porque el autotanque se desliza durante el llenado, por falta de calzas, y se desprende la manguera.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Incendio durante el llenado del tanque de almacenamiento.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Incendio en tubos de venteo durante el llenado del tanque de almacenamiento.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Derrame de producto o fuga durante el despacho de producto a vehículos.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Derrame por desprendimiento de manguera de despacho de combustible.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Incendio en el área de despacho por derribo de dispensario o desprendimiento de manguera.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Derrame durante la ejecución de trabajos de mantenimiento.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Incendio en Trampa de Combustibles.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Sismo.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Incendio de dispensario por Vandalismo.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+            <ion-item>
+              <h4>Incendio en instalaciones eléctricas.</h4>
+              <ion-button color="secondary" (click)="mostrarPicker()" slot="end">Mes de aplicación</ion-button>
+            </ion-item>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Enviar datos</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" type="submit">
+                Enviar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Descargar PDF</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" expand="block" (click)="pdf()">
+                Descargar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-grid>
+  </form>
 </ion-content>

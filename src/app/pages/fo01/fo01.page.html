@@ -1,82 +1,105 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>FO-01 INSPECCIÓN DE TANQUES Y REGISTROS</ion-title>
+    <ion-title class="ion-text-center">FO-01 INSPECCIÓN DE TANQUES Y REGISTROS</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-once"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriouno()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/motobombas.png" />
-          <ion-header>
-            <ion-card-title>MOTOBOMBAS</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesoriouno()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/motobombas.png" />
+            <ion-header>
+              <ion-card-title>MOTOBOMBAS</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriodos()">.
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/control de inventarios.png" />
-          <ion-header>
-            <ion-card-title>CONTROL DE INVENTARIOS</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesoriodos()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/control de inventarios.png" />
+            <ion-header>
+              <ion-card-title>CONTROL DE INVENTARIOS</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriotres()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/contenedor de boquilla de llenado.png" />
-          <ion-header>
-            <ion-card-title>CONTENEDOR BOQUILLA DE LLENADO</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesoriotres()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/contenedor de boquilla de llenado.png" />
+            <ion-header>
+              <ion-card-title>CONTENEDOR BOQUILLA DE LLENADO</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriocuatro()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/recuperacion de vapores.png" />
-          <ion-header>
-            <ion-card-title>RECUPERACIÓN DE VAPORES</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesoriocuatro()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/recuperacion de vapores.png" />
+            <ion-header>
+              <ion-card-title>RECUPERACIÓN DE VAPORES</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriocinco()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/espacio anular-01.png" />
-          <ion-header>
-            <ion-card-title>ESPACIO ANULAR</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesoriocinco()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/espacio anular-01.png" />
+            <ion-header>
+              <ion-card-title>ESPACIO ANULAR</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesorioseis()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/purga de aire.png" />
-          <ion-header>
-            <ion-card-title>PURGA</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesorioseis()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/purga de aire.png" />
+            <ion-header>
+              <ion-card-title>PURGA</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriosiete()">
-          <ion-header>
-            <ion-card-title>CONTENEDOR LLENADO REMOTO</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesoriosiete()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/contenedor de llenado remoto.png" />
+            <ion-header>
+              <ion-card-title>CONTENEDOR LLENADO REMOTO</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesorioocho()">
-          <ion-header>
-            <ion-card-title>NIVEL DE AGUA EN TANQUES</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesorioocho()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/nivel de agua en tanques.png" />
+            <ion-header>
+              <ion-card-title>NIVEL DE AGUA EN TANQUES</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesorionueve()">
-          <ion-header>
-            <ion-card-title>POZOS DE MONITOREO</ion-card-title>
-          </ion-header>
+        <ion-card mode="ios" (click)="goAccesorionueve()" class="fondo">
+          <ion-card-content>
+            <img height="200px" height="200px" class="ion-padding" src="../../../assets/imagenes/Punto11/pozos de monitoreo.png" />
+            <ion-header>
+              <ion-card-title>POZOS DE MONITOREO</ion-card-title>
+            </ion-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

@@ -22,7 +22,7 @@ const routes: Routes = [
   { 
     path: 'menu-sasisopa', 
     loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule',
-    canLoad: [AuthGuard]
+   canLoad: [AuthGuard]
   },
   { 
     path: 'punto-cinco', 
@@ -72,11 +72,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'login'
-  },
-  { path: 'punto-siete', 
-    loadChildren: './pages/punto-siete/punto-siete.module#PuntoSietePageModule',
-    canLoad: [AuthGuard]
-  },
+   },
   { path: 'punto-ocho', 
     loadChildren: './pages/punto-ocho/punto-ocho.module#PuntoOchoPageModule',
     canLoad: [AuthGuard] 
@@ -93,11 +89,6 @@ const routes: Routes = [
     loadChildren: './pages/listado-peligros/listado-peligros.module#ListadoPeligrosPageModule',
     canLoad: [AuthGuard] 
 
-  },
-  { 
-    path: 'punto-nueve', 
-    loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule',
-    canLoad: [AuthGuard] 
   },
   { 
     path: 'punto-once', 
@@ -180,9 +171,6 @@ const routes: Routes = [
   { path: 'punto-cuatro-menu', loadChildren: './pages/punto-cuatro-menu/punto-cuatro-menu.module#PuntoCuatroMenuPageModule' },
   { path: 'punto-cuatro-procedimiento', loadChildren: './pages/punto-cuatro-procedimiento/punto-cuatro-procedimiento.module#PuntoCuatroProcedimientoPageModule' },
   { path: 'punto-cuatro-evidencia', loadChildren: './pages/punto-cuatro-evidencia/punto-cuatro-evidencia.module#PuntoCuatroEvidenciaPageModule' },
-  { path: 'punto-siete-menu', loadChildren: './pages/punto-siete-menu/punto-siete-menu.module#PuntoSieteMenuPageModule' },
-  { path: 'punto-siete-evidencia', loadChildren: './pages/punto-siete-evidencia/punto-siete-evidencia.module#PuntoSieteEvidenciaPageModule' },
-  { path: 'punto-siete-procedimiento', loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule' },
   { path: 'quejas-sugerencias', loadChildren: './pages/quejas-sugerencias/quejas-sugerencias.module#QuejasSugerenciasPageModule' },
   { path: 'registros-control', loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule' },
   { path: 'punto-ocho-menu', loadChildren: './pages/punto-ocho-menu/punto-ocho-menu.module#PuntoOchoMenuPageModule' },
@@ -235,7 +223,22 @@ const routes: Routes = [
   { path: 'punto-dieciseis-entrevista', loadChildren: './pages/punto-dieciseis-entrevista/punto-dieciseis-entrevista.module#PuntoDieciseisEntrevistaPageModule' },
   { path: 'punto-dieciseis-comprobacion', loadChildren: './pages/punto-dieciseis-comprobacion/punto-dieciseis-comprobacion.module#PuntoDieciseisComprobacionPageModule' },
   { path: 'punto-dieciseis-recomendaciones', loadChildren: './pages/punto-dieciseis-recomendaciones/punto-dieciseis-recomendaciones.module#PuntoDieciseisRecomendacionesPageModule' },
-  { path: 'punto-dieciseis-estadistica', loadChildren: './pages/punto-dieciseis-estadistica/punto-dieciseis-estadistica.module#PuntoDieciseisEstadisticaPageModule' },  { path: 'punto-dieciseis', loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule' }
+  { path: 'punto-dieciseis-estadistica', loadChildren: './pages/punto-dieciseis-estadistica/punto-dieciseis-estadistica.module#PuntoDieciseisEstadisticaPageModule' },
+  { path: 'punto-dieciseis', loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule' },
+  { path: 'punto-nueve', loadChildren: './pages/punto-nueve/punto-nueve.module#PuntoNuevePageModule' },
+  { path: 'punto-seven', loadChildren: './pages/punto-seven/punto-seven.module#PuntoSevenPageModule' },
+  { path: 'punto-dieciocho', loadChildren: './pages/punto-dieciocho/punto-dieciocho.module#PuntoDieciochoPageModule' },
+  { path: 'punto-siete-procedimiento', loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule' },
+  { path: 'punto-siete-evidencia', loadChildren: './pages/punto-siete-evidencia/punto-siete-evidencia.module#PuntoSieteEvidenciaPageModule' },
+  { path: 'punto-siete-quejas', loadChildren: './pages/punto-siete-quejas/punto-siete-quejas.module#PuntoSieteQuejasPageModule' },
+  { path: 'punto-siete-lista', loadChildren: './pages/punto-siete-lista/punto-siete-lista.module#PuntoSieteListaPageModule' },
+  { path: 'punto-siete-registro', loadChildren: './pages/punto-siete-registro/punto-siete-registro.module#PuntoSieteRegistroPageModule' },  { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
+
+
+  
+
+
+
 
 
 

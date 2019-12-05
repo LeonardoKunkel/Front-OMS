@@ -3,136 +3,164 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-diciseis"></ion-back-button>
     </ion-buttons>
-    <ion-title>FO-11 Entrevista de Testigos para la Investigación Causa Raíz</ion-title>
+    <ion-title class="ion-text-center">FO-11 Entrevista de Testigos para la Investigación Causa Raíz</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-slides mode="ios">
-    <ion-slide>
-      <ion-card>
-        <ion-card-content>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>1. GENERALES</ion-label>
-          </ion-item-divider>
-          <br>
-          <ion-item>
-            <ion-label>Lugar de la entrevista</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>Fecha de la entrevista</ion-label>
-            <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>Nombre del entrevistado</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea> 
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>Puesto del entrevistado</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>Funciones</ion-label>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-content>
-          <ion-item-divider>
-            <ion-label>2. NOMBRES DE LOS PARTICIPANTES O TESTIGOS DEL INCIDENTE</ion-label>
-          </ion-item-divider>
-          <br>
-          <ion-item>
-            <ion-textarea placeholder="Nombre" rows="3"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-textarea placeholder="Nombre" rows="3"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-textarea placeholder="Nombre" rows="3"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-content>
-          <ion-item-divider>
-            <ion-label>3. EQUIPOS, MATERIALES, VEHÍCULOS, HERRAMIENTAS QUE INTEREVINIERON EN EL HECHO</ion-label>
-          </ion-item-divider>
-          <br>
-          <ion-item>
-            <ion-textarea placeholder="Escribe" rows="3"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-textarea placeholder="Escribe" rows="3"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-textarea placeholder="Escribed" rows="3"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-content>
-          <ion-item-divider color="success" class="ion-text-center">
-            <ion-label>4. CUESTIONAMIENTOS</ion-label>
-          </ion-item-divider>
-          <br>
-          <ion-item>
-            <ion-label>¿Qué actividades realizaba antes de ocurrir el incidente?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿Participaron otros trabajadores en el incidente?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿En qué condiciones se encontraban los equipos, herramientas, accesorios?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿La herramienta o accesorios eran apropiados para realizar el trabajo?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿Observó alguna condición anormal antes de ocurrir el incidente ?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿Observó algún acto inseguro antes de ocurrir el incidente?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿Cómo ocurrió el incidente?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-label>¿Cuántas horas trabajó antes del incidente?</ion-label>
-            <ion-textarea placeholder="Escribe" rows="4"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-slides mode="ios">
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>1. GENERALES</ion-label>
+            </ion-item-divider>
+            <br>
+            <ion-item>
+              <ion-label>Lugar de la entrevista</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Fecha de la entrevista</ion-label>
+              <ion-datetime display-format="DD/MM/YYYY"name="fecha1" [(ngModel)]="datos.fecha1"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Nombre del entrevistado</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea> 
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Puesto del entrevistado</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Funciones</ion-label>
+              <ion-textarea placeholder="Escribe" name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider>
+              <ion-label>2. NOMBRES DE LOS PARTICIPANTES O TESTIGOS DEL INCIDENTE</ion-label>
+            </ion-item-divider>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Nombre" rows="3" name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Nombre" rows="3" name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Nombre" rows="3" name="texto7" [(ngModel)]="datos.texto7" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider>
+              <ion-label>3. EQUIPOS, MATERIALES, VEHÍCULOS, HERRAMIENTAS QUE INTEREVINIERON EN EL HECHO</ion-label>
+            </ion-item-divider>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" rows="3" name="texto8" [(ngModel)]="datos.texto8" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" rows="3" name="texto9" [(ngModel)]="datos.texto9" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Escribed" rows="3" name="texto10" [(ngModel)]="datos.texto10" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider color="success" class="ion-text-center">
+              <ion-label>4. CUESTIONAMIENTOS</ion-label>
+            </ion-item-divider>
+            <br>
+            <ion-item>
+              <ion-label>¿Qué actividades realizaba antes de ocurrir el incidente?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto11" [(ngModel)]="datos.texto11" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿Participaron otros trabajadores en el incidente?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto12" [(ngModel)]="datos.texto12" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿En qué condiciones se encontraban los equipos, herramientas, accesorios?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto13" [(ngModel)]="datos.texto13" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿La herramienta o accesorios eran apropiados para realizar el trabajo?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto14" [(ngModel)]="datos.texto14" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿Observó alguna condición anormal antes de ocurrir el incidente ?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto15" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿Observó algún acto inseguro antes de ocurrir el incidente?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto16" [(ngModel)]="datos.texto16" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿Cómo ocurrió el incidente?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto17" [(ngModel)]="datos.texto17" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>¿Cuántas horas trabajó antes del incidente?</ion-label>
+              <ion-textarea placeholder="Escribe" rows="4" name="texto18" [(ngModel)]="datos.texto18" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-header>
+              <ion-card-title>Enviar datos</ion-card-title>
+            </ion-card-header>
+            <ion-button color="success"  type="submit">
+              Enviar
+              <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-header>
+              <ion-card-title>Descargar PDF</ion-card-title>
+            </ion-card-header>
+            <ion-button color="success" expand="block" (click)="pdf()">
+              Descargar
+              <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

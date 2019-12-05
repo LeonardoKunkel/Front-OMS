@@ -1,285 +1,314 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>FS-19 ADMINISTRACIÓN DE CAMBIOS DE TECNOLOGÍA</ion-title>
+    <ion-title class="ion-text-center">FS-19 ADMINISTRACIÓN DE CAMBIOS DE TECNOLOGÍA</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-diez"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios">
-    <ion-slide>
-      <ion-card>
-        <ion-item>
-          <ion-textarea placeholder="Área"></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <ion-textarea placeholder="Proceso"></ion-textarea>
-          <ion-textarea placeholder="No."></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona">Fecha</ion-datetime>
-        </ion-item>
-        <br>
-        <ion-card-header>DESCRIPCIÓN DEL CAMBIO PROPUESTO</ion-card-header>
-        <ion-textarea placeholder="Escribe..."></ion-textarea>
-        <br>
-        <ion-item>
-          <ion-label>RESULTADO DE LA EVALUACIÓN</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Aceptada</ion-select-option>
-            <ion-select-option value="">Rechazada</ion-select-option>
-          </ion-select>
-        </ion-item>
-        <br><br>
-        <ion-item>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-card>
+          <ion-item>
+            <ion-textarea placeholder="Área" name="texto1" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="Proceso" name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+            <ion-textarea placeholder="No." name="texto3" [(ngModel)]="datos.texto3" type="number"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <h4>Fecha</h4>
+            <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha1" [(ngModel)]="datos.fecha">Fecha</ion-datetime>
+          </ion-item>
+          <br>
+          <ion-card-header>DESCRIPCIÓN DEL CAMBIO PROPUESTO</ion-card-header>
+          <ion-textarea placeholder="Escribe..." name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+          <br>
+          <ion-card-header>ANÁLISIS DE LA PROPUESTA</ion-card-header>
+          <ion-textarea placeholder="Escribe..." name="texto23" [(ngModel)]="datos.texto23" type="text"></ion-textarea>
+          <br>
+          <ion-item>
+            <ion-label>RESULTADO DE LA EVALUACIÓN</ion-label>
+            <ion-label color="primary">{{ framework }}</ion-label>
+            <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+          </ion-item>
+          <br><br>
+          <ion-item>
+            <br><br><br>
+            <ion-textarea placeholder="Escribe..." name="texto5" [(ngModel)]="datos.texto5" type="text">MOTIVO DE LA ACEPTACIÓN O RECHAZO</ion-textarea>
+          </ion-item>
           <br><br><br>
-          <ion-textarea placeholder="Escribe...">MOTIVO DE LA ACEPTACIÓN O RECHAZO</ion-textarea>
-        </ion-item>
-        <br><br><br>
-        <ion-textarea placeholder="Escribe...">DESCRIPCIÓN DEL CAMBIO</ion-textarea>
-        <br><br><br>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title class="margentitulo">ESPECIFICACIONES DEL PROYECTO</ion-card-title>
-        <br>
-        
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE ANÁLISIS DE RIESGO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE ESTRUCTURA</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE LA TECNOLOGÍA DEL PROCESO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE PERMISOS O LICENCIAS</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE NORMATIVIDAD</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>CAPACITACIÓN Y ENTRETENIMIENTO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>COMUNICACIÓN DEL CAMBIO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <h2>Notas</h2>
-        </ion-toolbar>
-        <br>
-        <ion-item>
-          <ion-textarea placeholder="Escribe..."></ion-textarea>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+          <ion-textarea placeholder="Escribe..." name="texto6" [(ngModel)]="datos.texto6" type="text">DESCRIPCIÓN DEL CAMBIO</ion-textarea>
+          <br><br><br>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title class="margentitulo">ESPECIFICACIONES DEL PROYECTO</ion-card-title>
+            <br>
+            
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto7" [(ngModel)]="datos.texto7" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto8" [(ngModel)]="datos.texto8" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha2" [(ngModel)]="datos.fecha2"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>ACTUALIZACIÓN DE ANÁLISIS DE RIESGO</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto9" [(ngModel)]="datos.texto9" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto10" [(ngModel)]="datos.texto10" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha2" [(ngModel)]="datos.fecha2"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>ACTUALIZACIÓN DE ESTRUCTURA</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto11" [(ngModel)]="datos.texto11" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto12" [(ngModel)]="datos.texto12" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha3" [(ngModel)]="datos.fecha3"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>ACTUALIZACIÓN DE LA TECNOLOGÍA DEL PROCESO</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto13" [(ngModel)]="datos.texto13" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto14" [(ngModel)]="datos.texto14" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha4" [(ngModel)]="datos.fecha4"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>ACTUALIZACIÓN DE PERMISOS O LICENCIAS</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto15" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto24" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha5" [(ngModel)]="datos.fecha5"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>ACTUALIZACIÓN DE NORMATIVIDAD</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto16" [(ngModel)]="datos.texto16" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto17" [(ngModel)]="datos.texto17" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha6" [(ngModel)]="datos.fecha6"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>CAPACITACIÓN Y ENTRETENIMIENTO</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto18" [(ngModel)]="datos.texto18" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto19" [(ngModel)]="datos.texto19" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha7" [(ngModel)]="datos.fecha7"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <ion-title>Actividad</ion-title>
+            </ion-toolbar>
+            <br>
+            <ion-card-title>COMUNICACIÓN DEL CAMBIO</ion-card-title>
+            <br>
+            <h2>SI/NO</h2>
+            <ion-textarea placeholder="Escribe Si o No" name="texto20" [(ngModel)]="datos.texto20" type="text"></ion-textarea>
+            <br>
+            <h2>RESPONSABLE DE LA ATENCIÓN</h2>
+            <ion-textarea placeholder="Responsable..." name="texto21" [(ngModel)]="datos.texto21" type="text"></ion-textarea>
+            <br>
+            <ion-item>
+              <h4>Fecha</h4>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona" name="fecha8" [(ngModel)]="datos.fecha8"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label>Atendido</ion-label>
+              <ion-label color="primary">{{ framework }}</ion-label>
+              <ion-button color="secondary" (click)="mostrarPicker()">Seleccionar</ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-toolbar color="primary">
+              <h2>Notas</h2>
+            </ion-toolbar>
+            <br>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..." name="texto22" [(ngModel)]="datos.texto22" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-header>
+              <ion-card-title>Enviar datos</ion-card-title>
+            </ion-card-header>
+            <ion-button color="success"  type="submit">
+              Enviar
+              <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-header>
+              <ion-card-title>Descargar PDF</ion-card-title>
+            </ion-card-header>
+            <ion-button color="success" (click)="pdf()">
+              Descargar
+              <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

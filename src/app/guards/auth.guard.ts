@@ -8,9 +8,11 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthGuard implements CanLoad  {
 
-  constructor(private authService: AuthService){}
+  constructor(
+    private authService: AuthService
+   ){}
 
   canLoad(): Observable<boolean> | Promise<boolean> | boolean{
-    return this.authService.validaToken()
-  }
+   return this.authService.validaToken()
+ }
 }

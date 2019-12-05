@@ -3,61 +3,50 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO</ion-title>
+    <ion-title class="ion-text-center"> FS-30 RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-row>
-    <ion-col size="12">
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>Codificación</ion-card-title>
-          <ion-item>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>Indicador</ion-card-title>
-          <ion-item>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>Proceso, área o actividad</ion-card-title>
-          <ion-item>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>Criterio de Aceptación</ion-card-title>
-          <ion-item>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>Responsable</ion-card-title>
-          <ion-item>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>Resultado</ion-card-title>
-          <ion-item>
-            <ion-textarea placeholder="Escribe"></ion-textarea>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>Codificación</ion-card-title>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-card-title>Indicador</ion-card-title>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-card-title>Proceso, área o actividad</ion-card-title>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-card-title>Criterio de Aceptación</ion-card-title>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-card-title>Responsable</ion-card-title>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+            </ion-item>
+            <br>
+            <ion-card-title>Resultado</ion-card-title>
+            <ion-item>
+              <ion-textarea placeholder="Escribe" name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>
