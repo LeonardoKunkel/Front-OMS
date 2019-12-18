@@ -8,7 +8,9 @@ import { IonSlides, IonInfiniteScroll } from '@ionic/angular';
   styleUrls: ['./punto-ocho.page.scss'],
 })
 export class PuntoOchoPage implements OnInit {
+  datos:any={
 
+  }
   @ViewChild('slider') slider: IonSlides
   @ViewChild(IonInfiniteScroll) InfiniteScroll:IonInfiniteScroll;
 
@@ -17,6 +19,9 @@ export class PuntoOchoPage implements OnInit {
   ngOnInit() {
   }
 
-  
+  enviarForm(formulario){
+    console.log(this.datos);
+    
+  }
   
 }

@@ -13,6 +13,8 @@ export class PuntoTresListaPage implements OnInit {
   }
 
   downloadListReqLeg(){
+    console.log('Descarga');
+    
     var dd = {
       header: function(){
         return {
@@ -141,6 +143,8 @@ export class PuntoTresListaPage implements OnInit {
   }
 
   pdf2(){
+    console.log("descarga");
+    
     var dd = {
       header: function(){
         return {
