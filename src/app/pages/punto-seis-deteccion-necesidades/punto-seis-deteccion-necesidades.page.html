@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar no-border>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/menu-punto-seis"></ion-back-button>
+      <ion-back-button defaultHref="punto-seis-menu"></ion-back-button>
     </ion-buttons>
     <ion-title>Deteccion de Necesidades</ion-title>
   </ion-toolbar>
@@ -26,19 +26,24 @@
               <ion-checkbox color="primary" slot="start" name="R2" [(ngModel)]="datos.R2" ></ion-checkbox>
               <ion-label>Promoción</ion-label>
             </ion-item>
+                
+            <ion-item>
+              <ion-checkbox color="primary" slot="start" name="R3" [(ngModel)]="datos.R3" ></ion-checkbox>
+              <ion-label>Ascenso</ion-label>
+            </ion-item>
     
             <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R3" [(ngModel)]="datos.R3"></ion-checkbox>
+              <ion-checkbox color="primary" slot="start" name="R4" [(ngModel)]="datos.R4"></ion-checkbox>
               <ion-label>Reentrenamiento</ion-label>
             </ion-item>
         
             <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R4" [(ngModel)]="datos.R4"></ion-checkbox>
+              <ion-checkbox color="primary" slot="start" name="R5" [(ngModel)]="datos.R5"></ion-checkbox>
               <ion-label>Actualización trianual</ion-label>
             </ion-item>
     
             <ion-item color="secondary">
-                <ion-label>Quejas de clientes</ion-label>
+                <ion-label>Desarrollo Organizacional</ion-label>
             </ion-item>           
     
             <ion-item>
@@ -77,8 +82,19 @@
                   <ion-label>Temas para capacitación</ion-label>         
               </ion-item>
               <br>
+              <ion-item-divider color="light">
+                <ion-label>Situacion Actual</ion-label>
+              </ion-item-divider>
+              <ion-textarea placeholder="Describe la situacion" name="R12" [(ngModel)]="datos.R12"></ion-textarea>
+              <ion-item-divider>
+                <ion-label>Situacion deseada</ion-label>
+              </ion-item-divider>
+              <ion-textarea placeholder="Describe la situacion" name="R13" [(ngModel)]="datos.R13"></ion-textarea>
               <ion-button type="submit">
                 Guardar y enviar
+              </ion-button>
+              <ion-button (click)="pdf()">
+                Descargar
               </ion-button>
       </ion-card-content>
     </ion-card>
