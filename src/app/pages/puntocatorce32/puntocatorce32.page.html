@@ -3,78 +3,55 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>PLAN DE ATENCIÓN A HALLAZGOS DERIVADOS DEL MONITOREO</ion-title>
+    <ion-title class="ion-text-center">PLAN DE ATENCIÓN A HALLAZGOS DERIVADOS DEL MONITOREO</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios">
-    <ion-slide>
-
-        <ion-row>
-          <ion-col size="12">
-            <ion-card>
-              <ion-card-content>
-                <ion-toolbar  color="primary">
-                  <h2>Codificación</h2>
-                </ion-toolbar>
-                <br>
-                <ion-card-title>I-SASISOPA-01</ion-card-title>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Indicador</ion-card-subtitle>
-                <ion-card-title>Cumplimiento al programa de mantenimiento preventivo y predictivo</ion-card-title>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12">
-            <ion-card>
-              <ion-card-content>
-                <ion-label>Proceso, área o actividad</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
-              <ion-card-content>
-                <ion-label>Proceso, área o actividad</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
-              <ion-card-content>
-                <ion-label>Hallazgo</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
+          <ion-card>
+            <ion-card-content>
+              <ion-toolbar  color="primary">
+                <h2>Codificación</h2>
+              </ion-toolbar>
+              <br>
+              <ion-card-title>I-SASISOPA-01</ion-card-title>
+              <br><br>
+              <ion-card-subtitle>Indicador</ion-card-subtitle>
+              <ion-card-title>Cumplimiento al programa de mantenimiento preventivo y predictivo</ion-card-title>
+              <br><br>
+              <ion-label>Proceso, área o actividad</ion-label>
+              <ion-textarea placeholder="Escribe..." name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+              <br><br>
+              <ion-label>Proceso, área o actividad</ion-label>
+              <ion-textarea placeholder="Escribe..." name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+              <br><br>
+              <ion-label>Hallazgo</ion-label>
+              <ion-textarea placeholder="Escribe..." name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+              <br><br>
               <ion-item>
                 <ion-label>Fecha compromiso</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD MM YYYY" name="fecha1" [(ngModel)]="datos.fecha1"></ion-datetime>
               </ion-item>
-            </ion-card>
-            <ion-card>
-              <ion-card-content>
-                <ion-label>Acciones preventivas/correctivas</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-card-content>
-            </ion-card>
-            <ion-card>
+              <br><br>
+              <ion-label>Acciones preventivas/correctivas</ion-label>
+              <ion-textarea placeholder="Escribe..." name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+              <br><br>
               <ion-item>
                 <ion-label>Fecha de cierre</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD MM YYYY" name="fecha2" [(ngModel)]="datos.fecha2"></ion-datetime>
               </ion-item>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -82,60 +59,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-02</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Inspecciones y pruebas de tanques y de ciruitos de tubería</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto7" [(ngModel)]="datos.texto7" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha3" [(ngModel)]="datos.fecha3" type="text"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto8" [(ngModel)]="datos.texto8" type="text"></ion-textarea>
+              <br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha4" [(ngModel)]="datos.fecha4"></ion-datetime>
+              </ion-item>
             </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -143,60 +97,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-03</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Atención a las observaciones de verificaciones de la NOM-005ASEA-2016,DACG SASISOPA, análisis de riesgos y otras</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto9" [(ngModel)]="datos.texto9" type="text"></ion-textarea>
+              <br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto10" [(ngModel)]="datos.texto10" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto11" [(ngModel)]="datos.texto11" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha5" [(ngModel)]="datos.fecha5"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
+              <ion-textarea placeholder="Escribe..." name="texto12" [(ngModel)]="datos.texto12" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha6" [(ngModel)]="datos.fecha6"></ion-datetime>
+              </ion-item>
+            </ion-card-content> 
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -204,60 +135,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-04</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Índice de frecuencia</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto13" [(ngModel)]="datos.texto13" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto14" [(ngModel)]="datos.texto14" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto15" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha7" [(ngModel)]="datos.fecha7"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
+              <ion-textarea placeholder="Escribe..." name="texto16" [(ngModel)]="datos.texto16" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha8" [(ngModel)]="datos.fecha8" type="text"></ion-datetime>
+              </ion-item>
+            </ion-card-content> 
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -265,60 +173,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-05</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Índice de gravedad</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto17" [(ngModel)]="datos.texto17" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto18" [(ngModel)]="datos.texto18" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto19" [(ngModel)]="datos.texto19" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha9" [(ngModel)]="datos.fecha9"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto20" [(ngModel)]="datos.texto20" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha10" [(ngModel)]="datos.fecha10"></ion-datetime>
+              </ion-item>
             </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -326,60 +211,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-06</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Implementación del SASISOPA</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto21" [(ngModel)]="datos.texto21" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto22" [(ngModel)]="datos.texto22" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto23" [(ngModel)]="datos.texto23" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha11" [(ngModel)]="datos.fecha11"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto24" [(ngModel)]="datos.texto24" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha12" [(ngModel)]="datos.fecha12"></ion-datetime>
+              </ion-item>
             </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -387,60 +249,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-07</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Cumplimiento a requisitos legales</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto25" [(ngModel)]="datos.texto25" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto26" [(ngModel)]="datos.texto26" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto27" [(ngModel)]="datos.texto27" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha13" [(ngModel)]="datos.fecha13"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto28" [(ngModel)]="datos.texto28" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha14" [(ngModel)]="datos.fecha14"></ion-datetime>
+              </ion-item>
             </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -448,60 +287,38 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-08</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Reducción en la generación de residuos peligrosos</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto29" [(ngModel)]="datos.texto29" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto30" [(ngModel)]="datos.texto30" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto31" [(ngModel)]="datos.texto31" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha15" [(ngModel)]="datos.fecha15"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto32" [(ngModel)]="datos.texto32" type="text"></ion-textarea>
             </ion-card-content>
           </ion-card>
           <ion-card>
             <ion-item>
               <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+              <ion-datetime display-format="DD MM YYYY" name="fecha16" [(ngModel)]="datos.fecha16"></ion-datetime>
             </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -509,60 +326,37 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-09</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Reducción en el consumo de agua</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto33" [(ngModel)]="datos.texto33" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto34" [(ngModel)]="datos.texto34" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto35" [(ngModel)]="datos.texto35" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha17" [(ngModel)]="datos.fecha17"></ion-datetime>
+              </ion-item>
+              <br><br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto36" [(ngModel)]="datos.texto36" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha de cierre</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha18" [(ngModel)]="datos.fecha18" type="text"></ion-datetime>
+              </ion-item>
             </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
           <ion-card>
             <ion-card-content>
               <ion-toolbar color="primary">
@@ -570,57 +364,62 @@
               </ion-toolbar>
               <br>
               <ion-card-title>I-SASISOPA-10</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-card-subtitle>Indicador</ion-card-subtitle>
               <ion-card-title>Reducción en el consumo de energía eléctrica</ion-card-title>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto37" [(ngModel)]="datos.texto37" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Proceso, área o actividad</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto38" [(ngModel)]="datos.texto38" type="text"></ion-textarea>
+              <br><br>
               <ion-label>Hallazgo</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-item>
-              <ion-label>Fecha compromiso</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-            </ion-item>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
+              <ion-textarea placeholder="Escribe..." name="texto39" [(ngModel)]="datos.texto39" type="text"></ion-textarea>
+              <br><br>
+              <ion-item>
+                <ion-label>Fecha compromiso</ion-label>
+                <ion-datetime display-format="DD MM YYYY" name="fecha19" [(ngModel)]="datos.fecha19"></ion-datetime>
+              </ion-item>
+              <br>
               <ion-label>Acciones preventivas/correctivas</ion-label>
-              <ion-textarea placeholder="Escribe..."></ion-textarea>
+              <ion-textarea placeholder="Escribe..." name="texto40" [(ngModel)]="datos.texto40" type="text"></ion-textarea>
             </ion-card-content>
           </ion-card>
           <ion-card>
             <ion-item>
               <ion-label>Fecha de cierre</ion-label>
-              <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+              <ion-datetime display-format="DD MM YYYY" name="fecha20" [(ngModel)]="datos.fecha20"></ion-datetime>
             </ion-item>
           </ion-card>
         </ion-col>
-      </ion-row>
-    </ion-slide>
-  </ion-slides>
-  <br><br><br>
+      </ion-slide>
+      <ion-slide>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Enviar datos</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success"  type="submit">
+                Enviar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Descargar PDF</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" (click)="pdf()">
+                Descargar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>  
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

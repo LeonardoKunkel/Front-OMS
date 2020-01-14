@@ -37,4 +37,8 @@ export class PuntoTrecePage implements OnInit {
     this.navCtrl.navigateForward('/punto-trece-acta');
   }
 
+  goTreceEvidencia() {
+    this.navCtrl.navigateForward('/punto-trece-evidencia');
+  }
+
 }

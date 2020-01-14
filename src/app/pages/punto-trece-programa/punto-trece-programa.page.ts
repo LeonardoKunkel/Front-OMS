@@ -9,11 +9,12 @@ import { PickerOptions } from '@ionic/core';
 })
 export class PuntoTreceProgramaPage implements OnInit {
 
-  framework = '';
+  framework1 = '';
+  framework2 = '';
 
   constructor(private pickerCtrl: PickerController) { }
 
-  async mostrarPicker() {
+  async mostrarPicker1() {
     let opts: PickerOptions = {
       buttons: [
         {
@@ -26,7 +27,7 @@ export class PuntoTreceProgramaPage implements OnInit {
       ],
       columns: [
         {
-          name: 'framework',
+          name: 'framework1',
           options: [
             { text: 'Enero', value: 'A'},
             { text: 'Febrero', value: 'B'},
@@ -47,9 +48,49 @@ export class PuntoTreceProgramaPage implements OnInit {
     let picker = await this.pickerCtrl.create(opts);
     picker.present();
     picker.onDidDismiss().then( async data => {
-      let col = await picker.getColumn('framework');
+      let col = await picker.getColumn('framework1');
       console.log('col: ', col);
-      this.framework = col.options[col.selectedIndex].text;
+      this.framework1 = col.options[col.selectedIndex].text;
+    });
+  }
+
+  async mostrarPicker2() {
+    let opts: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Done'
+        }
+      ],
+      columns: [
+        {
+          name: 'framework2',
+          options: [
+            { text: 'Enero', value: 'A'},
+            { text: 'Febrero', value: 'B'},
+            { text: 'Marzo', value: 'C'},
+            { text: 'Abril', value: 'D'},
+            { text: 'Mayo', value: 'E'},
+            { text: 'Junio', value: 'F'},
+            { text: 'Julio', value: 'G'},
+            { text: 'Agosto', value: 'H'},
+            { text: 'Septiembre', value: 'I'},
+            { text: 'Octubre', value: 'J'},
+            { text: 'Noviembre', value: 'K'},
+            { text: 'Diciembre', value: 'L'},
+          ]
+        }
+      ]
+    };
+    let picker = await this.pickerCtrl.create(opts);
+    picker.present();
+    picker.onDidDismiss().then( async data => {
+      let col = await picker.getColumn('framework2');
+      console.log('col: ', col);
+      this.framework2 = col.options[col.selectedIndex].text;
     });
   }
 

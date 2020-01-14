@@ -13,23 +13,22 @@ export class PuntoCatorcePage implements OnInit {
   ngOnInit() {
   }
   goPuntoCatorce01(){
-    console.log('Hola mundo 1');
-
-      this.navCtrl.navigateForward('/puntocatorce32');
+    this.navCtrl.navigateForward('/puntocatorce32');
   }
+
   goPuntoCatorce02(){
-    console.log('Hola mundo 2');
-
-      this.navCtrl.navigateForward('/puntocatorce31');
+    this.navCtrl.navigateForward('/puntocatorce31');
   }
+
   goPuntoCatorce03(){
-    console.log('Hola mundo 3');
-
-      this.navCtrl.navigateForward('/puntocatorce30');
+    this.navCtrl.navigateForward('/puntocatorce30');
   }
-  goPuntoCatorce04(){
-    console.log('Hola mundo 4');
 
-      this.navCtrl.navigateForward('/puntocatorcefs29');
+  goPuntoCatorce04(){
+    this.navCtrl.navigateForward('/puntocatorcefs29');
+  }
+
+  goPuntoCatorce05(){
+    this.navCtrl.navigateForward('/punto-catorce-evidencia');
   }
 }

@@ -72,6 +72,11 @@ export class MenuSasisopaPage implements OnInit {
     console.log('entraste a la página XIV')
   }
 
+  goPuntoQuince() {
+    this.navCtrl.navigateForward('/punto15-menu');
+    console.log('entraste a la página XIV')
+  }
+
   goPuntoDieciseis() {
     this.navCtrl.navigateForward('/punto-dieciseis');
     console.log('entraste a la página XVI')
