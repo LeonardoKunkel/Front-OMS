@@ -10,11 +10,35 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 export class Fo04Page implements OnInit {
   @ViewChild('slider') slider: IonSlides
 
+  datos:any = {
+    check1:'',
+    check2:'',
+    check3:'',
+    check4:'',
+    check5:'',
+    check6:'',
+    check7:'',
+    check8:'',
+    check9:'',
+    check10:'',
+    check11:'',
+    check12:'',
+    check13:'',
+    check14:'',
+    check15:'',
+    check16:'',
+    check17:'',
+  }
+
 
   constructor( private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
     this.slider.lockSwipes(true);
+  }
+
+  enviarForm (formulario) {
+    console.log(this.datos);
   }
 
   goBack(){

@@ -3,635 +3,767 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-diecisiete"></ion-back-button>
     </ion-buttons>
-    <ion-title>FS-37 INFORME DE REVISIÓN POR LA DIRECCIÓN</ion-title>
+    <ion-title class="ion-text-center">FS-37 INFORME DE REVISIÓN POR LA DIRECCIÓN</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-grid fixed>
-    <ion-slides mode="ios">
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item>
-              <ion-label>Hora</ion-label>
-              <ion-datetime display-format="HH:mm" placeholder="Seleccionar hora"></ion-datetime>
-            </ion-item>
-            <ion-item>
-              <ion-label>Fecha</ion-label>
-              <ion-datetime display-format="DD/MM/YYYY" placeholder="Seleccionar fecha"></ion-datetime>
-            </ion-item>
-            <ion-item>
-              <ion-label>Objetivo</ion-label>
-              <ion-textarea placeholder="Escribe..." rows="5"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>ELEMENTOS DE ENTRADA</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-label class="texto">
-              <h2>1. Resultados de la medición de indicadores de Desempeño de SASISOPA.</h2>
-              <br>
-              <h2>2. Evaluación de Requisitos legales.</h2>
-              <br>
-              <h2>3. Cumplimiento de metas y objetivos</h2>
-              <br>
-              <h2>4. Seguimiento de hallazgos y recomendaciones de mejora.</h2>
-              <br>
-              <h2>5. Auditorías.</h2>
-              <br>
-              <h2>6. Las comunicaciones con las partes interesadas externas, incluyendo quejas y sugerencias.</h2>
-              <br>
-              <h2>7. Los cambios en las circunstancias, incluyendo las actualizaciones del marco normativo aplicable.</h2>
-              <br>
-              <h2>8. Recomendaciones de Incidentes y accidentes.</h2>
-            </ion-label> 
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>1. Resultado de Indicadores de desempeño</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-subtitle>INDICADOR (SIGLAS)</ion-card-subtitle>
-            <br>
-            <ion-card-title>ÍNDICE DE FRECUENCIA (I.F.)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (0%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>ÍNDICE DE GRAVEDAD (I.G.)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (0%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>CUMPLIMIENTO DE ICR'S (I.ICR)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>ÍNDICE DE CAPACITACIÓN PROCEDIMIENTOS (I.CAP)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>CUMPLIMIENTO PROGRAMA DE SIMULACROS (I.SIM)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>DISPOSICIÓN DE RESIDUOS (I.RES)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>CUMPLIMIENTO PROG. MANTTO. (I.IM)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>ATENCIÓN HALLAZGOS AUDITORIA (I.HA)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>PRUEBAS DE EQUIPOS DE SEGURIDAD (I.PE)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>ATENCIÓN A RECOMENDACIONES (I.REC)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>CUMPLIMIENTO DE REQUISITOS LEGALES (I.RG)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>CONTAMINACIONES (AIRE,AGUA,SUELO) (I.AAS)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (0%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>PROGRAMA DE LIMPIEZA (I.LIM)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>PRUEBAS DE HERMETICIDAD (I.PH)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (1%)</ion-label>
-            </ion-item>
-            <br><br>
-            <ion-card-title>CUMPLIMIENTO DE COMUNICACIONES (I.CO)</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Resultado anterior (%)"></ion-textarea>
-              <ion-textarea placeholder="Indicador (%)"></ion-textarea>
-              <ion-label>Meta 2020 (100%)</ion-label>
-            </ion-item>
-            <br><br>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>2. Evaluación de Requisitos legales</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-title>Requisitos Legales Totales</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-subtitle>CALIFICACIÓN (No se cumple: 0, Cumplimiento parcial: 1, Cumplimiento total: 2</ion-card-subtitle>
-            <br>
-            <ion-card-title>CUMPLIMIENTO</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Puntos máximos"></ion-textarea>
-              <ion-textarea placeholder="Puntos obtenidos"></ion-textarea>
-              <ion-textarea placeholder="% Logrado"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>3. Objetivos y Metas</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-title>Objetivo</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="6"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-title>Metas</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="6"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-title>Indicador</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="6"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-title>Criterio de aceptación</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="6"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-title>Grado de cumplimiento</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="6"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>4. Seguimiento de hallazgos y recomendaciones de mejora.</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-title>ACUERDO O ACCIÓN DE MEJORA</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="(Descripción breve)" rows="4"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>FECHA DE CUMPLIMIENTO</ion-card-title>
-            <ion-item>
-              <ion-datetime display-format="DD/MM/YY"></ion-datetime>
-            </ion-item>
-            <br><br>
-            <ion-card-title>ESTADO DE ACCIONES</ion-card-title>
-            <ion-item>
-              <ion-label>Cumplido</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>En proceso</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>No Cumplido</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br><br>
-            <ion-card-title>Observaciones</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="7"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>5. Auditorías</ion-label>
-            </ion-item-divider>
-            <br><br>
-            <ion-card-title>AUDITORÍA</ion-card-title>
-            <ion-item>
-              <ion-button color="success">Elegir</ion-button>
-            </ion-item>
-            <br>
-            <ion-card-title>FECHA</ion-card-title>
-            <ion-item>
-              <ion-datetime display-format="DD/MM/YY"></ion-datetime>
-            </ion-item>
-            <br><br>
-            <ion-card-title>HALLAZGOS</ion-card-title>
-            <br>
-            <ion-item>
-              <ion-textarea placeholder="CERRADOS"></ion-textarea>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="ABIERTOS"></ion-textarea>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="TOTALES"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>OBSERVACIONES</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="5"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>           
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>Comunicaciones realizadas </ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-subtitle>Concepto</ion-card-subtitle>
-            <br>
-            <ion-card-title>Política</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Cumplimiento de objetivos y metas</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Funciones, responsabilidad y autoridad</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Riesgos e impactos ambientales</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Requisitos legales</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Incidentes y accidentes</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Resultados de auditorías</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Resultados del desempeño</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br>
-            <ion-card-title>Comunicaciones a contratistas</ion-card-title>
-            <ion-item>
-              <ion-label>PERSONAL</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>CONTRATISTAS</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <br><br>
-            <ion-item>
-              <ion-textarea placeholder="Observaciones"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>7. Cambios en laa circunstancias</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-subtitle>ORIGEN</ion-card-subtitle>
-            <br>
-            <ion-card-title>Cambio en marco normativo</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Motivo"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-subtitle>ORIGEN</ion-card-subtitle>
-            <br>
-            <ion-card-title>Cambio en instalaciones</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Motivo"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-subtitle>ORIGEN</ion-card-subtitle>
-            <br>
-            <ion-card-title>Cambio de personal</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Motivo"></ion-textarea>
-            </ion-item>
-            <br>
-            <ion-card-subtitle>ORIGEN</ion-card-subtitle>
-            <br>
-            <ion-card-title>Otros</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Motivo"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>8. Recomendaciones de incidentes y accidentes.</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-subtitle>CLASE DE INCIDENTE</ion-card-subtitle>
-            <br>
-            <ion-card-title>Incidente incapacitante</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Cantidad"></ion-textarea>
-              <ion-textarea placeholder="Descripción" rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>Desprendimiento de manguera en dispensarios</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Cantidad"></ion-textarea>
-              <ion-textarea placeholder="Descripción" rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>Fugas</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Cantidad"></ion-textarea>
-              <ion-textarea placeholder="Descripción" rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>Derrame</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Cantidad"></ion-textarea>
-              <ion-textarea placeholder="Descripción" rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>Incendio</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Cantidad"></ion-textarea>
-              <ion-textarea placeholder="Descripción" rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>Impactos ambientales</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Cantidad"></ion-textarea>
-              <ion-textarea placeholder="Descripción" rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>Estado de análisis y recomendaciones derivadas de incidentes</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-title>INVESTIGACIONES DE CAUSA RAÍZ</ion-card-title>
-            <br>
-            <ion-card-subtitle>ANÁLISIS DE CAUSA RAÍZ</ion-card-subtitle>
-            <ion-item>
-              <ion-textarea placeholder="Requeridos"></ion-textarea>
-              <ion-textarea placeholder="Realizados"></ion-textarea>
-              <ion-textarea placeholder="% Requerimiento"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-item>
-              <ion-textarea placeholder="Emitidas"></ion-textarea>
-              <ion-textarea placeholder="Atendidas"></ion-textarea>
-              <ion-textarea placeholder="Vencidas"></ion-textarea>
-              <ion-textarea placeholder="% Cumplimiento"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-item>
-              <ion-textarea placeholder="Acciones de Mejora"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>9. Evaluación de la Política</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-subtitle>CONCEPTO</ion-card-subtitle>
-            <br>
-            <h2>¿Se utiliza como marco de referencia para establecer los objetivos del SASISOPA?</h2>
-            <ion-item>
-              <ion-label>Cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>No cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="Cambio requerido"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <h2>¿Considera el control de los aspectos ambientales y peligros y evaluación de los riesgos e impactos ambientales, asociados a la instalación?</h2>
-            <ion-item>
-              <ion-label>Cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>No cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="Cambio requerido"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <h2>¿Considera el cumplimiento de los requisitos legales?</h2>
-            <ion-item>
-              <ion-label>Cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>No cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="Cambio requerido"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <h2>¿Considera la participación del personal?</h2>
-            <ion-item>
-              <ion-label>Cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>No cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="Cambio requerido"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <h2>¿Considera el compromiso para la mejora continua?</h2>
-            <ion-item>
-              <ion-label>Cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>No cumple</ion-label>
-              <ion-checkbox color="success" checked slot="start"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-textarea placeholder="Cambio requerido"></ion-textarea>
-            </ion-item>
-            <br><br>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>10. Decisiones relativas a las oportunidades de mejora</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-card-title>OPORTUNIDAD DE MEJORA</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe..." rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>ACCIONES</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe..." rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-            <ion-card-title>RESPONSABLE</ion-card-title>
-            <ion-item>
-              <ion-textarea placeholder="Escribe..." rows="5"></ion-textarea>
-            </ion-item>
-            <br><br>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-content>
-            <ion-item-divider color="success" class="ion-text-center">
-              <ion-label>CONCLUSIONES</ion-label>
-            </ion-item-divider>
-            <br>
-            <ion-item>
-              <ion-textarea placeholder="Escribe" rows="10"></ion-textarea>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  </ion-grid>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-grid fixed>
+      <ion-slides mode="ios">
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item>
+                  <ion-label>Hora</ion-label>
+                  <ion-datetime display-format="HH:mm" placeholder="Seleccionar" name="hora1" [(ngModel)]="datos.hora1"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Fecha</ion-label>
+                  <ion-datetime display-format="DD/MM/YYYY" placeholder="Seleccionar fecha" name="fecha1" [(ngModel)]="datos.fecha1"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Objetivo</ion-label>
+                  <ion-textarea placeholder="Escribe..." rows="5" name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>ELEMENTOS DE ENTRADA</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-label class="texto">
+                  <h2>1. Resultados de la medición de indicadores de Desempeño de SASISOPA.</h2>
+                  <br>
+                  <h2>2. Evaluación de Requisitos legales.</h2>
+                  <br>
+                  <h2>3. Cumplimiento de metas y objetivos</h2>
+                  <br>
+                  <h2>4. Seguimiento de hallazgos y recomendaciones de mejora.</h2>
+                  <br>
+                  <h2>5. Auditorías.</h2>
+                  <br>
+                  <h2>6. Las comunicaciones con las partes interesadas externas, incluyendo quejas y sugerencias.</h2>
+                  <br>
+                  <h2>7. Los cambios en las circunstancias, incluyendo las actualizaciones del marco normativo aplicable.</h2>
+                  <br>
+                  <h2>8. Recomendaciones de Incidentes y accidentes.</h2>
+                </ion-label> 
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>1. Resultado de Indicadores de desempeño</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-subtitle>INDICADOR (SIGLAS)</ion-card-subtitle>
+                <br>
+                <ion-card-title>ÍNDICE DE FRECUENCIA (I.F.)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (0%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>ÍNDICE DE GRAVEDAD (I.G.)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto75" [(ngModel)]="datos.texto75" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (0%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>CUMPLIMIENTO DE ICR'S (I.ICR)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>ÍNDICE DE CAPACITACIÓN PROCEDIMIENTOS (I.CAP)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto7" [(ngModel)]="datos.texto7" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto8" [(ngModel)]="datos.texto8" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>CUMPLIMIENTO PROGRAMA DE SIMULACROS (I.SIM)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto9" [(ngModel)]="datos.texto9" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto10" [(ngModel)]="datos.texto10" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>DISPOSICIÓN DE RESIDUOS (I.RES)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto11" [(ngModel)]="datos.texto11" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto12" [(ngModel)]="datos.texto12" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>CUMPLIMIENTO PROG. MANTTO. (I.IM)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto13" [(ngModel)]="datos.texto13" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto14" [(ngModel)]="datos.texto14" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>ATENCIÓN HALLAZGOS AUDITORIA (I.HA)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto15" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto16" [(ngModel)]="datos.texto16" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>PRUEBAS DE EQUIPOS DE SEGURIDAD (I.PE)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto17" [(ngModel)]="datos.texto17" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto18" [(ngModel)]="datos.texto18" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>ATENCIÓN A RECOMENDACIONES (I.REC)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto19" [(ngModel)]="datos.texto19" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto20" [(ngModel)]="datos.texto20" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>CUMPLIMIENTO DE REQUISITOS LEGALES (I.RG)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto21" [(ngModel)]="datos.texto21" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto22" [(ngModel)]="datos.texto22" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>CONTAMINACIONES (AIRE,AGUA,SUELO) (I.AAS)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto23" [(ngModel)]="datos.texto23" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto24" [(ngModel)]="datos.texto24" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (0%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>PROGRAMA DE LIMPIEZA (I.LIM)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto25" [(ngModel)]="datos.texto25" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto26" [(ngModel)]="datos.texto26" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>PRUEBAS DE HERMETICIDAD (I.PH)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto27" [(ngModel)]="datos.texto27" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto28" [(ngModel)]="datos.texto28" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (1%)</ion-label>
+                </ion-item>
+                <br><br>
+                <ion-card-title>CUMPLIMIENTO DE COMUNICACIONES (I.CO)</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Resultado anterior (%)" name="texto29" [(ngModel)]="datos.texto29" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Indicador (%)" name="texto76" [(ngModel)]="datos.texto76" type="text"></ion-textarea>
+                  <ion-label>Meta 2020 (100%)</ion-label>
+                </ion-item>
+                <br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>2. Evaluación de Requisitos legales</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-title>Requisitos Legales Totales</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" name="texto30" [(ngModel)]="datos.texto30" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <h2>CALIFICACIÓN (No se cumple: 0, Cumplimiento parcial: 1, Cumplimiento total: 2</h2>
+                <br>
+                <ion-card-title>CUMPLIMIENTO</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Puntos máximos" name="texto31" [(ngModel)]="datos.texto31" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Puntos obtenidos" name="texto32" [(ngModel)]="datos.texto32" type="text"></ion-textarea>
+                  <ion-textarea placeholder="% Logrado" name="texto33" [(ngModel)]="datos.texto33" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Acción de mejora</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="5" name="texto77" [(ngModel)]="datos.texto77" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>3. Objetivos y Metas</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-title>Objetivo</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="6" name="texto34" [(ngModel)]="datos.texto34" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-title>Metas</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="6" name="texto35" [(ngModel)]="datos.texto35" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-title>Indicador</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="6" name="texto36" [(ngModel)]="datos.texto36" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-title>Criterio de aceptación</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="6" name="texto37" [(ngModel)]="datos.texto37" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-title>Grado de cumplimiento</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="6" name="texto38" [(ngModel)]="datos.texto38" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>4. Seguimiento de hallazgos y recomendaciones de mejora.</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-title>No. de Revisión</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe..." rows="3" name="texto78" [(ngModel)]="datos.texto78" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-title>ACUERDO O ACCIÓN DE MEJORA</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="(Descripción breve)" rows="4" name="texto39" [(ngModel)]="datos.texto39" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>FECHA DE CUMPLIMIENTO</ion-card-title>
+                <ion-item>
+                  <ion-datetime display-format="DD/MM/YY" name="fecha2" [(ngModel)]="datos.fecha2"></ion-datetime>
+                </ion-item>
+                <br><br>
+                <ion-card-title>ESTADO DE ACCIONES</ion-card-title>
+                <ion-item>
+                  <ion-label>Cumplido</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check1" [(ngModel)]="datos.check1"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>En proceso</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check2" [(ngModel)]="datos.check2"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No Cumplido</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check3" [(ngModel)]="datos.check3"></ion-checkbox>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Observaciones</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="7" name="texto40" [(ngModel)]="datos.texto40" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>5. Auditorías</ion-label>
+                </ion-item-divider>
+                <br><br>
+                <ion-card-title>AUDITORÍA</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Tipo de auditoría" name="texto79" [(ngModel)]="datos.texto79" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-title>FECHA</ion-card-title>
+                <ion-item>
+                  <ion-datetime display-format="DD/MM/YY"  name="fecha3" [(ngModel)]="datos.fecha3"></ion-datetime>
+                </ion-item>
+                <br><br>
+                <ion-card-title>HALLAZGOS</ion-card-title>
+                <br>
+                <ion-item>
+                  <ion-textarea placeholder="CERRADOS" name="texto41" [(ngModel)]="datos.texto41" type="text"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="ABIERTOS" name="texto42" [(ngModel)]="datos.texto42" type="text"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="TOTALES" name="texto43" [(ngModel)]="datos.texto43" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>OBSERVACIONES</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="5"  name="texto44" [(ngModel)]="datos.texto44" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>           
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>6. Comunicaciones con partes interesadas</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-subtitle>Comunicaciones</ion-card-subtitle>
+                <br><br>
+                <ion-card-title>Quejas</ion-card-title>
+                <ion-item>
+                  <ion-label>Recibidas</ion-label>
+                  <ion-textarea placeholder="Cantidad" name="texto80" [(ngModel)]="datos.texto80" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-item>
+                  <ion-label>Atención</ion-label>
+                  <ion-label color="primary">{{ framework1 }}</ion-label>
+                  <ion-button color="secondary" (click)="mostrarPicker1()">Seleccionar</ion-button>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="% de atención" name="texto81" [(ngModel)]="datos.texto80" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Sugerencias</ion-card-title>
+                <ion-item>
+                  <ion-label>Recibidas</ion-label>
+                  <ion-textarea placeholder="Cantidad" name="texto82" [(ngModel)]="datos.texto82" type="text"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Atención</ion-label>
+                  <ion-label color="primary">{{ framework2 }}</ion-label>
+                  <ion-button color="secondary" (click)="mostrarPicker2()">Seleccionar</ion-button>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="% de atención" name="texto83" [(ngModel)]="datos.texto83" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Solicitud de Información</ion-card-title>
+                <ion-item>
+                  <ion-label>Recibidas</ion-label>
+                  <ion-textarea placeholder="Cantidad" name="texto84" [(ngModel)]="datos.texto84" type="text"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Atención</ion-label>
+                  <ion-label color="primary">{{ framework3 }}</ion-label>
+                  <ion-button color="secondary" (click)="mostrarPicker3()">Seleccionar</ion-button>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="% de atención" name="texto85" [(ngModel)]="datos.texto85" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Reporte de actos o condiciones inseguras</ion-card-title>
+                <ion-item>
+                  <ion-label>Recibidas</ion-label>
+                  <ion-textarea placeholder="Cantidad" name="texto86" [(ngModel)]="datos.texto86" type="text"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Atención</ion-label>
+                  <ion-label color="primary">{{ framework4 }}</ion-label>
+                  <ion-button color="secondary" (click)="mostrarPicker4()">Seleccionar</ion-button>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="% de atención" name="texto87" [(ngModel)]="datos.texto87" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-item>
+                  <ion-label>Acciones de mejora</ion-label>
+                  <ion-textarea placeholder="Escribe" rows="7" name="texto88" [(ngModel)]="datos.texto88" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>Comunicaciones Realizadas</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-subtitle>Concepto</ion-card-subtitle>
+                <br>
+                <ion-card-title>Política</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check4" [(ngModel)]="datos.check4"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check5" [(ngModel)]="datos.check5"></ion-checkbox>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Cumplimiento de objetivos y metas</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check6" [(ngModel)]="datos.check6"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check7" [(ngModel)]="datos.check7"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Funciones, responsabilidad y autoridad</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check8" [(ngModel)]="datos.check8"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check9" [(ngModel)]="datos.check9"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Riesgos e impactos ambientales</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check10" [(ngModel)]="datos.check10"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check11" [(ngModel)]="datos.check11"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Requisitos legales</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check12" [(ngModel)]="datos.check12"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check13" [(ngModel)]="datos.check13"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Incidentes y accidentes</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check14" [(ngModel)]="datos.check14"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check15" [(ngModel)]="datos.check15"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Resultados de auditorías</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check16" [(ngModel)]="datos.check16"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check17" [(ngModel)]="datos.check17"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Resultados del desempeño</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check18" [(ngModel)]="datos.check18"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check19" [(ngModel)]="datos.check19"></ion-checkbox>
+                </ion-item>
+                <br>
+                <ion-card-title>Comunicaciones a contratistas</ion-card-title>
+                <ion-item>
+                  <ion-label>PERSONAL</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check20" [(ngModel)]="datos.check20"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>CONTRATISTAS</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check21" [(ngModel)]="datos.check21"></ion-checkbox>
+                </ion-item>
+                <br><br>
+                <ion-item>
+                  <ion-textarea placeholder="Observaciones" name="texto45" [(ngModel)]="datos.texto45" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>7. Cambios en laa circunstancias</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-subtitle>ORIGEN</ion-card-subtitle>
+                <br>
+                <ion-card-title>Cambio en marco normativo</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Motivo" name="texto46" [(ngModel)]="datos.texto46" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-subtitle>ORIGEN</ion-card-subtitle>
+                <br>
+                <ion-card-title>Cambio en instalaciones</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Motivo" name="texto47" [(ngModel)]="datos.texto47" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-subtitle>ORIGEN</ion-card-subtitle>
+                <br>
+                <ion-card-title>Cambio de personal</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Motivo" name="texto48" [(ngModel)]="datos.texto48" type="text"></ion-textarea>
+                </ion-item>
+                <br>
+                <ion-card-subtitle>ORIGEN</ion-card-subtitle>
+                <br>
+                <ion-card-title>Otros</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Motivo" name="texto49" [(ngModel)]="datos.texto49" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>8. Recomendaciones de incidentes y accidentes.</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-subtitle>CLASE DE INCIDENTE</ion-card-subtitle>
+                <br>
+                <ion-card-title>Incidente incapacitante</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Cantidad" name="texto50" [(ngModel)]="datos.texto50" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Descripción" rows="5" name="texto90" [(ngModel)]="datos.texto90" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Desprendimiento de manguera en dispensarios</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Cantidad" name="texto51" [(ngModel)]="datos.texto51" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Descripción" rows="5" name="texto52" [(ngModel)]="datos.texto52" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Fugas</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Cantidad" name="texto91" [(ngModel)]="datos.texto91" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Descripción" rows="5" name="texto89" [(ngModel)]="datos.texto89" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Derrame</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Cantidad" name="texto53" [(ngModel)]="datos.texto53" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Descripción" rows="5" name="texto54" [(ngModel)]="datos.texto54" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Incendio</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Cantidad" name="texto55" [(ngModel)]="datos.texto55" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Descripción" rows="5" name="texto56" [(ngModel)]="datos.texto56" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>Impactos ambientales</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Cantidad" name="texto92" [(ngModel)]="datos.texto92" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Descripción" rows="5" name="texto57" [(ngModel)]="datos.texto57" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>Estado de análisis y recomendaciones derivadas de incidentes</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-title>INVESTIGACIONES DE CAUSA RAÍZ</ion-card-title>
+                <br>
+                <ion-card-subtitle>ANÁLISIS DE CAUSA RAÍZ</ion-card-subtitle>
+                <ion-item>
+                  <ion-textarea placeholder="Requeridos" name="texto58" [(ngModel)]="datos.texto58" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Realizados" name="texto59" [(ngModel)]="datos.texto59" type="text"></ion-textarea>
+                  <ion-textarea placeholder="% Requerimiento" name="texto60" [(ngModel)]="datos.texto60" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-subtitle>OBSERVACIONES</ion-card-subtitle>
+                <ion-item>
+                  <ion-textarea placeholder="Emitidas" name="texto61" [(ngModel)]="datos.texto61" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Atendidas" name="texto62" [(ngModel)]="datos.texto62" type="text"></ion-textarea>
+                  <ion-textarea placeholder="Vencidas" name="texto63" [(ngModel)]="datos.texto63" type="text"></ion-textarea>
+                  <ion-textarea placeholder="% Cumplimiento" name="texto64" [(ngModel)]="datos.texto64" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-item>
+                  <ion-textarea placeholder="Acciones de Mejora" name="texto65" [(ngModel)]="datos.texto65" type="text"></ion-textarea>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>9. Evaluación de la Política</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-subtitle>CONCEPTO</ion-card-subtitle>
+                <br>
+                <h2>¿Se utiliza como marco de referencia para establecer los objetivos del SASISOPA?</h2>
+                <ion-item>
+                  <ion-label>Cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check22" [(ngModel)]="datos.check22"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check23" [(ngModel)]="datos.check23"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="Cambio requerido" name="texto66" [(ngModel)]="datos.texto66" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <h2>¿Considera el control de los aspectos ambientales y peligros y evaluación de los riesgos e impactos ambientales, asociados a la instalación?</h2>
+                <ion-item>
+                  <ion-label>Cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check24" [(ngModel)]="datos.check24"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check25" [(ngModel)]="datos.check25"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="Cambio requerido" name="texto67" [(ngModel)]="datos.texto67" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <h2>¿Considera el cumplimiento de los requisitos legales?</h2>
+                <ion-item>
+                  <ion-label>Cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check26" [(ngModel)]="datos.check26"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check27" [(ngModel)]="datos.check27"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="Cambio requerido" name="texto68" [(ngModel)]="datos.texto68" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <h2>¿Considera la participación del personal?</h2>
+                <ion-item>
+                  <ion-label>Cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check28" [(ngModel)]="datos.check28"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check29" [(ngModel)]="datos.check29"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="Cambio requerido" name="texto69" [(ngModel)]="datos.texto69" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <h2>¿Considera el compromiso para la mejora continua?</h2>
+                <ion-item>
+                  <ion-label>Cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check30" [(ngModel)]="datos.check30"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No cumple</ion-label>
+                  <ion-checkbox color="success" checked slot="start" name="check31" [(ngModel)]="datos.check31"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-textarea placeholder="Cambio requerido" name="texto70" [(ngModel)]="datos.texto70" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>10. Decisiones relativas a las oportunidades de mejora</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-card-title>OPORTUNIDAD DE MEJORA</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe..." rows="5" name="texto71" [(ngModel)]="datos.texto71" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>ACCIONES</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe..." rows="5" name="texto72" [(ngModel)]="datos.texto72" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-title>RESPONSABLE</ion-card-title>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe..." rows="5" name="texto73" [(ngModel)]="datos.texto73" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha compromiso</ion-label>
+                  <ion-datetime display-format="DD/MM/YYYY" placeholder="Seleccionar fecha" name="fecha4" [(ngModel)]="datos.fecha4"></ion-datetime>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+        <ion-slide>
+          <ion-col size="12" sizeMd="6" sizeLg="6">
+            <ion-card class="fondo">
+              <ion-card-content>
+                <ion-item-divider color="success" class="ion-text-center">
+                  <ion-label>CONCLUSIONES</ion-label>
+                </ion-item-divider>
+                <br>
+                <ion-item>
+                  <ion-textarea placeholder="Escribe" rows="10" name="texto74" [(ngModel)]="datos.texto74" type="text"></ion-textarea>
+                </ion-item>
+                <br><br>
+                <ion-card-header>
+                  <ion-card-title>Enviar datos</ion-card-title>
+                </ion-card-header>
+                <ion-button color="success"  type="submit">
+                  Enviar
+                  <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                </ion-button>
+                <br><br>
+                <ion-card-header>
+                  <ion-card-title>Descargar PDF</ion-card-title>
+                </ion-card-header>
+                <ion-button color="success" expand="block" (click)="pdf()">
+                  Descargar
+                  <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>  
+        </ion-slide>
+      </ion-slides>
+    </ion-grid>
+  </form>
 </ion-content>

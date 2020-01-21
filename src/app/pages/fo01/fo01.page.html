@@ -1,84 +1,1035 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>FO-01 INSPECCIÓN DE TANQUES Y REGISTROS</ion-title>
+    <ion-title class="ion-text-center">FO-01 INSPECCIÓN DE TANQUES Y REGISTROS</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-once"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriouno()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/motobombas.png" />
-          <ion-header>
-            <ion-card-title>MOTOBOMBAS</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriodos()">.
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/control de inventarios.png" />
-          <ion-header>
-            <ion-card-title>CONTROL DE INVENTARIOS</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriotres()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/contenedor de boquilla de llenado.png" />
-          <ion-header>
-            <ion-card-title>CONTENEDOR BOQUILLA DE LLENADO</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriocuatro()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/recuperacion de vapores.png" />
-          <ion-header>
-            <ion-card-title>RECUPERACIÓN DE VAPORES</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriocinco()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/espacio anular-01.png" />
-          <ion-header>
-            <ion-card-title>ESPACIO ANULAR</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesorioseis()">
-          <img height="200px" height="200px" class="ion-padding" src="../../../assets/icon/purga de aire.png" />
-          <ion-header>
-            <ion-card-title>PURGA</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesoriosiete()">
-          <ion-header>
-            <ion-card-title>CONTENEDOR LLENADO REMOTO</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesorioocho()">
-          <ion-header>
-            <ion-card-title>NIVEL DE AGUA EN TANQUES</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goAccesorionueve()">
-          <ion-header>
-            <ion-card-title>POZOS DE MONITOREO</ion-card-title>
-          </ion-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" sizeMd="8" sizeLg="6">
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>MOTOBOMBAS</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Libre de fugas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check1" [(ngModel)]="datos.check1"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check2" [(ngModel)]="datos.check2"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Libre de óxido</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check3" [(ngModel)]="datos.check3"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check4" [(ngModel)]="datos.check4"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Válvula de corte buen estado y libre de fugas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check5" [(ngModel)]="datos.check5"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check6" [(ngModel)]="datos.check6"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Conexión sensor mecánico de fugas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check7" [(ngModel)]="datos.check7"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check8" [(ngModel)]="datos.check8"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro entrada hombre, hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check9" [(ngModel)]="datos.check9"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check10" [(ngModel)]="datos.check10"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check11" [(ngModel)]="datos.check11"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check12" [(ngModel)]="datos.check12"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check13" [(ngModel)]="datos.check13"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check14" [(ngModel)]="datos.check14"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto7" [(ngModel)]="datos.texto7" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tubería, buen estado y sin fugas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check15" [(ngModel)]="datos.check15"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check16" [(ngModel)]="datos.check16"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto8" [(ngModel)]="datos.texto8" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Mangueras metálicas flexibles, buen estado</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check17" [(ngModel)]="datos.check17"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check18" [(ngModel)]="datos.check18"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto9" [(ngModel)]="datos.texto9" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Cajas de conexiones (condulet) con tapa y junta</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check19" [(ngModel)]="datos.check19"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check20" [(ngModel)]="datos.check20"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto10" [(ngModel)]="datos.texto10" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Sellos EYS con tapón y sello</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check21" [(ngModel)]="datos.check21"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check22" [(ngModel)]="datos.check22"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto11" [(ngModel)]="datos.texto11" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Conexión a tierra</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check23" [(ngModel)]="datos.check23"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check24" [(ngModel)]="datos.check24"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto12" [(ngModel)]="datos.texto12" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Sensor de líquidos, operando</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check25" [(ngModel)]="datos.check25"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check26" [(ngModel)]="datos.check26"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto13" [(ngModel)]="datos.texto13" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Alarmas visibles/audible, operando</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check27" [(ngModel)]="datos.check27"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check28" [(ngModel)]="datos.check28"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto14" [(ngModel)]="datos.texto14" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas, hermético</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check29" [(ngModel)]="datos.check29"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check30" [(ngModel)]="datos.check30"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto15" [(ngModel)]="datos.texto15" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de contenedor hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check31" [(ngModel)]="datos.check31"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check32" [(ngModel)]="datos.check32"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto16" [(ngModel)]="datos.texto16" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Botas (sello flexible) en buen estado y apretadas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check33" [(ngModel)]="datos.check33"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check34" [(ngModel)]="datos.check34"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto17" [(ngModel)]="datos.texto17" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label> CONTROL DE INVENTARIOS</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Tapa del tubo hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check35" [(ngModel)]="datos.check35"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check36" [(ngModel)]="datos.check36"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto18" [(ngModel)]="datos.texto18" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Cable buen estado</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check37" [(ngModel)]="datos.check37"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check38" [(ngModel)]="datos.check38"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto19" [(ngModel)]="datos.texto19" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>En operación (transmite señal)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check39" [(ngModel)]="datos.check39"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check40" [(ngModel)]="datos.check40"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto20" [(ngModel)]="datos.texto20" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro hermética, pintada</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check41" [(ngModel)]="datos.check41"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check42" [(ngModel)]="datos.check42"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto21" [(ngModel)]="datos.texto21" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check43" [(ngModel)]="datos.check43"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check44" [(ngModel)]="datos.check44"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto22" [(ngModel)]="datos.texto22" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check45" [(ngModel)]="datos.check45"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check46" [(ngModel)]="datos.check46"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto23" [(ngModel)]="datos.texto23" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Caja de conexión, con tapa y junta</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check47" [(ngModel)]="datos.check47"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check48" [(ngModel)]="datos.check48"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto24" [(ngModel)]="datos.texto24" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Sello EYS con tapón y sello</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check49" [(ngModel)]="datos.check49"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check50" [(ngModel)]="datos.check50"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto25" [(ngModel)]="datos.texto25" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas, hermético</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check51" [(ngModel)]="datos.check51"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check52" [(ngModel)]="datos.check52"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto26" [(ngModel)]="datos.texto26" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>CONTENEDOR BOQUILLA DE LLENADO</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Tapa con empaque (hermética)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check53" [(ngModel)]="datos.check53"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check54" [(ngModel)]="datos.check54"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto27" [(ngModel)]="datos.texto27" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Válvula de drenado operando</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check55" [(ngModel)]="datos.check55"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check56" [(ngModel)]="datos.check56"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto28" [(ngModel)]="datos.texto28" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Válvula de sobrellenado buen estado, completa</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check57" [(ngModel)]="datos.check57"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check58" [(ngModel)]="datos.check58"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto29" [(ngModel)]="datos.texto29" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Válvula de sobrellenado cierra al 95%</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check59" [(ngModel)]="datos.check59"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check60" [(ngModel)]="datos.check60"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto30" [(ngModel)]="datos.texto30" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check61" [(ngModel)]="datos.check61"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check62" [(ngModel)]="datos.check62"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto31" [(ngModel)]="datos.texto31" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check63" [(ngModel)]="datos.check63"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check64" [(ngModel)]="datos.check64"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto32" [(ngModel)]="datos.texto32" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check65" [(ngModel)]="datos.check65"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check66" [(ngModel)]="datos.check66"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto33" [(ngModel)]="datos.texto32" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas hermético</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check67" [(ngModel)]="datos.check67"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check68" [(ngModel)]="datos.check68"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto34" [(ngModel)]="datos.texto32" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>RECUPERACIÓN DE VAPORES</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Tapa de válvula con tapa y empaque (hermética)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check69" [(ngModel)]="datos.check69"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check70" [(ngModel)]="datos.check70"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto35" [(ngModel)]="datos.texto35" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Adaptador de recuperación de vapores hermético</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check71" [(ngModel)]="datos.check71"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check72" [(ngModel)]="datos.check72"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto36" [(ngModel)]="datos.texto36" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check73" [(ngModel)]="datos.check73"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check74" [(ngModel)]="datos.check74"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto37" [(ngModel)]="datos.texto37" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check75" [(ngModel)]="datos.check75"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check76" [(ngModel)]="datos.check76"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto38" [(ngModel)]="datos.texto38" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check77" [(ngModel)]="datos.check77"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check78" [(ngModel)]="datos.check78"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto39" [(ngModel)]="datos.texto39" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas, hermético</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check79" [(ngModel)]="datos.check79"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check80" [(ngModel)]="datos.check80"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto40" [(ngModel)]="datos.texto40" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>ESPACIO ANULAR</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Tapa de tubería en buen estado y hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check81" [(ngModel)]="datos.check81"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check82" [(ngModel)]="datos.check82"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto41" [(ngModel)]="datos.texto41" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Sensor operando</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check83" [(ngModel)]="datos.check83"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check84" [(ngModel)]="datos.check84"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto42" [(ngModel)]="datos.texto42" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Alimentación eléctrica a prueba de explosión</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check85" [(ngModel)]="datos.check85"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check86" [(ngModel)]="datos.check86"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto43" [(ngModel)]="datos.texto43" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Alarma audible y/o visible</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check87" [(ngModel)]="datos.check87"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check88" [(ngModel)]="datos.check88"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto44" [(ngModel)]="datos.texto44" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro hermética (operando)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check89" [(ngModel)]="datos.check89"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check90" [(ngModel)]="datos.check90"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto45" [(ngModel)]="datos.texto45" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check91" [(ngModel)]="datos.check91"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check92" [(ngModel)]="datos.check92"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto46" [(ngModel)]="datos.texto46" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check93" [(ngModel)]="datos.check93"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check94" [(ngModel)]="datos.check94"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto47" [(ngModel)]="datos.texto47" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Caja de conexión (condulet) con tapa y junta</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check95" [(ngModel)]="datos.check95"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check96" [(ngModel)]="datos.check96"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto48" [(ngModel)]="datos.texto48" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Sello EYS con tapón y sello</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check97" [(ngModel)]="datos.check97"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check98" [(ngModel)]="datos.check98"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto49" [(ngModel)]="datos.texto49" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check99" [(ngModel)]="datos.check99"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check100" [(ngModel)]="datos.check100"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto50" [(ngModel)]="datos.texto50" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>PURGA</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Tapa en buen estado, hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check101" [(ngModel)]="datos.check101"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check102" [(ngModel)]="datos.check102"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto51" [(ngModel)]="datos.texto51" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Libre de óxido</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check103" [(ngModel)]="datos.check103"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check104" [(ngModel)]="datos.check104"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto52" [(ngModel)]="datos.texto52" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check105" [(ngModel)]="datos.check105"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check106" [(ngModel)]="datos.check106"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto53" [(ngModel)]="datos.texto53" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check107" [(ngModel)]="datos.check107"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check108" [(ngModel)]="datos.check108"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto54" [(ngModel)]="datos.texto54" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check109" [(ngModel)]="datos.check109"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check110" [(ngModel)]="datos.check110"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto55" [(ngModel)]="datos.texto55" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check111" [(ngModel)]="datos.check111"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check112" [(ngModel)]="datos.check112"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto56" [(ngModel)]="datos.texto56" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>CONTENEDOR LLENADO REMOTO</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Tapa con empaque (hermética)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check113" [(ngModel)]="datos.check113"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check114" [(ngModel)]="datos.check114"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto57" [(ngModel)]="datos.texto57" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Válvula de drenado operando</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check115" [(ngModel)]="datos.check115"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check116" [(ngModel)]="datos.check116"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto58" [(ngModel)]="datos.texto58" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Tapa de registro hermética</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check117" [(ngModel)]="datos.check117"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check118" [(ngModel)]="datos.check118"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto59" [(ngModel)]="datos.texto59" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor limpio y seco</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check119" [(ngModel)]="datos.check119"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check120" [(ngModel)]="datos.check120"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto60" [(ngModel)]="datos.texto60" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Nivel de tapa 2.54 cm sobre NPT</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check121" [(ngModel)]="datos.check121"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check122" [(ngModel)]="datos.check122"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto61" [(ngModel)]="datos.texto61" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Contenedor buen estado, sin fracturas</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check123" [(ngModel)]="datos.check123"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check124" [(ngModel)]="datos.check124"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto62" [(ngModel)]="datos.texto62" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>NIVEL DE AGUA EN TANQUES</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Control de inventarios (mm)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check125" [(ngModel)]="datos.check125"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check126" [(ngModel)]="datos.check126"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto63" [(ngModel)]="datos.texto63" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+              <ion-card-title>Física (mm)</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check127" [(ngModel)]="datos.check127"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check128" [(ngModel)]="datos.check128"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto64" [(ngModel)]="datos.texto64" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>POZOS DE MONITOREO</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-card-title>Presencia de hidrocarburo</ion-card-title><ion-card-subtitle>¿Cumple?</ion-card-subtitle>
+              <ion-item>
+                <ion-checkbox slot="start" name="check129" [(ngModel)]="datos.check129"></ion-checkbox>
+                <ion-label>SI</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start" name="check130" [(ngModel)]="datos.check130"></ion-checkbox>
+                <ion-label>NO</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto65" [(ngModel)]="datos.texto65" type="text"></ion-textarea>
+              </ion-item>
+              <br>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-item-divider color="success" class="ion-text-center">
+                <ion-label>NOTAS</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-textarea placeholder="Escribe..." name="texto66" [(ngModel)]="datos.texto66" type="text"></ion-textarea>
+                <br><br><br><br><br><br><br><br><br><br><br>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" class="fondo">
+            <ion-card-content>
+              <ion-card-header>
+                <ion-card-title>Enviar datos</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" expand="block" type="submit">
+                Enviar datos
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+              <br>
+              <ion-card-header>
+                <ion-card-title>Descargar PDF</ion-card-title>
+              </ion-card-header>
+              <ion-button color="success" expand="block" (click)="pdf()">
+                Descargar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

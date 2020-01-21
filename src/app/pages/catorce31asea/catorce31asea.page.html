@@ -3,310 +3,373 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>ASEA</ion-title>
+    <ion-title class="ion-text-center">ASEA</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios">
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="primary">
-                <h2>Materia</h2>
-              </ion-toolbar>
-              <br>
-              <ion-card-title>Emisiones a la atmósfera</ion-card-title>
-              <br>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="secondary">
-                <h2>Requisito Legal</h2>
-              </ion-toolbar>
-              <br>
-              <h2>Licencia Ambiental Única del sector Hidrocarburos</h2>
-              <br><br>
-              <ion-item>
-                <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿Presenta cambio?</ion-label>
-
-                <!-- <ion-buttons slot="start">
-                  <ion-button (click)="mostrarPop()"></ion-button>
-                </ion-buttons> -->
-
-                <ion-select interface="popover">
-                  <ion-select-option value="mostrarPop()">Si</ion-select-option>
-                  <ion-select-option value="mostrarPop()">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-item>
-              <br><br><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="primary">
-                <h2>Materia</h2>
-              </ion-toolbar>
-              <br>
-              <ion-card-title>Residuos</ion-card-title>
-              <br>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="secondary">
-                <h2>Requisito Legal</h2>
-              </ion-toolbar>
-              <br>
-              <h2>Cédula de operación Anual del Sector de Hidrocarburos</h2>
-              <br><br>
-              <ion-item>
-                <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-item>
-              <br><br><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="primary">
-                <h2>Materia</h2>
-              </ion-toolbar>
-              <br>
-              <ion-card-title>Impacto ambiental</ion-card-title>
-              <br>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="secondary">
-                <h2>Requisito Legal</h2>
-              </ion-toolbar>
-              <br>
-              <h2>Autorización en materia de impacto ambiental, a través de una manifestación de Impacto Ambiental</h2>
-              <br><br>
-              <ion-item>
-                <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-item>
-              <br><br><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="primary">
-                <h2>Materia</h2>
-              </ion-toolbar>
-              <br>
-              <ion-card-title>Seguridad y Protección Ambiental</ion-card-title>
-              <br>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="secondary">
-                <h2>Requisito Legal</h2>
-              </ion-toolbar>
-              <br>
-              <h2>Dictamen de la NOM-005-ASEA-2016</h2>
-              <br><br>
-              <ion-item>
-                <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-item>
-              <br><br><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="primary">
-                <h2>Materia</h2>
-              </ion-toolbar>
-              <br>
-              <ion-card-title>Generador de residuos de manejo especial y/o peligrosos</ion-card-title>
-              <br>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="secondary">
-                <h2>Requisito Legal</h2>
-              </ion-toolbar>
-              <br>
-              <h2>Contar con su registro como generador de residuos (manejo especial y/o peligrosos) ante la ASEA</h2>
-              <br><br>
-              <ion-item>
-                <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-item>
-              <br><br><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="primary">
-                <h2>Materia</h2>
-              </ion-toolbar>
-              <br>
-              <ion-card-title>Seguridad y Protección ambiental</ion-card-title>
-              <br>
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
-            <ion-card-content>
-              <ion-toolbar color="secondary">
-                <h2>Requisito Legal</h2>
-              </ion-toolbar>
-              <br>
-              <h2>Contar con un sistema de administración en seguridad industrial, seguridad operativa y protección del ambiente (SASISOPA), registrado ante la ASEA</h2>
-              <br><br>
-              <ion-item>
-                <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
-              </ion-item>
-              <br><br><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-  </ion-slides>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12" sizeMd="8" sizeLg="8">
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="primary">
+                  <h2>Materia</h2>
+                </ion-toolbar>
+                <br>
+                <ion-card-title>Emisiones a la atmósfera</ion-card-title>
+                <br>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="secondary">
+                  <h2>Requisito Legal</h2>
+                </ion-toolbar>
+                <br>
+                <h1>Licencia Ambiental Única del sector Hidrocarburos</h1>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha del documento</ion-label>
+                  <ion-datetime display-format="DD MM YYYY" name="fecha1" [(ngModel)]="datos.fecha1"></ion-datetime>
+                </ion-item>
+                <br>
+                <div>
+                  <ion-label>¿Presenta cambio?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check1" [(ngModel)]="datos.check1"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check2" [(ngModel)]="datos.check2"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <div>
+                  <ion-label>¿El resultado cumple?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check3" [(ngModel)]="datos.check3"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check4" [(ngModel)]="datos.check4"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <ion-item>
+                  <ion-label>Observaciones</ion-label>
+                  <ion-textarea placeholder="Escribe..." name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+                </ion-item>
+                <br><br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="primary">
+                  <h2>Materia</h2>
+                </ion-toolbar>
+                <br>
+                <ion-card-title>Residuos</ion-card-title>
+                <br>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="secondary">
+                  <h2>Requisito Legal</h2>
+                </ion-toolbar>
+                <br>
+                <h2>Cédula de operación Anual del Sector de Hidrocarburos</h2>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha del documento</ion-label>
+                  <ion-datetime display-format="DD MM YYYY" name="fecha2" [(ngModel)]="datos.fecha2"></ion-datetime>
+                </ion-item>
+                <br>
+                <div>
+                  <ion-label>¿Presenta cambio?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check5" [(ngModel)]="datos.check5"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check6" [(ngModel)]="datos.check6"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <div>
+                  <ion-label>¿El resultado cumple?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check7" [(ngModel)]="datos.check7"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check8" [(ngModel)]="datos.check8"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <ion-item>
+                  <ion-label>Observaciones</ion-label>
+                  <ion-textarea placeholder="Escribe..." name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+                </ion-item>
+                <br><br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="primary">
+                  <h2>Materia</h2>
+                </ion-toolbar>
+                <br>
+                <ion-card-title>Impacto ambiental</ion-card-title>
+                <br>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="secondary">
+                  <h2>Requisito Legal</h2>
+                </ion-toolbar>
+                <br>
+                <h2>Autorización en materia de impacto ambiental, a través de una manifestación de Impacto Ambiental</h2>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha del documento</ion-label>
+                  <ion-datetime display-format="DD MM YYYY" name="fecha3" [(ngModel)]="datos.fecha3"></ion-datetime>
+                </ion-item>
+                <br>
+                <div>
+                  <ion-label>¿Presenta cambio?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check9" [(ngModel)]="datos.check9"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check10" [(ngModel)]="datos.check10"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <div>
+                  <ion-label>¿El resultado cumple?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check11" [(ngModel)]="datos.check11"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check12" [(ngModel)]="datos.check12"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <ion-item>
+                  <ion-label>Observaciones</ion-label>
+                  <ion-textarea placeholder="Escribe..." name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
+                </ion-item>
+                <br><br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="primary">
+                  <h2>Materia</h2>
+                </ion-toolbar>
+                <br>
+                <ion-card-title>Seguridad y Protección Ambiental</ion-card-title>
+                <br>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="secondary">
+                  <h2>Requisito Legal</h2>
+                </ion-toolbar>
+                <br>
+                <h2>Dictamen de la NOM-005-ASEA-2016</h2>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha del documento</ion-label>
+                  <ion-datetime display-format="DD MM YYYY" name="fecha4" [(ngModel)]="datos.fecha4"></ion-datetime>
+                </ion-item>
+                <br>
+                <div>
+                  <ion-label>¿Presenta cambio?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check13" [(ngModel)]="datos.check13"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check14" [(ngModel)]="datos.check14"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <div>
+                  <ion-label>¿El resultado cumple?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check15" [(ngModel)]="datos.check15"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check16" [(ngModel)]="datos.check16"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <ion-item>
+                  <ion-label>Observaciones</ion-label>
+                  <ion-textarea placeholder="Escribe..." name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
+                </ion-item>
+                <br><br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="primary">
+                  <h2>Materia</h2>
+                </ion-toolbar>
+                <br>
+                <ion-card-title>Generador de residuos de manejo especial y/o peligrosos</ion-card-title>
+                <br>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="secondary">
+                  <h2>Requisito Legal</h2>
+                </ion-toolbar>
+                <br>
+                <h2>Contar con su registro como generador de residuos (manejo especial y/o peligrosos) ante la ASEA</h2>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha del documento</ion-label>
+                  <ion-datetime display-format="DD MM YYYY" name="fecha5" [(ngModel)]="datos.fecha5"></ion-datetime>
+                </ion-item>
+                <br>
+                <div>
+                  <ion-label>¿Presenta cambio?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check17" [(ngModel)]="datos.check17"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check18" [(ngModel)]="datos.check18"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <div>
+                  <ion-label>¿El resultado cumple?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check19" [(ngModel)]="datos.check19"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check20" [(ngModel)]="datos.check20"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <ion-item>
+                  <ion-label>Observaciones</ion-label>
+                  <ion-textarea placeholder="Escribe..." name="texto5" [(ngModel)]="datos.texto5" type="text"></ion-textarea>
+                </ion-item>
+                <br><br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="primary">
+                  <h2>Materia</h2>
+                </ion-toolbar>
+                <br>
+                <ion-card-title>Seguridad y Protección ambiental</ion-card-title>
+                <br>
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-toolbar color="secondary">
+                  <h2>Requisito Legal</h2>
+                </ion-toolbar>
+                <br>
+                <h2>Contar con un sistema de administración en seguridad industrial, seguridad operativa y protección del ambiente (SASISOPA), registrado ante la ASEA</h2>
+                <br><br>
+                <ion-item>
+                  <ion-label>Fecha del documento</ion-label>
+                  <ion-datetime display-format="DD MM YYYY" name="fecha6" [(ngModel)]="datos.fecha6"></ion-datetime>
+                </ion-item>
+                <br>
+                <div>
+                  <ion-label>¿Presenta cambio?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check21" [(ngModel)]="datos.check21"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check22" [(ngModel)]="datos.check22"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <br>
+                <div>
+                  <ion-label>¿El resultado cumple?</ion-label>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check23" [(ngModel)]="datos.check23"></ion-checkbox>
+                    <ion-label>SI</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-checkbox color="secondary" slot="start" name="check24" [(ngModel)]="datos.check24"></ion-checkbox>
+                    <ion-label>NO</ion-label>
+                  </ion-item>
+                </div>
+                <ion-item>
+                  <ion-label>Observaciones</ion-label>
+                  <ion-textarea placeholder="Escribe..." name="texto6" [(ngModel)]="datos.texto6" type="text"></ion-textarea>
+                </ion-item>
+                <br><br><br>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

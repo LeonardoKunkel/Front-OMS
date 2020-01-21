@@ -1,12 +1,140 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-doce"></ion-back-button>
     </ion-buttons>
-    <ion-title>Anexo de Seguridad</ion-title>
+    <ion-title class="ion-text-center">Anexo de Seguridad</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <embed src="../../../assets/docs/FS-24 ANEXO DE SEGURIDAD.pdf" type="application/pdf" width="100%" height="1200px" />
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" sizeLg="6">
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label class="ion-text-center">OBJETIVO</ion-label>
+              </ion-item-divider>
+              <br>
+              <h3>Establecer las Reglas generales de seguridad industrial, seguridad operativa y protección del medio ambiente, que deben ser observadas por los contratistas, subcontratistas, proveedores y prestadores de servicio, que desarrollen trabajos o presten servicios, en las instalaciones de la con la Estación de Servicio, para prevenir la ocurrencia de incidentes que afecten la integridad de trabajadores, las instalaciones, al medio ambiente o terceros.</h3>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label class="ion-text-center">ALCANCE</ion-label>
+              </ion-item-divider>
+              <br>
+              <h3>
+                Las Reglas generales de seguridad son aplicables para todos los contratistas, subcontratistas, prestadores de servicio y proveedores, cuyas actividades dentro de la estación de servicio generan riesgos o aspectos ambientales significativos, entre otros:
+                <ol>
+                  <li>Trabajos con escaleras y plataformas en alturas mayores a 1.5 m.</li>
+                  <li>Trabajos en espacios confinados.</li>
+                  <li>Trabajos con herramienta que genera fuente de ignición.</li>
+                  <li>Trabajos en instalaciones eléctricas.</li>
+                  <li>Trabajos en equipos y accesorios que contengan producto.</li>
+                  <li>Suministro de productos inflamables y combustibles.</li>
+                </ol>
+              </h3>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label class="ion-text-center">MEDIDAS PREVENTIVAS GENERALES</ion-label>
+              </ion-item-divider>
+              <br>
+              <h3>
+                <ul>
+                  <li>El personal de las compañias contratistas, debe portar ropa de algodón.</li>
+                  <li>Está prohibido encender fuego, fumar, introducir cerillos y encendedores a la estación de servicio.</li>
+                  <li>Está prohibido introducir bebidas empriagantes, drogas o entrar bajo en efecto de dichas sustancias.</li>
+                  <li>Mantener el orden y la limpieza en el área de trabajo.</li>
+                  <li>Está restringido el uso de cámáras fotográficas y teléfonos celulares en las áreas de despacho o de almacenamiento.</li>
+                  <li>No se debe realizar un trabajo si no se ha generado el permiso de trabajo peligrosos correspondiente.</li>
+                  <li>Respetar el horario de trabajo establecido por el responsable de la Estación de servicio.</li>
+                  <li>Estan prohibidas las bromas y el retoso dentro de la estación de servicio.</li>
+                  <li>No se deben manipular equipos o accesorios sin autorización.</li>
+                </ul>
+              </h3>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label>EQUIPO DE PROTECCIÓN PERSONAL</ion-label>
+              </ion-item-divider>
+              <br>
+              <h3>
+                <ul>
+                  <li>El equipo de protección básico es: casco, ropa de algodón, guantes, lentes de seguridad, calzado de seguridad.</li>
+                  <li>Se debe utilizar el equipo de protección personal específico debe ser el adecuado para el tipo de trabajo a desrrollar.</li>
+                  <li>El equipo de protección personal debe estar en buen estado y de la talla adecuada.</li>
+                  <li>Los cables de vida y arnés deben contar con registros de revisión.</li>
+                </ul>
+              </h3>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label>USO DE HERRAMIENTA</ion-label>
+              </ion-item-divider>
+              <br>
+              <h3>
+                <ul>
+                  <li>La herramienta a utilizar debe estar en buen estado, no se debe utilizar si está completa o defectuosa.</li>
+                  <li>La Herramienta eléctrica debe aterrizarse durante su uso.</li>
+                  <li>La herramienta solo debe utilizarse para el fin que esta destinada, estrá prohibido darle otro uso.</li>
+                  <li>Las caladoras deben contar con su guarda correspondiente.</li>
+                  <li>Está prohibido el uso de herramienta hechiza.</li>
+                  <li>Las extensiones eléctricas deben ser de uso rudo.</li>
+                  <li>Están prohibidos los empates en las extensiones eléctricas.</li>
+                </ul>
+              </h3>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label>PROCEDIMIENTO</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-item>
+                <ion-textarea placeholder="Escribe..." rows="6" name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider color="success">
+                <ion-label>EQUIPO DE PROTECCIÓN PERSONAL</ion-label>
+              </ion-item-divider>
+              <br>
+              <ion-item>
+                <ion-textarea placeholder="Escribe..." rows="6" name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <ion-button color="success" type="submit">
+                Enviar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+              <br><br>
+              <ion-button color="success" (click)="pdf()">
+                Descargar
+                <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

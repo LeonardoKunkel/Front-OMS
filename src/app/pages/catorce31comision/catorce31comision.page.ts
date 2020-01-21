@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
 @Component({
   selector: 'app-catorce31comision',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Catorce31comisionPage implements OnInit {
 
-  constructor() { }
+  datos:any ={
+    fecha1:'',
+    texto1:'',
+    check1:'',
+    check2:'',
+    check3:'',
+    check4:'',
+  }
+  
+  constructor( private pdfMaker: PdfMakerService ) { }
 
   ngOnInit() {
+  }
+
+  enviarForm (formulario) {
+    console.log(this.datos);
   }
 
 }

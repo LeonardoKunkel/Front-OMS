@@ -32,25 +32,36 @@
               <br><br>
               <ion-item>
                 <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD MM YYYY" name="fecha1" [(ngModel)]="datos.fecha1"></ion-datetime>
               </ion-item>
-              <ion-item>
+              <br>
+              <div>
                 <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check1" [(ngModel)]="datos.check1"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check2" [(ngModel)]="datos.check2"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
+              <div>
                 <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check3" [(ngModel)]="datos.check3"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check4" [(ngModel)]="datos.check4"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
               <ion-item>
                 <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
+                <ion-textarea placeholder="Escribe..." name="texto1" [(ngModel)]="datos.texto1" type="text"></ion-textarea>
               </ion-item>
               <br><br><br>
             </ion-card-content>
@@ -81,25 +92,36 @@
               <br><br>
               <ion-item>
                 <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD MM YYYY" name="fecha2" [(ngModel)]="datos.fecha2"></ion-datetime>
               </ion-item>
-              <ion-item>
+              <br>
+              <div>
                 <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check5" [(ngModel)]="datos.check5"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check6" [(ngModel)]="datos.check6"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
+              <div>
                 <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check7" [(ngModel)]="datos.check7"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check8" [(ngModel)]="datos.check8"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
               <ion-item>
                 <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
+                <ion-textarea placeholder="Escribe..." name="texto2" [(ngModel)]="datos.texto2" type="text"></ion-textarea>
               </ion-item>
               <br><br><br>
             </ion-card-content>
@@ -130,25 +152,36 @@
               <br><br>
               <ion-item>
                 <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD MM YYYY" name="fecha3" [(ngModel)]="datos.fecha3"></ion-datetime>
               </ion-item>
-              <ion-item>
+              <br>
+              <div>
                 <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check9" [(ngModel)]="datos.check9"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check10" [(ngModel)]="datos.check10"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
+              <div>
                 <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check11" [(ngModel)]="datos.check11"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check12" [(ngModel)]="datos.check12"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
               <ion-item>
                 <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
+                <ion-textarea placeholder="Escribe..." name="texto3" [(ngModel)]="datos.texto3" type="text"></ion-textarea>
               </ion-item>
               <br><br><br>
             </ion-card-content>
@@ -179,25 +212,35 @@
               <br><br>
               <ion-item>
                 <ion-label>Fecha del documento</ion-label>
-                <ion-datetime display-format="DD MM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD MM YYYY" name="fecha4" [(ngModel)]="datos.fecha4"></ion-datetime>
               </ion-item>
-              <ion-item>
+              <br>
+              <div>
                 <ion-label>¿Presenta cambio?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check13" [(ngModel)]="datos.check13"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check14" [(ngModel)]="datos.check14"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
+              <br>
+              <div>
                 <ion-label>¿El resultado cumple?</ion-label>
-                <ion-select interface="popover">
-                  <ion-select-option value="">Si</ion-select-option>
-                  <ion-select-option value="">No</ion-select-option>
-                </ion-select>
-              </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check15" [(ngModel)]="datos.check15"></ion-checkbox>
+                  <ion-label>SI</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox color="secondary" slot="start" name="check16" [(ngModel)]="datos.check16"></ion-checkbox>
+                  <ion-label>NO</ion-label>
+                </ion-item>
+              </div>
               <ion-item>
                 <ion-label>Observaciones</ion-label>
-                <ion-textarea placeholder="Escribe..."></ion-textarea>
+                <ion-textarea placeholder="Escribe..." name="texto4" [(ngModel)]="datos.texto4" type="text"></ion-textarea>
               </ion-item>
               <br><br><br>
             </ion-card-content>

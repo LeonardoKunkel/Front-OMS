@@ -17,1012 +17,1085 @@
   ></ion-icon>
 </ion-item>
 <ion-content>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12">
-        <ion-slides mode="ios" pager="ios" scrollbar="ios">
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/motoBomba.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-                <h1>MOTOBOMBAS</h1>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Motobombas</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Cajas de Conexiones y sello EYS (tapón y empaque)</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-slides mode="ios" pager="ios" scrollbar="ios">
+            <ion-slide>
+              <ion-card>
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/motoBomba.png"
+                    alt=""
+                    class="image"
+                  />
                   <br /><br />
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+                  <h1>MOTOBOMBAS</h1>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Motobombas</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Cajas de Conexiones y sello EYS (tapón y empaque)</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check1" [(ngModel)]="datos.check1"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check2" [(ngModel)]="datos.check2"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check3" [(ngModel)]="datos.check3"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto1"
+                      [(ngModel)]="datos.texto1"
+                      type="text"
+                    ></ion-textarea>
+                    <br /><br />
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Motobombas</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Conexión a tierra</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Motobombas</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Conexión a tierra</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check4" [(ngModel)]="datos.check4"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check5" [(ngModel)]="datos.check5"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check6" [(ngModel)]="datos.check6"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto2"
+                      [(ngModel)]="datos.texto2"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Motobombas</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Tubería Conduit</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Motobombas</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Tubería Conduit</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check7" [(ngModel)]="datos.check7"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check8" [(ngModel)]="datos.check8"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check9" [(ngModel)]="datos.check9"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto3"
+                      [(ngModel)]="datos.texto3"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Motobombas</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Cable de sensor en ben estado</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/contronInventario.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-                <h1>Control de inventarios</h1>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Control de inventarios</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Cable buen estado</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Motobombas</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Cable de sensor en ben estado</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check10" [(ngModel)]="datos.check10"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check11" [(ngModel)]="datos.check11"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check12" [(ngModel)]="datos.check12"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto4"
+                      [(ngModel)]="datos.texto4"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/contronInventario.png"
+                    alt=""
+                    class="image"
+                  />
+                  <br /><br />
+                  <h1>Control de inventarios</h1>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Control de inventarios</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Cable buen estado</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check13" [(ngModel)]="datos.check13"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check14" [(ngModel)]="datos.check14"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check15" [(ngModel)]="datos.check15"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto5"
+                      [(ngModel)]="datos.texto5"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Control de inventarios</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Cajas de Conexiones y sello EYS (tapón y empaque)</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/detectorFugas.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-                <h1>Detector de fugas (sensor)</h1>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Detector de fugas (sensor)</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Cable de sensor en buen estado.</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Control de inventarios</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Cajas de Conexiones y sello EYS (tapón y empaque)</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check16" [(ngModel)]="datos.check16"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check17" [(ngModel)]="datos.check17"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check18" [(ngModel)]="datos.check18"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto6"
+                      [(ngModel)]="datos.texto6"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/detectorFugas.png"
+                    alt=""
+                    class="image"
+                  />
+                  <br /><br />
+                  <h1>Detector de fugas (sensor)</h1>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Detector de fugas (sensor)</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Cable de sensor en buen estado.</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check19" [(ngModel)]="datos.check19"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check20" [(ngModel)]="datos.check20"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check21" [(ngModel)]="datos.check21"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto7"
+                      [(ngModel)]="datos.texto7"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Detector de fugas (sensor)</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Contenedor limpio, seco y hermético.</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Detector de fugas (sensor)</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Contenedor limpio, seco y hermético.</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check22" [(ngModel)]="datos.check22"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check23" [(ngModel)]="datos.check23"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check24" [(ngModel)]="datos.check24"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto8"
+                      [(ngModel)]="datos.texto8"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Detector de fugas (sensor)</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Caja de conexiones y sello EYS con tapón</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/tuberiaVenteo.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-                <h1>
-                  Caja de conexiones y sello EYS con tapón Tubería de venteo
-                </h1>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <ion-card-title>Tubería de venteo</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Conexión a tierra</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>MG</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <ion-col size-md="4">
-                      <ion-item>
-                        <ion-label>DL</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/pozoObservacion.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-                <h1>
-                  Caja de conexiones y sello EYS con tapón Tubería de venteo
-                </h1>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Detector de fugas (sensor)</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Caja de conexiones y sello EYS con tapón</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check25" [(ngModel)]="datos.check25"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check26" [(ngModel)]="datos.check26"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check27" [(ngModel)]="datos.check27"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto9"
+                      [(ngModel)]="datos.texto9"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/tuberiaVenteo.png"
+                    alt=""
+                    class="image"
+                  />
+                  <br /><br />
+                  <h1>
+                    Caja de conexiones y sello EYS con tapón Tubería de venteo
+                  </h1>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card>
+                <ion-card-content>
+                  <ion-card-title>Tubería de venteo</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Conexión a tierra</h4>
+                  <h3></h3>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check28" [(ngModel)]="datos.check28"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>MG</ion-label>
+                          <ion-checkbox name="check29" [(ngModel)]="datos.check29"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size-md="4">
+                        <ion-item>
+                          <ion-label>DL</ion-label>
+                          <ion-checkbox name="check30" [(ngModel)]="datos.check30"></ion-checkbox>
+                        </ion-item>
+                      </ion-col>
+                      <br />
+                    </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto10"
+                      [(ngModel)]="datos.texto10"
+                      type="text"
+                    ></ion-textarea>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/pozoObservacion.png"
+                    alt=""
+                    class="image"
+                  />
+                  <br /><br />
+                  <h1>
+                    Caja de conexiones y sello EYS con tapón Tubería de venteo
+                  </h1>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Pozos de observación</ion-card-title>
-                <h3><b>Selecciona una de las siguientes opciones: </b></h3>
-                <br />
-                <h4>Sello EYS y cable</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="6">
-                      <ion-item>
-                        <ion-label>C</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/paroEmergencia.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-                <h1>
-                  Caja de conexiones y sello EYS con tapón Tubería de venteo
-                </h1>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <ion-card-title>Paro de emergencia</ion-card-title>
-                <h3><b>Sello EYS con tapón y tubería Conduit</b></h3>
-                <br />
-                <h4>Sello EYS y cable</h4>
-                <h3></h3>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size-md="6">
-                      <ion-item>
-                        <ion-label>C</ion-label>
-                        <ion-checkbox></ion-checkbox>
-                      </ion-item>
-                    </ion-col>
-                    <br />
-                  </ion-row>
-                  <ion-textarea
-                    placeholder="Escribe tus observaciones"
-                  ></ion-textarea>
-                </ion-grid>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-content>
-                <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
-                <h4><b>(DISPENSARIOS)</b></h4>
-                <br />
-                <img
-                  src="../../../assets/icon/iconosPunto11/doc5/dispensario.png"
-                  alt=""
-                  class="image"
-                />
-                <br /><br />
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title>Anclaje a basamento </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Conexión a tierra</h1>
-                <h3>
-                  Selecciona un numero dependiendo a la gravedad que presenta
-                </h3>
-                <ion-col>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Pozos de observación</ion-card-title>
+                  <h3><b>Selecciona una de las siguientes opciones: </b></h3>
+                  <br />
+                  <h4>Sello EYS y cable</h4>
+                  <h3></h3>
                   <ion-grid fixed>
                     <ion-row>
                       <ion-col size-md="6">
                         <ion-item>
-                          <ion-label>Uno</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Dos</ion-label>
-                          <ion-radio value="2"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Tres</ion-label>
-                          <ion-radio value="3"></ion-radio>
+                          <ion-label>C</ion-label>
+                          <ion-checkbox name="check31" [(ngModel)]="datos.check31"></ion-checkbox>
                         </ion-item>
                       </ion-col>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Cuatro</ion-label>
-                          <ion-radio value="4"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Cinco</ion-label>
-                          <ion-radio value="5"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Seis</ion-label>
-                          <ion-radio value="6"></ion-radio>
-                        </ion-item>
-                      </ion-col>
+                      <br />
                     </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto11"
+                      [(ngModel)]="datos.texto11"
+                      type="text"
+                    ></ion-textarea>
                   </ion-grid>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(TANQUES DE ALMACENAMIENTO)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/paroEmergencia.png"
+                    alt=""
+                    class="image"
+                  />
                   <br /><br />
-                  <ion-item-divider color="danger"> </ion-item-divider>
-                  <ion-item-divider color="primary"> </ion-item-divider>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-item>
-                <ion-icon
-                  name="save"
-                  size="large"
-                  ios="ios-save"
-                  color="secondary"
-                  type="submit"
-                  slot="end"
-                ></ion-icon>
-              </ion-item>
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title>Contenedor </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Cable de sensor</h1>
-                <h3>
-                  Selecciona un numero dependiendo a la gravedad que presenta
-                </h3>
-                <ion-col>
+                  <h1>
+                    Caja de conexiones y sello EYS con tapón Tubería de venteo
+                  </h1>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <ion-card-title>Paro de emergencia</ion-card-title>
+                  <h3><b>Sello EYS con tapón y tubería Conduit</b></h3>
+                  <br />
+                  <h4>Sello EYS y cable</h4>
+                  <h3></h3>
                   <ion-grid fixed>
                     <ion-row>
                       <ion-col size-md="6">
                         <ion-item>
-                          <ion-label>Uno</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Dos</ion-label>
-                          <ion-radio value="2"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Tres</ion-label>
-                          <ion-radio value="3"></ion-radio>
+                          <ion-label>C</ion-label>
+                          <ion-checkbox name="check32" [(ngModel)]="datos.check32"></ion-checkbox>
                         </ion-item>
                       </ion-col>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Cuatro</ion-label>
-                          <ion-radio value="4"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Cinco</ion-label>
-                          <ion-radio value="5"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Seis</ion-label>
-                          <ion-radio value="6"></ion-radio>
-                        </ion-item>
-                      </ion-col>
+                      <br />
                     </ion-row>
+                    <ion-textarea
+                      placeholder="Escribe tus observaciones"
+                      name="texto12"
+                      [(ngModel)]="datos.texto12"
+                      type="text"
+                    ></ion-textarea>
                   </ion-grid>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
-                  <br /><br />
-                  <ion-item-divider color="danger"> </ion-item-divider>
-                  <ion-item-divider color="primary"> </ion-item-divider>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-item>
-                <ion-icon
-                  name="save"
-                  size="large"
-                  ios="ios-save"
-                  color="secondary"
-                  type="submit"
-                  slot="end"
-                ></ion-icon>
-              </ion-item>
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title>Contenedor </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Cajas de conexiones y sellos EYS con tapón</h1>
-                <h3>
-                  Selecciona un numero dependiendo a la gravedad que presenta
-                </h3>
-                <ion-col>
-                  <ion-grid fixed>
-                    <ion-row>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Uno</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Dos</ion-label>
-                          <ion-radio value="2"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Tres</ion-label>
-                          <ion-radio value="3"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Cuatro</ion-label>
-                          <ion-radio value="4"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Cinco</ion-label>
-                          <ion-radio value="5"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Seis</ion-label>
-                          <ion-radio value="6"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-content>
+                  <h3>INSPECCIÓN DE INSTALACIONES ELÉCTRICAS</h3>
+                  <h4><b>(DISPENSARIOS)</b></h4>
+                  <br />
+                  <img
+                    src="../../../assets/icon/iconosPunto11/doc5/dispensario.png"
+                    alt=""
+                    class="image"
+                  />
                   <br /><br />
-                  <ion-item-divider color="danger"> </ion-item-divider>
-                  <ion-item-divider color="primary"> </ion-item-divider>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <!-- mbfbfbbfjbfjbfjbf -->
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-item>
-                <ion-icon
-                  name="save"
-                  size="large"
-                  ios="ios-save"
-                  color="secondary"
-                  type="submit"
-                  slot="end"
-                ></ion-icon>
-              </ion-item>
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title
-                  >Estructuras y conexiones cercanas
-                </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Sellos EYS con tapón y tubería Conduit</h1>
-                <h3>
-                  Selecciona un numero dependiendo a la gravedad que presenta
-                </h3>
-                <ion-col>
-                  <ion-grid fixed>
-                    <ion-row>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Uno</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Dos</ion-label>
-                          <ion-radio value="2"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Tres</ion-label>
-                          <ion-radio value="3"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Cuatro</ion-label>
-                          <ion-radio value="4"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Cinco</ion-label>
-                          <ion-radio value="5"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Seis</ion-label>
-                          <ion-radio value="6"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
-                  <br /><br />
-                  <ion-item-divider color="danger"> </ion-item-divider>
-                  <ion-item-divider color="primary"> </ion-item-divider>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-item>
-                <ion-icon
-                  name="save"
-                  size="large"
-                  ios="ios-save"
-                  color="secondary"
-                  type="submit"
-                  slot="end"
-                ></ion-icon>
-              </ion-item>
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title>Paros de emergencia </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Sellos EYS con tapón y tubería Conduit</h1>
-                <h3>
-                  Selecciona un numero dependiendo a la gravedad que presenta
-                </h3>
-                <ion-col>
-                  <ion-grid fixed>
-                    <ion-row>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Uno</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Dos</ion-label>
-                          <ion-radio value="2"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Tres</ion-label>
-                          <ion-radio value="3"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Cuatro</ion-label>
-                          <ion-radio value="4"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Cinco</ion-label>
-                          <ion-radio value="5"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Seis</ion-label>
-                          <ion-radio value="6"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
-                  <br /><br />
-                  <ion-item-divider color="danger"> </ion-item-divider>
-                  <ion-item-divider color="primary"> </ion-item-divider>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title>Anclaje a basamento </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Conexión a tierra</h1>
+                  <h3>
+                    Selecciona un numero dependiendo a la gravedad que presenta
+                  </h3>
+                  <ion-col>
+                    <ion-grid fixed>
+                      <ion-row>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Uno</ion-label>
+                            <ion-radio value="1" name="check33" [(ngModel)]="datos.check33"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Dos</ion-label>
+                            <ion-radio value="2" name="check34" [(ngModel)]="datos.check34"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Tres</ion-label>
+                            <ion-radio value="3" name="check35" [(ngModel)]="datos.check35"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Cuatro</ion-label>
+                            <ion-radio value="4" name="check36" [(ngModel)]="datos.check36"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Cinco</ion-label>
+                            <ion-radio value="5" name="check37" [(ngModel)]="datos.check37"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Seis</ion-label>
+                            <ion-radio value="6" name="check38" [(ngModel)]="datos.check38"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-textarea 
+                        placeholder="Observaciones"
+                        name="texto13"
+                        [(ngModel)]="datos.texto13"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <br /><br />
+                    <ion-item-divider color="danger"> </ion-item-divider>
+                    <ion-item-divider color="primary"> </ion-item-divider>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-item>
-                <ion-icon
-                  name="save"
-                  size="large"
-                  ios="ios-save"
-                  color="secondary"
-                  type="submit"
-                  slot="end"
-                ></ion-icon>
-              </ion-item>
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title>Registros eléctricos </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Tubería Conduit</h1>
-                <h3>Selecciona dependiendo a la gravedad que presenta</h3>
-                <ion-col>
-                  <ion-grid fixed>
-                    <ion-row>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Uno</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Dos</ion-label>
-                          <ion-radio value="2"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Tres</ion-label>
-                          <ion-radio value="3"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col size-md="6">
-                        <ion-item>
-                          <ion-label>Cuatro</ion-label>
-                          <ion-radio value="4"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Cinco</ion-label>
-                          <ion-radio value="5"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                          <ion-label>Seis</ion-label>
-                          <ion-radio value="6"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
-                  <br /><br />
-                  <ion-item-divider color="danger"> </ion-item-divider>
-                  <ion-item-divider color="primary"> </ion-item-divider>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="sliders">
-              <ion-item>
-                <ion-icon
-                  name="save"
-                  size="large"
-                  ios="ios-save"
-                  color="secondary"
-                  type="submit"
-                  slot="end"
-                ></ion-icon>
-              </ion-item>
-              <ion-card-header>
-                <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
-                <ion-card-title>Paros de emergencia </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <h1>Sellos EYS con tapón y tubería Conduit</h1>
-                <h3>
-                  Selecciona un numero dependiendo a la gravedad que presenta
-                </h3>
-                <ion-col>
-                  <ion-item>
-                    <ion-label>Uno</ion-label>
-                    <ion-radio value="1"></ion-radio>
-                  </ion-item>
-                  <ion-item>
-                    <ion-textarea placeholder="Observaciones"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Descargar</ion-card-subtitle>
-                <ion-card-title>Descargar</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <ion-button (click)="pdf()" color="primary">
-                  Decargar
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-item>
                   <ion-icon
-                    ios="ios-cloud-download"
-                    md="md-cloud-download"
+                    name="save"
+                    size="large"
+                    ios="ios-save"
+                    color="secondary"
+                    type="submit"
+                    slot="end"
                   ></ion-icon>
-                </ion-button>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
-    <ion-tabs>
-      <ion-tab-bar slot="bottom" color="dark">
-        <ion-tab-button tab="tab1">
-          <ion-icon name="home"></ion-icon>
-          <ion-label>Inicio</ion-label>
-        </ion-tab-button>
+                </ion-item>
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title>Contenedor </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Cable de sensor</h1>
+                  <h3>
+                    Selecciona un numero dependiendo a la gravedad que presenta
+                  </h3>
+                  <ion-col>
+                    <ion-grid fixed>
+                      <ion-row>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Uno</ion-label>
+                            <ion-radio value="1" name="check39" [(ngModel)]="datos.check39"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Dos</ion-label>
+                            <ion-radio value="2" name="check40" [(ngModel)]="datos.check40"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Tres</ion-label>
+                            <ion-radio value="3" name="check41" [(ngModel)]="datos.check41"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Cuatro</ion-label>
+                            <ion-radio value="4" name="check42" [(ngModel)]="datos.check42"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Cinco</ion-label>
+                            <ion-radio value="5" name="check43" [(ngModel)]="datos.check43"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Seis</ion-label>
+                            <ion-radio value="6" name="check44" [(ngModel)]="datos.check44"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-textarea 
+                      placeholder="Observaciones"
+                      name="texto14"
+                      [(ngModel)]="datos.texto14"
+                      type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <br /><br />
+                    <ion-item-divider color="danger"> </ion-item-divider>
+                    <ion-item-divider color="primary"> </ion-item-divider>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-        <ion-tab-button tab="tab2">
-          <ion-icon name="eye"></ion-icon>
-          <ion-label>Auditorias</ion-label>
-        </ion-tab-button>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-item>
+                  <ion-icon
+                    name="save"
+                    size="large"
+                    ios="ios-save"
+                    color="secondary"
+                    type="submit"
+                    slot="end"
+                  ></ion-icon>
+                </ion-item>
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title>Contenedor </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Cajas de conexiones y sellos EYS con tapón</h1>
+                  <h3>
+                    Selecciona un numero dependiendo a la gravedad que presenta
+                  </h3>
+                  <ion-col>
+                    <ion-grid fixed>
+                      <ion-row>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Uno</ion-label>
+                            <ion-radio value="1" name="check45" [(ngModel)]="datos.check45"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Dos</ion-label>
+                            <ion-radio value="2" name="check46" [(ngModel)]="datos.check46"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Tres</ion-label>
+                            <ion-radio value="3" name="check47" [(ngModel)]="datos.check47"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Cuatro</ion-label>
+                            <ion-radio value="4" name="check48" [(ngModel)]="datos.check48"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Cinco</ion-label>
+                            <ion-radio value="5" name="check49" [(ngModel)]="datos.check49"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Seis</ion-label>
+                            <ion-radio value="6" name="check50" [(ngModel)]="datos.check50"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-textarea 
+                        placeholder="Observaciones"
+                        name="texto15"
+                        [(ngModel)]="datos.texto15"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <br /><br />
+                    <ion-item-divider color="danger"> </ion-item-divider>
+                    <ion-item-divider color="primary"> </ion-item-divider>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <!-- mbfbfbbfjbfjbfjbf -->
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-item>
+                  <ion-icon
+                    name="save"
+                    size="large"
+                    ios="ios-save"
+                    color="secondary"
+                    type="submit"
+                    slot="end"
+                  ></ion-icon>
+                </ion-item>
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title
+                    >Estructuras y conexiones cercanas
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Sellos EYS con tapón y tubería Conduit</h1>
+                  <h3>
+                    Selecciona un numero dependiendo a la gravedad que presenta
+                  </h3>
+                  <ion-col>
+                    <ion-grid fixed>
+                      <ion-row>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Uno</ion-label>
+                            <ion-radio value="1" name="check51" [(ngModel)]="datos.check51"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Dos</ion-label>
+                            <ion-radio value="2" name="check52" [(ngModel)]="datos.check52"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Tres</ion-label>
+                            <ion-radio value="3" name="check53" [(ngModel)]="datos.check53"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Cuatro</ion-label>
+                            <ion-radio value="4" name="check54" [(ngModel)]="datos.check54"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Cinco</ion-label>
+                            <ion-radio value="5" name="check55" [(ngModel)]="datos.check55"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Seis</ion-label>
+                            <ion-radio value="6" name="check56" [(ngModel)]="datos.check56"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-textarea 
+                        placeholder="Observaciones"
+                        name="texto16"
+                        [(ngModel)]="datos.texto16"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <br /><br />
+                    <ion-item-divider color="danger"> </ion-item-divider>
+                    <ion-item-divider color="primary"> </ion-item-divider>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-        <ion-tab-button tab="tab3">
-          <ion-icon name="git-compare"></ion-icon>
-          <ion-label>Procesos</ion-label>
-        </ion-tab-button>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-item>
+                  <ion-icon
+                    name="save"
+                    size="large"
+                    ios="ios-save"
+                    color="secondary"
+                    type="submit"
+                    slot="end"
+                  ></ion-icon>
+                </ion-item>
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title>Paros de emergencia </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Sellos EYS con tapón y tubería Conduit</h1>
+                  <h3>
+                    Selecciona un numero dependiendo a la gravedad que presenta
+                  </h3>
+                  <ion-col>
+                    <ion-grid fixed>
+                      <ion-row>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Uno</ion-label>
+                            <ion-radio value="1" name="check57" [(ngModel)]="datos.check57"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Dos</ion-label>
+                            <ion-radio value="2" name="check58" [(ngModel)]="datos.check58"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Tres</ion-label>
+                            <ion-radio value="3" name="check59" [(ngModel)]="datos.check59"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Cuatro</ion-label>
+                            <ion-radio value="4" name="check60" [(ngModel)]="datos.check60"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Cinco</ion-label>
+                            <ion-radio value="5" name="check61" [(ngModel)]="datos.check61"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Seis</ion-label>
+                            <ion-radio value="6" name="check62" [(ngModel)]="datos.check62"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-textarea 
+                        placeholder="Observaciones"
+                        name="texto17"
+                        [(ngModel)]="datos.texto17"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <br /><br />
+                    <ion-item-divider color="danger"> </ion-item-divider>
+                    <ion-item-divider color="primary"> </ion-item-divider>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
 
-        <ion-tab-button tab="tab4" (click)="logout()">
-          <ion-icon name="power"></ion-icon>
-          <ion-label>Cerrar Sesion</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
-  </ion-grid>
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-item>
+                  <ion-icon
+                    name="save"
+                    size="large"
+                    ios="ios-save"
+                    color="secondary"
+                    type="submit"
+                    slot="end"
+                  ></ion-icon>
+                </ion-item>
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title>Registros eléctricos </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Tubería Conduit</h1>
+                  <h3>Selecciona dependiendo a la gravedad que presenta</h3>
+                  <ion-col>
+                    <ion-grid fixed>
+                      <ion-row>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Uno</ion-label>
+                            <ion-radio value="1" name="check63" [(ngModel)]="datos.check63"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Dos</ion-label>
+                            <ion-radio value="2" name="check64" [(ngModel)]="datos.check64"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Tres</ion-label>
+                            <ion-radio value="3" name="check65" [(ngModel)]="datos.check65"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size-md="6">
+                          <ion-item>
+                            <ion-label>Cuatro</ion-label>
+                            <ion-radio value="4" name="check66" [(ngModel)]="datos.check66"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Cinco</ion-label>
+                            <ion-radio value="5" name="check67" [(ngModel)]="datos.check67"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Seis</ion-label>
+                            <ion-radio value="6" name="check68" [(ngModel)]="datos.check68"></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                    <ion-item>
+                      <ion-textarea 
+                        placeholder="Observaciones"
+                        name="texto18"
+                        [(ngModel)]="datos.texto18"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <br /><br />
+                    <ion-item-divider color="danger"> </ion-item-divider>
+                    <ion-item-divider color="primary"> </ion-item-divider>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+
+            <ion-slide>
+              <ion-card class="sliders">
+                <ion-item>
+                  <ion-icon
+                    name="save"
+                    size="large"
+                    ios="ios-save"
+                    color="secondary"
+                    type="submit"
+                    slot="end"
+                  ></ion-icon>
+                </ion-item>
+                <ion-card-header>
+                  <ion-card-subtitle>DISPENSARIOS</ion-card-subtitle>
+                  <ion-card-title>Paros de emergencia </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>Sellos EYS con tapón y tubería Conduit</h1>
+                  <h3>
+                    Selecciona un numero dependiendo a la gravedad que presenta
+                  </h3>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label>Uno</ion-label>
+                      <ion-radio value="1" name="check69" [(ngModel)]="datos.check69"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                      <ion-textarea 
+                        placeholder="Observaciones"
+                        name="texto19"
+                        [(ngModel)]="datos.texto19"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Descargar</ion-card-subtitle>
+                  <ion-card-title>Descargar</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-button (click)="pdf()" color="primary">
+                    Decargar
+                    <ion-icon
+                      ios="ios-cloud-download"
+                      md="md-cloud-download"
+                    ></ion-icon>
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+      <ion-tabs>
+        <ion-tab-bar slot="bottom" color="dark">
+          <ion-tab-button tab="tab1">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Inicio</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="tab2">
+            <ion-icon name="eye"></ion-icon>
+            <ion-label>Auditorias</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="tab3">
+            <ion-icon name="git-compare"></ion-icon>
+            <ion-label>Procesos</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="tab4" (click)="logout()">
+            <ion-icon name="power"></ion-icon>
+            <ion-label>Cerrar Sesion</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-grid>
+  </form>
 </ion-content>

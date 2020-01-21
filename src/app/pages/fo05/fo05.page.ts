@@ -8,6 +8,98 @@ import { PdfMakerService } from "src/app/services/pdf-maker.service";
   styleUrls: ["./fo05.page.scss"]
 })
 export class Fo05Page implements OnInit {
+
+  datos:any = {
+    texto1:'',
+    texto2:'',
+    texto3:'',
+    texto4:'',
+    texto5:'',
+    texto6:'',
+    texto7:'',
+    texto8:'',
+    texto9:'',
+    texto10:'',
+    texto11:'',
+    texto12:'',
+    texto13:'',
+    texto14:'',
+    texto15:'',
+    texto16:'',
+    texto17:'',
+    texto18:'',
+    texto19:'',
+    check1:'',
+    check2:'',
+    check3:'',
+    check4:'',
+    check5:'',
+    check6:'',
+    check7:'',
+    check8:'',
+    check9:'',
+    check10:'',
+    check11:'',
+    check12:'',
+    check13:'',
+    check14:'',
+    check15:'',
+    check16:'',
+    check17:'',
+    check18:'',
+    check19:'',
+    check20:'',
+    check21:'',
+    check22:'',
+    check23:'',
+    check24:'',
+    check25:'',
+    check26:'',
+    check27:'',
+    check28:'',
+    check29:'',
+    check30:'',
+    check31:'',
+    check32:'',
+    check33:'',
+    check34:'',
+    check35:'',
+    check36:'',
+    check37:'',
+    check38:'',
+    check39:'',
+    check40:'',
+    check41:'',
+    check42:'',
+    check43:'',
+    check44:'',
+    check45:'',
+    check46:'',
+    check47:'',
+    check48:'',
+    check49:'',
+    check50:'',
+    check51:'',
+    check52:'',
+    check53:'',
+    check54:'',
+    check55:'',
+    check56:'',
+    check57:'',
+    check58:'',
+    check59:'',
+    check60:'',
+    check61:'',
+    check62:'',
+    check63:'',
+    check64:'',
+    check65:'',
+    check66:'',
+    check67:'',
+    check68:'',
+    check69:'',
+  }
+
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService
@@ -18,6 +110,11 @@ export class Fo05Page implements OnInit {
     console.log("esta vivo");
     this.navCtrl.navigateForward("/punto-once");
   }
+
+  enviarForm (formulario) {
+    console.log(this.datos);
+  }
+
   pdf() {
     console.log("hola mundo");
     var dd = {

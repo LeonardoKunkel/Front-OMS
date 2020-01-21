@@ -7,16 +7,17 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios">
-    <ion-slide>
-      <ion-card>
-        <ion-card-content>
-          <h1>PAROS DE EMERGENCIA</h1>
-          <img src="../../../assets/imagenes/Punto11/boton-de-paro.png" alt="">
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm()">
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-card>
+          <ion-card-content>
+            <h1>PAROS DE EMERGENCIA</h1>
+            <img src="../../../assets/imagenes/Punto11/boton-de-paro.png" alt="">
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
         <ion-card>
           <ion-card-header>
             <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
@@ -33,15 +34,30 @@
                   <h3>Cantidad:1</h3>
                   <ion-item>
                       <ion-label>Hora</ion-label>
-                      <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona" 
+                        name="fecha1" 
+                        [(ngModel)]="datos.fecha1"
+                      ></ion-datetime>
                   </ion-item>
                   <ion-item>
                     <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
+                    <ion-textarea 
+                      placeholder="Escribe..." 
+                      name="texto1" 
+                      [(ngModel)]="datos.texto1" 
+                      type="text"
+                    ></ion-textarea>
                   </ion-item>
                   <ion-item>
                     <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
+                    <ion-textarea 
+                      placeholder="Escribe..."
+                      name="texto2"
+                      [(ngModel)]="datos.texto2"
+                      type="text"
+                    ></ion-textarea>
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -55,700 +71,1121 @@
                 <ion-col size="12">
                   <ion-item>
                     <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
+                    <ion-datetime 
+                      displayFormat="h:mm a" 
+                      placeholder="Hora"
+                      name="fecha2"
+                      [(ngModel)]="datos.fecha2"
+                    ></ion-datetime>
                   </ion-item>
                   <ion-item>
                     <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
+                    <ion-textarea 
+                      placeholder="Escribe.."
+                      name="texto3"
+                      [(ngModel)]="datos.texto3"
+                      type="text"
+                    ></ion-textarea>
                   </ion-item>
                   <ion-item>
                     <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
+                    <ion-textarea 
+                      placeholder="Escribe"
+                      name="texto4"
+                      [(ngModel)]="datos.texto4"
+                      type="text"
+                    ></ion-textarea>
                   </ion-item>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-card-content>
         </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>PAROS DE EMERGENCIA</ion-card-title>
-            <h2><b>Llena los campos dependiendo al paro de emergencia: </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h2>Dispensario 2</h2>
-                  <h3>Cantidad:1</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>PAROS DE EMERGENCIA</ion-card-title>
+              <h2><b>Llena los campos dependiendo al paro de emergencia: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
             </ion-item-divider>
-            <h1>Dispensario 3</h1>
-            <h3>Cantidad:1</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>PAROS DE EMERGENCIA</ion-card-title>
-            <h2><b>Llena los campos dependiendo al paro de emergencia: </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h2>Dispensario 4</h2>
-                  <h3>Cantidad:1</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h2>Dispensario 2</h2>
+                    <h3>Cantidad:1</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Hora"
+                        name="fecha3"
+                        [(ngModel)]="datos.fecha3"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                      placeholder="Escribe.."
+                      name="texto5"
+                      [(ngModel)]="datos.texto5"
+                      type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                      placeholder="Escribe"
+                      name="texto6"
+                      [(ngModel)]="datos.texto6"
+                      type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h1>Dispensario 3</h1>
+              <h3>Cantidad:1</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Hora"
+                        name="fecha4"
+                        [(ngModel)]="datos.fecha4"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto7"
+                        [(ngModel)]="datos.texto7"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto8"
+                        [(ngModel)]="datos.texto8"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>PAROS DE EMERGENCIA</ion-card-title>
+              <h2><b>Llena los campos dependiendo al paro de emergencia: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
             </ion-item-divider>
-            <h1>Dispensario 5</h1>
-            <h3>Cantidad:1</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>PAROS DE EMERGENCIA</ion-card-title>
-            <h2><b>Llena los campos dependiendo al paro de emergencia: </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h2>Oficinas</h2>
-                  <h3>Cantidad:1</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h2>Dispensario 4</h2>
+                    <h3>Cantidad:1</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Hora"
+                        name="fecha5"
+                        [(ngModel)]="datos.fecha5"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto9"
+                        [(ngModel)]="datos.texto9"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto10"
+                        [(ngModel)]="datos.texto10"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h1>Dispensario 5</h1>
+              <h3>Cantidad:1</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Hora"
+                        name="fecha6"
+                        [(ngModel)]="datos.fecha6"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto11"
+                        [(ngModel)]="datos.texto11"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto12"
+                        [(ngModel)]="datos.texto12"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>PAROS DE EMERGENCIA</ion-card-title>
+              <h2><b>Llena los campos dependiendo al paro de emergencia: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
             </ion-item-divider>
-            <h1>Oficinas</h1>
-            <h3>Cantidad:1</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Hora"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-content>
-          <h1>VALVULAS SHUT-0FF Y PISTOLAS</h1>
-          <img src="../../../assets/imagenes/Punto11/valvula.png" alt="">
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h2>Oficinas</h2>
+                    <h3>Cantidad:1</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Hora"
+                        name="fecha7"
+                        [(ngModel)]="datos.fecha7"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe.."
+                        name="texto13"
+                        [(ngModel)]="datos.texto13"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto14"
+                        [(ngModel)]="datos.texto14"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h1>Oficinas</h1>
+              <h3>Cantidad:1</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Hora"
+                        name="fecha8"
+                        [(ngModel)]="datos.fecha8"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto15"
+                        [(ngModel)]="datos.texto15"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto16"
+                        [(ngModel)]="datos.texto16"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
         <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>VALVULAS SHUT-0FF Y PISTOLAS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a las:VALVULAS SHUT-0FF Y PISTOLAS </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
           <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Dispensario 1</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Magna"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Premium"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Diesel"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
-            </ion-item-divider>
-            <h3>Dispensario 2</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Magna"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Premium"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Diesel"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+            <h1>VALVULAS SHUT-0FF Y PISTOLAS</h1>
+            <img src="../../../assets/imagenes/Punto11/valvula.png" alt="">
           </ion-card-content>
         </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>VALVULAS SHUT-0FF Y PISTOLAS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a las:VALVULAS SHUT-0FF Y PISTOLAS </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Dispensario 3</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Magna"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Premium"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Diesel"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>VALVULAS SHUT-0FF Y PISTOLAS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a las:VALVULAS SHUT-0FF Y PISTOLAS </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
             </ion-item-divider>
-            <h3>Dispensario 4</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Magna"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Premium"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Diesel"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>VALVULAS SHUT-0FF Y PISTOLAS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a las:VALVULAS SHUT-0FF Y PISTOLAS </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Dispensario 5</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Magna"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Premium"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Diesel"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Dispensario 1</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Magna"
+                        name="fecha9"
+                        [(ngModel)]="datos.fecha9"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Premium"
+                        name="fecha10"
+                        [(ngModel)]="datos.fecha10"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Diesel"
+                        name="fecha11"
+                        [(ngModel)]="datos.fecha11"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                      placeholder="Escribe.."
+                      name="texto17"
+                      [(ngModel)]="datos.texto17"
+                      type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                      placeholder="Escribe"
+                      name="texto18"
+                      [(ngModel)]="datos.texto18"
+                      type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Dispensario 2</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Magna"
+                        name="fecha12"
+                        [(ngModel)]="datos.fecha12"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Premium"
+                        name="fecha13"
+                        [(ngModel)]="datos.fecha13"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Diesel"
+                        name="fecha14"
+                        [(ngModel)]="datos.fecha14"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe.."
+                        name="texto19"
+                        [(ngModel)]="datos.texto19"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto20"
+                        [(ngModel)]="datos.texto20"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>VALVULAS SHUT-0FF Y PISTOLAS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a las:VALVULAS SHUT-0FF Y PISTOLAS </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
             </ion-item-divider>
-            <h3>Dispensario 6</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Magna"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Premium"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Diesel"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
-          <img src="../../../assets/imagenes/Punto11/humidifier.png" alt="">
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Dispensario 3</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Magna"
+                        name="fecha15"
+                        [(ngModel)]="datos.fecha15"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Premium"
+                        name="fecha16"
+                        [(ngModel)]="datos.fecha16"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Diesel"
+                        name="fecha17"
+                        [(ngModel)]="datos.fecha17"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe.."
+                        name="texto21"
+                        [(ngModel)]="datos.texto21"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto22"
+                        [(ngModel)]="datos.texto22"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Dispensario 4</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Magna"
+                        name="fecha18"
+                        [(ngModel)]="datos.fecha18"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Premium"
+                        name="fecha19"
+                        [(ngModel)]="datos.fecha19"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Diesel"
+                        name="fecha20"
+                        [(ngModel)]="datos.fecha20"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto23"
+                        [(ngModel)]="datos.texto23"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto24"
+                        [(ngModel)]="datos.texto24"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>VALVULAS SHUT-0FF Y PISTOLAS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a las:VALVULAS SHUT-0FF Y PISTOLAS </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
+            </ion-item-divider>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Dispensario 5</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Magna"
+                        name="fecha21"
+                        [(ngModel)]="datos.fecha21"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Premium"
+                        name="fecha22"
+                        [(ngModel)]="datos.fecha22"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Diesel"
+                        name="fecha23"
+                        [(ngModel)]="datos.fecha23"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto25"
+                        [(ngModel)]="datos.texto25"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto26"
+                        [(ngModel)]="datos.texto26"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Dispensario 6</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Magna"
+                        name="fecha24"
+                        [(ngModel)]="datos.fecha24"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Premium"
+                        name="fecha25"
+                        [(ngModel)]="datos.fecha25"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Diesel"
+                        name="fecha26"
+                        [(ngModel)]="datos.fecha26"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe.."
+                        name="texto27"
+                        [(ngModel)]="datos.texto27"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto28"
+                        [(ngModel)]="datos.texto28"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
             <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            <img src="../../../assets/imagenes/Punto11/humidifier.png" alt="">
           </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Tanque de Magna</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Motobomba"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Espacio anular"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
-            </ion-item-divider>
-            <h3>Tanque de Premium</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Motobomba"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Espacio anular"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
         </ion-card>
-    </ion-slide>
-    <ion-slide>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
+            </ion-item-divider>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Tanque de Magna</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Motobomba"
+                        name="fecha27"
+                        [(ngModel)]="datos.fecha27"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Espacio anular"
+                        name="fecha28"
+                        [(ngModel)]="datos.fecha28"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe.."
+                        name="texto29"
+                        [(ngModel)]="datos.texto29"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto30"
+                        [(ngModel)]="datos.texto30"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Tanque de Premium</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Motobomba"
+                        name="fecha29"
+                        [(ngModel)]="datos.fecha29"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Espacio anular"
+                        name="fecha30"
+                        [(ngModel)]="datos.fecha30"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe.."
+                        name="texto31"
+                        [(ngModel)]="datos.texto31"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto32"
+                        [(ngModel)]="datos.texto32"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
+            </ion-item-divider>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Tanque de Diesel</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Motobomba"
+                        name="fecha31"
+                        [(ngModel)]="datos.fecha31"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Espacio anular"
+                        name="fecha32"
+                        [(ngModel)]="datos.fecha32"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto33"
+                        [(ngModel)]="datos.texto33"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto34"
+                        [(ngModel)]="datos.texto34"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Dispensario 1</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha33"
+                        [(ngModel)]="datos.fecha33"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto35"
+                        [(ngModel)]="datos.texto35"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto36"
+                        [(ngModel)]="datos.texto36"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
+            </ion-item-divider>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Dispensario 2</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha34"
+                        [(ngModel)]="datos.fecha34"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto37"
+                        [(ngModel)]="datos.texto37"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto38"
+                        [(ngModel)]="datos.texto38"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Dispensario 1</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha35"
+                        [(ngModel)]="datos.fecha35"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto39"
+                        [(ngModel)]="datos.texto39"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto40"
+                        [(ngModel)]="datos.texto40"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
+            </ion-item-divider>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Dispensario 4</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha36"
+                        [(ngModel)]="datos.fecha36"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto41"
+                        [(ngModel)]="datos.texto41"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto42"
+                        [(ngModel)]="datos.texto42"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Dispensario 5</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha37"
+                        [(ngModel)]="datos.fecha37"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto43"
+                        [(ngModel)]="datos.texto43"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto44"
+                        [(ngModel)]="datos.texto44"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
+              <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
+              <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            </ion-card-header>
+            <ion-item-divider color="secondary">
+            </ion-item-divider>
+            <ion-card-content>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <h3>Dispensario 6</h3>
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha38"
+                        [(ngModel)]="datos.fecha38"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto45"
+                        [(ngModel)]="datos.texto45"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe"
+                        name="texto46"
+                        [(ngModel)]="datos.texto46"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item-divider color="tertiary">
+              </ion-item-divider>
+              <h3>Pozos de Observacion</h3>
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-item>
+                      <ion-label>Hora</ion-label><br>
+                      <ion-datetime 
+                        displayFormat="h:mm a" 
+                        placeholder="Selecciona"
+                        name="fecha39"
+                        [(ngModel)]="datos.fecha39"
+                      ></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Resultados</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto47"
+                        [(ngModel)]="datos.texto47"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Observaciones</ion-label><br>
+                      <ion-textarea 
+                        placeholder="Escribe..."
+                        name="texto48"
+                        [(ngModel)]="datos.texto48"
+                        type="text"
+                      ></ion-textarea>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide>
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
+            <ion-card-subtitle>Descargar</ion-card-subtitle>
+            <ion-card-title>Descargar</ion-card-title>
           </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
           <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Tanque de Diesel</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Motobomba"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Espacio anular"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
-            </ion-item-divider>
-            <h3>Dispensario 1</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+            <ion-button (click)="pdf()" color="primary">
+              Decargar
+              <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+            </ion-button>  
           </ion-card-content>
         </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Dispensario 2</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
-            </ion-item-divider>
-            <h3>Dispensario 1</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Dispensario 4</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
-            </ion-item-divider>
-            <h3>Dispensario 5</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>PRUEBA OPERATIVA DE DISPOSITIVOS DE SEGURIDAD</ion-card-subtitle>
-            <ion-card-title>SENSORES DE LIQUIDOS</ion-card-title>
-            <h2><b>Llena los campos dependiendo a los SENSORES DE LIQUIDOS: </b></h2>
-          </ion-card-header>
-          <ion-item-divider color="secondary">
-          </ion-item-divider>
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <h3>Dispensario 6</h3>
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item-divider color="tertiary">
-            </ion-item-divider>
-            <h3>Pozos de Observacion</h3>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="12">
-                  <ion-item>
-                    <ion-label>Hora</ion-label><br>
-                    <ion-datetime displayFormat="h:mm a" placeholder="Selecciona"></ion-datetime>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Resultados</ion-label><br>
-                    <ion-textarea placeholder="Escribe.."></ion-textarea>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label>Observaciones</ion-label><br>
-                    <ion-textarea placeholder="Escribe"></ion-textarea>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Descargar</ion-card-subtitle>
-          <ion-card-title>Descargar</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button (click)="pdf()" color="primary">
-            Decargar
-            <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
-          </ion-button>  
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

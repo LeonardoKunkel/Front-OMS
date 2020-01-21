@@ -14,15 +14,19 @@ export class PuntoDocePage implements OnInit {
   }
 
   goDoceProcedimiento() {
-    this.navCtrl.navigateForward('/punto-doce-procedimiento')
+    this.navCtrl.navigateForward('/punto-doce-procedimiento');
   }
 
   goDoceAnexo() {
-    this.navCtrl.navigateForward('/punto-doce-anexo')
+    this.navCtrl.navigateForward('/punto-doce-anexo');
   }
 
   goDoceCarta() {
-    this.navCtrl.navigateForward('/punto-doce-carta')
+    this.navCtrl.navigateForward('/punto-doce-carta');
+  }
+
+  goDoceEvidencia() {
+    this.navCtrl.navigateForward('/punto-doce-evidencia');
   }
 
 }
