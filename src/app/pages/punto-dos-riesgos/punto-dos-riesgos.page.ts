@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonSlides, NavController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+
 
 @Component({
   selector: 'app-punto-dos-riesgos',
@@ -8,252 +8,150 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./punto-dos-riesgos.page.scss'],
 })
 export class PuntoDosRiesgosPage implements OnInit {
-  respuesta : any={};
-  @ViewChild('slider') slider: IonSlides
-   datos:any={
-    F1:'',
-    N1:'',
-    M1:'',
-    F2:'',
-    N2:'',
-    M2:'',
-    F3:'',
-    N3:'',
-    M3:'',
-    F4:'',
-    N4:'',
-    M4:'',
-    F5:'',
-    N5:'',
-    M5:'',
-    F6:'',
-    N6:'',
-    M6:'',
-    F7:'',
-    N7:'',
-    M7:'',
-    F8:'',
-    N8:'',
-    M8:'',
-    F9:'',
-    N9:'',
-    M9:'',
-    F10:'',
-    N10:'',
-    M10:'',
-    F11:'',
-    N11:'',
-    M11:'',
-    F12:'',
-    N12:'',
-    M12:'',
-    F13:'',
-    N13:'',
-    M13:'',
-    F14:'',
-    N14:'',
-    M14:'',
-    F15:'',
-    N15:'',
-    M15:'',
-    F16:'',
-    N16:'',
-    M16:'',
-    F17:'',
-    N17:'',
-    M17:'',
-    F18:'',
-    N18:'',
-    M18:'',
-    F19:'',
-    N19:'',
-    M19:'',
-    F20:'',
-    N20:'',
-    M20:'',
-    F21:'',
-    N21:'',
-    M21:'',
-    F22:'',
-    N22:'',
-    M22:'',
-    F23:'',
-    N23:'',
-    M23:'',
-    F24:'',
-    N24:'',
-    M24:'',
-    F25:'',
-    N25:'',
-    M25:'',
-    F26:'',
-    N26:'',
-    M26:'',
-    F27:'',
-    N27:'',
-    M27:'',
-    F28:'',
-    N28:'',
-    M28:'',
-    F29:'',
-    N29:'',
-    M29:'',
-    F30:'',
-    N30:'',
-    M30:'',
-    F31:'',
-    N31:'',
-    M31:'',
-    F32:'',
-    N32:'',
-    M32:'',
-    F33:'',
-    N33:'',
-    M33:'',
-    F34:'',
-    N34:'',
-    M34:'',
-    F35:'',
-    N35:'',
-    M35:'',
-    F36:'',
-    N36:'',
-    M36:'',
-    F37:'',
-    N37:'',
-    M37:'',
-    F38:'',
-    N38:'',
-    M38:'',
-  }
+
+  datos:any = {
+    F1: '',
+    F2: '',
+    F3: '',
+    F4: '',
+    F5: '',
+    F6: '',
+    F7: '',
+    F8: '',
+    F9: '',
+    F10: '',
+    F11: '',
+    F12: '',
+    F13: '',
+    F14: '',
+    F15: '',
+    F16: '',
+    F17: '',
+    F18: '',
+    C1: '',
+    C2: '',
+    C3: '',
+    C4: '',
+    C5: '',
+    C6: '',
+    C7: '',
+    C8: '',
+    C9: '',
+    C10: '',
+    C11: '',
+    C12: '',
+    C13: '',
+    C14: '',
+    C15: '',
+    C16: '',
+    C17: '',
+    C18: '',
+  } 
+
 
   constructor(private pdfMaker: PdfMakerService) { }
 
+  
+
   ngOnInit() {
-    //this.slider.lockSwipes(true);
+
   }
 
-enviarForm(formulario){
-  console.log(this.datos);
-  
-}
-pdf(){
-  console.log("imprimiendo");
-  var dd = {
-    //background: function(currentPage, pageSize) {
-    //return {image: 'sampleImage.jpg', width: 700,height: 500, absolutePosition: {x: 60, y: 100},opacity: 0.5}
-  //},
-    header: function(){
-      return {
-          table: { widths: [740],heights:[50,15,15],
-body: [
+  enviarForm(formulario){
+    console.log(this.datos);
+  }
 
-    [{text:''}],
-    [{text:'II. IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE IMPACTOS AMBIENTALES',alignment:'center',bold:true}],
-    [{text:'EVALUACIÓN DE ASPECTOS AMBIENTALES',alignment:'center',bold:true,fillColor:'#ddd'}],
-]
+  pdf(){
 
-}, margin: [22,15]
-      };
+    var dd = {
+      background: function(currentPage, pageSize) {
+      return {image: 'sampleImage.jpg', width: 750, absolutePosition: {x: 10, y: 80} ,opacity:0.3}
     },
-    footer: function(){
-      return {
-          table:{
-   headerRows:1, 
-   widths: [750],
-             body : [
-             [''],
-             [''],
-             ['']
-                 ]
-        }, layout : 'headerLineOnly',
-          margin: [30,85]
-      };
-    },
-    
-    content:[
-            {
-                table:{ widths: [15,55,55,55,40,40,40,15,15,15,15,20,50,5,5,5,5,5,5,40,60],
-                    body:[
-                        [{text:'ASPECTO AMBIENTAL',colSpan:7,fontSize:9,fillColor:'#ddd'},{},{},{},{},{},{},{text:'VALOR TOTAL VT= F + N + M',colSpan:4,fontSize:9,fillColor:'#ddd'},{},{},{},{text:'AAS\n SI/No',rowSpan:2,fontSize:9,fillColor:'#ddd'},{text:'REQUISITO LEGAL U OTRO REQUISITO',rowSpan:2,fontSize:9,fillColor:'#ddd'},{text:'CONTROL APLICADO',colSpan:6,fontSize:9,fillColor:'#ddd'},{},{},{},{},{},{text:'OBJETIVO O META',fontSize:9,fillColor:'#ddd',rowSpan:2},{text:'PROCEDIMIENTO DE CONTROL OPERACIONAL AMBIENTAL',fontSize:9,fillColor:'#ddd',rowSpan:2}],
-                        [{text:'NO°',fontSize:7,fillColor:'#ddd'},{text:'ACTIVIDAD,PRODUCTO O SERVICIO',fontSize:7,fillColor:'#ddd'},{text:'EQUIPO/LUGAR',fontSize:7,fillColor:'#ddd'},{text:'ELEMENTO',fontSize:7,fillColor:'#ddd'},{text:'IA IMPACTO AMBIENTAL',fontSize:7,fillColor:'#ddd'},{text:'REAL O POTENCIAL',fontSize:7,fillColor:'#ddd'},{text:'CONDICIÓN DE OPERACIÓN',fontSize:7,fillColor:'#ddd'},{text:'F',fontSize:7,fillColor:'#ddd'},{text:'N',fontSize:7,fillColor:'#ddd'},{text:'M',fontSize:7,fillColor:'#ddd'},{text:'VT',fontSize:7,fillColor:'#ddd'},{},{},{text:'ELIMINACIÓN',fontSize:9,fillColor:'#ddd'},{text:'SUSTITUCIÓN',fontSize:9,fillColor:'#ddd'},{text:'CONTROLDE ING.',fontSize:9,fillColor:'#ddd'},{text:'SEÑALIZACIÓN',fontSize:9,fillColor:'#ddd'},{text:'CONTRLAMVO.EP',fontSize:9,fillColor:'#ddd'},{text:'EPP',fontSize:9,fillColor:'#ddd'},{},{}],
-                        [{text:'ÁREA: ALMACENAMIENTO DE COMBUSTIBLES',colSpan:21,fillColor:'#ddd'},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],
-                        [{text:'1'},{text:'Entrada maniobra de autotanque (Recepción AT)',fontSize:9},{text:'Autotanque',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F1}`,fontSize:7},{text:`${this.datos.N1}`,fontSize:7},{text:`${this.datos.M1}`,fontSize:7},{text:`${(this.datos.F1 +this.datos.N1 +this.datos.M1)}`,fontSize:7},{text:'',fontSize:7},{text:'Licencia Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:7},{text:'',fontSize:9},{text:'',fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01\nP-IM-02',fontSize:9}],
-                        [{text:'2'},{text:'Toma muestra de producto (Recepción AT)',fontSize:9},{text:'Autotanque',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F2}`,fontSize:7},{text:`${this.datos.N2}`,fontSize:7},{text:`${this.datos.M2}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'3'},{text:'Conexión de mangueras(Recepción AT)',fontSize:9},{text:'Autotanque y tanque de almacenamiento',fontSize:9 },{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F3}`,fontSize:7},{text:`${this.datos.N3}`,fontSize:7},{text:`${this.datos.M3}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Licencia Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01\nP-IM-02',fontSize:9}]
-                        ,//Rompe primera pagina
-                        [{text:'4',pageBreak:'before'},{text:'Descarga de hidrocarburo(Recepción AT)',fontSize:9},{text:'Autotanque y tanque de almacenamiento',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F4}`,fontSize:7},{text:`${this.datos.N4}`,fontSize:7},{text:`${this.datos.M4}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'5'},{text:'Derrame durante en llenado(Recepción AT)',fontSize:9},{text:'Autotanque y tanque de almacenamiento',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Potencial',fontSize:9},{text:'Emergencia',fontSize:9},{text:`${this.datos.F5}`,fontSize:7},{text:`${this.datos.N5}`,fontSize:7},{text:`${this.datos.M5}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derramess',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'6'},{text:'Desconexión de Mangueras(Recepción AT)',rowSpan:2,fontSize:9},{text:'Autotanque y tanque de almacenamiento',fontSize:9,rowSpan:2},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F6}`,fontSize:7},{text:`${this.datos.N6}`,fontSize:7},{text:`${this.datos.M6}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'7'},{text:'Desconexión de Mangueras(Recepción AT)',fontSize:9},{text:'Autotanque y tanque de almacenamiento',fontSize:9},{text:'Hidrocarburo goteo al piso',fontSize:9},{text:'Suelo',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F7}`,fontSize:7},{text:`${this.datos.N7}`,fontSize:7},{text:`${this.datos.M7}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-002-SEMARNAT-1996',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'8'},{text:'',fontSize:9,colSpan:2},{text:'',fontSize:9},{text:'Hidrocarburo goteo que se lava y se va al drenaje',fontSize:9},{text:'Agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F8}`,fontSize:7},{text:`${this.datos.N8}`,fontSize:7},{text:`${this.datos.M8}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-002-SEMARNAT-1996',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'9'},{text:'Escurrimiento de autotanque(Recepción AT)',fontSize:9},{text:'Autotanque y tanque de almacenamiento',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F9}`,fontSize:7},{text:`${this.datos.N9}`,fontSize:7},{text:`${this.datos.M9}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Licencia Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'10'},{text:'Salida maniobra de autotanque(Recepción AT)',fontSize:9},{text:'Autotanque',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F10}`,fontSize:7},{text:`${this.datos.N10}`,fontSize:7},{text:`${this.datos.M10}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Licencia Ambiental Única(LAU)',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar incidentes',fontSize:9},{text:'P-OP-01\nP-IM-02',fontSize:9}],
-                        [{text:'11'},{text:'Almacenamiento derrame',fontSize:9,rowSpan:2},{text:'Tanque de almacenamiento',fontSize:9,rowSpan:2},{text:'Hidrocarburo',fontSize:9},{text:'Suelo',fontSize:9},{text:'Potencial',fontSize:9},{text:'Emergencia',fontSize:9},{text:`${this.datos.F12}`,fontSize:7},{text:`${this.datos.N12}`,fontSize:7},{text:`${this.datos.M12}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-138-SEMARNAT/SSA1-2012,',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar incidentes',fontSize:9},{text:'P-OP-01\nP-IM-02\nP-SA-06',fontSize:9}],
-                        [{text:'12',pageBreak:'before'},{text:'Salida maniobra de autotanque(Recepción AT)',fontSize:9},{text:'Autotanque',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Emergencia',fontSize:9},{text:`${this.datos.F13}`,fontSize:7},{text:`${this.datos.N13}`,fontSize:7},{text:`${this.datos.M13}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'(LAU) Licencia Ambiental Única',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar emisiones',fontSize:9},{text:'P-OP-01\nP-IM-02',fontSize:9}],
-                        [{text:'13'},{text:'Venteo',fontSize:9},{text:'Tuberías de venteo',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Potencial',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F14}`,fontSize:7},{text:`${this.datos.N14}`,fontSize:7},{text:`${this.datos.M14}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'(LAU) Licencia Ambiental Única',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar emiciones',fontSize:9},{text:'P-IM-02',fontSize:9}],
-                        [{text:'14'},{text:'Venteo incendio',fontSize:9},{text:'Tuberías de venteo',fontSize:9},{text:'Emisiones',fontSize:9},{text:'Aire',fontSize:9},{text:'Potencial',fontSize:9},{text:'Emergencia',fontSize:9},{text:`${this.datos.F15}`,fontSize:7},{text:`${this.datos.N15}`,fontSize:7},{text:`${this.datos.M15}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar emiciones',fontSize:9},{text:'P-OP-01\nP-IM-02\nP-PRE-01',fontSize:9}],
-                        [{text:'15'},{text:'Retiro de aguas aceitosas(purgado de agua)',fontSize:9},{text:'Tanque de almacenamiento',fontSize:9},{text:'Agua contaminada',fontSize:9},{text:'Agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F16}`,fontSize:7},{text:`${this.datos.N16}`,fontSize:7},{text:`${this.datos.M16}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-002SEMARNAT-1996',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-IM-021',fontSize:9}],
-                        [{text:'16'},{text:'Retiro de lodos(limpieza interior de tanque)',fontSize:9},{text:'Tanque de almacenamiento',fontSize:9},{text:'Lodos aceitosos',fontSize:9},{text:'Residuos Peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F17}`,fontSize:7},{text:`${this.datos.N17}`,fontSize:7},{text:`${this.datos.M17}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-IM-02P-TS-05',fontSize:9}],
-                        [{text:'17'},{text:'Retiro de aguas aceitosas y materiales impregnados(limpieza de bocatomas',fontSize:9},{text:'Tanque de almacenamiento',fontSize:9},{text:'Residuos impregnados',fontSize:9},{text:'Residuos Peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F18}`,fontSize:7},{text:`${this.datos.N18}`,fontSize:7},{text:`${this.datos.M18}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-IM-02P-TS-05\N P-IM-02P-TS-02',fontSize:9}],
-                        [{text:'18'},{text:'Generación de aguas aceitosas y materiales impregnados(limpieza del área)',fontSize:9},{text:'Área de tanque de almacenamiento',fontSize:9},{text:'Agua contaminada',fontSize:9},{text:'Agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F19}`,fontSize:7},{text:`${this.datos.N19}`,fontSize:7},{text:`${this.datos.M19}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-002-SEMARNAT-1996',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-IM-02P-TS-05\N P-IM-04',fontSize:9}],
-                        [{text:'19'},{text:'Colocación de la pistola en el vehículo',fontSize:9},{text:'Vehículo',fontSize:9},{text:'Hidrocarburo goteo y se lava y se va al drenaje',fontSize:9},{text:'Agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F20}`,fontSize:7},{text:`${this.datos.N20}`,fontSize:7},{text:`${this.datos.M20}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-002-SEMARNAT-1996',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-02',fontSize:9}],
-                        [{text:'20'},{text:'Carga de hidrocarburo',fontSize:9},{text:'Vehículo',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F21}`,fontSize:7},{text:`${this.datos.N21}`,fontSize:7},{text:`${this.datos.M21}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'(LAU) Licencia Ambiental Única',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-02',fontSize:9}],
-                        [{text:'21'},{text:'Termino del despacho y retiro de pistola del vehículo',fontSize:9},{text:'Vehículo',fontSize:9},{text:'Hidrocarburo  goteo y se lava y se va al drenaje',fontSize:9},{text:'Agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F22}`,fontSize:7},{text:`${this.datos.N22}`,fontSize:7},{text:`${this.datos.M22}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-002-SEMARNAT-1996',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-02',fontSize:9}],
-                        [{text:'22'},{text:'Suministro de lubricantes, aditivos.',fontSize:9},{text:'Vehículo',fontSize:9},{text:'Envases y estopa o franela impregnados de aceite o aditivos',fontSize:9},{text:'Residuos Peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F23}`,fontSize:7},{text:`${this.datos.N23}`,fontSize:7},{text:`${this.datos.M23}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-IM-02P-TS-05',fontSize:9}],
-                        [{text:'23'},{text:'Limpieza de dispensarios e islas',fontSize:9},{text:'Dispensario',fontSize:9},{text:'Consumo de agua',fontSize:9},{text:'agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F24}`,fontSize:7},{text:`${this.datos.N24}`,fontSize:7},{text:`${this.datos.M24}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ley de aguas Nacionales (LAN) 2012',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Reducir consumo de agua',fontSize:9},{text:'P-OP-02',fontSize:9}],
-                        [{text:'24'},{text:'Limpieza de contenedores',fontSize:9},{text:'Dispensario',fontSize:9},{text:'Aguas contaminadas y material impregnados con hidrocarburos',fontSize:9},{text:'Agua',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F25}`,fontSize:7},{text:`${this.datos.N25}`,fontSize:7},{text:`${this.datos.M25}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'25'},{text:'Cambio de filtros',fontSize:9},{text:'Dispensario',fontSize:9},{text:'Filtros impregnados de hidrocarburo',fontSize:9},{text:'Residuos peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F26}`,fontSize:7},{text:`${this.datos.N26}`,fontSize:7},{text:`${this.datos.M26}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'26'},{text:'Cambio de mangueras, conexiones o pistolas.',fontSize:9},{text:'Dispensario',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F27}`,fontSize:7},{text:`${this.datos.N27}`,fontSize:7},{text:`${this.datos.M27}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'(LAU) Licencia Ambiental Única',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-01',fontSize:9}],
-                        [{text:'ÁREA: DRENAJES Y TRAMPA DE COMBUSTIBLES',colSpan:21,fillColor:'#ddd'},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],                       
-                        [{text:'27'},{text:'Limpieza',fontSize:9},{text:'Registros, tubería y trampa',fontSize:9},{text:'Lodos impregnados de hidrocarburos y aceites',fontSize:9},{text:'Residuos peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F28}`,fontSize:7},{text:`${this.datos.N28}`,fontSize:7},{text:`${this.datos.M28}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-OP-05',fontSize:9}],
-                        [{text:'28'},{text:'Limpieza',fontSize:9},{text:'',fontSize:9},{text:'Recolección de residuos sólidos no peligrosos',fontSize:9},{text:'Residuos solidos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F29}`,fontSize:7},{text:`${this.datos.N29}`,fontSize:7},{text:`${this.datos.M29}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-OP-05',fontSize:9}],
-                        [{text:'29'},{text:'Separación de hidrocarburo',fontSize:9},{text:'',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F30}`,fontSize:7},{text:`${this.datos.N30}`,fontSize:7},{text:`${this.datos.M30}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'(LAU) Licencia Ambiental Única',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-OP-05',fontSize:9}],
-                        [{text:'ÁREA: DRENAJES Y TRAMPA DE COMBUSTIBLES',colSpan:21,fillColor:'#ddd'},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],                                               
-                        [{text:'30'},{text:'Actividades cotidianas sin riesgo',fontSize:9},{text:'Contenedores',fontSize:9},{text:'Generación de residuos',fontSize:9},{text:'Residuos sólidos no peligrosos(basura)',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F31}`,fontSize:7},{text:`${this.datos.F31}`,fontSize:7},{text:`${this.datos.M31}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-OP-05, P-IM-04',fontSize:9}],
-                        [{text:'31'},{text:'Actividades cotidianas sin riesgo',fontSize:9},{text:'Instalaciones eléctricas',fontSize:9},{text:'Consumo de energía eléctrica',fontSize:9},{text:'Recursos naturales',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F32}`,fontSize:7},{text:`${this.datos.N32}`,fontSize:7},{text:`${this.datos.M32}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ley del servicio público de Energía Eléctrica',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Reducir consumo',fontSize:9},{text:'P-OP-03',fontSize:9}],
-                        [{text:'32'},{text:'Actividades cotidianas sin riesgo',fontSize:9},{text:'Sanitarios',fontSize:9},{text:'consumo de agua',fontSize:9},{text:'Recursos naturales',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F33}`,fontSize:7},{text:`${this.datos.N33}`,fontSize:7},{text:`${this.datos.M33}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ley de aguas Nacionales (LAN) 2012',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Reducir consumo',fontSize:9},{text:'',fontSize:9}],
-                        [{text:'33'},{text:'Actividades cotidianas sin riesgo',fontSize:9},{text:'Consumo de papel',fontSize:9},{text:'Consumo de papel',fontSize:9},{text:'Recursos naturales',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F34}`,fontSize:7},{text:`${this.datos.N34}`,fontSize:7},{text:`${this.datos.M34}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Reducir consumo',fontSize:9},{text:'',fontSize:9}],
-                        [{text:'ÁREA: CUARTO DE CONTROL ELÉCTRICO',colSpan:21,fillColor:'#ddd'},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],                                                                                             
-                        [{text:'33'},{text:'Operación normal',fontSize:9},{text:'Tableros eléctricos',fontSize:9},{text:'Consumo de energía eléctrica',fontSize:9},{text:'Recursos naturale',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F35}`,fontSize:7},{text:`${this.datos.N35}`,fontSize:7},{text:`${this.datos.M35}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ley del servicio público de energía eléctrica',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'P-IM-03',fontSize:9}],
-                        [{text:'34'},{text:'Mantenimiento',fontSize:9},{text:'Tableros eléctricos',fontSize:9},{text:'Generación de residuos peligrosos (trapos impregnados aceite usado) y residuos solidos',fontSize:9},{text:'Recursos peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F36}`,fontSize:7},{text:`${this.datos.N36}`,fontSize:7},{text:`${this.datos.M36}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Controlde residuos',fontSize:9},{text:'P-OP-03',fontSize:9}],
-                        [{text:'35'},{text:'Operación normal',fontSize:9},{text:'Planta emergencia',fontSize:9},{text:'HTC, BETX y Hexano',fontSize:9},{text:'Aire',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:`${this.datos.F37}`,fontSize:7},{text:`${this.datos.N37}`,fontSize:7},{text:`${this.datos.M37}`,fontSize:7},{text:'',fontSize:9},{text:'',fontSize:9},{text:'(LAU) Licencia Ambiental Única ',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Evitar derrames',fontSize:9},{text:'P-IM-03',fontSize:9}],                        
-                        [{text:'36'},{text:'Mantenimiento',fontSize:9},{text:'Plan de emergencia',fontSize:9},{text:'Generación de residuos peligrosos (trapos impregnados aceite usado) y residuos solidos',fontSize:9},{text:'Residuos peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Control de residuos',fontSize:9},{text:'P-IM-03',fontSize:9}],
-                        [{text:'ÁREA: CUARTO DE CONTROL ELÉCTRICO',colSpan:21,fillColor:'#ddd'},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}],                                                                                             
-                        [{text:'33'},{text:'Operación normal',fontSize:9},{text:'Compresor e hidroneumático',fontSize:9},{text:'Consumo de energía eléctrica',fontSize:9},{text:'Recursos naturale',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Ley del servicio público de energía eléctrica',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Reducir consumo',fontSize:9},{text:'P-IM-06',fontSize:9}],
-                        [{text:'34'},{text:'Mantenimiento',fontSize:9},{text:'Compresor e hidroneumático',fontSize:9},{text:'Generación de residuos peligrosos (trapos impregnados aceite usado) y residuos solidos',fontSize:9},{text:'Residuos peligrosos',fontSize:9},{text:'Real',fontSize:9},{text:'Rutinaria',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'NOM-052-SEMARNAT-2005',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'',fontSize:9},{text:'Controlde residuos',fontSize:9},{text:'P-OP-06',fontSize:9}],
-                        ],
-                },
-                
-                                    
-            },
-            {text: '\n GLOSARIO', style: 'header',bold: true},
+      header: function(){
+        return {
+            table: { widths: [740],heights:[50,15,15],
             
-            {
-                        			table: {
-				body: [
-					['EPP: EQUIPO DE PROTECCIÓN PERSONAL', 'AAS: ASPECTO AMBIENTAL SIGNIFICATIVO', 'N= NATURALEZA (representa el grado de toxicidad o peligrosidad del aspecto en sí, en función de sus características o componentes).'],
-					['IA: IMPACTO AMBIENTAL', 'F: FRECUENCIA (número de veces por unidad de tiempo)', 'M = MAGNITUD (expresión de la cantidad o extensión en que se genera el aspecto ambiental).']
-				]
-			} },
-			
-			{     table:{
-            widths:[300,300],
-            heights:[80],
-            body:[['REVISANDO POR:\n\n\n\n\n\nRoberto Muñoz Torres\nREPRESENTANTE TÉCNICO',[{text:'FECHA DE APROBACION\n\n\n\n\n\n'},{text:'00/00/2000',fontSize: 16, color:'red'}]]]
-        }
-    }
-       
-            	
-         ]
-   ,
+      body: [
   
-    
-   pageOrientation: 'landscape',
-    pageSize: 'LETTER',
-    pageMargins: [22,120]
-};
-this.pdfMaker.generate(dd,'Evaluacion des aspectos ambientales');
-}  
+      [{}],
+      [{text:'II. IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE IMPACTOS AMBIENTALES',alignment:'center',bold:true}],
+      [{text:'EVALUACIÓN DE RIESGOS',alignment:'center',bold:true,fillColor:'#ddd'}],
+      ]
+  
+      }, margin: [22,15]
+        };
+      },
+      footer: function(){
+      
+        return {
+                  
+              table:{
+          headerRows:1, 
+          widths: [750],
+               body : [
+               [''],
+               [''],
+               ['']
+                   ]
+          }, layout : 'headerLineOnly',
+            margin: [30,85]
+        };
+      },
+      
+      content:[
+          {
+          table:{widths: [20,70,80,100,120,120,10,10,10,120],
+              body:[
+                  [{text:'NO',bold:true,fillColor:'#ddd'},{text:'Actividades',bold:true,fillColor:'#ddd'},{text:'Peligro',bold:true,fillColor:'#ddd'},{text:'Riesgo asociado',bold:true,fillColor:'#ddd'},{text:'Causas',bold:true,fillColor:'#ddd'},{text:'Salvaguardas',bold:true,fillColor:'#ddd'},{text:'F',bold:true,fillColor:'#ddd'},{text:'C',bold:true,fillColor:'#ddd'},{text:'R',bold:true,fillColor:'#ddd'},{text:'Recomendación',bold:true,fillColor:'#ddd'}],
+                  [{text:'PROCESO: RECEPCIÓN DE PRODUCTO Y ALMACENAMIENTO',bold:true,fillColor:'#ddd',colSpan:10},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},],
+                  [{text:'1'},{text:'Arribo de autotanque a la Estación de servicio.',fontSize:8},{text:'a. Maniobra dentro de la estación \n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Golpe a instalaciones u otros vehículos o atropellamiento a personas.',fontSize:8},{text:'a. Falta o mal estado de señalamiento de circulación dentro de la estación de servicio.\n b. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Abanderar al Autotanque al ingresar a la Estación de Servicio.\n b. Respetar el señalamiento de circulación, dentro de la estación.\n c. Procedimiento de descarga en estaciones de servicio.\n d. Protecciones en las islas de llenado.\n e. Válvulas Shut Off.\n f. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:''},{text:''},{text:''},{text:'a. Cumplir programa de mantenimiento de señalamientos, y procedimiento P-IM-04 \n b. Cumplir procedimiento P-OP-01.',fontSize:8},],
+                  [{text:'2',fontSize:8},{text:'Conexión e inicio de la descarga de producto.',fontSize:8},{text:'a. Equipos en mal estado \n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Derrame o fuga durante la conexión y/o operación de llenado de tanque de almacenamiento.',fontSize:8},{text:'a. Conexión deficiente o equipo en mal estado.\n b. Conexiones o manguera en mal estado, o falta de juntas. \n c. No se conecta la manguera de recuperación de vapores y la válvula de presión vacío no opera. \n d. Falta de válvula de sobrellenado. \n e. Falta de hermeticidad en las conexiones de las boquillas del tanque. \n f. No se cumple el procedimiento.',fontSize:8},{text:'a. Mangueras, conexiones, accesorios,válvulas de sobrellenado, accesorios de tanques en buen estado. \n b. Alarma de alto nivel. \n c. Pisos impermeables con pendiente del 1% a registros de drenaje. \n d. Procedimiento de descarga en estaciones de servicio \n e. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir programa de mantenimiento de mangueras, conexiones, accesorios, válvulas de sobrellenado, así como de accesorios de tanques y contenedores.P-IM-01 \n b. Cumplir procedimiento de P-0P-01.',fontSize:8},],
+                  [{text:'3',fontSize:8},{text:'Descarga de producto por autotanque.',fontSize:8},{text:'a. Deslizamiento de autotanque, con desprendimiento de la manguera de descarga en ambos extremos.',fontSize:8},{text:'Derrame de producto.',fontSize:8},{text:'a. No se colocan las calzas al autotanque antes de iniciar la descarga de producto. \n b. Distracción del personal.',fontSize:8},{text:'a. Accesorios de descarga para el autotanque.\n  b. Válvula de 3 vías del autotanque.\n c. Personal capacitado.\n d. Plan de Respuesta a emergencias',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Capacitar al personal en el procedimiento P-OP-01.\n b. Cumplir procedimiento p-OP-01.\n c. Verificar estado de accesorios de descarga (calzas).\n d. Verificar la operación de la válvula de 3 vías del autotanque.',fontSize:8,pageBreak:'after'},],
+                  [{text:'4',fontSize:8},{text:'Descarga de producto.',fontSize:8},{text:'a. Equipos en mal estado \nb. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Incendio durante el llenado del tanque de almacenamiento.',fontSize:8},{text:'Previamente ocurre fuga o derrame y la presencia de una fuente de ignición entre otras:a. Uso de celular.\n b. Portar ropa sintética.\n c. Fumar, encender fuego.\nd. Corto circuito en instalación eléctrica.\n e. Tormenta eléctrica.\n f. Corto circuito en instalación eléctrica del autotanque.\n g. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Mangueras, conexiones, accesorios,válvulas de sobrellenado, accesorios de tanques en buen estado.\nb. Alarma de alto nivel.\n c. Pisos impermeables con pendiente del 1% a registros de drenaje. \n d. Procedimiento de descarga en estaciones de servicio.\n e. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir procedimiento de P-OP-01.\n b. Cumplir programa de mantenimiento de instalaciones eléctricas.P-IM-03.',fontSize:8},],
+                  [{text:'5',fontSize:8},{text:'Descarga de producto.',fontSize:8},{text:'a. Equipos en mal estado. \n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Incendio en tubos de venteo durante el llenado del tanque de almacenamiento.',fontSize:8},{text:'a. Presencia de tormenta eléctrica.\nb. Líneas eléctricas cerca hacen emisión de fuego o chispas.\n c. Ausencia de mantenimiento aválvulas de presión vacío.\n d. Personal no sigue los procedimientos',fontSize:8},{text:'a. Válvulas de presión y vacío, arrestador de flama e instalaciones eléctricas en buen estado.\n b. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir programa de mantenimiento, P-IM-01 y P-IM-03.\n b. Cumplir procedimiento P-OP-01.',fontSize:8},],
+                  [{text:'6',fontSize:8},{text:'Descarga de producto',fontSize:8},{text:'a. Nivel de producto en tanque es erróneo.\n b. Conexión a tanque diferente.',fontSize:8},{text:'a. Sobrellenado de tanque de almacenamiento.\n b. Derrame de producto al realizar la desconexión.',fontSize:8},{text:'a. No se verifica la capacidad de recibo del autotanque previo al llenado.\n b. Distracción de la persona al conectar la manguera de descarga.',fontSize:8},{text:'a. Válvula de sobrellenado.\n b. Personal capacitado.\n c. Procedimiento de recepción de autotanque y llenado de tanques de almacenamiento,\n d. Planes de respuesta a emergencia.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir procedimiento P-OP-01.\n b. Realizar pruebas de operación de paros de emergencia. \n c. Cumplir programa de mantenimiento de válvula de sobrellenado.',fontSize:8},],
+                  [{text:'7',fontSize:8},{text:'Termino de la descarga de producto y desconexión.',fontSize:8},{text:'a. Equipos en mal estado.\n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Derrame o fuga durante la desconexión al término de la descarga.',fontSize:8},{text:'Desconexión deficiente o equipo en mal estado.\na. Conexiones o manguera en mal estado, o falta de juntas.\nb. Falta de válvula de sobrellenado.\nc. Falta de hermeticidad en la conexión de la boquilla de llenado de tanque.',fontSize:8},{text:'a. Mangueras, conexiones, accesorios,válvulas de sobrellenado, accesorios de tanques en buen estado.\n b. Alarma de alto nivel.\nc. Pisos impermeables con pendiente del1% a registros de drenaje.\n d. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir procedimiento de descarga P-0P-01.\n b. Cumplir programa de mantenimiento de tanques y accesorios de descarga.P-IM-01.',fontSize:8},],
+                  [{text:'8',fontSize:8},{text:'Salida de autotanque a la Estación de servicio.',fontSize:8},{text:'Maniobra dentro de la estación.',fontSize:8},{text:'Golpe a instalaciones u otros vehículos o atropellamiento a personas.',fontSize:8},{text:'a. Falta o mal estado de señalamiento de circulación dentro de la estación de servicio. \nb. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Abanderamiento al Autotanque al ingresar a la Estación de Servicio.\nb. Respetar el señalamiento de circulación, dentro de la Estación de Servicio.\nc. Procedimiento de descarga en estaciones de servicio.\nd. Protecciones en las islas de llenado.\ne. Válvulas Shut Off.\nf. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir procedimiento de Recepción de autotanque y descarga de producto a tanques de almacenamiento. P-OP-01,\n b. Cumplir programa de mantenimiento de señalamientos P-IM-04.',fontSize:8},],
+                  [{text:'PROCESO: DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES',fontSize:8,colSpan:10,fillColor:'#ddd',bold:true},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},],
+                  [{text:'9',fontSize:8},{text:'Despacho de producto.',fontSize:8},{text:'a. Equipos en mal estado.\n b. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Derrame de producto o fuga durante el despacho de producto a vehículos.',fontSize:8},{text:'a. La pistola no para en automático y no detiene el despacho cuando el tanque ya se llenó. \n b. La pistola no contiene el producto al 100% cuando no hay despacho.\n c. El tanque del vehículo se “ahoga” durante la carga y se derrama el producto.\n d. Se retira la pistola sin que termine aún la carga de producto.\n e. Personal no sigue los procedimientos.',fontSize:8},{text:'a. Pistolas de dispensarios en buen estado. \n b. Paro de emergencia.\n c. Procedimiento de despacho a automóviles.\n d. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir programa de mantenimiento a dispensarios. -IM-02 \n b. Cumplir procedimiento de despacho a automóviles. P-OP-02',fontSize:8},],
+                  [{text:'10',fontSize:8},{text:'Despacho de producto.',fontSize:8},{text:'Distracción o mala intención del conductor del vehículo.',fontSize:8},{text:'Derrame por desprendimiento de manguera de despacho de combustible por desplazamiento del vehículo.',fontSize:8},{text:'a. No se retira inmediatamente la pistola al término del llenado.\n b. El despachador no acomoda bien la manguera después de retirar la pistola y el vehículo avanza y desprende la manguera porque se atoró con alguna parte del vehículo. \n c. El conductor avanza con su vehículo en forma intencionada para no pagar o por distracción.\n d. Personal no cumple los',fontSize:8},{text:'a. Pistolas de dispensarios en buen estado. \n b. Paro de emergencia.\n c. Procedimiento de despacho a automóviles.\n d. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir programa de mantenimiento a dispensarios. P-IM-02.\n b. Cumplir procedimiento de despacho a automóviles, P-OP-02.',fontSize:8},],
+                  [{text:'11',fontSize:8},{text:'Despacho de producto.',fontSize:8},{text:'Distracción o mala intención del conductor del vehículo.',fontSize:8},{text:'Derrame por derribo del dispensario por automóvil o camión y no opera la válvula shut-off.',fontSize:8},{text:'No depende relativamente de la estación de servicio, sin embargo, se puede considerar: \na. Falta de carril de desaceleración. \nb. Falta de señalamientos. \nc. Falta de vibradores o topes.',fontSize:8},{text:'a. Válvula Shut-off \n b. Protecciones de isla \n c. Señalamientos de velocidad máxima y sentido de circulación \n d. Procedimiento preparación de respuesta a emergencias. \n e. Capacitación al personal de los procedimientos que le aplican.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Capacitar al personal de mantenimiento y despachadores.\n b. Cumplir programa de mantenimiento a dispensarios.\n c. Aplicar Plan de respuesta a emergencias.',fontSize:8},],
+                  [{text:'12',fontSize:8},{text:'Despacho de producto.',fontSize:8},{text:'a. Equipos en mal estado.\nb. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Incendio en el área de despacho, por derribo de dispensario o desprendimiento de manguera.',fontSize:8},{text:'Previamente, debe ocurrir una fuga o derrame y posterior el contacto con una fuente de ignición.\n a. Uso de teléfono celular. \n b. Pasar corriente a otro vehículo en el área de despacho.\n c. Fumar, encender fósforos. \nd. Contacto de los vapores con una parte caliente del vehículo. \ne. Falta de integridad eléctrica en instalaciones. \nf. Personal no sigue los procedimientos.',fontSize:8},{text:'? Válvula Shut-off \na  Protecciones de isla b \n Señalamientos de velocidad máxima, sentido de circulación, de no fumar y de no uso de celular. c\n Procedimiento de despacho a automóviles. d\nProcedimiento preparación de respuesta a emergencias',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Capacitar al personal de mantenimiento. \nb. Cumplir programa de mantenimiento a Instalaciones. \nc. Aplicar Plan de Respuesta a emergencias.',fontSize:8},],
+                  [{text:'PROCESO: ACTIVIDADES DE APOYO',fontSize:8,colSpan:10,fillColor:'#ddd',bold:true},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},],
+                  [{text:'13',fontSize:8},{text:'Ejecución de trabajos de mantenimiento.',fontSize:8},{text:'a. Equipos en mal estado.\nb. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Derrame o fuga durante la ejecución de trabajos de mantenimiento.',fontSize:8},{text:'a. No se realiza permiso de trabajo peligroso. \nb. No se identifican los riesgos de hacer un trabajo peligroso.\nc. No se vacía o de presiona la tubería. \nd. No se colocan bloqueos en válvulas y tablero de control',fontSize:8},{text:'a. Procedimiento de permiso de trabajo peligroso.\nb. Procedimiento de etiqueta bloqueo y candadeo de líneas.\nc. Procedimiento preparación de respuesta a emergencias.\nd. Permiso de trabajos peligrosos\ne. Procedimiento de Integridad Mecánica.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Capacitar al personal de mantenimiento. \nb. Cumplir programa de mantenimiento a Instalaciones.',fontSize:8},],
+                  [{text:'14',fontSize:8},{text:'Operación normal',fontSize:8},{text:'Trampa de combustibles con hidrocarburos.',fontSize:8},{text:'Incendio en Trampa de Combustibles.',fontSize:8},{text:'a. No se limpia el drenaje y trampa después de un derrame. \nb. Cultura deficiente en materia Ambiental y de seguridad.',fontSize:8},{text:'a. Verificación diaria de trampa de combustibles. \n b. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'aa. Mantener trampa de combustibles libre de hidrocarburos. peligrosos.',fontSize:8},],
+                  [{text:'15',fontSize:8},{text:'Vandalismo',fontSize:8},{text:'Incendio en área de despacho.',fontSize:8},{text:'No depende de la estación de servicio, si se trata de una manifestación social.',fontSize:8},{text:'a. Procedimiento de atención a casos de vandalismo. \nb. Planes de Respuesta a emergencias. \nc. Paro de emergencia. \nd. Válvula shut-off.',fontSize:8},{text:'a. Verificación diaria de trampa de combustibles. \n b. Procedimiento preparación de respuesta a emergencias.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'aa. Mantener trampa de combustibles libre de hidrocarburos. peligrosos.',fontSize:8},],
+                  [{text:'16',fontSize:8},{text:'Instalaciones eléctricas en operación.',fontSize:8},{text:'a. Equipos en mal estado. \nb. Falta de conocimiento o de conciencia del personal.',fontSize:8},{text:'Incendio en Instalaciones eléctricas.',fontSize:8},{text:'Mantenimiento deficiente.',fontSize:8},{text:'a. Instalaciones eléctricas en buen estado de la estación de servicio.\nb. Procedimiento de mantenimiento de instalaciones eléctricas. \nc. Paro de emergencia. \nd. Procedimiento preparación de respuesta a emergencias.\ne. Especificaciones de diseño de la E.S.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Capacitar al personal de mantenimiento.\nb. Cumplir programa de mantenimiento a Instalaciones.',fontSize:8},],
+                  [{text:'17',fontSize:8},{text:'Operación normal',fontSize:8},{text:'Sismo de magnitud considerable.',fontSize:8},{text:'Contaminación de subsuelo y mantos freáticos por fuga o derrame de combustible.',fontSize:8},{text:'a. Ruptura de tuberías interconectadas a los tanques de almacenamiento. \nb. Fenómeno geológico que no depende de la estación de servicio.',fontSize:8},{text:'a. Monitoreo de subsuelo por medio de pozos de observación y pozos de monitoreo. \nb. Detector de fugas en contenedores. \nc. Pruebas de hermeticidad en tanques y tuberías. \nd. Procedimiento preparación de respuesta a emergencias.\ne. Diseño de la E.S.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir monitoreo periódico de subsuelo y mantos freáticos.\nb. Cumplir programa de mantenimiento a detectores de sensores.',fontSize:8},],
+                  [{text:'18',fontSize:8},{text:'Inundación',fontSize:8},{text:'Sismo de magnitud considerable.',fontSize:8},{text:'Contaminación de subsuelo y mantos freáticos por fuga o derrame de combustible.',fontSize:8},{text:'a. Ruptura de tuberías interconectadas a los tanques de almacenamiento. \nb. Fenómeno geológico que no depende de la estación de servicio.',fontSize:8},{text:'a. Monitoreo de subsuelo por medio de pozos de observación y pozos de monitoreo. \nb. Detector de fugas en contenedores. \nc. Pruebas de hermeticidad en tanques y tuberías. \nd. Procedimiento preparación de respuesta a emergencias.\ne. Diseño de la E.S.',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'',fontSize:8},{text:'a. Cumplir monitoreo periódico de subsuelo y mantos freáticos.\nb. Cumplir programa de mantenimiento a detectores de sensores.',fontSize:8},],
+                  [{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''},{text:''}]
+                  
+                   ]
+          }
+      },{
+              text:'\n\n'
+          },{
+              table:{
+                   widths:[220,220,220],
+                   heights:[50],
+                   
+                  body:[
+                      ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
+                      ]
+              }
+              
+              
+          }
+              
+          
+           ]
+     ,
+     pageOrientation: 'landscape',
+      pageSize: 'LETTER',
+      pageMargins: [22,120]
+  };
+
+    this.pdfMaker.generate(dd,'');
+  }
 
 }

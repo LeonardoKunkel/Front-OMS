@@ -36,85 +36,16 @@ export class PuntoDosPage implements OnInit {
     //this.slider.lockSwipes(true);
   }
 
-  goEvaluacionesAspectos() {
-    this.navCtrl.navigateForward('/menu-punto2');
+  goDosProcedimiento() {
+    this.navCtrl.navigateForward('/punto-dos-procedimiento');
   }
 
-  goEvaluacionRiesgos() {
+  goDosRiesgos() {
     this.navCtrl.navigateForward('/punto-dos-riesgos');
   }
 
-  goResultadosAnalisisRiesgos() {
-    this.navCtrl.navigateForward('/resultados-riesgos');
+  goDosAspectos() {
+    this .navCtrl.navigateForward('/punto-dos-aspectos');
   }
 
-  goListadoPeligros() {
-    this.navCtrl.navigateForward('/listado-peligros');
-  }
-  goProcedimiento(){
-    this.navCtrl.navigateForward('/procedimiento-punto-dos');
-  }
-  goEvidencia(){
-    this.navCtrl.navigateForward('/punto-dos-evidencia');
-  }
-
-  /* async enviarPuntoDos() {
-    const alert = await this.alertCtrl.create({
-      header: 'Importante',
-      message: '<strong>Guardar Estos elementos</strong>',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Aceptar',
-          handler: () => {
-            const creado = this.PuntodosService.createPuntoDos(this.puntodos);
-            this.puntodos = {
-              compresor: false,
-              hidroneumatico: false,
-              palantaEmergencia: false,
-              pararayos: false,
-              cisterna: false,
-              bombaAgua: false,
-              cambioAceite: false,
-              bodegaLubricantes: false,
-              almacenResiduosPeligrosos: false
-            }
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
-
-  segmentChanged(event) {
-    const value = event.detail.value;
-    
-    if(value === "form") {
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(1);
-      this.slider.lockSwipes(true);
-    } else if(value === "proced"){
-      this.slider.lockSwipes(false);
-      this.slider.slideTo(0);
-      this.slider.lockSwipes(true);
-    }
-  }
-
-  cargarPuntoDos() {
-    this.PuntodosService.getPuntoDos().subscribe((data:any) => {
-      console.log(data);
-      data.puntoDos = this.puntoDos;
-      console.log(this.puntoDos);
-      
-    })
-  }
-  */
 }
