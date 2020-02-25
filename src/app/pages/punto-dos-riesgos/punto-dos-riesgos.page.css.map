@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACb,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "punto-dos-riesgos.page.scss"
+    ],
+    "names": [],
+    "file": "punto-dos-riesgos.page.css"
+}

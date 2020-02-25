@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,yDAAyD;CAC9E;;AAED,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,GAAG;CAEd",
+    "sources": [
+        "punto-uno.page.scss"
+    ],
+    "names": [],
+    "file": "punto-uno.page.css"
+}

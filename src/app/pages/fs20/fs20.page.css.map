@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;CACf;;AACD,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "fs20.page.scss"
+    ],
+    "names": [],
+    "file": "fs20.page.css"
+}

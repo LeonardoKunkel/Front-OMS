@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAC,KAAK;EACZ,KAAK,EAAC,KAAK;EACX,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,MAAM;CACzB",
+    "sources": [
+        "fo08.page.scss"
+    ],
+    "names": [],
+    "file": "fo08.page.css"
+}

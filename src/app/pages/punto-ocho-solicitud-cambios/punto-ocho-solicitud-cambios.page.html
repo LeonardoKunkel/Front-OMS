@@ -6,114 +6,135 @@
     <ion-title class="ion-text-center">FS-03 SOLICITUD DE CAMBIOS</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-card-header>
-  <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-  <ion-card-title>Awesome Title</ion-card-title>
-</ion-card-header>
 <ion-content>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-    <ion-slides mode="ios" pager="ios" scrollbar="ios">
-      <ion-slide>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle class="ion-text-center">Llena los campos requeridos</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-                <ion-grid fixed>
-                  <ion-row>
-                    <ion-col size="12" sizeMd="6" sizeLg="12">
-                        <ion-label>Codificacíon:</ion-label>
-                        <ion-input type="text" placeholder="Escribe.." name="codificacion" [(ngModel)]="datos.codificacion"></ion-input>
-                        <ion-label>Nombre del documento:</ion-label>
-                        <ion-input type="text" placeholder="Escribe.." name="nombreDocumento" [(ngModel)]="datos.nombreDocumento"></ion-input>
-                        <ion-label>Elemento del sistema:</ion-label>
-                        <ion-input type="text" placeholder="Escribe.." name="elementoSistema" [(ngModel)]="datos.elementoSistema"></ion-input>  
-                        <ion-label>Nombre del solicitante:</ion-label>
-                        <ion-input type="text" placeholder="Escribe.." name="nombreSolicitante" [(ngModel)]="datos.nombreSolicitante"></ion-input>  
-                        <ion-label>Fecha de solicitud</ion-label>
-                        <ion-input type="text" placeholder="Escribe.." name="fechaSolicitud" [(ngModel)]="datos.fechaSolicitud"></ion-input>  
-                        <ion-label>Puesto</ion-label>
-                        <ion-input type="text" placeholder="Escribe.." name="puesto" [(ngModel)]="datos.puesto"></ion-input>  
-                      </ion-col>
-                  </ion-row>
-                </ion-grid>
-            </ion-card-content>
-          </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Selecciona los documentos que tienes</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-item>
-              <ion-label>Procedimiento de sistema</ion-label>
-              <ion-checkbox name="c1C1" [(ngModel)]="datos.c1C1"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Formato de sistema</ion-label>
-              <ion-checkbox name="c1C2" [(ngModel)]="datos.c1C2"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Procedimiento especifico</ion-label>
-              <ion-checkbox name="c1C3" [(ngModel)]="datos.c1C3"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Formato operativo</ion-label>
-              <ion-checkbox name="c1C4" [(ngModel)]="datos.c1C4"></ion-checkbox>
-            </ion-item>
-          </ion-card-content>    
-      </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Selecciona la casilla correpondiente</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label>Sugerencia</ion-label>
-            <ion-checkbox name="c2C1" [(ngModel)]="datos.c2C1"></ion-checkbox><br>
-            <ion-label>Recomensación ICR</ion-label>
-            <ion-checkbox name="c2C2" [(ngModel)]="datos.c2C2"></ion-checkbox><br>
-            <ion-label>Hallazgo de auditoria</ion-label>
-            <ion-checkbox name="c2C3" [(ngModel)]="datos.c2C3"></ion-checkbox><br>
-            <ion-label>Acción de mejora</ion-label>
-            <ion-checkbox name="c2C4" [(ngModel)]="datos.c2C4"></ion-checkbox><br>
-            <ion-label>Cambio de tecnologia</ion-label>
-            <ion-checkbox name="c2C5" [(ngModel)]="datos.c2C5"></ion-checkbox><br>
-            <ion-label>Cambio en el proceso</ion-label>
-            <ion-checkbox name="c2C6" [(ngModel)]="datos.c2C6"></ion-checkbox>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Llena los campos requeridos</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label>Estado actual</ion-label>
-            <ion-input type="text" placeholder="Escribe.." name="estadoActual" [(ngModel)]="datos.estadoActual"></ion-input>
-            <ion-label>Cambio propuesto</ion-label>
-            <ion-input type="text" placeholder="Ingresa el cambio" name="cambioPropuesto" [(ngModel)]="datos.cambioPropuesto"></ion-input>
-            <ion-label>Resultado de la evaluación</ion-label>
-            <ion-item>
-              <ion-label>Aceptada</ion-label>
-              <ion-checkbox name="c3C1" [(ngModel)]="datos.c3C1"></ion-checkbox>
-              <ion-label>Rechazada</ion-label>
-              <ion-checkbox name="c3C2" [(ngModel)]="datos.c3C2"></ion-checkbox>
-            </ion-item>
-            <ion-label>Motivo de la acpetacion o rechazo</ion-label>
-            <ion-textarea placeholder="Describir" name="motivoAceptacion" [(ngModel)]="datos.motivoAceptacion"></ion-textarea>
-            <ion-button type="submit">
+    <ion-card>
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <ion-item >
+                <ion-label position="floating">CODIFICACIÓN</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">NOMBRE DEL DOCUMENTO</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">ELEMENTO DEL SISTEMA</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <ion-item >
+                <ion-label position="floating">NOMBRE DEL SOLICITANTE</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>FECHA DE SOLICITUD</ion-label>
+                <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">PUESTO</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-item-divider color="light" class="ion-text-center">
+              <ion-label >TIPO DE DOCUMENTO</ion-label>
+            </ion-item-divider>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label>DOCUMENTO PROCEDIMIENTO DE SISTEMA</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>FORMATO DE SISTEMA</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label>PROCEDIMIENTO ESPECIFICO</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>FORMATO OPERATIVO</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid fixed>
+          <ion-item-divider color="light">
+            <ion-label>ORIGEN DEL CAMBIO</ion-label>
+          </ion-item-divider>
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label>SUGERENCIA</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>RECOMENDACIÓN ICR</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>CAMBIO DE TECNOLOGÍA</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label>HALLAZGO DE AUDITORIA</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>ACCIÓN DE MEJORA</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>CAMBIO EN EL PROCESO</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item-divider color="light">
+          <ion-label>ESTADO ACTUAL</ion-label>
+        </ion-item-divider>
+        <ion-textarea placeholder="Describir ..."></ion-textarea>
+        <ion-item-divider color="light">
+          <ion-label>CAMBIO PROPUESTO</ion-label>
+        </ion-item-divider>
+        <ion-textarea placeholder="Describir ..."></ion-textarea>
+        <ion-item-divider color="light">
+          <ion-label>RESULTADO DE LA EVALUACIÓN</ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label>ACEPTADA</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>RECHAZADA</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
+      </ion-card-content>
+      <ion-item-divider color="light">
+        <ion-label>MOTIVO DE LA ACEPTACIÓN O RECHAZO</ion-label>
+      </ion-item-divider>
+      <ion-textarea placeholder="Describir ..."></ion-textarea>
+    </ion-card>
+
+    <ion-button type="submit">
               Enviar
             </ion-button>
             <ion-button (click)="pdf()">
               Descargar
             </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
   </form>
 </ion-content>

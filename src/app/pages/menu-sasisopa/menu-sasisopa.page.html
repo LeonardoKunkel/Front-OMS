@@ -3,8 +3,8 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">SASISOPA Menu</ion-title>
-  </ion-toolbar> <hr class="lineaN">
+    <ion-title class="ion-text-center" style="font-size: 40px; color:  #5b5b5f;">SASISOPA</ion-title>
+  </ion-toolbar> <hr class="lineaN"> 
 </ion-header>
 
 <ion-content>
@@ -147,7 +147,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card>
+        <ion-card mode="ios" (click)="goPuntoDiecisiete()" class="carta">
           <img height="100px" class="ion-padding" src="/assets/imagenes/performance.svg" />
           <ion-card-header>
             <ion-card-title>XVIII. Informes de desempeño</ion-card-title>

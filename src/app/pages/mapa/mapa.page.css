@@ -1,0 +1,14 @@
+#map {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: blue;
+}
+
+.boton-regresar {
+  position: fixed;
+  top: 40px;
+  right: 12px;
+  font-size: 23px;
+  color: black;
+}
+/*# sourceMappingURL=mapa.page.css.map */

@@ -25,8 +25,4 @@ export class PuntoCuatroPage implements OnInit {
     this.navCtrl.navigateForward('/cuatro2')
     console.log('entraste')
   }
-  goOpcion3() {
-    this.navCtrl.navigateForward('/cuatro3')
-    console.log('entraste')
-  }
 }

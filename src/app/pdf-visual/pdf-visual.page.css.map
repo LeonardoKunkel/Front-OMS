@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACD,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,MAAM;EACb,UAAU,EAAE,MAAM;CACpB;;AACD,AAAA,IAAI,CAAA;EACJ,UAAU,EAAE,MAGZ;CAAC",
+    "sources": [
+        "pdf-visual.page.scss"
+    ],
+    "names": [],
+    "file": "pdf-visual.page.css"
+}

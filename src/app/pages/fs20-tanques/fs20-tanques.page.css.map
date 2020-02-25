@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "fs20-tanques.page.scss"
+    ],
+    "names": [],
+    "file": "fs20-tanques.page.css"
+}

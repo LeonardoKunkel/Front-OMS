@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAC,OAAO;EACxB,MAAM,EAAE,GAAG;CACd;;AACD,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,yDAAyD;CAC9E;;AACD,AAAA,gBAAgB,CAAC;EACb,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "punto-tes.page.scss"
+    ],
+    "names": [],
+    "file": "punto-tes.page.css"
+}

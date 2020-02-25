@@ -7,89 +7,110 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-card-header>
+    <ion-card-subtitle class="ion-text-center">El Encargado de la Estación de servicio, antes de que concluya en año calendario, al menos
+      con dos meses de anticipación, realiza la Detección de Necesidades de Capacitación.</ion-card-subtitle>
+  </ion-card-header>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
       <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Llena los campos requeridos</ion-card-subtitle>
-      </ion-card-header>
       <ion-card-content>
-            <ion-item color="secondary">
-              <ion-label>Desarrollo laboral</ion-label>
-            </ion-item>           
-            
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name='R1' [(ngModel)]="datos.R1"></ion-checkbox>
-              <ion-label>Nuevo ingreso</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R2" [(ngModel)]="datos.R2" ></ion-checkbox>
-              <ion-label>Promoción</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R3" [(ngModel)]="datos.R3" ></ion-checkbox>
-              <ion-label>Ascenso</ion-label>
-            </ion-item>
-    
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R4" [(ngModel)]="datos.R4"></ion-checkbox>
-              <ion-label>Reentrenamiento</ion-label>
-            </ion-item>
-        
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R5" [(ngModel)]="datos.R5"></ion-checkbox>
-              <ion-label>Actualización trianual</ion-label>
-            </ion-item>
-    
-            <ion-item color="secondary">
-                <ion-label>Desarrollo Organizacional</ion-label>
-            </ion-item>           
-    
-            <ion-item>
-                <ion-checkbox color="primary" slot="start" name="R5" [(ngModel)]="datos.R5"></ion-checkbox>
-                <ion-label>Inconformidad de auditoría</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R6" [(ngModel)]="datos.R6"></ion-checkbox>
-              <ion-label>Bajo desempeño</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R7" [(ngModel)]="datos.R7"></ion-checkbox>
-              <ion-label>Recomendación ICR</ion-label>
-            </ion-item>
-                
-            <ion-item>
-                <ion-checkbox color="primary" slot="start" name="R8" [(ngModel)]="datos.R8"></ion-checkbox>
-                <ion-label>No se cumplieron objetivos</ion-label>        
-            </ion-item>
-                  
-            <ion-item color="secondary">
-                <ion-label>Situación actual</ion-label>
-               </ion-item> 
-            <ion-item>
-                <ion-checkbox color="primary" slot="start" name="R9" [(ngModel)]="datos.R9"></ion-checkbox>
-                <ion-label>Situación deseada</ion-label>         
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12" sizeLg="4">
+              <ion-item-divider color="light">
+                <ion-label>Desarrollo laboral</ion-label>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label>Nuevo ingreso</ion-label>
+                <ion-checkbox slot="start" color="success" name="nuevoIngreso" [(ngModel)]="datos.nuevoIngreso"></ion-checkbox>
               </ion-item>
               <ion-item>
-                  <ion-checkbox color="primary" slot="start" name="R10" [(ngModel)]="datos.R10"></ion-checkbox>
-                  <ion-label>Objetivos de la necesidad</ion-label>        
+                <ion-label>Promomción</ion-label>
+                <ion-checkbox slot="start" color="success" name="promocion" [(ngModel)]="datos.promocion"></ion-checkbox>
               </ion-item>
               <ion-item>
-                  <ion-checkbox color="primary" slot="start" name="R11" [(ngModel)]="datos.R11"></ion-checkbox>
-                  <ion-label>Temas para capacitación</ion-label>         
+                <ion-label>Ascenso</ion-label>
+                <ion-checkbox slot="start" color="success" name="ascenso" [(ngModel)]="datos.ascenso"></ion-checkbox>
               </ion-item>
+              <ion-item>
+                <ion-label>Reentrenamiento</ion-label>
+                <ion-checkbox slot="start" color="success" name="reentrenamoento" [(ngModel)]="datos.reentrenamoento"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Actualizacion trianual</ion-label>
+                <ion-checkbox slot="start" color="success" name="actualizacionTrianual" [(ngModel)]="datos.actualizacionTrianual"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="4">
+              <ion-item-divider color="light">
+                <ion-label>Desarrollo organizacional</ion-label>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label>Cambio de tecnologia/proceso</ion-label>
+                <ion-checkbox slot="start" color="success" name="cambioTecnologia" [(ngModel)]="datos.cambioTecnologia"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Cambio de personal</ion-label>
+                <ion-checkbox slot="start" color="success" name="cambioPersonal" [(ngModel)]="datos.cambioTecnologia"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Actualización de procedimientos</ion-label>
+                <ion-checkbox slot="start" color="success" name="actualizacionProcedimientos" [(ngModel)]="datos.actualizacionProcedimientos"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Cambio de normatividad</ion-label>
+                <ion-checkbox slot="start" color="success" name="cambioNormativa" [(ngModel)]="datos.cambioNormativa"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Refuerzo de politíca</ion-label>
+                <ion-checkbox slot="start" color="success" name="refuerzoPolitica" [(ngModel)]="datos.refuerzoPolitica"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="4" >
+              <ion-item-divider color="light">
+                <ion-label>Solución de problema</ion-label>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label>Queja de clientes</ion-label>
+                <ion-checkbox slot="start" color="success"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>No conformidad de auditoria</ion-label>
+                <ion-checkbox slot="start" color="success"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Bajo desempeño</ion-label>
+                <ion-checkbox slot="start" color="success"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>Recomendacion de ICR</ion-label>
+                <ion-checkbox slot="start" color="success"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                <ion-label>No se cumplen los objetivos</ion-label>
+                <ion-checkbox slot="start" color="success"></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
               <br>
               <ion-item-divider color="light">
-                <ion-label>Situacion Actual</ion-label>
+                <ion-label>Situacion Actual:</ion-label>
               </ion-item-divider>
               <ion-textarea placeholder="Describe la situacion" name="R12" [(ngModel)]="datos.R12"></ion-textarea>
-              <ion-item-divider>
-                <ion-label>Situacion deseada</ion-label>
+              <ion-item-divider color="light">
+                <ion-label >Situacion deseada:</ion-label>
               </ion-item-divider>
               <ion-textarea placeholder="Describe la situacion" name="R13" [(ngModel)]="datos.R13"></ion-textarea>
+              <ion-item-divider color="light">
+                <ion-label>Objetivos de la necesidad:</ion-label>
+              </ion-item-divider>
+              <ion-textarea placeholder="Describe la situacion"></ion-textarea>
+              <ion-item-divider color="light">
+                <ion-label>Temas para Capacitación:</ion-label>
+              </ion-item-divider>
+              <ion-textarea placeholder="Describe la situacion"></ion-textarea>
+              
               <ion-button type="submit">
                 Guardar y enviar
               </ion-button>

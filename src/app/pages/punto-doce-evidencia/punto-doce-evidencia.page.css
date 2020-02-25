@@ -1,0 +1,26 @@
+:root {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+
+.ion-segment {
+  padding: 5px;
+}
+
+.lineaN {
+  background-color: #D79043;
+  height: 5px;
+}
+
+.fondo {
+  background-image: url("../../../assets/FondosEstilos/Dots2_100.png");
+}
+
+.center {
+  text-align: center;
+}
+
+.linea {
+  background-color: cadetblue;
+}
+/*# sourceMappingURL=punto-doce-evidencia.page.css.map */

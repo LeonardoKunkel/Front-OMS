@@ -16,70 +16,74 @@
 
 
  <ion-content>
+   <ion-card-header>
+     <ion-card-subtitle class="ion-text-center">Es un documento que contiene la información del puesto a cubrirse, en él
+      se describen varios requisitos como, el objetivo del puesto, funciones específicas,conocimientos específicos, las habilidades, nivel académico, idiomas, características
+      personales, destrezas técnicas.</ion-card-subtitle>
+   </ion-card-header>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-    <ion-card>
-      <ion-header>
-        <ion-card-header>
-          <h5>Llena los campos requeridos del formulario</h5>
-        </ion-card-header>
-      </ion-header>
-      <ion-item-divider class="separador">
-        <ion-label class="ion-text-center">Perfil de puesto de trabajo</ion-label>
-      </ion-item-divider>
-      <div>
-        <ion-label>Nombre</ion-label><br>
-        <ion-input type="text" placeholder="Jefe inmediato/Superior" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
-      </div>
-      <div>
-        <ion-label>Area</ion-label>
-        <ion-input type="text" placeholder="Nombre del area" name="area" [(ngModel)]="datos.area"></ion-input>
-      </div>
-      <div>
-        <ion-label>Caracteristícas personales</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="caracteristicasPersonales" [(ngModel)]="datos.caracteristicasPersonales"></ion-input>
-      </div>
-      <div>
-        <ion-label>Requerimientos fisicos</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="requerimientosFisicos" [(ngModel)]="datos.requerimientosFisicos"></ion-input>
-      </div>
-      <div>
-        <ion-label>Conocimientos específicos</ion-label>
-        <ion-input type="text" placeholder="Caracteristicas" name="conocimientosFisiscos" [(ngModel)]="datos.conocimientosFisiscos"></ion-input>
-      </div>
-      <div>
-        <ion-label>Deztrezas técnicas</ion-label>
-        <ion-input type="text" placeholder="Tipos" name="deztrezasTecnicas" [(ngModel)]="datos.deztrezasTecnicas"></ion-input>
-      </div>
-      <div>
-        <ion-label>Nivel academico requerido</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="nivelAcademico" [(ngModel)]="datos.nivelAcademico"></ion-input>
-      </div>
-      <div>
-        <ion-label>Objetivo de puesto</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="objetivoPuesto" [(ngModel)]="datos.objetivoPuesto"></ion-input>
-      </div>
-      <div>
-        <ion-label>Funciones especificas</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="funcionesEspecificas" [(ngModel)]="datos.funcionesEspecificas"></ion-input>
-      </div>
-      <div>
-        <ion-label>Personal a cargo</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="personalCargo" [(ngModel)]="datos.personalCargo"></ion-input>
-      </div>
-      <div>
-        <ion-label>Herramientas Y/O Equipos</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="herramientasEquipos" [(ngModel)]="datos.herramientasEquipos"></ion-input>
-      </div>
-      <div>
-        <ion-label>Equipos de proteccion personal</ion-label>
-        <ion-input type="text" placeholder="Especificar" name="proteccionPersonal" [(ngModel)]="datos.proteccionPersonal"></ion-input>
-      </div><br>           
-      <ion-button expand="full" type="submit" color="danger"  >
-          Guardar
-      </ion-button>
-      <ion-button (click)="pdf()">
-        Imprimir 
-      </ion-button>
-    </ion-card>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal()">
+            <ion-card-header>
+              <img src="../../../assets/imagenes/Elemento6/director-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+              <ion-card-title class="ion-text-center">Director</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal2()">
+            <img src="../../../assets/imagenes/Elemento6/representante tecnico-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Representante tecnico</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal3()">
+            <img src="../../../assets/imagenes/Elemento6/encargado-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Encargado</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal4()">
+            <img src="../../../assets/imagenes/Elemento6/jefe de piso-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Jefe de piso</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal5()">
+            <img src="../../../assets/imagenes/Elemento6/despachadores-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Despachadores</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal6()">
+            <img src="../../../assets/imagenes/Elemento6/personal de mantenimiento-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Personal de mantenimiento</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card (click)="openModal7()">
+            <img src="../../../assets/imagenes/Elemento6/contratistas y proveedores-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Contratistas/Proveedores</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button (click)="director()">
+      Director
+    </ion-button>
   </form>
 </ion-content> 

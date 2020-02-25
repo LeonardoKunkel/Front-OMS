@@ -1,0 +1,19 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.fondo {
+  background-image: url("../../../assets/FondosEstilos/Dots2_100.png");
+  opacity: 0.8;
+}
+
+.lineaN {
+  background-color: #D79043;
+  height: 5px;
+}
+
+.carta {
+  background-color: white;
+}
+/*# sourceMappingURL=tab1.page.css.map */

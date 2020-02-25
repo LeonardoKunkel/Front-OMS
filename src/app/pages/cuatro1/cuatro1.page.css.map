@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,GAAG;CACd",
+    "sources": [
+        "cuatro1.page.scss"
+    ],
+    "names": [],
+    "file": "cuatro1.page.css"
+}

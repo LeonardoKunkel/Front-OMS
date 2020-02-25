@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,IAAI;CACf;;AACD,AAAA,OAAO,CAAA;EACH,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,MAAM;CAE3B",
+    "sources": [
+        "menu-punto2.page.scss"
+    ],
+    "names": [],
+    "file": "menu-punto2.page.css"
+}

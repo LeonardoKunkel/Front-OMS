@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,GAAG;CACd;;AACD,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,uDAAuD;CAC5E",
+    "sources": [
+        "punto-trece.page.scss"
+    ],
+    "names": [],
+    "file": "punto-trece.page.css"
+}

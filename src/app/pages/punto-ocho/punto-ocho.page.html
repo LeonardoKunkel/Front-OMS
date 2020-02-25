@@ -3,1520 +3,781 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Control de Documentos y Registros</ion-title>
+    <ion-title class="ion-text-center">Control de Documentos y Registros</ion-title>
   </ion-toolbar>
+  <p class="ion-text-justify">En los procedimientos del sistema y los procedimientos
+    específicos se establecen los registros necesarios para generar la evidencia de su
+    cumplimiento, entre las actividades que se deben registrar, el  <b>representante tecnico</b> debera de proporcionar la fecha y numero de revision de todas las actividades que se muestran a continuacion:</p>
 </ion-header>
 
 <ion-content>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-      <ion-card>
-          <ion-card-header>
-            <ion-card-title class="ion-text-center">Debes de ingresar las fechas solicitadas de acuerdo a los documentos internos</ion-card-title>
-          </ion-card-header>
-      </ion-card>
-      <ion-slides mode="ios" pager="ios" scrollbar="ios">
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>Política</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c1p1" [(ngModel)]="datos.c1p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c1p2" [(ngModel)]="datos.c1p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c1p3" [(ngModel)]="datos.c1p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE
-                    IMPACTOS AMBIENTALES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c1p4" [(ngModel)]="datos.c1p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c1p5" [(ngModel)]="datos.c1p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c1p6" [(ngModel)]="datos.c1p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>REQUISITOS LEGALES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c1p7" [(ngModel)]="datos.c1p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c1p8" [(ngModel)]="datos.c1p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c1p9" [(ngModel)]="datos.c1p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>OBJETIVOS, METAS E INDICADORES.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c2p1" [(ngModel)]="datos.c2p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c2p2" [(ngModel)]="c2p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c2p3" [(ngModel)]="datos.c2p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>FUNCIONES, RESPONSABILIDADES Y AUTORIDAD</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c2p4" [(ngModel)]="datos.c2p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c2p4" [(ngModel)]="datos.c2p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c2p5" [(ngModel)]="datos.c2p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c2p6" [(ngModel)]="datos.c2p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c2p7" [(ngModel)]="datos.c2p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c2p8" [(ngModel)]="datos.c2p8"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c3p1" [(ngModel)]="datos.c3p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c3p2" [(ngModel)]="datos.c3p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c3p3" [(ngModel)]="datos.c3p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>CONTROL DE DOCUMENTOS Y REGISTROS.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c3p4" [(ngModel)]="datos.c3p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c3p5" [(ngModel)]="datos.c3p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c3p6" [(ngModel)]="datos.c3p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>MEJORES PRÁCTICAS Y ESTÁNDARES.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c3p7" [(ngModel)]="datos.c3p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c3p8" [(ngModel)]="datos.c3p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c3p9" [(ngModel)]="datos.c3p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>CONTROL DE ACTIVIDADES Y PROCESOS.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c4p1" [(ngModel)]="datos.c4p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c4p2" [(ngModel)]="datos.c4p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c4p3" [(ngModel)]="datos.c4p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c4p4" [(ngModel)]="datos.c4p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c4p5" [(ngModel)]="datos.c4p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c4p6" [(ngModel)]="datos.c4p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>SEGURIDAD DE CONTRATISTAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c4p7" [(ngModel)]="datos.c4p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c4p8" [(ngModel)]="c4p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c4p9" [(ngModel)]="datos.c4p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>PREPARACIÓN Y RESPUESTA A EMERGENCIAS.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c5p1" [(ngModel)]="datos.c5p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c5p2" [(ngModel)]="datos.c5p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c5p3" [(ngModel)]="datos.c5p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>MONITOREO, VERIFICACIÓN Y EVALUACIÓN.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c5p4" [(ngModel)]="datos.c5p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c5p5" [(ngModel)]="datos.c5p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c5p6" [(ngModel)]="datos.c5p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>AUDITORÍAS.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c5p7" [(ngModel)]="datos.c5p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c5p8" [(ngModel)]="datos.c5p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c5p9" [(ngModel)]="datos.c5p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c6p1" [(ngModel)]="datos.c6p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="datos.c6p2" [(ngModel)]="datos.c6p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c6p3" [(ngModel)]="datos.c6p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>REVISIÓN DE RESULTADOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="datos.c6p4" [(ngModel)]="datos.c6p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="datos.c6p5" [(ngModel)]="datos.c6p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c6p6" [(ngModel)]="datos.c6p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>INFORMES DE DESEMPEÑO.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c6p7" [(ngModel)]="datos.c6p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c6p8" [(ngModel)]="datos.c6p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c6p9" [(ngModel)]="datos.c6p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card-header>
-            <ion-card-title>Procedimientos especificos</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <img src="../../../assets/imagenes/libra.svg" alt="">
-          </ion-card-content>
-        </ion-slide>
-                <!-- //////////////////////////////////// -->
-        <ion-slide>        
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>RECEPCION DE AUTOTANQUE Y DESCARGA DE PODUCTOS A TANQUES DE ALMACENAMIENTO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c7p1" [(ngModel)]="datos.c7p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c7p2" [(ngModel)]="datos.c7p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c7p3" [(ngModel)]="datos.c7p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES A VEHÍCULOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c7p4" [(ngModel)]="datos.c7p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c7p5" [(ngModel)]="datos.c7p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c7p6" [(ngModel)]="datos.c7p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>ETIQUETA, CANDADEO Y BLOQUEO PARA INTERRUPCIÓN DE LÍNEAS ELÉCTRICAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c7p7" [(ngModel)]="datos.c7p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c7p8" [(ngModel)]="datos.c7p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c7p9" [(ngModel)]="datos.c7p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>ETIQUETA, CANDADEO Y BLOQUEO PARA INTERRPCIÓN DE LÍNEAS CON PRODUCTO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c8p1" [(ngModel)]="datos.c8p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c8p2" [(ngModel)]="datos.c8p3"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c8p3" [(ngModel)]="datos.c8p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>TRABAJOS CON HERRAMIENTAS QUE GENEREN FUENTES DE IGNICION</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c8p4" [(ngModel)]="datos.c8p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c8p5" [(ngModel)]="datos.c8p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c8p6" [(ngModel)]="datos.c8p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>TRABAJOS EN ESCALERAS O PLATAFORMAS EN ALTURAS MAYORES A 1.5 m.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c8p7" [(ngModel)]="datos.c8p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c8p8" [(ngModel)]="datos.c8p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c8p9" [(ngModel)]="datos.c8p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>TRABAJOS EN ÁREAS CONFINADAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c9p1" [(ngModel)]="datos.c9p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c9p2" [(ngModel)]="datos.c9p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c9p3" [(ngModel)]="datos.c9p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PERMISO DE TRABAJOS PELIGROSOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c9p4" [(ngModel)]="datos.c9p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c9p5" [(ngModel)]="datos.c9p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c9p6" [(ngModel)]="datos.c9p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>ADMINISTRACIÓN DE CAMBIOS DE PERSONAL</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c9p7" [(ngModel)]="datos.c9p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c9p8" [(ngModel)]="datos.p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c9p9" [(ngModel)]="datos.c9p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>ADMINISTRACION DE CAMBIOS DE TECNOLOGÍA</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c10p1" [(ngModel)]="datos.c10p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c10p2" [(ngModel)]="datos.c10p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c10p3" [(ngModel)]="datos.c10p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>MANTENIMIENTO A DISPENSARIOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c10p4" [(ngModel)]="datos.c10p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c10p5" [(ngModel)]="datos.c10p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c10p6" [(ngModel)]="datos.c10p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>MANTENIMIENTO A TANQUES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c10p7" [(ngModel)]="datos.c10p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c10p8" [(ngModel)]="datos.c10p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c10p9" [(ngModel)]="datos.c10p9" ></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>MANTENIMIENTO A INSTALACIONES ELÉCTRICAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c11p1" [(ngModel)]="datos.c11p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c11p2" [(ngModel)]="datos.c11p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c11p3" [(ngModel)]="datos.c11p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>MANTENIMIENTO A EDIFICIOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c11p4" [(ngModel)]="datos.c11p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c11p5" [(ngModel)]="datos.c11p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c11p6" [(ngModel)]="datos.c11p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>MANTENIMIENTO A DRENAJES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c11p7" [(ngModel)]="datos.c11p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c11p8" [(ngModel)]="datos.c11p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c11p9" [(ngModel)]="datos.c11p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-              <hr class="lineaC">
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>MANTENIMIENTO A MAQUINAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c12p1" [(ngModel)]="datos.c12p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c12p2" [(ngModel)]="datos.c12p2"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c12p3" [(ngModel)]="datos.c12p3"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PLANES DE RESPUESTA A EMERGENCIAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c12p4" [(ngModel)]="datos.c12p4"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c12p5" [(ngModel)]="datos.c12p5"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c12p6" [(ngModel)]="datos.c12p6"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>METODOLOGÍA DEL ARBOL DE FALLAS.</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccione" name="c12p7" [(ngModel)]="datos.c12p7"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha de revisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY " placeholder="Seleccione" name="c12p8" [(ngModel)]="datos.c12p8"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                <ion-label>No.de revision</ion-label>
-                  <ion-input type="number" placeholder="Eje.1995" name="c12p9" [(ngModel)]="datos.c12p9"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>REGISTRO DE SISTEMA</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>LISTA DE DISTRIBUCIÓN DE DOCUMENTOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c13p1" [(ngModel)]="datos.c13p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p2" [(ngModel)]="datos.c13p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p3" [(ngModel)]="datos.c13p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p4" [(ngModel)]=datos.c13p4></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p5" [(ngModel)]=datos.c13p5></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>LISTA DE COMUNICACIÓN</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c13p6" [(ngModel)]="datos.c13p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p7" [(ngModel)]="datos.c13p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p8" [(ngModel)]="datos.c13p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p9" [(ngModel)]="datos.c13p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p10" [(ngModel)]="datos.c13p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>QUEJAS Y SUGERENCIAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c13p11" [(ngModel)]="datos.c13p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p12" [(ngModel)]="datos.c13p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p13" [(ngModel)]="datos.c13p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p14" [(ngModel)]="datos.c13p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c13p15" [(ngModel)]="datos.c13p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>REGISTRO Y CONTROL DE QUEJAS Y SUGERENCIAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c14p1" [(ngModel)]="datos.c14p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p2" [(ngModel)]="datos.c14p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p3" [(ngModel)]="datos.c14p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p4" [(ngModel)]="datos.c14p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p5" [(ngModel)]="datos.c14p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>EVALUACIÓN DE ASPECTOS AMBIENTALES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c14p6" [(ngModel)]="datos.c14p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p7" [(ngModel)]="datos.c14p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p8" [(ngModel)]="datos.c14p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p9" [(ngModel)]="datos.c14p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p10" [(ngModel)]="datos.c14p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>EVALUACIÓN DE RIESGOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c14p11" [(ngModel)]="datos.c14p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p12" [(ngModel)]="datos.c14p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p13" [(ngModel)]="datos.c14p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c14p14" [(ngModel)]="datos.c14p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c15p15" [(ngModel)]="datos.c15p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>RESULTADO DEL ANÁLISIS DE RISGOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c16p1" [(ngModel)]="datos.c16p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p2" [(ngModel)]="datos.c16p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p3" [(ngModel)]="datos.c16p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p4" [(ngModel)]="datos.c16p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p5" [(ngModel)]="datos.c16p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>LISTADO DE RIESGOS Y ASPECTOS AMBIENTALES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c16p6" [(ngModel)]="datos.c16p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p7" [(ngModel)]="datos.c16p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p8" [(ngModel)]="datos.c16p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p9" [(ngModel)]="datos.c16p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p10" [(ngModel)]="datos.c16p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>OBJETIVOS Y METAS E INDICADORES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c16p11" [(ngModel)]="c16p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p12" [(ngModel)]="datos.c16p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p13" [(ngModel)]="datos.c16p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p14" [(ngModel)]="datos.c16p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c16p15" [(ngModel)]="datos.c16p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>MATRIZ DE RESPONSABILIDADES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c17p1" [(ngModel)]="datos.c17p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p2" [(ngModel)]="datos.c17p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p3" [(ngModel)]="datos.c17p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p4" [(ngModel)]="datos.c17p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p5" [(ngModel)]="datos.c17p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PERFIL DEL PUESTO DE TRABAJO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c17p6" [(ngModel)]="datos.c17p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p7" [(ngModel)]="datos.c17p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p8" [(ngModel)]="datos.c17p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p9" [(ngModel)]="datos.c17p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p10" [(ngModel)]="datos.c17p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>DETECCION DE NECESIDADES DE CAPACITACIÓN</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c17p11" [(ngModel)]="datos.c17p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p12" [(ngModel)]="datos.c17p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p13" [(ngModel)]="datos.c17p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p14" [(ngModel)]="datos.c17p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c17p15" [(ngModel)]="datos.c17p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>PROGRAMA DE CAPACITACIÓN</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c18p1" [(ngModel)]="datos.c18p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p2" [(ngModel)]="datos.c18p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p3" [(ngModel)]="datos.c18p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p4" [(ngModel)]="datos.c18p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p5" [(ngModel)]="datos.c18p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>SEGUIMIENTO AL PROGRAMA DE CAPACITACION</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c18p6" [(ngModel)]="datos.c18p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p7" [(ngModel)]="datos.c18p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p8" [(ngModel)]="datos.c18p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p9" [(ngModel)]="datos.c18p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p10" [(ngModel)]="datos.c18p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>LISTADO DE CODIGOS Y ESTÁNDARES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c18p11" [(ngModel)]="datos.c18p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p12" [(ngModel)]="datos.c18p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p13" [(ngModel)]="datos.c18p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p14" [(ngModel)]="datos.c18p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c18p15" [(ngModel)]="datos.c18p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>ADMINISTRACION DEL CAMBIO DE TECNOLOGÍA</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c19p1" [(ngModel)]="datos.c19p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p2" [(ngModel)]="datos.c19p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p3" [(ngModel)]="datos.c19p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p4" [(ngModel)]="datos.c19p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p5" [(ngModel)]="datos.c19p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PROGRAMA DE MANTENIMIENTO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c19p6" [(ngModel)]="datos.c19p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p7" [(ngModel)]="datos.c19p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p8" [(ngModel)]="datos.c19p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p9" [(ngModel)]="datos.c19p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p10" [(ngModel)]="datos.c19p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PLAN DE MANTENIMIENTO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c19p11" [(ngModel)]="datos.c"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p12" [(ngModel)]="datos.c19p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p13" [(ngModel)]="datos.c19p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p14" [(ngModel)]="datos.c19p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c19p15" [(ngModel)]="datos.c19p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>LISTADO DE EQUIPO CRITICO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c20p1" [(ngModel)]="datos.c20p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p2" [(ngModel)]="datos.c20p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p3" [(ngModel)]="datos.c20p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p4" [(ngModel)]="datos.c20p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p5" [(ngModel)]="datos.c20p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>LISTADO DE REQUISITOS LEGALES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c20p6" [(ngModel)]="datos.c20p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p7" [(ngModel)]="datos.c20p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p8" [(ngModel)]="datos.c20p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p9" [(ngModel)]="datos.c20p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p10" [(ngModel)]="datos.c20p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>ANEXO DE SEGURIDAD DE CONTRATISTAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c20p11" [(ngModel)]="datos.c20p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p12" [(ngModel)]="datos.c20p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p13" [(ngModel)]="datos.c20p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p14" [(ngModel)]="datos.c20p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c20p15" [(ngModel)]="datos.c20p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>ACTA DE INTEGRACION DE LAS BRIGADAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c21p1" [(ngModel)]="datos.c21p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p2" [(ngModel)]="datos.c21p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p3" [(ngModel)]="datos.c21p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p4" [(ngModel)]="datos.c21p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p5" [(ngModel)]="datos.c21p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PROGRAMA DE SIMULACROS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c21p6" [(ngModel)]="datos.c21p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p7" [(ngModel)]="datos.c21p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p8" [(ngModel)]="datos.c21p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p9" [(ngModel)]="datos.c21p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p10" [(ngModel)]="datos.c21p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PLANEACION DE SIMULACROS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c21p11" [(ngModel)]="datos.c21p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p12" [(ngModel)]="datos.c21p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p13" [(ngModel)]="datos.c21p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p14" [(ngModel)]="datos.c21p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c21p15" [(ngModel)]="datos.c21p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>EVALUACION DE SIMULACROS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c22p1" [(ngModel)]="datos.c22p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p2" [(ngModel)]="datos.c22p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p3" [(ngModel)]="datos.c22p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p4" [(ngModel)]="datos.c22p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p5" [(ngModel)]="datos.c22p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PROGRAMA DE MONITOREO Y MEDICIÓN DE PARÁMETROS DE
-                    DESEMPEÑO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c22p6" [(ngModel)]="datos.c22p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p7" [(ngModel)]="datos.c22p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p8" [(ngModel)]="datos.c22p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p9" [(ngModel)]="datos.c22p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p10" [(ngModel)]="datos.c22p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>RESULTADOS DEL MONITOREO DE PARÁMETROS DEL DESEMPEÑO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c22p11" [(ngModel)]="datos.c22p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p12" [(ngModel)]="datos.c22p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p13" [(ngModel)]="datos.c22p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p14" [(ngModel)]="datos.c22p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c22p15" [(ngModel)]="datos.c22p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>EVALUACIÓN DEL CUMPLIMIENTO DE LOS REQUISITOS LEGALES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c23p1" [(ngModel)]="datos.c23p1" ></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p2" [(ngModel)]="datos.c23p2" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p3" [(ngModel)]="datos.c23p3" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p4" [(ngModel)]="datos.c23p4" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p5" [(ngModel)]="datos.c23p5" ></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PLAN DE ATENCIÓN DE HALLAZGOS DERIVADOS DEL MONITOREO DEL SA</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c23p6" [(ngModel)]="datos.c23p6" ></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p7" [(ngModel)]="datos.c23p7" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p8" [(ngModel)]="datos.c23p8" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p9" [(ngModel)]="datos.c23p9" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p10" [(ngModel)]="datos.c23p10" ></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PROGRAMA DE AUDITORIAS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c23p11" [(ngModel)]="datos.c23p11" ></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p12" [(ngModel)]="datos.c23p12" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p13" [(ngModel)]="datos.c23p13" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p14" [(ngModel)]="datos.c23p14" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c23p15" [(ngModel)]="datos.c23p15" ></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>PLAN DE AUDITORIA</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c24p1" [(ngModel)]="datos.c24p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p2" [(ngModel)]="datos.c24p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p3" [(ngModel)]="datos.c24p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p4" [(ngModel)]="datos.c24p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p5" [(ngModel)]="datos.c24p5"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>INFORME DE AUDITORIA</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c24p6" [(ngModel)]="datos.c24p6"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p7" [(ngModel)]="datos.c24p7"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p8" [(ngModel)]="datos.c24p8"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p9" [(ngModel)]="datos.c24p9"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p10" [(ngModel)]="datos.c24p10"></ion-input>
-              </ion-item>
-              <ion-item-divider color="light">
-                <ion-label>PLAN DE ATENCION DE HALLAZGOS</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c24p11" [(ngModel)]="datos.c24p11"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p12" [(ngModel)]="datos.c24p12"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p13" [(ngModel)]="datos.c24p13"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p14" [(ngModel)]="datos.c24p14"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c24p15" [(ngModel)]="datos.c24p15"></ion-input>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card>
-            <ion-card-content>
-              <ion-item-divider color="light">
-                <ion-label>REVISION POR LA DIRECCIÓN</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-label>Fecha de emisión</ion-label>
-                <ion-datetime display-format="DD.MM.YYYY" placeholder="Seleccionar" name="c25p1" [(ngModel)]="datos.c25p1"></ion-datetime>
-              </ion-item>
-              <ion-item>
-                  <ion-label>No.de Revision</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c25p2" [(ngModel)]="datos.c25p2"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Disposición</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c25p3" [(ngModel)]="datos.c25p3"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Tiempo de retención</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c25p4" [(ngModel)]="datos.c25p4"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Procedimiento Asociado</ion-label>
-                  <ion-input type="text" placeholder="Ingresar" name="c25p5" [(ngModel)]="datos.c25p5"></ion-input>
-              </ion-item>
-              <ion-button type="submit">
-              Guardar y enviar
-              </ion-button>
-              <ion-button (click)="pdf()">
-                Imprimir
-              </ion-button>
-            </ion-card-content>
-          </ion-card>
-        </ion-slide>
-      </ion-slides>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-01   POLÍTICA</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-02   IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE
+                    IMPACTOS AMBIENTALES</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-03   REQUISITOS LEGALES</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-04  OBJETIVOS, METAS E INDICADORES.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-05   FUNCIONES, RESPONSABILIDADES Y AUTORIDAD.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider >
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-06   COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-07   COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-08   CONTROL DE DOCUMENTOS Y REGISTROS.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-09   MEJORES PRÁCTICAS Y ESTÁNDARES.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-10   CONTROL DE ACTIVIDADES Y PROCESOS.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-11   INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-12   SEGURIDAD DE CONTRATISTAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-13   PREPARACIÓN Y RESPUESTA A EMERGENCIAS.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-14   MONITOREO, VERIFICACIÓN Y EVALUACIÓN.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-15   AUDITORÍAS.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-16   INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider  color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-17   REVISIÓN DE RESULTADOS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-SA-18   INFORMES DE DESEMPEÑO.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item-divider  color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-OP-01 RECEPCION DE AUTOTANQUE Y DESCARGA DE PODUCTOS A TANQUES DE ALMACENAMIENTO</label>
+                </ion-col> 
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-OP-02 DESPACHO DE PRODUCTOS INFLAMABLES Y COMBUSTIBLES A VEHÍCULOS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-TS-01   ETIQUETA, CANDADEO Y BLOQUEO PARA INTERRUPCIÓN DE LÍNEAS ELÉCTRICAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-TS-02   ETIQUETA, CANDADEO Y BLOQUEO PARA INTERRPCIÓN DE LÍNEAS CON PRODUCTO</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-TS-03   TRABAJOS CON HERRAMIENTAS QUE GENEREN FUENTES DE IGNICION</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-TS-04   TRABAJOS EN ESCALERAS O PLATAFORMAS EN ALTURAS MAYORES A 1.5 m.</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-TS-05   TRABAJOS EN ÁREAS CONFINADAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-TS-06   PERMISO DE TRABAJOS PELIGROSOS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-CP-01   ADMINISTRACIÓN DE CAMBIOS DE PERSONAL</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-CT-01   ADMINISTRACION DE CAMBIOS DE TECNOLOGÍA</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-IM-01   MANTENIMIENTO A DISPENSARIOS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-IM-02   MANTENIMIENTO A TANQUES</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-IM-03   MANTENIMIENTO A INSTALACIONES ELÉCTRICAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-IM-04  MANTENIMIENTO A EDIFICIOS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-IM-05   MANTENIMIENTO A DRENAJES</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-IM-06   MANTENIMIENTO A MAQUINAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider color="light">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-RE-01   PLANES DE RESPUESTA A EMERGENCIAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+          <ion-item-divider>
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="4">
+                  <label>P-CR-01   METODOLOGÍA DEL ARBOL DE FALLAS</label>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>Fecha de revision</ion-label>
+                    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" sizeLg="4">
+                  <ion-item>
+                    <ion-label>No° de revicion</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item-divider>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
   </form>
 </ion-content> 

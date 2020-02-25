@@ -3,6 +3,7 @@ import { AlertController, IonSlides, ActionSheetController } from "@ionic/angula
 import { async } from "@angular/core/testing";
 import EventClicking from "@fullcalendar/core/interactions/EventClicking";
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ElementoUnoPoliticaService } from 'src/app/services/elemento-uno-politica.service';
 
 @Component({
   selector: 'app-punto-uno-politica',
@@ -13,59 +14,55 @@ export class PuntoUnoPoliticaPage implements OnInit {
   @ViewChild("texto") texto;
   @ViewChild("texto2") texto2;
   @ViewChild("texto3") texto3;
+
+  politica:string = '';
   constructor(public alertController: AlertController,
     private actionSheetCtrl:ActionSheetController,
-    private pdfMakerService: PdfMakerService) { }
+    private pdfMakerService: PdfMakerService, private puntoUnoService: ElementoUnoPoliticaService) { }
 
   ngOnInit() {
   }
 
+  crearPolitica(politica) {
+    this.puntoUnoService.getPolitica(politica).subscribe((data:any) => {
+      console.log(data);
+      this.politica = data.politica;
+    })
+  }
+
   btn1() {
+    var politicaUno =' En la Estación de Servicio “Super Servicio La Concha S.A. de C.V.” conscientes con la naturaleza de los peligros y aspectos ambientales asociados a las actividades propias de la instalación, trabajadores y contratistas estamos comprometidos en mejorar nuestro desempeño en materia de Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente, en todos los niveles de la organización, juntos orientamos nuestros esfuerzos para la evaluación, reducción y control de los riesgos e impactos ambientales, el cumplimiento normativo, mediante un proceso de mejora'
     var P1 = this.texto.el.innerText;
-    this.condicion(P1);
+    this.change(P1);
+    console.log(P1);
+    this.crearPolitica(politicaUno);
   }
   btn2() {
+    var politicaDos ='En “Super Servicio La Concha S.A. de C.V.” estamos comprometidos en todos los niveles de la organización con la seguridad de las instalaciones, los trabajadores, contratistas y medio ambiente, controlando los peligros, riesgos e impactos ambientales derivados de la operación normal de la estación, enfocándonos en el cumplimento de la normatividad y la mejora continua en materia Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente.'
     var P2 = this.texto2.el.innerText;
-    this.condicion(P2);
+    this.change(P2);
+    console.log(P2);
   }
   btn3() {
     var P3 = this.texto3.el.innerText;
-    this.condicion(P3);
+    var politica2 = 'Considerando los peligros, riesgos e impactos ambientales  que se generan en la operación de esta estación de servicio, en “Super Servicio La Concha S.A. de C.V.” estamos comprometidos en todos los niveles de la organización en establecer los controles necesarios y buscar continuamente su mejora en materia de Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente.'
+   this.change(P3);
+    console.log(P3);
   }
   
-  condicion(res) {
-    var c1 = this.texto.el.innerText;
-    var c2 = this.texto2.el.innerText;
-    var c3 = this.texto3.el.innerText;
-    if (res === c1) {
-      console.log(c1);
-      this.change(res)
-    }
-    if (res === c2) {
-      console.log(c2);
-      this.change(res)
-    }
-    if (res === c3) {
-      console.log(c3);
-      this.change(res)
-    }
-  }
-  public disabled= true;
 
   change(oo){
     var c1 = this.texto.el.innerText;
     var c2 = this.texto2.el.innerText;
     var c3 = this.texto3.el.innerText;
+
     if (oo === c1) {
-      this.disabled=false;
       return this.politica1(oo);
     }
     if (oo === c2) {
-      this.disabled=false;
       return this.politica2(oo);
     }
     if (oo === c3) {
-      this.disabled=false;
       return this.politica3(oo);
     }
   }

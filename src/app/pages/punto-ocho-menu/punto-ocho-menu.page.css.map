@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,GAAG;CACd;;AAED,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,uDAAuD;CAC5E",
+    "sources": [
+        "punto-ocho-menu.page.scss"
+    ],
+    "names": [],
+    "file": "punto-ocho-menu.page.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACP,UAAU,EAAE,MAAM;CACjB",
+    "sources": [
+        "fs20-electricas.page.scss"
+    ],
+    "names": [],
+    "file": "fs20-electricas.page.css"
+}

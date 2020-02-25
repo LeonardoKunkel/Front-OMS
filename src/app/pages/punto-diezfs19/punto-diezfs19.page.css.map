@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,QAAQ;CACnB",
+    "sources": [
+        "punto-diezfs19.page.scss"
+    ],
+    "names": [],
+    "file": "punto-diezfs19.page.css"
+}

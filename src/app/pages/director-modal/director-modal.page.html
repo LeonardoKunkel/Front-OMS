@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-button (click)="closeModal()" horizontal="end" slot="fixed">
+      <ion-icon name="close-circle" slot="end"></ion-icon>
+    </ion-button>
+    <ion-button (click)="print()">
+      <ion-icon slot="start" name="print"></ion-icon>
+      Imprimir
+    </ion-button>
+  </ion-buttons>
+</ion-header>
+<ion-content>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Director</ion-card-title>
+        <ion-card-subtitle>Debes de llenar los campos solicitados en el siguiente formulario de acuerdo al puesto que tienes en la estacion de servicio</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="close-sharp"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Menciona algunas características personales:</ion-label>
+          <ion-input  required name="caracteristicasPersonales" [(ngModel)]="datos.caracteristicasPersonales"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Requerimientos fisícos:</ion-label>
+          <ion-input  required name="requerimientosFisicos" [(ngModel)]="datos.requerimientosFisicos" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Herramientas/equipos:</ion-label>
+          <ion-input  required name="herramientasEquipos" [(ngModel)]="datos.herramientasEquipos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Equipo de proteccion personal:</ion-label>
+          <ion-input  required name="proteccionPersonal" [(ngModel)]="datos.equipoProteccio"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">
+      Guardar y enviar
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,13 @@
+ion-card-content {
+  text-align: start;
+}
+
+ion-item:hover {
+  cursor: pointer;
+}
+
+.linea {
+  background-color: #d79043;
+  height: 5px;
+}
+/*# sourceMappingURL=punto-cuatro.page.css.map */

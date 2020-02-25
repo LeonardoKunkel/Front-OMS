@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,AAAA,MAAM,CAAC;EACT,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "onbjetivo-modal.page.scss"
+    ],
+    "names": [],
+    "file": "onbjetivo-modal.page.css"
+}

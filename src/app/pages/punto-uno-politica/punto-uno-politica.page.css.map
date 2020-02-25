@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAA;EACN,SAAS,EAAE,IAAI;CAClB;;AACD,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAC,OAAgB;EACjC,MAAM,EAAE,GAAG;CACd;;AACD,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,kDAAkD;CACvE;;AACD,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAC,OAAQ;EACzB,MAAM,EAAE,GAAG;CACd;;AACD,MAAM,EAAC,SAAS,EAAE,MAAM;EACpB,AAAA,UAAU,CAAA;IACN,SAAS,EAAE,IAAI;GAElB",
+    "sources": [
+        "punto-uno-politica.page.scss"
+    ],
+    "names": [],
+    "file": "punto-uno-politica.page.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,GAAG;CACd;;AACD,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,yDAAyD;CAC9E",
+    "sources": [
+        "punto-seis-menu.page.scss"
+    ],
+    "names": [],
+    "file": "punto-seis-menu.page.css"
+}

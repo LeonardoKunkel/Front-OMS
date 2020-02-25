@@ -1,0 +1,17 @@
+ion-card:hover {
+  cursor: pointer;
+}
+
+.lineaN {
+  background-color: #D79043;
+  height: 5px;
+}
+
+.carta {
+  background-color: white;
+}
+
+.fondo {
+  background-image: url("../../../assets/FondosEstilos/Dots2_100.png");
+}
+/*# sourceMappingURL=tab3.page.css.map */

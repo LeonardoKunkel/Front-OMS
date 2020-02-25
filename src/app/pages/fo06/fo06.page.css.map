@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "fo06.page.scss"
+    ],
+    "names": [],
+    "file": "fo06.page.css"
+}

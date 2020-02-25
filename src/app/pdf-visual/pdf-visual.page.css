@@ -1,0 +1,12 @@
+.pdf {
+  height: 700px;
+  width: 1500px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.tit {
+  text-align: center;
+}
+/*# sourceMappingURL=pdf-visual.page.css.map */

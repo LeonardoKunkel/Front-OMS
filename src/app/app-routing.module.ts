@@ -333,11 +333,6 @@ const routes: Routes = [
     //canLoad: [AuthGuard]
   },
   { 
-    path: 'punto-tres-evidencia', 
-    loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
     path: 'menu-punto5', 
     loadChildren: './pages/menu-punto5/menu-punto5.module#MenuPunto5PageModule', 
     //canLoad: [AuthGuard]
@@ -347,11 +342,6 @@ const routes: Routes = [
      loadChildren: './pages/punto-cinco-procedimiento/punto-cinco-procedimiento.module#PuntoCincoProcedimientoPageModule', 
      //canLoad: [AuthGuard] 
     },
-  { 
-    path: 'punto-cinco-evidencia', 
-    loadChildren: './pages/punto-cinco-evidencia/punto-cinco-evidencia.module#PuntoCincoEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
   { 
     path: 'punto-seis-menu', 
     loadChildren: './pages/punto-seis-menu/punto-seis-menu.module#PuntoSeisMenuPageModule', 
@@ -511,11 +501,6 @@ const routes: Routes = [
   { 
     path: 'cuatro2', 
     loadChildren: './pages/cuatro2/cuatro2.module#Cuatro2PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'cuatro3', 
-    loadChildren: './pages/cuatro3/cuatro3.module#Cuatro3PageModule', 
     //canLoad: [AuthGuard]
    },
   { 
@@ -687,13 +672,24 @@ const routes: Routes = [
     path: 'punto-ocho-evidencias', 
     loadChildren: './pages/punto-ocho-evidencias/punto-ocho-evidencias.module#PuntoOchoEvidenciasPageModule', 
     //canLoad: [AuthGuard]
-   },  { path: 'punto-cinco-matriz', loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule' },
+   },
+  { path: 'punto-cinco-matriz', loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule' },
   { path: 'punto-diez-evidencia', loadChildren: './pages/punto-diez-evidencia/punto-diez-evidencia.module#PuntoDiezEvidenciaPageModule' },
   { path: 'punto-once-evidencia', loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule' },
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
   { path: 'punto-trece-evidencia', loadChildren: './pages/punto-trece-evidencia/punto-trece-evidencia.module#PuntoTreceEvidenciaPageModule' },
   { path: 'punto-catorce-evidencia', loadChildren: './pages/punto-catorce-evidencia/punto-catorce-evidencia.module#PuntoCatorceEvidenciaPageModule' },
-  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' }
+  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },  { path: 'director-modal', loadChildren: './pages/director-modal/director-modal.module#DirectorModalPageModule' },
+  { path: 'representante-modal', loadChildren: './pages/representante-modal/representante-modal.module#RepresentanteModalPageModule' },
+  { path: 'encargado-modal', loadChildren: './pages/encargado-modal/encargado-modal.module#EncargadoModalPageModule' },
+  { path: 'jefe-piso-modal', loadChildren: './pages/jefe-piso-modal/jefe-piso-modal.module#JefePisoModalPageModule' },
+  { path: 'despachadores-modal', loadChildren: './pages/despachadores-modal/despachadores-modal.module#DespachadoresModalPageModule' },
+  { path: 'mantenimiento-modal', loadChildren: './pages/mantenimiento-modal/mantenimiento-modal.module#MantenimientoModalPageModule' },
+  { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },
+
+ 
+
+  
 
 
 

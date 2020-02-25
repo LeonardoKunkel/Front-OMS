@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAC,OAAQ;EACzB,MAAM,EAAE,GAAG;CACd",
+    "sources": [
+        "punto-uno-procedimiento.page.scss"
+    ],
+    "names": [],
+    "file": "punto-uno-procedimiento.page.css"
+}

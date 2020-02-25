@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACN,gBAAgB,EAAE,2CAA2C;CAC5D",
+    "sources": [
+        "punto-cinco.page.scss"
+    ],
+    "names": [],
+    "file": "punto-cinco.page.css"
+}

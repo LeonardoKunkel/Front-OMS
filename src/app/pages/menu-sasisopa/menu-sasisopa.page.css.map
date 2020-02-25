@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,AAAA,MAAM,CAAC;EACX,SAAS,EAAE,UAAU;EACrB,MAAM,EAAE,OAAO;CAClB;;AAED,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,kDAAkD;CACvE;;AAID,AAAA,OAAO,CAAA;EACL,gBAAgB,EAAE,OAAQ;EAC1B,MAAM,EAAE,GAAG;CACZ",
+    "sources": [
+        "menu-sasisopa.page.scss"
+    ],
+    "names": [],
+    "file": "menu-sasisopa.page.css"
+}

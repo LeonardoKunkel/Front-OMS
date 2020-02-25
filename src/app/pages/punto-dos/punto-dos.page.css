@@ -1,0 +1,15 @@
+.linea {
+  background-color: #D79043;
+  height: 5px;
+}
+
+.carta {
+  background-image: url("../../../assets/FondosEstilos/login_blue_BG-02.png");
+}
+
+.image {
+  width: 100px;
+  height: auto;
+  margin: auto;
+}
+/*# sourceMappingURL=punto-dos.page.css.map */

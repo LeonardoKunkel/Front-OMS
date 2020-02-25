@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACb,UAAU,EAAE,KAAK;CACpB;;AAED,AAAA,QAAQ,AAAA,MAAM,CAAC;EACX,MAAM,EAAE,OAAO;CAClB;;AACD,AAAA,MAAM,CAAA;EACF,gBAAgB,EAAE,OAAO;EACzB,MAAM,EAAE,GAAG;CACd",
+    "sources": [
+        "punto-cuatro.page.scss"
+    ],
+    "names": [],
+    "file": "punto-cuatro.page.css"
+}
