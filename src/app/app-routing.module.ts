@@ -81,19 +81,6 @@ const routes: Routes = [
     loadChildren: './pages/punto-ocho/punto-ocho.module#PuntoOchoPageModule',
     //canLoad: [AuthGuard] 
   },
-  { path: 'menu-punto2', 
-    loadChildren: './menu-punto2/menu-punto2.module#MenuPunto2PageModule',
-    //canLoad: [AuthGuard]
-  },
-  { path: 'resultados-riesgos', 
-    loadChildren: './pages/resultados-riesgos/resultados-riesgos.module#ResultadosRiesgosPageModule',
-    //canLoad: [AuthGuard] 
-  },
-  { path: 'listado-peligros', 
-    loadChildren: './pages/listado-peligros/listado-peligros.module#ListadoPeligrosPageModule',
-    //canLoad: [AuthGuard] 
-
-  },
   { 
     path: 'punto-nueve', 
     loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule',
@@ -225,11 +212,6 @@ const routes: Routes = [
     path: 'fo07', 
     loadChildren: './pages/fo07/fo07.module#Fo07PageModule' , 
     //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'procedimiento-punto-dos', 
-    loadChildren: './pages/procedimiento-punto-dos/procedimiento-punto-dos.module#ProcedimientoPuntoDosPageModule', 
-    //canLoad: [AuthGuard] 
   },
   { 
     path: 'punto-diez', 
@@ -687,13 +669,24 @@ const routes: Routes = [
     path: 'punto-ocho-evidencias', 
     loadChildren: './pages/punto-ocho-evidencias/punto-ocho-evidencias.module#PuntoOchoEvidenciasPageModule', 
     //canLoad: [AuthGuard]
-   },  { path: 'punto-cinco-matriz', loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule' },
+   },
+  { path: 'punto-cinco-matriz', loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule' },
   { path: 'punto-diez-evidencia', loadChildren: './pages/punto-diez-evidencia/punto-diez-evidencia.module#PuntoDiezEvidenciaPageModule' },
   { path: 'punto-once-evidencia', loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule' },
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
   { path: 'punto-trece-evidencia', loadChildren: './pages/punto-trece-evidencia/punto-trece-evidencia.module#PuntoTreceEvidenciaPageModule' },
   { path: 'punto-catorce-evidencia', loadChildren: './pages/punto-catorce-evidencia/punto-catorce-evidencia.module#PuntoCatorceEvidenciaPageModule' },
-  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' }
+  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
+  { path: 'punto-dos-procedimiento', loadChildren: './pages/punto-dos-procedimiento/punto-dos-procedimiento.module#PuntoDosProcedimientoPageModule' },
+  { path: 'punto-dos-aspectos', loadChildren: './pages/punto-dos-aspectos/punto-dos-aspectos.module#PuntoDosAspectosPageModule' },  { path: 'punto-dos-asam-uno', loadChildren: './pages/punto-dos-asam-uno/punto-dos-asam-uno.module#PuntoDosAsamUnoPageModule' },
+  { path: 'punto-dos-asam-dos', loadChildren: './pages/punto-dos-asam-dos/punto-dos-asam-dos.module#PuntoDosAsamDosPageModule' },
+  { path: 'punto-dos-asam-tres', loadChildren: './pages/punto-dos-asam-tres/punto-dos-asam-tres.module#PuntoDosAsamTresPageModule' },
+  { path: 'punto-dos-asam-cuatro', loadChildren: './pages/punto-dos-asam-cuatro/punto-dos-asam-cuatro.module#PuntoDosAsamCuatroPageModule' },
+  { path: 'punto-dos-asam-cinco', loadChildren: './pages/punto-dos-asam-cinco/punto-dos-asam-cinco.module#PuntoDosAsamCincoPageModule' },
+  { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
+
+  
+
 
 
 

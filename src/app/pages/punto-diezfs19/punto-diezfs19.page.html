@@ -6,280 +6,356 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-
-
+<div>
+  <hr class="linea">
+</div>
 <ion-content>
-  <ion-slides mode="ios" pager="ios" scrollbar="ios">
-    <ion-slide>
-      <ion-card>
-        <ion-item>
-          <ion-textarea placeholder="Área"></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <ion-textarea placeholder="Proceso"></ion-textarea>
-          <ion-textarea placeholder="No."></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona">Fecha</ion-datetime>
-        </ion-item>
+  <ion-card class="carta">
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="12" sizeMd="8" sizeLg="8">
+          <ion-item>
+            <ion-label>Área</ion-label>
+            <ion-textarea placeholder="Escribe..."></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Proceso</ion-label>
+            <ion-textarea placeholder="Escribe..."></ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" sizeMd="4" sizeLg="4">
+          <ion-item>
+            <ion-label>Fecha</ion-label>
+            <ion-datetime display="DD MM YYYY"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>No.</ion-label>
+            <ion-textarea placeholder="Escribe..."></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
+          <ion-card-title>Descripción del cambio propuesto</ion-card-title>
+          <ion-item>
+            <ion-textarea placeholder="Escribe..." rows="4"></ion-textarea>
+          </ion-item>
+          <br>
+          <ion-card-title>Análisis de la propuesta</ion-card-title>
+          <ion-item>
+            <ion-textarea placeholder="Escribe..." rows="4"></ion-textarea>
+          </ion-item>
+          <br>
+        </ion-col>
         <br>
-        <ion-card-header>DESCRIPCIÓN DEL CAMBIO PROPUESTO</ion-card-header>
-        <ion-textarea placeholder="Escribe..."></ion-textarea>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
+          <ion-card-title>Resultado de la evaluación</ion-card-title>
+          <ion-item>
+            <ion-textarea placeholder="Aceptada o Rechazada" rows="4"></ion-textarea>
+          </ion-item>
+          <br>
+          <ion-card-title>Motivo de la aceptación</ion-card-title>
+          <ion-item>
+            <ion-textarea placeholder="Escribe..." rows="4"></ion-textarea>
+          </ion-item>
+          <br>
+        </ion-col>
         <br>
-        <ion-item>
-          <ion-label>RESULTADO DE LA EVALUACIÓN</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Aceptada</ion-select-option>
-            <ion-select-option value="">Rechazada</ion-select-option>
-          </ion-select>
-        </ion-item>
-        <br><br>
-        <ion-item>
-          <br><br><br>
-          <ion-textarea placeholder="Escribe...">MOTIVO DE LA ACEPTACIÓN O RECHAZO</ion-textarea>
-        </ion-item>
-        <br><br><br>
-        <ion-textarea placeholder="Escribe...">DESCRIPCIÓN DEL CAMBIO</ion-textarea>
-        <br><br><br>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title class="margentitulo">ESPECIFICACIONES DEL PROYECTO</ion-card-title>
-        <br>
-        
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE ANÁLISIS DE RIESGO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE ESTRUCTURA</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE LA TECNOLOGÍA DEL PROCESO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE PERMISOS O LICENCIAS</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>ACTUALIZACIÓN DE NORMATIVIDAD</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>CAPACITACIÓN Y ENTRETENIMIENTO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <ion-title>Actividad</ion-title>
-        </ion-toolbar>
-        <br>
-        <ion-card-title>COMUNICACIÓN DEL CAMBIO</ion-card-title>
-        <br>
-        <ion-label>SI/NO</ion-label>
-        <ion-textarea placeholder="Escribe Si o No"></ion-textarea>
-        <br>
-        <ion-label>RESPONSABLE DE LA ATENCIÓN</ion-label>
-        <ion-textarea placeholder="Responsable..."></ion-textarea>
-        <br>
-        <ion-item>
-          <h4>Fecha</h4>
-          <ion-datetime displayFormat="DD MM YYYY" placeholder="Selecciona"></ion-datetime>
-        </ion-item>
-        <br>
-        <ion-item>
-          <ion-label>Atendido</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="">Si</ion-select-option>
-            <ion-select-option value="">No</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-toolbar color="primary">
-          <h2>Notas</h2>
-        </ion-toolbar>
-        <br>
-        <ion-item>
-          <ion-textarea placeholder="Escribe..."></ion-textarea>
-        </ion-item>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+        <ion-col size="12" sizeMd="6" sizeLg="6">
+          <ion-card-title>Descripción del cambio</ion-card-title>
+          <ion-item>
+            <ion-textarea placeholder="Escribe..." rows="4"></ion-textarea>
+          </ion-item>
+          <br>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="carta">
+    <ion-row>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Especificaciones del proyecto</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Actualización de análisis de riesgo</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Actualización de estructura</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Actualización de la tecnología del proceso</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Actualización de permiso o licencias</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Actualización de normatividad</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Capacitación y entrenamiento</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="3" sizeLg="3">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-subtitle>Actividad</ion-card-subtitle>
+            <ion-card-title>Comunicación del cambio</ion-card-title>
+            <hr class="linea1">
+            <br>
+            <h2>Responsable de la atención</h2>
+            <ion-item>
+              <ion-textarea placeholder="Escribe..."></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fecha de cumplimiento</ion-label>
+              <ion-datetime displayformat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+            <ion-radio-group value="grape">
+
+              <ion-list-header>
+                <ion-label>Atendido</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" color="success"></ion-radio>
+              </ion-item>
+    
+            </ion-radio-group>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="carta">
+    <ion-card-content>
+      <ion-card-title>Notas</ion-card-title>
+      <ion-item>
+        <ion-textarea placeholder="Escribe..." rows="6"></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

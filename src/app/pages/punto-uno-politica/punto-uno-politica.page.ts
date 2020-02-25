@@ -3,6 +3,7 @@ import { AlertController, IonSlides, ActionSheetController } from "@ionic/angula
 import { async } from "@angular/core/testing";
 import EventClicking from "@fullcalendar/core/interactions/EventClicking";
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ElementoUnoService } from 'src/app/services/elementouno.service';
 
 @Component({
   selector: 'app-punto-uno-politica',
@@ -13,24 +14,39 @@ export class PuntoUnoPoliticaPage implements OnInit {
   @ViewChild("texto") texto;
   @ViewChild("texto2") texto2;
   @ViewChild("texto3") texto3;
+
+  politica: string = '';
+
   constructor(public alertController: AlertController,
-    private actionSheetCtrl:ActionSheetController,
-    private pdfMakerService: PdfMakerService) { }
+              private actionSheetCtrl:ActionSheetController,
+              private pdfMakerService: PdfMakerService,
+              private puntoUnoService: ElementoUnoService) { }
 
   ngOnInit() {
+  }
+
+  createPolitica(texto) {
+    this.puntoUnoService.createPolitica(texto).subscribe((data:any) => {
+      console.log(data);
+      this.politica = data.politica;
+      console.log(this.politica);
+    })
   }
 
   btn1() {
     var P1 = this.texto.el.innerText;
     this.condicion(P1);
+    this.createPolitica(P1)
   }
   btn2() {
     var P2 = this.texto2.el.innerText;
     this.condicion(P2);
+    this.createPolitica(P2);
   }
   btn3() {
     var P3 = this.texto3.el.innerText;
     this.condicion(P3);
+    this.createPolitica(P3);
   }
   
   condicion(res) {
