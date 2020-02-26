@@ -8,77 +8,120 @@
   </ion-header>
   
   <ion-content>
+  <ion-card-header>
+      <ion-card-subtitle class="ion-text-center">
+            Debes de establecer 3 objetivos, metas e indicadores consistentes con la politica del SASISOPA considerando los requisitos legales aplicables y los resultados de la evaluación de los
+            aspectos ambientales y análisis de Riesgo.
+      </ion-card-subtitle>
+  </ion-card-header>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-    <ion-grid fixed>
-        <ion-row>
-            <ion-col size="12">
-                <ion-card >
-                        <ion-card-content>
-                            <ion-label>Objetivo</ion-label>
-                            <ion-textarea placeholder="¿Cual es su objetivo?" name="objetivo" [(ngModel)]="datos.objetivo"></ion-textarea>
-                            <ion-label>Proceso</ion-label>
-                            <ion-input type="text" placeholder="Describe el proceso" name="proceso" [(ngModel)]="datos.proceso"></ion-input>
-                            <ion-label>Responsable/Respresentante tecnico:</ion-label>
-                            <ion-input type="text" placeholder="Juan Emeregildo Peréz" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
-                            <ion-label>Periodo</ion-label>
-                            <ion-input type="text" placeholder="Ingresa periodo" name="periodo" [(ngModel)]="datos.periodo"></ion-input>
-                            <ion-item-divider color="light">
-                                <ion-label >Meta 1</ion-label>
-                            </ion-item-divider>
-                            <ion-label>Meta #1</ion-label>
-                            <ion-textarea placeholder="¿Cual es tu meta?" name="meta" [(ngModel)]="datos.meta1"></ion-textarea>
-                            <ion-label>Actividad a realizar</ion-label>
-                            <ion-textarea placeholder="Describe la actividad" name="actividad1" [(ngModel)]="datos.actividad1"></ion-textarea>
-                            <ion-label>Indicador</ion-label>
-                            <ion-textarea placeholder="¿Cual es tu indicador?" name="indicador1" [(ngModel)]="datos.indicador1"></ion-textarea>
-                            <ion-label>Soporte</ion-label>
-                            <ion-textarea placeholder="Describe el soporte" name="soporte1" [(ngModel)]="datos.soporte1"></ion-textarea>
-                            <ion-label>Frecuencia de evaluacion</ion-label>
-                            <ion-textarea placeholder="Ingresa la frecuencia" name="frecuencia1" [(ngModel)]="datos.frecuencia1"></ion-textarea>
-                            <ion-label>Criterio de evaluacion</ion-label>
-                            <ion-textarea placeholder="¿Cual es el criterio?" name="criterio1" [(ngModel)]="datos.criterio1"></ion-textarea>
-                            <ion-item-divider color="light">
-                                <ion-label>Meta 2</ion-label>
-                            </ion-item-divider>
-                            <ion-label>Meta #2</ion-label>
-                            <ion-textarea placeholder="¿Cual es tu meta?" name="meta2" [(ngModel)]="datos.meta2"></ion-textarea>
-                            <ion-label>Actividad a realizar</ion-label>
-                            <ion-textarea placeholder="Describe la actividad" name="actividad2" [(ngModel)]="datos.actividad2"></ion-textarea>
-                            <ion-label>Indicador</ion-label>
-                            <ion-textarea placeholder="¿Cual es tu indicador?" name="indicador2" [(ngModel)]="datos.indicador2"></ion-textarea>
-                            <ion-label>Soporte</ion-label>
-                            <ion-textarea placeholder="Describe el soporte" name="soporte2" [(ngModel)]="datos.soporte2"></ion-textarea>
-                            <ion-label>Frecuencia de evaluacion</ion-label>
-                            <ion-textarea placeholder="Ingresa la frecuencia" name="frecuencia2" [(ngModel)]="datos.frecuencia2"></ion-textarea>
-                            <ion-label>Criterio de evaluacion</ion-label>
-                            <ion-textarea placeholder="¿Cual es el criterio?" name="criterio2" [(ngModel)]="datos.criterio2"></ion-textarea>
-                            <ion-item-divider color="light">
-                                <ion-label>Meta 3</ion-label>
-                            </ion-item-divider>
-                            <ion-label>Meta #3</ion-label>
-                            <ion-textarea placeholder="¿Cual es tu meta?" name="meta3" [(ngModel)]="datos.meta3"></ion-textarea>
-                            <ion-label>Actividad a realizar</ion-label>
-                            <ion-textarea placeholder="Describe la actividad" name="actividad3" [(ngModel)]="datos.actividad3"></ion-textarea>
-                            <ion-label>Indicador</ion-label>
-                            <ion-textarea placeholder="¿Cual es tu indicador?" name="indicador3" [(ngModel)]="datos.indicador3"></ion-textarea>
-                            <ion-label>Soporte</ion-label>
-                            <ion-textarea placeholder="Describe el soporte" name="soporte3" [(ngModel)]="datos.soporte3"></ion-textarea>
-                            <ion-label>Frecuencia de evaluacion</ion-label>
-                            <ion-textarea placeholder="Ingresa la frecuencia" name="frecuencia3" [(ngModel)]="datos.frecuencia3"></ion-textarea>
-                            <ion-label>Criterio de evaluacion</ion-label>
-                            <ion-textarea placeholder="¿Cual es el criterio?" name="criterio3" [(ngModel)]="datos.criterio3"></ion-textarea>
-    
-                            <ion-button type="submit">
-                                Guardar y enviar
-                            </ion-button>
-                            <ion-button (click)="pdf()">
-                                Imprimir
-                            </ion-button>
-                        </ion-card-content>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+      <ion-grid fixed>
+          <ion-row>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/reducción en generacion de residuos-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Reducción en la generación de residuos peligrosos.</ion-label>
+                              <ion-checkbox slot="start" name = "C1" [(ngModel)]="datos.C1"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/reduccion de consumo de agua-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Reducción en el consumo de agua</ion-label>
+                              <ion-checkbox slot="start" name = "C2" [(ngModel)]="datos.C2"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+      <ion-grid fixed>
+          <ion-row>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/reduccion de energia electrica-01-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Reducción en el consumo de energía eléctrica</ion-label>
+                              <ion-checkbox slot="start" name = "C3" [(ngModel)]="datos.C3"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/cumplimiento programa de mantenimiento-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Cumplimiento al programa de mantenimiento </ion-label>
+                              <ion-checkbox slot="start" name = "C4" [(ngModel)]="datos.C4"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+      <ion-grid fixed>
+          <ion-row>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/mejora actividades simulacros-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Mejorar todas las actividades de simulacros</ion-label>
+                              <ion-checkbox slot="start" name = "C5" [(ngModel)]="datos.C5"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/incrementar capacitaciones-01 (1).png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Incrementar las capacitaciones a los trabajadores</ion-label>
+                              <ion-checkbox slot="start" name = "C6" [(ngModel)]="datos.C6"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+      <ion-grid fixed>
+          <ion-row>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/mejora de servicio al cliente-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text">Mejorar el servicio de atencion al cliente</ion-label>
+                              <ion-checkbox slot="start" name = "C7" [(ngModel)]="datos.C7"> </ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+              <ion-col size="12" sizeMd="6" siseLg="6">
+                  <ion-card>
+                      <ion-card-content>
+                        <img src="../../../assets/Imagenes/Elemento 4/incrementar venta 10-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;">
+                          <ion-item>
+                              <ion-label class="text" >Incrementar la venta un 10% anualmente</ion-label>
+                              <ion-checkbox slot="start" name = "C8" [(ngModel)]="datos.C8"></ion-checkbox>
+                          </ion-item>
+                      </ion-card-content>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+      <ion-button (click)="enviarForm(formulario)" style="margin: auto; display: block;">
+          Guardar y enviar
+      </ion-button>
   </form>
   </ion-content>
   
