@@ -13,7 +13,7 @@ export class PoliticaService {
 
   getPolitica(){
     const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
+    const headers = new HttpHeaders({  
       'Authorization': token
     });
     return this.http.get('http://localhost:300/politica/',{headers});
