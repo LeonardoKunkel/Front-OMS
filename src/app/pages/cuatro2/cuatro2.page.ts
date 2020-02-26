@@ -9,29 +9,14 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class Cuatro2Page implements OnInit {
   datos:any={
-    objetivo:'',
-    proceso:'',
-    nombre:'',
-    periodo:'',
-    meta1:'',
-    actividad1:'',
-    indicador1:'',
-    soporte1:'',
-    frecuencia1:'',
-    criterio1:'',
-    meta2:'',
-    actividad2:'',
-    indicador2:'',
-    soporte2:'',
-    frecuencia2:'',
-    criterio2:'',
-    meta3:'',
-    actividad3:'',
-    indicador3:'',
-    soporte3:'',
-    frecuencia3:'',
-    criterio3:'',
-
+ C1:false,
+ C2:false,
+ C3:false,
+ C4:false,
+ C5:false,
+ C6:false,
+ C7:false,
+ C8:false,
   }
   constructor(private pdfMaker: PdfMakerService) { }
 
@@ -40,6 +25,21 @@ export class Cuatro2Page implements OnInit {
   }
 
   enviarForm(formulario){
+    if(this.datos.C1===true && this.datos.C2===true && this.datos.C3===true ){
+      console.log('Servicio exitoso');
+    }else{
+      alert('Debes seleccionar 3 ')
+    }
+    if(this.datos.C2===true && this.datos.C3===true && this.datos.C4===true ){
+      console.log('Servicio exitoso');
+    }else{
+      alert('Debes seleccionar 3 ')
+    }
+    if(this.datos.C3===true && this.datos.C4===true && this.datos.C5===true ){
+      console.log('Servicio exitoso');
+    }else{
+      alert('Debes seleccionar 3 ')
+    }
     console.log(this.datos);
     
   }
