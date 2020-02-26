@@ -1,22 +1,11 @@
 
 
-.politica1{
-    font-size: 40px;
-}
-.lineaS{
-    background-color:rgb(68, 68, 177);
-    height: 3px;
+
+.lineaN{
+    background-color: #D79043;
+    height: 5px;
+    
 }
 .carta{
     background-image: url('../../../assets/FondosEstilos/Dots2_100.png');
-}
-.lineaN{
-    background-color:#D79043 ;
-    height: 5px;
-}
-@media(max-width:1000px){
-    .politica1{
-        font-size: 20px;
-
-    }
 }
