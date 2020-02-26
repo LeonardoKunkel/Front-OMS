@@ -4,6 +4,7 @@ import { async } from "@angular/core/testing";
 import EventClicking from "@fullcalendar/core/interactions/EventClicking";
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ElementoUnoService } from 'src/app/services/elementouno.service';
+import { PoliticaService } from 'src/app/services/politica.service';
 
 @Component({
   selector: 'app-punto-uno-politica',
@@ -20,9 +21,15 @@ export class PuntoUnoPoliticaPage implements OnInit {
   constructor(public alertController: AlertController,
               private actionSheetCtrl:ActionSheetController,
               private pdfMakerService: PdfMakerService,
-              private puntoUnoService: ElementoUnoService) { }
+              private puntoUnoService: ElementoUnoService,
+              private politicaService: PoliticaService) { }
 
   ngOnInit() {
+  }
+
+  createPolitica2(){
+    let politic = 'Esta es una prueba de politica'
+    this.politicaService.createPolitica(politic).subscribe(data => console.log(data));
   }
 
   createPolitica(texto) {
@@ -293,7 +300,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
           {text: new Date().toTimeString()},
           {
               text:`POLITICA`,bold:true,alignment: 'center',Style:'header',fontSize:25
-          },{
+            },{
              text:'\n\n\nEn la Estación Servicio “Servicio El Carril S.A. de C.V.” conscientes con la naturaleza de los peligros y aspectos ambientales asociados a las actividades propias de la instalación, trabajadores y contratistas estamos comprometidos en mejorar nuestro desempeño en materia de Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente, en todos los niveles de la organización, juntos orientamos nuestros esfuerzos para la evaluación, reducción y control de los riesgos e impactos ambientales, el cumplimiento normativo, mediante un proceso de mejora continua.\n\n' 
              ,fontSize:17,alignment:'justify'
           },

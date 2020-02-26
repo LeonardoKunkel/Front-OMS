@@ -11,17 +11,20 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class PuntoCincoPage implements OnInit {
 
+  fechaActual = new Date();
+
   cp: number;
   respuestaCP: any= {};
   datos: any={
-    fecha:'',
-    nombreEncargado:'',
-    correoElectronico:'',
+    nombre:'',
+    nombreEstacion:'',
+    correo:'',
     telefono:'',
-    razonSocial:'',
-    calleNumero:'',
     estado:'',
-    colonia:''
+    ciudad:'',
+    colonia:'',
+    cp:'',
+    calle:'' 
   }
 
   constructor(
@@ -32,22 +35,6 @@ export class PuntoCincoPage implements OnInit {
 
   ngOnInit() {
   }
-
-  // cambio(event) {
-  //    const cambio = event.target.value;
-  //    this.cp = cambio;
-  //    this.peticiones(cambio);
-    
-    
-    
-  // }
-
-  //  peticiones(cp){
-  //    this.cpService.getCp(cp).subscribe((data:any) =>{
-  //      console.log(data);
-  //      this.respuestaCP = data;
-  //    })
-  //  }
 
   enviarForm(formulario) {
     console.log(this.datos);
@@ -62,6 +49,12 @@ export class PuntoCincoPage implements OnInit {
 
   pdf(){
     var dd = {
+      background: function(currentPage, pageSize) {
+      return {
+       // image: 'data:image/jpg;base64,'+getBase64Image('{{ URL::asset('../../') }}'),
+        //image: '../../../assets/imagenes/caution.svg', width: 400,height: 500, absolutePosition: {x: 60, y: 100},opacity: 0.5
+      }
+    },
       header: function(){
         return {
               table: {widths: [320, 20, 200],
@@ -95,17 +88,17 @@ export class PuntoCincoPage implements OnInit {
               
           },
           {
-              text:`Ciudad, Estado. a ${this.datos.fecha}`,alignment:'right'
+              text:`${this.datos.ciudad} ${this.datos.estado} ${this.fechaActual}`,alignment:'right'
               
           },
           {
-              text:`\n ${this.datos.nombreEncargado}`,fontSize:10
+              text:`\n ${this.datos.nombre}`,fontSize:10
           },{
               text:'Encargado',fontSize:10
           },{
               text:'Presente. -',fontSize:10
           },{
-              text: '\nEn seguimiento al proceso de la Implantación del Sistema de Administración de la Seguridad Industrial,Seguridad Operativa y Protección al medio Ambiente, en la Gasolinera El Carril S.A. de C.V., ubicada en Gomez Farias #387, C.P. 45680, El Salto, Jalisco, el que suscribe Roberto Muñoz Torres, Representante Legal me permito hacer de su conocimiento que ha sido designado Representante Técnico, para fungir como Representante de la Estación de Servicio ante la ASEA, y para cumplir con lo siguiente:\n\n', style: 'header',alignment: 'justify',fontSize:10
+              text: `\nEn seguimiento al proceso de la Implantación del Sistema de Administración de la Seguridad Industrial,Seguridad Operativa y Protección al medio Ambiente, en la ${this.datos.nombreEstacion}, ubicada en ${this.datos.calle}, C.P. ${this.datos.cp},${this.datos.ciudad}, ${this.datos.estado}, el que suscribe Roberto Muñoz Torres, Representante Legal me permito hacer de su conocimiento que ha sido designado Representante Técnico, para fungir como Representante de la Estación de Servicio ante la ASEA, y para cumplir con lo siguiente:\n\n`, style: 'header',alignment: 'justify',fontSize:10
           },
       {
         type: 'lower-alpha',
@@ -117,7 +110,7 @@ export class PuntoCincoPage implements OnInit {
             'Informar a la Agencia de cualquier situación que pudiera poner en riesgo la seguridad Industrial, seguridad Operativa y Protección al Ambiente.'
         ],alignment:'justify',fontSize:10
       },{
-          text:`\nPor lo anterior se le ha asignado el siguiente buzón de correo electrónico estación de ${this.datos.correo} el número de teléfono: ${this.datos.telefono}, y el domicilio ubicado en ${this.datos.calleNumero} , ${this.datos.cp} ${this.datos.estado} ${this.datos.colonia} , para oír y recibir notificaciones.`,alignment:'justify',fontSize:10
+          text:`\nPor lo anterior se le ha asignado el siguiente buzón de correo electrónico estación de ${this.datos.correo} el número de teléfono: ${this.datos.telefono}, y el domicilio ubicado en ${this.datos.calle} , ${this.datos.cp} ${this.datos.estado} ${this.datos.colonia} , para oír y recibir notificaciones.`,alignment:'justify',fontSize:10
       },{
           text:'Sin más por el momento, no dudando que realizará las actividades asignadas de acuerdo a su acostumbrado desempeño quedo de usted.',fontSize:10
       },{
