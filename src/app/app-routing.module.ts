@@ -300,11 +300,6 @@ const routes: Routes = [
     //canLoad: [AuthGuard]
   },
   { 
-    path: 'punto-dos-evidencia', 
-    loadChildren: './pages/punto-dos-evidencia/punto-dos-evidencia.module#PuntoDosEvidenciaPageModule' , 
-    //canLoad: [AuthGuard]
-  },
-  { 
     path: 'punto-tres-procedimiento', 
     loadChildren: './pages/punto-tres-procedimiento/punto-tres-procedimiento.module#PuntoTresProcedimientoPageModule', 
     //canLoad: [AuthGuard]
@@ -678,12 +673,16 @@ const routes: Routes = [
   { path: 'punto-catorce-evidencia', loadChildren: './pages/punto-catorce-evidencia/punto-catorce-evidencia.module#PuntoCatorceEvidenciaPageModule' },
   { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
   { path: 'punto-dos-procedimiento', loadChildren: './pages/punto-dos-procedimiento/punto-dos-procedimiento.module#PuntoDosProcedimientoPageModule' },
-  { path: 'punto-dos-aspectos', loadChildren: './pages/punto-dos-aspectos/punto-dos-aspectos.module#PuntoDosAspectosPageModule' },  { path: 'punto-dos-asam-uno', loadChildren: './pages/punto-dos-asam-uno/punto-dos-asam-uno.module#PuntoDosAsamUnoPageModule' },
+  { path: 'punto-dos-aspectos', loadChildren: './pages/punto-dos-aspectos/punto-dos-aspectos.module#PuntoDosAspectosPageModule' },
+  { path: 'punto-dos-asam-uno', loadChildren: './pages/punto-dos-asam-uno/punto-dos-asam-uno.module#PuntoDosAsamUnoPageModule' },
   { path: 'punto-dos-asam-dos', loadChildren: './pages/punto-dos-asam-dos/punto-dos-asam-dos.module#PuntoDosAsamDosPageModule' },
   { path: 'punto-dos-asam-tres', loadChildren: './pages/punto-dos-asam-tres/punto-dos-asam-tres.module#PuntoDosAsamTresPageModule' },
   { path: 'punto-dos-asam-cuatro', loadChildren: './pages/punto-dos-asam-cuatro/punto-dos-asam-cuatro.module#PuntoDosAsamCuatroPageModule' },
   { path: 'punto-dos-asam-cinco', loadChildren: './pages/punto-dos-asam-cinco/punto-dos-asam-cinco.module#PuntoDosAsamCincoPageModule' },
   { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
+  { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
+  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },
+
 
   
 
