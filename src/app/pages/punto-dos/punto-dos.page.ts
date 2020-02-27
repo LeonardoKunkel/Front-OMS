@@ -45,7 +45,15 @@ export class PuntoDosPage implements OnInit {
   }
 
   goDosAspectos() {
-    this .navCtrl.navigateForward('/punto-dos-aspectos');
+    this.navCtrl.navigateForward('/punto-dos-aspectos');
+  }
+
+  goDosListado() {
+    this.navCtrl.navigateForward('/punto-dos-listado');
+  }
+
+  goDosResultados() {
+    this.navCtrl.navigateForward('/punto-dos-resultados');
   }
 
 }
