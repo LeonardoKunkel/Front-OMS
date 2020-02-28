@@ -15,6 +15,14 @@
   </ion-fab-button>
 </ion-fab>
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-card-header>
     <ion-card-title class="ion-text-center">Debes de optar por una de las 3 politicas, de este modo se imprimira y deberas exhibirla con todos los empleados de la estacion de servicio.</ion-card-title>
   </ion-card-header>
@@ -125,6 +133,12 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
+    <ion-button (click)="createPolitica2()" expand="block" fill="clear" shape="round">
+      agregar politica
+    </ion-button>
+    <ion-button (click)="consultarPolitica()" expand="block" fill="clear" shape="round">
+      Consultar politica
+    </ion-button>
   </form>
 </ion-content>
 
