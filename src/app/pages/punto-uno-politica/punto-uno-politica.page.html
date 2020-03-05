@@ -3,28 +3,20 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-uno"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">POLÍTICA</ion-title>
+    <ion-title class="ion-text-center">Politicas</ion-title>
   </ion-toolbar>
 </ion-header>
 <div>
-  <hr class="lineaN" />
+  <hr class="lineaN"> 
 </div>
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button [disabled]="disabled" (click)="print()">
+    <ion-icon name="print"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="arrow-dropdown"
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles"
-      refreshingText="Refreshing..."
-    >
-    </ion-refresher-content>
-  </ion-refresher>
   <ion-card-header>
-    <ion-card-title class="ion-text-center"
-      >Debes de optar por una de las 3 politicas, de este modo se imprimira y
-      deberas exhibirla con todos los empleados de la estacion de
-      servicio.</ion-card-title
-    >
+    <ion-card-title class="ion-text-center">Debes de optar por una de las 3 politicas, de este modo se imprimira y deberas exhibirla con todos los empleados de la estacion de servicio.</ion-card-title>
   </ion-card-header>
   <form action="ngForm" (ngSubmit)="enviarForm()">
     <ion-slides mode="ios" pager="ios" scrollbar="ios">
@@ -62,7 +54,7 @@
               #texto value="politica1" 
               expand="block" 
               color="secondary" 
-              (click)="presentAlertConfirm1()" 
+              (click)="btn1()" 
               value="boton1">
                 Escoger politica 1&nbsp;&nbsp;&nbsp;
                 <ion-icon name="checkmark-circle"></ion-icon>
@@ -98,12 +90,7 @@
               </ion-row>
             </ion-grid>
             <br />
-            <ion-button
-              #texto2
-              (click)="presentAlertConfirm2()"
-              expand="block"
-              color="secondary"
-            >
+            <ion-button #texto2 (click)="btn2()"  expand="block" color="secondary">
               Escoger esta politica 2&nbsp;&nbsp;&nbsp;
               <ion-icon name="checkmark-circle"></ion-icon>
             </ion-button>
@@ -135,37 +122,28 @@
               </ion-row>
             </ion-grid>
             <br />
-            <ion-button
-              #texto3
-              (click)="presentAlertConfirm3()"
-              expand="block"
-              color="secondary"
-            >
-              Escoger politica 3&nbsp;&nbsp;&nbsp;
+            <ion-button #texto3 (click)="btn3()"  expand="block" color="secondary">
+              Escoger  politica 3&nbsp;&nbsp;&nbsp;
               <ion-icon name="checkmark-circle"></ion-icon>
             </ion-button>
           </ion-card-content>
         </ion-card>
       </ion-slide>
     </ion-slides>
-    <ion-item *ngFor="let contacto of lista">
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size="12" sizeLg="4">
-            <ion-card class="carta">
-              <ion-card-header>
-                <ion-card-title class="ion-text-center"
-                  >Politica Escogida</ion-card-title
-                >
-              </ion-card-header>
-              <ion-card-content>
-                <p>{{lista}}</p>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeLg="8"> </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
   </form>
 </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

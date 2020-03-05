@@ -1,27 +1,29 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { RootObject } from '../interfaces/PoliticaInterface';
+// import { Injectable } from '@angular/core';
+// import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class PoliticaService {
+// const URL = environment.url;
 
-  constructor( private httpClient: HttpClient) { }
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class PoliticaService {
 
-  getPolitica(){
-    const tokent = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      'Authorization': tokent
-    });
-    return this.httpClient.get<RootObject>('http://localhost:3000/politica/',{headers});
-  }
+//   constructor( private http:HttpClient ) { }
 
-  createPolitica(politica){
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      'Authorization': token
-    });
-    return this.httpClient.post('http://localhost:3000/politica/create', {politica}, {headers});
-  }
-}
+//   getPolitica(){
+//     const token = localStorage.getItem('token');
+//     const headers = new HttpHeaders({  
+//       'Authorization': token
+//     });
+//     return this.http.get('http://localhost:300/politica/',{headers});
+//   }
+
+//   createPolitica(politica){
+//     const token = localStorage.getItem('token');
+//     const headers = new HttpHeaders({
+//       'Authorization': token
+//     })
+//     return this.http.post('http://localhost:3000/politica/create',politica,{headers});
+//   }
+// }
