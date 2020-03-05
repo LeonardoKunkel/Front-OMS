@@ -1,15 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import {
-  AlertController,
-  IonSlides,
-  ActionSheetController
-} from "@ionic/angular";
-import { async } from "@angular/core/testing";
-import EventClicking from "@fullcalendar/core/interactions/EventClicking";
+import { AlertController,IonSlides,ActionSheetController} from "@ionic/angular";
 import { PdfMakerService } from "src/app/services/pdf-maker.service";
 import { ElementoUnoService } from "src/app/services/elementouno.service";
 import { PoliticaService } from "src/app/services/politica.service";
-import { FindPolitica } from "src/app/interfaces/PoliticaInterface";
 
 @Component({
   selector: "app-punto-uno-politica",
@@ -36,39 +29,12 @@ export class PuntoUnoPoliticaPage implements OnInit {
 
   ngOnInit() {}
 
-  // ES para refrescar la pagina
   doRefresh(event) {
     this.consultarPolitica();
-
     setTimeout(() => {
       console.log("Async operation has ended");
       event.target.complete();
     }, 1000);
-  }
-  // Consultar las 3 politicas existentes
-
-  consultarPolitica() {
-    //this.politicaService.getPolitica().subscribe(data => console.log(data));
-    this.politicaService.getPolitica().subscribe(data => {
-      // console.log(data.findPolitica[0].politica);
-      //this.posts.push(...data.findPolitica );
-      let contenido = data.findPolitica[0].politica;
-      this.lista = [contenido];
-    });
-  }
-
-  consultarPolitica2() {
-    this.politicaService.getPolitica().subscribe(data => {
-      let contenido = data.findPolitica[1].politica;
-      this.lista = [contenido];
-    });
-  }
-
-  consultarPolitica3() {
-    this.politicaService.getPolitica().subscribe(data => {
-      let contenido = data.findPolitica[2].politica;
-      this.lista = [contenido];
-    });
   }
 
   createPolitica2() {
@@ -161,6 +127,29 @@ export class PuntoUnoPoliticaPage implements OnInit {
 
     await alert.present();
   }
+ 
+
+  consultarPolitica() {
+    //this.politicaService.getPolitica().subscribe(data => console.log(data));
+    this.politicaService.getPolitica().subscribe(data => {
+      let contenido = data.findPolitica[0].politica;
+      this.lista = [contenido];
+    });
+  }
+
+  consultarPolitica2() {
+    this.politicaService.getPolitica().subscribe(data => {
+      let contenido = data.findPolitica[1].politica;
+      this.lista = [contenido];
+    });
+  }
+
+  consultarPolitica3() {
+    this.politicaService.getPolitica().subscribe(data => {
+      let contenido = data.findPolitica[2].politica;
+      this.lista = [contenido];
+    });
+  }
 
   print1() {
     console.log("Politica 1");
@@ -206,7 +195,6 @@ export class PuntoUnoPoliticaPage implements OnInit {
           fontSize: 17,
           alignment: "justify"
         },
-        //lineas para la firma
         {
           style: "tableExample",
           table: {
@@ -272,7 +260,6 @@ export class PuntoUnoPoliticaPage implements OnInit {
           fontSize: 17,
           alignment: "justify"
         },
-        //lineas para la firma
         {
           style: "tableExample",
           table: {
@@ -337,7 +324,6 @@ export class PuntoUnoPoliticaPage implements OnInit {
           fontSize: 17,
           alignment: "justify"
         },
-        //lineas para la firma
         {
           style: "tableExample",
           table: {
