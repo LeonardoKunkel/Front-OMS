@@ -48,7 +48,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
     const alert = await this.alertController.create({
       header: "Indicaciones!",
       message:
-        "Una vez seleccionada esta politica deberas difundirla por cualquier medio con los empleados de la estacion de servicio!!!",
+        "Una vez seleccionada esta politica deberas difundirla por cualquier medio especificado en tu sistema con los empleados de la estacion de servicio!!!",
       buttons: [
         {
           text: "Cancelar",
@@ -76,7 +76,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
     const alert = await this.alertController.create({
       header: "Indicaciones!",
       message:
-        "Una vez seleccionada esta politica deberas difundirla por cualquier medio con los empleados de la estacion de servicio <strong>text</strong>!!!",
+        "Una vez seleccionada esta politica deberas difundirla por cualquier medio especificado en tu sistema con los empleados de la estacion de servicio <strong>text</strong>!!!",
       buttons: [
         {
           text: "Cancelar",
@@ -104,7 +104,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
     const alert = await this.alertController.create({
       header: "Indicaciones!",
       message:
-        "Una vez seleccionada esta politica deberas difundirla por cualquier medio con los empleados de la estacion de servicio <strong>text</strong>!!!",
+        "Una vez seleccionada esta politica deberas difundirla por cualquier medio especificado en tu sistema con los empleados de la estacion de servicio <strong>text</strong>!!!",
       buttons: [
         {
           text: "Cancelar",
