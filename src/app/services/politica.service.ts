@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { RootObject } from '../interfaces/PoliticaInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PoliticaService {
     const headers = new HttpHeaders({
       'Authorization': tokent
     });
-    return this.httpClient.get('http://localhost:3000/politica/',{headers});
+    return this.httpClient.get<RootObject>('http://localhost:3000/politica/',{headers});
   }
 
   createPolitica(politica){
