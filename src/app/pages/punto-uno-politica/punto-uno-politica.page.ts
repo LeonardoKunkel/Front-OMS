@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { AlertController,IonSlides,ActionSheetController} from "@ionic/angular";
-import { PdfMakerService } from "src/app/services/pdf-maker.service";
 import { ElementoUnoService } from "src/app/services/elementouno.service";
-import { PoliticaService } from "src/app/services/politica.service";
+import { AlertController, IonSlides, ActionSheetController } from "@ionic/angular";
+import { async } from "@angular/core/testing";
+import EventClicking from "@fullcalendar/core/interactions/EventClicking";
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { PoliticaService } from 'src/app/services/Elemento1/politica.service';
+
 
 @Component({
   selector: "app-punto-uno-politica",
@@ -16,6 +19,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
 
   politica: string = "";
   lista: string[] = [];
+
 
   constructor(
     public alertController: AlertController,
@@ -36,6 +40,20 @@ export class PuntoUnoPoliticaPage implements OnInit {
       event.target.complete();
     }, 1000);
   }
+
+  constructor(public alertController: AlertController,
+              private actionSheetCtrl:ActionSheetController,
+              private pdfMakerService: PdfMakerService,
+              private politicaService: PoliticaService) { this.politicaService.getPolitica().subscribe(data => console.log(data))}
+
+  ngOnInit() {
+  }
+
+  createPolitica() {
+    let politic = 'eduardo'
+    this.politicaService.createPolitica(politic);
+  }
+
 
   createPolitica2() {
     let politic = "Lorem ipsu a dolor estenue verigue datamotosol galiehdfhst";
