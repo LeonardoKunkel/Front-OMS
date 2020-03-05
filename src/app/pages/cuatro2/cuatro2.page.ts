@@ -25,23 +25,74 @@ export class Cuatro2Page implements OnInit {
   }
 
   enviarForm(formulario){
-    if(this.datos.C1===true && this.datos.C2===true && this.datos.C3===true ){
-      console.log('Servicio exitoso');
-    }else{
-      alert('Debes seleccionar 3 ')
+    var check1 = this.datos.C1?'Reducción en la generacion de residuos peligrosos':' ';
+    var check2 = this.datos.c2?'Reducción en el consumo de agua':' ';
+    var check3 = this.datos.C3?'Reducción en el cosumo de energía eléctrica':' ';
+    var check4 = this.datos.C4?'Cumplimiento al programa de mantenimiento': ' ';
+    var check5 = this.datos.C5?'Mejorar todas las actividades de simulacros': ' ';
+    var check6 = this.datos.C6?'Incrementar las capacitaciones a los trabajadores': ' ';
+    var check7 = this.datos.C7?'Mejorar el servicio de atencion al cliente': ' ';
+    var check8 = this.datos.C5?'Incrementar la venta un 10% anualmente': ' ';
+
+    if(this.datos.C1 === true && this.datos.C2 === true){
+      alert('C1,C2')
+    }else if(this.datos.C1 === true && this.datos.C3 === true){
+      alert('C1,3')
+    }else if(this.datos.C1 === true && this.datos.C4 === true){
+      alert('c1,4')
+    }else if(this.datos.C1 === true && this.datos.C4 === true){
+      alert('c1,4')
+    }else if(this.datos.C1 === true && this.datos.C5 === true){
+      alert('c1,5')
+    }else if(this.datos.C1 === true && this.datos.C6 === true){
+      alert('c1,6')
+    }else if(this.datos.C1 === true && this.datos.C7 === true){
+      alert('c1,7')
+    }else if(this.datos.C1 === true && this.datos.C8 === true){
+      alert('c1,8')
+    }else if(this.datos.C2 === true && this.datos.C3 === true){
+      alert('c2,3')
+    }else if(this.datos.C2 === true && this.datos.C4 === true){
+      alert('c2,4')
+    }else if(this.datos.C2 === true && this.datos.C5 === true){
+      alert('c2,5')
+    }else if(this.datos.C2 === true && this.datos.C6 === true){
+      alert('c2,6')
+    }else if(this.datos.C2 === true && this.datos.C7 === true){
+      alert('c2,7')
+    }else if(this.datos.C2 === true && this.datos.C8 === true){
+      alert('c2,8')
+    }else if(this.datos.C4 === true && this.datos.C3 === true){
+      alert('c3,4')
+    }else if(this.datos.C3 === true && this.datos.C5 === true){
+      alert('c3,5')
+    }else if(this.datos.C3 === true && this.datos.C6 === true){
+      alert('C3,6')
+    }else if(this.datos.C3 === true && this.datos.C7 === true){
+      alert('C3,7')
+    }else if(this.datos.C3 === true && this.datos.C8 === true){
+      alert('C3,8')
+    }else if(this.datos.C4 === true && this.datos.C5 === true){
+      alert('C4.5')
+    }else if(this.datos.C4 === true && this.datos.C6 === true){
+      alert('C4.6')
+    }else if(this.datos.C4 === true && this.datos.C7 === true ){
+      alert('C4.7')
+    }else if(this.datos.C4 === true && this.datos.C8 === true ){
+      alert('C4,8')
+    }else if(this.datos.C5 === true && this.datos.C6 === true){
+      alert('C5.6')
+    }else if(this.datos.C5 === true && this.datos.C7 === true){
+      alert('C5.7')
+    }else if(this.datos.C5 === true && this.datos.C8 === true){
+      alert('C5,8')
+    }else if(this.datos.C6 === true && this.datos.C7 === true){
+      alert('C6.7')
+    }else if(this.datos.C6 === true && this.datos.C8 === true){
+      alert('C6,8')
+    }else if(this.datos.C7 === true && this.datos.C8 === true){
+      alert('C7,8')      
     }
-    if(this.datos.C2===true && this.datos.C3===true && this.datos.C4===true ){
-      console.log('Servicio exitoso');
-    }else{
-      alert('Debes seleccionar 3 ')
-    }
-    if(this.datos.C3===true && this.datos.C4===true && this.datos.C5===true ){
-      console.log('Servicio exitoso');
-    }else{
-      alert('Debes seleccionar 3 ')
-    }
-    console.log(this.datos);
-    
   }
 
   pdf(){
