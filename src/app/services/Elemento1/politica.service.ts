@@ -11,18 +11,18 @@ export class PoliticaService {
 
   getPolitica() {
     const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      'Authorization': token
+    const headers = new HttpHeaders ({
+      Authorization: token
     });
-    return this.httpClient.get('http://localhost:3000/politica/',{headers});
+    return this.httpClient.get('http://localhost:3000/politica/', {headers});
   }
 
   createPolitica(politica) {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      'Authorization': token
+      Authorization: token
     });
-    return this.httpClient.post('http://localhost:3000/politica/create', politica, {headers});
+    return this.httpClient.post('http://localhost:3000/politica/create', {politica}, {headers});
   }
 
 }

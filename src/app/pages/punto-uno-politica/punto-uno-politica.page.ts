@@ -20,14 +20,34 @@ export class PuntoUnoPoliticaPage implements OnInit {
   constructor(public alertController: AlertController,
               private actionSheetCtrl:ActionSheetController,
               private pdfMakerService: PdfMakerService,
-              private politicaService: PoliticaService) { this.politicaService.getPolitica().subscribe(data => console.log(data))}
+              private politicaService: PoliticaService) { this.consultarPolitica();}
 
   ngOnInit() {
+  }
+
+  doRefresh(event) {
+    this.consultarPolitica();
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 1000);
+  }
+
+  consultarPolitica() {
+    this.politicaService.getPolitica().subscribe( data => {
+      return console.log(data);
+    })
   }
 
   createPolitica() {
     let politic = 'eduardo'
     this.politicaService.createPolitica(politic);
+  }
+
+  createPolitica2() {
+    let politic = 'eduardo'
+    this.politicaService.createPolitica(politic).subscribe(data => console.log(data))
   }
 
 

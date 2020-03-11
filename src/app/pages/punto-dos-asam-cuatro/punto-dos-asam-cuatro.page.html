@@ -11,170 +11,207 @@
 </div>
 
 <ion-content>
-  <ion-slides>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Residuos sólidos no peligrosos (basura)</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Actividades cotidianas sin riesgo (Instalaciones eléctricas)</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Recursos naturales</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Actividades cotidianas sin riesgo (Sanitario)</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Recursos naturales</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Actividades cotidianas sin riesgo (Consumo de papel)</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Recursos naturales</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-  </ion-slides>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Actividades cotidianas sin riesgo</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Residuos sólidos no peligrosos (basura)</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="20"
+                    name="F30"
+                    [(ngModel)]="datos.F30">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="N30"
+                    [(ngModel)]="datos.N30"></ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="M30"
+                    [(ngModel)]="datos.M30">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: </ion-label>
+                  
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Actividades cotidianas sin riesgo (Instalaciones eléctricas)</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Recursos naturales</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="20"
+                    name="F31"
+                    [(ngModel)]="datos.F31">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="N31"
+                    [(ngModel)]="datos.N31">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="M31"
+                    [(ngModel)]="datos.M31">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: </ion-label>
+                  
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Actividades cotidianas sin riesgo (Sanitario)</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Recursos naturales</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="20"
+                    name="F32"
+                    [(ngModel)]="datos.F32">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="N32"
+                    [(ngModel)]="datos.N32">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="M32"
+                    [(ngModel)]="datos.M32">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: </ion-label>
+                  
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Actividades cotidianas sin riesgo (Consumo de papel)</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Recursos naturales</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="20"
+                    name="F33"
+                    [(ngModel)]="datos.F33">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="N33"
+                    [(ngModel)]="datos.N33">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="4"
+                    name="M33"
+                    [(ngModel)]="datos.M33">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: </ion-label>
+                  
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

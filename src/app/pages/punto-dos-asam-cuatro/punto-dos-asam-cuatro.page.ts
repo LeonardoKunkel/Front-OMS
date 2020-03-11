@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
 @Component({
   selector: 'app-punto-dos-asam-cuatro',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuntoDosAsamCuatroPage implements OnInit {
 
-  constructor() { }
+  datos: any = {
+    F30: '',
+    F31: '',
+    F32: '',
+    F33: '',
+    N30: '',
+    N31: '',
+    N32: '',
+    N33: '',
+    M30: '',
+    M31: '',
+    M32: '',
+    M33: '',
+  };
+
+  constructor(private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
+  }
+  
+  enviarForm(formulario) {
+    console.log(this.datos);
   }
 
 }

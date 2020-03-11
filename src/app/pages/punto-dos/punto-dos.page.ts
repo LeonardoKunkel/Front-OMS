@@ -33,7 +33,7 @@ export class PuntoDosPage implements OnInit {
    }
 
   ngOnInit() {
-    //this.slider.lockSwipes(true);
+    
   }
 
   goDosProcedimiento() {
@@ -53,7 +53,7 @@ export class PuntoDosPage implements OnInit {
   }
 
   goDosResultados() {
-    this.navCtrl.navigateForward('/punto-dos-resultados');
+    this.navCtrl.navigateForward('/punto-dos-resultado');
   }
 
 }

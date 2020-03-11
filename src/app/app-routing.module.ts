@@ -230,58 +230,7 @@ const routes: Routes = [
    },
   { 
     path: 'punto-catorce',
-     loadChildren: './pages/punto-catorce/punto-catorce.module#PuntoCatorcePageModule', 
-     //canLoad: [AuthGuard]
-     },
-  { 
-    path: 'puntocatorcefs29',
-     loadChildren: './pages/puntocatorcefs29/puntocatorcefs29.module#Puntocatorcefs29PageModule', 
-     //canLoad: [AuthGuard] 
-    },
-  { 
-    path: 'puntocatorce30', 
-    loadChildren: './pages/puntocatorce30/puntocatorce30.module#Puntocatorce30PageModule' , 
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'puntocatorce31', 
-    loadChildren: './pages/puntocatorce31/puntocatorce31.module#Puntocatorce31PageModule' , 
-    //canLoad: [AuthGuard]
-  },
-  
-  { 
-    path: 'puntocatorce32', 
-    loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31asea', 
-    loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31comision', 
-    loadChildren: './pages/catorce31comision/catorce31comision.module#Catorce31comisionPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31secretaria', 
-    loadChildren: './pages/catorce31secretaria/catorce31secretaria.module#Catorce31secretariaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31semarnat', 
-    loadChildren: './pages/catorce31semarnat/catorce31semarnat.module#Catorce31semarnatPageModule', 
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'catorce31legestatal', 
-    loadChildren: './pages/catorce31legestatal/catorce31legestatal.module#Catorce31legestatalPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31leglocal', 
-    loadChildren: './pages/catorce31leglocal/catorce31leglocal.module#Catorce31leglocalPageModule' , 
+    loadChildren: './pages/punto-catorce/punto-catorce.module#PuntoCatorcePageModule', 
     //canLoad: [AuthGuard]
   },
   { 
@@ -496,51 +445,6 @@ const routes: Routes = [
     //canLoad: [AuthGuard]
    },
   { 
-    path: 'fo01-contboq', 
-    loadChildren: './pages/fo01-contboq/fo01-contboq.module#Fo01ContboqPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-contremoto', 
-    loadChildren: './pages/fo01-contremoto/fo01-contremoto.module#Fo01ContremotoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-espacio', 
-    loadChildren: './pages/fo01-espacio/fo01-espacio.module#Fo01EspacioPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-inventarios', 
-    loadChildren: './pages/fo01-inventarios/fo01-inventarios.module#Fo01InventariosPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-motobombas', 
-    loadChildren: './pages/fo01-motobombas/fo01-motobombas.module#Fo01MotobombasPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-nivel', 
-    loadChildren: './pages/fo01-nivel/fo01-nivel.module#Fo01NivelPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-pozos', 
-    loadChildren: './pages/fo01-pozos/fo01-pozos.module#Fo01PozosPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-purga', 
-    loadChildren: './pages/fo01-purga/fo01-purga.module#Fo01PurgaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-vapores', 
-    loadChildren: './pages/fo01-vapores/fo01-vapores.module#Fo01VaporesPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
     path: 'nueve-evidencia', 
     loadChildren: './pages/nueve-evidencia/nueve-evidencia.module#NueveEvidenciaPageModule', 
     //canLoad: [AuthGuard]
@@ -554,12 +458,7 @@ const routes: Routes = [
     path: 'nueve-procedimiento', 
     loadChildren: './pages/nueve-procedimiento/nueve-procedimiento.module#NueveProcedimientoPageModule', 
     //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'popover1', 
-    loadChildren: './pages/popover1/popover1.module#Popover1PageModule', 
-    //canLoad: [AuthGuard]
-   },
+  },
   { 
     path: 'punto-doce', 
     loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule', 
@@ -680,7 +579,8 @@ const routes: Routes = [
   { path: 'punto-dos-asam-cuatro', loadChildren: './pages/punto-dos-asam-cuatro/punto-dos-asam-cuatro.module#PuntoDosAsamCuatroPageModule' },
   { path: 'punto-dos-asam-cinco', loadChildren: './pages/punto-dos-asam-cinco/punto-dos-asam-cinco.module#PuntoDosAsamCincoPageModule' },
   { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
-  { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
+  { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },
+  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
   { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },
 
 
