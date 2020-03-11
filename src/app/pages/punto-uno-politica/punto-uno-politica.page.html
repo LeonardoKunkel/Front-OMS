@@ -3,158 +3,168 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-uno"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Politicas</ion-title>
+    <ion-title class="ion-text-center">POLÍTICA</ion-title>
   </ion-toolbar>
 </ion-header>
 <div>
-  <hr class="lineaN"> 
+  <hr class="lineaN" />
 </div>
-<ion-fab vertical="top" horizontal="end" slot="fixed">
-  <ion-fab-button [disabled]="disabled" (click)="print1()">
-    <ion-icon name="print"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
 <ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
       pullingText="Pull to refresh"
       refreshingSpinner="circles"
-      refreshingText="Refreshing...">
+      refreshingText="Refreshing..."
+    >
     </ion-refresher-content>
   </ion-refresher>
   <ion-card-header>
-    <ion-card-title class="ion-text-center">Debes de optar por una de las 3 politicas, de este modo se imprimira y deberas exhibirla con todos los empleados de la estacion de servicio.</ion-card-title>
+    <ion-card-title class="ion-text-center"
+      >Debes de optar por una de las 3 politicas, de este modo se imprimira y
+      deberas exhibirla con todos los empleados de la estacion de
+      servicio.</ion-card-title
+    >
   </ion-card-header>
   <form action="ngForm">
-    <ion-slides mode="ios" pager="ios" scrollbar="ios">
-      <ion-slide #slide1>
-        <ion-card class="carta">
-          <ion-card-header>
-            <ion-card-title>1.Politica</ion-card-title>
-          </ion-card-header>
-          <hr class="lineaS" />
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col sizeMd="6" sizeLg="12">
-                  <p class="ion-text-justify politica1">
-                    En la Estación de Servicio
-                    <strong>“Super Servicio La Concha S.A. de C.V.”</strong>
-                    conscientes con la naturaleza de los peligros y aspectos
-                    ambientales asociados a las actividades propias de la
-                    instalación, trabajadores y contratistas estamos
-                    comprometidos en mejorar nuestro desempeño en materia de
-                    Seguridad Industrial, Seguridad Operativa y Protección del
-                    medio ambiente, en todos los niveles de la organización,
-                    juntos orientamos nuestros esfuerzos para la evaluación,
-                    reducción y control de los riesgos e impactos ambientales,
-                    el cumplimiento normativo, mediante un proceso de mejora
-                    continua.
-                  </p>
-                  <h5>1-3</h5>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <br />
-            <div >
-              <ion-button 
-              #texto value="politica1" 
-              expand="block" 
-              color="secondary" 
-              (click)="btn1()" 
-              value="boton1">
-                Escoger politica 1&nbsp;&nbsp;&nbsp;
-                <ion-icon name="checkmark-circle"></ion-icon>
-              </ion-button>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide #slide2>
-        <ion-card class="carta">
-          <ion-card-header>
-            <ion-card-title>2.Politica</ion-card-title>
-          </ion-card-header>
-          <hr class="lineaS" />
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col sizeMd="6" sizeLg="12">
-                  <p class="ion-text-justify politica1">
-                    En
-                    <strong>“Super Servicio La Concha S.A. de C.V.”</strong>
-                    estamos comprometidos en todos los niveles de la
-                    organización con la seguridad de las instalaciones, los
-                    trabajadores, contratistas y medio ambiente, controlando los
-                    peligros, riesgos e impactos ambientales derivados de la
-                    operación normal de la estación, enfocándonos en el
-                    cumplimento de la normatividad y la mejora continua en
-                    materia Seguridad Industrial, Seguridad Operativa y
-                    Protección del medio ambiente.
-                  </p>
-                  <h5>2-3</h5>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <br />
-            <ion-button #texto2 (click)="btn2()"  expand="block" color="secondary">
-              Escoger esta politica 2&nbsp;&nbsp;&nbsp;
-              <ion-icon name="checkmark-circle"></ion-icon>
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-      <ion-slide #slide1>
-        <ion-card class="carta">
-          <ion-card-header>
-            <ion-card-title>3.Politica</ion-card-title>
-          </ion-card-header>
-          <hr class="lineaS" />
-          <ion-card-content>
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col sizeMd="6" sizeLg="12">
-                  <p class="ion-text-justify politica1">
-                    Considerando los peligros, riesgos e impactos ambientales
-                    que se generan en la operación de esta estación de servicio,
-                    en
-                    <strong>“Super Servicio La Concha S.A. de C.V.”</strong>
-                    estamos comprometidos en todos los niveles de la
-                    organización en establecer los controles necesarios y buscar
-                    continuamente su mejora en materia de Seguridad Industrial,
-                    Seguridad Operativa y Protección del medio ambiente.
-                  </p>
-                  <h5>3-3</h5>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <br />
-            <ion-button #texto3 (click)="btn3()"  expand="block" color="secondary">
-              Escoger  politica 3&nbsp;&nbsp;&nbsp;
-              <ion-icon name="checkmark-circle"></ion-icon>
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-    <ion-button (click)="createPolitica2()" expand="block" fill="clear" shape="round">
-      Agregar Política
-    </ion-button>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" sizeLg="6">
+          <ion-slides mode="ios" pager="ios" scrollbar="ios">
+            <ion-slide #slide1>
+              <ion-card class="carta">
+                <ion-card-header>
+                  <ion-card-title>1.Politica</ion-card-title>
+                </ion-card-header>
+                <hr class="lineaS" />
+                <ion-card-content>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col sizeMd="6" sizeLg="12">
+                        <p class="ion-text-justify politica1">
+                          En la Estación de Servicio
+                          <strong>“Super Servicio La Concha S.A. de C.V.”</strong>
+                          conscientes con la naturaleza de los peligros y aspectos
+                          ambientales asociados a las actividades propias de la
+                          instalación, trabajadores y contratistas estamos
+                          comprometidos en mejorar nuestro desempeño en materia de
+                          Seguridad Industrial, Seguridad Operativa y Protección del
+                          medio ambiente, en todos los niveles de la organización,
+                          juntos orientamos nuestros esfuerzos para la evaluación,
+                          reducción y control de los riesgos e impactos ambientales,
+                          el cumplimiento normativo, mediante un proceso de mejora
+                          continua.
+                        </p>
+                        <h5>1-3</h5>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                  <br />
+                  <div >
+                    <ion-button 
+                    #texto value="politica1" 
+                    expand="block" 
+                    color="secondary" 
+                    (click)="presentAlertConfirm1()" 
+                    value="boton1">
+                      Escoger politica 1&nbsp;&nbsp;&nbsp;
+                      <ion-icon name="checkmark-circle"></ion-icon>
+                    </ion-button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide #slide2>
+              <ion-card class="carta">
+                <ion-card-header>
+                  <ion-card-title>2.Politica</ion-card-title>
+                </ion-card-header>
+                <hr class="lineaS" />
+                <ion-card-content>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col sizeMd="6" sizeLg="12">
+                        <p class="ion-text-justify politica1">
+                          En
+                          <strong>“Super Servicio La Concha S.A. de C.V.”</strong>
+                          estamos comprometidos en todos los niveles de la
+                          organización con la seguridad de las instalaciones, los
+                          trabajadores, contratistas y medio ambiente, controlando los
+                          peligros, riesgos e impactos ambientales derivados de la
+                          operación normal de la estación, enfocándonos en el
+                          cumplimento de la normatividad y la mejora continua en
+                          materia Seguridad Industrial, Seguridad Operativa y
+                          Protección del medio ambiente.
+                        </p>
+                        <h5>2-3</h5>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                  <br />
+                  <ion-button
+                    #texto2
+                    (click)="presentAlertConfirm2()"
+                    expand="block"
+                    color="secondary"
+                  >
+                    Escoger esta politica 2&nbsp;&nbsp;&nbsp;
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+            <ion-slide #slide1>
+              <ion-card class="carta">
+                <ion-card-header>
+                  <ion-card-title>3.Politica</ion-card-title>
+                </ion-card-header>
+                <hr class="lineaS" />
+                <ion-card-content>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col sizeMd="6" sizeLg="12">
+                        <p class="ion-text-justify politica1">
+                          Considerando los peligros, riesgos e impactos ambientales
+                          que se generan en la operación de esta estación de servicio,
+                          en
+                          <strong>“Super Servicio La Concha S.A. de C.V.”</strong>
+                          estamos comprometidos en todos los niveles de la
+                          organización en establecer los controles necesarios y buscar
+                          continuamente su mejora en materia de Seguridad Industrial,
+                          Seguridad Operativa y Protección del medio ambiente.
+                        </p>
+                        <h5>3-3</h5>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                  <br />
+                  <ion-button
+                    #texto3
+                    (click)="presentAlertConfirm3()"
+                    expand="block"
+                    color="secondary"
+                  >
+                    Escoger politica 3&nbsp;&nbsp;&nbsp;
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+        <ion-col size="12" sizeLg="6">
+          <ion-item *ngFor="let contacto of lista">
+            <ion-card class="carta">
+              <ion-card-header>
+                <ion-card-title class="ion-text-center">Politica Escogida</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>{{lista}}</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 </ion-content>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -146,24 +146,24 @@ const routes: Routes = [
   { 
     path: 'fs20-pozos', 
     loadChildren: './pages/fs20-pozos/fs20-pozos.module#Fs20PozosPageModule' ,
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'fs20-edificios', 
+  {
+    path: 'fs20-edificios',
     loadChildren: './pages/fs20-edificios/fs20-edificios.module#Fs20EdificiosPageModule' ,
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'pdf-im01', 
+  {
+    path: 'pdf-im01',
     loadChildren: './pages/pdf-im01/pdf-im01.module#PdfIM01PageModule' ,
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'pdf-im02', 
+  {
+    path: 'pdf-im02',
     loadChildren: './pages/pdf-im02/pdf-im02.module#PdfIM02PageModule' ,
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
+  {
     path: 'pdf-im03', 
     loadChildren: './pages/pdf-im03/pdf-im03.module#PdfIM03PageModule' ,
     //canLoad: [AuthGuard]  
