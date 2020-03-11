@@ -6,29 +6,12 @@
     <ion-title class="ion-text-center">MATRIZ DE RESPONSABILIDADES</ion-title>
   </ion-toolbar>
 </ion-header>
-  
-<ion-content fullscreen class="ion-padding">
-  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-      <ion-card id="jj">
-          <ion-card-header>
-            <ion-card-subtitle class="ion-text-center">Debes de registrar los puestos que tienes en tu estacion de servicio, debera ingresar maximo 5 puestos</ion-card-subtitle>
-            <h3 class="ion-text-center">(Encargado,Jefe de piso,Despachadores,Contratistas/Proveedores)</h3>
-          </ion-card-header>
-          <ion-fab-button>
-            <ion-icon name="add" (click)="agregar()" ></ion-icon>
-          </ion-fab-button>
-          <ion-card-content class="contenedor" id="contenido">
-            <ion-label>Puesto #1</ion-label>
-            <ion-input type="text" placeholder="Ejem.Jefe de piso" name="puesto1" [(ngModel)]="datos.puesto1"></ion-input>
-            <ion-label>Puesto #2</ion-label>
-            <ion-input type="text" placeholder="Ejem.Despachador" name="puesto2" [(ngModel)]="datos.puesto2S"></ion-input>
-          </ion-card-content>
-      </ion-card>
-      <ion-button type="submit">
-          Guardar y enviar
-        </ion-button>
-        <ion-button (click)="pdf()">
-          Imprimir
-        </ion-button>
-  </form>
+<ion-content>
+  <ion-card class="item1">
+    <ion-card-content >
+      <ion-item>
+        <embed  src="../../../assets/docs/Elemento 5/FS-13 MATRIZ DE RESPONSABILIDADES.pdf" type="application/pdf" width="100%" height="1000px" alt="pdf"/>
+      </ion-item>  
+    </ion-card-content>
+  </ion-card>
 </ion-content>

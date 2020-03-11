@@ -3,13 +3,21 @@ import { IonSlides } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { AlertController } from '@ionic/angular';
 import { FormsModule, Form } from '@angular/forms';
-
+import { ModalController } from '@ionic/angular';
+import { DirectorModalPage} from '../director-modal/director-modal.page';
+import { settings } from 'cluster';
+import { RepresentanteModalPage} from '../representante-modal/representante-modal.page';
+import { EncargadoModalPage } from '../encargado-modal/encargado-modal.page';
+import { JefePisoModalPage } from '../jefe-piso-modal/jefe-piso-modal.page';
+import { DespachadoresModalPage } from '../despachadores-modal/despachadores-modal.page';
+import { MantenimientoModalPage } from '../mantenimiento-modal/mantenimiento-modal.page';
+import { ContratistasModalPage} from '../contratistas-modal/contratistas-modal.page';
 
 @Component({
   selector: 'app-punto-seis',
   templateUrl: './punto-seis.page.html',
   styleUrls: ['./punto-seis.page.scss'],
-})
+})  
 export class PuntoSeisPage implements OnInit {
   pdfObj=null;
   datos:any={
@@ -30,51 +38,65 @@ export class PuntoSeisPage implements OnInit {
   @ViewChild('slider') slider: IonSlides
   @ViewChild('formulario') formulario: Form
 
-  constructor(public alertController: AlertController,private pdfMaker: PdfMakerService) { }
+  constructor(public alertController: AlertController,private pdfMaker: PdfMakerService,
+    private modalCtrl: ModalController) { }
   
   ngOnInit() {
    
-  }
+  }  
 
-    
-  //   async ver() {
-     
-  //   const alert = await this.alertController.create({
-  //     header: 'Alert',
-  //     subHeader: 'Importante',
-  //     message: 'Seguro de realizar esta accion',
-  //     buttons: [
-  //       {
-  //         text: 'Okay',
-  //         handler: () => {
-  //           console.log('Confirm Okay');
-  //          this.change()
+  async openModal(){
+    const modal = await this.modalCtrl.create({
+      component: DirectorModalPage
+    });
+    console.log('Entraste a modal');
+    return await modal.present();
+  }  
 
-  //         }
-  //       }
-  //     ]
-  //         });
+  async openModal2(){
+    const modal = await this.modalCtrl.create({
+      component: RepresentanteModalPage
+    });
+    return await modal.present();
+  }  
 
-          
+  async openModal3(){
+    const modal = await this.modalCtrl.create({
+      component: EncargadoModalPage
+    });
+    return await modal.present();
+  }  
 
-  //   await alert.present();
-  // }
+  async openModal4(){
+    const modal = await this.modalCtrl.create({
+      component: JefePisoModalPage
+    });
+    return await modal.present();
+  }  
+
+  async openModal5(){
+    const modal = await this.modalCtrl.create({
+      component: DespachadoresModalPage
+    });
+    return await modal.present();
+  }  
+
+  async openModal6(){
+    const modal = await this.modalCtrl.create({
+      component: MantenimientoModalPage
+    });
+    return await modal.present();
+  } 
+  async openModal7(){
+    const modal = await this.modalCtrl.create({
+      component: ContratistasModalPage
+    });
+    return await modal.present();
+  }  
   
-  // public disabled = true;
-
-   
-
-  //  change() {
-  //   this.disabled = false;
-  // }
-
-
 
 
   pdf(){
-    console.log('jkdjddjk');
-    // playground requires you to assign document definition to a variable called dd
-
 var dd = {
   header: function(){
     return {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ObjetivosMetasService } from '../../services/Elemento 4/objetivos-metas.service';
 
 
 @Component({
@@ -8,6 +9,20 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./cuatro2.page.scss'],
 })
 export class Cuatro2Page implements OnInit {
+  
+
+  marcas:any={
+    reduccionGeneracionResiduos:'hgkgkhgjkgkjgkj',
+    reduccionConsumoAgua:'vfvfvsd',
+    reduccionConsumoEnergia:'dfvdfvdf',
+    cumplimientoProgramaMantenimiento:'',
+    mejorarActividadesSimulacros:'',
+    incrementarCapacitaciones:'',
+    mejorarServicioAtencionCliente:'',
+    incrementarVentaAnualmente:''
+  }
+
+  
   datos:any={
  C1:false,
  C2:false,
@@ -18,7 +33,7 @@ export class Cuatro2Page implements OnInit {
  C7:false,
  C8:false,
   }
-  constructor(private pdfMaker: PdfMakerService) { }
+  constructor(private pdfMaker: PdfMakerService,private objetivo: ObjetivosMetasService) { }
 
   ngOnInit() {  
   
@@ -94,6 +109,20 @@ export class Cuatro2Page implements OnInit {
       alert('C7,8')      
     }
   }
+
+  //Crear el post en la base de datos
+
+
+
+    createMetaObjetivo(){
+      this.objetivo.createMetaObjetivo(this.marcas).subscribe((data:any) => {
+    console.log(data);
+        
+      });
+    }
+
+
+
 
   pdf(){
     // playground requires you to assign document definition to a variable called dd

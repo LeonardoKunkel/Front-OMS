@@ -1,32 +1,22 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { ElementoUnoService } from "src/app/services/elementouno.service";
-import { AlertController, IonSlides, ActionSheetController } from "@ionic/angular";
-import { async } from "@angular/core/testing";
-import EventClicking from "@fullcalendar/core/interactions/EventClicking";
-import { PdfMakerService } from 'src/app/services/pdf-maker.service';
-import { PoliticaService } from 'src/app/services/Elemento1/politica.service';
-
-
+  import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+  import { AlertController, IonSlides, ActionSheetController } from "@ionic/angular";
+  import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+  import { PoliticaService } from 'src/app/services/Elemento1/politica.service';
+  
 @Component({
   selector: "app-punto-uno-politica",
   templateUrl: "./punto-uno-politica.page.html",
   styleUrls: ["./punto-uno-politica.page.scss"]
 })
 export class PuntoUnoPoliticaPage implements OnInit {
-  @ViewChild("texto") texto;
-  @ViewChild("texto2") texto2;
-  @ViewChild("texto3") texto3;
-
+  
   politica: string = "";
   lista: string[] = [];
 
-
   constructor(
     public alertController: AlertController,
-    private actionSheetCtrl: ActionSheetController,
     private pdfMakerService: PdfMakerService,
-    private puntoUnoService: ElementoUnoService,
-    private politicaService: PoliticaService
+    private politicaService: PoliticaService,
   ) {
     //this.consultarPolitica();
   }
@@ -41,13 +31,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
     }, 1000);
   }
 
-  constructor(public alertController: AlertController,
-              private actionSheetCtrl:ActionSheetController,
-              private pdfMakerService: PdfMakerService,
-              private politicaService: PoliticaService) { this.politicaService.getPolitica().subscribe(data => console.log(data))}
-
-  ngOnInit() {
-  }
+  
 
   createPolitica() {
     let politic = 'eduardo'
@@ -60,6 +44,29 @@ export class PuntoUnoPoliticaPage implements OnInit {
     this.politicaService
       .createPolitica(politic)
       .subscribe(data => console.log(data));
+  }
+
+  consultarPolitica() {
+    //this.politicaService.getPolitica().subscribe(data => console.log(data));
+    this.politicaService.getPolitica().subscribe((data:any) => {
+      let contenido = data.findPolitica[0].politica;
+      this.lista = [contenido];
+      
+    });
+  }
+
+  consultarPolitica2() {
+    this.politicaService.getPolitica().subscribe((data:any) => {
+      let contenido = data.findPolitica[1].politica;
+      this.lista = [contenido];
+    });
+  }
+
+  consultarPolitica3() {
+    this.politicaService.getPolitica().subscribe((data:any) => {
+      let contenido = data.findPolitica[2].politica;
+      this.lista = [contenido];
+    });
   }
 
   async presentAlertConfirm1() {
@@ -147,27 +154,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
   }
  
 
-  consultarPolitica() {
-    //this.politicaService.getPolitica().subscribe(data => console.log(data));
-    this.politicaService.getPolitica().subscribe(data => {
-      let contenido = data.findPolitica[0].politica;
-      this.lista = [contenido];
-    });
-  }
-
-  consultarPolitica2() {
-    this.politicaService.getPolitica().subscribe(data => {
-      let contenido = data.findPolitica[1].politica;
-      this.lista = [contenido];
-    });
-  }
-
-  consultarPolitica3() {
-    this.politicaService.getPolitica().subscribe(data => {
-      let contenido = data.findPolitica[2].politica;
-      this.lista = [contenido];
-    });
-  }
+ 
 
   print1() {
     console.log("Politica 1");

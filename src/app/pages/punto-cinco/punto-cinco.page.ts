@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { CpService } from 'src/app/services/cp.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { CartaDesignacionServiceService } from '../../services/Elemento 5/carta-designacion-service.service';
 
 @Component({
   selector: 'app-punto-cinco',
@@ -27,13 +28,33 @@ export class PuntoCincoPage implements OnInit {
     calle:'' 
   }
 
+  lista={
+    nombre:'jsdjsjsdd',
+    nombreEstacion:'kskdjdhgsysg',
+    correo:'llskjdudnd',
+    telefono:'555586458',
+    estado:'qkegeharl',
+    ciudad:'queretaro',
+    colonia:'cimatario',
+    cp:'8868',
+    calle:'haxmin'
+  }
+
   constructor(
     private cpService: CpService,
     private pdfMaker: PdfMakerService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private cartaDesignacion: CartaDesignacionServiceService
   ) { }
 
   ngOnInit() {
+  }
+
+  createCartaDesignacion(){
+    this.cartaDesignacion.getcartaDesignacion(this.datos).subscribe((data:any) =>{
+      console.log(data);
+      
+    })
   }
 
   enviarForm(formulario) {

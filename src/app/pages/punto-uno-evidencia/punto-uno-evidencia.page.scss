@@ -26,3 +26,19 @@
       border: solid 4px rgb(96, 206, 240);
       border-radius: 10px;
   }
+  .celulares2{
+   display: none;
+ }
+ .celulares{
+   display: block;
+   margin: auto;
+   background-color: blue($color: #000000);
+ }
+  @media ( max-width: 900px) {
+    .celulares{
+      display: none;
+    }
+    .celulares2{
+      display: inline;
+    }
+  }
