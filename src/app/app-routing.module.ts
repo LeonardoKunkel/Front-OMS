@@ -4,65 +4,65 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { 
-    path: 'main', 
+  {
+    path: 'main',
     loadChildren: './pages/tabs/tabs.module#TabsPageModule',
    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'mapa', 
+  {
+    path: 'mapa',
     loadChildren: './pages/mapa/mapa.module#MapaPageModule',
-    //canLoad: [AuthGuard]  
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'calendar', 
+  {
+    path: 'calendar',
     loadChildren: './pages/calendar/calendar.module#CalendarPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'menu-sasisopa', 
+  {
+    path: 'menu-sasisopa',
     loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-cinco', 
+  {
+    path: 'punto-cinco',
     loadChildren: './pages/punto-cinco/punto-cinco.module#PuntoCincoPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-seis', 
+  {
+    path: 'punto-seis',
     loadChildren: './pages/punto-seis/punto-seis.module#PuntoSeisPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-uno', 
+  {
+    path: 'punto-uno',
     loadChildren: './pages/punto-uno/punto-uno.module#PuntoUnoPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-dos', 
+  {
+    path: 'punto-dos',
     loadChildren: './pages/punto-dos/punto-dos.module#PuntoDosPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-dos-riesgos', 
+  {
+    path: 'punto-dos-riesgos',
     loadChildren: './pages/punto-dos-riesgos/punto-dos-riesgos.module#PuntoDosRiesgosPageModule',
-    //canLoad: [AuthGuard] 
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-tes', 
+  {
+    path: 'punto-tes',
     loadChildren: './pages/punto-tes/punto-tes.module#PuntoTesPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-cuatro', 
+  {
+    path: 'punto-cuatro',
     loadChildren: './pages/punto-cuatro/punto-cuatro.module#PuntoCuatroPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
-  { 
-    path: 'onbjetivo-modal', 
+  {
+    path: 'onbjetivo-modal',
     loadChildren: './pages/onbjetivo-modal/onbjetivo-modal.module#OnbjetivoModalPageModule',
-    //canLoad: [AuthGuard] 
+    // canLoad: [AuthGuard]
   },
   { 
     path: 'login', 
