@@ -680,8 +680,17 @@ const routes: Routes = [
   { path: 'punto-dos-asam-cuatro', loadChildren: './pages/punto-dos-asam-cuatro/punto-dos-asam-cuatro.module#PuntoDosAsamCuatroPageModule' },
   { path: 'punto-dos-asam-cinco', loadChildren: './pages/punto-dos-asam-cinco/punto-dos-asam-cinco.module#PuntoDosAsamCincoPageModule' },
   { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
-  { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
-  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },
+  { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },
+  { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
+  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },  { path: 'director-modal', loadChildren: './pages/director-modal/director-modal.module#DirectorModalPageModule' },
+  { path: 'representante-modal', loadChildren: './pages/representante-modal/representante-modal.module#RepresentanteModalPageModule' },
+  { path: 'encargado-modal', loadChildren: './pages/encargado-modal/encargado-modal.module#EncargadoModalPageModule' },
+  { path: 'jefe-piso-modal', loadChildren: './pages/jefe-piso-modal/jefe-piso-modal.module#JefePisoModalPageModule' },
+  { path: 'despachadores-modal', loadChildren: './pages/despachadores-modal/despachadores-modal.module#DespachadoresModalPageModule' },
+  { path: 'mantenimiento-modal', loadChildren: './pages/mantenimiento-modal/mantenimiento-modal.module#MantenimientoModalPageModule' },
+  { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },
+
+  
 
 
   

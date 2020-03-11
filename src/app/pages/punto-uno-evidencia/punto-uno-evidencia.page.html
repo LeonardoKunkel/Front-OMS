@@ -6,11 +6,9 @@
     <ion-title class="ion-text-center">Evidencia</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <div>
   <hr class="lineaN">
 </div>
-
 <ion-content padding ng-controller="MainCtrl">
 <ion-card class="fondo">
   <ion-card-header>
@@ -19,29 +17,26 @@
   <ion-card-content>
     <ion-img [src]="foto" *ngIf="foto"></ion-img>
     <h1 class="center">Subir la evidencia tomada en el punto dos del SASISOPA</h1><br><br><br><br><br><br><br><br>
-    <ion-segment color="secondary">
-      <ion-segment-button (click)="capturarFoto()">
-        <ion-label>Foto</ion-label>
-        <ion-icon name="camera" size="large"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button checked (click)="buscarFoto()">
-        <ion-label>Imagen</ion-label>
-        <ion-icon name="images" size="large"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Subir</ion-label>
-        <ion-icon name="cloud-upload" size="large"></ion-icon>
-      </ion-segment-button>
-    </ion-segment><br><br><br>
-    <hr class="linea"><br><br><br>
-    <ion-item  class="columnas">
-    <ion-label position="floating">Descriciones</ion-label>
-      <ion-textarea  placeholder="Escribe" rows="15"></ion-textarea>
-    </ion-item>
+    <div class="celulares2">
+      <ion-segment color="secondary" >
+        <ion-segment-button (click)="capturarFoto()">
+          <ion-label>Foto</ion-label>
+          <ion-icon name="camera" size="large"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button checked (click)="buscarFoto()" type="file">
+          <ion-label >Subir</ion-label>
+          <ion-icon name="cloud-upload" size="large">
+          </ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+    </div><br><br><br>
+    <div class="card">
+      <img src="" alt="" id="img-preview">
+      <div class="card-footer">
+        <ion-input type="file" placeholder="jdjdjdj" class="celulares" id="img-uploader "></ion-input>
+      </div>
+    </div>
   </ion-card-content>
-  <ion-button (click)="subir()" expand="block">
-    Enviar comentario
-  </ion-button>
 </ion-card>
 
 </ion-content>
