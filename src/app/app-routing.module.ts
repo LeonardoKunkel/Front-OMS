@@ -24,11 +24,11 @@ const routes: Routes = [
     loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule',
     //canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-cinco', 
-    loadChildren: './pages/punto-cinco/punto-cinco.module#PuntoCincoPageModule',
-    //canLoad: [AuthGuard]
-  },
+  // {                 P A R A   E L   M O D A L
+  //   path: 'punto-cinco', 
+  //   loadChildren: './pages/punto-cinco/punto-cinco.module#PuntoCincoPageModule',
+  //   //canLoad: [AuthGuard]
+  // },
   { 
     path: 'punto-seis', 
     loadChildren: './pages/punto-seis/punto-seis.module#PuntoSeisPageModule',
@@ -344,12 +344,12 @@ const routes: Routes = [
     loadChildren: './pages/punto-seis-programa-capacitacion/punto-seis-programa-capacitacion.module#PuntoSeisProgramaCapacitacionPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
+  // { 
     
-    path: 'punto-seis-seguimiento-programa', 
-    loadChildren: './pages/punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.module#PuntoSeisSeguimientoProgramaPageModule', 
-    //canLoad: [AuthGuard]
-   },
+  //   path: 'punto-seis-seguimiento-programa', 
+  //   loadChildren: './pages/punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.module#PuntoSeisSeguimientoProgramaPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
   { 
     path: 'punto-seis-procedimiento', 
     loadChildren: './pages/punto-seis-procedimiento/punto-seis-procedimiento.module#PuntoSeisProcedimientoPageModule', 
@@ -682,7 +682,8 @@ const routes: Routes = [
   { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
   { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },
   { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
-  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },  { path: 'director-modal', loadChildren: './pages/director-modal/director-modal.module#DirectorModalPageModule' },
+  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },
+  { path: 'director-modal', loadChildren: './pages/director-modal/director-modal.module#DirectorModalPageModule' },
   { path: 'representante-modal', loadChildren: './pages/representante-modal/representante-modal.module#RepresentanteModalPageModule' },
   { path: 'encargado-modal', loadChildren: './pages/encargado-modal/encargado-modal.module#EncargadoModalPageModule' },
   { path: 'jefe-piso-modal', loadChildren: './pages/jefe-piso-modal/jefe-piso-modal.module#JefePisoModalPageModule' },

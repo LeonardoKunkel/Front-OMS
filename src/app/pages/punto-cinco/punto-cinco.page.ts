@@ -50,6 +50,10 @@ export class PuntoCincoPage implements OnInit {
   ngOnInit() {
   }
 
+  async closeModal(){
+    await this.modalCtrl.dismiss();
+  }
+
   createCartaDesignacion(){
     this.cartaDesignacion.getcartaDesignacion(this.datos).subscribe((data:any) =>{
       console.log(data);

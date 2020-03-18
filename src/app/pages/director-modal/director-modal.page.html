@@ -32,12 +32,15 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Equipo de proteccion personal:</ion-label>
-          <ion-input  required name="proteccionPersonal" [(ngModel)]="datos.equipoProteccio"></ion-input>
+          <ion-input  required name="equipoProteccion" [(ngModel)]="datos.equipoProteccion"></ion-input>
         </ion-item>
       </ion-card-content>
     </ion-card>
     <ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">
       Guardar y enviar
+    </ion-button>
+    <ion-button (click)="crearDirector()" expand="block" fill="clear" shape="round">
+      Click me
     </ion-button>
   </form>
 </ion-content>
