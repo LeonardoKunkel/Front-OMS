@@ -3,100 +3,192 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="punto-seis-menu"></ion-back-button>
     </ion-buttons>
-    <ion-title>Deteccion de Necesidades</ion-title>
+    <ion-title class="ion-text-center" style="color: #134289;">DETECCÓN DE NECESIDADES</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-      <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Llena los campos requeridos</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-            <ion-item color="secondary">
-              <ion-label>Desarrollo laboral</ion-label>
-            </ion-item>           
-            
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name='R1' [(ngModel)]="datos.R1"></ion-checkbox>
-              <ion-label>Nuevo ingreso</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R2" [(ngModel)]="datos.R2" ></ion-checkbox>
-              <ion-label>Promoción</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R3" [(ngModel)]="datos.R3" ></ion-checkbox>
-              <ion-label>Ascenso</ion-label>
-            </ion-item>
-    
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R4" [(ngModel)]="datos.R4"></ion-checkbox>
-              <ion-label>Reentrenamiento</ion-label>
-            </ion-item>
-        
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R5" [(ngModel)]="datos.R5"></ion-checkbox>
-              <ion-label>Actualización trianual</ion-label>
-            </ion-item>
-    
-            <ion-item color="secondary">
-                <ion-label>Desarrollo Organizacional</ion-label>
-            </ion-item>           
-    
-            <ion-item>
-                <ion-checkbox color="primary" slot="start" name="R5" [(ngModel)]="datos.R5"></ion-checkbox>
-                <ion-label>Inconformidad de auditoría</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R6" [(ngModel)]="datos.R6"></ion-checkbox>
-              <ion-label>Bajo desempeño</ion-label>
-            </ion-item>
-                
-            <ion-item>
-              <ion-checkbox color="primary" slot="start" name="R7" [(ngModel)]="datos.R7"></ion-checkbox>
-              <ion-label>Recomendación ICR</ion-label>
-            </ion-item>
-                
-            <ion-item>
-                <ion-checkbox color="primary" slot="start" name="R8" [(ngModel)]="datos.R8"></ion-checkbox>
-                <ion-label>No se cumplieron objetivos</ion-label>        
-            </ion-item>
-                  
-            <ion-item color="secondary">
-                <ion-label>Situación actual</ion-label>
-               </ion-item> 
-            <ion-item>
-                <ion-checkbox color="primary" slot="start" name="R9" [(ngModel)]="datos.R9"></ion-checkbox>
-                <ion-label>Situación deseada</ion-label>         
-              </ion-item>
-              <ion-item>
-                  <ion-checkbox color="primary" slot="start" name="R10" [(ngModel)]="datos.R10"></ion-checkbox>
-                  <ion-label>Objetivos de la necesidad</ion-label>        
-              </ion-item>
-              <ion-item>
-                  <ion-checkbox color="primary" slot="start" name="R11" [(ngModel)]="datos.R11"></ion-checkbox>
-                  <ion-label>Temas para capacitación</ion-label>         
-              </ion-item>
-              <br>
-              <ion-item-divider color="light">
-                <ion-label>Situacion Actual</ion-label>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" sizeLg="4">
+          <ion-card mode="ios">
+            <ion-card-content>
+              <ul>
+                <li>
+                  <ion-item>
+                    <ion-label>Nuevo Ingreso</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Promoción</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Ascenso</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Reentrenamiento</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Actualización trianual</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card mode="ios">
+            <ion-card-content>
+              <ul>
+                <li>
+                  <ion-item>
+                    <ion-label>Cambio de Tecnología/proceso</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Cambio de personal</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Actualización de procedimientos</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Cambio de Normatividad</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Refuerzo de la política</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="4">
+          <ion-card mode="ios">
+            <ion-card-content>
+              <ul>
+                <li>
+                  <ion-item>
+                    <ion-label>Queja de clientes</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>No conformidad de Auditoría</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Bajo desempeño</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>Recomendación de ICR</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+                <li>
+                  <ion-item>
+                    <ion-label>No se cumplen los objetivos</ion-label>
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </ion-item>
+                </li>
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" sizeLg="3">
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider style="background-color: #134289; color: white; border-radius: 15px;">
+                <ion-label>SITUACIÓN ACTUAL</ion-label>
               </ion-item-divider>
-              <ion-textarea placeholder="Describe la situacion" name="R12" [(ngModel)]="datos.R12"></ion-textarea>
-              <ion-item-divider>
-                <ion-label>Situacion deseada</ion-label>
+              <ion-textarea placeholder="Describe..."></ion-textarea>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="3">
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider style="background-color: #134289; color: white; border-radius: 15px;">
+                <ion-label>SITUACIÓN DESEADA</ion-label>
               </ion-item-divider>
-              <ion-textarea placeholder="Describe la situacion" name="R13" [(ngModel)]="datos.R13"></ion-textarea>
-              <ion-button type="submit">
-                Guardar y enviar
-              </ion-button>
-              <ion-button (click)="pdf()">
-                Descargar
-              </ion-button>
-      </ion-card-content>
-    </ion-card>
+              <ion-textarea placeholder="Describe..."></ion-textarea>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="3">
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider style="background-color: #134289; color: white; border-radius: 15px;">
+                <ion-label> OBJETIVOS DE LA NECESIDAD</ion-label>
+              </ion-item-divider>
+              <ol>
+                <li>
+                  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                </li>
+                <li>
+                  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                </li>
+                <li>
+                  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                </li>
+              </ol>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeLg="3">
+          <ion-card>
+            <ion-card-content>
+              <ion-item-divider style="background-color: #134289; color: white; border-radius: 15px;">
+                <ion-label>TEMAS PARA CAPACITACIÓN</ion-label>
+              </ion-item-divider>
+              <ol>
+                <li>
+                  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                </li>
+                <li>
+                  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                </li>
+                <li>
+                  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+                </li>
+              </ol>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 </ion-content>

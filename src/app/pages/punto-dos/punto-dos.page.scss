@@ -11,3 +11,7 @@
     height: auto;
     margin: auto;
 }
+ion-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

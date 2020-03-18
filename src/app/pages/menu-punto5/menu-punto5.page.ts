@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { PuntoCincoPage } from '../punto-cinco/punto-cinco.page';
 
 @Component({
   selector: 'app-menu-punto5',
@@ -8,12 +10,16 @@ import { NavController } from '@ionic/angular';
 })
 export class MenuPunto5Page implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
-  goPuntoCinco() {
-    this.navCtrl.navigateForward('/punto-cinco')
+  async goPuntoCinco() {
+    const modal = await this.modalCtrl.create({
+      component: PuntoCincoPage
+    });
+    console.log('Entraste a modal');
+    return await modal.present();
   }
   goPuntoMatriz() {
     this.navCtrl.navigateForward('/punto-cinco-matriz')
