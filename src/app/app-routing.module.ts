@@ -77,15 +77,6 @@ const routes: Routes = [
     loadChildren: './pages/punto-siete/punto-siete.module#PuntoSietePageModule',
     //canLoad: [AuthGuard]
   },
-  { path: 'punto-ocho', 
-    loadChildren: './pages/punto-ocho/punto-ocho.module#PuntoOchoPageModule',
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'punto-nueve', 
-    loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule',
-    //canLoad: [AuthGuard] 
-  },
   { 
     path: 'punto-once', 
     loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule',
@@ -380,44 +371,19 @@ const routes: Routes = [
     loadChildren: './pages/punto-siete-menu/punto-siete-menu.module#PuntoSieteMenuPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-siete-evidencia', 
-    loadChildren: './pages/punto-siete-evidencia/punto-siete-evidencia.module#PuntoSieteEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
+  {
     path: 'punto-siete-procedimiento', 
     loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
-    path: 'quejas-sugerencias', 
-    loadChildren: './pages/quejas-sugerencias/quejas-sugerencias.module#QuejasSugerenciasPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'registros-control', 
-    loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
+  {
     path: 'punto-ocho-menu', 
     loadChildren: './pages/punto-ocho-menu/punto-ocho-menu.module#PuntoOchoMenuPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
+  {
     path: 'punto-evidencia', 
     loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-ocho-solicitud-cambios', 
-    loadChildren: './pages/punto-ocho-solicitud-cambios/punto-ocho-solicitud-cambios.module#PuntoOchoSolicitudCambiosPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-ocho-lista-distribucion', 
-    loadChildren: './pages/punto-ocho-lista-distribucion/punto-ocho-lista-distribucion.module#PuntoOchoListaDistribucionPageModule', 
     //canLoad: [AuthGuard]
    },
   { 
@@ -530,142 +496,121 @@ const routes: Routes = [
     loadChildren: './pages/fo01-pozos/fo01-pozos.module#Fo01PozosPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
-    path: 'fo01-purga', 
-    loadChildren: './pages/fo01-purga/fo01-purga.module#Fo01PurgaPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'fo01-purga',
+    loadChildren: './pages/fo01-purga/fo01-purga.module#Fo01PurgaPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'fo01-vapores', 
-    loadChildren: './pages/fo01-vapores/fo01-vapores.module#Fo01VaporesPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'fo01-vapores',
+    loadChildren: './pages/fo01-vapores/fo01-vapores.module#Fo01VaporesPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'nueve-evidencia', 
-    loadChildren: './pages/nueve-evidencia/nueve-evidencia.module#NueveEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'popover1',
+    loadChildren: './pages/popover1/popover1.module#Popover1PageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'nueve-listado', 
-    loadChildren: './pages/nueve-listado/nueve-listado.module#NueveListadoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-doce',
+    loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'nueve-procedimiento', 
-    loadChildren: './pages/nueve-procedimiento/nueve-procedimiento.module#NueveProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-doce-anexo',
+    loadChildren: './pages/punto-doce-anexo/punto-doce-anexo.module#PuntoDoceAnexoPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'popover1', 
-    loadChildren: './pages/popover1/popover1.module#Popover1PageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-doce-carta',
+    loadChildren: './pages/punto-doce-carta/punto-doce-carta.module#PuntoDoceCartaPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-doce', 
-    loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-doce-procedimiento',
+    loadChildren: './pages/punto-doce-procedimiento/punto-doce-procedimiento.module#PuntoDoceProcedimientoPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-doce-anexo', 
-    loadChildren: './pages/punto-doce-anexo/punto-doce-anexo.module#PuntoDoceAnexoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece',
+    loadChildren: './pages/punto-trece/punto-trece.module#PuntoTrecePageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-doce-carta', 
-    loadChildren: './pages/punto-doce-carta/punto-doce-carta.module#PuntoDoceCartaPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece-acta',
+    loadChildren: './pages/punto-trece-acta/punto-trece-acta.module#PuntoTreceActaPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-doce-procedimiento', 
-    loadChildren: './pages/punto-doce-procedimiento/punto-doce-procedimiento.module#PuntoDoceProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece-evaluacion',
+    loadChildren: './pages/punto-trece-evaluacion/punto-trece-evaluacion.module#PuntoTreceEvaluacionPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece', 
-    loadChildren: './pages/punto-trece/punto-trece.module#PuntoTrecePageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece-planeacion',
+    loadChildren: './pages/punto-trece-planeacion/punto-trece-planeacion.module#PuntoTrecePlaneacionPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece-acta', 
-    loadChildren: './pages/punto-trece-acta/punto-trece-acta.module#PuntoTreceActaPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece-planes',
+    loadChildren: './pages/punto-trece-planes/punto-trece-planes.module#PuntoTrecePlanesPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece-evaluacion', 
-    loadChildren: './pages/punto-trece-evaluacion/punto-trece-evaluacion.module#PuntoTreceEvaluacionPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece-procedimiento',
+    loadChildren: './pages/punto-trece-procedimiento/punto-trece-procedimiento.module#PuntoTreceProcedimientoPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece-planeacion', 
-    loadChildren: './pages/punto-trece-planeacion/punto-trece-planeacion.module#PuntoTrecePlaneacionPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-trece-programa',
+    loadChildren: './pages/punto-trece-programa/punto-trece-programa.module#PuntoTreceProgramaPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece-planes', 
-    loadChildren: './pages/punto-trece-planes/punto-trece-planes.module#PuntoTrecePlanesPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-procedimiento',
+    loadChildren: './pages/punto-dieciseis-procedimiento/punto-dieciseis-procedimiento.module#PuntoDieciseisProcedimientoPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece-procedimiento', 
-    loadChildren: './pages/punto-trece-procedimiento/punto-trece-procedimiento.module#PuntoTreceProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-procedimiento2',
+    loadChildren: './pages/punto-dieciseis-procedimiento2/punto-dieciseis-procedimiento2.module#PuntoDieciseisProcedimiento2PageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-trece-programa', 
-    loadChildren: './pages/punto-trece-programa/punto-trece-programa.module#PuntoTreceProgramaPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-formato',
+    loadChildren: './pages/punto-dieciseis-formato/punto-dieciseis-formato.module#PuntoDieciseisFormatoPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-procedimiento', 
-    loadChildren: './pages/punto-dieciseis-procedimiento/punto-dieciseis-procedimiento.module#PuntoDieciseisProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-entrevista',
+    loadChildren: './pages/punto-dieciseis-entrevista/punto-dieciseis-entrevista.module#PuntoDieciseisEntrevistaPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-procedimiento2', 
-    loadChildren: './pages/punto-dieciseis-procedimiento2/punto-dieciseis-procedimiento2.module#PuntoDieciseisProcedimiento2PageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-comprobacion',
+    loadChildren: './pages/punto-dieciseis-comprobacion/punto-dieciseis-comprobacion.module#PuntoDieciseisComprobacionPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-formato', 
-    loadChildren: './pages/punto-dieciseis-formato/punto-dieciseis-formato.module#PuntoDieciseisFormatoPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-recomendaciones',
+    loadChildren: './pages/punto-dieciseis-recomendaciones/punto-dieciseis-recomendaciones.module#PuntoDieciseisRecomendacionesPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-entrevista', 
-    loadChildren: './pages/punto-dieciseis-entrevista/punto-dieciseis-entrevista.module#PuntoDieciseisEntrevistaPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis-estadistica',
+    loadChildren: './pages/punto-dieciseis-estadistica/punto-dieciseis-estadistica.module#PuntoDieciseisEstadisticaPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-comprobacion', 
-    loadChildren: './pages/punto-dieciseis-comprobacion/punto-dieciseis-comprobacion.module#PuntoDieciseisComprobacionPageModule', 
-    //canLoad: [AuthGuard]
+  {
+    path: 'punto-dieciseis',
+    loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule',
+    // canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-recomendaciones', 
-    loadChildren: './pages/punto-dieciseis-recomendaciones/punto-dieciseis-recomendaciones.module#PuntoDieciseisRecomendacionesPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-estadistica', 
-    loadChildren: './pages/punto-dieciseis-estadistica/punto-dieciseis-estadistica.module#PuntoDieciseisEstadisticaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis', 
-    loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-ocho-evidencia', 
-    loadChildren: './pages/punto-ocho-evidencia/punto-ocho-evidencia.module#PuntoOchoEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-ocho-evidencias', 
-    loadChildren: './pages/punto-ocho-evidencias/punto-ocho-evidencias.module#PuntoOchoEvidenciasPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { path: 'punto-cinco-matriz', loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule' },
+  {
+    path: 'punto-cinco-matriz',
+    loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule'
+    // canLoad: [AuthGuard]
+  },
   { path: 'punto-diez-evidencia', loadChildren: './pages/punto-diez-evidencia/punto-diez-evidencia.module#PuntoDiezEvidenciaPageModule' },
   { path: 'punto-once-evidencia', loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule' },
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
@@ -682,13 +627,24 @@ const routes: Routes = [
   { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
   { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },
   { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
-  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },  { path: 'director-modal', loadChildren: './pages/director-modal/director-modal.module#DirectorModalPageModule' },
+  { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },
+  { path: 'director-modal', loadChildren: './pages/director-modal/director-modal.module#DirectorModalPageModule' },
   { path: 'representante-modal', loadChildren: './pages/representante-modal/representante-modal.module#RepresentanteModalPageModule' },
   { path: 'encargado-modal', loadChildren: './pages/encargado-modal/encargado-modal.module#EncargadoModalPageModule' },
   { path: 'jefe-piso-modal', loadChildren: './pages/jefe-piso-modal/jefe-piso-modal.module#JefePisoModalPageModule' },
   { path: 'despachadores-modal', loadChildren: './pages/despachadores-modal/despachadores-modal.module#DespachadoresModalPageModule' },
   { path: 'mantenimiento-modal', loadChildren: './pages/mantenimiento-modal/mantenimiento-modal.module#MantenimientoModalPageModule' },
   { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },
+  { path: 'punto-siete-quejas', loadChildren: './pages/punto-siete-quejas/punto-siete-quejas.module#PuntoSieteQuejasPageModule' },
+  { path: 'punto-siete-registro', loadChildren: './pages/punto-siete-registro/punto-siete-registro.module#PuntoSieteRegistroPageModule' },
+  { path: 'punto-nueve', loadChildren: './pages/punto-nueve/punto-nueve.module#PuntoNuevePageModule' },
+  { path: 'punto-nueve-procedimiento', loadChildren: './pages/punto-nueve-procedimiento/punto-nueve-procedimiento.module#PuntoNueveProcedimientoPageModule' },
+  { path: 'punto-nueve-listado', loadChildren: './pages/punto-nueve-listado/punto-nueve-listado.module#PuntoNueveListadoPageModule' },
+  { path: 'punto-ocho-lista', loadChildren: './pages/punto-ocho-lista/punto-ocho-lista.module#PuntoOchoListaPageModule' },
+  { path: 'punto-ocho-procedimiento', loadChildren: './pages/punto-ocho-procedimiento/punto-ocho-procedimiento.module#PuntoOchoProcedimientoPageModule' },
+
+
+
 
   
 

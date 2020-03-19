@@ -8,73 +8,62 @@ import { and } from '@angular/router/src/utils/collection';
   styleUrls: ['./punto-siete.page.scss'],
 })
 export class PuntoSietePage implements OnInit {
-  datos:any={
-    curso:false,
-    difusion:false,
-    interno:false,
-    externo:false,
-    nombreCurso:'',
-    lugar:'',
-    facilitador:'',
-    empresa:''
-  }
+  datos: any = {
+    curso: false,
+    difusion: false,
+    interno: false,
+    externo: false,
+    nombreCurso: '',
+    lugar: '',
+    facilitador: '',
+    empresa: ''
+  };
 
   @ViewChild('slider') slider: IonSlides
 
-  constructor(private alertCtrl: AlertController,private pdfMaker: PdfMakerService) { }
+  constructor(private alertCtrl: AlertController, private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
     // this.slider.lockSwipes(true);
   }
-  enviarForm(formulario){
+  enviarForm(formulario) {
       console.log(this.datos);
-      
   }
-  pdf(){
-      if(this.datos.curso===true){
-        var curso1="X"
+  pdf() {
+      if (this.datos.curso === true) {
+        var curso1 = 'X';
         console.log(curso1);
-      }else{
-          var curso1=" "
+      } else {
+          curso1 = '';
           console.log(curso1);
       }
-      
-      if(this.datos.difusion===true){
-        var curso2="X"
+      if (this.datos.difusion === true) {
+        var curso2 = 'X';
         console.log(curso2);
-        
-      }else{
-          var curso2=" "
+      } else {
+          curso2 = '';
           console.log(curso2);
-          
       }
 
-      if(this.datos.interno===true){
-        var curso3="X"
+      if (this.datos.interno === true) {
+        var curso3 = 'X';
         console.log(curso3);
-        
-      }else{
-          var curso3=" "
+      } else {
+          curso3 = '';
           console.log(curso3);
-          
       }
-      if(this.datos.Externo===true){
-        var curso4="X"
+      if (this.datos.Externo === true) {
+        var curso4 = 'X';
         console.log(curso4);
-        
-      }else{
-          var curso4=" "
+      } else {
+          curso4 = '';
           console.log(curso4);
-          
       }
-var dd = {
-  //   background: function(currentPage, pageSize) {
-  //   return {image: 'sampleImage.jpg', width: 400,height: 500, absolutePosition: {x: 60, y: 100},opacity: 0.5}
-  // },
-    header: function(){
-      return {
-          table: { widths: [560],heights:[40,0,0],
-body: [
+    var dd = {
+        header: function() {
+            return {
+                table: { widths: [560], heights: [40, 0, 0],
+                body: [
 
     [{text:''}],
     [{text:'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',alignment:'center',bold:true}],

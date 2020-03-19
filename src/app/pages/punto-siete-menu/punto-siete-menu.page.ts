@@ -12,20 +12,20 @@ export class PuntoSieteMenuPage implements OnInit {
 
   ngOnInit() {
   }
-  goListaComunicacion(){
-    this.navCtrl.navigateForward('/punto-siete')
+  goListaComunicacion() {
+    this.navCtrl.navigateForward('/punto-siete');
   }
-  goPuntoQuejasSugerencias(){
-    this.navCtrl.navigateForward('/quejas-sugerencias')
+  goPuntoQuejasSugerencias() {
+    this.navCtrl.navigateForward('/punto-siete-quejas');
   }
-  goPuntoRegistrosControl(){
-    this.navCtrl.navigateForward('/registros-control')
+  goPuntoRegistrosControl() {
+    this.navCtrl.navigateForward('/punto-siete-registro');
   }
-  goPuntoProcedimiento(){
-    this.navCtrl.navigateForward('/punto-siete-procedimiento')
+  goPuntoProcedimiento() {
+    this.navCtrl.navigateForward('/punto-siete-procedimiento');
   }
-  goPuntoEvidencia(){
-    this.navCtrl.navigateForward('/punto-siete-evidencia')
+  goPuntoEvidencia() {
+    this.navCtrl.navigateForward('/punto-siete-evidencia');
   }
 
 }

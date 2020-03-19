@@ -11,333 +11,428 @@
 </div>
 
 <ion-content>
-  <ion-slides>
-    <ion-slide>
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+    <ion-grid fixed>
       <ion-row>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Colocación de la pistola en el vehículo</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Agua</ion-card-title>
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Carga de hidrocarburo</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Aire</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Término del despacho y retiro de pistola del vehículo</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Agua</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Suministro de lubricantes o aditivos</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Residuos peligrosos</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
+        <ion-col size="12">
+          <div>
+            
+            <h3 class="ion-text-center">
+              Para cada aspecto se asigna la puntuación correspondiente a cada criterio en función de 
+              la experiencia del evaluador. El valor máximo es 10.
+            </h3>
+            <h6 class="ion-text-center">(Deslice los recuardos)</h6>
+            
+          </div>
         </ion-col>
       </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <ion-row>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Limpieza de dispensarios e islas</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Agua</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Limpieza de contenedores</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Residuos peligrosos</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Cambio de filtros</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Residuos peligrosos</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-              <ion-card-title>Cambio de mangueras, conexiones o pistolas</ion-card-title>
-              <hr class="linea1">
-              <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
-              <ion-card-title>Aire</ion-card-title>
-              <hr class="linea1">
-              <ion-item>
-                <ion-label>Frecuencia:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="20"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item> 
-              <ion-item>
-                <ion-label>Magnitud:</ion-label>
-                <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Naturaleza:</ion-label>
-                
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-slide>
-  </ion-slides>
+    </ion-grid>
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Colocación de la pistola en el vehículo</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Agua</ion-card-title>
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F19"
+                    [(ngModel)]="datos.F19">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N19"
+                    [(ngModel)]="datos.N19">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M19"
+                    [(ngModel)]="datos.M19">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT19 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Carga de hidrocarburo</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Aire</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F22"
+                    [(ngModel)]="datos.F20"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N20"
+                    [(ngModel)]="datos.N20">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M20"
+                    [(ngModel)]="datos.M20">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT20 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Término del despacho y retiro de pistola del vehículo</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Agua</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F21"
+                    [(ngModel)]="datos.F21">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N21"
+                    [(ngModel)]="datos.N21">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M21"
+                    [(ngModel)]="datos.M21">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT21 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Suministro de lubricantes o aditivos</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Residuos peligrosos</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F22"
+                    [(ngModel)]="datos.F22">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N22"
+                    [(ngModel)]="datos.N22">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M22"
+                    [(ngModel)]="datos.M22">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT22 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Limpieza de dispensarios e islas</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Agua</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F23"
+                    [(ngModel)]="datos.F23">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"                    
+                    name="N23"
+                    [(ngModel)]="datos.N23">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M23"
+                    [(ngModel)]="datos.M23">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT23 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Limpieza de contenedores</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Residuos peligrosos</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F24"
+                    [(ngModel)]="datos.F24">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N24"
+                    [(ngModel)]="datos.N24">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M24"
+                    [(ngModel)]="datos.M24">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT24 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Cambio de filtros</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Residuos peligrosos</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F25"
+                    [(ngModel)]="datos.F25">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N25"
+                    [(ngModel)]="datos.N25">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M25"
+                    [(ngModel)]="datos.M25">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT25 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" sizeLg="4">
+            <ion-card>
+              <ion-card-content>
+                <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
+                <ion-card-title>Cambio de mangueras, conexiones o pistolas</ion-card-title>
+                <hr class="linea1">
+                <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
+                <ion-card-title>Aire</ion-card-title>
+                <hr class="linea1">
+                <ion-item>
+                  <ion-label>Frecuencia:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="F26"
+                    [(ngModel)]="datos.F26">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Naturaleza:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="N26"
+                    [(ngModel)]="datos.N26">
+                  </ion-input>
+                </ion-item> 
+                <ion-item>
+                  <ion-label>Magnitud:</ion-label>
+                  <ion-input 
+                    placeholder="Selecciona"
+                    type="number"  
+                    min="1" 
+                    max="10"
+                    name="M26"
+                    [(ngModel)]="datos.M26">
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Valor Total: {{ this.datos.VT26 }}</ion-label>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-card-content>
+                <ion-button type="submit" class="ion-activatable ripple-parent">
+                  Guardar datos
+                  <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+                  <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>
