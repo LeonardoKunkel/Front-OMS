@@ -12,33 +12,12 @@ export class PuntoOchoMenuPage implements OnInit {
   ngOnInit() {
   }
 
-  goListaMaestra() {
-    this.navCtrl.navigateForward('/punto-ocho');
+  goOchoLista() {
+    this.navCtrl.navigateForward('/punto-ocho-lista');
   }
 
-  goSolicitudCambios() {
-    this.navCtrl.navigateForward('/punto-ocho-solicitud-cambios');
-    console.log('entraste a la página 9')
+  goOchoProcedimiento() {
+    this.navCtrl.navigateForward('/punto-ocho-procedimiento');
   }
-
-  goDistribucionDocumentos(){
-    this.navCtrl.navigateForward('/punto-diez');
-    console.log('entraste a la página X')
-  }
-
-  goListaDistribucion(){
-    this.navCtrl.navigateForward('/punto-ocho-lista-distribucion');
-    console.log('entraste a la página X')
-  }
-  
-  goprocedimiento() {
-    this.navCtrl.navigateForward('/punto-ocho-evidencias');
-  }
-
-  goEvidencia() {
-    this.navCtrl.navigateForward('/punto-ocho-evidencia');
-  }
-
- 
 
 }
