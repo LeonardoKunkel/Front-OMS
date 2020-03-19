@@ -24,11 +24,11 @@ const routes: Routes = [
     loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule',
     //canLoad: [AuthGuard]
   },
-  { 
-    path: 'punto-cinco', 
-    loadChildren: './pages/punto-cinco/punto-cinco.module#PuntoCincoPageModule',
-    //canLoad: [AuthGuard]
-  },
+  // {                 P A R A   E L   M O D A L
+  //   path: 'punto-cinco', 
+  //   loadChildren: './pages/punto-cinco/punto-cinco.module#PuntoCincoPageModule',
+  //   //canLoad: [AuthGuard]
+  // },
   { 
     path: 'punto-seis', 
     loadChildren: './pages/punto-seis/punto-seis.module#PuntoSeisPageModule',
@@ -335,12 +335,12 @@ const routes: Routes = [
     loadChildren: './pages/punto-seis-programa-capacitacion/punto-seis-programa-capacitacion.module#PuntoSeisProgramaCapacitacionPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
+  // { 
     
-    path: 'punto-seis-seguimiento-programa', 
-    loadChildren: './pages/punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.module#PuntoSeisSeguimientoProgramaPageModule', 
-    //canLoad: [AuthGuard]
-   },
+  //   path: 'punto-seis-seguimiento-programa', 
+  //   loadChildren: './pages/punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.module#PuntoSeisSeguimientoProgramaPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
   { 
     path: 'punto-seis-procedimiento', 
     loadChildren: './pages/punto-seis-procedimiento/punto-seis-procedimiento.module#PuntoSeisProcedimientoPageModule', 
@@ -371,17 +371,17 @@ const routes: Routes = [
     loadChildren: './pages/punto-siete-menu/punto-siete-menu.module#PuntoSieteMenuPageModule', 
     //canLoad: [AuthGuard]
    },
-  {
+  { 
     path: 'punto-siete-procedimiento', 
     loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule', 
     //canLoad: [AuthGuard]
    },
-  {
+   { 
     path: 'punto-ocho-menu', 
     loadChildren: './pages/punto-ocho-menu/punto-ocho-menu.module#PuntoOchoMenuPageModule', 
     //canLoad: [AuthGuard]
    },
-  {
+  { 
     path: 'punto-evidencia', 
     loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule', 
     //canLoad: [AuthGuard]
@@ -643,23 +643,6 @@ const routes: Routes = [
   { path: 'punto-ocho-lista', loadChildren: './pages/punto-ocho-lista/punto-ocho-lista.module#PuntoOchoListaPageModule' },
   { path: 'punto-ocho-procedimiento', loadChildren: './pages/punto-ocho-procedimiento/punto-ocho-procedimiento.module#PuntoOchoProcedimientoPageModule' },
 
-
-
-
-  
-
-
-  
-
-
-
-
- 
-  
-
-
-
-
 ];
 @NgModule({
   imports: [
@@ -668,12 +651,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
-
-
-
-
-
-
-
-

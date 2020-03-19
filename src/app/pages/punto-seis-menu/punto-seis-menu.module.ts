@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PuntoSeisMenuPage } from './punto-seis-menu.page';
-
+import { PuntoSeisSeguimientoProgramaPage } from '../punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.page';
 const routes: Routes = [
   {
     path: '',
@@ -20,7 +20,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
-  ],
-  declarations: [PuntoSeisMenuPage]
+  ],             //Recordar eliminar de app routing la pagina importada
+  declarations: [PuntoSeisMenuPage,PuntoSeisSeguimientoProgramaPage],
+  entryComponents:[PuntoSeisSeguimientoProgramaPage]
 })
 export class PuntoSeisMenuPageModule {}

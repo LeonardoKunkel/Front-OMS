@@ -9,3 +9,8 @@
 ion-card-content {
     text-align: start;
 }
+
+ion-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

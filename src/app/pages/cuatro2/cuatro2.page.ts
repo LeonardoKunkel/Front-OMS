@@ -39,6 +39,20 @@ export class Cuatro2Page implements OnInit {
   
   }
 
+  validacion(formu, obj){
+    const limite=2; //limite de checks a seleccionar
+    var num=0;
+    var ele
+    var i
+    if (obj.checked) {
+      for (i=0; ele=document.getElementById(formu).children[i]; i++)
+        if (ele.checked) num++;
+    if (num>limite)
+      obj.checked=false;
+    }
+  }
+
+
   enviarForm(formulario){
     var check1 = this.datos.C1?'Reducción en la generacion de residuos peligrosos':' ';
     var check2 = this.datos.c2?'Reducción en el consumo de agua':' ';

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-seis-seguimiento-programa',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuntoSeisSeguimientoProgramaPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController,) { }
 
   ngOnInit() {
+  }
+
+  async closeModal(){
+    await this.modalCtrl.dismiss();
   }
 
 }

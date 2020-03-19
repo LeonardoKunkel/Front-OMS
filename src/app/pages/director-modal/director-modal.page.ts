@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { DirectorServiceService } from '../../services/Elemento 6/director-service.service';
+
 
 @Component({
   selector: 'app-director-modal',
@@ -14,12 +16,21 @@ export class DirectorModalPage implements OnInit {
     herramientasEquipos:'',
     equipoProteccion:''
   }
-
-  constructor( private modalController: ModalController,private pdfMaker: PdfMakerService  ) { }
-
+  constructor( 
+    private modalController: ModalController,
+    private pdfMaker: PdfMakerService,
+    private directorService: DirectorServiceService  
+    ) { }
   ngOnInit() {
   }
 
+
+  crearDirector(){
+    this.directorService.createDirector(this.datos).subscribe((data:any)=> {
+      console.log(data);
+      
+    })
+  }
   async closeModal(){
     await this.modalController.dismiss();
   }
