@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-diez',
@@ -8,21 +7,9 @@ import { NavController } from '@ionic/angular';
 })
 export class PuntoDiezPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  goPuntoDiez01(){
-    console.log('Hola mundo');
 
-     this.navCtrl.navigateForward('/punto-diezfs19');
-  }
-  goPuntoDiez02(){
-    console.log('Hola mundo2');
-
-     this.navCtrl.navigateForward('/punto-diezfo09');
-  }
-  goPuntoDiezEvidencia(){
-    this.navCtrl.navigateForward('/punto-diez-evidencia');
-  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
 @Component({
   selector: 'app-punto-once',
@@ -8,90 +8,446 @@ import { NavController } from '@ionic/angular';
 })
 export class PuntoOncePage implements OnInit {
 
-  constructor( private navCtrl: NavController) { }
+
+  constructor( private pdfMaker: PdfMakerService) { }
 
   ngOnInit() {
   }
-  goPuntoOnce01() {
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fo01');
-  }
-  goPuntoOnce02() {
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fso02');
+
+  enviarForm(formulario) {
+    console.log();
   }
 
-  goPuntoOnce03() {
-    this.navCtrl.navigateForward('/fo03');
-  }
-
-  goPuntoOnce04() {
-    this.navCtrl.navigateForward('/fo04');
-  }
-
-  goPuntoOnce08() {
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fo08');
-  }
-
-  goPuntoOnce05() {
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fo05');
-  }
-  goPuntoOnce06() {
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fo06');
-  }
-  goPuntoOnce07() {
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fo07');
-  }
-  goPuntoOnce20(){
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fs20')
-  }
-  goPuntoOnce21(){
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fs21')
-  }
-  goPuntoOnce22(){
-    console.log('Hola mundo');
-    
-     this.navCtrl.navigateForward('/fs22')
-  }
-  goPuntoOnceIm01(){
-    console.log('Hola mundo');
-    this.navCtrl.navigateForward('/pdf-im01')
-  }
-  goPuntoOnceIm02(){
-    console.log('Hola mundo');
-    this.navCtrl.navigateForward('/pdf-im02')
-  }
-  goPuntoOnceIm03(){
-    console.log('Hola mundo');
-    this.navCtrl.navigateForward('/pdf-im03')
-  }
-  goPuntoOnceIm04(){
-    console.log('Hola mundo');
-    this.navCtrl.navigateForward('/pdf-im04')
-  }
-  goPuntoOnceIm05(){
-    console.log('Hola mundo');
-    this.navCtrl.navigateForward('/pdf-im05')
-  }
-  goPuntoOnceIm11(){
-    console.log('Hola mundo');
-    this.navCtrl.navigateForward('/pdf-im11')
-  }
-  goPuntoOnceEvidencia(){
-    this.navCtrl.navigateForward('/punto-once-evidencia')
+  pdf() {
+    const dd = {
+      header: function() {
+        return {
+          table: {
+            widths: [740], heights: [50, 15, 15],
+            body: [
+              [{text: ''}],
+              [{text: 'XI. INTEGRIDAD MECÁNICA', alignment: 'center', bold: true}],
+              [{text: 'INFORMACIÓN DE LOS EQUIPOS', alignment: 'center', bold: true, fillColor: '#ddd'}],
+            ]
+          },
+          margin: [22, 15]
+        };
+      },
+      footer: function() {
+        return {
+          table: {
+            headerRows: 1,
+            widths: [750],
+            body : [
+              [''],
+              [''],
+              ['']
+            ]
+          },
+          layout : 'headerLineOnly',
+          margin: [30, 85]
+        };
+      },
+      content: [
+        {
+          table: {
+              widths: [30, 150, 60, 310, 45, 45, 45],
+              body: [
+                [
+                    {text: 'NO.', bold: true, fillColor: '#ddd', alignment: 'center'},
+                    {text: 'TIPO DE EQUIPO', bold: true, fillColor: '#ddd'},
+                    {text: 'CANTIDAD', bold: true, fillColor: '#ddd'},
+                    {text: 'DESCRIPCIÓN', bold: true, fillColor: '#ddd'},
+                    {text: 'PRODUCTO', bold: true, fillColor: '#ddd', colSpan: 3},
+                    {},
+                    {}
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+                [
+                    {text: '', alignment: 'center'},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                    {text: ''},
+                ],
+              ]
+          }
+        },
+      ],
+      pageOrientation: 'landscape',
+      pageSize: 'LETTER',
+      pageMargins: [22, 120]
+    };
+    this.pdfMaker.generate(dd, 'Equipos');
   }
 }

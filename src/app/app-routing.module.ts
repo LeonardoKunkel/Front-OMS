@@ -210,16 +210,6 @@ const routes: Routes = [
     //canLoad: [AuthGuard]
   },
   { 
-    path: 'punto-diezfs19',
-     loadChildren: './pages/punto-diezfs19/punto-diezfs19.module#PuntoDiezfs19PageModule', 
-     //canLoad: [AuthGuard] 
-    },
-  { 
-    path: 'punto-diezfo09', 
-    loadChildren: './pages/punto-diezfo09/punto-diezfo09.module#PuntoDiezfo09PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
     path: 'punto-catorce',
      loadChildren: './pages/punto-catorce/punto-catorce.module#PuntoCatorcePageModule', 
      //canLoad: [AuthGuard]
@@ -446,64 +436,19 @@ const routes: Routes = [
     loadChildren: './pages/punto-diecisiete-formulario/punto-diecisiete-formulario.module#PuntoDiecisieteFormularioPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
-    path: 'cuatro1', 
-    loadChildren: './pages/cuatro1/cuatro1.module#Cuatro1PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'cuatro2', 
-    loadChildren: './pages/cuatro2/cuatro2.module#Cuatro2PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'cuatro3', 
-    loadChildren: './pages/cuatro3/cuatro3.module#Cuatro3PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-contboq', 
-    loadChildren: './pages/fo01-contboq/fo01-contboq.module#Fo01ContboqPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-contremoto', 
-    loadChildren: './pages/fo01-contremoto/fo01-contremoto.module#Fo01ContremotoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-espacio', 
-    loadChildren: './pages/fo01-espacio/fo01-espacio.module#Fo01EspacioPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-inventarios', 
-    loadChildren: './pages/fo01-inventarios/fo01-inventarios.module#Fo01InventariosPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-motobombas', 
-    loadChildren: './pages/fo01-motobombas/fo01-motobombas.module#Fo01MotobombasPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-nivel', 
-    loadChildren: './pages/fo01-nivel/fo01-nivel.module#Fo01NivelPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fo01-pozos', 
-    loadChildren: './pages/fo01-pozos/fo01-pozos.module#Fo01PozosPageModule', 
-    //canLoad: [AuthGuard]
-   },
   {
-    path: 'fo01-purga',
-    loadChildren: './pages/fo01-purga/fo01-purga.module#Fo01PurgaPageModule',
+    path: 'cuatro1',
+    loadChildren: './pages/cuatro1/cuatro1.module#Cuatro1PageModule',
     // canLoad: [AuthGuard]
    },
   {
-    path: 'fo01-vapores',
-    loadChildren: './pages/fo01-vapores/fo01-vapores.module#Fo01VaporesPageModule',
+    path: 'cuatro2',
+    loadChildren: './pages/cuatro2/cuatro2.module#Cuatro2PageModule',
+    // canLoad: [AuthGuard]
+   },
+  {
+    path: 'cuatro3',
+    loadChildren: './pages/cuatro3/cuatro3.module#Cuatro3PageModule',
     // canLoad: [AuthGuard]
    },
   {
@@ -611,7 +556,6 @@ const routes: Routes = [
     loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule'
     // canLoad: [AuthGuard]
   },
-  { path: 'punto-diez-evidencia', loadChildren: './pages/punto-diez-evidencia/punto-diez-evidencia.module#PuntoDiezEvidenciaPageModule' },
   { path: 'punto-once-evidencia', loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule' },
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
   { path: 'punto-trece-evidencia', loadChildren: './pages/punto-trece-evidencia/punto-trece-evidencia.module#PuntoTreceEvidenciaPageModule' },
@@ -642,6 +586,8 @@ const routes: Routes = [
   { path: 'punto-nueve-listado', loadChildren: './pages/punto-nueve-listado/punto-nueve-listado.module#PuntoNueveListadoPageModule' },
   { path: 'punto-ocho-lista', loadChildren: './pages/punto-ocho-lista/punto-ocho-lista.module#PuntoOchoListaPageModule' },
   { path: 'punto-ocho-procedimiento', loadChildren: './pages/punto-ocho-procedimiento/punto-ocho-procedimiento.module#PuntoOchoProcedimientoPageModule' },
+  { path: 'firmas', loadChildren: './pages/firmas/firmas.module#FirmasPageModule' },
+
 
 ];
 @NgModule({
