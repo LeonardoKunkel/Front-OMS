@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, IonSlides } from '@ionic/angular';
-import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { IonSlides } from '@ionic/angular';
 import { and } from '@angular/router/src/utils/collection';
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 @Component({
   selector: 'app-punto-siete',
   templateUrl: './punto-siete.page.html',
@@ -9,209 +9,361 @@ import { and } from '@angular/router/src/utils/collection';
 })
 export class PuntoSietePage implements OnInit {
   datos: any = {
-    curso: false,
-    difusion: false,
-    interno: false,
-    externo: false,
-    nombreCurso: '',
-    lugar: '',
-    facilitador: '',
-    empresa: ''
+    C1: '',
+    C2: '',
+    C3: '',
+    C4: '',
+    C5: '',
+    C6: '',
+    C7: '',
+    C8: '',
+    C9: '',
+    C10: '',
+    C11: '',
+    C12: '',
+    C13: '',
+    C14: '',
+    C15: '',
+    C16: '',
+    C17: '',
+    C18: '',
+    C19: '',
+    C20: '',
+    C21: '',
+    C22: '',
+    C23: '',
+    C24: '',
+    C25: '',
+    C26: '',
+    C27: '',
+    C28: '',
+    C29: '',
+    C30: '',
+    C31: '',
+    C32: '',
+    C33: '',
+    C34: '',
+    C35: '',
+    C36: '',
+    C37: '',
+    C38: '',
+    C39: '',
+    C40: '',
+    C41: '',
   };
 
-  @ViewChild('slider') slider: IonSlides
+  @ViewChild('slider') slider: IonSlides;
 
-  constructor(private alertCtrl: AlertController, private pdfMaker: PdfMakerService) { }
+  constructor( private pdfMaker: PdfMakerService) {
+  }
 
   ngOnInit() {
-    // this.slider.lockSwipes(true);
+
   }
   enviarForm(formulario) {
-      console.log(this.datos);
+    console.log(this.datos);
   }
+
   pdf() {
-      if (this.datos.curso === true) {
-        var curso1 = 'X';
-        console.log(curso1);
-      } else {
-          curso1 = '';
-          console.log(curso1);
-      }
-      if (this.datos.difusion === true) {
-        var curso2 = 'X';
-        console.log(curso2);
-      } else {
-          curso2 = '';
-          console.log(curso2);
-      }
-
-      if (this.datos.interno === true) {
-        var curso3 = 'X';
-        console.log(curso3);
-      } else {
-          curso3 = '';
-          console.log(curso3);
-      }
-      if (this.datos.Externo === true) {
-        var curso4 = 'X';
-        console.log(curso4);
-      } else {
-          curso4 = '';
-          console.log(curso4);
-      }
-    var dd = {
-        header: function() {
-            return {
-                table: { widths: [560], heights: [40, 0, 0],
-                body: [
-
-    [{text:''}],
-    [{text:'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',alignment:'center',bold:true}],
-    [{text:'LISTA DE COMUNICACIÓN',alignment:'center',bold:true,fillColor:'#ddd'}],
-]
-
-}, margin: [22,15]
-      };
-    },
-    footer: function(){
-      return {
-          table:{
-   headerRows:1, 
-   widths: [560],
-             body : [
-             [''],
-             [''],
-             ['']
-                 ]
-        }, layout : 'headerLineOnly',
-          margin: [30,100]
-      };
-    },
-    
-    content:[
-            {
-                columns: [
-				[    //Primera columna
-				    {
-				        text:'Curso'
-				    },{
-				        table:{ widths: [10],heights:[10],
-				            body:[
-				                [
-				                    {
-				                      text:`${curso1}`  
-				                    }]
-				                ]
-				        }
-				    }],[
-				        //Segunda columna  
-				        {
-				        text:'Difusión'
-				    },{
-				        table:{ widths: [10],heights:[10],
-				            body:[
-				                [
-				                    {
-				                      text:`${this.datos. curso2}`  
-				                    }]
-				                ]
-				        }
-				    }
-				        ],//Tercera columna
-				        [
-				            {
-				        text:'Interno'
-				    },{
-				        table:{ widths: [10],heights:[10],
-				            body:[
-				                [
-				                    {
-				                       text:`${this.datos.curso3}` 
-				                    }]
-				                ]
-				        }
-				    }],//Cuarta columna
-				        [
-				            {
-				        text:'Externo'
-				    },{
-				        table:{ widths: [10],heights:[10],
-				            body:[
-				                [
-				                    {
-				                      text:`${this.datos.curso4}`  
-				                    }]
-				                ]
-				        }
-				    }],//Quinta columna
-				    [
-				        {
-				        text:'Fecha'
-				    },{
-				        table:{ widths: [100],heights:[10],
-				            
-				            body:[
-				                [
-				                    {text:''}]
-				                ]
-				        }
-				    }],//Linea para la fecha
-				    
-				    
-				
-		      	],
-                
-            },{text:'\n\n'},{
-                table:{
-                         widths: [560,560,560,560,560],heights:[10,10,10,10,10,10],
-                    body:[
-                        [{text:'Nombre del Curso o documento:',bold:true}],
-                        [{text:`${this.datos.nombreCurso}`}],
-                        [{text:`Lugar: ${this.datos.lugar}`,bold:true}],
-                        [{text:`Facilitador: ${this.datos.facilitador}`,bold:true}],
-                        [{text:`Empresa: ${this.datos.empresa}`,bold:true}],
-                        
-                        ]
-                }
-            },{text:'\n'},{
-                table:{
-                        widths: [20,250,160,100],
-                        heights:[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
-                    body:[
-                       [{text:'No.'},{text:'Nombre'},{text:'Cargo'},{text:'Firma'}],
-                       [{text:'1'},{text:''},{text:''},{text:''}],
-                       [{text:'2'},{text:''},{text:''},{text:''}],
-                       [{text:'3'},{text:''},{text:''},{text:''}],
-                       [{text:'4'},{text:''},{text:''},{text:''}],
-                       [{text:'5'},{text:''},{text:''},{text:''}],
-                       [{text:'6'},{text:''},{text:''},{text:''}],
-                       [{text:'7'},{text:''},{text:''},{text:''}],
-                       [{text:'8'},{text:''},{text:''},{text:''}],
-                       [{text:'9'},{text:''},{text:''},{text:''}],
-                       [{text:'10'},{text:''},{text:''},{text:''}],
-                       [{text:'11'},{text:''},{text:''},{text:''}],
-                       [{text:'12'},{text:''},{text:''},{text:''}],
-                       [{text:'13'},{text:''},{text:''},{text:''}],
-                       [{text:'14'},{text:''},{text:''},{text:''}],
-                       [{text:'15'},{text:''},{text:''},{text:''}],
-                       [{text:'16'},{text:''},{text:''},{text:''}],
-                       [{text:'17'},{text:''},{text:''},{text:''}],
-                       [{text:'18'},{text:''},{text:''},{text:''}],
-                       [{text:'19'},{text:''},{text:''},{text:''}],
-                       [{text:'20'},{text:''},{text:''},{text:''}],
-        
-                       
-                        ]
-                }
-            }
-        
-         ]
-   ,
-   
-    pageSize: 'LETTER',
-    pageMargins: [22,110]
-};
-
-this.pdfMaker.generate(dd,'Punto 7');
+    const dd = {
+      header: function() {
+        return {
+          table: {
+            widths: [740], heights: [50, 15, 15],
+            body: [
+              [{text: ''}],
+              [{text: 'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA', alignment: 'center', bold: true}],
+              [{text: 'LISTA DE COMUNICACIÓN', alignment: 'center', bold: true, fillColor: '#ddd'}],
+            ]
+          },
+          margin: [22, 15]
+        };
+      },
+      footer: function() {
+        return {
+          table: {
+            headerRows: 1,
+            widths: [750],
+            body: [
+              [''],
+              [''],
+              ['']
+            ]
+          },
+          layout : 'headerLineOnly',
+          margin: [30, 85]
+        };
+      },
+      content: [
+          {
+              table: {
+                  widths: [220, 260, 220, 13],
+                  body: [
+                      [
+                          {text: 'Tema a difundir', bold: true, fillColor: '#ddd', alignment: 'center'},
+                          {text: 'Personal a quien fue distribuida la información', bold: true, fillColor: '#ddd', alignment: 'center'},
+                          {text: '¿A través de qué medio obtuvo la información?', bold: true, fillColor: '#ddd', alignment:'center', colSpan: 2},
+                      ],
+                      [
+                          {text: 'Política', bold: true, alignment: 'center', rowSpan: 7},
+                          {text: 'Jefe de piso\nPersonal de mantenimiento\nProveedores y contratistas\nDespachadores\nEncargado', alignment: 'center', rowSpan: 7},
+                          {text: 'Correo'},
+                          {text: `${this.datos.C1}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Pláticas'},
+                          {text: `${this.datos.C2}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Trípticos'},
+                          {text: `${this.datos.C3}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Lonas'},
+                          {text: `${this.datos.C4}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Oficios'},
+                          {text: `${this.datos.C5}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Tablero de información'},
+                          {text: `${this.datos.C6}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Carteles'},
+                          {text: `${this.datos.C7}`}
+                      ],
+                      [
+                          {text: 'Identificación de riesgos y aspectos ambientales', bold: true, alignment: 'center', rowSpan: 7},
+                          {text: 'Jefe de piso\nPersonal de mantenimiento\nProveedores y contratistas\nDespachadores', alignment: 'center', rowSpan: 7},
+                          {text: 'Correo'},
+                          {text: `${this.datos.C8}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Pláticas'},
+                          {text: `${this.datos.C9}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Trípticos'},
+                          {text: `${this.datos.C10}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Lonas'},
+                          {text: `${this.datos.C11}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Oficios'},
+                          {text: `${this.datos.C12}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Tablero de información'},
+                          {text: `${this.datos.C13}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Carteles'},
+                          {text: `${this.datos.C14}`}
+                      ],
+                      [
+                          {text: 'Requisitos legales vigentes', bold: true, alignment: 'center', rowSpan: 7},
+                          {text: 'Encargado', alignment: 'center', rowSpan: 7},
+                          {text: 'Correo'},
+                          {text: `${this.datos.C15}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Pláticas'},
+                          {text: `${this.datos.C16}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Trípticos'},
+                          {text: `${this.datos.C17}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Lonas'},
+                          {text: `${this.datos.C18}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Oficios'},
+                          {text: `${this.datos.C19}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Tablero de información'},
+                          {text: `${this.datos.C20}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Carteles'},
+                          {text: `${this.datos.C21}`}
+                      ],
+                      [
+                          {text: 'Cumplimiento', bold: true, alignment: 'center', rowSpan: 7},
+                          {text: 'Encargado\nRepresentante técnico', alignment: 'center', rowSpan: 7},
+                          {text: 'Correo'},
+                          {text: `${this.datos.C22}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Pláticas'},
+                          {text: `${this.datos.C23}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Trípticos'},
+                          {text: `${this.datos.C24}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Lonas'},
+                          {text: `${this.datos.C25}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Oficios'},
+                          {text: `${this.datos.C26}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Tablero de información'},
+                          {text: `${this.datos.C27}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Carteles'},
+                          {text: `${this.datos.C28}`}
+                      ],
+                      [
+                          {text: 'Resultados de evaluación', bold: true, alignment: 'center', rowSpan: 7},
+                          {text: 'Encargado\nRepresentante técnico', alignment: 'center', rowSpan: 7},
+                          {text: 'Correo'},
+                          {text: `${this.datos.C29}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Pláticas'},
+                          {text: `${this.datos.C30}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Trípticos'},
+                          {text: `${this.datos.C31}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Lonas'},
+                          {text: `${this.datos.C32}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Oficios'},
+                          {text: `${this.datos.C33}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Tablero de información'},
+                          {text: `${this.datos.C34}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Carteles'},
+                          {text: `${this.datos.C35}`}
+                      ],
+                      [
+                          {text: 'Resultados de auditoría', bold: true, alignment: 'center', rowSpan: 7},
+                          {text: 'Representante técnico\nDirección', alignment: 'center', rowSpan: 7},
+                          {text: 'Correo'},
+                          {text: `${this.datos.C36}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Pláticas'},
+                          {text: `${this.datos.C37}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Trípticos'},
+                          {text: `${this.datos.C38}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Lonas'},
+                          {text: `${this.datos.C39}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: '', alignment: 'center'},
+                          {text: 'Oficios'},
+                          {text: `${this.datos.C40}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Tablero de información'},
+                          {text: `${this.datos.C41}`}
+                      ],
+                      [
+                          {text: ''},
+                          {text: ''},
+                          {text: 'Carteles'},
+                          {text: `${this.datos.C42}`}
+                      ],
+                  ]
+              }
+          }
+      ],
+      pageOrientation: 'landscape',
+      pageSize: 'LETTER',
+      pageMargins: [22, 120]
+    };
+    this.pdfMaker.generate(dd, 'Lista_de_Comunicacion');
   }
 }

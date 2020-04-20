@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
 @Component({
@@ -65,15 +65,11 @@ export class PuntoDosRiesgosPage implements OnInit {
     M18: '',
   };
 
-
-
   constructor(private pdfMaker: PdfMakerService) { }
-
 
   ngOnInit() {
 
   }
-
 
   enviarForm(formulario) {
     console.log(this.datos);

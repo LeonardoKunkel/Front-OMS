@@ -1,0 +1,20 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu-sasisopa"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Agregar Firmas Digitales</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div>
+  <hr class="linea">
+</div>
+<ion-content>
+  <signature-pad
+    [options]="signaturePadOptions"
+    (onBeginEvent)="drawStart()" 
+    (onEndEvent)="drawComplete()">
+  </signature-pad>
+  <ion-button (click)="clear()"> Borrar </ion-button>
+  <ion-button (click)="agregarFirma()"> Aceptar </ion-button>
+</ion-content>
