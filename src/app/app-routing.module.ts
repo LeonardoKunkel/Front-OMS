@@ -209,61 +209,10 @@ const routes: Routes = [
     loadChildren: './pages/punto-diez/punto-diez.module#PuntoDiezPageModule' , 
     //canLoad: [AuthGuard]
   },
-  { 
+  {
     path: 'punto-catorce',
      loadChildren: './pages/punto-catorce/punto-catorce.module#PuntoCatorcePageModule', 
      //canLoad: [AuthGuard]
-     },
-  { 
-    path: 'puntocatorcefs29',
-     loadChildren: './pages/puntocatorcefs29/puntocatorcefs29.module#Puntocatorcefs29PageModule', 
-     //canLoad: [AuthGuard] 
-    },
-  { 
-    path: 'puntocatorce30', 
-    loadChildren: './pages/puntocatorce30/puntocatorce30.module#Puntocatorce30PageModule' , 
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'puntocatorce31', 
-    loadChildren: './pages/puntocatorce31/puntocatorce31.module#Puntocatorce31PageModule' , 
-    //canLoad: [AuthGuard]
-  },
-  
-  { 
-    path: 'puntocatorce32', 
-    loadChildren: './pages/puntocatorce32/puntocatorce32.module#Puntocatorce32PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31asea', 
-    loadChildren: './pages/catorce31asea/catorce31asea.module#Catorce31aseaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31comision', 
-    loadChildren: './pages/catorce31comision/catorce31comision.module#Catorce31comisionPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31secretaria', 
-    loadChildren: './pages/catorce31secretaria/catorce31secretaria.module#Catorce31secretariaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31semarnat', 
-    loadChildren: './pages/catorce31semarnat/catorce31semarnat.module#Catorce31semarnatPageModule', 
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'catorce31legestatal', 
-    loadChildren: './pages/catorce31legestatal/catorce31legestatal.module#Catorce31legestatalPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'catorce31leglocal', 
-    loadChildren: './pages/catorce31leglocal/catorce31leglocal.module#Catorce31leglocalPageModule' , 
-    //canLoad: [AuthGuard]
   },
   { 
     path: 'punto-uno-politica', 
@@ -339,21 +288,6 @@ const routes: Routes = [
   { 
     path: 'punto-seis-evidencia', 
     loadChildren: './pages/punto-seis-evidencia/punto-seis-evidencia.module#PuntoSeisEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-cuatro-menu',
-     loadChildren: './pages/punto-cuatro-menu/punto-cuatro-menu.module#PuntoCuatroMenuPageModule', 
-    //canLoad: [AuthGuard]    
-  },
-  { 
-    path: 'punto-cuatro-procedimiento', 
-    loadChildren: './pages/punto-cuatro-procedimiento/punto-cuatro-procedimiento.module#PuntoCuatroProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-cuatro-evidencia', 
-    loadChildren: './pages/punto-cuatro-evidencia/punto-cuatro-evidencia.module#PuntoCuatroEvidenciaPageModule', 
     //canLoad: [AuthGuard]
    },
   { 
@@ -559,7 +493,6 @@ const routes: Routes = [
   { path: 'punto-once-evidencia', loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule' },
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
   { path: 'punto-trece-evidencia', loadChildren: './pages/punto-trece-evidencia/punto-trece-evidencia.module#PuntoTreceEvidenciaPageModule' },
-  { path: 'punto-catorce-evidencia', loadChildren: './pages/punto-catorce-evidencia/punto-catorce-evidencia.module#PuntoCatorceEvidenciaPageModule' },
   { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
   { path: 'punto-dos-procedimiento', loadChildren: './pages/punto-dos-procedimiento/punto-dos-procedimiento.module#PuntoDosProcedimientoPageModule' },
   { path: 'punto-dos-aspectos', loadChildren: './pages/punto-dos-aspectos/punto-dos-aspectos.module#PuntoDosAspectosPageModule' },
