@@ -17,12 +17,4 @@ export class PuntoDiecisietePage implements OnInit {
     this.navCtrl.navigateForward('/punto-diecisiete-procedimiento');
   }
 
-  goDiecisieteFormulario() {
-    this.navCtrl.navigateForward('/punto-diecisiete-formulario');
-  }
-
-  goDiecisieteEvidencia() {
-    this.navCtrl.navigateForward('/punto-diecisiete-evidencia')
-  }
-
 }
