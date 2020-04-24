@@ -83,68 +83,6 @@ const routes: Routes = [
     //canLoad: [AuthGuard]  
   },
   { 
-    path: 'fo01', 
-    loadChildren: './pages/fo01/fo01.module#FO01PageModule',
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fo08', 
-    loadChildren: './pages/fo08/fo08.module#Fo08PageModule',
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fo05', 
-    loadChildren: './pages/fo05/fo05.module#Fo05PageModule',
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fo03', 
-    loadChildren: './pages/fo03/fo03.module#FO03PageModule',
-    //canLoad: [AuthGuard] 
-  },
-  { 
-    path: 'fo04', 
-    loadChildren: './pages/fo04/fo04.module#Fo04PageModule',
-    //canLoad: [AuthGuard] 
-  },
-  
-  {
-     path: 'fs20', 
-     loadChildren: './pages/fs20/fs20.module#Fs20PageModule',
-     //canLoad: [AuthGuard] 
-  },
-
-  { 
-    path: 'fs20-tanques', 
-    loadChildren: './pages/fs20-tanques/fs20-tanques.module#Fs20TanquesPageModule' ,
-    //canLoad: [AuthGuard]
-  },
-  {
-    path: 'fs20-dispensarios', 
-    loadChildren: './pages/fs20-dispensarios/fs20-dispensarios.module#Fs20DispensariosPageModule',
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'fs20-drenajes', 
-    loadChildren: './pages/fs20-drenajes/fs20-drenajes.module#Fs20DrenajesPageModule' ,
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'fs20-electricas', 
-    loadChildren: './pages/fs20-electricas/fs20-electricas.module#Fs20ElectricasPageModule' ,
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'fs20-pozos', 
-    loadChildren: './pages/fs20-pozos/fs20-pozos.module#Fs20PozosPageModule' ,
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'fs20-edificios', 
-    loadChildren: './pages/fs20-edificios/fs20-edificios.module#Fs20EdificiosPageModule' ,
-    //canLoad: [AuthGuard]
-  },
-  { 
     path: 'pdf-im01', 
     loadChildren: './pages/pdf-im01/pdf-im01.module#PdfIM01PageModule' ,
     //canLoad: [AuthGuard]
@@ -172,36 +110,6 @@ const routes: Routes = [
   { 
     path: 'pdf-im11', 
     loadChildren: './pages/pdf-im11/pdf-im11.module#PdfIM11PageModule', 
-    //canLoad: [AuthGuard]
-  },
-  { 
-    path: 'fs21', 
-    loadChildren: './pages/fs21/fs21.module#Fs21PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fs22', 
-    loadChildren: './pages/fs22/fs22.module#Fs22PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fso02', 
-    loadChildren: './pages/fso02/fso02.module#Fso02PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'fso06', 
-    loadChildren: './pages/fso06/fso06.module#Fso06PageModule' , 
-    //canLoad: [AuthGuard]
-  },
-  {
-     path: 'fo06', 
-     loadChildren: './pages/fo06/fo06.module#Fo06PageModule', 
-     //canLoad: [AuthGuard]
-     },
-  { 
-    path: 'fo07', 
-    loadChildren: './pages/fo07/fo07.module#Fo07PageModule' , 
     //canLoad: [AuthGuard]
   },
   { 
@@ -356,18 +264,8 @@ const routes: Routes = [
     //canLoad: [AuthGuard]
    },
   { 
-    path: 'punto-diecisiete-evidencia', 
-    loadChildren: './pages/punto-diecisiete-evidencia/punto-diecisiete-evidencia.module#PuntoDiecisieteEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
     path: 'punto-diecisiete-procedimiento', 
     loadChildren: './pages/punto-diecisiete-procedimiento/punto-diecisiete-procedimiento.module#PuntoDiecisieteProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-diecisiete-formulario', 
-    loadChildren: './pages/punto-diecisiete-formulario/punto-diecisiete-formulario.module#PuntoDiecisieteFormularioPageModule', 
     //canLoad: [AuthGuard]
    },
   {
@@ -490,18 +388,11 @@ const routes: Routes = [
     loadChildren: './pages/punto-cinco-matriz/punto-cinco-matriz.module#PuntoCincoMatrizPageModule'
     // canLoad: [AuthGuard]
   },
-  { path: 'punto-once-evidencia', loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule' },
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
   { path: 'punto-trece-evidencia', loadChildren: './pages/punto-trece-evidencia/punto-trece-evidencia.module#PuntoTreceEvidenciaPageModule' },
   { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
   { path: 'punto-dos-procedimiento', loadChildren: './pages/punto-dos-procedimiento/punto-dos-procedimiento.module#PuntoDosProcedimientoPageModule' },
   { path: 'punto-dos-aspectos', loadChildren: './pages/punto-dos-aspectos/punto-dos-aspectos.module#PuntoDosAspectosPageModule' },
-  { path: 'punto-dos-asam-uno', loadChildren: './pages/punto-dos-asam-uno/punto-dos-asam-uno.module#PuntoDosAsamUnoPageModule' },
-  { path: 'punto-dos-asam-dos', loadChildren: './pages/punto-dos-asam-dos/punto-dos-asam-dos.module#PuntoDosAsamDosPageModule' },
-  { path: 'punto-dos-asam-tres', loadChildren: './pages/punto-dos-asam-tres/punto-dos-asam-tres.module#PuntoDosAsamTresPageModule' },
-  { path: 'punto-dos-asam-cuatro', loadChildren: './pages/punto-dos-asam-cuatro/punto-dos-asam-cuatro.module#PuntoDosAsamCuatroPageModule' },
-  { path: 'punto-dos-asam-cinco', loadChildren: './pages/punto-dos-asam-cinco/punto-dos-asam-cinco.module#PuntoDosAsamCincoPageModule' },
-  { path: 'punto-dos-asam-seis', loadChildren: './pages/punto-dos-asam-seis/punto-dos-asam-seis.module#PuntoDosAsamSeisPageModule' },
   { path: 'punto-dos-listado', loadChildren: './pages/punto-dos-listado/punto-dos-listado.module#PuntoDosListadoPageModule' },
   { path: 'punto-evidencia', loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule' },
   { path: 'punto-dos-resultado', loadChildren: './pages/punto-dos-resultado/punto-dos-resultado.module#PuntoDosResultadoPageModule' },
@@ -520,6 +411,10 @@ const routes: Routes = [
   { path: 'punto-ocho-lista', loadChildren: './pages/punto-ocho-lista/punto-ocho-lista.module#PuntoOchoListaPageModule' },
   { path: 'punto-ocho-procedimiento', loadChildren: './pages/punto-ocho-procedimiento/punto-ocho-procedimiento.module#PuntoOchoProcedimientoPageModule' },
   { path: 'firmas', loadChildren: './pages/firmas/firmas.module#FirmasPageModule' },
+  { path: 'punto-catorce-procedimiento', loadChildren: './pages/punto-catorce-procedimiento/punto-catorce-procedimiento.module#PuntoCatorceProcedimientoPageModule' },
+  { path: 'punto-quince-procedimiento', loadChildren: './pages/punto-quince-procedimiento/punto-quince-procedimiento.module#PuntoQuinceProcedimientoPageModule' },
+  { path: 'punto-quince', loadChildren: './pages/punto-quince/punto-quince.module#PuntoQuincePageModule' },
+
 
 
 ];

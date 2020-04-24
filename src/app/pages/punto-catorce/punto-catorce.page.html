@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/menu-sasisopa"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN</ion-title>
   </ion-toolbar><hr class="linea">
@@ -10,41 +10,59 @@
 <ion-content>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goPuntoCatorce01()" class="carta">
-          <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
+      <ion-col size="12">
+        <ion-card mode="ios" class="carta" (click)="goCatorceProcedimiento()">
           <ion-card-header>
-            <ion-card-title>FS-32 PLAN DE HALLAZGOS DERIVADOS DEL MONITOREO</ion-card-title>
+            <ion-card-title>P-SA-14 MONITOREO VERIFICACIÓN Y EVALUACIÓN</ion-card-title>
+            <ion-button shape="round">
+              Descargar procedimiento
+            </ion-button>
           </ion-card-header>
         </ion-card>
       </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goPuntoCatorce02()" class="carta"><img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
-          <ion-card-header>
-            <ion-card-title>FS-31 EVALUACIÓN REQUISITOS LEGALES</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goPuntoCatorce03()" class="carta"><img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
-          <ion-card-header>
-            <ion-card-title>FS-30 RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goPuntoCatorce04()" class="carta"><img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
-          <ion-card-header>
-            <ion-card-title>FS-29 PROGRAMA DE MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4" class="carta">
-        <ion-card mode="ios" (click)="goPuntoCatorceEvidencia()">
-            <img height="100px" class="ion-padding" src="/assets/imagenes/diploma.svg"/>
-          <ion-card-header>
-            <ion-card-title>Evidencia</ion-card-title>
-          </ion-card-header>
+      <ion-col size="12">
+        <ion-card class="carta">
+          <ion-card-content>
+            <ion-card-title>
+              Te presentamos los formatos para evaluar el desempeño del cumplimiento de tu SASISOPA.
+              Deberás llenar los campos faltantes y ser conciente de los avances que has tenido con
+              el Sistema
+            </ion-card-title>
+            <br><br>
+            <ion-card-header>
+              <ion-card-title>Formato FS-29 PROGRAMA DE MONITOREO Y MEDICIÓN</ion-card-title>
+              <ion-button
+                shape="round"
+                href="assets/docs/Elemento 14/FS-29 PROGRAMA DE MONITOREO Y MEDICION.pdf"
+                download>
+                Descargar Formato
+              </ion-button>
+              <br><br>
+              <ion-card-title>Formato FS-30  RESULTADO DE MONITOREO Y MEDICIÓN  DE DESEMPEÑO</ion-card-title>
+              <ion-button
+                shape="round"
+                href="assets/docs/Elemento 14/FS-30  RESULTADO DE MONITOREO Y MEDICIÓN  DE DESEMPEÑO.pdf"
+                download>
+                Descargar Formato
+              </ion-button>
+              <br><br>
+              <ion-card-title>Formato FS-31 EVALUACIÓN REQUISITOS LEGALES</ion-card-title>
+              <ion-button
+                shape="round"
+                href="assets/docs/Elemento 14/FS-31 EVALUACION REQUISITOS LEGALES.pdf"
+                download>
+                Descargar Formato
+              </ion-button>
+              <br><br>
+              <ion-card-title>Formato FS-32 PLAN DE HALLAZGOS DERIVADOS DEL MONITOREO</ion-card-title>
+              <ion-button
+                shape="round"
+                href="assets/docs/Elemento 14/FS-32 PLAN DE HALLAZGOS DERIVADOS DEL MONITOREO.pdf"
+                download>
+                Descargar Formato
+              </ion-button>
+            </ion-card-header>
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
