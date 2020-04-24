@@ -1,110 +1,105 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/punto-trece"></ion-back-button>
     </ion-buttons>
-    <ion-title>Evaluación de Simulacros</ion-title>
+    <ion-title class="ion-text-center">Evaluación de Simulacros</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-justify" style="margin: 3%;">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, placeat iste quasi
+         illum neque nisi maiores at corrupti cumque! Ullam corrupti culpa incidunt inventore possimus
+          eligendi. Necessitatibus nisi culpa earum.
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card mode="ios">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">INFORMACIÓN DEL SIMULACRO</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label position="floating">Área</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Equipo</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Clase de simulacro</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label position="floating">Agente perturbador</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Fecha y hora programada</ion-label>
+                <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Escenario de emergencia</ion-label>
+                <ion-textarea></ion-textarea>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <ion-item-divider color="light">
+                <ion-label>EVALUACIÓN</ion-label>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label>Objetivo</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Concepto Evaluados</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Aciertos y deficiencias observadas</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <div>
+                <ion-item-divider color="light">
+                  <ion-label>Observaciones</ion-label>
+                </ion-item-divider>
+                <ion-textarea placeholder="Escribe ..."></ion-textarea>
+              </div>
+              <div>
+                <ion-item-divider color="light">
+                  <ion-label>Concluciones</ion-label>
+                </ion-item-divider>
+              </div>
+              <ion-textarea placeholder="Escribe ..." ></ion-textarea>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+  <ion-button (click)="enviar()" expand="block" color="primary" shape="round">
+    Guardar y enviar
+  </ion-button>
   <form  #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-      <ion-grid fixed>
-        <ion-slides>
-          <ion-slide>
-            <ion-card>
-              <ion-item-divider color="success" class="ion-text-center">
-                <ion-label>1. INFORMACIÓN DEL SIMULACRO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-textarea placeholder="Área" name="area" [(ngModel)]="datos.area"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Equipo" name="equipo" [(ngModel)]="datos.equipo"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Clase de simulacro" name="simulacro" [(ngModel)]="datos.simulacro"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Aviso previo" name="aviso" [(ngModel)]="datos.aviso"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Agente perturbador" name="agente" [(ngModel)]="datos.agente"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label>Fecha y Hora</ion-label>
-                <ion-datetime display-format="HH:m DD/MM/YYYY" name="fecha" [(ngModel)]="datos.fecha"></ion-datetime>
-              </ion-item>
-              <br><br><br>
-              <ion-item-divider color="success" class="ion-text-center">
-                <ion-label>ESCENARIO DE EMERGENCIA</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-textarea placeholder="Escribe..." rows="10" name="escenario" [(ngModel)]="datos.escenario"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card>
-              <ion-item-divider color="success" class="ion-text-center">
-                <ion-label>2. EVALUACIÓN</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-textarea placeholder="Objetivo" rows="8" name="objetivo" [(ngModel)]="datos.objetivo"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Conceptos evaluados" rows="8" name="conceptos" [(ngModel)]="datos.conceptos"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Aciertos y Deficiencias Observadas" rows="8" name="aciertos" [(ngModel)]="datos.aciertos"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card>
-              <ion-item-divider color="success" class="ion-text-center">
-                <ion-label>3. OBSERVACIONES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-textarea placeholder="Escribe" rows="15" name="observaciones" [(ngModel)]="datos.observaciones"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card>
-              <ion-item-divider color="success" class="ion-text-center">
-                <ion-label>4. CONCLUSIONES</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-textarea placeholder="Escribe" rows="15" name="concluciones" [(ngModel)]="datos.concluciones"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card>
-              <ion-item-divider color="success" class="ion-text-center">
-                <ion-label>5. AUTORIZACIÓN DEL SIMULACRO</ion-label>
-              </ion-item-divider>
-              <ion-item>
-                <ion-textarea placeholder="Propone:" rows="7" name="propone" [(ngModel)]="datos.propone"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Aprobado por:" rows="7" name="aprobado" [(ngModel)]="datos.aprobado"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-textarea placeholder="Autoriza:" rows="7" name="autoriza" [(ngModel)]="datos.autoriza"></ion-textarea>
-              </ion-item>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-button type="submit">
-              Guardar y enviar
-            </ion-button>
-            <ion-button (click)="pdf()">
-              Pdf
-            </ion-button>
-          </ion-slide>
-        </ion-slides>
-      </ion-grid>
   </form>
 </ion-content>

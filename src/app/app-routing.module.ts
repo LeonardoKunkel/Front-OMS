@@ -615,42 +615,7 @@ const routes: Routes = [
     loadChildren: './pages/punto-trece-programa/punto-trece-programa.module#PuntoTreceProgramaPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-dieciseis-procedimiento', 
-    loadChildren: './pages/punto-dieciseis-procedimiento/punto-dieciseis-procedimiento.module#PuntoDieciseisProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-procedimiento2', 
-    loadChildren: './pages/punto-dieciseis-procedimiento2/punto-dieciseis-procedimiento2.module#PuntoDieciseisProcedimiento2PageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-formato', 
-    loadChildren: './pages/punto-dieciseis-formato/punto-dieciseis-formato.module#PuntoDieciseisFormatoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-entrevista', 
-    loadChildren: './pages/punto-dieciseis-entrevista/punto-dieciseis-entrevista.module#PuntoDieciseisEntrevistaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-comprobacion', 
-    loadChildren: './pages/punto-dieciseis-comprobacion/punto-dieciseis-comprobacion.module#PuntoDieciseisComprobacionPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-recomendaciones', 
-    loadChildren: './pages/punto-dieciseis-recomendaciones/punto-dieciseis-recomendaciones.module#PuntoDieciseisRecomendacionesPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'punto-dieciseis-estadistica', 
-    loadChildren: './pages/punto-dieciseis-estadistica/punto-dieciseis-estadistica.module#PuntoDieciseisEstadisticaPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
+  {  
     path: 'punto-dieciseis', 
     loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule', 
     //canLoad: [AuthGuard]
@@ -671,7 +636,7 @@ const routes: Routes = [
   { path: 'punto-doce-evidencia', loadChildren: './pages/punto-doce-evidencia/punto-doce-evidencia.module#PuntoDoceEvidenciaPageModule' },
   { path: 'punto-trece-evidencia', loadChildren: './pages/punto-trece-evidencia/punto-trece-evidencia.module#PuntoTreceEvidenciaPageModule' },
   { path: 'punto-catorce-evidencia', loadChildren: './pages/punto-catorce-evidencia/punto-catorce-evidencia.module#PuntoCatorceEvidenciaPageModule' },
-  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
+  //{ path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
   { path: 'punto-dos-procedimiento', loadChildren: './pages/punto-dos-procedimiento/punto-dos-procedimiento.module#PuntoDosProcedimientoPageModule' },
   { path: 'punto-dos-aspectos', loadChildren: './pages/punto-dos-aspectos/punto-dos-aspectos.module#PuntoDosAspectosPageModule' },
   { path: 'punto-dos-asam-uno', loadChildren: './pages/punto-dos-asam-uno/punto-dos-asam-uno.module#PuntoDosAsamUnoPageModule' },
@@ -689,7 +654,19 @@ const routes: Routes = [
   { path: 'jefe-piso-modal', loadChildren: './pages/jefe-piso-modal/jefe-piso-modal.module#JefePisoModalPageModule' },
   { path: 'despachadores-modal', loadChildren: './pages/despachadores-modal/despachadores-modal.module#DespachadoresModalPageModule' },
   { path: 'mantenimiento-modal', loadChildren: './pages/mantenimiento-modal/mantenimiento-modal.module#MantenimientoModalPageModule' },
-  { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },
+  { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },  { path: 'elemento18-procedimiento', loadChildren: './pages/elemento18-procedimiento/elemento18-procedimiento.module#Elemento18ProcedimientoPageModule' },
+  { path: 'elemento16-investigacion-accidentes', loadChildren: './pages/elemento16-investigacion-accidentes/elemento16-investigacion-accidentes.module#Elemento16InvestigacionAccidentesPageModule' },
+  { path: 'elemento16-arbol-fallas', loadChildren: './pages/elemento16-arbol-fallas/elemento16-arbol-fallas.module#Elemento16ArbolFallasPageModule' },
+  { path: 'elemento16-causa-raiz', loadChildren: './pages/elemento16-causa-raiz/elemento16-causa-raiz.module#Elemento16CausaRaizPageModule' },
+  { path: 'estacion-servicio-model', loadChildren: './pages/estacion-servicio-model/estacion-servicio-model.module#EstacionServicioModelPageModule' },
+  { path: 'elemento16-hipotesis-recomendaciones', loadChildren: './pages/elemento16-hipotesis-recomendaciones/elemento16-hipotesis-recomendaciones.module#Elemento16HipotesisRecomendacionesPageModule' },
+  { path: 'elemento16-entrevista', loadChildren: './pages/elemento16-entrevista/elemento16-entrevista.module#Elemento16EntrevistaPageModule' },
+  { path: 'elemento16-estadistica', loadChildren: './pages/elemento16-estadistica/elemento16-estadistica.module#Elemento16EstadisticaPageModule' },
+
+  //{ path: 'anexo-procedimiento-model', loadChildren: './pages/anexo-procedimiento-model/anexo-procedimiento-model.module#AnexoProcedimientoModelPageModule' },
+
+  
+
 
   
 

@@ -3,10 +3,21 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-doce"></ion-back-button>
     </ion-buttons>
-    <ion-title>Anexo de Seguridad</ion-title>
+    <ion-title class="ion-text-center">Anexo de Seguridad</ion-title>
   </ion-toolbar>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal()" style="-prefix-linear-gradient:(left, red, white);">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-header>
 
 <ion-content>
-  <embed src="../../../assets/docs/FS-24 ANEXO DE SEGURIDAD.pdf" type="application/pdf" width="100%" height="1200px" />
+  <p style="text-align: justify; margin: 3%;">
+    "A continuación te presentamos un Anexo de Seguridad de Contratistas, leélo con detenimiento y sientete 
+    libre de agregar alguna(s) Medidas Preventivas Generales que vayan acorde a la filosofía de tu 
+    Estación de Servicio para efectuar lo antes mencionado <b>oprima el boton en la esquina superior derecha</b>. 
+    Si creed que las Medidas Preventivas son suficientes, solo descarga el documento".
+  </p>
+  <embed src="../../../assets/docs/Elemento 12/FS-24 ANEXO DE SEGURIDAD.pdf" type="application/pdf" width="100%" height="500px" />
 </ion-content>

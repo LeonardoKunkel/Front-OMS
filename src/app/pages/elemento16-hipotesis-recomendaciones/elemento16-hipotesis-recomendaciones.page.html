@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-dieciseis"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">COMPROBACIÓN DE HIPÓTESIS DE TRABAJO / RECOMENDACIONES DE LA INVESTIGACIÓN CAUSA RAÍZ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p style="margin: 3%; text-align: justify;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit natus animi dolorem iusto porro illum blanditiis, tempora cum,
+    eveniet saepe dicta exercitationem perspiciatis dolorum eos atque at velit nobis. Repudiandae.
+  </p>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeLg="4"></ion-col>
+      <ion-col size="12" sizeLg="4">
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider color="light">
+              <ion-label>DESCRIPCIÓN DEL INCIDENTE:</ion-label>
+            </ion-item-divider>
+            <ion-textarea placeholder="Describir"></ion-textarea>
+          </ion-card-content>
+          <hr style="background-color:#ABABBA; margin: 2%;">
+          <ion-item>
+            <ion-label position="floating">ID DEL INCIDENTE</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">ÁREA O EQUIPO</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">SERVICIO</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">FECHA DEL INCIDENTE</ion-label>
+            <ion-datetime display-format="DD.MM.YYYY"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">FECHA DE ANÁLISIS</ion-label>
+            <ion-datetime display-format="DD.MM.YYYY  "></ion-datetime>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeLg="4"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <p style="text-align: justify; margin: 3%;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minus neque tempore esse aut, magnam consequatur, provident perspiciatis veritatis
+    libero officia minima illo iure atque mollitia corporis? Cupiditate, ipsam voluptatibus?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, repudiandae architecto error voluptatem earum, sit laboriosam mollitia ipsum sequi 
+    asperiores ullam expedita culpa optio inventore vitae aspernatur officia totam laborum.
+  </p>
+  <ion-card>
+    <ion-card-content *ngFor="let att of anArrayRecomendacion; let idx = index">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">{{att.label}}{{idx+1}}.Recomendación</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayRecomendacion[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">Elemento del SASISOPA</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayElementoSasisopa[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">Responsable</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayResponsable[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">Fecha Compromiso</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayFechaCompromiso[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid><hr style="background-color: #ABABBA; size: 2px;"> 
+    </ion-card-content>
+    <ion-button (click)="Add()" expand="block" fill="clear" shape="round">
+      Agregar
+    </ion-button>
+  </ion-card>
+
+  <p style="text-align: justify; margin: 3%;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minus neque tempore esse aut, magnam consequatur, provident perspiciatis veritatis
+    libero officia minima illo iure atque mollitia corporis? Cupiditate, ipsam voluptatibus?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, repudiandae architecto error voluptatem earum, sit laboriosam mollitia ipsum sequi 
+    asperiores ullam expedita culpa optio inventore vitae aspernatur officia totam laborum.
+  </p>
+  <ion-card>
+    <ion-card-content *ngFor="let att of anArrayDescripcion; let idx = index">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">{{att.label}}{{idx+1}}.Descripción</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayDescripcion[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">Comprobaccion</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayAccionComprobacion[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">Responsable</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayResponsable2[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" sizeLg="3">
+            <ion-item>
+              <ion-label position="floating">Fecha</ion-label>
+              <ion-input type="text"[(ngModel)]="anArrayFecha[idx].value"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid><hr style="background-color: #ABABBA; size: 2px;"> 
+    </ion-card-content>
+    <ion-button (click)="Add2()" expand="block" fill="clear" shape="round">
+      Agregar
+    </ion-button>
+  </ion-card>
+</ion-content>

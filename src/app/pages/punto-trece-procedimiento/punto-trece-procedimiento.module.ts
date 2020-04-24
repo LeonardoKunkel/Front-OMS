@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PuntoTreceProcedimientoPage } from './punto-trece-procedimiento.page';
+import { AnexoProcedimientoModelPage } from '../anexo-procedimiento-model/anexo-procedimiento-model.page';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntoTreceProcedimientoPage]
+  declarations: [PuntoTreceProcedimientoPage,AnexoProcedimientoModelPage],
+  entryComponents: [AnexoProcedimientoModelPage]
 })
 export class PuntoTreceProcedimientoPageModule {}

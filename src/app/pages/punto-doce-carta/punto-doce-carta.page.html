@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons>
       <ion-back-button defaultHref="/punto-doce"></ion-back-button>
+      <ion-button (click)="pdf()" fill="clear" shape="round" slot="end" horizontal="end">
+        Print
+      </ion-button>
     </ion-buttons>
-    <ion-title>CARTA RESPONSIVA CONTRATISTAS</ion-title>
+    <ion-title class="ion-text-center">CARTA RESPONSIVA CONTRATISTAS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <embed src="../../../assets/docs/CARTA RESPONSIVA CONTRATISTAS.pdf" type="application/pdf" width="100%" height="1200px" />
+<ion-content> 
+  <embed src="../../../assets/docs/Elemento 12/CARTA RESPONSIVA CONTRATISTAS2.pdf" type="application/pdf" width="100%" height="1200px" />
 </ion-content>
