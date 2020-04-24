@@ -34,9 +34,10 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
   declarations: [AppComponent],   
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule,AyudaPageModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AyudaPageModule,
     ProcedimientoCincoPageModule,
     FullCalendarModule,
     EditPoliticaPageModule,
@@ -44,7 +45,6 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxChartsModule,
-    //ChartsModule
   ],
   providers: [
     StatusBar,

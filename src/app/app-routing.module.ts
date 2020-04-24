@@ -654,7 +654,8 @@ const routes: Routes = [
   { path: 'jefe-piso-modal', loadChildren: './pages/jefe-piso-modal/jefe-piso-modal.module#JefePisoModalPageModule' },
   { path: 'despachadores-modal', loadChildren: './pages/despachadores-modal/despachadores-modal.module#DespachadoresModalPageModule' },
   { path: 'mantenimiento-modal', loadChildren: './pages/mantenimiento-modal/mantenimiento-modal.module#MantenimientoModalPageModule' },
-  { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },  { path: 'elemento18-procedimiento', loadChildren: './pages/elemento18-procedimiento/elemento18-procedimiento.module#Elemento18ProcedimientoPageModule' },
+  { path: 'contratistas-modal', loadChildren: './pages/contratistas-modal/contratistas-modal.module#ContratistasModalPageModule' },
+  { path: 'elemento18-procedimiento', loadChildren: './pages/elemento18-procedimiento/elemento18-procedimiento.module#Elemento18ProcedimientoPageModule' },
   { path: 'elemento16-investigacion-accidentes', loadChildren: './pages/elemento16-investigacion-accidentes/elemento16-investigacion-accidentes.module#Elemento16InvestigacionAccidentesPageModule' },
   { path: 'elemento16-arbol-fallas', loadChildren: './pages/elemento16-arbol-fallas/elemento16-arbol-fallas.module#Elemento16ArbolFallasPageModule' },
   { path: 'elemento16-causa-raiz', loadChildren: './pages/elemento16-causa-raiz/elemento16-causa-raiz.module#Elemento16CausaRaizPageModule' },
@@ -662,25 +663,14 @@ const routes: Routes = [
   { path: 'elemento16-hipotesis-recomendaciones', loadChildren: './pages/elemento16-hipotesis-recomendaciones/elemento16-hipotesis-recomendaciones.module#Elemento16HipotesisRecomendacionesPageModule' },
   { path: 'elemento16-entrevista', loadChildren: './pages/elemento16-entrevista/elemento16-entrevista.module#Elemento16EntrevistaPageModule' },
   { path: 'elemento16-estadistica', loadChildren: './pages/elemento16-estadistica/elemento16-estadistica.module#Elemento16EstadisticaPageModule' },
-
-  //{ path: 'anexo-procedimiento-model', loadChildren: './pages/anexo-procedimiento-model/anexo-procedimiento-model.module#AnexoProcedimientoModelPageModule' },
-
-  
-
-
-  
-
-
-  
-
-
-
-
- 
-  
-
-
-
+  { path: 'punto-siete-quejas', loadChildren: './pages/punto-siete-quejas/punto-siete-quejas.module#PuntoSieteQuejasPageModule' },
+  { path: 'punto-siete-registro', loadChildren: './pages/punto-siete-registro/punto-siete-registro.module#PuntoSieteRegistroPageModule' },
+  { path: 'punto-nueve', loadChildren: './pages/punto-nueve/punto-nueve.module#PuntoNuevePageModule' },
+  { path: 'punto-nueve-procedimiento', loadChildren: './pages/punto-nueve-procedimiento/punto-nueve-procedimiento.module#PuntoNueveProcedimientoPageModule' },
+  { path: 'punto-nueve-listado', loadChildren: './pages/punto-nueve-listado/punto-nueve-listado.module#PuntoNueveListadoPageModule' },
+  { path: 'punto-ocho-lista', loadChildren: './pages/punto-ocho-lista/punto-ocho-lista.module#PuntoOchoListaPageModule' },
+  { path: 'punto-ocho-procedimiento', loadChildren: './pages/punto-ocho-procedimiento/punto-ocho-procedimiento.module#PuntoOchoProcedimientoPageModule' },
+  { path: 'firmas', loadChildren: './pages/firmas/firmas.module#FirmasPageModule' },
 
 ];
 @NgModule({
@@ -690,12 +680,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
-
-
-
-
-
-
-
 

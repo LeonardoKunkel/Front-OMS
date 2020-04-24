@@ -10,43 +10,74 @@
   <hr class="linea">
 </div>
 <ion-content>
+  <ion-row>
+    <ion-col size="12">
+      <div class="acomodo">
+        <h3>
+          Se deben analizar todas las actividades realizadas dentro de la estaciones de servicio para 
+          determinar todas las entradas y salidas de los procesos. Una vez identificadas se debe definir
+          los elementos con interacción con el medio ambiente, las cuales son el agua, la atmósfera,
+          el suelo, la flora y la fauna.
+        </h3>
+        <h3>
+          A continuación se enlistarán las áreas donde de la estación de servicio, en cada una deberá
+          evaluar los riesgos asociados. 
+        </h3>
+      </div>
+    </ion-col>
+  </ion-row>
   <ion-list>
 
     <ion-item routerLink="/punto-dos-asam-uno">
+      <ion-icon name="arrow-dropright-circle" slot="start"></ion-icon>
       <ion-label>
         ALMACENAMIENTO DE COMBUSTIBLES
       </ion-label>
     </ion-item>
 
     <ion-item routerLink="/punto-dos-asam-dos">
+      <ion-icon name="arrow-dropright-circle" slot="start"></ion-icon>
       <ion-label>
         MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS
       </ion-label>
     </ion-item>
 
     <ion-item routerLink="/punto-dos-asam-tres">
+      <ion-icon name="arrow-dropright-circle" slot="start"></ion-icon>
       <ion-label>
         DRENAJES Y TRAMPA DE COMBUSTIBLES
       </ion-label>
     </ion-item>
 
     <ion-item routerLink="/punto-dos-asam-cuatro">
+      <ion-icon name="arrow-dropright-circle" slot="start"></ion-icon>
       <ion-label>
         OFICINAS Y BAÑOS
       </ion-label>
     </ion-item>
 
     <ion-item routerLink="/punto-dos-asam-cinco">
+      <ion-icon name="arrow-dropright-circle" slot="start"></ion-icon>
       <ion-label>
         CUARTO DE CONTROL ELÉCTRICO
       </ion-label>
     </ion-item>
-
+  
     <ion-item routerLink="/punto-dos-asam-seis">
+      <ion-icon name="arrow-dropright-circle" slot="start"></ion-icon>
       <ion-label>
         CUARTO DE MÁQUINAS
       </ion-label>
     </ion-item>
 
   </ion-list>
+  <ion-row>
+    <ion-col size="3">
+      <ion-button (click)="pdf()" class="ion-activatable ripple-parent">
+        Descargar
+        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        <ion-icon ios="ios-cloud-download" md="md-cloud-download"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

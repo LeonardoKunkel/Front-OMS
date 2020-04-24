@@ -12,25 +12,27 @@ export class MenuSasisopaPage implements OnInit {
 
   ngOnInit() {
   }
-
-  goPuntoUno(){
-    this.navCtrl.navigateForward('/punto-uno')
+  goFirmas() {
+    this.navCtrl.navigateForward('/firmas');
+  }
+  goPuntoUno() {
+    this.navCtrl.navigateForward('/punto-uno');
   }
 
   goPuntoDos() {
-    this.navCtrl.navigateForward('/punto-dos')
+    this.navCtrl.navigateForward('/punto-dos');
   }
 
   goPuntoTres() {
-    this.navCtrl.navigateForward('/punto-tes')
+    this.navCtrl.navigateForward('/punto-tes');
   }
 
   goPuntoCuatro() {
-    this.navCtrl.navigateForward('/punto-cuatro')
+    this.navCtrl.navigateForward('/punto-cuatro');
   }
 
   goPuntoCinco() {
-    this.navCtrl.navigateForward('/menu-punto5')
+    this.navCtrl.navigateForward('/menu-punto5');
   }
 
   goPuntoSeis() {
@@ -47,14 +49,12 @@ export class MenuSasisopaPage implements OnInit {
 
   goPuntoNueve() {
     this.navCtrl.navigateForward('/punto-nueve');
-    console.log('entraste a la página 9')
   }
 
   goPuntoDiez(){
     this.navCtrl.navigateForward('/punto-diez');
-    console.log('entraste a la página X')
   }
-  
+
   goPuntoOnce() {
     this.navCtrl.navigateForward('/punto-once');
   }
@@ -69,16 +69,14 @@ export class MenuSasisopaPage implements OnInit {
 
   goPuntoCatorce() {
     this.navCtrl.navigateForward('/punto-catorce');
-    console.log('entraste a la página XIV')
   }
+
   goPuntoQuince() {
     this.navCtrl.navigateForward('/punto15-menu');
-    console.log('entraste a la página XV') 
   }
 
   goPuntoDieciseis() {
     this.navCtrl.navigateForward('/punto-dieciseis');
-    console.log('entraste a la página XVI')
   }
 
 goPuntoDiecisiete() {

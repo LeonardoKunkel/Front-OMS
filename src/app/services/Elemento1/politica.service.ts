@@ -12,7 +12,7 @@ export class PoliticaService {
   getPolitica() {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      'Authorization': token
+      Authorization: token
     });
     return this.httpClient.get('http://localhost:3000/politica/',{headers});
   }
@@ -20,7 +20,7 @@ export class PoliticaService {
   createPolitica(politica) {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      'Authorization': token
+      Authorization: token
     });
     return this.httpClient.post('http://localhost:3000/politica/create', politica, {headers});
   }
