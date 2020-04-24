@@ -1,12 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+    <ion-buttons >
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="openModal()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-back-button defaultHref="/punto-trece"></ion-back-button>
     </ion-buttons>
-    <ion-title>Procedimiento</ion-title>
+    <ion-title class="ion-text-center">Procedimiento</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <embed src="../../../assets/docs/P-SA-13 PREPARACION Y RESPUESTA A EMERGENCIAS.pdf" type="application/pdf" width="100%" height="1200px" />
+  <ion-card>
+    <p style="text-align: justify; margin: 3%;">
+      En este apartado deberas agregar las reglas de seguridad que tu estación de servicio tiene a la hora de recibir contratistas y prestadores de servicios.
+    </p>
+    <ion-card-content>
+      <embed src="../../../assets/docs/Elementon 13/P-SA-13 PREPARACION Y RESPUESTA A EMERGENCIAS2.pdf" type="application/pdf" width="100%" height="450px" />
+    </ion-card-content>
+  </ion-card>
 </ion-content>

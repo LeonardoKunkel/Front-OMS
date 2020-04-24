@@ -1,0 +1,368 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" horizontal="end" slot="fixed">
+        <ion-icon name="close-circle" slot="end" horizontal="end"></ion-icon>
+      </ion-button>
+      <ion-button (click)="pdf()">
+        <ion-icon slot="end" name="print"></ion-icon>
+        Imprimir
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Anexos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider color="light">
+    <ion-label>Directorio de apoyo externo</ion-label>
+  </ion-item-divider>
+  <p style="text-align: justify; margin: 3%;">
+    Como parte de la preparación y respuesta a emergencias, 
+    te presentamos un Directorio de apoyo externo, es necesario llenar los campos tomando en 
+    cuenta la ubicación y las cercanías de tu Estación de Servicio.
+  </p>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">HOSPITAL REGIONAL</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">POLICÍA JUDICIAL</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">BOMBEROS</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">CRUZ ROJA</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">IMSS CLÍNICA </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">PROTECCIÓN CIVIL ESTATAL </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">PROTECCIÓN CIVIL MUNICIPAL</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode='ios'>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">MINISTERIO PÚBLICO</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Función</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tiempo que tardaria en llegar la ayuda</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-item-divider color="light">
+    <ion-label class="ion-text-center">Grupo Estratégico y Táctico en la estación de servicio</ion-label>
+  </ion-item-divider>
+  <p style="text-align: justify; margin: 3%;">
+    Es necesario tener los datos de al menos dos personas que fungiran como coordinadores del comité
+     interno de Protección Civil. 
+    Te recomendamos asignar a la Dirección y al Encargado de la Estación de Servicio.
+  </p>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <ion-card>
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Nombre del encargado administrativo</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Cargo dentro de la estructura</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Teléfono de oficina</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-card-content>
+          <ion-card-subtitle>Deslice para la siguiente carta =></ion-card-subtitle><ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-card>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Nombre del encargado administrativo</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Cargo dentro de la estructura</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Teléfono de oficina</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+      <p style="text-align: justify; margin: 3%;">
+        Es necesario tener un control e inventario del equipamento de seguridad de tu Estación 
+        de Servicio, en la siguiente sección deberás especificar la cantidad de extintores, el tipo,
+         y su ubicación.
+        Así como la ubicación de los paros de emergencia y de los botiquines.
+      </p>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12" sizeLg="4">
+            <ion-card mode="ios">
+              <ion-card-header>
+                <ion-card-title>
+                  Extintores
+                  <ion-buttons >
+                    <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+                      <ion-fab-button (click)="Add()">
+                        <ion-icon name="add"></ion-icon>
+                      </ion-fab-button>
+                    </ion-fab>
+                  </ion-buttons>
+                </ion-card-title> 
+              </ion-card-header>
+              <ion-card-content *ngFor="let att of anArray; let idx = index">
+                <ion-item>
+                  <ion-label color="primary">{{att.label}}{{idx+1}}.Ubicacion</ion-label>
+                  <ion-input type="text"[(ngModel)]="anArray[idx].value"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Tipo</ion-label>
+                  <ion-select [(ngModel)]="anArrayTipo[idx].value" >
+                    <ion-select-option value="PQS">PQS</ion-select-option>
+                    <ion-select-option value="PQR">PQR</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeLg="4">
+            <ion-card mode="ios">
+              <ion-card-header>
+                <ion-card-title>
+                  Paros de emergencia
+                  <ion-buttons >
+                    <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+                      <ion-fab-button (click)="AddParoEmergencia()">
+                        <ion-icon name="add"></ion-icon>
+                      </ion-fab-button>
+                    </ion-fab>
+                  </ion-buttons>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content *ngFor="let att of anArrayParoEmergencia; let idx = index">
+                <ion-item>
+                  <ion-label color="primary">{{att.label}}{{idx+1}}.Ubicacion</ion-label>
+                  <ion-input type="text"[(ngModel)]="anArrayParoEmergencia[idx].value"></ion-input>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" sizeLg="4">
+            <ion-card mode="ios">
+              <ion-card-header>
+                <ion-card-title>
+                  Botiquin
+                  <ion-buttons >
+                    <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+                      <ion-fab-button (click)="AddBotiquin()">
+                        <ion-icon name="add"></ion-icon>
+                      </ion-fab-button>
+                    </ion-fab>
+                  </ion-buttons>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content *ngFor="let att of anArrayBotiquin; let idx = index">
+                <ion-item>
+                  <ion-label color="primary">{{att.label}}{{idx+1}}.Ubicacion</ion-label>
+                  <ion-input type="text"[(ngModel)]="anArrayBotiquin[idx].value"></ion-input>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

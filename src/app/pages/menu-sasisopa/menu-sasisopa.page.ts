@@ -83,4 +83,8 @@ goPuntoDiecisiete() {
   this.navCtrl.navigateForward('/punto-diecisiete');
 }
 
+goElemento18(){
+  this.navCtrl.navigateForward('/elemento18-procedimiento')
+}
+
 }

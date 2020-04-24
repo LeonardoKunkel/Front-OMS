@@ -23,6 +23,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+//import { ChartsModule } from 'ng2-charts';
 // import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
@@ -30,7 +31,7 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent],   
   entryComponents: [],
   imports: [
     BrowserModule,
