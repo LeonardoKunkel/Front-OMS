@@ -19,6 +19,7 @@ export class PuntoUnoPoliticaPage implements OnInit {
     private politicaService: PoliticaService,
   ) {
     //this.consultarPolitica();
+    this.consultarPolitica();
   }
 
   ngOnInit() {}

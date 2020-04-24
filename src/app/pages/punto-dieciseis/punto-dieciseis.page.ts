@@ -14,31 +14,31 @@ export class PuntoDieciseisPage implements OnInit {
   }
 
   goPuntoProcedimiento() {
-    this.navCtrl.navigateForward('/punto-dieciseis-procedimiento')
+    this.navCtrl.navigateForward('/elemento16-investigacion-accidentes')
   }
 
   goPuntoProcedimiento2() {
-    this.navCtrl.navigateForward('/punto-dieciseis-procedimiento2')
-  }
-
-  goPuntoEstadistica() {
-    this.navCtrl.navigateForward('/punto-dieciseis-estadistica')
-  }
-
-  goPuntoRecomendaciones() {
-    this.navCtrl.navigateForward('/punto-dieciseis-comprobacion')
-  }
-
-  goPuntoComprobacion() {
-    this.navCtrl.navigateForward('/punto-dieciseis-comprobacion')
-  }
-
-  goPuntoEntrevista() {
-    this.navCtrl.navigateForward('/punto-dieciseis-entrevista')
+    this.navCtrl.navigateForward('/elemento16-arbol-fallas')
   }
 
   goPuntoFormato() {
-    this.navCtrl.navigateForward('/punto-dieciseis-formato')
+    this.navCtrl.navigateForward('/elemento16-causa-raiz')
+  }
+
+
+
+  
+
+  goPuntoComprobacion() {
+    this.navCtrl.navigateForward('/elemento16-hipotesis-recomendaciones');
+  }
+
+  goPuntoEntrevista() {
+    this.navCtrl.navigateForward('/elemento16-entrevista')
+  }
+
+  goPuntoEstadistica() {
+    this.navCtrl.navigateForward('/elemento16-estadistica')
   }
   goEvidencia(){
     this.navCtrl.navigateForward('/punto-dieciseis-evidencia')

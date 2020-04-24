@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PuntoTreceProgramaPage } from './punto-trece-programa.page';
+import { AcordeonComponent } from '../../components/acordeon/acordeon.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntoTreceProgramaPage]
+  declarations: [PuntoTreceProgramaPage,AcordeonComponent]
 })
 export class PuntoTreceProgramaPageModule {}
