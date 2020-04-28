@@ -25,6 +25,7 @@ import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 //import { ChartsModule } from 'ng2-charts';
 // import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { EstacionServicioModelPageModule } from '../app/pages/estacion-servicio-model/estacion-servicio-model.module';
 
 
 
@@ -45,6 +46,7 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxChartsModule,
+    EstacionServicioModelPageModule
   ],
   providers: [
     StatusBar,

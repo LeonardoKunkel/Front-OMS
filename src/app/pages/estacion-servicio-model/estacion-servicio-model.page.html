@@ -1,9 +1,80 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>estacionServicioModel</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" horizontal="end" slot="fixed">
+        <ion-icon name="close-circle" slot="end" horizontal="end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center ">Datos generales de la estacióm de servicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
+    <ion-card>
+      <ion-card-content>
+        <p style="margin:3%; text-align: justify;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore laboriosam expedita exercitationem explicabo voluptate ab est. Facilis corporis odio voluptatum? Repellendus facere earum voluptatibus consectetur inventore esse velit necessitatibus porro?
+        </p>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label position="floating">Nombre de la estación de servicio</ion-label>
+                <ion-input name="nombreEstacionServicio" [(ngModel)]="datos.nombreEstacionServicio"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Estado</ion-label>
+                <ion-input name="estado" [(ngModel)]="datos.estado"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Ciudad</ion-label>
+                <ion-input name="ciudad" [(ngModel)]="datos.ciudad"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Colonia</ion-label>
+                <ion-input name="colonia" [(ngModel)]="datos.colonia"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Cp</ion-label>
+                <ion-input name="cp" [(ngModel)]="datos.cp"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Calle y numero</ion-label>
+                <ion-input name="calleNumero" [(ngModel)]="datos.calleNumero"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label position="floating">Correo electronico</ion-label>
+                <ion-input name="correoElectronico" [(ngModel)]="datos.correoElectronico"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Telefono</ion-label>
+                <ion-input name="telefono" [(ngModel)]="datos.telefono"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Gerente de la estación(Nombre)</ion-label>
+                <ion-input name="gerenteEstacion" [(ngModel)]="datos.gerenteEstacion"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Representante tecnico(Nombre)</ion-label>
+                <ion-input name="representanteTecnico" [(ngModel)]="datos.representanteTecnico"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Maxima autoridad(Nombre)</ion-label>
+                <ion-input name="maximaAutoridad" [(ngModel)]="datos.maximaAutoridad"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </form>
+<ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">
+  Guardar y enviar
+</ion-button>
+<ion-button (click)="consultarDatos()" expand="block" fill="clear" shape="round">
+  Consutar
+</ion-button>
 </ion-content>
