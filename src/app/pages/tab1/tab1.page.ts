@@ -15,7 +15,9 @@ export class Tab1Page {
   constructor(
     private modalCtrl: ModalController,
     private navCtlr: NavController
-  ) {}
+  ) {
+    this.openModal();
+  }
 
   segmentChanged(event){
     console.log(event); 

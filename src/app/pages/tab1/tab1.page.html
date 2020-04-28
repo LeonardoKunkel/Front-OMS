@@ -29,6 +29,11 @@
 </ion-header><br>
 
 <ion-content padding>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal()">
+      Datos <br>ES
+    </ion-fab-button>
+  </ion-fab>
   <div>
     <ion-grid fixed>
       <ion-row>
@@ -87,8 +92,4 @@
       </ion-row>
     </ion-grid>
   </div>
-  
-  <!-- <ion-button (click)="openModal()" expand="block" fill="clear" shape="round">
-    Click me
-  </ion-button> -->
 </ion-content>
