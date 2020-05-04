@@ -17,4 +17,23 @@ export class PuntoQuincePage implements OnInit {
     this.navCtrl.navigateForward('/punto-quince-procedimiento');
   }
 
+  goQuincePrograma() {
+    this.navCtrl.navigateForward('/punto-quince-programa');
+  }
+
+  goQuincePlan() {
+    this.navCtrl.navigateForward('/punto-quince-plan');
+  }
+
+  goQuinceInforme() {
+    this.navCtrl.navigateForward('/punto-quince-informe');
+  }
+
+  goQuinceHallazgos() {
+    this.navCtrl.navigateForward('/punto-quince-hallazgos');
+  }
+
+  goQuinceEvidencia() {
+    this.navCtrl.navigateForward('/punto-quince-evidencia');
+  }
 }

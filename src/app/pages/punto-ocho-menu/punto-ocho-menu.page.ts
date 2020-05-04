@@ -20,4 +20,15 @@ export class PuntoOchoMenuPage implements OnInit {
     this.navCtrl.navigateForward('/punto-ocho-procedimiento');
   }
 
+  goOchoInstructivo() {
+    this.navCtrl.navigateForward('/punto-ocho-inst');
+  }
+
+  goOchoDistribucion() {
+    this.navCtrl.navigateForward('/punto-ocho-distribucion');
+  }
+
+  goOchoSolicitud() {
+    this.navCtrl.navigateForward('/punto-ocho-solicitud');
+  }
 }

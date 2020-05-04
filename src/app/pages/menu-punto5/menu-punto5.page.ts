@@ -22,12 +22,12 @@ export class MenuPunto5Page implements OnInit {
     return await modal.present();
   }
   goPuntoMatriz() {
-    this.navCtrl.navigateForward('/punto-cinco-matriz')
+    this.navCtrl.navigateForward('/punto-cinco-matriz');
   }
   goPuntoCincoProcedimiento() {
-    this.navCtrl.navigateForward('/punto-cinco-procedimiento')
+    this.navCtrl.navigateForward('/punto-cinco-procedimiento');
   }
-  goPuntoCincoEvidencia(){
-    this.navCtrl.navigateForward('/punto-cinco-evidencia')
+  goPuntoCincoEvidencia() {
+    this.navCtrl.navigateForward('/punto-cinco-evidencia');
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-dos-riesgos',
@@ -65,16 +66,21 @@ export class PuntoDosRiesgosPage implements OnInit {
     M18: '',
   };
 
-  constructor(private pdfMaker: PdfMakerService) { }
+  constructor( private pdfMaker: PdfMakerService, public toast: ToastController) { }
 
   ngOnInit() {
 
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
 
-    let magnitud1 = this.datos.F1 + this.datos.C1;
+    const magnitud1 = this.datos.F1 + this.datos.C1;
     this.datos.M1 = '';
     switch (magnitud1) {
       case 0:
@@ -97,7 +103,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M1 = 'I';
         break;
     }
-    let magnitud2 = this.datos.F2 + this.datos.C2;
+    const magnitud2 = this.datos.F2 + this.datos.C2;
     this.datos.M2 = '';
     switch (magnitud2) {
       case 0:
@@ -120,7 +126,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M2 = 'I';
         break;
     }
-    let magnitud3 = this.datos.F3 + this.datos.C3;
+    const magnitud3 = this.datos.F3 + this.datos.C3;
     this.datos.M3 = '';
     switch (magnitud3) {
       case 0:
@@ -143,7 +149,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M3 = 'I';
         break;
     }
-    let magnitud4 = this.datos.F4 + this.datos.C4;
+    const magnitud4 = this.datos.F4 + this.datos.C4;
     this.datos.M4 = '';
     switch (magnitud4) {
       case 0:
@@ -166,7 +172,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M4 = 'I';
         break;
     }
-    let magnitud5 = this.datos.F5 + this.datos.C5;
+    const magnitud5 = this.datos.F5 + this.datos.C5;
     this.datos.M5 = '';
     switch (magnitud5) {
       case 0:
@@ -189,7 +195,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M5 = 'I';
         break;
     }
-    let magnitud6 = this.datos.F6 + this.datos.C6;
+    const magnitud6 = this.datos.F6 + this.datos.C6;
     this.datos.M6 = '';
     switch (magnitud6) {
       case 0:
@@ -212,7 +218,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M6 = 'I';
         break;
     }
-    let magnitud7 = this.datos.F7 + this.datos.C7;
+    const magnitud7 = this.datos.F7 + this.datos.C7;
     this.datos.M7 = '';
     switch (magnitud7) {
       case 0:
@@ -235,7 +241,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M7 = 'I';
         break;
     }
-    let magnitud8 = this.datos.F8 + this.datos.C8;
+    const magnitud8 = this.datos.F8 + this.datos.C8;
     this.datos.M8 = '';
     switch (magnitud8) {
       case 0:
@@ -258,7 +264,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M8 = 'I';
         break;
     }
-    let magnitud9 = this.datos.F9 + this.datos.C9;
+    const magnitud9 = this.datos.F9 + this.datos.C9;
     this.datos.M9 = '';
     switch (magnitud9) {
       case 0:
@@ -281,7 +287,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M9 = 'I';
         break;
     }
-    let magnitud10 = this.datos.F10 + this.datos.C10;
+    const magnitud10 = this.datos.F10 + this.datos.C10;
     this.datos.M10 = '';
     switch (magnitud10) {
       case 0:
@@ -304,7 +310,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M10 = 'I';
         break;
     }
-    let magnitud11 = this.datos.F11 + this.datos.C11;
+    const magnitud11 = this.datos.F11 + this.datos.C11;
     this.datos.M11 = '';
     switch (magnitud11) {
       case 0:
@@ -327,7 +333,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M11 = 'I';
         break;
     }
-    let magnitud12 = this.datos.F12 + this.datos.C12;
+    const magnitud12 = this.datos.F12 + this.datos.C12;
     this.datos.M12 = '';
     switch (magnitud12) {
       case 0:
@@ -350,7 +356,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M12 = 'I';
         break;
     }
-    let magnitud13 = this.datos.F13 + this.datos.C13;
+    const magnitud13 = this.datos.F13 + this.datos.C13;
     this.datos.M13 = '';
     switch (magnitud13) {
       case 0:
@@ -373,7 +379,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M13 = 'I';
         break;
     }
-    let magnitud14 = this.datos.F14 + this.datos.C14;
+    const magnitud14 = this.datos.F14 + this.datos.C14;
     this.datos.M14 = '';
     switch (magnitud14) {
       case 0:
@@ -396,7 +402,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M14 = 'I';
         break;
     }
-    let magnitud15 = this.datos.F15 + this.datos.C15;
+    const magnitud15 = this.datos.F15 + this.datos.C15;
     this.datos.M15 = '';
     switch (magnitud15) {
       case 0:
@@ -419,7 +425,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M15 = 'I';
         break;
     }
-    let magnitud16 = this.datos.F16 + this.datos.C16;
+    const magnitud16 = this.datos.F16 + this.datos.C16;
     this.datos.M16 = '';
     switch (magnitud16) {
       case 0:
@@ -442,7 +448,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M16 = 'I';
         break;
     }
-    let magnitud17 = this.datos.F17 + this.datos.C17;
+    const magnitud17 = this.datos.F17 + this.datos.C17;
     this.datos.M17 = '';
     switch (magnitud17) {
       case 0:
@@ -465,7 +471,7 @@ export class PuntoDosRiesgosPage implements OnInit {
         this.datos.M17 = 'I';
         break;
     }
-    let magnitud18 = this.datos.F18 + this.datos.C18;
+    const magnitud18 = this.datos.F18 + this.datos.C18;
     this.datos.M18 = '';
     switch (magnitud18) {
       case 0:
@@ -537,7 +543,7 @@ export class PuntoDosRiesgosPage implements OnInit {
                 {text: 'Salvaguardas', bold: true, fillColor: '#ddd'},
                 {text: 'F', bold: true, fillColor: '#ddd'},
                 {text: 'C', bold: true, fillColor: '#ddd'},
-                {text: 'R', bold: true, fillColor: '#ddd'},
+                {text: 'M', bold: true, fillColor: '#ddd'},
                 {text: 'Recomendación', bold: true, fillColor: '#ddd'}
               ],
               [

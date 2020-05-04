@@ -13,7 +13,9 @@ export class ContratistasModalPage implements OnInit {
     caracteristicasPersonales:'',
     requerimientosFisicos:'',
     herramientasEquipos:'',
-    equipoProteccion:''
+    equipoProteccion:'',
+    nivelAcademico: '',
+    personalCargo: ''
   }
 
   constructor(
@@ -95,7 +97,8 @@ export class ContratistasModalPage implements OnInit {
                    [{text:'PERSONAL A SU CARGO',bold:true},{text:'•Encargado de anden\n•Llenadores\n•Personal de Mantenimiento',colSpan:3,alignment:'justify'},{},{}],
                    [{text:'HERRAMIENTAS Y O EQUIPOS',bold:true},{text:`${this.datos.herramientasEquipos}`,colSpan:3,alignment:'justify'},{},{}],
                    [{text:'EQUIPO DE PROTECCION PERSONAL',bold:true},{text:`${this.datos.equipoProteccion}`,colSpan:3,alignment:'justify'},{},{}],
-                   
+                   [{text: 'NIVEL ACADÉMICO', bold: true}, {text: `${this.datos.nivelAcademico}`, colSpan: 3, alignment: 'justify'}, {}, {}],
+                   [{text: 'PERSONAL A SU CARGO', bold: true}, {text: `${this.datos.personalCargo}`, colSpan: 3, alignment: 'justify'}, {}, {}],
                    ]
            }
        },{

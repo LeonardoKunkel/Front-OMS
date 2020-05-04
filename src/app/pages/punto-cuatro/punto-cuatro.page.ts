@@ -9,24 +9,19 @@ import { NavController } from '@ionic/angular';
 })
 export class PuntoCuatroPage implements OnInit {
 
-  constructor(
-    private navCtrl: NavController,
-  ) { }
+  constructor( private navCtrl: NavController ) { }
 
   ngOnInit() {
   }
 
   goOpcion1() {
-    this.navCtrl.navigateForward('/cuatro1')
-    console.log('entraste')
+    this.navCtrl.navigateForward('/cuatro1');
   }
 
   goOpcion2() {
-    this.navCtrl.navigateForward('/cuatro2')
-    console.log('entraste')
+    this.navCtrl.navigateForward('/cuatro2');
   }
   goOpcion3() {
-    this.navCtrl.navigateForward('/cuatro3')
-    console.log('entraste')
+    this.navCtrl.navigateForward('/cuatro3');
   }
 }

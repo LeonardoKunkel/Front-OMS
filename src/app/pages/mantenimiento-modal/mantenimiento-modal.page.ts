@@ -9,27 +9,28 @@ import { PersonalMantenimientoServiceService} from '../../services/Elemento 6/pe
   styleUrls: ['./mantenimiento-modal.page.scss'],
 })
 export class MantenimientoModalPage implements OnInit {
-  datos:any={
-    caracteristicasPersonales:'',
-    requerimientosFisicos:'',
-    herramientasEquipos:'',
-    equipoProteccion:''
-  }
- 
+  datos: any = {
+    caracteristicasPersonales: '',
+    requerimientosFisicos: '',
+    herramientasEquipos: '',
+    equipoProteccion: '',
+    nivelAcademico: '',
+    personalCargo: ''
+  };
+
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService ,
-    private mantenimientoService:PersonalMantenimientoServiceService
-    ) { } 
+    private mantenimientoService: PersonalMantenimientoServiceService
+    ) { }
 
   ngOnInit() {
   }
 
-  mantenimiento(){
-    this.mantenimientoService.mantenimientoCreado(this.datos).subscribe((data:any)=>{
+  mantenimiento() {
+    this.mantenimientoService.mantenimientoCreado(this.datos).subscribe((data: any) => {
       console.log(data);
-      
-    })
+    });
   }
 
   async closeModal(){
@@ -95,7 +96,8 @@ export class MantenimientoModalPage implements OnInit {
                    [{text:'PERSONAL A SU CARGO',bold:true},{text:'•Encargado de anden\n•Llenadores\n•Personal de Mantenimiento',colSpan:3,alignment:'justify'},{},{}],
                    [{text:'HERRAMIENTAS Y O EQUIPOS',bold:true},{text:`${this.datos.herramientasEquipos}`,colSpan:3,alignment:'justify'},{},{}],
                    [{text:'EQUIPO DE PROTECCION PERSONAL',bold:true},{text:`${this.datos.equipoProteccion}`,colSpan:3,alignment:'justify'},{},{}],
-                   
+                   [{text: 'NIVEL ACADÉMICO', bold: true}, {text: `${this.datos.nivelAcademico}`, colSpan: 3, alignment: 'justify'}, {}, {}],
+                   [{text: 'PERSONAL A SU CARGO', bold: true}, {text: `${this.datos.personalCargo}`, colSpan: 3, alignment: 'justify'}, {}, {}],
                    ]
            }
        },{

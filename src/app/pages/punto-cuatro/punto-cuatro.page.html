@@ -8,17 +8,21 @@
 </ion-header>
   
 <ion-content>
-  <p style="padding: 2%; text-align: justify;">Establecer los criterios para diseñar y establecer objetivos, metas e indicadores consistentes
-    con la Política de Seguridad Industrial, Seguridad Operativa y Protección al Medio Ambiente,
-    considerando los requisitos legales aplicables y los resultados de la evaluación de los
-    Aspectos Ambientales y Análisis de Riesgo.</p>
   <ion-grid fixed>
+    <p style="padding: 2%; text-align: justify;">
+      Establecer los criterios para diseñar y establecer objetivos, metas e indicadores consistentes
+      con la Política de Seguridad Industrial, Seguridad Operativa y Protección al Medio Ambiente,
+      considerando los requisitos legales aplicables y los resultados de la evaluación de los
+      Aspectos Ambientales y Análisis de Riesgo.
+    </p>
     <ion-row>
       <ion-col size="12" sizeMd="6" sizeLg="4">
         <ion-card mode="ios" (click)="goOpcion1()" style="background-image: url('../../../assets/FondosEstilos/login_blue_BG-02.png');">
           <ion-card-content>
             <img class="ion-padding" src="../../../assets/Imagenes/1_procedimiento.png" style="margin: auto; display: block; width: 50%;" />
-            <ion-card-title>Procedimiento</ion-card-title>
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Procedimiento</ion-card-title>
+            </ion-card-header>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -26,7 +30,9 @@
         <ion-card mode="ios" (click)="goOpcion2()" style="background-image: url('../../../assets/FondosEstilos/login_blue_BG-02.png');">
           <ion-card-content>
             <img class="ion-padding" src="../../../assets/Imagenes/Elemento 4/4_metas-01.png" style="margin: auto; display: block; width: 50%;" />
-            <ion-card-title>FS-12 OBJETIVOS, METAS E INDICADORES</ion-card-title>
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">FS-12 Objetivos, Metas e Indicadores</ion-card-title>
+            </ion-card-header>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -34,7 +40,9 @@
         <ion-card mode="ios" (click)="goOpcion3()" style="background-image: url('../../../assets/FondosEstilos/login_blue_BG-02.png');">
           <ion-card-content>
             <img class="ion-padding" src="../../../assets/Imagenes/1_evidencia.png" style="margin: auto; display: block; width: 50%;" />
-            <ion-card-title>Subir evidencia</ion-card-title>
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Evidencia</ion-card-title>
+            </ion-card-header>
           </ion-card-content>
         </ion-card>
       </ion-col>
