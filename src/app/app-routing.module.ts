@@ -204,21 +204,12 @@ const routes: Routes = [
     loadChildren: './pages/punto-siete-menu/punto-siete-menu.module#PuntoSieteMenuPageModule', 
     //canLoad: [AuthGuard]
    },
-  //{ 
-    //path: 'punto-siete-evidencia', 
-    //loadChildren: './pages/punto-siete-evidencia/punto-siete-evidencia.module#PuntoSieteEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   //},
   { 
     path: 'punto-siete-procedimiento', 
     loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule', 
     //canLoad: [AuthGuard]
    },
-  // {
-  //   path: 'quejas-sugerencias', 
-  //   loadChildren: './pages/quejas-sugerencias/quejas-sugerencias.module#QuejasSugerenciasPageModule', 
-  //   //canLoad: [AuthGuard]
-  //  },
+
   {
     path: 'registros-control',
     loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule',
@@ -232,6 +223,16 @@ const routes: Routes = [
   { 
     path: 'punto-evidencia', 
     loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule', 
+    //canLoad: [AuthGuard]
+   },
+  // { 
+  //   path: 'punto-ocho-solicitud-cambios', 
+  //   loadChildren: './pages/punto-ocho-solicitud-cambios/punto-ocho-solicitud-cambios.module#PuntoOchoSolicitudCambiosPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
+  { 
+    path: 'punto-ocho-lista-distribucion', 
+    loadChildren: './pages/punto-ocho-lista-distribucion/punto-ocho-lista-distribucion.module#PuntoOchoListaDistribucionPageModule', 
     //canLoad: [AuthGuard]
    },
   { 
