@@ -13,7 +13,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 export class PuntoUnoEvidenciaPage implements OnInit {
 
   foto: any;
-
+  uploadedFiles: Array <File>;
   constructor(private camera: Camera, private platform: Platform, private document: DocumentViewer, private file: File, private transfer: FileTransfer) { }
 
   ngOnInit() {
@@ -66,6 +66,20 @@ export class PuntoUnoEvidenciaPage implements OnInit {
     }).then(imagenData => this.foto = 'data:image/jpeg;base64' + imagenData );
   }
 
-  subir() {}
+  // onUpload(){
+  //   console.log('upload');
+  //   let formData = new FormData();
+  //   for(let i = 0; i < this.uploadedFiles.length; i++){
+  //     formData.append("uploads[]", this.uploadedFiles[i],this.uploadedFiles[i].name);
+  //   }
+  // }
+
+
+  onFileChange(e){
+    //console.log('FileChange',e);
+    this.uploadedFiles = e.target.files;
+    console.log(this.uploadedFiles);
+    
+  }
 
 }

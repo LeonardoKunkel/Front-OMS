@@ -77,15 +77,6 @@ const routes: Routes = [
     loadChildren: './pages/punto-siete/punto-siete.module#PuntoSietePageModule',
     //canLoad: [AuthGuard]
   },
-  // { path: 'punto-ocho', 
-    // loadChildren: './pages/punto-ocho/punto-ocho.module#PuntoOchoPageModule',
-    // canLoad: [AuthGuard] 
-  // },
-  // { 
-  //   path: 'punto-nueve', 
-  //   loadChildren: './punto-nueve/punto-nueve.module#PuntoNuevePageModule',
-  //   //canLoad: [AuthGuard] 
-  // },
   { 
     path: 'punto-once', 
     loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule',

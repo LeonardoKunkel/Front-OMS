@@ -15,7 +15,7 @@
     <ion-card-title class="center">Evidencia</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-img [src]="foto" *ngIf="foto"></ion-img>
+    <!-- <ion-img [src]="foto" *ngIf="foto"></ion-img>
     <h1 class="center">Subir la evidencia tomada en el punto dos del SASISOPA</h1><br><br><br><br><br><br><br><br>
     <div class="celulares2">
       <ion-segment color="secondary" >
@@ -35,7 +35,18 @@
       <div class="card-footer">
         <ion-input type="file" placeholder="jdjdjdj" class="celulares" id="img-uploader "></ion-input>
       </div>
+    </div> -->
+
+    <div class="custom-file">
+      <form action="/api/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" class="custom-file-input" id="input-custom-file" (change)="onFileChange($event)">
+        <label for="input-custom-file" class="input-custom-label">Selecciona un archivo</label>
+      </form>
     </div>
+
+    <ion-button (click)="onUpload()" expand="block" fill="clear" shape="round">
+      Subir
+    </ion-button>
   </ion-card-content>
 </ion-card>
 
