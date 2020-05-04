@@ -34,6 +34,14 @@
           <ion-label position="floating">Equipo de proteccion personal:</ion-label>
           <ion-input  required name="equipoProteccion" [(ngModel)]="datos.equipoProteccion"></ion-input>
         </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nivel académico:</ion-label>
+          <ion-input  required name="nivelAcademico" [(ngModel)]="datos.nivelAcademico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Personal a su cargo:</ion-label>
+          <ion-input  required name="personalCargo" [(ngModel)]="datos.personalCargo"></ion-input>
+        </ion-item>
       </ion-card-content>
     </ion-card>
     <ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">

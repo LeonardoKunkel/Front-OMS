@@ -11,36 +11,31 @@ export class PuntoSeisMenuPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private modalCtrl:ModalController
+    private modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
   }
-goPuntoPerfilPuesto(){
-  this.navCtrl.navigateForward('/punto-seis')
-  
-}
-goPuntoDeteccionNecesidaes(){
-  this.navCtrl.navigateForward('/punto-seis-deteccion-necesidades')
-  
-}
-goPuntoProgramaCapacitacion(){
-  this.navCtrl.navigateForward('/punto-seis-programa-capacitacion')
-  
-}
-async goPuntoSeguimientoPrograma(){
- const modal = await this.modalCtrl.create({
-   component: PuntoSeisSeguimientoProgramaPage
- });
- console.log('Entraste a modal');
- return await modal.present();
-}
-goPuntoProcedimiento(){
-  this.navCtrl.navigateForward('/punto-seis-procedimiento')
-  
-}
-goPuntoEvidencia(){
-  this.navCtrl.navigateForward('/punto-seis-evidencia')
-  
-}
+  goPuntoPerfilPuesto() {
+    this.navCtrl.navigateForward('/punto-seis');
+  }
+  goPuntoDeteccionNecesidaes() {
+    this.navCtrl.navigateForward('/punto-seis-deteccion-necesidades');
+  }
+  goPuntoProgramaCapacitacion() {
+    this.navCtrl.navigateForward('/punto-seis-programa-capacitacion');
+  }
+  async goPuntoSeguimientoPrograma() {
+   const modal = await this.modalCtrl.create({
+     component: PuntoSeisSeguimientoProgramaPage
+   });
+   console.log('Entraste a modal');
+   return await modal.present();
+  }
+  goPuntoProcedimiento() {
+    this.navCtrl.navigateForward('/punto-seis-procedimiento');
+  }
+  goPuntoEvidencia() {
+    this.navCtrl.navigateForward('/punto-seis-evidencia');
+  }
 }

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/menu-sasisopa"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">COMPETENCIA DEL PERSONAL, CAPACITACION Y ENTRETENIMIENTO </ion-title>
+    <ion-title class="ion-text-center">Competencia del Personal, Capacitación Y Entretenimiento</ion-title>
   </ion-toolbar>
 
   <!-- //[disabled]="disabled" -->
@@ -15,14 +15,14 @@
 </ion-header>
 
 
- <ion-content>
-   <ion-card-header>
-     <ion-card-subtitle class="ion-text-justify" style="margin: 3%;">Es un documento que contiene la información del puesto a cubrirse, en él
-      se describen varios requisitos como, el objetivo del puesto, funciones específicas,conocimientos específicos, las habilidades, nivel académico, idiomas, características
-      personales, destrezas técnicas.</ion-card-subtitle>
-   </ion-card-header>
+<ion-content>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
     <ion-grid fixed>
+      <p>
+        Es un documento que contiene la información del puesto a cubrirse, en él se describen varios
+        requisitos como, el objetivo del puesto, funciones específicas,conocimientos específicos,
+        las habilidades, nivel académico, idiomas, características personales y destrezas técnicas.
+      </p>
       <ion-row>
         <ion-col size="12" sizeLg="4">
           <ion-card (click)="openModal()" mode="ios">
@@ -36,7 +36,7 @@
           <ion-card (click)="openModal2()" mode="ios">
             <img src="../../../assets/Imagenes/Elemento 6/representante tecnico-01.png" style="width: 30%; height: auto; margin: auto; display: block;" alt="">
             <ion-card-header>
-              <ion-card-title class="ion-text-center">Representante tecnico</ion-card-title>
+              <ion-card-title class="ion-text-center">Representante Técnico</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
@@ -82,8 +82,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button (click)="director()">
-      Director
-    </ion-button>
   </form>
 </ion-content> 
