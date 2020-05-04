@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-dos-aspectos',
@@ -167,91 +168,96 @@ export class PuntoDosAspectosPage implements OnInit {
     VT39: '',
   };
 
-  constructor(private pdfMaker: PdfMakerService) { }
+  constructor(private pdfMaker: PdfMakerService, public toast: ToastController) { }
 
 
   ngOnInit() {
 
   }
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
-    let valortotal1 = this.datos.F1 + this.datos.N1 + this.datos.M1;
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+
+    const valortotal1 = this.datos.F1 + this.datos.N1 + this.datos.M1;
     this.datos.VT1 = valortotal1;
-    let valortotal2 = this.datos.F2 + this.datos.N2 + this.datos.M2;
+    const valortotal2 = this.datos.F2 + this.datos.N2 + this.datos.M2;
     this.datos.VT2 = valortotal2;
-    let valortotal3 = this.datos.F3 + this.datos.N3 + this.datos.M3;
+    const valortotal3 = this.datos.F3 + this.datos.N3 + this.datos.M3;
     this.datos.VT3 = valortotal3;
-    let valortotal4 = this.datos.F4 + this.datos.N4 + this.datos.M4;
+    const valortotal4 = this.datos.F4 + this.datos.N4 + this.datos.M4;
     this.datos.VT4 = valortotal4;
-    let valortotal5 = this.datos.F5 + this.datos.N5 + this.datos.M5;
+    const valortotal5 = this.datos.F5 + this.datos.N5 + this.datos.M5;
     this.datos.VT5 = valortotal5;
-    let valortotal6 = this.datos.F6 + this.datos.N6 + this.datos.M6;
+    const valortotal6 = this.datos.F6 + this.datos.N6 + this.datos.M6;
     this.datos.VT6 = valortotal6;
-    let valortotal7 = this.datos.F7 + this.datos.N7 + this.datos.M7;
+    const valortotal7 = this.datos.F7 + this.datos.N7 + this.datos.M7;
     this.datos.VT7 = valortotal7;
-    let valortotal8 = this.datos.F8 + this.datos.N8 + this.datos.M8;
+    const valortotal8 = this.datos.F8 + this.datos.N8 + this.datos.M8;
     this.datos.VT8 = valortotal8;
-    let valortotal9 = this.datos.F9 + this.datos.N9 + this.datos.M9;
+    const valortotal9 = this.datos.F9 + this.datos.N9 + this.datos.M9;
     this.datos.VT9 = valortotal9;
-    let valortotal10 = this.datos.F10 + this.datos.N10 + this.datos.M10;
+    const valortotal10 = this.datos.F10 + this.datos.N10 + this.datos.M10;
     this.datos.VT10 = valortotal10;
-    let valortotal11 = this.datos.F11 + this.datos.N11 + this.datos.M11;
+    const valortotal11 = this.datos.F11 + this.datos.N11 + this.datos.M11;
     this.datos.VT11 = valortotal11;
-    let valortotal12 = this.datos.F12 + this.datos.N12 + this.datos.M12;
+    const valortotal12 = this.datos.F12 + this.datos.N12 + this.datos.M12;
     this.datos.VT12 = valortotal12;
-    let valortotal13 = this.datos.F13 + this.datos.N13 + this.datos.M13;
+    const valortotal13 = this.datos.F13 + this.datos.N13 + this.datos.M13;
     this.datos.VT13 = valortotal13;
-    let valortotal14 = this.datos.F14 + this.datos.N14 + this.datos.M14;
+    const valortotal14 = this.datos.F14 + this.datos.N14 + this.datos.M14;
     this.datos.VT14 = valortotal14;
-    let valortotal15 = this.datos.F15 + this.datos.N15 + this.datos.M15;
+    const valortotal15 = this.datos.F15 + this.datos.N15 + this.datos.M15;
     this.datos.VT15 = valortotal15;
-    let valortotal16 = this.datos.F16 + this.datos.N16 + this.datos.M16;
+    const valortotal16 = this.datos.F16 + this.datos.N16 + this.datos.M16;
     this.datos.VT16 = valortotal16;
-    let valortotal17 = this.datos.F17 + this.datos.N17 + this.datos.M17;
+    const valortotal17 = this.datos.F17 + this.datos.N17 + this.datos.M17;
     this.datos.VT17 = valortotal17;
-    let valortotal18 = this.datos.F18 + this.datos.N18 + this.datos.M18;
+    const valortotal18 = this.datos.F18 + this.datos.N18 + this.datos.M18;
     this.datos.VT18 = valortotal18;
-    let valortotal19 = this.datos.F19 + this.datos.N19 + this.datos.M19;
+    const valortotal19 = this.datos.F19 + this.datos.N19 + this.datos.M19;
     this.datos.VT19 = valortotal19;
-    let valortotal20 = this.datos.F20 + this.datos.N20 + this.datos.M20;
+    const valortotal20 = this.datos.F20 + this.datos.N20 + this.datos.M20;
     this.datos.VT20 = valortotal20;
-    let valortotal21 = this.datos.F21 + this.datos.N21 + this.datos.M21;
+    const valortotal21 = this.datos.F21 + this.datos.N21 + this.datos.M21;
     this.datos.VT21 = valortotal21;
-    let valortotal22 = this.datos.F22 + this.datos.N22 + this.datos.M22;
+    const valortotal22 = this.datos.F22 + this.datos.N22 + this.datos.M22;
     this.datos.VT22 = valortotal22;
-    let valortotal23 = this.datos.F23 + this.datos.N23 + this.datos.M23;
+    const valortotal23 = this.datos.F23 + this.datos.N23 + this.datos.M23;
     this.datos.VT23 = valortotal23;
-    let valortotal24 = this.datos.F24 + this.datos.N24 + this.datos.M24;
+    const valortotal24 = this.datos.F24 + this.datos.N24 + this.datos.M24;
     this.datos.VT24 = valortotal24;
-    let valortotal25 = this.datos.F25 + this.datos.N25 + this.datos.M25;
+    const valortotal25 = this.datos.F25 + this.datos.N25 + this.datos.M25;
     this.datos.VT25 = valortotal25;
-    let valortotal26 = this.datos.F26 + this.datos.N26 + this.datos.M26;
+    const valortotal26 = this.datos.F26 + this.datos.N26 + this.datos.M26;
     this.datos.VT26 = valortotal26;
-    let valortotal27 = this.datos.F27 + this.datos.N27 + this.datos.M27;
+    const valortotal27 = this.datos.F27 + this.datos.N27 + this.datos.M27;
     this.datos.VT27 = valortotal27;
-    let valortotal28 = this.datos.F28 + this.datos.N28 + this.datos.M28;
+    const valortotal28 = this.datos.F28 + this.datos.N28 + this.datos.M28;
     this.datos.VT28 = valortotal28;
-    let valortotal29 = this.datos.F29 + this.datos.N29 + this.datos.M29;
+    const valortotal29 = this.datos.F29 + this.datos.N29 + this.datos.M29;
     this.datos.VT29 = valortotal29;
-    let valortotal30 = this.datos.F30 + this.datos.N30 + this.datos.M30;
+    const valortotal30 = this.datos.F30 + this.datos.N30 + this.datos.M30;
     this.datos.VT30 = valortotal30;
-    let valortotal31 = this.datos.F31 + this.datos.N31 + this.datos.M31;
+    const valortotal31 = this.datos.F31 + this.datos.N31 + this.datos.M31;
     this.datos.VT31 = valortotal31;
-    let valortotal32 = this.datos.F32 + this.datos.N32 + this.datos.M32;
+    const valortotal32 = this.datos.F32 + this.datos.N32 + this.datos.M32;
     this.datos.VT32 = valortotal32;
-    let valortotal33 = this.datos.F33 + this.datos.N33 + this.datos.M33;
+    const valortotal33 = this.datos.F33 + this.datos.N33 + this.datos.M33;
     this.datos.VT33 = valortotal33;
-    let valortotal34 = this.datos.F34 + this.datos.N34 + this.datos.M34;
+    const valortotal34 = this.datos.F34 + this.datos.N34 + this.datos.M34;
     this.datos.VT34 = valortotal34;
-    let valortotal35 = this.datos.F35 + this.datos.N35 + this.datos.M35;
+    const valortotal35 = this.datos.F35 + this.datos.N35 + this.datos.M35;
     this.datos.VT35 = valortotal35;
-    let valortotal36 = this.datos.F36 + this.datos.N36 + this.datos.M36;
+    const valortotal36 = this.datos.F36 + this.datos.N36 + this.datos.M36;
     this.datos.VT36 = valortotal36;
-    let valortotal37 = this.datos.F37 + this.datos.N37 + this.datos.M37;
+    const valortotal37 = this.datos.F37 + this.datos.N37 + this.datos.M37;
     this.datos.VT37 = valortotal37;
-    let valortotal38 = this.datos.F38 + this.datos.N38 + this.datos.M38;
+    const valortotal38 = this.datos.F38 + this.datos.N38 + this.datos.M38;
     this.datos.VT38 = valortotal38;
-    let valortotal39 = this.datos.F39 + this.datos.N39 + this.datos.M39;
+    const valortotal39 = this.datos.F39 + this.datos.N39 + this.datos.M39;
     this.datos.VT39 = valortotal39;
   }
 
@@ -379,7 +385,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 7},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 7},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 7},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
@@ -403,7 +409,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -426,7 +432,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01\nP-IM-02', fontSize: 9}
@@ -450,7 +456,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -473,7 +479,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derramess', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -496,7 +502,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -519,7 +525,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -542,7 +548,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -563,7 +569,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: 'Licencia Ambiental Única(LAU)', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
@@ -587,7 +593,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar incidentes', fontSize: 9},
@@ -609,7 +615,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: 'NOM-138-SEMARNAT/SSA1-2012,', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
@@ -632,7 +638,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
@@ -655,7 +661,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
@@ -680,7 +686,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar emiciones', fontSize: 9},
                 {text: 'P-OP-01\nP-IM-02\nP-PRE-01', fontSize: 9}
@@ -703,7 +709,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-IM-021', fontSize: 9}
@@ -726,7 +732,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-IM-02P-TS-05', fontSize: 9}
@@ -749,7 +755,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-IM-02P-TS-05\N P-IM-02P-TS-02', fontSize: 9}
@@ -772,7 +778,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-IM-02P-TS-05\N P-IM-04', fontSize: 9}
@@ -815,7 +821,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
@@ -839,7 +845,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
@@ -864,7 +870,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-02', fontSize: 9}
@@ -887,7 +893,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-IM-02P-TS-05', fontSize: 9}
@@ -910,7 +916,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Reducir consumo de agua', fontSize: 9},
                 {text: 'P-OP-02', fontSize: 9}
@@ -933,7 +939,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -956,7 +962,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -979,7 +985,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-01', fontSize: 9}
@@ -1025,7 +1031,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-OP-05', fontSize: 9}
@@ -1048,7 +1054,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-OP-05', fontSize: 9}
@@ -1071,7 +1077,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-OP-05', fontSize: 9}
@@ -1117,7 +1123,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-OP-05, P-IM-04', fontSize: 9}
@@ -1140,7 +1146,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Reducir consumo', fontSize: 9},
                 {text: 'P-OP-03', fontSize: 9}
@@ -1163,7 +1169,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Reducir consumo', fontSize: 9},
                 {text: '', fontSize: 9}
@@ -1186,7 +1192,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Reducir consumo', fontSize: 9},
                 {text: '', fontSize: 9}
@@ -1233,7 +1239,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'P-IM-03', fontSize: 9}
               ],
@@ -1255,7 +1261,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Controlde residuos', fontSize: 9},
                 {text: 'P-OP-03', fontSize: 9}
@@ -1278,7 +1284,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Evitar derrames', fontSize: 9},
                 {text: 'P-IM-03', fontSize: 9}
@@ -1301,7 +1307,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Control de residuos', fontSize: 9},
                 {text: 'P-IM-03', fontSize: 9}
@@ -1347,7 +1353,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Reducir consumo', fontSize: 9},
                 {text: 'P-IM-06', fontSize: 9}
@@ -1370,7 +1376,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: '', fontSize: 9},
-                {text: '', fontSize: 9},
+                {text: 'X', fontSize: 9},
                 {text: '', fontSize: 9},
                 {text: 'Controlde residuos', fontSize: 9},
                 {text: 'P-OP-06', fontSize: 9}
@@ -1382,8 +1388,14 @@ export class PuntoDosAspectosPage implements OnInit {
         {
           table: {
             body: [
-              ['EPP: EQUIPO DE PROTECCIÓN PERSONAL', 'AAS: ASPECTO AMBIENTAL SIGNIFICATIVO', 'N= NATURALEZA (representa el grado de toxicidad o peligrosidad del aspecto en sí, en función de sus características o componentes).'],
-              ['IA: IMPACTO AMBIENTAL', 'F: FRECUENCIA (número de veces por unidad de tiempo)', 'M = MAGNITUD (expresión de la cantidad o extensión en que se genera el aspecto ambiental).']
+              [
+                'EPP: EQUIPO DE PROTECCIÓN PERSONAL', 'AAS: ASPECTO AMBIENTAL SIGNIFICATIVO',
+                'N= NATURALEZA (representa el grado de toxicidad o peligrosidad del aspecto en sí, en función de sus características o componentes).'
+              ],
+              [
+                'IA: IMPACTO AMBIENTAL', 'F: FRECUENCIA (número de veces por unidad de tiempo)',
+                'M = MAGNITUD (expresión de la cantidad o extensión en que se genera el aspecto ambiental).'
+              ]
             ]
           }
         },
@@ -1403,7 +1415,7 @@ export class PuntoDosAspectosPage implements OnInit {
         },
       ],
       pageOrientation: 'landscape',
-      pageSize: 'LETTER',
+      pageSize: 'constTER',
       pageMargins: [22, 120]
     };
     this.pdfMaker.generate(dd, 'Aspectos Ambientales');

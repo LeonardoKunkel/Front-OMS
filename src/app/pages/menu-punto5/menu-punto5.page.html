@@ -8,40 +8,46 @@
 </ion-header>
 
 <ion-content >
-  <div class="fondo">
-    <p style="margin:2%; text-align: justify;">Establece las acciones a seguir para identificar, adquirir y asignar los recursos necesarios, la
-      designación de funciones, responsabilidad y autoridad para establecer, documentar,
+  <ion-grid fixed>
+    <p style="margin:2%; text-align: justify;">
+      Establece las acciones a seguir para identificar, adquirir y asignar los recursos necesarios, 
+      la designación de funciones, responsabilidad y autoridad para establecer, documentar,
       implementar, mantener y mejorar el Sistema de Administración de Seguridad Industrial,
-      Seguridad Operativa y Protección del Medio Ambiente.</p>
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card (click)="goPuntoCinco()" class="carta">
-              <img  class="ion-padding" src="../../../assets/Imagenes/Elemento 5/5_cartadedesignacion-01.png" style="width: 40%; margin: auto; display: block;" />
-              <ion-card-title class="ion-text-justify">CARTA DE DESIGNACION DEL RESPRESENTANTE TECNICO</ion-card-title>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-          <ion-card (click)="goPuntoMatriz()" class="carta">
-              <img class="ion-padding" src="../../../assets/Imagenes/Elemento 5/5_cartadedesignacion-01.png" style="width: 40%; margin: auto; display: block;" />
-              <ion-card-title class="ion-text-justify">MATRIZ DE RESPONSABILIDADES</ion-card-title>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card (click)="goPuntoCincoProcedimiento()" class="carta">
-                <img  class="ion-padding" src="../../../assets/Imagenes/1_procedimiento.png" style="width: 40%; margin: auto; display: block;" />
-                <ion-card-title class="ion-text-justify">Procedimiento</ion-card-title>
-            </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card (click)="goPuntoCincoEvidencia()"class="carta">
-                <img class="ion-padding" src="../../../assets/Imagenes/1_evidencia.png" style="width: 40%; margin: auto; display: block;" />
-                <ion-card-title class="ion-text-justify">Evidencia</ion-card-title>
-            </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-  </div>
-
+      Seguridad Operativa y Protección del Medio Ambiente.
+    </p>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card (click)="goPuntoCincoProcedimiento()" class="carta">
+          <img  class="ion-padding" src="../../../assets/Imagenes/1_procedimiento.png" style="width: 40%; margin: auto; display: block;" />
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Procedimiento</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card (click)="goPuntoCinco()" class="carta">
+          <img  class="ion-padding" src="../../../assets/Imagenes/Elemento 5/5_cartadedesignacion-01.png" style="width: 50%; margin: auto; display: block;" />
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Carta de Designación del Representante Técnico</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card (click)="goPuntoMatriz()" class="carta">
+          <img class="ion-padding" src="../../../assets/Imagenes/Elemento 5/5_cartadedesignacion-01.png" style="width: 40%; margin: auto; display: block;" />
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">FS-13 Matriz de Responsabilidades</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <ion-card (click)="goPuntoCincoEvidencia()" class="carta">
+          <img class="ion-padding" src="../../../assets/Imagenes/1_evidencia.png" style="width: 40%; margin: auto; display: block;" />
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Evidencia</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

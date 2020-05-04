@@ -15,29 +15,29 @@ export class PuntoCincoPage implements OnInit {
   fechaActual = new Date();
 
   cp: number;
-  respuestaCP: any= {};
-  datos: any={
-    nombre:'',
-    nombreEstacion:'',
-    correo:'',
-    telefono:'',
-    estado:'',
-    ciudad:'',
-    colonia:'',
-    cp:'',
-    calle:'' 
-  }
+  respuestaCP: any = {};
+  datos: any = {
+    nombre: '',
+    nombreEstacion: '',
+    correo: '',
+    telefono: '',
+    estado: '',
+    ciudad: '',
+    colonia: '',
+    cp: '',
+    calle: ''
+  };
 
-  lista={
-    nombre:'jsdjsjsdd',
-    nombreEstacion:'kskdjdhgsysg',
-    correo:'llskjdudnd',
-    telefono:'555586458',
-    estado:'qkegeharl',
-    ciudad:'queretaro',
-    colonia:'cimatario',
-    cp:'8868',
-    calle:'haxmin'
+  lista = {
+    nombre: 'jsdjsjsdd',
+    nombreEstacion: 'kskdjdhgsysg',
+    correo: 'llskjdudnd',
+    telefono: '555586458',
+    estado: 'qkegeharl',
+    ciudad: 'queretaro',
+    colonia: 'cimatario',
+    cp: '8868',
+    calle: 'haxmin'
   }
 
   constructor(

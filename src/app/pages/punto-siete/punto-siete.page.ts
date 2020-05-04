@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
-import { and } from '@angular/router/src/utils/collection';
+import { IonSlides, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 @Component({
   selector: 'app-punto-siete',
@@ -54,19 +53,24 @@ export class PuntoSietePage implements OnInit {
 
   @ViewChild('slider') slider: IonSlides;
 
-  constructor( private pdfMaker: PdfMakerService) {
+  constructor( private pdfMaker: PdfMakerService, public toast: ToastController) {
   }
 
   ngOnInit() {
 
   }
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+        message: 'Datos guardados',
+        duration: 2000
+    });
+    toast.present();
   }
 
   pdf() {
     const dd = {
-      header: function() {
+      header: () => {
         return {
           table: {
             widths: [740], heights: [50, 15, 15],
@@ -79,7 +83,7 @@ export class PuntoSietePage implements OnInit {
           margin: [22, 15]
         };
       },
-      footer: function() {
+      footer: () => {
         return {
           table: {
             headerRows: 1,

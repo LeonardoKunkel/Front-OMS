@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ObjetivosMetasService } from '../../services/Elemento 4/objetivos-metas.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cuatro2',
@@ -9,32 +9,35 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./cuatro2.page.scss'],
 })
 export class Cuatro2Page implements OnInit {
-  
+
   objetivos: String;
-  datos:{
+  datos: {
     meta1,
     meta2,
     meta3
-  }
-  
-  constructor(private pdfMaker: PdfMakerService,private objetivo: ObjetivosMetasService, public alertController:AlertController) { 
-    this.objetivos='Muy bien!!!!!!!!!!';
+  };
+
+  constructor(
+  private pdfMaker: PdfMakerService,
+  private objetivo: ObjetivosMetasService,
+  public alertController: AlertController,
+  public toast: ToastController) {
+    this.objetivos = 'Muy bien!!!!!!!!!!';
   }
 
-  ngOnInit() {  
-  
+  ngOnInit() {
+
   }
 
-  updateGoals(){
+  updateGoals() {
     this.showAlert();
     console.log(this.objetivos);
-    
   }
 
-  async showAlert(){
+  async showAlert() {
     const alert = await this.alertController.create({
       header: 'Metas a realizar',
-      message: ' '+this.objetivos,
+      message: ' ' + this.objetivos,
       buttons: [ {
         text: 'Cancel',
         role: 'cancel',
@@ -50,80 +53,86 @@ export class Cuatro2Page implements OnInit {
         }
       }
     ]
-    }); 
+    });
 
     await alert.present();
   }
 
-    doc(param){
-      const residuos ='Reducción en la generación de residuos peligrosos';
-      const agua ='Reducción en el consumo de agua';
-      const energia ='Reducción en el consumo de energia';
-      const mantenimiento ='Cumplimiento al programa de mantenimiento';
-      const capacitaciones ='Incrementar capacitaciones a los trabajadoreas';
-      const venta  ='Reducción en el consumo de agua';
+  doc(param) {
+    const residuos = 'Reducción en la generación de residuos peligrosos';
+    const agua = 'Reducción en el consumo de agua';
+    const energia = 'Reducción en el consumo de energia';
+    const mantenimiento = 'Cumplimiento al programa de mantenimiento';
+    const capacitaciones = 'Incrementar capacitaciones a los trabajadoreas';
+    const venta  = 'Reducción en el consumo de agua';
 
-      if(param === residuos ){
-        console.log('datos de residuos');
-        var insert ={
-          meta1:'Reducir un 10% anual los residuos del producto.',
-          meta2:'Reducir las ??????',
-          meta3:' '
-        }
-        console.log(insert);
-        this.createMetaObjetivo(insert);
-      }else if(param === agua){
-        console.log('datos de aguas');
-        var insert ={
-          meta1:'Reducir un 10% anual los residuos del vital liquido.',
-          meta2:'Solventar las fugas.',
-          meta3:'Potencias sistema de limpieza en seco (barrer,aspirar).'
-        }
-        console.log(insert);
-      }else if( param === energia){
-        console.log('datos de energia');
-        var insert ={
-          meta1:'Reducir un 10% anual en el consumo de energia',
-          meta2:'Aprovechar el punto maximo la luz natural',
-          meta3:'Usar bombillos ahorradores'
-        }
-        console.log(insert);
-      }else if( param === mantenimiento){
-        console.log('datos de mantenimiento');
-        var insert ={
-          meta1:'Reparar equipo dañados',
-          meta2:'Planificar mantenimientos preventivos periodicamente',
-          meta3:''
-        }
-        console.log(insert);
-      }else if( param === capacitaciones){
-        console.log('datos de capacitaciones');
-        var insert ={
-          meta1:'Reforzar conocimientos',
-          meta2:'Aprender nuevos temas',
-          meta3:'Prevenir riesgos de trabajo'
-        }
-        console.log(insert);
-      }else if( param === venta){
-        console.log('datos de ventas');
-        var insert ={
-          meta1:'Establecer metas de ventas diarias',
-          meta2:'Capacitar a los vendedores',
-          meta3:'Realizar marketing'
-        }
-        console.log(insert);
-      }
+    if (param === residuos ) {
+      console.log('datos de residuos');
+      var insert = {
+        meta1: 'Reducir un 10% anual los residuos del producto.',
+        meta2: 'Reducir las ??????',
+        meta3: ' '
+      };
+      console.log(insert);
+      this.createMetaObjetivo(insert);
+    } else if (param === agua) {
+      console.log('datos de aguas');
+      var insert = {
+        meta1: 'Reducir un 10% anual los residuos del vital liquido.',
+        meta2: 'Solventar las fugas.',
+        meta3: 'Potencias sistema de limpieza en seco (barrer,aspirar).'
+      };
+      console.log(insert);
+    } else if ( param === energia) {
+      console.log('datos de energia');
+      var insert = {
+        meta1: 'Reducir un 10% anual en el consumo de energia',
+        meta2: 'Aprovechar el punto maximo la luz natural',
+        meta3: 'Usar bombillos ahorradores'
+      };
+      console.log(insert);
+    } else if ( param === mantenimiento) {
+      console.log('datos de mantenimiento');
+      var insert = {
+        meta1: 'Reparar equipo dañados',
+        meta2: 'Planificar mantenimientos preventivos periodicamente',
+        meta3: ''
+      };
+      console.log(insert);
+    } else if ( param === capacitaciones ) {
+      console.log('datos de capacitaciones');
+      var insert = {
+        meta1: 'Reforzar conocimientos',
+        meta2: 'Aprender nuevos temas',
+        meta3: 'Prevenir riesgos de trabajo'
+      };
+      console.log(insert);
+    } else if ( param === venta ) {
+      console.log('datos de ventas');
+      var insert = {
+        meta1: 'Establecer metas de ventas diarias',
+        meta2: 'Capacitar a los vendedores',
+        meta3: 'Realizar marketing'
+      };
+      console.log(insert);
     }
+  }
 
-    //Crear el post en la base de datos
-      createMetaObjetivo(datillos){
-        this.objetivo.createMetaObjetivo(datillos).subscribe((data:any) => {
-      console.log(data);
-          
-        });
-      }
-  
+  // Crear el post en la base de datos
+  createMetaObjetivo(datillos) {
+    this.objetivo.createMetaObjetivo(datillos).subscribe((data: any) => {
+    console.log(data);
+    });
+  }
 
+  async enviarForm(formulario) {
+    
+    const toast = await this.toast.create({
+      message: 'Datos guardados.',
+      duration: 2000
+    });
+    toast.present();
+  }
 //   pdf(){
 //     // playground requires you to assign document definition to a variable called dd
 
