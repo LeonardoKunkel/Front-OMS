@@ -589,7 +589,11 @@ const routes: Routes = [
   {
     path: 'punto-ocho-distribucion',
     loadChildren: './pages/punto-ocho-distribucion/punto-ocho-distribucion.module#PuntoOchoDistribucionPageModule'
-  },  { path: 'punto-seis-cursos', loadChildren: './pages/punto-seis-cursos/punto-seis-cursos.module#PuntoSeisCursosPageModule' },
+  },
+  {
+    path: 'punto-seis-cursos',
+    loadChildren: './pages/punto-seis-cursos/punto-seis-cursos.module#PuntoSeisCursosPageModule'
+  },
 
 
 ];
