@@ -447,7 +447,7 @@ export class Cuatro2Page implements OnInit {
   }
 
   async enviarForm(formulario) {
-    
+
     const toast = await this.toast.create({
       message: 'Datos guardados.',
       duration: 2000

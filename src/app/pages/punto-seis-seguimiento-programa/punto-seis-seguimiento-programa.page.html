@@ -1,44 +1,23 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">Salir</ion-button>
+      <ion-back-button defaulthref="/punto-seis-menu"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Seguimiento de Programa de capacitacion</ion-title>
+    <ion-title class="ion-text-center">Seguimiento de Programa de Capacitación</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  <ion-card-header>
-    <ion-card-subtitle class="ion-text-justify">El seguimiento de programas tiene dos propósitos principales:
+  <ion-grid fixed>
+    <p>
+      El seguimiento de programas tiene dos propósitos principales:
       mejorar los programas identificando aquellos aspectos que están trabajando de acuerdo a un plan y aquellos que deben ser corregidos a mitad de curso y
-      rastrear los resultados a nivel de programa o de población.</ion-card-subtitle>
-  </ion-card-header>
-  <ion-card-content>
-    <form action="">
-      <ion-list>
-        <ion-item>
-          <ion-label position="floating">Puesto:</ion-label>
-          <ion-input type="text" name="email"  required ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Personal:</ion-label>
-          <ion-input type="text" name="email"  required ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Nombre del curso:</ion-label>
-          <ion-input type="text" name="email"  required ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Evaluacion:</ion-label>
-          <ion-input type="text" name="email"  required ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Seguimiento de aplicacion:</ion-label>
-          <ion-input type="text" name="email"  required ></ion-input>
-        </ion-item>
-        <ion-button (click)="onClick()" expand="block" color="secondary" shape="round">
-          Guardar y enviar
-        </ion-button>
-      </ion-list>
-    </form>
-  </ion-card-content> 
+      rastrear los resultados a nivel de programa o de población.
+    </p>
+  </ion-grid>
+  <embed 
+  src="../../../assets/docs/Elemento 6/FS-17 SEGUIMIENTO DEL PROGRAMA  DE CAPACITACIÓN.pdf" 
+  type="application/pdf"
+  width="100%"
+  height="1200px">
 </ion-content>

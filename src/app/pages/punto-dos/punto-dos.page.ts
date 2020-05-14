@@ -27,13 +27,11 @@ export class PuntoDosPage implements OnInit {
   @ViewChild('slider') slider: IonSlides
 
   constructor(private navCtrl: NavController) {
-    //this.cargarPuntoDos();
-    console.log(this.puntoDos);
-    //private alertCtrl: AlertController,private navCtrl: NavController, private PuntodosService: PuntodosService, private location: Location
-   }
+
+  }
 
   ngOnInit() {
-    //this.slider.lockSwipes(true);
+
   }
 
   goDosProcedimiento() {
@@ -53,7 +51,7 @@ export class PuntoDosPage implements OnInit {
   }
 
   goDosResultados() {
-    this.navCtrl.navigateForward('/punto-dos-resultados');
+    this.navCtrl.navigateForward('/punto-dos-resultado');
   }
 
 }
