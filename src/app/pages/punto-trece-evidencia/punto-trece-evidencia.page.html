@@ -1,45 +1,39 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/punto-trece"></ion-back-button>
-      </ion-buttons>
-      <ion-title class="ion-text-center">Evidencia</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div>
-    <hr class="lineaN">
-  </div>
-  <ion-content padding ng-controller="MainCtrl">
-  <ion-card class="fondo">
-    <ion-card-header>
-      <ion-card-title class="center">Evidencia</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-img [src]="foto" *ngIf="foto"></ion-img>
-        <h1 class="center">Subir la evidencia tomada en el punto dos del SASISOPA</h1><br><br><br><br><br><br><br><br>
-        <ion-segment color="secondary">
-            <ion-segment-button (click)="capturarFoto()">
-              <ion-label>Foto</ion-label>
-              <ion-icon name="camera" size="large"></ion-icon>
-            </ion-segment-button>
-            <ion-segment-button checked (click)="buscarFoto()">
-              <ion-label>Imagen</ion-label>
-              <ion-icon name="images" size="large"></ion-icon>
-            </ion-segment-button>
-            <ion-segment-button>
-              <ion-label>Subir</ion-label>
-              <ion-icon name="cloud-upload" size="large"></ion-icon>
-            </ion-segment-button>
-          </ion-segment><br><br><br>
-          <hr class="linea"><br><br><br>
-          <ion-item  class="columnas">
-          <ion-label position="floating">Descriciones</ion-label>
-            <ion-textarea  placeholder="Escribe" rows="15"></ion-textarea>
-          </ion-item>
-    </ion-card-content>
-    <ion-button (click)="onClick()">
-      Enviar comentario
-    </ion-button>
-  </ion-card>
-  
-  </ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-dos"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Evidencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div>
+  <hr class="lineaN">
+</div>
+
+<ion-content [fullscreen]="true">
+<ion-card color="light">
+  <ion-card-content>
+    <p style="margin: 3%; text-align: justify;">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, cupiditate doloribus consectetur natus voluptate, sed numquam sit, labore tempore molestias nisi? Iste vel tempora magni voluptatum quos maxime praesentium aut.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, laborum. Consequuntur nesciunt quam nisi esse omnis rerum, repudiandae ex tenetur in nulla a molestiae, voluptatum velit molestias blanditiis provident cupiditate.
+    </p>
+    <form (submit)="uploadPhoto(title, description)">
+      <ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input type="text" #title required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripcion </ion-label>
+        <ion-input type="text" required #description></ion-input>
+      </ion-item>
+      <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+      <ion-card>
+        <ion-card-content>
+          <img [src]="photoSelected || '../../../assets/Imagenes/no hay imagen.png'" style="width: 30%; display: block; margin: auto;" alt="No image" (click)="photoInput.click()">
+        </ion-card-content>
+      </ion-card>
+      <button class="btn btn-primary btn-block"> Upload</button>
+    </form>
+  </ion-card-content>
+</ion-card>
+</ion-content>

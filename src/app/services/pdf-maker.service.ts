@@ -15,5 +15,6 @@ export class PdfMakerService {
   generate(document, title){
     this.pdfObj = pdfMake.createPdf(document);
     this.pdfObj.download(title);
+    
   }
 }

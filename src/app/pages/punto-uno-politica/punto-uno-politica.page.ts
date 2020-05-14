@@ -349,5 +349,6 @@ export class PuntoUnoPoliticaPage implements OnInit {
       pageMargins: [72, 150]
     };
     this.pdfMakerService.generate(dd, "Politica");
+    //this.pdfMakerService.pdfObj(dd)
   }
 }

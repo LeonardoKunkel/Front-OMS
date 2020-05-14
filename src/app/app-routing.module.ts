@@ -201,6 +201,7 @@ const routes: Routes = [
     path: 'registros-control',
     loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule',
     // canLoad: [AuthGuard]
+
   },
   {
     path: 'punto-ocho-menu',

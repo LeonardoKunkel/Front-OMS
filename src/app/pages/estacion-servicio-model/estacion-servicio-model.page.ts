@@ -30,7 +30,7 @@ export class EstacionServicioModelPage implements OnInit {
     maximaAutoridad:''
   }
   lista: string[] = [];
-
+  
 
   guardarEnviar(){
     this.estacionServicioService.crearDatos(this.datos).subscribe(data => console.log(data));
@@ -38,6 +38,7 @@ export class EstacionServicioModelPage implements OnInit {
 
   consultarDatos(){
     this.estacionServicioService.getEstacion().subscribe((data:any) =>{
+      
       return console.log(data);
       
     })
