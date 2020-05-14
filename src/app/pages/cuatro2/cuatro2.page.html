@@ -8,160 +8,40 @@
   </ion-header>
   
   <ion-content>
-  <ion-card-header>
-      <ion-card-title class="ion-text-center" style="font-size: 15px;">
-            Debes de establecer 2 objetivos, metas e indicadores consistentes con la politica del SASISOPA considerando los requisitos legales aplicables y los resultados de la evaluación de los
-            aspectos ambientales y análisis de Riesgo.
-      </ion-card-title>
-  </ion-card-header>
-
-  <ion-list>
-      <ion-radio-group [(ngModel)]="objetivos" (ionChange)="updateGoals()">
-          <ion-list-header>
-          </ion-list-header>
-          <ion-grid fixed>
-              <ion-row>
-                  <ion-col size="12" sizeLg="6">
-                    <ion-item>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-card-title class="ion-text-center">Reducción en generacion de residuos peligrosos</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                                <img src="../../../assets/Imagenes/Elemento 4/reducción en generacion de residuos-01.png" alt="" style="width: 20%; height: auto; margin: auto; display: block;">
-                                <h1 class="ion-text-center">Metas</h1> 
-                                <div>
-                                    <ul>
-                                        <li>Reducir un 10% anual los residuos del producto.</li>
-                                        <li>Reducir las ??????.</li>
-                                    </ul>
-                                </div>
-                                <ion-radio value="Reducción en la generación de residuos peligrosos"></ion-radio>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-item>
-                  </ion-col>
-                  <ion-col size="12" sizeLg="6">
-                    <ion-item>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-card-title class="ion-text-center">Reducción en el consumo de agua</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <img src="../../../assets/Imagenes/Elemento 4/reduccion de consumo de agua-01.png" alt="" style="width: 20%; height: auto; margin: auto; display: block;">
-                              <h1 class="ion-text-center">Metas</h1> 
-                              <div>
-                                  <ul>
-                                      <li>Reducir un 10% anual los residuos del vital liquido.</li>
-                                      <li>Solventar las fugas.</li>
-                                      <li>Potencias sistema de limpieza en seco (barrer,aspirar).</li>
-                                  </ul>
-                              </div>
-                              <ion-radio value="Reducción en el consumo de agua"></ion-radio>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-item>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-          <ion-grid fixed>
-              <ion-row>
-                  <ion-col size="12" sizeLg="6">
-                    <ion-item>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-card-title class="ion-text-center">Reducción en el consumo de energia</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                                <img src="../../../assets/Imagenes/Elemento 4/reduccion de energia electrica-01-01.png" alt="" style="width: 10%; height: auto; margin: auto; display: block;" alt="" style="width: 20%; height: auto; margin: auto; display: block;">
-                                <h1 class="ion-text-center">Metas</h1> 
-                                <div>
-                                    <ul>
-                                        <li>Reducir un 10% anual en el consumo de energia</li>
-                                        <li>Aprovechar el punto maximo la luz natural</li>
-                                        <li>Usar bombillos ahorradores</li>
-                                    </ul>
-                                </div>
-                                <ion-radio value="Reducción en el consumo de energia"></ion-radio>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-item>
-                  </ion-col>
-                  <ion-col size="12" sizeLg="6">
-                    <ion-item>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-card-title class="ion-text-center">Cumplimiento al programa de mantenimiento</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <img src="../../../assets/Imagenes/Elemento 4/cumplimiento programa de mantenimiento-01.png" alt="" style="width: 20%; height: auto; margin: auto; display: block;">
-                              <h1 class="ion-text-center">Metas</h1> 
-                              <div>
-                                  <ul>
-                                      <li>Reparar equipo dañados</li>
-                                      <li>Planificar mantenimientos preventivos periodicamente</li>
-                                  </ul>
-                              </div>
-                              <ion-radio value="Cumplimiento al programa de mantenimiento"></ion-radio>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-item>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-          <ion-grid fixed>
-              <ion-row>
-                  <ion-col size="12" sizeLg="6">
-                    <ion-item>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-card-title class="ion-text-center">Incrementar capacitaciones a los trabajadoreas</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                                <img src="../../../assets/Imagenes/Elemento 4/incrementar venta 10-01.png" alt="" style="width: 20%; height: auto; margin: auto; display: block;">
-                                <h1 class="ion-text-center">Metas</h1> 
-                                <div>
-                                    <ul>
-                                        <li>Reforzar conocimientos</li>
-                                        <li>Aprender nuevos temas</li>
-                                        <li>Prevenir riesgos de trabajo</li>
-                                    </ul>
-                                </div>
-                                <ion-radio value="Incrementar capacitaciones a los trabajadoreas"></ion-radio>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-item>
-                  </ion-col>
-                  <ion-col size="12" sizeLg="6">
-                    <ion-item>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-card-title class="ion-text-center">Incrementar venta 5% anualmente</ion-card-title>
-                            </ion-card-header>
-                            <ion-card-content>
-                              <img src="../../../assets/Imagenes/Elemento 4/incrementar capacitaciones-01 (1).png" alt="" style="width: 20%; height: auto; margin: auto; display: block;">
-                              <h1 class="ion-text-center">Metas</h1> 
-                              <div>
-                                  <ul>
-                                      <li>Establecer metas de ventas diarias</li>
-                                      <li>Capacitar a los vendedores</li>
-                                      <li>Realizar marketing</li>
-                                  </ul>
-                              </div>
-                              <ion-radio value="Incrementar venta 5% anualmente"></ion-radio>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-item>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-      </ion-radio-group>
+      <p style="margin: 3%; text-align: justify;">
+        Debes de establecer 3 objetivos, metas e indicadores consistentes con la politica del SASISOPA considerando los requisitos legales aplicables y los resultados de la evaluación de los
+        aspectos ambientales y análisis de Riesgo.
+     </p>
+  <ion-list *ngFor = "let check of data">
+      <ion-card >
+          <ion-card-header>
+              <ion-card-title class="ion-text-center">{{check.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-grid fixed>
+                  <ion-row>
+                      <ion-col size="12" sizeLg="6">
+                          <img src={{check.img}} alt="" style="width: 30%;">
+                      </ion-col>
+                      <ion-col size="12" sizeLg="6">
+                          <h6 class="ion-text-center">Objetivos</h6>
+                          <ol>
+                              <li>{{check.met1}}</li>
+                              <li>{{check.met2}}</li>
+                              <li>{{check.meth3}}</li>
+                          </ol>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+              <ion-item (click)="showAlert(check)" color="light" #carta>
+                  <ion-label>{{check.name}}</ion-label>
+                  <ion-checkbox [(ngModel)]="check.selected" [id]="check.id"></ion-checkbox>
+              </ion-item>
+          </ion-card-content>
+      </ion-card>
   </ion-list>
-  <ion-button style="margin: auto; display: block;">
+  <ion-button (click)="alert()" expand="block" fill="clear" shape="round">
       Guardar y enviar
-  </ion-button>
-  <ion-button (click)="createMetaObjetivo()" expand="block" fill="clear" shape="round">
-      Crear
   </ion-button>
   </ion-content>
 
