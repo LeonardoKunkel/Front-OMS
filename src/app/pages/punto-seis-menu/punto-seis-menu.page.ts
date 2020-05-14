@@ -9,10 +9,7 @@ import { PuntoSeisSeguimientoProgramaPage } from '../punto-seis-seguimiento-prog
 })
 export class PuntoSeisMenuPage implements OnInit {
 
-  constructor(
-    private navCtrl: NavController,
-    private modalCtrl: ModalController
-  ) { }
+  constructor( private navCtrl: NavController ) { }
 
   ngOnInit() {
   }
@@ -26,14 +23,13 @@ export class PuntoSeisMenuPage implements OnInit {
     this.navCtrl.navigateForward('/punto-seis-programa-capacitacion');
   }
   async goPuntoSeguimientoPrograma() {
-   const modal = await this.modalCtrl.create({
-     component: PuntoSeisSeguimientoProgramaPage
-   });
-   console.log('Entraste a modal');
-   return await modal.present();
+    this.navCtrl.navigateForward('/punto-seis-seguimiento-capacitacion');
   }
   goPuntoProcedimiento() {
     this.navCtrl.navigateForward('/punto-seis-procedimiento');
+  }
+  goPuntoCursos() {
+    this.navCtrl.navigateForward('/punto-seis-cursos');
   }
   goPuntoEvidencia() {
     this.navCtrl.navigateForward('/punto-seis-evidencia');

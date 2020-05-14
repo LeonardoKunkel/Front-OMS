@@ -30,7 +30,6 @@ datos:any={
 
   enviarForm(formulario){
     console.log(this.datos);
-    
   }
 
   pdf(){

@@ -89,16 +89,10 @@ export class PuntoSeisPage implements OnInit {
     });
     return await modal.present();
   }
-  async openModal7() {
-    const modal = await this.modalCtrl.create({
-      component: ContratistasModalPage
-    });
-    return await modal.present();
-  }
 
   pdf() {
-    var dd = {
-      header: function() {
+    const dd = {
+      header: () => {
         return {
           table: { widths: [565], heights: [50, 15, 15],
             body: [
@@ -111,7 +105,7 @@ export class PuntoSeisPage implements OnInit {
           margin: [22, 20]
         };
       },
-      footer: function() {
+      footer: () => {
         return {
           table: {
             headerRows: 1,
@@ -211,15 +205,18 @@ export class PuntoSeisPage implements OnInit {
           widths: [175, 185, 185],
           heights: [50],
           body: [
-            ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
+            [
+              'REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO',
+              'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"'
+            ]
           ]
         }
       }
     ],
   pageSize: 'LETTER',
   pageMargins: [22, 130]
-};
-this.pdfMaker.generate(dd, 'VI.Perfil de puesto de trabajo.pdf');
+  };
+    this.pdfMaker.generate(dd, 'VI.Perfil de puesto de trabajo.pdf');
   }
 
   enviarForm(formulario) {
