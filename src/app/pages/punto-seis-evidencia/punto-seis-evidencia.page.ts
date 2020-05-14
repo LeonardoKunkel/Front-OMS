@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { EvidenciaElementoSeisService } from '../../services/Elemento 6/evidencia-elemento-seis.service';
 
 @Component({
   selector: 'app-punto-seis-evidencia',
@@ -7,10 +8,29 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   styleUrls: ['./punto-seis-evidencia.page.scss'],
 })
 export class PuntoSeisEvidenciaPage implements OnInit {
+
+  photoSelected: string | ArrayBuffer;
+  
+  file:File;
   foto: any;
-  constructor(private camera: Camera) { }
+  constructor(private camera: Camera,
+    private _uploadService:EvidenciaElementoSeisService) { }
 
   ngOnInit() {
+  }
+
+  uploadPhoto(title: HTMLInputElement, description: HTMLInputElement){
+    this._uploadService.uploadImage(title.value, description.value, this.file).subscribe(data => console.log(data));
+  }
+
+  onPhotoSelected(event): void{
+    if(event.target.files && event.target.files[0]){
+      this.file = <File>event.target.files[0];
+      //Vista de la imagen
+      const reader = new FileReader();
+      reader.onload = e =>this.photoSelected = reader.result;
+      reader.readAsDataURL(this.file);
+    }
   }
 
   capturarFoto() {

@@ -230,11 +230,11 @@ const routes: Routes = [
   //   loadChildren: './pages/punto-ocho-solicitud-cambios/punto-ocho-solicitud-cambios.module#PuntoOchoSolicitudCambiosPageModule', 
   //   //canLoad: [AuthGuard]
   //  },
-  { 
-    path: 'punto-ocho-lista-distribucion', 
-    loadChildren: './pages/punto-ocho-lista-distribucion/punto-ocho-lista-distribucion.module#PuntoOchoListaDistribucionPageModule', 
-    //canLoad: [AuthGuard]
-   },
+  // { 
+  //   path: 'punto-ocho-lista-distribucion', 
+  //   loadChildren: './pages/punto-ocho-lista-distribucion/punto-ocho-lista-distribucion.module#PuntoOchoListaDistribucionPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
   { 
     path: 'punto15-menu', 
     loadChildren: './pages/punto15-menu/punto15-menu.module#Punto15MenuPageModule', 
@@ -305,16 +305,16 @@ const routes: Routes = [
   //   loadChildren: './pages/nueve-evidencia/nueve-evidencia.module#NueveEvidenciaPageModule', 
   //   //canLoad: [AuthGuard]
   //  },
-  { 
-    path: 'nueve-listado', 
-    loadChildren: './pages/nueve-listado/nueve-listado.module#NueveListadoPageModule', 
-    //canLoad: [AuthGuard]
-   },
-  { 
-    path: 'nueve-procedimiento', 
-    loadChildren: './pages/nueve-procedimiento/nueve-procedimiento.module#NueveProcedimientoPageModule', 
-    //canLoad: [AuthGuard]
-   },
+  // { 
+  //   path: 'nueve-listado', 
+  //   loadChildren: './pages/nueve-listado/nueve-listado.module#NueveListadoPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
+  // { 
+  //   path: 'nueve-procedimiento', 
+  //   loadChildren: './pages/nueve-procedimiento/nueve-procedimiento.module#NueveProcedimientoPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
   { 
     path: 'popover1', 
     loadChildren: './pages/popover1/popover1.module#Popover1PageModule', 
@@ -380,11 +380,11 @@ const routes: Routes = [
     loadChildren: './pages/punto-dieciseis/punto-dieciseis.module#PuntoDieciseisPageModule', 
     //canLoad: [AuthGuard]
    },
-  { 
-    path: 'punto-ocho-evidencia', 
-    loadChildren: './pages/punto-ocho-evidencia/punto-ocho-evidencia.module#PuntoOchoEvidenciaPageModule', 
-    //canLoad: [AuthGuard]
-   },
+  // { 
+  //   path: 'punto-ocho-evidencia', 
+  //   loadChildren: './pages/punto-ocho-evidencia/punto-ocho-evidencia.module#PuntoOchoEvidenciaPageModule', 
+  //   //canLoad: [AuthGuard]
+  //  },
   { 
     path: 'punto-ocho-evidencias', 
     loadChildren: './pages/punto-ocho-evidencias/punto-ocho-evidencias.module#PuntoOchoEvidenciasPageModule', 

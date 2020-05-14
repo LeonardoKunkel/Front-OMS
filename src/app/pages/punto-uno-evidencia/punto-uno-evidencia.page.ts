@@ -1,9 +1,10 @@
 import { Platform } from '@ionic/angular';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
-import { File } from '@ionic-native/file/ngx';
+//import { File } from '@ionic-native/file/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { EvidenciaElementoUnoService } from '../../services/Elemento1/evidencia-elemento-uno.service';
 
 @Component({
   selector: 'app-punto-uno-evidencia',
@@ -12,9 +13,17 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 })
 export class PuntoUnoEvidenciaPage implements OnInit {
 
+  photoSelected: string | ArrayBuffer;
+  file : File;
+
   foto: any;
   uploadedFiles: Array <File>;
-  constructor(private camera: Camera, private platform: Platform, private document: DocumentViewer, private file: File, private transfer: FileTransfer) { }
+  constructor(private camera: Camera,
+     private platform: Platform, 
+     private document: DocumentViewer, 
+    // private file: File, 
+     private transfer: FileTransfer,
+     private _uploadService:EvidenciaElementoUnoService) { }
 
   ngOnInit() {
   }
@@ -26,21 +35,21 @@ export class PuntoUnoEvidenciaPage implements OnInit {
     this.document.viewDocument('assets/CARTA RESPONSIVA CONTRATISTAS.pdf', 'aplication/pdf', options);
   }
 
-  bajarArchivo() {
-    let path = null;
+  // bajarArchivo() {
+  //   let path = null;
 
-    if (this.platform.is('ios')) {
-      path = this.file.documentsDirectory;
-    } else {
-      path = this.file.dataDirectory;
-    }
+  //   if (this.platform.is('ios')) {
+  //     path = this.file.documentsDirectory;
+  //   } else {
+  //     path = this.file.dataDirectory;
+  //   }
 
-    const transfer = this.transfer.create();
-    transfer.download('ruta', path + 'myfile.pdf').then(entry => {
-      let url = entry.toUrl();
-      this.document.viewDocument(url, 'application/pdf', {});
-    });
-  }
+  //   const transfer = this.transfer.create();
+  //   transfer.download('ruta', path + 'myfile.pdf').then(entry => {
+  //     let url = entry.toUrl();
+  //     this.document.viewDocument(url, 'application/pdf', {});
+  //   });
+  // }
 
   capturarFoto() {
     this.camera.getPicture({
@@ -66,20 +75,18 @@ export class PuntoUnoEvidenciaPage implements OnInit {
     }).then(imagenData => this.foto = 'data:image/jpeg;base64' + imagenData );
   }
 
-  // onUpload(){
-  //   console.log('upload');
-  //   let formData = new FormData();
-  //   for(let i = 0; i < this.uploadedFiles.length; i++){
-  //     formData.append("uploads[]", this.uploadedFiles[i],this.uploadedFiles[i].name);
-  //   }
-  // }
+ uploadPhoto(title: HTMLInputElement, description: HTMLInputElement){
+  this._uploadService.uploadImage(title.value, description.value, this.file).subscribe(data => console.log(data));
+ }
 
-
-  onFileChange(e){
-    //console.log('FileChange',e);
-    this.uploadedFiles = e.target.files;
-    console.log(this.uploadedFiles);
-    
+ onPhotoSelected(event): void{
+  if(event.target.files && event.target.files[0]){
+    this.file = <File>event.target.files[0];
+    //Vista de la imagen
+    const reader = new FileReader();
+    reader.onload = e =>this.photoSelected = reader.result;
+    reader.readAsDataURL(this.file);
   }
+ }
 
 }

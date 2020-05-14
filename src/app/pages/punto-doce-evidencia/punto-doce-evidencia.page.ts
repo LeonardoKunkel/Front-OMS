@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { EvidenciaElementoDoceService } from '../../services/Elemento 12/evidencia-elemento-doce.service';
 
 @Component({
   selector: 'app-punto-doce-evidencia',
@@ -7,10 +8,28 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   styleUrls: ['./punto-doce-evidencia.page.scss'],
 })
 export class PuntoDoceEvidenciaPage implements OnInit {
+  photoSelected: String |ArrayBuffer;
+  file:File;
   foto: any;
-  constructor(private camera: Camera) { }
+  constructor(private camera: Camera,
+    private _uploadService:EvidenciaElementoDoceService
+    ) { }
 
   ngOnInit() {
+  }
+
+  uploadPhoto(title: HTMLInputElement, description: HTMLInputElement){
+    this._uploadService.uploadImage(title.value, description.value, this.file).subscribe(data => console.log(data));
+  }
+
+  onPhotoSelected(event): void{
+    if(event.target.files && event.target.files[0]){
+      this.file = <File>event.target.files[0];
+      //Vista de la imagen
+      const reader = new FileReader();
+      reader.onload = e =>this.photoSelected = reader.result;
+      reader.readAsDataURL(this.file);
+    }
   }
 
   capturarFoto() {
