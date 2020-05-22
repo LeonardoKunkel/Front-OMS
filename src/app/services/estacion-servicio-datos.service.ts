@@ -23,4 +23,12 @@ export class EstacionServicioDatosService {
     });
     return this.httpClient.get('http://localhost:3000/estacionServicio/',{headers})
   }
+
+  getEstacionById(id){
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.httpClient.get(`http://localhost:3000/estacionServicio/${id}`,{headers})
+  }
 }

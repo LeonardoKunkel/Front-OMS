@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { ModalController , IonCard } from '@ionic/angular';
 import { EstacionServicioDatosService } from '../../services/estacion-servicio-datos.service';
 import { PoliticaService } from 'src/app/services/Elemento1/politica.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-estacion-servicio-model',
@@ -14,8 +15,14 @@ export class EstacionServicioModelPage implements OnInit {
 
   constructor(
     private modalCtrl: ModalController,
-    private estacionServicioService:EstacionServicioDatosService
-    ) { }
+    private estacionServicioService:EstacionServicioDatosService,
+    private activateRoute: ActivatedRoute
+    ) {
+      const id = this.activateRoute.snapshot.paramMap.get("id");
+      console.log(id,'id');
+      
+      this.consultarDatos();
+     }
   datos:any={
     nombreEstacionServicio:'',
     estado:'',
@@ -29,18 +36,20 @@ export class EstacionServicioModelPage implements OnInit {
     representanteTecnico:'',
     maximaAutoridad:''
   }
-  lista: string[] = [];
-  
 
+   lista:any=[]
+   
   guardarEnviar(){
     this.estacionServicioService.crearDatos(this.datos).subscribe(data => console.log(data));
   }
 
   consultarDatos(){
     this.estacionServicioService.getEstacion().subscribe((data:any) =>{
-      
-      return console.log(data);
-      
+      let datoConsultado = data.findEstacion.length -1;
+      let ff = data.findEstacion[datoConsultado];
+       this.lista.push(ff);
+       return console.log(this.lista);
+      //return console.log(data.findEstacion[datoConsultado]);
     })
   }
 
@@ -56,6 +65,10 @@ export class EstacionServicioModelPage implements OnInit {
   enviarForm(formulario){
     console.log(this.datos);
     this.guardarEnviar();
+  }
+
+  consultarXId(){
+
   }
 
 }
