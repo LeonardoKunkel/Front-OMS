@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
-import { PuntoSeisSeguimientoProgramaPage } from '../punto-seis-seguimiento-programa/punto-seis-seguimiento-programa.page';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-seis-menu',
@@ -22,8 +21,8 @@ export class PuntoSeisMenuPage implements OnInit {
   goPuntoProgramaCapacitacion() {
     this.navCtrl.navigateForward('/punto-seis-programa-capacitacion');
   }
-  async goPuntoSeguimientoPrograma() {
-    this.navCtrl.navigateForward('/punto-seis-seguimiento-capacitacion');
+  goPuntoSeguimientoPrograma() {
+    this.navCtrl.navigateForward('/punto-seis-seguimiento-programa');
   }
   goPuntoProcedimiento() {
     this.navCtrl.navigateForward('/punto-seis-procedimiento');

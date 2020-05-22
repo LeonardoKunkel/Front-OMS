@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { PersonalMantenimientoServiceService} from '../../services/Elemento 6/personal-mantenimiento-service.service';
 
@@ -21,7 +21,8 @@ export class MantenimientoModalPage implements OnInit {
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService ,
-    private mantenimientoService: PersonalMantenimientoServiceService
+    private mantenimientoService: PersonalMantenimientoServiceService,
+    public toast: ToastController
     ) { }
 
   ngOnInit() {
@@ -37,16 +38,16 @@ export class MantenimientoModalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
-  enviarForm(formulario){
-    console.log(this.datos)
+  async enviarForm(formulario) {
+    console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
   }
-  
-  
- 
- 
- 
- 
-   print(){
+
+   print() {
      // playground requires you to assign document definition to a variable called dd
  
  var dd = {

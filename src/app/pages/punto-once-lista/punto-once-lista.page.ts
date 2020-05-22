@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-punto-once-lista',
@@ -58,13 +59,18 @@ export class PuntoOnceListaPage implements OnInit {
     num18: '',
 };
 
-  constructor( private pdfMaker: PdfMakerService ) { }
+  constructor( private pdfMaker: PdfMakerService, public toast: ToastController ) { }
 
   ngOnInit() {
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.datos.create({
+        message: 'Datos guardados',
+        duration: 2000
+    });
+    toast.present();
   }
 
   pdf() {

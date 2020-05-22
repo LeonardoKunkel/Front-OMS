@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { JefePisoServiceService } from '../../services/Elemento 6/jefe-piso-service.service'
 
@@ -21,7 +21,8 @@ export class JefePisoModalPage implements OnInit {
   constructor(
     private modalController: ModalController ,
     private pdfMaker: PdfMakerService,
-    private jefeService: JefePisoServiceService
+    private jefeService: JefePisoServiceService,
+    public toast: ToastController
     ) { }
 
   ngOnInit() {
@@ -31,8 +32,13 @@ export class JefePisoModalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
   }
 
  crearJefe() {

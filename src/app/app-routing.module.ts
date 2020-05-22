@@ -594,7 +594,8 @@ const routes: Routes = [
   {
     path: 'punto-seis-cursos',
     loadChildren: './pages/punto-seis-cursos/punto-seis-cursos.module#PuntoSeisCursosPageModule'
-  },
+  },  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
+
 
 
 ];

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class RepresentanteModalPage implements OnInit {
     personalCargo: '',
   };
 
-  constructor(private modalController: ModalController,private pdfMaker: PdfMakerService   ) { }
+  constructor( private modalController: ModalController, private pdfMaker: PdfMakerService, public toast: ToastController ) { }
 
   ngOnInit() {
   }
@@ -26,8 +26,13 @@ export class RepresentanteModalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
   }
 
    print() {

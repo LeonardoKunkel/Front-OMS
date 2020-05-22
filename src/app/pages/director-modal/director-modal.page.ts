@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { DirectorServiceService } from '../../services/Elemento 6/director-service.service';
 
@@ -20,7 +20,8 @@ export class DirectorModalPage implements OnInit {
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
-    private directorService: DirectorServiceService
+    private directorService: DirectorServiceService,
+    public toast: ToastController
   ) { }
   ngOnInit() {
   }
@@ -29,29 +30,28 @@ export class DirectorModalPage implements OnInit {
   crearDirector() {
     this.directorService.createDirector(this.datos).subscribe((data: any) => {
       console.log(data);
-      
-    })
+
+    });
   }
-  async closeModal(){
+  async closeModal() {
     await this.modalController.dismiss();
   }
 
- enviarForm(formulario){
-   console.log(this.datos)
+ async enviarForm(formulario) {
+   console.log(this.datos);
+   const toast = await this.toast.create({
+    message: 'Datos guardados',
+    duration: 2000
+   });
+   toast.present();
  }
 
-
-
-
-
-
-  print(){
-    // playground requires you to assign document definition to a variable called dd
+  print() {
 
 var dd = {
   header: function(){
     return {
-        table: { widths: [565],heights:[50,15,15],
+        table: { widths: [565], heights: [50, 15, 15],
 body: [
 
   [{text: ''}],

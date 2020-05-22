@@ -4,18 +4,16 @@
       <ion-back-button defaultHref="/punto-dos"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">Evaluación de aspectos ambientales</ion-title>
-  </ion-toolbar>
+  </ion-toolbar><hr class="linea">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="pdf()">
+      <ion-icon name="cloud-download"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-header>
-<div>
-  <hr class="linea">
-</div>
+
 <ion-content>
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="pdf()">
-        <ion-icon name="cloud-download"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
     <ion-row>
       <ion-col size="12">
         <div class="acomodo">
@@ -1408,7 +1406,7 @@
               <ion-card>
                 <ion-card-content>
                   <ion-card-subtitle>Actividad, producto o servicio</ion-card-subtitle>
-                  <ion-card-title>Separación de hidrocarburo</ion-card-title>
+                  <ion-card-title>Separación de hidrocarburos</ion-card-title>
                   <hr class="linea1">
                   <ion-card-subtitle>Impacto Ambiental</ion-card-subtitle>
                   <ion-card-title>Aire</ion-card-title>
