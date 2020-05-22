@@ -521,7 +521,7 @@ export class Cuatro2Page implements OnInit {
                
             },
                     //Segunda tabla
-            {
+            {  
               
                   table:{
                       widths: [110,460,70,70],
