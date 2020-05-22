@@ -272,64 +272,64 @@ export class Cuatro2Page implements OnInit {
     let cT = document.getElementById('capacitacionesTrabajadores');
     let vA = document.getElementById('ventaAnualmente');
 
-    if (rs.checked === true && cA.checked === true && cE.checked === true) {
-     // alert('123')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.reduccionConsumoEnergia);
-    }else if(rs.checked === true && cA.checked === true && pM.checked === true){
-     // alert('124')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento);
-    }else if(rs.checked === true && cA.checked === true && cT.checked === true){
-     // alert('125')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores);
-    }else if(rs.checked === true && cA.checked === true && vA.checked === true){
-     // alert('126')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarVentas);
-    }else if(rs.checked === true && cE.checked === true && pM.checked === true){
-     // alert('134')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
-    }else if(rs.checked === true && cE.checked === true && cT.checked === true){
-      //alert('135')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
-    }else if(rs.checked === true && cE.checked === true && vA.checked === true){
-      //alert('136')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarVentas)
-    }else if(rs.checked === true && pM.checked === true && cT.checked === true){
-      //alert('145')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
-    }else if(rs.checked === true && pM.checked === true && vA.checked === true){
-      //alert('146')
-      this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarVentas);
-    }else if(cA.checked === true && cE.checked === true && pM.checked === true){
-      //alert('234')
-      this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
-    }else if(cA.checked === true && cE.checked === true && cT.checked === true){
-      //alert('235')
-      this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
-    }else if(cA.checked === true && cE.checked === true && vA.checked === true){
-      //alert('236')
-      this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarVentas)
-    }else if(cA.checked === true && pM.checked === true && cT.checked === true){
-      //alert('245')
-      this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores)
-    }else if(cA.checked === true && pM.checked === true && vA.checked === true){
-      //alert('246')
-      this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
-    }else if(cA.checked === true && cT.checked === true && vA.checked === true){
-      //alert('256')
-      this.maquetacion(this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
-    }else if(cE.checked === true && cT.checked === true && pM.checked === true){
-      //alert('345')
-      this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
-    }else if(cE.checked === true && pM.checked === true && vA.checked === true){
-      //alert('346')
-      this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
-    }else if(cE.checked === true && cT.checked === true && vA.checked === true){
-      //alert('356')
-      this.maquetacion(this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
-    }else if(pM.checked === true && cT.checked === true && vA.checked === true){
-      //alert('456')
-      this.maquetacion(this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores,this.incrementarVentas)
-    }
+    // if (rs.checked === true && cA.checked === true && cE.checked === true) {
+    //  // alert('123')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.reduccionConsumoEnergia);
+    // }else if(rs.checked === true && cA.checked === true && pM.checked === true){
+    //  // alert('124')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento);
+    // }else if(rs.checked === true && cA.checked === true && cT.checked === true){
+    //  // alert('125')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores);
+    // }else if(rs.checked === true && cA.checked === true && vA.checked === true){
+    //  // alert('126')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarVentas);
+    // }else if(rs.checked === true && cE.checked === true && pM.checked === true){
+    //  // alert('134')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
+    // }else if(rs.checked === true && cE.checked === true && cT.checked === true){
+    //   //alert('135')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
+    // }else if(rs.checked === true && cE.checked === true && vA.checked === true){
+    //   //alert('136')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarVentas)
+    // }else if(rs.checked === true && pM.checked === true && cT.checked === true){
+    //   //alert('145')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
+    // }else if(rs.checked === true && pM.checked === true && vA.checked === true){
+    //   //alert('146')
+    //   this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarVentas);
+    // }else if(cA.checked === true && cE.checked === true && pM.checked === true){
+    //   //alert('234')
+    //   this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
+    // }else if(cA.checked === true && cE.checked === true && cT.checked === true){
+    //   //alert('235')
+    //   this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
+    // }else if(cA.checked === true && cE.checked === true && vA.checked === true){
+    //   //alert('236')
+    //   this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarVentas)
+    // }else if(cA.checked === true && pM.checked === true && cT.checked === true){
+    //   //alert('245')
+    //   this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores)
+    // }else if(cA.checked === true && pM.checked === true && vA.checked === true){
+    //   //alert('246')
+    //   this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
+    // }else if(cA.checked === true && cT.checked === true && vA.checked === true){
+    //   //alert('256')
+    //   this.maquetacion(this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
+    // }else if(cE.checked === true && cT.checked === true && pM.checked === true){
+    //   //alert('345')
+    //   this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
+    // }else if(cE.checked === true && pM.checked === true && vA.checked === true){
+    //   //alert('346')
+    //   this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
+    // }else if(cE.checked === true && cT.checked === true && vA.checked === true){
+    //   //alert('356')
+    //   this.maquetacion(this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
+    // }else if(pM.checked === true && cT.checked === true && vA.checked === true){
+    //   //alert('456')
+    //   this.maquetacion(this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores,this.incrementarVentas)
+    // }
   }
 
   async showAlert(check) {

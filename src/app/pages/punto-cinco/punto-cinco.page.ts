@@ -1,5 +1,5 @@
 import { ProcedimientoCincoPage } from './../procedimiento-cinco/procedimiento-cinco.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { CpService } from 'src/app/services/cp.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
@@ -46,7 +46,8 @@ export class PuntoCincoPage implements OnInit {
     private cpService: CpService,
     private pdfMaker: PdfMakerService,
     private modalCtrl: ModalController,
-    private cartaDesignacion: CartaDesignacionServiceService
+    private cartaDesignacion: CartaDesignacionServiceService,
+    public toast: ToastController
   ) { }
 
   ngOnInit() {
@@ -62,8 +63,13 @@ export class PuntoCincoPage implements OnInit {
     });
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
   }
 
   async abriAyuda() {
@@ -103,13 +109,13 @@ export class PuntoCincoPage implements OnInit {
       },
       content: [
           {
-              text: 'CARTA DE DESIGNACIÓN', bold: true, style: 'header', alignment: 'center', fontSize: 20
+            text: 'CARTA DE DESIGNACIÓN', bold: true, style: 'header', alignment: 'center', fontSize: 20
           },
           {
-              text: `${this.datos.ciudad} ${this.datos.estado} ${this.fechaActual}`, alignment: 'right'
+            text: `${this.datos.ciudad} ${this.datos.estado} ${this.fechaActual}`, alignment: 'right'
           },
           {
-              text: `\n ${this.datos.nombre}`, fontSize: 10
+            text: `\n ${this.datos.nombre}`, fontSize: 10
           },
           {
             text: 'Encargado', fontSize: 10
@@ -131,9 +137,11 @@ export class PuntoCincoPage implements OnInit {
             ol: [
               'Asegurar que el SA es conforme con los requisitos establecidos en los lineamientos y demás normativa aplicable.',
               'Informar a la alta dirección de la Estación de Servicio acerca del desempeño del Sistema de Administración.',
-              'Proponer la adopción de las mejores prácticas nacionales e internacionales en la implementación del Sistema de Administración.',
+              `Proponer la adopción de las mejores prácticas nacionales e internacionales en la implementación del
+              Sistema de Administración.`,
               'Coordinar las acciones necesarias para subsanar los incumplimientos de la normatividad interna y externa aplicable.',
-              'Informar a la Agencia de cualquier situación que pudiera poner en riesgo la seguridad Industrial, seguridad Operativa y Protección al Ambiente.'
+              `Informar a la Agencia de cualquier situación que pudiera poner en riesgo la seguridad Industrial,
+              seguridad Operativa y Protección al Ambiente.`
             ], alignment: 'justify', fontSize: 10
           },
           {

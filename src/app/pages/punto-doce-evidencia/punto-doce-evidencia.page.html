@@ -19,17 +19,21 @@
     </p>
     <form (submit)="uploadPhoto(title, description)">
       <ion-item>
-        <ion-label position="floating">Titulo</ion-label>
+        <ion-label position="floating">Título</ion-label>
         <ion-input type="text" #title required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Descripcion </ion-label>
+        <ion-label position="floating">Descripción</ion-label>
         <ion-input type="text" required #description></ion-input>
       </ion-item>
       <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
       <ion-card>
         <ion-card-content>
-          <img [src]="photoSelected || '../../../assets/Imagenes/no hay imagen.png'" style="width: 30%; display: block; margin: auto;" alt="No image" (click)="photoInput.click()">
+          <img
+          [src]="photoSelected || '../../../assets/Imagenes/no hay imagen.png'"
+          style="width: 30%; display: block; margin: auto;"
+          alt="No image"
+          (click)="photoInput.click()">
         </ion-card-content>
       </ion-card>
       <button class="btn btn-primary btn-block"> Upload</button>

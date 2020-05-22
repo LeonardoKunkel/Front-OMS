@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ListaServiceService } from 'src/app/services/Elemento 7/lista-service.service';
 @Component({
   selector: 'app-punto-siete',
   templateUrl: './punto-siete.page.html',
@@ -55,7 +56,7 @@ export class PuntoSietePage implements OnInit {
 
   @ViewChild('slider') slider: IonSlides;
 
-  constructor( private pdfMaker: PdfMakerService, public toast: ToastController) {
+  constructor( private pdfMaker: PdfMakerService, public toast: ToastController, private superLista: ListaServiceService) {
   }
 
   ngOnInit() {
@@ -64,15 +65,15 @@ export class PuntoSietePage implements OnInit {
 
   async enviarForm(formulario) {
     console.log(this.datos);
-    // for (let i in this.datos) {
-    //     if (this.datos[i] === true && this.datos[i] >= 1) {
-    //         this.datos[i] = 'X';
-    //     }
-    // }
-    if (this.datos.C1) {
-        this.datos.C1 = 'X';
-    } else {
-        this.datos.C1 = '--';
+
+    this.superLista.crearLista(this.datos).subscribe(data => {
+        console.log(data);
+    });
+
+    for (const i in this.datos) {
+        if (this.datos[i] === true && this.datos[i] >= 1) {
+            this.datos[i] = 'X';
+        }
     }
 
     const toast = await this.toast.create({

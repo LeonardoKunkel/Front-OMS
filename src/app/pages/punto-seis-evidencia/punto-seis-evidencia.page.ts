@@ -23,19 +23,19 @@ export class PuntoSeisEvidenciaPage implements OnInit {
     this._uploadService.uploadImage(title.value, description.value, this.file).subscribe(data => console.log(data));
   }
 
-  onPhotoSelected(event): void{
-    if(event.target.files && event.target.files[0]){
+  onPhotoSelected(event): void {
+    if (event.target.files && event.target.files[0]) {
       this.file = <File>event.target.files[0];
       //Vista de la imagen
       const reader = new FileReader();
-      reader.onload = e =>this.photoSelected = reader.result;
+      reader.onload = e => this.photoSelected = reader.result;
       reader.readAsDataURL(this.file);
     }
   }
 
   capturarFoto() {
     this.camera.getPicture({
-      quality:100,
+      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
@@ -47,7 +47,7 @@ export class PuntoSeisEvidenciaPage implements OnInit {
 
   buscarFoto() {
     this.camera.getPicture({
-      quality:100,
+      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,

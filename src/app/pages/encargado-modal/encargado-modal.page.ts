@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { EncargadoServiceService } from '../../services/Elemento 6/encargado-service.service';
 
@@ -21,7 +21,8 @@ export class EncargadoModalPage implements OnInit {
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
-    private encargadoService:EncargadoServiceService
+    private encargadoService: EncargadoServiceService,
+    public toast: ToastController
     ) { }
 
   ngOnInit() {
@@ -31,11 +32,16 @@ export class EncargadoModalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
   }
-    crearEncargado(){
-      this.encargadoService.crearEncargado(this.datos).subscribe((data:any)=>{
+    crearEncargado() {
+      this.encargadoService.crearEncargado(this.datos).subscribe((data: any) => {
         console.log(data);
       });
     }

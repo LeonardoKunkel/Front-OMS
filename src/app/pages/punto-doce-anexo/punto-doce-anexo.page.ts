@@ -14,12 +14,11 @@ export class PuntoDoceAnexoPage implements OnInit {
   ngOnInit() {
   }
 
-  async openModal(){
+  async openModal() {
     const modal = await this.modalCtrl.create({
       component: AnexoModelPage
     });
     console.log('Entraste a modala');
     return await modal.present();
-  } 
   }
-
+}

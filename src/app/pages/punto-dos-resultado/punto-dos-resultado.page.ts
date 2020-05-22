@@ -364,6 +364,474 @@ export class PuntoDosResultadoPage implements OnInit {
                   text: '\n\n'
               },
               {
+                table: {
+                    widths: [20, 140, 133, 164, 165, 10, 10, 10, 16],
+                    body: [
+                        [
+                            {text: 'No.', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'Actividad', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'Equipo/Lugar', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'Impacto ambiental', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'Objetivo o Meta', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'F', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'N', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'M', fillColor: '#ddd', bold: true, alignment: 'center'},
+                            {text: 'VT', fillColor: '#ddd', bold: true, alignment: 'center'}
+                        ],
+                        [
+                            {text: 'ÁREA: ALMACENAMINETO DE COMBUSTIBLES', bold: true, colSpan: 9, fillColor: '#ddd'}
+                        ],
+                        [
+                            {text: '1', bold: true, alignment: 'center'},
+                            {text: 'Entrada maniobra de autotanque (Recepción AT).'},
+                            {text: 'Autotanque'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '2', bold: true, alignment: 'center'},
+                            {text: 'TOma muestra de producto (Recepción AT).'},
+                            {text: 'Autotanque'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '3', bold: true, alignment: 'center'},
+                            {text: 'Conexión de mangueras (Recepción AT).'},
+                            {text: 'Autotanque y tanque de almacenamiento'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '4', bold: true, alignment: 'center'},
+                            {text: 'Descarga de hidrocarburo (Recepción AT).'},
+                            {text: 'Autotanque y tanque de almacenamiento'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '5', bold: true, alignment: 'center'},
+                            {text: 'Derrame durante llenado (Recepción AT).'},
+                            {text: 'Autotanque y tanque de almacenamiento'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '6', bold: true, alignment: 'center'},
+                            {text: 'Desconexión de mangueras (Recepción AT).', rowSpan: 3},
+                            {text: 'Autotanque y tanque de almacenamiento', rowSpan: 3},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '7', bold: true, alignment: 'center'},
+                            {text: ''},
+                            {text: ''},
+                            {text: 'Suelo'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '8', bold: true, alignment: 'center'},
+                            {text: ''},
+                            {text: ''},
+                            {text: 'Agua'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '9', bold: true, alignment: 'center'},
+                            {text: 'Escurrimiento de autotanque (Recepción AT).'},
+                            {text: 'Autotanque y tanque de almacenamiento'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '10', bold: true, alignment: 'center'},
+                            {text: 'Salida maniobra de autotanque (Recepción AT)'},
+                            {text: 'Autotanque'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '11', bold: true, alignment: 'center'},
+                            {text: 'Almacenamiento derrame.', rowSpan: 2},
+                            {text: 'Tanque de almacenamiento', rowSpan: 2},
+                            {text: 'Suelo'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '12', bold: true, alignment: 'center'},
+                            {text: ''},
+                            {text: ''},
+                            {text: 'Aire'},
+                            {text: 'Evitar emisiones'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '13', bold: true, alignment: 'center'},
+                            {text: 'Venteo.'},
+                            {text: 'Tuberías de venteo'},
+                            {text: 'Aire'},
+                            {text: 'Evitar emisiones'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '14', bold: true, alignment: 'center'},
+                            {text: 'Venteo incendio.'},
+                            {text: 'Tuberías de venteo'},
+                            {text: 'Aire'},
+                            {text: 'Evitar emisiones'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '15', bold: true, alignment: 'center'},
+                            {text: 'Retiro de aguas aceitosas (purgado de agua).'},
+                            {text: 'Tanque de almacenamiento'},
+                            {text: 'Agua'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '16', bold: true, alignment: 'center'},
+                            {text: 'Retiro de lodos (limpieza interior de tanque).'},
+                            {text: 'Tanque de almacenamiento'},
+                            {text: 'Residuos Peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '17', bold: true, alignment: 'center'},
+                            {text: 'Retiro de aguas aceitosas y materiales impregnados (limpieza de bocatomas).'},
+                            {text: 'Tanque de almacenamiento'},
+                            {text: 'Residuos Peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '18', bold: true, alignment: 'center'},
+                            {text: 'Generación de aguas aceitosas y materiales impregnados (limpieza del área).'},
+                            {text: 'Área de tanque de almacenamiento'},
+                            {text: 'Agua'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: 'ÁREA: MÓDULO DE DESPACHO DE ABASTECIMIENTO DE COMBUSTIBLE A VEHÍCULOS', bold: true, colSpan: 9, fillColor: '#ddd'}
+                        ],
+                        [
+                            {text: '19', bold: true, alignment: 'center'},
+                            {text: 'Colocación de la pistola en el vehículo.'},
+                            {text: 'Vehículo'},
+                            {text: 'Agua'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '20', bold: true, alignment: 'center'},
+                            {text: 'Carga de hidrocarburo.'},
+                            {text: 'Vehículo'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '21', bold: true, alignment: 'center'},
+                            {text: 'Término del despacho y retiro de pistola del vehículo.'},
+                            {text: 'Vehículo'},
+                            {text: 'Agua'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '22', bold: true, alignment: 'center'},
+                            {text: 'Suministro de lubricantes, aditivos.'},
+                            {text: 'Vehículo'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '23', bold: true, alignment: 'center'},
+                            {text: 'Limpieza de dispensarios e islas.'},
+                            {text: 'Dispensario'},
+                            {text: 'Agua'},
+                            {text: 'Reducir consumo de agua'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '24', bold: true, alignment: 'center'},
+                            {text: 'Limpieza de contenedores.'},
+                            {text: 'Dispensario'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '25', bold: true, alignment: 'center'},
+                            {text: 'Cambio de filtros.'},
+                            {text: 'Dispensario'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '26', bold: true, alignment: 'center'},
+                            {text: 'Cambio de mangueras, conexiones o pistolas.'},
+                            {text: 'Dispensario'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: 'ÁREA: DRENAJES Y TRAMPA DE COMBUSTIBLES', bold: true, colSpan: 9, fillColor: '#ddd'}
+                        ],
+                        [
+                            {text: '27', bold: true, alignment: 'center'},
+                            {text: 'Limpieza.'},
+                            {text: 'Registros, tubería y trampa'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '28', bold: true, alignment: 'center'},
+                            {text: 'Limpieza.'},
+                            {text: 'Rejillas'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '29', bold: true, alignment: 'center'},
+                            {text: 'Separación de hidrocarburo.'},
+                            {text: 'Trampa de gasolina y Diesel'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: 'ÁREA: OFICINAS Y BAÑOS', bold: true, colSpan: 9, fillColor: '#ddd'}
+                        ],
+                        [
+                            {text: '30', bold: true, alignment: 'center'},
+                            {text: 'Actividades cotidianas sin riesgo.'},
+                            {text: 'Contenedores'},
+                            {text: 'Residuos sólidos no peligrosos (basura)'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '31', bold: true, alignment: 'center'},
+                            {text: 'Actividades cotidianas sin riesgo.'},
+                            {text: 'Instalaciones eléctricas'},
+                            {text: 'Recursos naturales'},
+                            {text: 'Reducir consumo'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '32', bold: true, alignment: 'center'},
+                            {text: 'Actividades cotidianas sin riesgo.'},
+                            {text: 'Sanitarios'},
+                            {text: 'Recursos naturales'},
+                            {text: 'Reducir consumo'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '33', bold: true, alignment: 'center'},
+                            {text: 'Actividades cotidianas sin riesgo.'},
+                            {text: 'Consumo de papel'},
+                            {text: 'Recursos naturales'},
+                            {text: 'Reducir consumo'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: 'ÁREA: CUARTO DE CONTROL ELÉCTRICO', bold: true, colSpan: 9, fillColor: '#ddd'}
+                        ],
+                        [
+                            {text: '34', bold: true, alignment: 'center'},
+                            {text: 'Operación normal.'},
+                            {text: 'Tableros eléctricos'},
+                            {text: 'Recursos naturales'},
+                            {text: ''},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '35', bold: true, alignment: 'center'},
+                            {text: 'Mantenimiento.'},
+                            {text: 'Tableros eléctricos'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '36', bold: true, alignment: 'center'},
+                            {text: 'Operación normal.'},
+                            {text: 'Planta de emergencia'},
+                            {text: 'Aire'},
+                            {text: 'Evitar derrames'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '37', bold: true, alignment: 'center'},
+                            {text: 'Mantenimiento.'},
+                            {text: 'Planta de emergencia'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: 'ÁREA: CUARTO DE MÁQUINAS', bold: true, colSpan: 9, fillColor: '#ddd'}
+                        ],
+                        [
+                            {text: '38', bold: true, alignment: 'center'},
+                            {text: 'Operación normal.'},
+                            {text: 'Compresor e hidroneumático'},
+                            {text: 'Recursos naturales'},
+                            {text: 'Reducir consumo'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                        [
+                            {text: '39', bold: true, alignment: 'center'},
+                            {text: 'Mantenimiento.'},
+                            {text: 'Compresor e hidroneumático'},
+                            {text: 'Residuos peligrosos'},
+                            {text: 'Control de residuos'},
+                            {},
+                            {},
+                            {},
+                            {}
+                        ],
+                    ]
+                },
+              },
+              {
+                text: '\n\n'
+              },
+              {
                   table: {
                       widths: [740],
                       heights: [15, 80],

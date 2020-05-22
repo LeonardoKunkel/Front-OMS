@@ -6,17 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EvidenciaElementoDieciseisService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getImages(){
-    return this.http.get('http://localhost:3000/img/')
+  getImages() {
+    return this.http.get('http://localhost:3000/img/');
   }
 
-  uploadImage(title: string, description:string, photo: File){
+  uploadImage(title: string, description: string, photo: File) {
     const fd = new FormData();
-    fd.append('title',title);
-    fd.append('description',description);
-    fd.append('image',photo);
-    return this.http.post('http://localhost:3000/evidencia16/create',fd)
+    fd.append('title', title);
+    fd.append('description', description);
+    fd.append('image', photo);
+    return this.http.post('http://localhost:3000/evidencia16/create', fd);
   }
 }

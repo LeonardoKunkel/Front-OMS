@@ -1,17 +1,17 @@
-import { EvidenciaElementoQuinceService } from './../../services/Elemento 15/evidencia-elemento-quince.service';
+import { EvidenciaElementoDieciseisService } from './../../services/Elemento 16/evidencia-elemento-dieciseis.service';
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
-  selector: 'app-punto-quince-evidencia',
-  templateUrl: './punto-quince-evidencia.page.html',
-  styleUrls: ['./punto-quince-evidencia.page.scss'],
+  selector: 'app-punto-dieciseis-evidencia',
+  templateUrl: './punto-dieciseis-evidencia.page.html',
+  styleUrls: ['./punto-dieciseis-evidencia.page.scss'],
 })
-export class PuntoQuinceEvidenciaPage implements OnInit {
+export class PuntoDieciseisEvidenciaPage implements OnInit {
   photoSelected: String | ArrayBuffer;
   file: File;
   foto: any;
-  constructor( private camera: Camera, private _uploadService: EvidenciaElementoQuinceService ) { }
+  constructor( private camera: Camera, private _uploadService: EvidenciaElementoDieciseisService ) { }
 
   ngOnInit() {
   }
