@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { EncargadoServiceService } from '../../services/Elemento 6/encargado-service.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 
 @Component({
@@ -10,20 +11,39 @@ import { EncargadoServiceService } from '../../services/Elemento 6/encargado-ser
   styleUrls: ['./encargado-modal.page.scss'],
 })
 export class EncargadoModalPage implements OnInit {
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
   datos: any = {
-    caracteristicasPersonales: '',
     requerimientosFisicos: '',
     herramientasEquipos: '',
     equipoProteccion: '',
-    nivelAcademico: ''
+    nivelAcademico: '',
+    personalCargo: ''
   };
 
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
     private encargadoService: EncargadoServiceService,
-    public toast: ToastController
-    ) { }
+    public toast: ToastController,
+    private encargadoService:EncargadoServiceService,
+    private estacionService: EstacionServicioDatosService
+    ) {
+      this.getEncargado();
+      this.getStationService();
+     }
+
 
   ngOnInit() {
   }
@@ -31,6 +51,19 @@ export class EncargadoModalPage implements OnInit {
   async closeModal(){
     await this.modalController.dismiss();
   }
+  getEncargado(){
+    this.encargadoService.getEncargado().subscribe((data:any) =>{
+      console.log(data);
+      this.datos = data.newRepresentante[data.newRepresentante.length - 1];
+    })
+  }
+
+  getStationService(){
+    this.estacionService.getEstacion().subscribe((data:any) =>{
+      let datoConsultado = data.findEstacion.length -1;
+      this.datosEstacion = data.findEstacion[datoConsultado];
+  });
+}
 
   async enviarForm(formulario) {
     console.log(this.datos);
@@ -46,15 +79,14 @@ export class EncargadoModalPage implements OnInit {
       });
     }
    print(){
-     // playground requires you to assign document definition to a variable called dd
- 
+    let ddd = this.datosEstacion;
  var dd = {
    header: function(){
      return {
          table: { widths: [565],heights:[50,15,15],
  body: [
- 
-   [{text:''}],
+
+  [{text: `${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment:'center'}],
    [{text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',alignment:'center',bold:true}],
    [{text:'PERFIL DE PUESTO DE TRABAJO',alignment:'center',bold:true,fillColor: '#e6e6e6'}],
  ]
@@ -174,8 +206,8 @@ export class EncargadoModalPage implements OnInit {
             widths: [175, 185, 185],
             heights: [50],
             body: [
-             ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
-            ]
+              [`REVISADO POR:\n\n\n\n ${ddd.representanteTecnico}\n\n REPRESENTANTE TÉCNICO`, `APROBADO POR:\n\n\n\n${ddd.maximaAutoridad}`, `FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"`]
+           ]
            }
        }
    ]

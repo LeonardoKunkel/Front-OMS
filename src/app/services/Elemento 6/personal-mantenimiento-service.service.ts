@@ -15,4 +15,8 @@ export class PersonalMantenimientoServiceService {
     });
     return this.httpClient.post('http://localhost:3000/copetenciaPersonalMantenimiento/create',datos,{headers})
   }
+
+  getDirector(){
+    return this.httpClient.get('http://localhost:3000/copetenciaPersonalMantenimiento');
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { DirectorServiceService } from '../../services/Elemento 6/director-service.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 
 @Component({
@@ -10,6 +11,19 @@ import { DirectorServiceService } from '../../services/Elemento 6/director-servi
   styleUrls: ['./director-modal.page.scss'],
 })
 export class DirectorModalPage implements OnInit {
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
   datos: any = {
     requerimientosFisicos: '',
     herramientasEquipos: '',
@@ -21,32 +35,50 @@ export class DirectorModalPage implements OnInit {
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
     private directorService: DirectorServiceService,
-    public toast: ToastController
-  ) { }
+    public toast: ToastController,
+    private estacionService: EstacionServicioDatosService
+  ) { 
+    this.getDirector();
+    this.getStationService()
+  }
+
   ngOnInit() {
   }
 
+  getDirector(){
+    this.directorService.getDirector().subscribe((data:any) =>{
+      this.datos = data.newDirector[data.newDirector.length - 1];
+    });
+  }
+
+  getStationService(){
+    this.estacionService.getEstacion().subscribe((data:any) =>{
+      let datoConsultado = data.findEstacion.length -1;
+      this.datosEstacion = data.findEstacion[datoConsultado];
+  });
+}
 
   crearDirector() {
-    this.directorService.createDirector(this.datos).subscribe((data: any) => {
+    this.directorService.createDirector(this.datos).subscribe((data:any) =>{
       console.log(data);
-
     });
+
   }
   async closeModal() {
     await this.modalController.dismiss();
   }
 
- async enviarForm(formulario) {
+ async enviarForm(formulario){
    console.log(this.datos);
    const toast = await this.toast.create({
     message: 'Datos guardados',
     duration: 2000
    });
    toast.present();
+   this.crearDirector();
  }
-
-  print() {
+  print(){
+    let ddd = this.datosEstacion;
 
 var dd = {
   header: function(){
@@ -54,7 +86,7 @@ var dd = {
         table: { widths: [565], heights: [50, 15, 15],
 body: [
 
-  [{text: ''}],
+  [{text: `${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment:'center'}],
   [{text: 'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO', alignment: 'center', bold: true}],
   [{text: 'PERFIL DE PUESTO DE TRABAJO', alignment: 'center', bold: true, fillColor: '#e6e6e6'}],
 ]
@@ -167,7 +199,7 @@ body: [
                widths: [175, 185, 185],
                heights: [50],
                body: [
-                  ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
+                  [`REVISADO POR:\n\n\n\n ${ddd.representanteTecnico}\n\n REPRESENTANTE TÉCNICO`, `APROBADO POR:\n\n\n\n${ddd.maximaAutoridad}`, `FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"`]
                ]
           }
       }

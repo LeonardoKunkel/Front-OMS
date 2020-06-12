@@ -15,4 +15,8 @@ export class DespachadoresServiceService {
     });
     return this.hhtpClient.post('http://localhost:3000/coptenciaPersonalDespachadores/create',datos,{headers});
   }
+
+  getDespachadores(){
+    return this.hhtpClient.get('http://localhost:3000/coptenciaPersonalDespachadores/');
+  }
 }

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Actualizacion a la estacion de servicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="update(form)" #form= "ngForm">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut animi explicabo ex, quasi doloremque accusantium consequuntur alias nisi inventore quas officia maiores cupiditate eveniet, sit voluptates ullam quaerat qui velit.</ion-card-subtitle>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label position = "floating">Nombre de la estación</ion-label>
+                <ion-input name="nombreEstacionServicio" [(ngModel)] = "datos.nombreEstacionServicio"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Estado</ion-label>
+                <ion-input name="estado" [(ngModel)] = "datos.estado"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Ciudad en la que esta situada</ion-label>
+                <ion-input name="ciudad" [(ngModel)] = "datos.ciudad"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Colonia</ion-label>
+                <ion-input name = "colonia" [(ngModel)] = "datos.colonia"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Calle y numero de ubicación</ion-label>
+                <ion-input name="calleNumero" [(ngModel)] = "datos.calleNumero"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Codigo postal</ion-label>
+                <ion-input name="cp" [(ngModel)] = "datos.cp"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12" sizeLg="6">
+              <ion-item>
+                <ion-label position = "floating">Correo electronico</ion-label>
+                <ion-input name="correoElectronico" [(ngModel)] = "datos.correoElectronico"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Telefono de la estacion de servicio</ion-label>
+                <ion-input name="telefono" [(ngModel)] = "datos.telefono"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Nombre del gerente de la estación</ion-label>
+                <ion-input name="gerenteEstacion" [(ngModel)] = "datos.gerenteEstacion"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Nombre del representante tecnico</ion-label>
+                <ion-input name="representanteTecnico" [(ngModel)] = "datos.representanteTecnico"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position = "floating">Nombre de la Maxima autoridad de la estación</ion-label>
+                <ion-input name="maximaAutoridad" [(ngModel)] = "datos.maximaAutoridad"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+    </ion-card>
+    <ion-button type="submit" expand="block" fill="clear" shape="round">
+      Actualizar datos
+    </ion-button>
+  </form>
+</ion-content>
