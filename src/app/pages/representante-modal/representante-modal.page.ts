@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { RepresentanteTecnicoServiceService } from 'src/app/services/Elemento 6/representante-tecnico-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
@@ -34,6 +34,7 @@ export class RepresentanteModalPage implements OnInit {
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
+    public toast: ToastController,
     private representanteService:RepresentanteTecnicoServiceService,
     private estacionService: EstacionServicioDatosService
     ) { 
@@ -41,13 +42,14 @@ export class RepresentanteModalPage implements OnInit {
       this.getStationService();
     }
 
+
   ngOnInit() {
   }
 
   async closeModal() {
     await this.modalController.dismiss();
   }
-
+  
   getStationService(){
     this.estacionService.getEstacion().subscribe((data:any) =>{
       let datoConsultado = data.findEstacion.length -1;
@@ -67,6 +69,7 @@ export class RepresentanteModalPage implements OnInit {
     this.representanteService.createRepresentante(this.datos).subscribe((data:any) =>{
       console.log(data);
     })
+
   }
 
    print() {

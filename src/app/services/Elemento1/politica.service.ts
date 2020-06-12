@@ -25,8 +25,10 @@ export class PoliticaService {
     return this.httpClient.post('http://localhost:3000/politica/create',politica,{headers})
   }
 
+
   getSpecificPolitic( id:String){
     return this.httpClient.get(`http://localhost:3000/politica/${id}`)
   }
 
 }
+

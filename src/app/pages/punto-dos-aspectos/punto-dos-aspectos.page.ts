@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ToastController } from '@ionic/angular';
+import { AspectosServiceService } from 'src/app/services/Elemento 2/aspectos-service.service';
+
 
 @Component({
   selector: 'app-punto-dos-aspectos',
@@ -168,7 +170,7 @@ export class PuntoDosAspectosPage implements OnInit {
     VT39: '',
   };
 
-  constructor(private pdfMaker: PdfMakerService, public toast: ToastController) { }
+  constructor(private pdfMaker: PdfMakerService, public toast: ToastController, private superAspectos: AspectosServiceService ) { }
 
 
   ngOnInit() {
@@ -176,6 +178,11 @@ export class PuntoDosAspectosPage implements OnInit {
   }
   async enviarForm(formulario) {
     console.log(this.datos);
+
+    this.superAspectos.crearAspectos(this.datos).subscribe(data => {
+      console.log(data);
+    });
+
     const toast = await this.toast.create({
       message: 'Datos guardados',
       duration: 2000

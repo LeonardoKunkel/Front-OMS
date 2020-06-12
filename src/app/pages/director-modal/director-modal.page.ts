@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { DirectorServiceService } from '../../services/Elemento 6/director-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
@@ -35,11 +35,13 @@ export class DirectorModalPage implements OnInit {
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
     private directorService: DirectorServiceService,
+    public toast: ToastController,
     private estacionService: EstacionServicioDatosService
   ) { 
     this.getDirector();
     this.getStationService()
   }
+
   ngOnInit() {
   }
 
@@ -59,30 +61,29 @@ export class DirectorModalPage implements OnInit {
   crearDirector() {
     this.directorService.createDirector(this.datos).subscribe((data:any) =>{
       console.log(data);
-    })
-    
+    });
+
   }
-  async closeModal(){
+  async closeModal() {
     await this.modalController.dismiss();
   }
 
- enviarForm(formulario){
-   console.log(this.datos)
+ async enviarForm(formulario){
+   console.log(this.datos);
+   const toast = await this.toast.create({
+    message: 'Datos guardados',
+    duration: 2000
+   });
+   toast.present();
    this.crearDirector();
  }
-
-
-
-
-
-
   print(){
     let ddd = this.datosEstacion;
 
 var dd = {
   header: function(){
     return {
-        table: { widths: [565],heights:[50,15,15],
+        table: { widths: [565], heights: [50, 15, 15],
 body: [
 
   [{text: `${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment:'center'}],

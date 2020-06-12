@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { DespachadoresServiceService } from '../../services/Elemento 6/despachadores-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
@@ -34,12 +34,14 @@ export class DespachadoresModalPage implements OnInit {
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService,
+    public toast: ToastController,
     private despachadoresServices: DespachadoresServiceService,
     private estacionService: EstacionServicioDatosService
     ) {
       this.getDespachadores();
       this.getStationService();
      }
+
 
   ngOnInit() {
   }
@@ -61,8 +63,13 @@ export class DespachadoresModalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
-  enviarForm(formulario) {
+  async enviarForm(formulario) {
     console.log(this.datos);
+    const toast = await this.toast.create({
+      message: 'Datos guardados',
+      duration: 2000
+    });
+    toast.present();
   }
 
   crearDespachador() {

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, ToastController, IonContent} from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { ListaServiceService } from 'src/app/services/Elemento 7/lista-service.service';
 @Component({
   selector: 'app-punto-siete',
   templateUrl: './punto-siete.page.html',
@@ -115,10 +116,10 @@ export class PuntoSietePage implements OnInit {
 //     C42: false,
 //   };
 
-
   constructor( 
       private pdfMaker: PdfMakerService, 
-      public toast: ToastController) {
+      public toast: ToastController,
+      private superLista: ListaServiceService) {
         this.Checkboxes = [
           {
             value: "Captain Marvel",
@@ -142,17 +143,7 @@ export class PuntoSietePage implements OnInit {
             id: "check5"
           }
         ];
-      
   }
-//   async slideChange(){
-//      let toast = await this.toast.create({
-//           message:'Haz cambiado de slide',
-//           duration:2000,
-//           closeButtonText:"Cerrar"
-//       });
-//       toast.present();
-      
-//   }
 
   ngOnInit() {
 
@@ -165,10 +156,10 @@ export class PuntoSietePage implements OnInit {
     });
   }
 
+
   verifyEvent(){
     const allItems = this.Checkboxes.length;
     let selected = 0;
-
     this.Checkboxes.map(item => {
       if (item.isItemChecked) selected++;
     });

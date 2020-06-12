@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { AnexoSeguridadService } from '../../services/Elemento 12/anexo-seguridad.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 
@@ -9,76 +9,77 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./anexo-model.page.scss'],
 })
 export class AnexoModelPage implements OnInit {
-  //public anArray:any=[];
-  public anArray:any=[];
+  // public anArray:any=[];
+  public anArray: any = [];
   data: boolean;
-  public datoss1:{
-    regla1:''
+  public datoss1: {
+    regla1: ''
   };
-  public datoss2:{
-    regla1:'',
-    regla2:''
+  public datoss2: {
+    regla1: '',
+    regla2: ''
   };
-  public datoss3:{
-    regla1:'',
-    regla2:'',
-    regla3:''
+  public datoss3: {
+    regla1: '',
+    regla2: '',
+    regla3: ''
   };
-  public datoss4:{
-    regla1:'',
-    regla2:'',
-    regla3:'',
-    regla4:''
+  public datoss4: {
+    regla1: '',
+    regla2: '',
+    regla3: '',
+    regla4: ''
   };
-  public datoss5:{
-    regla1:'',
-    regla2:'',
-    regla3:'',
-    regla4:'',
-    regla5:''
+  public datoss5: {
+    regla1: '',
+    regla2: '',
+    regla3: '',
+    regla4: '',
+    regla5: ''
   };
-  public datoss6:{
-    regla1:'',
-    regla2:'',
-    regla3:'',
-    regla4:'',
-    regla5:'',
-    regla6:''
+  public datoss6: {
+    regla1: '',
+    regla2: '',
+    regla3: '',
+    regla4: '',
+    regla5: '',
+    regla6: ''
   };
-  public datoss7:{
-    regla1:'',
-    regla2:'',
-    regla3:'',
-    regla4:'',
-    regla5:'',
-    regla6:'',
-    regla7:''
+  public datoss7: {
+    regla1: '',
+    regla2: '',
+    regla3: '',
+    regla4: '',
+    regla5: '',
+    regla6: '',
+    regla7: ''
   };
-  public datoss8:{
-    regla1:'',
-    regla2:'',
-    regla3:'',
-    regla4:'',
-    regla5:'',
-    regla6:'',
-    regla7:'',
-    regla8:''
+  public datoss8: {
+    regla1: '',
+    regla2: '',
+    regla3: '',
+    regla4: '',
+    regla5: '',
+    regla6: '',
+    regla7: '',
+    regla8: ''
   };
-  public datoss9:{
-    regla1:'',
-    regla2:'',
-    regla3:'',
-    regla4:'',
-    regla5:'',
-    regla6:'',
-    regla7:'',
-    regla8:'',
-    regla9:''
+  public datoss9: {
+    regla1: '',
+    regla2: '',
+    regla3: '',
+    regla4: '',
+    regla5: '',
+    regla6: '',
+    regla7: '',
+    regla8: '',
+    regla9: ''
   };
   constructor(
-    private modalCtrl:ModalController,
-    private anexoService:AnexoSeguridadService,
-    private pdfMake:PdfMakerService
+    private modalCtrl: ModalController,
+    private anexoService: AnexoSeguridadService,
+    private pdfMake: PdfMakerService,
+    public toast: ToastController
     ) {
     this.Add();
     this.goTo();
@@ -86,32 +87,31 @@ export class AnexoModelPage implements OnInit {
 
   ngOnInit() {
   }
-  async closeModal(){
+  async closeModal() {
     await this.modalCtrl.dismiss();
   }
-  goTo(){
-   console.log('this.anArray',this.anArray);
-   this.data=true;
-   }
-  
-    Add(){
+  goTo() {
+   console.log('this.anArray', this.anArray);
+   this.data = true;
+  }
+
+    Add() {
     this.anArray.push([]);
     console.log(this.data);
     }
 
-    creaAnexo(oo){
-      this.anexoService.createAnexo(oo).subscribe((data:any)=>{
+    creaAnexo(oo) {
+      this.anexoService.createAnexo(oo).subscribe((data: any) => {
         console.log(data);
-        
-      })
+      });
     }
-     
+
     // verificar(){
     //   console.log(this.datoss);
     //   this.creaAnexo(this.datoss)                 falta pasar los parametrods en  la funcion
     // }
 
-    pdf(){
+    pdf() {
       
       if( this.anArray.length === 1){
       this.datoss1={

@@ -14,34 +14,30 @@ export class PuntoDieciseisPage implements OnInit {
   }
 
   goPuntoProcedimiento() {
-    this.navCtrl.navigateForward('/elemento16-investigacion-accidentes')
+    this.navCtrl.navigateForward('/elemento16-investigacion-accidentes');
   }
 
   goPuntoProcedimiento2() {
-    this.navCtrl.navigateForward('/elemento16-arbol-fallas')
+    this.navCtrl.navigateForward('/elemento16-arbol-fallas');
   }
 
   goPuntoFormato() {
-    this.navCtrl.navigateForward('/elemento16-causa-raiz')
+    this.navCtrl.navigateForward('/elemento16-causa-raiz');
   }
-
-
-
-  
 
   goPuntoComprobacion() {
     this.navCtrl.navigateForward('/elemento16-hipotesis-recomendaciones');
   }
 
   goPuntoEntrevista() {
-    this.navCtrl.navigateForward('/elemento16-entrevista')
+    this.navCtrl.navigateForward('/elemento16-entrevista');
   }
 
   goPuntoEstadistica() {
-    this.navCtrl.navigateForward('/elemento16-estadistica')
+    this.navCtrl.navigateForward('/elemento16-estadistica');
   }
-  goEvidencia(){
-    this.navCtrl.navigateForward('/punto-dieciseis-evidencia')
+  goEvidencia() {
+    this.navCtrl.navigateForward('/punto-dieciseis-evidencia');
   }
 
 }

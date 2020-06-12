@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ToastController } from '@ionic/angular';
+import { RiesgosServiceService } from 'src/app/services/Elemento 2/riesgos-service.service';
+
 
 @Component({
   selector: 'app-punto-dos-riesgos',
@@ -66,7 +68,9 @@ export class PuntoDosRiesgosPage implements OnInit {
     M18: '',
   };
 
-  constructor( private pdfMaker: PdfMakerService, public toast: ToastController) { }
+  constructor( private pdfMaker: PdfMakerService,
+               public toast: ToastController,
+               private superRiesgos: RiesgosServiceService ) { }
 
   ngOnInit() {
 
@@ -74,6 +78,11 @@ export class PuntoDosRiesgosPage implements OnInit {
 
   async enviarForm(formulario) {
     console.log(this.datos);
+
+    this.superRiesgos.crearRiesgos(this.datos).subscribe(data => {
+      console.log(data);
+    });
+
     const toast = await this.toast.create({
       message: 'Datos guardados',
       duration: 2000
