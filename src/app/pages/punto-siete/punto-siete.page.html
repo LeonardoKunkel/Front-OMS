@@ -10,445 +10,99 @@
   <hr class="linea1">
 </div>
 <ion-content>
-  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="pdf()">
-        <ion-icon name="cloud-download"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <!-- <form>
     <ion-grid fixed>
       <ion-row>
-        <ion-col size="12" sizeLg="6">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-title>Política</ion-card-title>
-              <div>
-                <hr class="linea">
-              </div>
-              <ion-row>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>Personas a quienes deben ser divulgada</ion-card-title>
-                  <ion-list class="texto1">
-                    <ul>
-                      <li class="texto2">Jefe de Piso</li>
-                      <li class="texto2">Despachador</li>
-                      <li class="texto2">Personal de Mantenimiento</li>
-                      <li class="texto2">Contratistas y Proveedores</li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>¿Por qué medio se va a divulgar la política?</ion-card-title>
-                  <ion-list>
-                    <ul>
-                      <li>
-                        <ion-item type="checkbox">
-                          <ion-label>Correo</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C1" [(ngModel)]="datos.C1"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Pláticas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C2" [(ngModel)]="datos.C2"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Trípticos</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success"  name="C3" [(ngModel)]="datos.C3"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Lonas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C4" [(ngModel)]="datos.C4"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Oficios</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C5" [(ngModel)]="datos.C5"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Tablero de información</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success"  name="C6" [(ngModel)]="datos.C6"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Carteles</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C7" [(ngModel)]="datos.C7"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeLg="6">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-title>Identificación de Riesgos y Aspectos Ambientales</ion-card-title>
-              <div>
-                <hr class="linea">
-              </div>
-              <ion-row>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>Personas a quienes deben ser divulgados</ion-card-title>
-                  <ion-list class="texto1">
-                    <ul>
-                      <li class="texto2">Jefe de Piso</li>
-                      <li class="texto2">Despachador</li>
-                      <li class="texto2">Personal de Mantenimiento</li>
-                      <li class="texto2">Contratistas y Proveedores</li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>¿Por qué medio se van a divulgar los riesgos y aspectos ambientales?</ion-card-title>
-                  <ion-list>
-                    <ul>
-                      <li>
+        <ion-col size="12" sizeLg="8" style="margin: auto; display: block;">
+          <ion-slides mode="ios" pager="true" scrollbar="ios" (ionSlideDidChange)="slideChange()" [options]="slideOpts">
+            <ion-slide *ngFor= "let sd of slides" >
+              <ion-card >
+              <ion-card-header>
+                <ion-card-title>{{sd.titulo}}</ion-card-title>
+                <ion-card-subtitle>Personas a quienes deben ser divulgada</ion-card-subtitle>
+                <ion-list>
+                  <ion-item> 
+                    <ion-label>1-Jefe de Piso</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>2-Despachador</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>3-Personal de Mantenimiento</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>4-Contratistas y Proveedores</ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-card-header>               
+               <ion-card-content>
+                 <p>¿Por qué medio se va a divulgar la política?</p>
+                 <ion-list>
+                  <ion-grid fixed>
+                    <ion-row>
+                      <ion-col size="12" sizeLg="6">
                         <ion-item>
                           <ion-label>Correo</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C8" [(ngModel)]="datos.C8"></ion-checkbox>
+                          <ion-checkbox slot="start"  ></ion-checkbox>
                         </ion-item>
-                      </li>
-                      <li>
                         <ion-item>
                           <ion-label>Pláticas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success"  name="C9" [(ngModel)]="datos.C9"></ion-checkbox>
+                          <ion-checkbox slot="start"></ion-checkbox>
                         </ion-item>
-                      </li>
-                      <li>
                         <ion-item>
                           <ion-label>Trípticos</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C10" [(ngModel)]="datos.C10"></ion-checkbox>
+                          <ion-checkbox slot="start"></ion-checkbox>
                         </ion-item>
-                      </li>
-                      <li>
                         <ion-item>
                           <ion-label>Lonas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C11" [(ngModel)]="datos.C11"></ion-checkbox>
+                          <ion-checkbox slot="start"></ion-checkbox>
                         </ion-item>
-                      </li>
-                      <li>
+                      </ion-col>
+                      <ion-col size="12" sizeLg="6">
                         <ion-item>
                           <ion-label>Oficios</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C12" [(ngModel)]="datos.C12"></ion-checkbox>
+                          <ion-checkbox slot="start"></ion-checkbox>
                         </ion-item>
-                      </li>
-                      <li>
                         <ion-item>
                           <ion-label>Tablero de información</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C13" [(ngModel)]="datos.C13"></ion-checkbox>
+                          <ion-checkbox slot="start"></ion-checkbox>
                         </ion-item>
-                      </li>
-                      <li>
                         <ion-item>
                           <ion-label>Carteles</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C14" [(ngModel)]="datos.C14"></ion-checkbox>
+                          <ion-checkbox slot="start"></ion-checkbox>
                         </ion-item>
-                      </li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                 </ion-list>
+
+              </ion-card-content>
+            </ion-card>
+            </ion-slide>
+          </ion-slides>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col size="12" sizeLg="6">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-title>Requisitos Legales Vigentes</ion-card-title>
-              <div>
-                <hr class="linea">
-              </div>
-              <ion-row>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>Personas a quienes deben ser divulgados</ion-card-title>
-                  <ion-list class="texto1">
-                    <ul>
-                      <li class="texto2">Encargado</li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>¿Por qué medio se van a divulgar los requisitos legales vigentes?</ion-card-title>
-                  <ion-list>
-                    <ul>
-                      <li>
-                        <ion-item>
-                          <ion-label>Correo</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C15" [(ngModel)]="datos.C15"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Pláticas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C16" [(ngModel)]="datos.C16"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Trípticos</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C17" [(ngModel)]="datos.C17"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Lonas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C18" [(ngModel)]="datos.C18"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Oficios</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C19" [(ngModel)]="datos.C19"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Tablero de información</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C20" [(ngModel)]="datos.C20"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Carteles</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C21" [(ngModel)]="datos.C21"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeLg="6">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-title>Cumplimiento de Objetivos y Metas</ion-card-title>
-              <div>
-                <hr class="linea">
-              </div>
-              <ion-row>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>Personas a quienes deben ser divulgados</ion-card-title>
-                  <ion-list class="texto1">
-                    <ul>
-                      <li class="texto2">Representante Técnico</li>
-                      <li class="texto2">Encargado</li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>¿Por qué medio se van a divulgar los objetivos y Metas?</ion-card-title>
-                  <ion-list>
-                    <ul>
-                      <li>
-                        <ion-item>
-                          <ion-label>Correo</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success"  name="C22" [(ngModel)]="datos.C22"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Pláticas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C23" [(ngModel)]="datos.C23"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Trípticos</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C24" [(ngModel)]="datos.C24"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Lonas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C25" [(ngModel)]="datos.C25"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Oficios</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C26" [(ngModel)]="datos.C26"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Tablero de información</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C27" [(ngModel)]="datos.C27"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Carteles</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C28" [(ngModel)]="datos.C28"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12" sizeLg="6">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-title>Resultados de Auditoría</ion-card-title>
-              <div>
-                <hr class="linea">
-              </div>
-              <ion-row>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>Personas a quienes deben ser divulgados</ion-card-title>
-                  <ion-list class="texto1">
-                    <ul>
-                      <li class="texto2">Representante Técnico</li>
-                      <li class="texto2">Dirección</li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>¿Por qué medio se van a divulgar los resultados de Auditorías?</ion-card-title>
-                  <ion-list>
-                    <ul>
-                      <li>
-                        <ion-item>
-                          <ion-label>Correo</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C29" [(ngModel)]="datos.C29"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Pláticas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C30" [(ngModel)]="datos.C30"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Trípticos</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C31" [(ngModel)]="datos.C31"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Lonas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C32" [(ngModel)]="datos.C32"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Oficios</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C33" [(ngModel)]="datos.C33"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Tablero de información</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C34" [(ngModel)]="datos.C34"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Carteles</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C35" [(ngModel)]="datos.C35"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" sizeLg="6">
-          <ion-card>
-            <ion-card-content>
-              <ion-card-title>Resultados de Evaluación</ion-card-title>
-              <div>
-                <hr class="linea">
-              </div>
-              <ion-row>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>Personas a quienes deben ser divulgados</ion-card-title>
-                  <ion-list class="texto1">
-                    <ul>
-                      <li class="texto2">Representante Técnico</li>
-                      <li class="texto2">Encargado</li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-                <ion-col size="12" sizeLg="5">
-                  <ion-card-title>¿Por qué medio se van a divulgar los resultados de Evaluaciones?</ion-card-title>
-                  <ion-list>
-                    <ul>
-                      <li>
-                        <ion-item>
-                          <ion-label>Correo</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C36" [(ngModel)]="datos.C36"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Pláticas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C37" [(ngModel)]="datos.C37"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Trípticos</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C38" [(ngModel)]="datos.C38"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Lonas</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C39" [(ngModel)]="datos.C39"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Oficios</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C40" [(ngModel)]="datos.C40"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Tablero de información</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C41" [(ngModel)]="datos.C41"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                      <li>
-                        <ion-item>
-                          <ion-label>Carteles</ion-label>
-                          <ion-checkbox mode="ios" slot="end" color="success" name="C42" [(ngModel)]="datos.C42"></ion-checkbox>
-                        </ion-item>
-                      </li>
-                    </ul>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-button expand="full" shape="round" color="success" type="submit">
-        Guardar datos
-      </ion-button>
     </ion-grid>
-  </form>
+    <ion-button (click)="test()" expand="block" fill="clear" shape="round">
+      Click me
+    </ion-button>
+  </form> -->
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label><strong>Superheroes - Select All</strong></ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="checkParent" [indeterminate]="indeterminateState"
+        (click)="checkCheckbox($event)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item *ngFor="let checkboxes of Checkboxes">
+      <ion-label>{{checkboxes.value}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="checkboxes.isItemChecked" (ionChange)="verifyEvent()">
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="check()" expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
 </ion-content>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { JefePisoServiceService } from '../../services/Elemento 6/jefe-piso-service.service'
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 @Component({
   selector: 'app-jefe-piso-modal',
@@ -9,8 +10,20 @@ import { JefePisoServiceService } from '../../services/Elemento 6/jefe-piso-serv
   styleUrls: ['./jefe-piso-modal.page.scss'],
 })
 export class JefePisoModalPage implements OnInit {
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
   datos: any = {
-    caracteristicasPersonales: '',
     requerimientosFisicos: '',
     herramientasEquipos: '',
     equipoProteccion: '',
@@ -21,8 +34,12 @@ export class JefePisoModalPage implements OnInit {
   constructor(
     private modalController: ModalController ,
     private pdfMaker: PdfMakerService,
-    private jefeService: JefePisoServiceService
-    ) { }
+    private jefeService: JefePisoServiceService,
+    private estacionService: EstacionServicioDatosService
+    ) { 
+      this.getJefe();
+      this.getStationService()
+    }
 
   ngOnInit() {
   }
@@ -31,6 +48,18 @@ export class JefePisoModalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
+  getJefe(){
+    this.jefeService.getDirector().subscribe((data:any) =>{
+      this.datos = data.newRepresentante[data.newRepresentante.length - 1];
+    })
+  }
+
+  getStationService(){
+    this.estacionService.getEstacion().subscribe((data:any) =>{
+      let datoConsultado = data.findEstacion.length -1;
+      this.datosEstacion = data.findEstacion[datoConsultado];
+  });
+}
   enviarForm(formulario) {
     console.log(this.datos);
   }
@@ -42,8 +71,7 @@ export class JefePisoModalPage implements OnInit {
  }
 
   print() {
-     // playground requires you to assign document definition to a variable called dd
-
+    let ddd = this.datosEstacion;
     const dd = {
      header: () => {
        return {
@@ -51,7 +79,8 @@ export class JefePisoModalPage implements OnInit {
           widths: [565],
           heights: [50, 15, 15],
           body: [
-            [{text: ''}],
+
+            [{text: `${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment:'center'}],
             [{text: 'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO', alignment: 'center', bold: true}],
             [{text: 'PERFIL DE PUESTO DE TRABAJO', alignment: 'center', bold: true, fillColor: '#e6e6e6'}],
           ]
@@ -172,10 +201,8 @@ export class JefePisoModalPage implements OnInit {
             heights: [50],
             body: [
               [
-                'REVISADO POR:\n\n\n\n Gamaliel Chavarría REPRESENTANTE TÉCNICO',
-                'APROBADO POR:\n\n\n\nSergio Lechuga',
-                'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2020"'
-              ]
+                [`REVISADO POR:\n\n\n\n ${ddd.representanteTecnico}\n\n REPRESENTANTE TÉCNICO`, `APROBADO POR:\n\n\n\n${ddd.maximaAutoridad}`, `FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"`]
+             ]
             ]
           }
          }

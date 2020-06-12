@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-buttons slot="start">
+  <ion-buttons slot="end">
     <ion-button (click)="closeModal()" horizontal="end" slot="fixed">
       <ion-icon name="close-circle" slot="end"></ion-icon>
     </ion-button>
@@ -40,11 +40,8 @@
         </ion-item>
       </ion-card-content>
     </ion-card>
-    <ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">
-      Guardar y enviar
-    </ion-button>
     <ion-button (click)="crearDirector()" expand="block" fill="clear" shape="round">
-      Click me
+      Guardar y enviar
     </ion-button>
   </form>
 </ion-content>

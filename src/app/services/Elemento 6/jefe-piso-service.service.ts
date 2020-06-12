@@ -16,4 +16,8 @@ export class JefePisoServiceService {
     return this.httpClient.post('http://localhost:3000/copetenciaPersonalJefe/create',datos,{headers})
   }
 
+  getDirector(){
+    return this.httpClient.get('http://localhost:3000/copetenciaPersonalJefe');
+  }
+
 }

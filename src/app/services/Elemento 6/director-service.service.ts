@@ -15,4 +15,8 @@ export class DirectorServiceService {
     });
     return this.httpClient.post('http://localhost:3000/copetenciaPersonalDirector/create', datos ,{headers});
   }
+
+  getDirector(){
+    return this.httpClient.get('http://localhost:3000/copetenciaPersonalDirector');
+  }
 }

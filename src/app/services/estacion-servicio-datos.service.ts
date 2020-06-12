@@ -24,11 +24,15 @@ export class EstacionServicioDatosService {
     return this.httpClient.get('http://localhost:3000/estacionServicio/',{headers})
   }
 
-  getEstacionById(id){
+  getEstacionById(id: string){
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Authorization': token
     });
     return this.httpClient.get(`http://localhost:3000/estacionServicio/${id}`,{headers})
+  }
+
+  updateStation(id , body){
+    return this.httpClient.put(`http://localhost:3000/estacionServicio/${id}`, body)
   }
 }

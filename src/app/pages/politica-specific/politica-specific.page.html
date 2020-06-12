@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()" horizontal="end" slot="fixed">
+        <ion-icon name="close-circle" slot="end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Politíca actual</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" siseLg="8">
+        <ion-card *ngFor="let dd of politicas">
+          <ion-buttons slot="end">
+            <ion-button (click)="pdf()">
+              <ion-icon  name="download" color="success"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-card-header> 
+            <ion-card-subtitle class="ion-text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At vitae porro odio blanditiis ab iste quos laborum nulla pariatur saepe accusamus iusto consequatur aliquam ipsum laboriosam cumque, necessitatibus eos. Ut!</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content >
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12" sizeLg="8" style="margin: auto; display: block;">
+                  <p style="text-align: justify;">{{dd.politica}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-buttons slot="start" *ngFor="let de of estacione">
+              <ion-button (click)="postPolitica(de._id)">
+                Seleccionar nueva política
+              </ion-button>
+            </ion-buttons>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

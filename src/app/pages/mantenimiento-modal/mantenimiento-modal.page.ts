@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { PersonalMantenimientoServiceService} from '../../services/Elemento 6/personal-mantenimiento-service.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 @Component({
   selector: 'app-mantenimiento-modal',
@@ -9,22 +10,50 @@ import { PersonalMantenimientoServiceService} from '../../services/Elemento 6/pe
   styleUrls: ['./mantenimiento-modal.page.scss'],
 })
 export class MantenimientoModalPage implements OnInit {
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
   datos: any = {
-    caracteristicasPersonales: '',
     requerimientosFisicos: '',
     herramientasEquipos: '',
     equipoProteccion: '',
     nivelAcademico: '',
     personalCargo: ''
   };
-
   constructor(
     private modalController: ModalController,
     private pdfMaker: PdfMakerService ,
-    private mantenimientoService: PersonalMantenimientoServiceService
-    ) { }
+    private mantenimientoService: PersonalMantenimientoServiceService,
+    private estacionService: EstacionServicioDatosService
+    ) { 
+      this.getMantenimiento();
+      this.getStationService();
+    }
 
   ngOnInit() {
+  }
+
+  getStationService(){
+    this.estacionService.getEstacion().subscribe((data:any) =>{
+      let datoConsultado = data.findEstacion.length -1;
+      this.datosEstacion = data.findEstacion[datoConsultado];
+  });
+}
+
+  getMantenimiento(){
+    this.mantenimientoService.getDirector().subscribe((data:any) =>{
+      this.datos = data.newRepresentante[data.newRepresentante.length - 1];
+    })
   }
 
   mantenimiento() {
@@ -47,15 +76,14 @@ export class MantenimientoModalPage implements OnInit {
  
  
    print(){
-     // playground requires you to assign document definition to a variable called dd
- 
+    let ddd = this.datosEstacion;
  var dd = {
    header: function(){
      return {
          table: { widths: [565],heights:[50,15,15],
  body: [
- 
-   [{text:''}],
+
+  [{text: `${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment:'center'}],
    [{text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',alignment:'center',bold:true}],
    [{text:'PERFIL DE PUESTO DE TRABAJO',alignment:'center',bold:true,fillColor: '#e6e6e6'}],
  ]
@@ -108,8 +136,8 @@ export class MantenimientoModalPage implements OnInit {
                 heights:[50],
                 
                body:[
-                   ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
-                   ]
+                [`REVISADO POR:\n\n\n\n ${ddd.representanteTecnico}\n\n REPRESENTANTE TÉCNICO`, `APROBADO POR:\n\n\n\n${ddd.maximaAutoridad}`, `FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"`]
+             ]
            }
            
            
