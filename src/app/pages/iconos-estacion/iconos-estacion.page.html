@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Marca de agua e Icono de la estacion de servicio</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="closeModal()">
+      <ion-icon slot="close" name="add"></ion-icon>
+      Click me
+    </ion-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeLg="6" style="margin: auto; display: block;">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput></ion-input>
+              <img [src]="fotoSeleccionada || '../../../assets/Imagenes/Elemento 1/1_politica.png'" style="width: 30%; display: block; margin: auto;" alt="No image">
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="file" class="d-none" (change)="onPhotoSelected2($event)" #photoInput2></ion-input>
+              <img [src]="fotoSeleccionada2 || '../../../assets/Imagenes/Elemento 1/1_politica.png'" style="width: 30%; display: block; margin: auto;" alt="No image">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

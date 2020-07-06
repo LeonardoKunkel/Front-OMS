@@ -43,7 +43,7 @@ export class Tab1Page {
     const modal = await this.modalCtrl.create({
       component: EstacionServicioModelPage
     });
-    console.log('Entraste al modal');
+    //console.log('Entraste al modal');
     return await modal.present();
     
   }

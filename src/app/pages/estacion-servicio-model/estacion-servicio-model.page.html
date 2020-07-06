@@ -34,10 +34,11 @@
             </ion-col>
           </ion-row>
           <ion-item>
-            <ion-button (click)="updateEstacion(es._id)" expand="block" fill="clear" shape="round">
-              Actualizar datos
-            </ion-button>
           </ion-item>
+          <ion-button (click)="updateEstacion(es._id)" expand="block" fill="clear" shape="round">
+            <ion-icon name="clipboard" slot="start"></ion-icon>
+            Actualizar
+          </ion-button>
         </ion-grid>
       </ion-card-content>
     </ion-card>

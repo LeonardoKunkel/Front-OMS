@@ -1,8 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef ,QueryList, ViewChildren} from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ObjetivosMetasService } from '../../services/Elemento 4/objetivos-metas.service';
 import { AlertController, ToastController, IonCheckbox } from '@ionic/angular';
+import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
+import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
 
+import { Observable } from 'rxjs';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 @Component({
   selector: 'app-cuatro2',
   templateUrl: './cuatro2.page.html',
@@ -216,31 +221,90 @@ export class Cuatro2Page implements OnInit {
       cA2:'5%',
       cA3:'5%',
   }
-
-    @ViewChild("residuosPeligrosos") residuosPeligrosos :IonCheckbox;
-    @ViewChild("consumoAgua") consumoAgua;
-    @ViewChild("consumoEnergia") consumoEnergia;
-    @ViewChild("programaMantenimiento") programaMantenimiento;
-    @ViewChild("capacitacionesTrabajadores") capacitacionesTrabajadores;
-    @ViewChild("ventaAnualmente") ventaAnualmente;
-    @ViewChild("carta") carta;
-
-  
+  firmaEstacion:string;
+  marcaAgua:string;
+  iconoEstacion:string;
+  myImage = null;
+  nombreEstacion =null;
+  representanteTecnico = null;
+  maximaAutorida = null;
 
   constructor(
   private pdfMaker: PdfMakerService,
   private objetivo: ObjetivosMetasService,
   public alertController: AlertController,
-  public toast: ToastController) {
-    
+  public toast: ToastController,
+  private iconoService:IconoEstacionService,
+  private marcaService:MarcaAguaServiceService,
+  private firmaService: FirmaEstacionServiceService,
+  private estacionService: EstacionServicioDatosService
+  ) {
+    this.getEstacion();
+    this.getFirma();
+    this.getMarcaAgua();
+    this.getIcono();
+    this.getObjetivos();
+    this.imagen64();
+  }
+  getEstacion(){
+    this.estacionService.getEstacion().subscribe((data:any) =>{
+      //console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.nombreEstacion = data.findEstacion[data.findEstacion.length -1].nombreEstacionServicio;
+      this.representanteTecnico = data.findEstacion[data.findEstacion.length -1].representanteTecnico;
+      this.maximaAutorida = data.findEstacion[data.findEstacion.length -1].maximaAutoridad;
+    })
+  }
+  imagen64(){
+      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+        base64 =>{
+          this.myImage = base64;
+         // console.log(this.myImage);
+        }
+      )
+  }
+  convertFileDataURLviaFileReader(url: string){
+    return Observable.create(observer =>{
+      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      xhr.onload = function(){
+        let reader: FileReader = new FileReader();
+        reader.onloadend = function(){
+          observer.next(reader.result);
+          observer.complete();
+        };
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    })
   }
 
+  getFirma(){
+    this.firmaService.getFirmaEstacion().subscribe((data:any)=>{
+      //console.log(data.findFirma[data.findFirma.length-1].firma);
+      this.firmaEstacion = data.findFirma[data.findFirma.length-1].firma;
+    })
+  }
+
+  getMarcaAgua(){
+    this.marcaService.getMarcaAgua().subscribe((data:any)=>{
+      //console.log(data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua);
+      this.marcaAgua = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+    })
+  }
+
+  getIcono(){
+    this.iconoService.getPolitica().subscribe((data:any) =>{
+      //console.log(data.findPolitica[data.findPolitica.length -1].imagen);
+      this.iconoEstacion = data.findPolitica[data.findPolitica.length -1].imagen;
+    })
+  }
   ngOnInit() {
     
-  }
+  }  
   async alert(){
     const alert = await this.alertController.create({
-      header: 'Confirm!',
+      header: 'Confirmar!',
       message: 'SE enviara y guardara las metas seleccionadas ademas de te imprimira un documento de estas mismas.',
       buttons: [
         {
@@ -255,6 +319,7 @@ export class Cuatro2Page implements OnInit {
           handler: () => {
             console.log('Confirm Okay');
             this.onClick();
+            this.consultarDatos();
           }
         }
       ]
@@ -264,72 +329,85 @@ export class Cuatro2Page implements OnInit {
 
   }
 
-  onClick(){
-    let rs = document.getElementById('residuosPeligrosos');
-    let cA = document.getElementById('consumoAgua');
-    let cE = document.getElementById('consumoEnergia');
-    let pM = document.getElementById('programaMantenimiento');
-    let cT = document.getElementById('capacitacionesTrabajadores');
-    let vA = document.getElementById('ventaAnualmente');
+  getObjetivos(){
+    this.objetivo.getObjetivo().subscribe((data:any)=>{
+      this.data[0].selected = data.findMetas[data.findMetas.length -1].reduccionGeneracionResiduos;
+      this.data[1].selected = data.findMetas[data.findMetas.length -1].reduccionConsumoAgua;
+      this.data[2].selected = data.findMetas[data.findMetas.length -1].reduccionConsumoEnergia;
+      this.data[3].selected = data.findMetas[data.findMetas.length -1].cumplimientoProgramaMantenimiento;
+      this.data[4].selected = data.findMetas[data.findMetas.length -1].incrementarCapacitaciones;
+      this.data[5].selected = data.findMetas[data.findMetas.length -1].incrementarVentaAnualmente;
+    });
+    
+  }
 
-    // if (rs.checked === true && cA.checked === true && cE.checked === true) {
-    //  // alert('123')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.reduccionConsumoEnergia);
-    // }else if(rs.checked === true && cA.checked === true && pM.checked === true){
-    //  // alert('124')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento);
-    // }else if(rs.checked === true && cA.checked === true && cT.checked === true){
-    //  // alert('125')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores);
-    // }else if(rs.checked === true && cA.checked === true && vA.checked === true){
-    //  // alert('126')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarVentas);
-    // }else if(rs.checked === true && cE.checked === true && pM.checked === true){
-    //  // alert('134')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
-    // }else if(rs.checked === true && cE.checked === true && cT.checked === true){
-    //   //alert('135')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
-    // }else if(rs.checked === true && cE.checked === true && vA.checked === true){
-    //   //alert('136')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarVentas)
-    // }else if(rs.checked === true && pM.checked === true && cT.checked === true){
-    //   //alert('145')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
-    // }else if(rs.checked === true && pM.checked === true && vA.checked === true){
-    //   //alert('146')
-    //   this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarVentas);
-    // }else if(cA.checked === true && cE.checked === true && pM.checked === true){
-    //   //alert('234')
-    //   this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
-    // }else if(cA.checked === true && cE.checked === true && cT.checked === true){
-    //   //alert('235')
-    //   this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
-    // }else if(cA.checked === true && cE.checked === true && vA.checked === true){
-    //   //alert('236')
-    //   this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarVentas)
-    // }else if(cA.checked === true && pM.checked === true && cT.checked === true){
-    //   //alert('245')
-    //   this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores)
-    // }else if(cA.checked === true && pM.checked === true && vA.checked === true){
-    //   //alert('246')
-    //   this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
-    // }else if(cA.checked === true && cT.checked === true && vA.checked === true){
-    //   //alert('256')
-    //   this.maquetacion(this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
-    // }else if(cE.checked === true && cT.checked === true && pM.checked === true){
-    //   //alert('345')
-    //   this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
-    // }else if(cE.checked === true && pM.checked === true && vA.checked === true){
-    //   //alert('346')
-    //   this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
-    // }else if(cE.checked === true && cT.checked === true && vA.checked === true){
-    //   //alert('356')
-    //   this.maquetacion(this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
-    // }else if(pM.checked === true && cT.checked === true && vA.checked === true){
-    //   //alert('456')
-    //   this.maquetacion(this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores,this.incrementarVentas)
-    // }
+  onClick(){
+    let uno = this.data[0].selected;
+    let dos = this.data[1].selected;
+    let tres = this.data[2].selected;
+    let cuatro = this.data[3].selected;
+    let cinco = this.data[4].selected;
+    let seis = this.data[5].selected;
+  
+      if (uno === true && dos === true && tres === true) {
+       //alert('123')
+     this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.reduccionConsumoEnergia);
+     }else if(uno === true && dos === true && cuatro === true){
+       //alert('124')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento);
+     }else if(uno === true && dos === true && cinco === true){
+       //alert('125')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores);
+     }else if(uno === true && dos === true && seis === true){
+       //alert('126')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarVentas);
+     }else if(uno === true && tres === true && cuatro === true){
+       //alert('134')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
+     }else if(uno === true && tres === true && cinco === true){
+       //alert('135')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
+     }else if(uno === true && tres === true && seis === true){
+       //alert('136')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarVentas)
+     }else if(uno === true && cuatro === true && cinco=== true){
+       //alert('145')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
+     }else if(uno === true && cuatro=== true && seis === true){
+       //alert('146')
+       this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarVentas);
+     }else if(dos === true && tres === true && cuatro === true){
+       //alert('234')
+       this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
+     }else if(dos === true && tres === true && cinco === true){
+       //alert('235')
+       this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
+     }else if(dos === true && tres === true && seis === true){
+       //alert('236')
+       this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarVentas)
+     }else if(dos === true && cuatro === true && cinco === true){
+      //alert('245')
+       this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores)
+     }else if(dos === true && cuatro === true && seis === true){
+      //alert('246')
+       this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
+     }else if(dos === true && cinco === true && seis === true){
+      // alert('256')
+       this.maquetacion(this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
+     }else if(tres === true && cuatro === true && cinco === true){
+      // alert('345')
+       this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
+     }else if(tres=== true && cuatro === true && seis === true){
+       //alert('346')
+       this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
+     }else if(tres === true && cinco === true && seis === true){
+       //alert('356')
+       this.maquetacion(this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
+     }else if(cuatro === true && cinco === true && seis === true){
+       //alert('456')
+       this.maquetacion(this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores,this.incrementarVentas)
+     }
+      
   }
 
   async showAlert(check) {
@@ -366,7 +444,6 @@ export class Cuatro2Page implements OnInit {
         text: 'Ok',
         handler: (formData) => {
           console.log(formData,"formDataAlert");
-          this.doc(check.value);
 
         }
       }
@@ -376,70 +453,20 @@ export class Cuatro2Page implements OnInit {
     await alert.present();
   }
 
-  doc(param) {
-
-    console.log(param);
-    
-    const residuos = 'Reducción en generacion de residuos peligrosos';
-    const agua = 'Reducción en el consumo de agua';
-    const energia = 'Reducción en el consumo de energia';
-    const mantenimiento = 'Cumplimiento al programa de mantenimiento';
-    const capacitaciones = 'Incrementar capacitaciones a los trabajadoreas';
-    const venta  = 'Reducción en el consumo de agua';
-
-    if (param === residuos ) {
-      console.log('datos de residuos');
-      var insert = {
-        meta1: 'Reducir un 5% anual los residuos del producto.',
-        meta2: 'Reducir las ??????',
-        meta3: ' '
-      };
-      console.log(insert);
-      this.createMetaObjetivo(insert);
-    } else if (param === agua) {
-      console.log('datos de aguas');
-      var insert = {
-        meta1: 'Reducir un 5% anual los residuos del vital liquido.',
-        meta2: 'Solventar las fugas.',
-        meta3: 'Potencias sistema de limpieza en seco (barrer,aspirar).'
-      };
-      console.log(insert);
-    } else if ( param === energia) {
-      console.log('datos de energia');
-      var insert = {
-        meta1: 'Reducir un 5% anual en el consumo de energia',
-        meta2: 'Aprovechar el punto maximo la luz natural',
-        meta3: 'Usar bombillos ahorradores'
-      };
-      console.log(insert);
-    } else if ( param === mantenimiento) {
-      console.log('datos de mantenimiento');
-      var insert = {
-        meta1: 'Reparar equipo dañados',
-        meta2: 'Planificar mantenimientos preventivos periodicamente',
-        meta3: ''
-      };
-      console.log(insert);
-    } else if ( param === capacitaciones ) {
-      console.log('datos de capacitaciones');
-      var insert = {
-        meta1: 'Reforzar conocimientos',
-        meta2: 'Aprender nuevos temas',
-        meta3: 'Prevenir riesgos de trabajo'
-      };
-      console.log(insert);
-    } else if ( param === venta ) {
-      console.log('datos de ventas');
-      var insert = {
-        meta1: 'Establecer metas de ventas diarias',
-        meta2: 'Capacitar a los vendedores',
-        meta3: 'Realizar marketing'
-      };
-      console.log(insert);
-    }
-  }
-
+  
   // Crear el post en la base de datos
+  consultarDatos(){
+    let dataBase:any={
+      reduccionGeneracionResiduos: this.data[0].selected,
+      reduccionConsumoAgua:this.data[1].selected,
+      reduccionConsumoEnergia:this.data[2].selected,
+      cumplimientoProgramaMantenimiento :this.data[3].selected,
+      incrementarCapacitaciones:this.data[4].selected,
+      incrementarVentaAnualmente:this.data[5].selected
+    }
+    //console.log(dataBase);
+    this.createMetaObjetivo(dataBase);
+  }
   createMetaObjetivo(datillos) {
      this.objetivo.createMetaObjetivo(datillos).subscribe((data: any) => {
      console.log(data);
@@ -456,40 +483,77 @@ export class Cuatro2Page implements OnInit {
   }
 
   maquetacion(data1,data2,data3){
-    // console.log('holaaaaaaaaaa');
-    
-    // console.log(data1);
-    // console.log(data2);
-    // console.log(data3);// playground requires you to assign document definition to a variable called dd
-
+    let icono = this.iconoEstacion;
+    let marcaAguaEstacion =this.marcaAgua;
+    let firma = this.firmaEstacion;
+    let footer= this.myImage;
+    let nombreEstacion = this.nombreEstacion;
     var dd = {
-        header: function(){
-          return {
-              table: { widths: [740],heights:[50,15,15],
-    body: [
     
-        [{text:'`${Razon social}`',alignment:'center',bold:true}],
-        [{text:'IV. OBJETIVOS, METAS E INDICADORES',alignment:'center',bold:true}],
-        [{text:'OBJETIVOS, METAS E INDICADORES',alignment:'center',bold:true,fillColor:'#dddddd'}],
-    ]
-    
-    }, margin: [22,20]
-          };
-        },
-        footer: function(){
-          return {
-              table:{
-       headerRows:1, 
-       widths: [690],
-                 body : [
-                 [''],
-                 [''],
-                 ['']
-                     ]
-            }, layout : 'headerLineOnly',
-              margin: [70,90]
-          };
-        },
+      background: function(currentPage, pageSize) {
+      return {
+          image: `${marcaAguaEstacion}`,
+          width: 710,
+          height: 350, 
+          absolutePosition: {x: 40, y: 150},opacity: 0.5}
+    },
+    header: function(){
+      return {
+        table:{
+            widths: [150,570],
+            heights: [30,10,10],
+            body:[
+                [
+                    {
+                        image:`${icono}`,
+                    width: 70,
+                    height: 70,
+                    alignment:'center',
+                    border:[true,true,false,true],
+                    },{
+                        text:`${nombreEstacion}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15],
+                    border:[false,true,true,true],
+                    }
+                ],[
+                    {
+                        text:'PERFIL DE PUESTO DE TRABAJO',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                    },{
+                        
+                    }
+                    ],[
+                        {
+                          text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                        },{
+                            
+                        }
+                        ]
+              ]
+        },margin: [22,15],
+        
+          layout:{
+            defaultBorder: false
+          }
+      };
+    },
+      footer: function(){
+        return {
+            table:{
+          headerRows:1, 
+          widths: [650],
+               body : [
+               [''],
+               [''],
+               [{
+                image: `${footer}`,
+                pageBreak: 'after',
+                width: 650,
+                height: 80,
+                 }]
+                   ]
+             }, layout : 'headerLineOnly',
+            margin: [72,20]
+        };
+      },
         
         content:[
             //primera tabla
@@ -573,14 +637,31 @@ export class Cuatro2Page implements OnInit {
                           ]
                   }
                 
-            },{text:'\n\n'},{
+            },{text:'\n\n',pageBreak:'after'},{
                 table:{ 
                     widths: [250,250,220],
                     heights:[70,70,70],
                     body:[
-                        [{text:'REVISADO POR:\nREPRESENTANTE TÉCNICO'},{text:'APROBADO POR:\nMÁXIMA AUTORIDAD'},{text:'FECHA DE APROBACIÓN:'}]
-                        ]
-                }
+                      [{
+                          //image:'sampleImage.jpg',
+                    //width: 180,
+                    //height: 20,
+                    //alignment: 'center'
+                      },{
+                          image:`${firma}`,
+                    width: 150,
+                    height: 60,
+                    alignment: 'center'
+                      },{
+                          //image:'sampleImage.jpg',
+                    //width: 180,
+                    //height: 20,
+                    //alignment: 'center' 
+                      }],
+                      [{text:`REVISADO POR:\n${this.representanteTecnico}\nREPRESENTANTE TÉCNICO`,bold:true},{text:`APROBADO POR:\n${this.maximaAutorida}\nMÁXIMA AUTORIDAD`,bold:true},{text:'FECHA DE APROBACIÓN:'}]
+                      ],margin:[100,10]
+                },
+                layout: 'noBorders'
             }
             ]
        ,
