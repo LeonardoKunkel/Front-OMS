@@ -12,9 +12,6 @@ export class MenuSasisopaPage implements OnInit {
 
   ngOnInit() {
   }
-  goFirmas() {
-    this.navCtrl.navigateForward('/firmas');
-  }
   goPuntoUno() {
     this.navCtrl.navigateForward('/punto-uno');
   }

@@ -31,9 +31,10 @@
             </ion-grid>
             <ion-buttons slot="start" *ngFor="let de of estacione">
               <ion-button (click)="postPolitica(de._id)">
-                Seleccionar nueva política
+                <ion-icon name="clipboard" slot="start"></ion-icon>
+                Actualizar Politíca
               </ion-button>
-            </ion-buttons>
+             </ion-buttons>
           </ion-card-content>
         </ion-card>
       </ion-col>

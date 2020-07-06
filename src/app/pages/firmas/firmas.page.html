@@ -10,11 +10,29 @@
   <hr class="linea">
 </div>
 <ion-content>
-  <signature-pad
-    [options]="signaturePadOptions"
-    (onBeginEvent)="drawStart()" 
-    (onEndEvent)="drawComplete()">
-  </signature-pad>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeLg="5" style="margin: auto; display: block;">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item-divider>
+              <ion-label>Firma</ion-label>
+            </ion-item-divider>
+            <signature-pad class="signature-pad" class="canvas"
+              [options]="signaturePadOptions"
+              (onBeginEvent)="drawStart()" 
+              (onEndEvent)="drawComplete()">
+            </signature-pad>
+            <hr class="linea">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <ion-button (click)="clear()"> Borrar </ion-button>
   <ion-button (click)="agregarFirma()"> Aceptar </ion-button>
 </ion-content>

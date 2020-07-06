@@ -5,6 +5,14 @@
     </ion-buttons>
     <ion-title class="ion-text-center">Actualizacion a la estacion de servicio</ion-title>
   </ion-toolbar>
+  <ion-fab vertical="top" horizontal="end" slot="fixed" >
+    <ion-fab-button (click)="iconEstacion()">
+      <ion-icon name="images"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="goFirmas()">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-header>
 
 <ion-content>
@@ -67,7 +75,8 @@
       </ion-card-header>
     </ion-card>
     <ion-button type="submit" expand="block" fill="clear" shape="round">
-      Actualizar datos
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Guardar
     </ion-button>
   </form>
 </ion-content>

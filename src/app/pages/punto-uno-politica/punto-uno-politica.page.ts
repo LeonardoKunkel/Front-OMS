@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef,Input } from "@angular/core";
-import { AlertController, IonSlides, ActionSheetController } from "@ionic/angular";
+import { AlertController, IonSlides, ActionSheetController, NavController } from "@ionic/angular";
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { PoliticaService } from 'src/app/services/Elemento1/politica.service';
 import { EstacionServicioDatosService } from '../../services/estacion-servicio-datos.service';
@@ -26,42 +26,78 @@ export class PuntoUnoPoliticaPage implements OnInit {
 //   }, 1000);
 // }
 
-
+  politicaResultado:any={
+    politica:''
+  }
 
 constructor(
   public alertController: AlertController,
   private pdfMakerService: PdfMakerService,
   private politicaService: PoliticaService,
   private estacionServicioService: EstacionServicioDatosService,
-  private route: ActivatedRoute
+  private route: ActivatedRoute,
+  private navCtrl: NavController
 ) {
 }
 
 ngOnInit() {
   this.idEstacion = this.route.snapshot.paramMap.get('custom_id');
-  console.log('Id traido',this.idEstacion);
+  //console.log('Id traido',this.idEstacion);
   this.getStationSpecific(this.idEstacion);
   
 }
 
-// getStationSpecific(){
-//   this.estacionServicioService.getEstacion().subscribe((data:any) =>{
-//     console.log(data,lo);
+  public options(item): void{
+    console.log(this.politicaResultado.politica);
+    if (this.politicaResultado.politica === 'Política1') {
+      this.politicaOne();
+      this.presentAlert();
+    }
+    if (this.politicaResultado.politica === 'Política2') {
+      this.politicaTwo();
+      this.presentAlert();
+    }
+    if (this.politicaResultado.politica === 'Política3') {
+      this.politicaTree();
+      this.presentAlert();
+    }
     
-//   })
-// }
+  }
+
+async presentAlert() {
+  const alert = await this.alertController.create({
+    cssClass: 'my-custom-class',
+    header: 'Confirmar!',
+    message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
+    buttons: [{
+      text:'Entendido',
+      role:'Ok',
+      cssClass:'secondary',
+      handler: (blah) =>{
+        //console.log('Boton ok');
+        this.politicaNav();
+      }
+    }]
+  });
+
+  await alert.present();
+}
 
 getStationSpecific(id:string){
   this.estacionServicioService.getEstacionById(id).subscribe((data:any)=>{
     this.datos = [data.estacion];
-    console.log(this.datos);
+    //console.log(this.datos);
     
   })
 }
+  politicaNav(){
+    this.navCtrl.navigateForward('/punto-uno');
+  }
 
 politicaOne(){
- let politicaSeleccionada = this.politicaUno.nativeElement.innerText;
- this.postPolitica(politicaSeleccionada);
+  this.presentAlert();
+  let politicaSeleccionada = this.politicaUno.nativeElement.innerText;
+  this.postPolitica(politicaSeleccionada);
 }
 
 politicaTwo(){

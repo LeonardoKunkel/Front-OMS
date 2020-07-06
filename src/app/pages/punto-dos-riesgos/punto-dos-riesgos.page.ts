@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ToastController } from '@ionic/angular';
 import { RiesgosServiceService } from 'src/app/services/Elemento 2/riesgos-service.service';
+import { Observable } from 'rxjs';
+import { FirmaEstacionServiceService } from '../../services/firma-estacion-service.service';
+import { IconoEstacionService } from '../../services/iconosEstacion.service';
+import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+
 
 
 @Component({
@@ -67,14 +73,93 @@ export class PuntoDosRiesgosPage implements OnInit {
     M17: '',
     M18: '',
   };
+  estacione:any[]=[];
+  myImage = null;
+  firmaEstacion = null;
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
 
   constructor( private pdfMaker: PdfMakerService,
                public toast: ToastController,
-               private superRiesgos: RiesgosServiceService ) { }
+               private superRiesgos: RiesgosServiceService,
+               private firma :FirmaEstacionServiceService,
+               private marca : MarcaAguaServiceService,
+               private icono : IconoEstacionService,
+               private datosEstacionService:EstacionServicioDatosService
+                ) {
+                  this.getDatosEstacion();
+                 }
 
   ngOnInit() {
-
+    this.imagen64();
+    this.getMarcaAgua();
+    this.getFirma();
+    this.getIcono();
   }
+  getDatosEstacion(){
+    this.datosEstacionService.getEstacion().subscribe((data:any) =>{
+      //console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
+    })
+  }
+  getIcono(){
+    this.icono.getPolitica().subscribe((data:any)=>{
+     // console.log(data);
+      this.iconoEstacion =  data.findPolitica[data.findPolitica.length -1].imagen;
+    })
+  }
+  getMarcaAgua(){
+    this.marca.getMarcaAgua().subscribe((data:any)=>{
+      //console.log(data);
+      this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
+    })
+  }
+  getFirma(){
+    this.firma.getFirmaEstacion().subscribe((data:any) =>{
+      //console.log(data);
+      this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  imagen64(){
+ 
+      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+        base64 =>{
+          this.myImage = base64;
+          //console.log(this.myImage);
+        }
+        
+      )
+  }
+  convertFileDataURLviaFileReader(url: string){
+    return Observable.create(observer =>{
+      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      xhr.onload = function(){
+        let reader: FileReader = new FileReader();
+        reader.onloadend = function(){
+          observer.next(reader.result);
+          observer.complete();
+        };
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    })
+  }
+
 
   async enviarForm(formulario) {
     console.log(this.datos);
@@ -506,38 +591,78 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
   pdf() {
+    let marcaAgua = this.marcaAguaEstacion;
+    let iconoEstacion = this.iconoEstacion;
+    let firmaEstacion = this.firmaEstacion;  
+    let footer = this.myImage;
+    let ddd = this.datosEstacion;
     const dd = {
-      header: () => {
-        return {
-          table: {
-            widths: [740],
-            heights: [50, 15, 15],
-            body: [
-              [{}],
-              [{text:
-                'II. IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE IMPACTOS AMBIENTALES',
-                alignment: 'center', bold: true}],
-              [{text: 'EVALUACIÓN DE RIESGOS', alignment: 'center', bold: true, fillColor: '#ddd'}],
-            ]
-          },
-          margin: [22, 15]
-        };
-      },
-      footer : () => {
-        return {
-          table: {
-            headerRows: 1,
-            widths: [750],
-            body : [
-              [''],
-              [''],
-              ['']
-            ]
-          },
-          layout : 'headerLineOnly',
-          margin: [30, 85]
-        };
-      },
+    
+      background: function(currentPage, pageSize) {
+      return {
+          image: `${marcaAgua}`,
+          width: 350,
+          height: 350, 
+          absolutePosition: {x: 250, y: 150},opacity: 0.5}
+    },///////////////////////////////////////////////////////
+    header: function(){
+      return {
+        table:{
+            widths: [150,570],
+            heights: [30,10,10],
+            body:[
+                [
+                    {
+                        image:`${iconoEstacion}`,
+                    width: 70,
+                    height: 70,
+                    alignment:'center',
+                    border:[true,true,false,true],
+                    },{
+                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment: 'rigth', margin:[15,20],
+                    border:[false,true,true,true],
+                    }
+                ],[
+                    {
+                        text:'EVALUACIÓN DE ASPECTOS AMBIENTALES',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                    },{
+                        
+                    }
+                    ],[
+                        {
+                          text:'II. IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE IMPACTOS AMBIENTALES',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                        },{
+                            
+                        }
+                        ]
+              ]
+        },margin: [22,7],
+        
+          layout:{
+            defaultBorder: false
+          }
+      };
+    },
+    footer: function(){
+      return {
+          table:{
+        headerRows:1, 
+        widths: [650],
+             body : [
+             [''],
+             [''],
+             [{
+              image: `${footer}`,
+              pageBreak: 'after',
+              width: 650,
+              height: 80,
+               }]
+                 ]
+           }, layout : 'headerLineOnly',
+          margin: [72,20]
+      };
+    },    
+      ///////////////////////
       content: [
         {
           table: {
@@ -953,17 +1078,37 @@ export class PuntoDosRiesgosPage implements OnInit {
           text: '\n\n'
         },
         {
-          table: {
-            widths: [220, 220, 220],
-            heights: [50],
-            body: [
-              [
-                'REVISADO POR:\n\n\n\n Gamaliel Chavarría REPRESENTANTE TÉCNICO',
-                'APROBADO POR:\n\n\n\n Sergio Lechuga',
-                'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2020"'
-              ]
-            ]
-          }
+            table: {
+              widths: [200,200,140],
+              heights: [50,30],
+                 body: [
+                     [
+                         {
+                           text:'',
+                           fit:[100,50],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         },{
+                           image:`${firmaEstacion}`,
+                           fit:[100,50],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         },{
+                           text:'',
+                           fit:[100,50],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         }],
+                    [
+                        {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
+                        {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
+                        {text:`FECHA DE APROBACIÓN:\nAgregar fecha "10/10/2018"`,alignment:'center',border:[true,false,true,true]}]
+                 ]
+            },
+        layout:{
+          defaultBorder: false
+        },
+        margin:[85,0]
         }
       ],
       pageOrientation: 'landscape',

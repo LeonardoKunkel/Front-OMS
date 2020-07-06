@@ -24,7 +24,7 @@ export class EstacionServicioModelPage implements OnInit {
   consultarDatos(){
     this.estacionServicioService.getEstacion().subscribe((data:any) =>{
       this.estacion = data.findEstacion;
-      console.log(this.estacion);
+      //console.log(this.estacion);
     })
   }
 

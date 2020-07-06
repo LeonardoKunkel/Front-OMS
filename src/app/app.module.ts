@@ -26,7 +26,10 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 //import { ChartsModule } from 'ng2-charts';
 // import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { EstacionServicioModelPageModule } from '../app/pages/estacion-servicio-model/estacion-servicio-model.module';
-
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { Base64 } from '@ionic-native/base64/ngx';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 
 
@@ -46,7 +49,9 @@ import { EstacionServicioModelPageModule } from '../app/pages/estacion-servicio-
     HttpClientModule,
     BrowserAnimationsModule,
     NgxChartsModule,
-    EstacionServicioModelPageModule
+    EstacionServicioModelPageModule,
+    AlifeFileToBase64Module
+    
   ],
   providers: [
     StatusBar,
@@ -57,6 +62,9 @@ import { EstacionServicioModelPageModule } from '../app/pages/estacion-servicio-
     File,
     FileOpener,
     DocumentViewer,
+    FilePath,
+    FileChooser,
+    Base64
     // Geolocation
   ],
   bootstrap: [AppComponent]

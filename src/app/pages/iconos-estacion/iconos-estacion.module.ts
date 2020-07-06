@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PoliticaSpecificPage } from './politica-specific.page';
-import { ImageCropperModule } from 'ngx-image-cropper';
+import { IconosEstacionPage } from './iconos-estacion.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PoliticaSpecificPage
+    component: IconosEstacionPage
   }
 ];
 
@@ -20,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    ImageCropperModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [PoliticaSpecificPage]
+  declarations: [IconosEstacionPage]
 })
-export class PoliticaSpecificPageModule {}
+export class IconosEstacionPageModule {}

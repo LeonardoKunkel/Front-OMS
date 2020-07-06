@@ -596,9 +596,10 @@ const routes: Routes = [
     loadChildren: './pages/punto-seis-cursos/punto-seis-cursos.module#PuntoSeisCursosPageModule'
   },
   { path: 'estacion-servicio-update', loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule' },
-  { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },
-  },
-  { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
+  { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },  { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
+
+  // },
+  // { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
 
 
 
