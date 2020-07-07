@@ -14,7 +14,13 @@ export class PdfMakerService {
 
   generate(document, title){
     this.pdfObj = pdfMake.createPdf(document);
-    this.pdfObj.download(title);
-    
+      //Descargar el pdf
+  //this.pdfObj.download(title);
+      //VEr en la misma ventana
+   //this.pdfObj.open({},window);
+      //Abrir en otra ventana
+   this.pdfObj.open();
+      //Imprimir el pdf
+    //this.pdfObj.print();
   }
 }

@@ -4,53 +4,85 @@ import { Component, OnInit } from '@angular/core';
 import { CpService } from 'src/app/services/cp.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { CartaDesignacionServiceService } from '../../services/Elemento 5/carta-designacion-service.service';
-
+import { EstacionServicioDatosService } from '../../services/estacion-servicio-datos.service'
+import { ActivatedRoute } from '@angular/router';
+import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
+import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
+import { Observable } from 'rxjs';
+import { base64ToFile } from 'ngx-image-cropper';
 @Component({
   selector: 'app-punto-cinco',
   templateUrl: './punto-cinco.page.html',
   styleUrls: ['./punto-cinco.page.scss'],
 })
 export class PuntoCincoPage implements OnInit {
-
+  idEstacion = null;
   fechaActual = new Date();
-
   cp: number;
   respuestaCP: any = {};
   datos: any = {
-    nombre: '',
-    nombre2: '',
-    nombreEstacion: '',
-    correo: '',
-    telefono: '',
-    estado: '',
-    ciudad: '',
-    colonia: '',
-    cp: '',
-    calle: ''
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
   };
 
-  lista = {
-    nombre: 'jsdjsjsdd',
-    nombre2: 'duh',
-    nombreEstacion: 'kskdjdhgsysg',
-    correo: 'llskjdudnd',
-    telefono: '555586458',
-    estado: 'qkegeharl',
-    ciudad: 'queretaro',
-    colonia: 'cimatario',
-    cp: '8868',
-    calle: 'haxmin'
-  };
+  
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
+  firmaEstacion = null;
+  lista : any[]=[];
+  myImage=null;
+  nombreEstacion:string
 
   constructor(
     private cpService: CpService,
     private pdfMaker: PdfMakerService,
     private modalCtrl: ModalController,
     private cartaDesignacion: CartaDesignacionServiceService,
-    public toast: ToastController
-  ) { }
+    public toast: ToastController,
+    private estacionServicioDatos :EstacionServicioDatosService,
+    private route: ActivatedRoute,
+    private firma: FirmaEstacionServiceService,
+    private icono: IconoEstacionService,
+    private marcaAgua: MarcaAguaServiceService
+  ) {
+    this.onClick();
+    this.getIcono();
+    this.getFirma();
+    this.getMarcaAgua();
+    this.imagen64();
+   }
+
 
   ngOnInit() {
+    
+  }
+  getIcono(){
+    this.icono.getPolitica().subscribe((data:any)=>{
+     // console.log(data.findPolitica[data.findPolitica.length -1].imagen);
+    this.iconoEstacion = data.findPolitica[data.findPolitica.length -1].imagen;
+    })
+  }
+  getFirma(){
+    this.firma.getFirmaEstacion().subscribe((data:any)=>{
+      // console.log(data.findFirma[data.findFirma.length -1].firma);
+      this.firmaEstacion = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  getMarcaAgua(){
+    this.marcaAgua.getMarcaAgua().subscribe((data:any)=>{
+      // console.log(data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua);
+      this.marcaAgua = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
+    })
   }
 
   async closeModal() {
@@ -78,33 +110,103 @@ export class PuntoCincoPage implements OnInit {
     });
     return await modal.present();
   }
+  onClick(){
+    this.estacionServicioDatos.getEstacion().subscribe((data:any) =>{
+      let datoConsultado = data.findEstacion.length -1;
+      let ff = data.findEstacion[datoConsultado];
+      this.datos = data.findEstacion[datoConsultado];
+       this.lista.push(ff);
+       return console.log(this.lista);
+      
+    })
+  }
+  imagen64(){
+      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+        base64 =>{
+          this.myImage = base64;
+         // console.log(this.myImage);
+        }
+      )
+  }
+  convertFileDataURLviaFileReader(url: string){
+    return Observable.create(observer =>{
+      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      xhr.onload = function(){
+        let reader: FileReader = new FileReader();
+        reader.onloadend = function(){
+          observer.next(reader.result);
+          observer.complete();
+        };
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    })
+  }
+
 
   pdf() {
+    let marca = this.marcaAgua;
+    let footer = this.myImage;
+    let iconoEstacion = this.iconoEstacion;
+    let nombreEstacion = this.datos.nombreEstacionServicio;
+    let firmaEstacion = this.firmaEstacion;
     const dd = {
-      header: () => {
+      background: function(currentPage, pageSize) {
+      return {
+          image: `${marca}`, width: 500,height: 500, 
+          absolutePosition: {x: 80, y: 150},opacity: 0.5}
+    },
+    header: function(){
+      return {
+        table:{
+            widths: [150,400],
+            heights: [30,10,10],
+            body:[
+                [
+                    {
+                        image:`${iconoEstacion}`,
+                    width: 70,
+                    height: 70,
+                    alignment:'center'
+                    },{
+                        text:`${nombreEstacion}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15]
+                    }
+                ],[
+                    {
+                        text:'DESIGNACIÓN DEL REPRESENTANTE TÉCNICO',fontSize:9,alignment: 'center',colSpan:2
+                    },{
+                        
+                    }
+                    ],[
+                        {
+                          text:'V. FUNCIONES RESPONSABILIDAD Y AUTORIDAD',bold:true,alignment: 'center',colSpan:2,fillColor: '#eeeeee'
+                        },{
+                            
+                        }
+                        ]
+              ]
+        },margin: [22,20]
+      };
+    },
+    footer: function(){
         return {
-              table: {widths: [320, 20, 200],
-              heights: [30, 10, 10],
-          body: [
-            [{text: '', colSpan: 3}, {}, {}],
-            [{text: 'V. FUNCIONES RESPONSABILIDAD Y AUTORIDAD', colSpan: 3, alignment: 'center'}, {}, {}],
-            [{text: 'DESIGNACIÓN DEL REPRESENTANTE TÉCNICO', colSpan: 3, alignment: 'center', bold: true, fillColor: '#dddddd'}, {}, {}]
-          ]
-        }, margin: [22, 20]
-        };
-      },
-      footer: () => {
-        return {
-            table: {
-          headerRows: 1,
+            table:{
+          headerRows:1, 
           widths: [510],
                body : [
                [''],
                [''],
-               ['']
+               [{
+                image: `${footer}`,
+                pageBreak: 'after',
+                width: 510,
+                height: 80,
+                 }]
                    ]
              }, layout : 'headerLineOnly',
-            margin: [70, 90]
+            margin: [72,40]
         };
       },
       content: [
@@ -112,10 +214,10 @@ export class PuntoCincoPage implements OnInit {
             text: 'CARTA DE DESIGNACIÓN', bold: true, style: 'header', alignment: 'center', fontSize: 20
           },
           {
-            text: `${this.datos.ciudad} ${this.datos.estado} ${this.fechaActual}`, alignment: 'right'
+              text: `${this.datos.ciudad} ,${this.datos.estado}, ${this.fechaActual.getFullYear()}`, alignment: 'right'
           },
           {
-            text: `\n ${this.datos.nombre}`, fontSize: 10
+              text: `\n ${this.datos.gerenteEstacione}`, fontSize: 10
           },
           {
             text: 'Encargado', fontSize: 10
@@ -126,9 +228,9 @@ export class PuntoCincoPage implements OnInit {
           {
             text: `\nEn seguimiento al proceso de la Implementación del Sistema de Administración
                     de la Seguridad Industrial,Seguridad Operativa y Protección al medio Ambiente,
-                    en la ${this.datos.nombreEstacion}, ubicada en ${this.datos.calle}, C.P. ${this.datos.cp},
-                    ${this.datos.ciudad}, ${this.datos.estado}, el que suscribe Roberto Muñoz Torres.
-                    ${this.datos.nombre2}, Representante Legal me permito hacer de su conocimiento que ha sido designado
+                    en la gasolinera ${this.datos.nombreEstacionServicio}, ubicada en ${this.datos.calleNumero}, C.P. ${this.datos.cp},
+                    ${this.datos.estado}, ${this.datos.ciudad}, el que suscribe Roberto Muñoz Torres.
+                    ${this.datos.representanteTecnico}, Representante Legal me permito hacer de su conocimiento que ha sido designado
                     Representante Técnico, para fungir como Representante de la Estación de Servicio
                     ante la ASEA, y para cumplir con lo siguiente:\n\n`, style: 'header', alignment: 'justify', fontSize: 10
           },
@@ -146,8 +248,8 @@ export class PuntoCincoPage implements OnInit {
           },
           {
             text: `\nPor lo anterior se le ha asignado el siguiente buzón de correo electrónico
-                    ${this.datos.correo}, el número de teléfono: ${this.datos.telefono} y el domicilio
-                    ubicado en ${this.datos.calle}, ${this.datos.colonia}, ${this.datos.cp} ${this.datos.estado},
+                    ${this.datos.correoElectronico}, el número de teléfono: ${this.datos.telefono} y el domicilio
+                    ubicado en ${this.datos.calleNumero}, ${this.datos.colonia}, ${this.datos.cp} ${this.datos.estado},
                     para oír y recibir notificaciones.\n`, alignment: 'justify', fontSize: 10
           },
           {
@@ -155,10 +257,17 @@ export class PuntoCincoPage implements OnInit {
                     su acostumbrado desempeño quedo de usted.`, fontSize: 10
           },
           {
-            text: '\n\nAtentamente', alignment: 'center'
+            text: '\nAtentamente', alignment: 'center'
           },
           {
-            text: `\n${this.datos.nombre2}`, alignment: 'center'
+                image:`${firmaEstacion}`,
+        width: 150,
+        height: 50,
+        alignment:'center'        
+              
+          },
+          {
+            text: `${this.datos.maximaAutoridad}`, alignment: 'center'
           },
           {
             text: 'Representante Legal', alignment: 'center'
@@ -166,9 +275,8 @@ export class PuntoCincoPage implements OnInit {
       ]
      ,
       pageSize: 'LETTER',
-      pageMargins: [72, 150]
+      pageMargins: [72, 135]
     };
-
     this.pdfMaker.generate(dd, 'V. Funciones de funcionalidad y responsabilidad.pdf');
   }
 

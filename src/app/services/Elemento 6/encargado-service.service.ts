@@ -15,4 +15,8 @@ export class EncargadoServiceService {
     })
     return this.httpClient.post('http://localhost:3000/copetenciaPersonalEncargado/create',datos,{headers})
   }
+
+  getEncargado(){
+    return this.httpClient.get('http://localhost:3000/copetenciaPersonalEncargado');
+  }
 }

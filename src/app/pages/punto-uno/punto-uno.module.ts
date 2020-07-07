@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PuntoUnoPage } from './punto-uno.page';
+import { PoliticaSpecificPage } from '../politica-specific/politica-specific.page';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntoUnoPage]
+  declarations: [PuntoUnoPage,PoliticaSpecificPage],
+  entryComponents:[PoliticaSpecificPage]
 })
 export class PuntoUnoPageModule {}

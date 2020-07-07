@@ -1,99 +1,49 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">Salir</ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
       <ion-button (click)="pdf()">
         <ion-icon slot="icon-only" name="download"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" expand="block" fill="clear" shape="round">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
- 
 </ion-header>
-
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">  
+  <ion-grid >
+    <ion-row>
+      <ion-col size="10" style="display: block; margin: auto;" *ngFor= "let dd of lista">
+        <p style="margin: 3%; text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam dolores amet non repudiandae rem at aut minus quo. Adipisci atque consequuntur ullam esse laborum omnis nisi voluptatum praesentium commodi repellat!</p>
         <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle class="ion-text-center">FUNCIONES RESPONSABILIDADES Y AUTORIDAD</ion-card-subtitle>
-            <ion-card-title class="ion-text-center">Carta designación</ion-card-title>
-            <ion-card-subtitle class="ion-text-center">
-              El siguiente formulario designa formalmente al representante tecnico del sistema de administración ademas de establecer y coordinar.
-            </ion-card-subtitle>
-          </ion-card-header>
           <ion-card-content>
-            <ion-item-divider>
-              <ion-label>Datos de la estacion de servicio</ion-label>
-            </ion-item-divider>
-            <ion-list>
-              <ion-item>
-                <ion-label position="floating">Nombre del Encargado</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="nombre" required [(ngModel)]="datos.nombre"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Nombre del Representante Legal</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="nombre" required [(ngModel)]="datos.nombre2"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Nombre de la estacion de servicio</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="nombreEstacion" required [(ngModel)]="datos.nombreEstacion"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Correo</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="correo" required [(ngModel)]="datos.correo"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Telefono</ion-label>
-                <ion-input type="number" placeholder="Escriba..." name="telefono" required [(ngModel)]="datos.telefono"></ion-input>
-              </ion-item>
-            </ion-list>
-            <ion-item-divider color="light">
-              <ion-label>Dirección de la estacion de servicio</ion-label>
-            </ion-item-divider>
-            <ion-list>
-              <ion-item>
-                <ion-label position="floating">Estado</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="estado" required [(ngModel)]="datos.estado"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Ciudad</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="ciudad" required [(ngModel)]="datos.ciudad"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Colonia</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="colonia" required [(ngModel)]="datos.colonia"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Codigo Postal</ion-label>
-                <ion-input type="number" placeholder="Escriba..." name="cp" required [(ngModel)]="datos.cp"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Calle y numero</ion-label>
-                <ion-input type="text" placeholder="Escriba..." name="calle" required [(ngModel)]="datos.calle"></ion-input>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card> 
-        <ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">
-          Guardar y enviar
-        </ion-button>
-        <ion-button (click)="createCartaDesignacion()" expand="block" fill="clear" shape="round">
-          Crear
-        </ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
-    <ion-fab-button color="secondary">
-      <ion-icon name="hand"></ion-icon>
-  </ion-fab-button>
-
-    <ion-fab-list side="top">
-      <ion-fab-button color="add" (click)="abriAyuda()"><ion-icon name="folder"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  
-  </ion-fab>
+            En seguimiento al proceso de la Implantación del Sistema de Administración de la Seguridad Industrial,
+              Seguridad Operativa y Protección al medio Ambiente, en la Gasolinera <b>{{dd.nombreEstacionServicio}}</b> , ubicada en
+              <b>{{dd.calleNumero}}</b>, C.P. <b>{{dd.cp}}</b>,<b>{{dd.estado}}</b>, <b>{{dd.ciudad}}</b>, el que suscribe <b style="font-size: 15px;">{{dd.representanteTecnico}}</b>, Representante
+              Legal me permito hacer de su conocimiento que ha sido designado Representante Técnico, para fungir
+              como Representante de la Estación de Servicio ante la ASEA, y para cumplir con lo siguiente:
+              <ol>
+                <li>Asegurar que el SA es conforme con los requisitos establecidos en los lineamientos y
+                  demás normativa aplicable.
+                </li>
+                <li>
+                  Informar a la alta dirección de la Estación de Servicio acerca del desempeño del Sistema
+                  de Administración.
+                </li>
+                <li>Proponer la adopción de las mejores prácticas nacionales e internacionales en la
+                  implementación del Sistema de Administración.
+                </li>
+                <li>Coordinar las acciones necesarias para subsanar los incumplimientos de la normatividad
+                  interna y externa aplicable.</li>
+                <li>Informar a la Agencia de cualquier situación que pudiera poner en riesgo la seguridad
+                  Industrial, seguridad Operativa y Protección al Ambiente.
+                </li>
+              </ol>
+            </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

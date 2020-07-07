@@ -5,73 +5,42 @@
         <ion-icon name="close-circle" slot="end" horizontal="end"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center ">Datos generales de la estacióm de servicio</ion-title>
+    <ion-title class="ion-text-center ">Datos generales de la estación de servicio</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)" >
+  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
     <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-justify" style="margin: 3%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt saepe voluptatibus ipsum! Deleniti quasi voluptatibus magni ratione quos fugiat dicta cupiditate repellat alias, odit voluptas doloribus. Asperiores exercitationem dicta nulla!</ion-card-subtitle>
+      </ion-card-header>
       <ion-card-content>
-        <p style="margin:3%; text-align: justify;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore laboriosam expedita exercitationem explicabo voluptate ab est. Facilis corporis odio voluptatum? Repellendus facere earum voluptatibus consectetur inventore esse velit necessitatibus porro?
-        </p>
-        <ion-grid fixed>
-          <ion-row >
-            <ion-col size="12" sizeLg="6" *ngFor="let contacto of lista">
-              <ion-item >
-                <ion-label position="floating">Nombre de la estación de servicio</ion-label>
-                <ion-input name="nombreEstacionServicio" [(ngModel)]="datos.nombreEstacionServicio" placeholder="{{contacto.nombreEstacionServicio}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Estado</ion-label>
-                <ion-input name="estado" [(ngModel)]="datos.estado" placeholder="{{contacto.estado}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Ciudad</ion-label>
-                <ion-input name="ciudad" [(ngModel)]="datos.ciudad" placeholder="{{contacto.ciudad}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Colonia</ion-label>
-                <ion-input name="colonia" [(ngModel)]="datos.colonia" placeholder="{{contacto.colonia}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Cp</ion-label>
-                <ion-input name="cp" [(ngModel)]="datos.cp" placeholder="{{contacto.cp}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Calle y numero</ion-label>
-                <ion-input name="calleNumero" [(ngModel)]="datos.calleNumero" placeholder="{{contacto.calleNumero}}"></ion-input>
-              </ion-item>
+        <ion-grid fixed *ngFor="let es of estacion"> 
+          <ion-row>
+            <ion-col size="12" sizeLg="6">
+              <p>Nombre de la estación <br><b>{{es.nombreEstacionServicio}}</b></p>
+              <p>Estado <br><b>{{es.estado}}</b></p>
+              <p>Ciudad en la que esta situada<br><b>{{es.ciudad}}</b></p>
+              <p>Codigo postal <br><b>{{es.cp}}</b></p>
+              <p>Colonia <br><b>{{es.colonia}}</b></p>
+              <p>Calle y numero de ubicación <br><b>{{es.calleNumero}}</b></p>
             </ion-col>
-            <ion-col size="12" sizeLg="6" *ngFor="let contacto of lista">
-              <ion-item>
-                <ion-label position="floating">Correo electronico</ion-label>
-                <ion-input name="correoElectronico" [(ngModel)]="datos.correoElectronico" placeholder="{{contacto.correoElectronico}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Telefono</ion-label>
-                <ion-input name="telefono" [(ngModel)]="datos.telefono" placeholder="{{contacto.telefono}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Gerente de la estación(Nombre)</ion-label>
-                <ion-input name="gerenteEstacion" [(ngModel)]="datos.gerenteEstacion" placeholder="{{contacto.gerenteEstacion}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating" >Representante tecnico(Nombre)</ion-label>
-                <ion-input name="representanteTecnico" [(ngModel)]="datos.representanteTecnico" placeholder="{{contacto.representanteTecnico}}"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating" >Maxima autoridad(Nombre)</ion-label>
-                <ion-input name="maximaAutoridad" [(ngModel)]="datos.maximaAutoridad" placeholder="{{contacto.maximaAutoridad}}"></ion-input>
-              </ion-item>
+            <ion-col size="12" sizeLg="6">
+              <p>Correo electronico <br><b>{{es.correoElectronico}}</b></p>
+              <p>Telefono de la estacion de servicio <br><b>{{es.telefono}}</b></p>
+              <p>Nombre del gerente de la estación <br><b>{{es.gerenteEstacion}}</b></p>
+              <p>Nombre del representante tecnico <br><b>{{es.representanteTecnico}}</b></p>
+              <p>Nombre de la Maxima autoridad de la estación <br><b>{{es.maximaAutoridad}}</b></p>
             </ion-col>
           </ion-row>
+          <ion-item>
+          </ion-item>
+          <ion-button (click)="updateEstacion(es._id)" expand="block" fill="clear" shape="round">
+            <ion-icon name="clipboard" slot="start"></ion-icon>
+            Actualizar
+          </ion-button>
         </ion-grid>
       </ion-card-content>
     </ion-card>
   </form>
-<ion-button (click)="enviarForm(formulario)" expand="block" fill="clear" shape="round">
-  Guardar y enviar
-</ion-button>
 </ion-content>
