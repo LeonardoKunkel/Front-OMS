@@ -17,24 +17,18 @@ export class PuntoUnoPage implements OnInit {
 
   localizacion: any = {};
 
-  constructor(private navCtrl: NavController) {  }
+  constructor( private navCtrl: NavController ) {  }
 
   ngOnInit() {
-}
-goPuntoProcedimiento() {
-  this.navCtrl.navigateForward('/punto-uno-procedimiento')
-}
+  }
+  goPuntoProcedimiento() {
+    this.navCtrl.navigateForward('/punto-uno-procedimiento');
+  }
+  goPuntoPolitica() {
+    this.navCtrl.navigateForward('/punto-uno-politica');
+  }
+  goPuntoEvidencia() {
+    this.navCtrl.navigateForward('/punto-uno-evidencia');
+  }
 
-goPuntoPolitica() {
-  this.navCtrl.navigateForward('/punto-uno-politica')
-}
-goPuntoEvidencia() {
-  this.navCtrl.navigateForward('/punto-uno-evidencia')
-}
-// getLocalitation() {
-//   this.mapaService.getLocalitation().subscribe(( data:any ) => { 
-//     this.localizacion = data;
-//     console.log(this.localizacion);
-//   });
-// }
 }

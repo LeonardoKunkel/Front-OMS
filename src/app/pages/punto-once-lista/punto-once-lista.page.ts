@@ -152,7 +152,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '1', alignment: 'center'},
                     {text: 'Tanque Horizontal'},
-                    {text: ''},
+                    {text: `${this.datos.num7}`},
                     {text: 'Almacenamiento de gasolina'},
                     {text: 'MG'},
                     {text: 'PR'},
@@ -161,7 +161,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '2', alignment: 'center'},
                     {text: 'Dispensario'},
-                    {text: ''},
+                    {text: `${this.datos.num8}`},
                     {text: 'Despacho de producto a vehículos'},
                     {text: ''},
                     {text: ''},
@@ -170,7 +170,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '3', alignment: 'center'},
                     {text: 'Extintores'},
-                    {text: ''},
+                    {text: `${this.datos.num9}`},
                     {text: 'Protección C.I.'},
                     {text: ''},
                     {text: ''},
@@ -179,7 +179,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '4', alignment: 'center'},
                     {text: 'Válvula presión-vacío'},
-                    {text: ''},
+                    {text: `${this.datos.num10}`},
                     {text: 'Retención -expulsión de vapores de gasolina'},
                     {text: ''},
                     {text: ''},
@@ -188,7 +188,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '5', alignment: 'center'},
                     {text: 'Arrestador de flama'},
-                    {text: ''},
+                    {text: `${this.datos.num11}`},
                     {text: 'Retención de flamas'},
                     {text: ''},
                     {text: ''},
@@ -197,7 +197,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '6', alignment: 'center'},
                     {text: 'Pozos de Observación'},
-                    {text: ''},
+                    {text: `${this.datos.num12}`},
                     {text: 'Monitoreo de fugas'},
                     {text: ''},
                     {text: ''},
@@ -206,7 +206,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '7', alignment: 'center'},
                     {text: 'Drenajes'},
-                    {text: ''},
+                    {text: `${this.datos.num13}`},
                     {text: 'Contención y conducción de agua aceitosa'},
                     {text: ''},
                     {text: ''},
@@ -215,7 +215,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '8', alignment: 'center'},
                     {text: 'Trampa de combustible'},
-                    {text: ''},
+                    {text: `${this.datos.num14}`},
                     {text: 'Contención y separación de producto con agua'},
                     {text: ''},
                     {text: ''},
@@ -224,7 +224,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '9', alignment: 'center'},
                     {text: 'Tierras Eléctricas'},
-                    {text: ''},
+                    {text: `${this.datos.num15}`},
                     {text: 'Disipación de cargas estáticas y atmosféricas '},
                     {text: ''},
                     {text: ''},
@@ -233,7 +233,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '10', alignment: 'center'},
                     {text: 'Control de Inventarios'},
-                    {text: ''},
+                    {text: `${this.datos.num16}`},
                     {text: 'Medición de nivel de producto en tanques'},
                     {text: ''},
                     {text: ''},
@@ -242,7 +242,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '11', alignment: 'center'},
                     {text: 'Sensores de fugas'},
-                    {text: ''},
+                    {text: `${this.datos.num17}`},
                     {text: 'Detección de fugas de producto en tanques y accesorios'},
                     {text: ''},
                     {text: ''},
@@ -251,7 +251,7 @@ export class PuntoOnceListaPage implements OnInit {
                 [
                     {text: '12', alignment: 'center'},
                     {text: 'Tablero de control Eléctrico'},
-                    {text: ''},
+                    {text: `${this.datos.num16}`},
                     {text: 'Control de suministro de e.e., arranque y paro de bombas'},
                     {text: ''},
                     {text: ''},
@@ -274,74 +274,74 @@ export class PuntoOnceListaPage implements OnInit {
                     [
                         {text: '13', alignment: 'center'},
                         {text: 'Compresor'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Máquina para aumentar la presión de un fluido'}
                     ],
                     [
                         {text: '14', alignment: 'center'},
                         {text: 'Pararrayos'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Instrumento para atraer rayos ionizados'}
                     ],
                     [
                         {text: '15', alignment: 'center'},
                         {text: 'Área cambio de aceite'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Espacio determinado'}
                     ],
                     [
                         {text: '16', alignment: 'center'},
                         {text: 'Hidroneumático'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Bombeo de Agua residual'}
                     ],
                     [
                         {text: '17', alignment: 'center'},
                         {text: 'Cisterna'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Depósito para almacenar agua'}
                     ],
                     [
                         {text: '18', alignment: 'center'},
                         {text: 'Bodega de lubricantes'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Espacio determinado'}
                     ],
                     [
                         {text: '19', alignment: 'center'},
                         {text: 'Bomba de agua'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Máquina para distribuir agua'}
                     ],
                     [
                         {text: '20', alignment: 'center'},
                         {text: 'Almacén de residuos peligrosos'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Almacenaje marcado'}
                     ],
                     [
                         {text: '21', alignment: 'center'},
                         {text: 'Paros de emergencia'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Botones visibles'}
                     ],
                     [
                         {text: '22', alignment: 'center'},
                         {text: 'Transformador'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Instrumento para regular las tensiones eléctricas'}
                     ],
                     [
                         {text: '23', alignment: 'center'},
                         {text: 'Motobomba'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Bomba con motor de gasolina'}
                     ],
                     [
                         {text: '24', alignment: 'center'},
                         {text: 'Tubería de venteo'},
-                        {},
-                        {}
+                        {text: '', alignment: 'center'},
+                        {text: 'Venteo de emergencia'}
                     ],
                 ]
             }
@@ -351,6 +351,6 @@ export class PuntoOnceListaPage implements OnInit {
       pageSize: 'LETTER',
       pageMargins: [22, 120]
     };
-    this.pdfMaker.generate(dd, 'Equipos');
+    this.pdfMaker.generate(dd, 'Equipos_Críticos');
   }
 }
