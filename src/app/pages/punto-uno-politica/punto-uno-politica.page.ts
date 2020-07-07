@@ -6,9 +6,9 @@ import { EstacionServicioDatosService } from '../../services/estacion-servicio-d
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-selector: "app-punto-uno-politica",
-templateUrl: "./punto-uno-politica.page.html",
-styleUrls: ["./punto-uno-politica.page.scss"]
+selector: 'app-punto-uno-politica',
+templateUrl: './punto-uno-politica.page.html',
+styleUrls: ['./punto-uno-politica.page.scss']
 })
 export class PuntoUnoPoliticaPage implements OnInit {
   idEstacion = null;
