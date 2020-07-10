@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient ,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,21 +7,21 @@ import { HttpClient ,HttpHeaders } from '@angular/common/http';
 export class FirmaEstacionServiceService {
 
   constructor(
-    private httpClient:HttpClient
+    private httpClient: HttpClient
   ) { }
 
-  postFirmaEstacion(body){
+  postFirmaEstacion(body) {
     const token = localStorage.getItem('token');
     // const headers = new HttpHeaders({
     //   Authorization: token
     // });
-    return this.httpClient.post<any>('http://localhost:3000/firmaEstacion/create',body)
+    return this.httpClient.post<any>('http://localhost:3000/firmaEstacion/create', body);
   }
-  getFirmaEstacion(){
+  getFirmaEstacion() {
     const token = localStorage.getItem('token');
     // const headers = new HttpHeaders({
     //   Authorization: token
     // });
-   return this.httpClient.get('http://localhost:3000/firmaEstacion/');
+    return this.httpClient.get('http://localhost:3000/firmaEstacion/');
   }
 }
