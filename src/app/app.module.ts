@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpClientModule } from '@angular/common/http'
-import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.module';
+//import { EditPoliticaPageModule } from './pages/edit-politica/edit-politica.module';
 import { OnbjetivoModalPageModule } from './pages/onbjetivo-modal/onbjetivo-modal.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +24,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 //import { ChartsModule } from 'ng2-charts';
-// import { Geolocation } from '@ionic-native/geolocation/ngx';
+ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { EstacionServicioModelPageModule } from '../app/pages/estacion-servicio-model/estacion-servicio-model.module';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
@@ -44,7 +44,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     AyudaPageModule,
     ProcedimientoCincoPageModule,
     FullCalendarModule,
-    EditPoliticaPageModule,
+   // EditPoliticaPageModule,
     OnbjetivoModalPageModule,
     HttpClientModule,
     BrowserAnimationsModule,

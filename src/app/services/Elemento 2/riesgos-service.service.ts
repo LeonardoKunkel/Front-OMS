@@ -15,4 +15,12 @@ export class RiesgosServiceService {
     });
     return this.httpClient.post('http://localhost:3000/riesgos/create', datos, { headers });
   }
+
+  getRiesgos(){
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.httpClient.get('http://localhost:3000/riesgos/',{headers})
+  }
 }

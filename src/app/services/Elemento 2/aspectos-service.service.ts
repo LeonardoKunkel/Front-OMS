@@ -15,4 +15,13 @@ export class AspectosServiceService {
     });
     return this.httpClient.post('http://localhost:3000/aspectos/create', datos, { headers });
   }
+
+  getAspectos(){
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.httpClient.get('http://localhost:3000/aspectos/',{headers});
+  
+  }
 }

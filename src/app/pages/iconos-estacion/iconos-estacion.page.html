@@ -1,23 +1,23 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="end" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title class="ion-text-center">Marca de agua e Icono de la estacion de servicio</ion-title>
   </ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-button (click)="closeModal()">
-      <ion-icon slot="close" name="add"></ion-icon>
-      Click me
-    </ion-button>
-  </ion-buttons>
 </ion-header>
 
 <ion-content>
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12" sizeLg="6" style="margin: auto; display: block;">
+        <p style="text-align: justify;">Este apartado es  importante debido  a que debes de poner el icono de tu estación de servicio ademas de tu marca de agua.</p>
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
+            <ion-card-title>Icono</ion-card-title>
+            <ion-card-subtitle>Icono: 310 X461 pixeles.</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ion-input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput></ion-input>
@@ -26,8 +26,8 @@
         </ion-card>
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>Awesome Title</ion-card-title>
+            <ion-card-title>Marca de agua</ion-card-title>
+            <ion-card-subtitle>Marca de agua: 310 X461 pixeles.</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ion-input type="file" class="d-none" (change)="onPhotoSelected2($event)" #photoInput2></ion-input>

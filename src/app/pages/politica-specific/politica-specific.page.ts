@@ -133,8 +133,13 @@ pdf(){
   let iconoEstacion = this.iconoService;
   let firmaEstacion = this.firma;
   let footer = this.myImage;
+
   var dd = {
-    
+    userPassword:'123',
+    ownerPassword: '123456',
+    permissions:{
+      printing:'lowResolution'
+    },  
     background: function(currentPage, pageSize) {
     return {
         image: `${marca}`, width: 500,height: 500, 

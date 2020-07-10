@@ -5,7 +5,7 @@
         <ion-icon name="close-circle" slot="end"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Politíca actual</ion-title>
+    <ion-title class="ion-text-center">Politíca seleccionada</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -19,7 +19,7 @@
             </ion-button>
           </ion-buttons>
           <ion-card-header> 
-            <ion-card-subtitle class="ion-text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At vitae porro odio blanditiis ab iste quos laborum nulla pariatur saepe accusamus iusto consequatur aliquam ipsum laboriosam cumque, necessitatibus eos. Ut!</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-justify">En este apartado puedes ver la política seleccionada, en caso de no querer la política actual, ve al botón de actualizar. <b>"Nota", si actualizaste el nombre de la estacion es necesario que actualices la politica, puedes seleccionar la misma</b> </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content >
             <ion-grid fixed>
@@ -30,9 +30,9 @@
               </ion-row>
             </ion-grid>
             <ion-buttons slot="start" *ngFor="let de of estacione">
-              <ion-button (click)="postPolitica(de._id)">
-                <ion-icon name="clipboard" slot="start"></ion-icon>
-                Actualizar Politíca
+              <ion-button (click)="postPolitica(de._id)" color="primary">
+                <ion-icon name="clipboard" slot="start" ></ion-icon>
+                Actualizar 
               </ion-button>
              </ion-buttons>
           </ion-card-content>

@@ -137,6 +137,17 @@ export class RepresentanteModalPage implements OnInit {
     let footer = this.myImage;
     let ddd = this.datosEstacion;
   var dd = {
+    userPassword: '123',
+    ownerPassword: '123456',
+    permissions: {
+      printing: 'highResolution', //'lowResolution'
+      modifying: false,
+      copying: false,
+      annotating: true,
+      fillingForms: true,
+      contentAccessibility: true,
+      documentAssembly: true
+    },
     background: function(currentPage, pageSize) {
     return {
         image: `${marcaAgua}`, width: 500,height: 500, 

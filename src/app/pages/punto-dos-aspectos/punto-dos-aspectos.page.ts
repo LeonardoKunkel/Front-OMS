@@ -15,7 +15,6 @@ import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio
   styleUrls: ['./punto-dos-aspectos.page.scss'],
 })
 export class PuntoDosAspectosPage implements OnInit {
-  fecha
   datos: any = {
     F1: '',
     F2: '',
@@ -203,6 +202,7 @@ export class PuntoDosAspectosPage implements OnInit {
     private datosEstacionService:EstacionServicioDatosService
      ) {
        this.getDatosEstacion();
+       this.getAspectos();
       }
 
      ngOnInit() {
@@ -210,6 +210,12 @@ export class PuntoDosAspectosPage implements OnInit {
        this.getMarcaAgua();
        this.getFirma();
        this.getIcono();
+     }
+     getAspectos(){
+       this.superAspectos.getAspectos().subscribe((data:any)=>{
+         //console.log(data.findAspectos[data.findAspectos.length -1]);
+         this.datos = data.findAspectos[data.findAspectos.length -1];
+       })
      }
      getDatosEstacion(){
        this.datosEstacionService.getEstacion().subscribe((data:any) =>{
@@ -261,7 +267,6 @@ export class PuntoDosAspectosPage implements OnInit {
          xhr.send();
        })
      }
-   
    
   async enviarForm(formulario) {
     console.log(this.datos);
@@ -357,6 +362,10 @@ export class PuntoDosAspectosPage implements OnInit {
   }
 
   pdf() {
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
     let firmaEstacion = this.firmaEstacion;  
@@ -1572,7 +1581,7 @@ export class PuntoDosAspectosPage implements OnInit {
                     [
                         {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
                         {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                        {text:`FECHA DE APROBACIÓN:\nAgregar fecha "10/10/2018"`,alignment:'center',border:[true,false,true,true]}]
+                        {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
                  ]
             },
         layout:{

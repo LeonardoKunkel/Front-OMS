@@ -11,12 +11,15 @@ import { CalendarPage } from '../calendar/calendar.page';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
+  darkMode: boolean = false;
   constructor(
     private modalCtrl: ModalController,
-    private navCtlr: NavController
+    private navCtlr: NavController,
   ) {
     this.openModal();
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.darkMode = prefersDark.matches;
   }
 
   segmentChanged(event){
@@ -46,5 +49,10 @@ export class Tab1Page {
     //console.log('Entraste al modal');
     return await modal.present();
     
+  }
+
+  change(){
+    this.darkMode = !this.darkMode;
+      document.body.classList.toggle('dark');
   }
 }
