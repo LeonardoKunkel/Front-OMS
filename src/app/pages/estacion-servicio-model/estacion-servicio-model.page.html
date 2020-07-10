@@ -12,7 +12,7 @@
   <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
     <ion-card>
       <ion-card-header>
-        <ion-card-subtitle class="ion-text-justify" style="margin: 3%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt saepe voluptatibus ipsum! Deleniti quasi voluptatibus magni ratione quos fugiat dicta cupiditate repellat alias, odit voluptas doloribus. Asperiores exercitationem dicta nulla!</ion-card-subtitle>
+        <ion-card-subtitle class="ion-text-justify" style="margin: 3%;">En este apartado se da a conocer la información general de la estación de servicio, a si mismo como las personas requeridas para poder conformar el <b>SASISOPA</b>.</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <ion-grid fixed *ngFor="let es of estacion"> 
@@ -31,14 +31,14 @@
               <p>Nombre del gerente de la estación <br><b>{{es.gerenteEstacion}}</b></p>
               <p>Nombre del representante tecnico <br><b>{{es.representanteTecnico}}</b></p>
               <p>Nombre de la Maxima autoridad de la estación <br><b>{{es.maximaAutoridad}}</b></p>
+              <ion-button (click)="updateEstacion(es._id)" expand="block" fill="clear" shape="round">
+                <ion-icon name="clipboard" slot="start"></ion-icon>
+                Actualizar
+              </ion-button>
             </ion-col>
           </ion-row>
           <ion-item>
           </ion-item>
-          <ion-button (click)="updateEstacion(es._id)" expand="block" fill="clear" shape="round">
-            <ion-icon name="clipboard" slot="start"></ion-icon>
-            Actualizar
-          </ion-button>
         </ion-grid>
       </ion-card-content>
     </ion-card>

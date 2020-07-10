@@ -92,6 +92,8 @@ export class PuntoDosRiesgosPage implements OnInit {
     telefono:''
   };
 
+ 
+
   constructor( private pdfMaker: PdfMakerService,
                public toast: ToastController,
                private superRiesgos: RiesgosServiceService,
@@ -101,6 +103,7 @@ export class PuntoDosRiesgosPage implements OnInit {
                private datosEstacionService:EstacionServicioDatosService
                 ) {
                   this.getDatosEstacion();
+                  this.getRiesgos();
                  }
 
   ngOnInit() {
@@ -108,6 +111,13 @@ export class PuntoDosRiesgosPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+  }
+
+  getRiesgos(){
+    this.superRiesgos.getRiesgos().subscribe((data:any)=>{
+      //console.log(data.findRiesgos[data.findRiesgos.length -1]);
+      this.datos = data.findRiesgos[data.findRiesgos.length -1];
+    })
   }
   getDatosEstacion(){
     this.datosEstacionService.getEstacion().subscribe((data:any) =>{
@@ -591,12 +601,27 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
   pdf() {
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
     let firmaEstacion = this.firmaEstacion;  
     let footer = this.myImage;
     let ddd = this.datosEstacion;
     const dd = {
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', //'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
     
       background: function(currentPage, pageSize) {
       return {
@@ -1087,22 +1112,25 @@ export class PuntoDosRiesgosPage implements OnInit {
                            text:'',
                            fit:[100,50],
                            alignment:'center',
-                           border:[true,true,true,false]
+                           border:[true,true,true,false],
+                           pageBreak:'before'
                          },{
                            image:`${firmaEstacion}`,
                            fit:[100,50],
                            alignment:'center',
-                           border:[true,true,true,false]
+                           border:[true,true,true,false],
+                           pageBreak:'before'
                          },{
                            text:'',
                            fit:[100,50],
                            alignment:'center',
-                           border:[true,true,true,false]
+                           border:[true,true,true,false],
+                           pageBreak:'before'
                          }],
                     [
                         {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
                         {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                        {text:`FECHA DE APROBACIÓN:\nAgregar fecha "10/10/2018"`,alignment:'center',border:[true,false,true,true]}]
+                        {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
                  ]
             },
         layout:{

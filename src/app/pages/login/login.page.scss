@@ -1,11 +1,7 @@
-// ion-slides{
-//     height: 100%;
-//     background-image: url('../../../assets/FondosEstilos/login_blue_BG-02.png');
-// }
-// .slide{
-//     height: 70%;
-//     width: 10%;
-// }
+
+ion-content {
+    --overflow: hidden;
+}
 .cabeza{
     font-size: 30px;
     

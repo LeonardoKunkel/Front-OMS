@@ -1,7 +1,7 @@
 import { PuntodosService } from './../../services/puntodos.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { EditPoliticaPage } from '../edit-politica/edit-politica.page';
+//import { EditPoliticaPage } from '../edit-politica/edit-politica.page';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { AlertController, IonSlides } from '@ionic/angular';
 import { NavController } from '@ionic/angular';

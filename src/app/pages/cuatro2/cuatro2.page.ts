@@ -27,9 +27,9 @@ export class Cuatro2Page implements OnInit {
       selected:false,
       value:'Reducción en generacion de residuos peligrosos',
       img:'../../../assets/Imagenes/Elemento 4/reducción en generacion de residuos-01.png',
-      met1:'Reducir un 5% anual los residuos del producto',
-      met2:'meta 2',
-      meth3:'meta 3',
+      met1:'Reducción en la fuente, separación y valorización de los residuos',
+      met2:'Implementación del esquema “Producción más limpia”',
+      meth3:'Extremar medidas de seguridad en el almacenamiento de los productos peligrosos para evitar derrames o escapes',
       id:'residuosPeligrosos'
     },
     {
@@ -221,13 +221,28 @@ export class Cuatro2Page implements OnInit {
       cA2:'5%',
       cA3:'5%',
   }
-  firmaEstacion:string;
-  marcaAgua:string;
-  iconoEstacion:string;
-  myImage = null;
   nombreEstacion =null;
   representanteTecnico = null;
   maximaAutorida = null;
+  estacione:any[]=[];
+  myImage = null;
+  firmaEstacion = null;
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
+
 
   constructor(
   private pdfMaker: PdfMakerService,
@@ -289,7 +304,7 @@ export class Cuatro2Page implements OnInit {
   getMarcaAgua(){
     this.marcaService.getMarcaAgua().subscribe((data:any)=>{
       //console.log(data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua);
-      this.marcaAgua = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+      this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
     })
   }
 
@@ -305,7 +320,7 @@ export class Cuatro2Page implements OnInit {
   async alert(){
     const alert = await this.alertController.create({
       header: 'Confirmar!',
-      message: 'SE enviara y guardara las metas seleccionadas ademas de te imprimira un documento de estas mismas.',
+      message: 'Se enviara y guardara las metas seleccionadas, ademas se imprimira un documento de estas mismas.',
       buttons: [
         {
           text: 'Cancelar',
@@ -483,20 +498,35 @@ export class Cuatro2Page implements OnInit {
   }
 
   maquetacion(data1,data2,data3){
-    let icono = this.iconoEstacion;
-    let marcaAguaEstacion =this.marcaAgua;
-    let firma = this.firmaEstacion;
-    let footer= this.myImage;
-    let nombreEstacion = this.nombreEstacion;
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
+    let marcaAgua = this.marcaAguaEstacion;
+    let iconoEstacion = this.iconoEstacion;
+    let firmaEstacion = this.firmaEstacion;  
+    let footer = this.myImage;
+    let ddd = this.datosEstacion;
     var dd = {
-    
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', //'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
+        
       background: function(currentPage, pageSize) {
       return {
-          image: `${marcaAguaEstacion}`,
-          width: 710,
+          image: `${marcaAgua}`,
+          width: 350,
           height: 350, 
-          absolutePosition: {x: 40, y: 150},opacity: 0.5}
-    },
+          absolutePosition: {x: 250, y: 150},opacity: 0.5}
+    },///////////////////////////////////////////////////////
     header: function(){
       return {
         table:{
@@ -505,56 +535,55 @@ export class Cuatro2Page implements OnInit {
             body:[
                 [
                     {
-                        image:`${icono}`,
+                        image:`${iconoEstacion}`,
                     width: 70,
                     height: 70,
                     alignment:'center',
                     border:[true,true,false,true],
                     },{
-                        text:`${nombreEstacion}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15],
+                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment: 'rigth', margin:[15,20],
                     border:[false,true,true,true],
                     }
                 ],[
                     {
-                        text:'PERFIL DE PUESTO DE TRABAJO',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                        text:'Objetivos, metas e indicadores',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
                     },{
                         
                     }
                     ],[
                         {
-                          text:'VI. COMPETENCIA DEL PERSONAL, CAPACITACIÓN Y ENTRENAMIENTO',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                          text:'IV. Objetivos, metas e indicadores',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
                         },{
                             
                         }
                         ]
               ]
-        },margin: [22,15],
+        },margin: [22,7],
         
           layout:{
             defaultBorder: false
           }
       };
     },
-      footer: function(){
-        return {
-            table:{
-          headerRows:1, 
-          widths: [650],
-               body : [
-               [''],
-               [''],
-               [{
-                image: `${footer}`,
-                pageBreak: 'after',
-                width: 650,
-                height: 80,
-                 }]
-                   ]
-             }, layout : 'headerLineOnly',
-            margin: [72,20]
-        };
-      },
-        
+    footer: function(){
+      return {
+          table:{
+        headerRows:1, 
+        widths: [650],
+             body : [
+             [''],
+             [''],
+             [{
+              image: `${footer}`,
+              pageBreak: 'after',
+              width: 650,
+              height: 80,
+               }]
+                 ]
+           }, layout : 'headerLineOnly',
+          margin: [72,20]
+      };
+    },    
         content:[
             //primera tabla
             {
@@ -637,31 +666,39 @@ export class Cuatro2Page implements OnInit {
                           ]
                   }
                 
-            },{text:'\n\n',pageBreak:'after'},{
-                table:{ 
-                    widths: [250,250,220],
-                    heights:[70,70,70],
-                    body:[
-                      [{
-                          //image:'sampleImage.jpg',
-                    //width: 180,
-                    //height: 20,
-                    //alignment: 'center'
-                      },{
-                          image:`${firma}`,
-                    width: 150,
-                    height: 60,
-                    alignment: 'center'
-                      },{
-                          //image:'sampleImage.jpg',
-                    //width: 180,
-                    //height: 20,
-                    //alignment: 'center' 
-                      }],
-                      [{text:`REVISADO POR:\n${this.representanteTecnico}\nREPRESENTANTE TÉCNICO`,bold:true},{text:`APROBADO POR:\n${this.maximaAutorida}\nMÁXIMA AUTORIDAD`,bold:true},{text:'FECHA DE APROBACIÓN:'}]
-                      ],margin:[100,10]
+            },{text:'\n\n',pageBreak:'after'},
+            {
+                table: {
+                  widths: [200,200,140],
+                  heights: [50,30],
+                     body: [
+                         [
+                             {
+                               text:'',
+                               fit:[100,50],
+                               alignment:'center',
+                               border:[true,true,true,false]
+                             },{
+                               image:`${firmaEstacion}`,
+                               fit:[100,50],
+                               alignment:'center',
+                               border:[true,true,true,false]
+                             },{
+                               text:'',
+                               fit:[100,50],
+                               alignment:'center',
+                               border:[true,true,true,false]
+                             }],
+                        [
+                            {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
+                            {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
+                            {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
+                     ]
                 },
-                layout: 'noBorders'
+            layout:{
+              defaultBorder: false
+            },
+            margin:[85,0]
             }
             ]
        ,

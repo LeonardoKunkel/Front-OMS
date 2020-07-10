@@ -4,8 +4,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MapaService } from 'src/app/services/mapa.service';
 import { NavController } from '@ionic/angular';
-declare var google;
-
+//declare var google;
+ var google;
 @Component({
   selector: 'app-simple',
   templateUrl: './simple.page.html',
