@@ -144,6 +144,10 @@ export class JefePisoModalPage implements OnInit {
     let firmaEstacion = this.firmaEstacion;  
     let footer = this.myImage;
     let ddd = this.datosEstacion;
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -158,8 +162,8 @@ export class JefePisoModalPage implements OnInit {
       },
       background: function(currentPage, pageSize) {
       return {
-          image: `${marcaAgua}`, width: 500,height: 500, 
-          absolutePosition: {x: 60, y: 150},opacity: 0.5}
+          image: `${marcaAgua}`, width: 300,height: 350, 
+          absolutePosition: {x: 150, y: 160},opacity: 0.5}
     },
     header: function(){
       return {
@@ -170,10 +174,10 @@ export class JefePisoModalPage implements OnInit {
                 [
                     {
                         image:`${iconoEstacion}`,
-                    width: 70,
-                    height: 70,
-                    alignment:'center',
-                    border:[true,true,false,true],
+                        width: 45,
+                        height: 60,
+                        alignment:'center',
+                        border:[true,true,false,true],
                     },{
                         text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15],
                     border:[false,true,true,true],
@@ -199,26 +203,28 @@ export class JefePisoModalPage implements OnInit {
           }
       };
     },
-      footer: function(){
-        return {
-            table:{
-          headerRows:1, 
-          widths: [510],
-               body : [
-               [''],
-               [''],
-               [{
-                image: `${footer}`,
-                pageBreak: 'after',
-                width: 510,
-                height: 80,
-                 }]
-                   ]
-             }, layout : 'headerLineOnly',
-            margin: [72,20]
-        };
-      },
-      
+    footer: function(currentPage, pageCount){
+      return {
+          table:{
+        headerRows:1, 
+        widths: [510],
+             body : [
+             [{columns:[
+                 'Página ' + currentPage.toString() + ' de ' + pageCount,
+                 {text:`FS-14 Rev., ${day}/${month}/${year}`,width: 180}
+                 ]}],
+             [{
+              image: `${footer}`,
+              pageBreak: 'after',
+              width: 510,
+              height: 60,
+               },],
+             [''],
+                 ]
+           }, layout : 'headerLineOnly',
+          margin: [72,20],
+      };
+    },
      content: [
          {
              table: {

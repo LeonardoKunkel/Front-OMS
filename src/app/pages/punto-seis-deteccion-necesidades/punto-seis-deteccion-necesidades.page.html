@@ -22,7 +22,7 @@
             style="width: 50%; display: block; margin: auto;">
             <ion-card-header>
               <ion-card-title>Nuevo Ingreso</ion-card-title>
-              <ion-button href="assets/docs/Elemento 6/FS-15 DETECCIÓN DE NECESIDADES DE CAPACITACIÓN (Nuevo Ingreso).pdf" shape="round" download>
+              <ion-button  shape="round" (click)='pdf()'>
                 Descargar formato
               </ion-button>
             </ion-card-header>
@@ -35,7 +35,7 @@
             <img style="width: 50%; display: block; margin: auto;" class="ion-padding" src="../../../assets/Imagenes/Elemento 6/reentrenamiento.png">
             <ion-card-header>
               <ion-card-title>Reentrenamiento</ion-card-title>
-              <ion-button href="assets/docs/Elemento 6/FS-15 DETECCIÓN DE NECESIDADES DE CAPACITACIÓN (Reentrenamiento).pdf" shape="round" download>
+              <ion-button shape="round" (click)="pdf2()">
                 Descargar formato
               </ion-button>
             </ion-card-header>
@@ -48,7 +48,7 @@
             <img style="width: 50%; display: block; margin: auto;" class="ion-padding" src="../../../assets/Imagenes/Elemento 6/curso_extra.png">
             <ion-card-header>
               <ion-card-title>Curso Extra</ion-card-title>
-              <ion-button href="assets/docs/Elemento 6/FS-15 DETECCIÓN DE NECESIDADES DE CAPACITACIÓN.pdf" shape="round" download>
+              <ion-button shape="round" (click)="pdf3()">
                 Descargar formato
               </ion-button>
             </ion-card-header>

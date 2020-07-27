@@ -1,220 +1,429 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { Observable } from 'rxjs';
+import { FirmaEstacionServiceService } from '../../services/firma-estacion-service.service';
+import { IconoEstacionService } from '../../services/iconosEstacion.service';
+import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+
 @Component({
   selector: 'app-punto-tres-lista',
   templateUrl: './punto-tres-lista.page.html',
   styleUrls: ['./punto-tres-lista.page.scss'],
 })
-export class PuntoTresListaPage implements OnInit {
+export class PuntoTresListaPage implements OnInit { 
+  myImage = null;
+  firmaEstacion = null;
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
 
-  constructor(private pdfMakerService: PdfMakerService) { }
+  constructor(
+    private pdfMakerService: PdfMakerService,
+    private firma :FirmaEstacionServiceService,
+    private marca : MarcaAguaServiceService,
+    private icono : IconoEstacionService,
+    private datosEstacionService:EstacionServicioDatosService
+    
+    ) { }
 
   ngOnInit() {
+    this.getDatosEstacion();
+    this.imagen64();
+    this.getMarcaAgua();
+    this.getFirma();
+    this.getIcono();
+  }
+  getDatosEstacion(){
+    this.datosEstacionService.getEstacion().subscribe((data:any) =>{
+      //console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
+    })
+  }
+  getIcono(){
+    this.icono.getPolitica().subscribe((data:any)=>{
+     // console.log(data);
+      this.iconoEstacion =  data.findPolitica[data.findPolitica.length -1].imagen;
+    })
+  }
+  getMarcaAgua(){
+    this.marca.getMarcaAgua().subscribe((data:any)=>{
+      //console.log(data);
+      this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
+    })
+  }
+  getFirma(){
+    this.firma.getFirmaEstacion().subscribe((data:any) =>{
+      //console.log(data);
+      this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  imagen64(){
+ 
+      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+        base64 =>{
+          this.myImage = base64;
+          //console.log(this.myImage);
+        }
+        
+      )
+  }
+  convertFileDataURLviaFileReader(url: string){
+    return Observable.create(observer =>{
+      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      xhr.onload = function(){
+        let reader: FileReader = new FileReader();
+        reader.onloadend = function(){
+          observer.next(reader.result);
+          observer.complete();
+        };
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    })
   }
 
-  downloadListReqLeg(){
-    console.log('Descarga');
-    
+  pdf(){
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
+    let marcaAgua = this.marcaAguaEstacion;
+    let iconoEstacion = this.iconoEstacion;
+    let firmaEstacion = this.firmaEstacion;  
+    let footer = this.myImage;
+    let ddd = this.datosEstacion;
+    console.log('Descarga');// playground requires you to assign document definition to a variable called dd
+
     var dd = {
-      header: function(){
-        return {
-            table: { widths: [720],heights:[40,0,0],
-  body: [
-  
-      [{text:''}],
-      [{text:'III. REQUISITOS LEGALES',alignment:'center',bold:true}],
-      [{text:'Identificación de los requisitos legales, aplicables al transporte y actividades',alignment:'center',bold:true,fillColor:'#ddd'}],
-     
-  ]
-  
-  }, margin: [22,15]
-        };
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', //'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
       },
-      footer: function(){
-        return {
-            table:{
-     headerRows:1, 
-     widths: [560],
-               body : [
-               [''],
-               [''],
-               ['']
-                   ]
-          }, layout : 'headerLineOnly',
-            margin: [30,85]
-        };
-      },
-      
-      content:[
+      background: function(currentPage, pageSize) {
+      return {
+          image: `${marcaAgua}`,
+          width: 300,
+          height: 370, 
+          absolutePosition: {x: 250, y: 140},opacity: 0.5}
+    },
+    header: function(){
+      return {
+        table:{
+            widths: [150,570],
+            heights: [30,10,10],
+            body:[
+                [
+                    {
+                        image:`${iconoEstacion}`,
+                        width: 45,
+                        height: 60,
+                    alignment:'center',
+                    border:[true,true,false,true],
+                    },{
+                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15],
+                    border:[false,true,true,true],
+                    }
+                ],[
+                    {
+                        text:'MATRIZ DE REQUERIMIENTOS Y ASPECTOS LEGALES FM-6.4-01',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                    },{
+                        
+                    }
+                    ],[
+                        {
+                          text:'III. Identificación de Requisitos Legales',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                        },{
+                            
+                        }
+                        ]
+              ]
+        },margin: [22,15],
+        
+          layout:{
+            defaultBorder: false
+          }
+      };
+    },
+    footer: function(currentPage, pageCount){
+      return {
+          table:{
+        headerRows:1, 
+        widths: [650],
+             body : [
+             [{columns:[
+                 'Página' + currentPage.toString() + ' de ' + pageCount,
+                 {text:`FS-23 Rev. 0, ${day}/${month}/${year}`,width: 180}
+                 ]}],
+             [{
+              image: `${footer}`,
+              pageBreak: 'after',
+              width: 650,
+              height: 60,
+               },],
+             [''],
+                 ]
+           }, layout : 'headerLineOnly',
+          margin: [72,20],
+      };
+    },
+      content: [
           {
-            ol:[
-                [{text:'Considerará todas las actividades, procesos, equipos e instalaciones y la siguiente relación, para identificar los requisitos legales'}],
-                [{text:'Constitución Política de los Estados Unidos Mexicanos.'}],
-                [{text:'Leyes Generales, Leyes Federales y sus Reglamentos'}],
-                [{text:'Normas Oficiales Mexicanas y disposiciones administrativas aplicables al proyecto'}],
-                [{text:'Leyes y Reglamentos Federales y Estatales'}],
-                [{text:'Acuerdos del DOF'}],
-                [{text:'Autorizaciones, permisos, licencias, otros emitidos por los 3 ordenes de gobierno'}],
-                [{text:'Órdenes específicas emitidas por autoridades reguladoras'}],
-                ]  
-          },{
-            text:'\n'  
+           table:{
+            widths: [200,120,120,150,90],
+               body:[
+                   [
+                      {text:`INFORMACIÓN DEL REQUISITO`,colSpan:3,alignment:'center'},
+                      {text:``},
+                      {text:``},
+                      {text:`APLICACIÓN Y EVALUACIÓN DEL REQUISITO`,alignment:'center'},
+                      {text:`REFERENCIAS`,alignment:'center'},
+                   ],[
+                      {text:`NOMBRE DE LA LEGISLACIÓN`,bold:true,alignment:'center',fillColor:'#a5c3dd'},
+                      {text:`NOMBRE DEL REQUISITO`,bold:true,alignment:'center',fillColor:'#a5c3dd'},
+                      {text:`DEPENDENCIA (FEDERAL, ESTATAL O MUNICIPAL)`,bold:true,alignment:'center',fillColor:'#a5c3dd'},
+                      {text:`CLAUSULA Y ARTICULOS QUE APLICAN`,bold:true,alignment:'center',fillColor:'#a5c3dd'},
+                      {text:``,bold:true,alignment:'center',fillColor:'#a5c3dd'},
+                   ],[
+                      {text:`LEY GENERAL DEL EQUILIBRIO ECOLOGICO Y PROTECCIÓN AL AMBIENTE`,fontSize:8,alignment:'justify'},
+                      {text:`LICENCIA AMBIENTAL UNICA`,fontSize:8,alignment:'center',rowSpan:2},
+                      {text:`Federal`,fontSize:8,alignment:'center',rowSpan:2},
+                      {text:`109 BIS1 Y 111 BIS`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar', link: 'DOFsr/148.pdf',fontSize:8,alignment:'center',color: 'blue'},
+                   ],[
+                      {text:`REGLAMENTO DE LA LEY GENERAL DEL EQUILIBRIO ECOLOGICO Y LA PROTECCIÓN AL AMBIENTE EN MATERIA DE PREVENCIÓN Y CONTROL DE LA ATMOSFERA`,fontSize:8,alignment:'justify'},
+                      {text:``,fontSize:8,alignment:'center'},
+                      {text:``,fontSize:8,alignment:'center'},
+                      {text:`17 BIS`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar', link: 'http://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LGEEPA_MPCCA_311014.pdf',fontSize:8,alignment:'center',color:'blue'},
+                   ],[
+                      {text:`LEY GENERAL DEL EQUILIBRIO ECOLOGICO Y PROTECCIÓN AL AMBIENTE`,fontSize:8,alignment:'justify'},
+                      {text:`Impacto Ambiental `,fontSize:8,alignment:'center'},
+                      {text:`Federal`,fontSize:8,alignment:'center'},
+                      {text:``,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`DISPOCIÓN LEGISLATIVA "CARÁCTER GENERAL QUE ESTABLECE LOS LINEAMIENTOS PARA LA GESTIÓN INTEGRAL DE LOS RESIDUOS DE MANEJO ESPCIAL DEL SECTOR DE HIDROCARBUROS"`,fontSize:8,alignment:'justify'},
+                      {text:`REGISTRO COMO GENERADOR DE RESIDUOS DE MANEJO ESPECIAL`,fontSize:8,alignment:'center'},
+                      {text:`Federal `,fontSize:8,alignment:'center'},
+                      {text:`DISPOSICIONES GENERALES `,fontSize:8,alignment:'center'},
+                      {text: 'Consultar', link: 'https://dof.gob.mx/nota_detalle.php?codigo=5459927&fecha=07/11/2016',color:'blue',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`NOM-005-ASEA-2016`,fontSize:8,alignment:'justify',rowSpan:2},
+                      {text:`CERTIFICADO DE LIMPIEZAS ECOLOGICAS`,fontSize:8,alignment:'center'},
+                      {text:`Federal `,fontSize:8,alignment:'center'},
+                      {text:``,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:``,fontSize:8,alignment:'justify'},
+                      {text:`MANIFIESTO DE DISPOSICIÓN DE RESIDUOS`,fontSize:8,alignment:'center'},
+                      {text:`Federal`,fontSize:8,alignment:'center'},
+                      {text:``,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`LEY DE HIDROCARBUROS`,fontSize:8,alignment:'justify',rowSpan:2},
+                      {text:`PERMISO DEL EXPENDIO AL PUBLICO`,fontSize:8,alignment:'center'},
+                      {text:`Federal `,fontSize:8,alignment:'center'},
+                      {text:`TITULO III, CAPITULO I, ART.50 Y 51`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://www.diputados.gob.mx/LeyesBiblio/pdf/LHidro_151116.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:``,fontSize:8,alignment:'justify'},
+                      {text:`POLIZA DE SEGURO `,fontSize:8,alignment:'center'},
+                      {text:`Federal `,fontSize:8,alignment:'center'},
+                      {text:`TITULO III, CAPITULO I, ART,50, INCISO IV`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`NOM `,fontSize:8,alignment:'justify'},
+                      {text:`Planos actualizados sellados con su respectivo oficio de Pemex`,fontSize:8,alignment:'center'},
+                      {text:`Federal `,fontSize:8,alignment:'center'},
+                      {text:`APARTADO V Y APARTADO VI`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Reglamento Federal de Seguridad, Higiene y Medio Ambiente del Trabajo y NOM020`,fontSize:8,alignment:'justify',rowSpan:2},
+                      {text:`Registro de Compresor y por Unidad Verificadora`,fontSize:8,alignment:'center'},
+                      {text:`Federal`,fontSize:8,alignment:'center'},
+                      {text:`Art. 29,30 y 31 del Reglamento Federal de Seguridad, Higiene y Carpetas de las 13 Normas Medio Ambiente del Trabajo y NOM-020-STPS-2011`,fontSize:8,alignment:'center',colSpan:2},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:``,fontSize:8,alignment:'justify'},
+                      {text:`Carpetas de las 13 Normas`,fontSize:8,alignment:'center'},
+                      {text:`Federal`,fontSize:8,alignment:'center'},
+                      {text:``,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://www.stps.gob.mx/bp/secciones/dgsst/normatividad/n152.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Ley del Seguro Social y Reglamento de la Ley del Seguro Social en Materia de Filiación`,fontSize:8,alignment:'justify'},
+                      {text:`Registro Patrona`,fontSize:8,alignment:'center'},
+                      {text:`Federa`,fontSize:8,alignment:'center'},
+                      {text:`Art. 15, 72, 73, 75 de la Ley y Art 12-30 del Reglamento`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`NOM-022`,fontSize:8,alignment:'justify'},
+                      {text:`Dictamen de Tierras Físicas`,fontSize:8,alignment:'center'},
+                      {text:`Federa`,fontSize:8,alignment:'center'},
+                      {text:`Cap 2, Secc 1 , Articulo 40 NOM, L.F.M.`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://www.imss.gob.mx/sites/all/statics/pdf/reglamentos/4046.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`NOM-025 `,fontSize:8,alignment:'justify'},
+                      {text:`Dictamen de Iluminación`,fontSize:8,alignment:'center'},
+                      {text:`Federal `,fontSize:8,alignment:'center'},
+                      {text:`Cap 2, Secc 1 , Articulo 40 NOM, L.F.M`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://dof.gob.mx/nota_detalle.php?codigo=5268977&fecha=18/09/2012',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Código Administrativo del Estado de México y su Reglamento`,fontSize:8,alignment:'justify'},
+                      {text:`Programa de Protección Civil Aprobado`,fontSize:8,alignment:'center'},
+                      {text:`Estatal`,fontSize:8,alignment:'center'},
+                      {text:`Libro Sexto en materia de Protección Civil Art. 6.17,6.18, 6.23 6.26 asi como Norma Técnica NTE-001-CGPC-2016`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://www.dof.gob.mx/normasOficiales/5805/salud3a11_C/salud3a11_C.html',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`MNX-EC-17025-IMNC-2006 `,fontSize:8,alignment:'justify'},
+                      {text:`Pruebas de Hermeticidad`,fontSize:8,alignment:'center'},
+                      {text:`Estatal `,fontSize:8,alignment:'center'},
+                      {text:`Cap 2, Secc 2 , Articulo 51,54 y 66, L.F.M`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://integra.cimav.edu.mx/intranet/data/files/calidad/documentos/externos/NMX-EC-17025-IMNC-2006.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Ley Federal de Metrología y NormalizacionNOM-154-SCFI2005`,fontSize:8,alignment:'justify'},
+                      {text:`Cartas Responsivas de Extintores y factura`,fontSize:8,alignment:'center'},
+                      {text:`Estatal`,fontSize:8,alignment:'center'},
+                      {text:`Art. 39, 40,46 y 47 de la LFMyN, asi como la NOM`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Reglamento de construcción de inmuebles en construcción en condominio del estado de México`,fontSize:8,alignment:'justify'},
+                      {text:`Dictamen de Seguridad Estructural`,fontSize:8,alignment:'center'},
+                      {text:`Estatal`,fontSize:8,alignment:'center'},
+                      {text:`Cap 2, art. 9, parrafo IX `,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`NOM-001-SEDE-2012 `,fontSize:8,alignment:'justify'},
+                      {text:`Dictamen Electrico`,fontSize:8,alignment:'center'},
+                      {text:`Estatal `,fontSize:8,alignment:'center'},
+                      {text:`Aplicable a todo la Normatividad`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',Color:'blue', link: 'https://dof.gob.mx/nota_detalle_popup.php?codigo=5280607',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Código Administrativo del Estado de México y Reglamento Orgánico Adm. De Naucalpan`,fontSize:8,alignment:'justify'},
+                      {text:`Vo. Bo. De Protección Civil`,fontSize:8,alignment:'center'},
+                      {text:`Municipa`,fontSize:8,alignment:'center'},
+                      {text:`Art. 6.4 y 6.7 del CAEM y 13 y 48 del Reglamento de la Adm. De Naucalpan`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'https://naucalpan.gob.mx/wp-content/uploads/2019/01/codvig008.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Reglamento de construcción de inmuebles en construcción en condominio del estado de México`,fontSize:8,alignment:'justify'},
+                      {text:`Responsiva de Instalaciones Eléctricas`,fontSize:8,alignment:'center'},
+                      {text:`Municipal`,fontSize:8,alignment:'center'},
+                      {text:`Cap 2, art. 9, párrafo IX`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'https://dof.gob.mx/nota_detalle_popup.php?codigo=5280607',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`NOM-001-SEDE-2012 `,fontSize:8,alignment:'justify'},
+                      {text:`Constancia de Seguridad Estructural`,fontSize:8,alignment:'center'},
+                      {text:`Municipa`,fontSize:8,alignment:'center'},
+                      {text:`Aplicable a todo la Normatividad`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'https://legislacion.edomex.gob.mx/sites/legislacion.edomex.gob.mx/files/files/pdf/rgl/vig/rglvig107.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Ley Orgánica de la Admin Publica EM, Código Administrativo del EM. Y Reglamento del Libro Quinto del EM`,fontSize:8,alignment:'justify'},
+                      {text:`Impacto Urbano`,fontSize:8,alignment:'center'},
+                      {text:`Estatal `,fontSize:8,alignment:'center'},
+                      {text:`Art. 51, 52 53 de la Ley Orgánica, 5.5, 5.9, 5.35 y 5.35 del Código Administrativo y 2-6, 128, 129 del Reglamento del Libro Qunto`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Código Administrativo del Estado de México y Reglamento de Salud del Estado de México`,fontSize:8,alignment:'justify'},
+                      {text:`Licencia Sanitaria `,fontSize:8,alignment:'center'},
+                      {text:`Estatal `,fontSize:8,alignment:'center'},
+                      {text:`Art. 2.44, 2.46 y 2.47 del Código Adm del Estado de México y Titulo Cuarto del Reglamento de Salud E.M`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Ley General de Equilibrio Ecológico y Protección al Ambiente, Código de Biodiversidad del E.M. Y Leo Orgánica Municipal`,fontSize:8,alignment:'justify'},
+                      {text:`Licencia Ambiental `,fontSize:8,alignment:'center'},
+                      {text:`Municipal `,fontSize:8,alignment:'center'},
+                      {text:`Art. 4,8 y 10 de la LGEEyPA 1.1. 1.5, 1.6, 2.9 del Código de Biodiversidad y 49, 86 y 89 de la LOMEM`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar',color:'blue', link: 'http://legislacion.edomex.gob.mx/sites/legislacion.edomex.gob.mx/files/files/pdf/cod/vig/codvig008.pdf',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Reglamento del Servicio de Agua Potable, Drenaje, Alcantarillado y Aguas Residuales de Naucalpan `,fontSize:8,alignment:'justify'},
+                      {text:`Registro de aguas Residuales`,fontSize:8,alignment:'center'},
+                      {text:`Municipal`,fontSize:8,alignment:'center'},
+                      {text:`Art. 125 y 126 de la Ley Orgánica Municipal y Art. 128 y 128 del Reglamento del Servicio de Agua de Naucalpan`,fontSize:8,alignment:'center'},
+                      {text: 'Consultar', link: 'http://www.conafor.gob.mx:8080/documentos/docs/4/321Ley%20de%20Desarrollo%20Forestal%20Sustentable%20del%20Estado%20de%20M%C3%A9xico.pdf',fontSize:8,alignment:'center',color:'blue'},
+                   ],[
+                      {text:`Reglamento de Unidades Económicas de Naucalpan y Ley de Competitividad y Ordenamiento Comercial del E.M`,fontSize:8,alignment:'justify'},
+                      {text:`Licencia de Funcionamiento`,fontSize:8,alignment:'center'},
+                      {text:`Municipal `,fontSize:8,alignment:'center'},
+                      {text:`Art. 16-23 del Reglamento de Unidades Económicas y Art. 13 de la LCOCEM`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Ley Orgánica Municipal del E.M., y Reglamento de Anuncios del Municipio de Naucalpan`,fontSize:8,alignment:'justify'},
+                      {text:`Licencia de Anuncios`,fontSize:8,alignment:'center'},
+                      {text:`Municipal `,fontSize:8,alignment:'center'},
+                      {text:`Art. 31 de la Ley y Arts. 12-14, 48-57 del Reglamento de Anuncios`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ],[
+                      {text:`Código Administrativo del Estado de México y Reglamento Del Ordenamiento Territorial de los Asentamientos Humanos y Desarrollo Urbano.`,fontSize:8,alignment:'justify'},
+                      {text:`Licencia de Construcción`,fontSize:8,alignment:'center'},
+                      {text:`Municipal `,fontSize:8,alignment:'center'},
+                      {text:`Art. 18.3, 18.6 y 18.20 del Código Administrativo y Artículo 88, 89, 90, 91, 92, 93, 94, Y 95 del Reglamento Del Ordenamiento Territorial de los Asentamientos Humanos y Desarrollo Urbano De Naucalpan`,fontSize:8,alignment:'center'},
+                      {text: '', link: 'http://google.com',fontSize:8,alignment:'center'},
+                   ]
+                   ]
+           } 
+          },{text:'\n'},
+          {
+              table: {
+                   widths: [200,200,140],
+                   heights: [50,30],
+                   body: [
+                       [
+                           {
+                             text:'',
+                             fit:[100,50],
+                             alignment:'center',
+                             border:[true,true,true,false]
+                           },{
+                             image:`${firmaEstacion}`,
+                             fit:[100,50],
+                             alignment:'center',
+                             border:[true,true,true,false]
+                           },{
+                             text:'',
+                             fit:[100,50],
+                             alignment:'center',
+                             border:[true,true,true,false]
+                           }],
+                      [
+                          {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
+                          {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
+                          {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
+                   ]
+              },
+          layout:{
+            defaultBorder: false
           },
-          {
-              table:{
-                  widths:[30,650],
-                  body:[
-                          [{text:'N°',alignment:'center'},{text:'Lugar',alignment:'center'}],
-                          [{text:'Tramsporte',alignment:'center',colSpan:2,fillColor:'#ddd'},{}],
-                          [{text:'1'},{text:'LEY DE CAMINOS, PUENTES Y AUTOTRANSPORTE FEDERAL'}],
-                          [{text:'2'},{text:'REGLAMENTO de Autotransporte Federal y Servicios Auxiliares'}],
-                          [{text:'3'},{text:'REGLAMENTO para el Transporte Terrestre de Materiales y Residuos Peligrosos'}],
-                          [{text:'4'},{text:'REGLAMENTO de peos y dimenciones'}],
-                          [{text:'5'},{text:'REGLAMENTO de medicina preventiva en el transporte'}],
-                          [{text:'6'},{text:'REGLAMENTO federalde seguridad y salud en el trabajo'}],
-                          [{text:'7'},{text:'REGLAMENTO de transito en carreteras federales'}],
-                          [{text:'8'},{text:'REGLAMENTO de gas lp'}],
-                          [{text:'9'},{text:'LEY FEDERAL DE TRABAJO'}],
-                          [{text:'10'},{text:'LEY FEDERAL DE PROTECCION de datos personales en posicion de particulares'}],
-                          [{text:'CENTRO DE CAPACITACIÓN SCT',alignment:'center',fillColor:'#ddd',colSpan:2},{text:''}],
-                          [{text:'1'},{text:'Programas mínimos de Capacitación para conductores'}],
-                          [{text:'2'},{text:'LEY de Caminos y puentes de autotransporte federal'}],
-                          [{text:'3'},{text:'REGLAMENTO para el Transporte Terrestre de Materiales y Residuos Peligrosos'}],
-                          [{text:'4'},{text:'REGLAMENTO de Autotransporte Federal y Servicios Auxiliares'}],
-                          [{text:'5'},{text:'REGLAMENTO de transito en carreteras federales'}],
-                          [{text:'6'},{text:'NORMAS OFICIALES MEXICANAS'}],
-                          [{text:'6.1'},{text:'NOM-002-SCT/2011, Listado de las substancias y materiales peligrosos más usualmente transportados.'}],
-                          [{text:'6.2'},{text:'NOM-003-SCT/2008, Características  etiquetas, envases, embalajes, en transporte  mat. Pel.'}],
-                          [{text:'6.3'},{text:'NOM-004-SCT/2008, Sistemas de identificación de unidades destinadas al transporte de smat. Pel.'}],
-                          [{text:'6.4'},{text:'NOM-003-SCT/2008, Características de las etiquetas de envases y embalajes del transporte de mat. Pel'}],
-                          [{text:'6.5'},{text:'NOM-006-SCT2/2011, Aspectos básicos para la revisión ocular diaria, mat pel.'}],
-                          [{text:'6.6'},{text:'NOM-019-SCT2/2015, Especificaciones, limpieza y control de remanentes, mat. pel.'}],
-                          [{text:'6.7'},{text:'NOM-043-SCT/2003, Documento de embarque de substancias, materiales y residuos peligrosos'}],
-                          [{text:'SEGURIDAD DEL PERSONAL',alignment:'center',fillColor:'#ddd',colSpan:2},{text:''}],
-                          [{text:'1'},{text:'NOM-001-STPS-2008, Edificios, locales, instalaciones y áreas en los centros de trabajo.'}],
-                          [{text:'2'},{text:'NOM-002-STPS-2010, Condiciones de seguridad-Prevención y protección contra incendios.'}],
-                          [{text:'3'},{text:'NOM-004-STPS-1999, Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo'}],
-                          [{text:'4'},{text:'NOM-005-STPS-1998, condiciones de seguridad e higiene para el manejode mat pel'}],
-                          [{text:'5'},{text:'NOM-006-STPS-2014, Manejo y almacenamiento de materiales'}],
-                          [{text:'6'},{text:'NOM-009-STPS-2011, Condiciones de seguridad para realizar trabajos en altura.'}],
-                          [{text:'7'},{text:'NOM-017-STPS-2008, Equipo de protección personal-Selección, uso y manejo'}],
-                          [{text:'8'},{text:'NOM-018-STPS-2015, Sistema armonizado para la comunicación de riesgos. '}],
-                          [{text:'9'},{text:'NOM-019-STPS-2011, Constitución, integración, organización y funcionamiento de las comisione'}],
-                          [{text:'10'},{text:'NOM-020-STPS-2011, Recipientes sujetoss a presión'}],
-                          [{text:'11'},{text:'NOM-022-STPS-2015, Electricidad estática en los centros de trabajo-Condiciones de seguridad'}],
-                          [{text:'12'},{text:'NOM-026-STPS-2008, Colores y señales de seguridad y riesgos por fluidos conducidos en tuberías'}],
-                          [{text:'13'},{text:'NOM-027-STPS-2008, Actividades de soldadura y corte-Condiciones de seguridad e higiene.'}],
-                          [{text:'14'},{text:'NOM-033-STPS-2015, Condiciones de seguridad para realizar trabajos en espacios confinados'}],
-                          [{text:'SEGURIDAD EN EQUIPO, INSTALACIONES Y ACTIVIDADES',alignment:'center',fillColor:'#ddd',colSpan:2},{text:''}],
-                          [{text:'1'},{text:'NOM-013-SEDG-2002, Evaluación de espesores mediante medición ultrasónica '}],
-                          [{text:'2'},{text:'NOM-007-SESH-2010, Vehículos para el transporte y distribución de Gas L.P.- Condiciones de seguridad'}],
-                          [{text:'3'},{text:'NOM-057-SCT2/2003, Reequerimientos para el diseño y contrucción de Autotanques'}],
-                          [{text:'4'},{text:'NOM-068-SCT-2-2014, Condiciones físico-mecánica y de seguridad para la operación'}],
-                          [{text:'5'},{text:'NOM-087-SCT-2-2017, Que establece los tiempos de conducción y pausas'}],
-                          [{text:'HIGIENE',alignment:'center',fillColor:'#ddd',colSpan:2},{text:''}],
-                          [{text:'1'},{text:'NOM-011-STPS-2001, Condiciones de seguridad e higiene en los centros de trabajo que genere ruido'}],
-                          [{text:'2'},{text:'NOM-013-STPS-1993. Condiciones seguridad e higiene en centros de trabajo con Radiaciones no ionizantes'}],
-                          [{text:'3'},{text:'NOM-015-STPS-2001, Condiciones térmicas elevadas o abatidas'}],
-                          [{text:'4'},{text:'NOM-024-STPS-2001, Vibraciones-Condiciones de seguridad e higiene'}],
-                          [{text:'5'},{text:'NOM-025-STPS-2008, Condiciones de iluminación en los centros de trabajo'}],
-                          [{text:'6'},{text:'NOM-030-STPS-2009, Servicios preventivos de seguridad y salud en el trabajo-'}],
-                          [{text:'7'},{text:'NOM-035-STPS-2018, Factores de riesgo psicosociales en los centros de trbajo'}],
-                          [{text:'8'},{text:'NOM-036-1-STPS-2018, Factores de riesgo ergonómico en los centros de trabajo'}],
-                          [{text:'MEDIO AMBIENTE',alignmente:'center',fillColor:'#ddd',colSpan:2},{text:''}],
-                          [{text:'1'},{text:'LEY GENERAL DEL EQUILIBRIO ECOLÓGICO Y LA PROTECCIÓN AL AMBIENTE'}],
-                          [{text:'2'},{text:'LEY PARA LA PREVENCION  Y GESTION DE RESIDUOS'}],
-                          [{text:'3'},{text:'NOM-043-SEMRNAT-1993, Limites máximos permisibles de emisiones a la atmosfera por fuentes fijas'}],
-                          [{text:'4'},{text:'NOM-052-SEMARNAT-2005, que Establece las Características de los Residuos Peligrosos, '}],
-                          [{text:'5'},{text:'NOM-003-SEMARNAT-1997 Limites máximos permisibles de contaminantes en descargas de aguas res.'}],
-                          [{text:'6'},{text:'REGLAMENTO de la Ley General del Equilibrio Ecológico y la Protección al Ambiente en Materia de ResPel'}],
-                          [{text:'7'},{text:'PRIMER listado de actividades altamente Riesgosas'}],
-                          [{text:'8'},{text:'Segundo Listado de Actividades Altamente Riesgosas'}],
-                          [{text:'9'},{text:'NOM-054-1994, Incompatibilidad de residuos considerados como peligrosos'}],
-                      ]
-              }
+          margin:[85,0]
           }
-           ]
-     ,pageOrientation: 'landscape',
-      pageSize: 'letter',
-      pageMargins: [22,120]
-  }
-  this.pdfMakerService.generate(dd, 'Lista'); 
-
-  }
-
-  pdf2(){
-    console.log("descarga");
-    
-    var dd = {
-      header: function(){
-        return {
-            table: { widths: [720],heights:[40,0,0],
-  body: [
-  
-      [{text:''}],
-      [{text:'III. REQUISITOS LEGALES',alignment:'center',bold:true}],
-      [{text:'Identificacion de requisitos legales',alignment:'center',bold:true,fillColor:'#ddd'}],
-     
-  ]
-  
-  }, margin: [22,15]
-        };
-      },
-      footer: function(){
-        return {
-            table:{
-     headerRows:1, 
-     widths: [560],
-               body : [
-               [''],
-               [''],
-               ['']
-                   ]
-          }, layout : 'headerLineOnly',
-            margin: [30,85]
-        };
-      },
+          ]
+     ,
+      pageSize: 'LETTER',
+      pageOrientation: 'landscape',
+      pageMargins: [22, 130]
       
-      content:[
-          {
-              table:{
-          widths:[100,100,250,250],
-                  body:[
-                      [{text:'Organismo'},{text:'Area'},{text:'Norma'},{text:'Normatividad Vigente'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'CONDICIONES DE SEGURIDAD DE EDIFICIOS'},{text:'NOM-001-STPS-2008'}],
-                      [{text:'STPS/portección civil'},{text:'Seguridad'},{text:'PROTECCIÓN CIVIL'},{text:'NOM-002-STPS-2010'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'MANEJO DE SUSTANCIAS QUIMICAS PELIGROSAS'},{text:'NOM-005-STPS-1998'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'MANEJO Y ALMACENAMIENTO DE MATERIALES'},{text:'NOM-006-STPS-2014'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'TRABAJOS EN ALTURA'},{text:'NOM-009-STPS-2011'}],
-                      [{text:'STPS'},{text:'Organización'},{text:'Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros'},{text:'NOM-017-STPS-2008'}],
-                      [{text:'STPS'},{text:'Organización'},{text:'Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene'},{text:'NOM-019-STPS-2011'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'recipientes sujetos a presión'},{text:'NOM-020-STPS-2011'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'electricidad estática'},{text:'NOM-022-STPS-2008'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'iluminación'},{text:'NOM-025-STPS-2008'}],
-                      [{text:'STPS'},{text:'Organización'},{text:'colores y señales de seguridad'},{text:'NOM-026-STPS-2008'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'mantenimiento de instalaciones electricas'},{text:'NOM-029-STPS-2011'}],
-                      [{text:'STPS'},{text:'Organización'},{text:'servicios preventivos de seguridad y salud'},{text:'NOM-030-STPS-2009'}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'Condiciones de Seguridad para Trabajos Confinados'},{text:''}],
-                      [{text:'STPS'},{text:'Seguridad'},{text:'Condiciones de Seguridad para el acceso y desarrollo de actividades de trabajadores con discapacidad en los centros de trabajo'},{text:''}],
-                      [{text:'PROFECO'},{text:'Sistemas'},{text:'Instrumentos de medición-Sistema para medición y despacho de gasolina y otros combustibles líquidos con un gasto máximo de 250 L/min, Especificaciones, métodos de prueba y de verificación'},{text:'NOM-005-SCFI-2011'}],
-                      [{text:'PROFECO'},{text:'Sistemas'},{text:'Programas informáticos y sistemas electrónicos que controlan el funcionamiento de los sistemas para medición y despacho de gasolina y otros combustibles líquidos-Especificaciones, métodos de prueba y de verificación'},{text:'NOM-185-SCFI-2012'}],
-                      [{text:'ASEA'},{text:'Seguridad'},{text:'Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección al Ambiente'},{text:'SASISOPA'}],
-                      [{text:'ASEA'},{text:'Operación y Mantenimiento'},{text:'Diseño, construcción, operación y mantenimiento de Estaciones de Servicio para Almacenamiento y expendio de diésel y gasolinas'},{text:'NOM-005-ASEA-2016'}],
-                      [{text:'CRE'},{text:'Medición'},{text:'Medición aplicables a la actividad de almacenamiento de petróleo, petrolíferos y petroquímicos'},{text:'RES/811/2015'}],
-                      [{text:'CRE'},{text:'Combustibles'},{text:'Especificaciones de calidad de los petrolíferos'},{text:'NOM-016-CRE-2016'}],
-                      [{text:''},{text:'Señales y aviso para proteccion civil'},{text:'Señales y avisos para protección civil- Colores, formas y sombolos a utilizar'},{text:'NOM-003-SEGOB-2002'}],
-  
-                      ]
-              }
-          }
-          
-              
-           ]
-     ,pageOrientation: 'landscape',
-      pageSize: 'letter',
-      pageMargins: [22,120]
-  };
-  this.pdfMakerService.generate(dd, 'Lista'); 
+    };
+    this.pdfMakerService.generate(dd,'Lista de requisitos legales')
   }
 
 }

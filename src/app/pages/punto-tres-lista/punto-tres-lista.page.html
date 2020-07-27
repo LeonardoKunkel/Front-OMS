@@ -9,5 +9,18 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <embed src="../../../assets/docs/Elemento 3/III. Identificación de Requisitos Legales.pdf" width="100%" height="1200px" />
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size ="6" sizeLg ='4' style="margin: auto; display: block;">
+        <ion-card>
+          <ion-card-content>
+            <img src="../../../assets/Imagenes/Elemento 3/3_requisitoslegales-01.png" style="margin: auto; display:block;">
+            <ion-button (click)="pdf()" expand="block" fill="clear" shape="round">
+              Consultar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content> 
