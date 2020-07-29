@@ -152,6 +152,10 @@ export class PuntoCincoPage implements OnInit {
     let iconoEstacion = this.iconoEstacion;
     let nombreEstacion = this.datos.nombreEstacionServicio;
     let firmaEstacion = this.firmaEstacion;
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -166,8 +170,8 @@ export class PuntoCincoPage implements OnInit {
       },
       background: function(currentPage, pageSize) {
       return {
-          image: `${marca}`, width: 500,height: 500, 
-          absolutePosition: {x: 80, y: 150},opacity: 0.5}
+          image: `${marca}`, width: 300,height: 350, 
+          absolutePosition: {x: 150, y: 160},opacity: 0.5}
     },
     header: function(){
       return {
@@ -178,11 +182,13 @@ export class PuntoCincoPage implements OnInit {
                 [
                     {
                         image:`${iconoEstacion}`,
-                    width: 70,
-                    height: 70,
-                    alignment:'center'
+                    width: 45,
+                    height: 60,
+                    alignment:'center',
+                    border:[true,true,false,true],
                     },{
-                        text:`${nombreEstacion}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15]
+                        text:`${nombreEstacion}`,bold:true,fontSize:25,margin:[55,20],
+                    border:[false,true,true,true],
                     }
                 ],[
                     {
@@ -201,25 +207,28 @@ export class PuntoCincoPage implements OnInit {
         },margin: [22,20]
       };
     },
-    footer: function(){
-        return {
-            table:{
-          headerRows:1, 
-          widths: [510],
-               body : [
-               [''],
-               [''],
-               [{
-                image: `${footer}`,
-                pageBreak: 'after',
-                width: 510,
-                height: 80,
-                 }]
-                   ]
-             }, layout : 'headerLineOnly',
-            margin: [72,40]
-        };
-      },
+    footer: function(currentPage, pageCount){
+      return {
+          table:{
+        headerRows:1, 
+        widths: [510],
+             body : [
+             [{columns:[
+                 'Página' + currentPage.toString() + ' de ' + pageCount,
+                 {text:`P-SA-01 Rev.0, ${day}/${month}/${year}`,width: 180}
+                 ]}],
+             [{
+              image: `${footer}`,
+              pageBreak: 'after',
+              width: 510,
+              height: 60,
+               },],
+             [''],
+                 ]
+           }, layout : 'headerLineOnly',
+          margin: [72,20],
+      };
+    },
       content: [
           {
             text: 'CARTA DE DESIGNACIÓN', bold: true, style: 'header', alignment: 'center', fontSize: 20
@@ -228,7 +237,7 @@ export class PuntoCincoPage implements OnInit {
               text: `${this.datos.ciudad} ,${this.datos.estado}, ${this.fechaActual.getFullYear()}`, alignment: 'right'
           },
           {
-              text: `\n ${this.datos.gerenteEstacione}`, fontSize: 10
+              text: `\n ${this.datos.gerenteEstacion}`, fontSize: 10
           },
           {
             text: 'Encargado', fontSize: 10

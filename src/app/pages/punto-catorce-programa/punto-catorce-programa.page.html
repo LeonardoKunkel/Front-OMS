@@ -3,17 +3,26 @@
   <ion-buttons slot="start">
     <ion-back-button defaultHref="/punto-catorce"></ion-back-button>
   </ion-buttons>
-    <ion-title>Programa de Monitoreo y Medición</ion-title>
+    <ion-title class="ion-text-center">Programa de Monitoreo y Medición</ion-title>
   </ion-toolbar>
 </ion-header>
 <div>
   <hr class="linea">
 </div>
 <ion-content>
-  <embed
-    src="../../../assets/docs/Elemento 14/FS-29 PROGRAMA DE MONITOREO Y MEDICION.pdf"
-    width="100%"
-    height="1200px"
-    alt="pdf"
-  >
+  <p style="margin: 3%;">Debes de imprimir el formato de Programa de Monitoreo y Medición y llenarlo correctamente, después de realizarlo es importante que lo escanees y lo subas en el apartado de evidencia.</p>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" sizeLg="3" style="margin: auto; display: block;">
+        <ion-card >
+          <ion-card-content>
+            <img src="../../../assets/Imagenes/Elemento 14/Resultado de monitoreo y medicion de parametros de desempeños-01.png" alt="">
+            <ion-button (click)="pdf()" expand="block" fill="clear" shape="round" color="primary">
+               Descargar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
