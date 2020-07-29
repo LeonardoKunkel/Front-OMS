@@ -16,11 +16,11 @@ export class ListaServiceService {
     return this.httpClient.post('http://localhost:3000/lista/create', datos, { headers });
   }
 
-  getLista(){
+  getLista() {
     return this.httpClient.get('http://localhost:3000/lista/');
   }
 
-  getSpecificLista( id:String){
+  getSpecificLista( id:String) {
     return this.httpClient.get(`http://localhost:3000/lista/${id}`);
   }
 }
