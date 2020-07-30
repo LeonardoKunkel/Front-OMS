@@ -124,15 +124,15 @@ export class PuntoSietePage implements OnInit {
 
 
   constructor(
-      private pdfMaker: PdfMakerService,
-      public toast: ToastController,
-      private superLista: ListaServiceService,
-      private alertCtrl: AlertController,
-      private estacionService: EstacionServicioDatosService,
-      private navCtrl: NavController,
-      private firma: FirmaEstacionServiceService,
-      private marca: MarcaAguaServiceService,
-      private icono: IconoEstacionService
+    private pdfMaker: PdfMakerService,
+    public toast: ToastController,
+    private superLista: ListaServiceService,
+    private alertCtrl: AlertController,
+    private estacionService: EstacionServicioDatosService,
+    private navCtrl: NavController,
+    private firma: FirmaEstacionServiceService,
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService
   ) {
     this.consultar();
     this.getEstacion();
@@ -460,7 +460,7 @@ export class PuntoSietePage implements OnInit {
       userPassword: '123',
       ownerPassword: '123456',
       permissions: {
-        printing: 'highResolution', //'lowResolution'
+        printing: 'highResolution', // 'lowResolution'
         modifying: false,
         copying: false,
         annotating: true,
@@ -468,7 +468,7 @@ export class PuntoSietePage implements OnInit {
         contentAccessibility: true,
         documentAssembly: true
       },
-      background: function(currentPage, pageSize) {
+      background(currentPage, pageSize) {
       return {
         image: `${marcaAgua}`, width: 500, height: 500,
         absolutePosition: {x: 60, y: 150}, opacity: 0.5
@@ -501,7 +501,12 @@ export class PuntoSietePage implements OnInit {
             ],
             [
               {
-                text: 'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA', bold: true, alignment: 'center', colSpan: 2, fillColor: '#eeeeee', border: [true, true, true, true],
+                text: 'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',
+                bold: true,
+                alignment: 'center',
+                colSpan: 2,
+                fillColor: '#eeeeee',
+                border: [true, true, true, true],
               },
               {}
             ]

@@ -64,11 +64,16 @@
           </ion-card-header>
         </ion-card>
       </ion-col>
-      <ion-item-divider color="light">
-        <p style="text-align: justify;">En caso de generarse  incidentes y accidentes que originen eventos tipo 1,2 o 3 que ocurran en la estación de servicio en las Bitácoras de Operación y Mantenimiento.Debera llenar los siguientes formularios</p>
-      </ion-item-divider>
+      <br><br>
+      <h2><b>Importante:</b></h2>
+      <p class="textomd">
+        En caso de generarse incidentes y accidentes que originen eventos tipo 1, 2 o 3
+        que ocurran en la estación de servicio en las Bitácoras de Operación y
+        Mantenimiento.Debera llenar los siguientes formularios:
+      </p>
+      <br><br>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goPuntoComprobacion()" class="carta">
+        <ion-card mode="ios" (click)="pdf()" class="carta">
           <img src="../../../assets/Imagenes/1_procedimiento.png" style="width: 50%; margin: auto; display: block;"/>
           <ion-card-header>
             <ion-card-title>Comprobación de Hipótesis de Trabajo / Recomendaciones de la Investigación Causa Raíz</ion-card-title>
@@ -76,7 +81,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card mode="ios" (click)="goPuntoEntrevista()" class="carta">
+        <ion-card mode="ios" (click)="pdf2()" class="carta">
           <img src="../../../assets/Imagenes/Elemento 16/Entrevista de testigos para la investigacion causa raiz-01.png" style="width: 50%; margin: auto; display: block;"/>
           <ion-card-header>
             <ion-card-title>FO-11 Entrevista de Testigos para la Investigación Causa Raíz</ion-card-title>
