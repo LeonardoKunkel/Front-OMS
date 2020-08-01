@@ -450,11 +450,15 @@ export class PuntoSietePage implements OnInit {
   }
 
   pdf() {
-    const marcaAgua = this.marcaAguaEstacion;
-    const iconoEstacion = this.iconoEstacion;
-    const firmaEstacion = this.firmaEstacion;
-    const footer = this.myImage;
-    const ddd = this.datosEstacion;
+    let marcaAgua = this.marcaAguaEstacion;
+    let iconoEstacion = this.iconoEstacion;
+    let firmaEstacion = this.firmaEstacion;  
+    let footer = this.myImage;
+    let ddd = this.datosEstacion;
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
     this.checar();
     const dd = {
       userPassword: '123',
@@ -470,76 +474,69 @@ export class PuntoSietePage implements OnInit {
       },
       background(currentPage, pageSize) {
       return {
-        image: `${marcaAgua}`, width: 500, height: 500,
-        absolutePosition: {x: 60, y: 150}, opacity: 0.5
-      };
+        image: `${marcaAgua}`, width: 300,height: 350, 
+        absolutePosition: {x: 150, y: 160},opacity: 0.5}
     },
     header: () => {
       return {
-        table: {
-          widths: [150, 400],
-          heights: [30, 10, 10],
-          body: [
-            [
-              {
-                image: `${iconoEstacion}`,
-                width: 70,
-                height: 70,
-                alignment: 'center',
-                border: [true, true, false, true],
-              },
-              {
-                text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 17, alignment: 'center', margin: [0, 15],
-                border: [false, true, true, true],
-              }
-            ],
-            [
-              {
-                text: 'LISTA DE COMUNICACIÓN', fontSize: 9, alignment: 'center', colSpan: 2, border: [true, true, true, true],
-              },
-              {}
-            ],
-            [
-              {
-                text: 'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',
-                bold: true,
-                alignment: 'center',
-                colSpan: 2,
-                fillColor: '#eeeeee',
-                border: [true, true, true, true],
-              },
-              {}
-            ]
-          ]
-        },
-        margin: [22, 25],
-        layout: {
-          defaultBorder: false
-        }
+        table:{
+            widths: [150,400],
+            heights: [30,10,10],
+            body:[
+                [
+                    {
+                        image:`${iconoEstacion}`,
+                        width: 45,
+                        height: 60,
+                        alignment:'center',
+                        border:[true,true,false,true],
+                    },{
+                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15],
+                    border:[false,true,true,true],
+                    }
+                ],[
+                    {
+                        text:'LISTA DE COMUNICACIÓN',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                    },{
+                        
+                    }
+                    ],[
+                        {
+                          text:'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                        },{
+                            
+                        }
+                        ]
+              ]
+        },margin: [22,25],
+        
+          layout:{
+            defaultBorder: false
+          }
       };
     },
-      footer: () => {
-        return {
-          table: {
-            headerRows: 1,
-            widths: [510],
-            body: [
-              [''],
-              [''],
-              [
-                {
-                  image: `${footer}`,
-                  pageBreak: 'after',
-                  width: 510,
-                  height: 80,
-                }
-              ]
-            ]
-          },
-          layout : 'headerLineOnly',
-          margin: [72, 20]
-        };
-      },
+    footer: function(currentPage, pageCount){
+      return {
+          table:{
+        headerRows:1, 
+        widths: [510],
+             body : [
+             [{columns:[
+                 'Página ' + currentPage.toString() + ' de ' + pageCount,
+                 {text:`FS-14 Rev., ${day}/${month}/${year}`,width: 180}
+                 ]}],
+             [{
+              image: `${footer}`,
+              pageBreak: 'after',
+              width: 510,
+              height: 60,
+               },],
+             [''],
+                 ]
+           }, layout : 'headerLineOnly',
+          margin: [72,20],
+      };
+    },
       content: [
         {
           table: {

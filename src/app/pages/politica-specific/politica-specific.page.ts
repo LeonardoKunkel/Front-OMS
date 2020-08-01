@@ -133,6 +133,10 @@ pdf(){
   let iconoEstacion = this.iconoService;
   let firmaEstacion = this.firma;
   let footer = this.myImage;
+  var fecha = new Date();
+  let day = fecha.getDate();
+  let month = fecha.getUTCMonth() + 1;
+  let year = fecha.getFullYear();
 
   var dd = {
     userPassword:'123',
@@ -142,8 +146,8 @@ pdf(){
     },  
     background: function(currentPage, pageSize) {
     return {
-        image: `${marca}`, width: 500,height: 500, 
-        absolutePosition: {x: 60, y: 150},opacity: 0.5}
+        image: `${marca}`, width: 300,height: 350, 
+        absolutePosition: {x: 150, y: 160},opacity: 0.5}
   },
   header: function(){
     return {
@@ -154,8 +158,8 @@ pdf(){
               [
                   {
                       image:`${iconoEstacion}`,
-                  width: 70,
-                  height: 70,
+                  width: 65,
+                  height: 80,
                   alignment:'center',
                   border:[true,true,false,true],
                   },{
@@ -183,30 +187,35 @@ pdf(){
         }
     };
   },
-    footer: function(){
-      return {
-          table:{
-        headerRows:1, 
-        widths: [510],
-             body : [
-             [''],
-             [''],
-             [{
-              image: `${footer}`,
-              pageBreak: 'after',
-              width: 510,
-              height: 80,
-               }]
-                 ]
-           }, layout : 'headerLineOnly',
-          margin: [72,20]
-      };
-    },
-    
+  footer: function(currentPage, pageCount){
+    return {
+        table:{
+      headerRows:1, 
+      widths: [510],
+           body : [
+           [{columns:[
+               'Página' + currentPage.toString() + ' de ' + pageCount,
+               {text:`P-SA-01 Rev.0, ${day}/${month}/${year}`,width: 180}
+               ]}],
+           [{
+            image: `${footer}`,
+            pageBreak: 'after',
+            width: 510,
+            height: 60,
+             },],
+           [''],
+               ]
+         }, layout : 'headerLineOnly',
+        margin: [72,20],
+    };
+  },
     content:[
         {
-            text:`POLITICA`,bold:true,alignment: 'center',Style:'header',fontSize:25
+            text:`POLÍTICA`,bold:true,alignment: 'center',Style:'header',fontSize:25
         },{
+          text:`(SASISOPA)`,bold:true,fontSize:20,alignment:'center'
+        },
+        {
            text:`\n\n${politicaString}\n\n`,fontSize:17,alignment:'justify'
         },
         //lineas para la firma

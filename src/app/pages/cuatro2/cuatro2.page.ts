@@ -520,11 +520,11 @@ export class Cuatro2Page implements OnInit {
 
       background(currentPage, pageSize) {
       return {
-        image: `${marcaAgua}`,
-        width: 350,
-        height: 350,
-        absolutePosition: {x: 250, y: 150}, opacity: 0.5}
-    }, ///////////////////////////////////////////////////////
+          image: `${marcaAgua}`,
+          width: 300,
+          height: 370, 
+          absolutePosition: {x: 250, y: 140},opacity: 0.5}
+    },///////////////////////////////////////////////////////
     header: function(){
       return {
         table: {
@@ -533,12 +533,13 @@ export class Cuatro2Page implements OnInit {
             body: [
                 [
                     {
-                        image: `${iconoEstacion}`,
-                    width: 70,
-                    height: 70,
-                    alignment: 'center',
-                    border: [true, true, false, true],
-                    }, {
+
+                        image:`${iconoEstacion}`,
+                        width: 65,
+                        height: 80,
+                    alignment:'center',
+                    border:[true,true,false,true],
+                    },{
                         text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment: 'rigth', margin:[15,20],
                     border:[false,true,true,true],
                     }
@@ -563,23 +564,26 @@ export class Cuatro2Page implements OnInit {
           }
       };
     },
-    footer: function(){
+    footer: function(currentPage, pageCount){
       return {
           table:{
         headerRows:1, 
         widths: [650],
              body : [
-             [''],
-             [''],
+             [{columns:[
+                 'Página' + currentPage.toString() + ' de ' + pageCount,
+                 {text:`FS-12 Rev. 0, ${day}/${month}/${year}`,width: 180}
+                 ]}],
              [{
               image: `${footer}`,
               pageBreak: 'after',
               width: 650,
-              height: 80,
-               }]
+              height: 60,
+               },],
+             [''],
                  ]
            }, layout : 'headerLineOnly',
-          margin: [72,20]
+          margin: [72,20],
       };
     },    
         content:[
