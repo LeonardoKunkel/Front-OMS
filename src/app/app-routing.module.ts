@@ -47,7 +47,7 @@ const routes: Routes = [
   {
     path: 'punto-tes',
     loadChildren: './pages/punto-tes/punto-tes.module#PuntoTesPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
   {
     path: 'punto-cuatro',
@@ -138,11 +138,6 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
-    path: 'punto-tres-lista',
-    loadChildren: './pages/punto-tres-lista/punto-tres-lista.module#PuntoTresListaPageModule' ,
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'punto-tres-evidencia',
     loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule',
     // canLoad: [AuthGuard]
@@ -214,41 +209,6 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
-    path: 'punto15-menu',
-    loadChildren: './pages/punto15-menu/punto15-menu.module#Punto15MenuPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto15-programa-auditorias',
-    loadChildren: './pages/punto15-programa-auditorias/punto15-programa-auditorias.module#Punto15ProgramaAuditoriasPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto15-plan-auditorias',
-    loadChildren: './pages/punto15-plan-auditorias/punto15-plan-auditorias.module#Punto15PlanAuditoriasPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto15-informe-auditorias',
-    loadChildren: './pages/punto15-informe-auditorias/punto15-informe-auditorias.module#Punto15InformeAuditoriasPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto15-procedimiento',
-    loadChildren: './pages/punto15-procedimiento/punto15-procedimiento.module#Punto15ProcedimientoPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto15-evidencia',
-    loadChildren: './pages/punto15-evidencia/punto15-evidencia.module#Punto15EvidenciaPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto15-atencion-hallazgos',
-    loadChildren: './pages/punto15-atencion-hallazgos/punto15-atencion-hallazgos.module#Punto15AtencionHallazgosPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'simple',
     loadChildren: './pages/simple/simple.module#SimplePageModule',
     // canLoad: [AuthGuard]
@@ -306,26 +266,6 @@ const routes: Routes = [
   {
     path: 'punto-trece',
     loadChildren: './pages/punto-trece/punto-trece.module#PuntoTrecePageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto-trece-acta',
-    loadChildren: './pages/punto-trece-acta/punto-trece-acta.module#PuntoTreceActaPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto-trece-evaluacion',
-    loadChildren: './pages/punto-trece-evaluacion/punto-trece-evaluacion.module#PuntoTreceEvaluacionPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto-trece-planeacion',
-    loadChildren: './pages/punto-trece-planeacion/punto-trece-planeacion.module#PuntoTrecePlaneacionPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto-trece-planes',
-    loadChildren: './pages/punto-trece-planes/punto-trece-planes.module#PuntoTrecePlanesPageModule',
     // canLoad: [AuthGuard]
   },
   {
@@ -432,20 +372,8 @@ const routes: Routes = [
     loadChildren: './pages/estacion-servicio-model/estacion-servicio-model.module#EstacionServicioModelPageModule'
   },
   {
-    path: 'elemento16-hipotesis-recomendaciones',
-    loadChildren: './pages/elemento16-hipotesis-recomendaciones/elemento16-hipotesis-recomendaciones.module#Elemento16HipotesisRecomendacionesPageModule'
-  },
-  {
-    path: 'elemento16-entrevista',
-    loadChildren: './pages/elemento16-entrevista/elemento16-entrevista.module#Elemento16EntrevistaPageModule'
-  },
-  {
     path: 'elemento16-estadistica',
     loadChildren: './pages/elemento16-estadistica/elemento16-estadistica.module#Elemento16EstadisticaPageModule'
-  },
-  {
-    path: 'punto-siete-quejas',
-    loadChildren: './pages/punto-siete-quejas/punto-siete-quejas.module#PuntoSieteQuejasPageModule'
   },
   {
     path: 'punto-siete-registro',
@@ -512,24 +440,8 @@ const routes: Routes = [
     loadChildren: './pages/punto-quince-informe/punto-quince-informe.module#PuntoQuinceInformePageModule'
   },
   {
-    path: 'punto-quince-hallazgos',
-    loadChildren: './pages/punto-quince-hallazgos/punto-quince-hallazgos.module#PuntoQuinceHallazgosPageModule'
-  },
-  {
-    path: 'punto-catorce-programa',
-    loadChildren: './pages/punto-catorce-programa/punto-catorce-programa.module#PuntoCatorceProgramaPageModule'
-  },
-  {
-    path: 'punto-catorce-resultado',
-    loadChildren: './pages/punto-catorce-resultado/punto-catorce-resultado.module#PuntoCatorceResultadoPageModule'
-  },
-  {
     path: 'punto-catorce-evaluacion',
     loadChildren: './pages/punto-catorce-evaluacion/punto-catorce-evaluacion.module#PuntoCatorceEvaluacionPageModule'
-  },
-  {
-    path: 'punto-catorce-plan',
-    loadChildren: './pages/punto-catorce-plan/punto-catorce-plan.module#PuntoCatorcePlanPageModule'
   },
   {
     path: 'punto-catorce-evidencia',
@@ -538,14 +450,6 @@ const routes: Routes = [
   {
     path: 'punto-once-evidencia',
     loadChildren: './pages/punto-once-evidencia/punto-once-evidencia.module#PuntoOnceEvidenciaPageModule'
-  },
-  {
-    path: 'punto-once-programa',
-    loadChildren: './pages/punto-once-programa/punto-once-programa.module#PuntoOnceProgramaPageModule'
-  },
-  {
-    path: 'punto-once-plan',
-    loadChildren: './pages/punto-once-plan/punto-once-plan.module#PuntoOncePlanPageModule'
   },
   {
     path: 'punto-once-lista',
@@ -590,10 +494,6 @@ const routes: Routes = [
   {
     path: 'punto-ocho-distribucion',
     loadChildren: './pages/punto-ocho-distribucion/punto-ocho-distribucion.module#PuntoOchoDistribucionPageModule'
-  },
-  {
-    path: 'punto-seis-cursos',
-    loadChildren: './pages/punto-seis-cursos/punto-seis-cursos.module#PuntoSeisCursosPageModule'
   },
   { path: 'estacion-servicio-update', loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule' },
   { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },

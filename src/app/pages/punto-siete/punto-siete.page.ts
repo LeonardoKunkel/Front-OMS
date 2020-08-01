@@ -124,15 +124,15 @@ export class PuntoSietePage implements OnInit {
 
 
   constructor(
-      private pdfMaker: PdfMakerService,
-      public toast: ToastController,
-      private superLista: ListaServiceService,
-      private alertCtrl: AlertController,
-      private estacionService: EstacionServicioDatosService,
-      private navCtrl: NavController,
-      private firma: FirmaEstacionServiceService,
-      private marca: MarcaAguaServiceService,
-      private icono: IconoEstacionService
+    private pdfMaker: PdfMakerService,
+    public toast: ToastController,
+    private superLista: ListaServiceService,
+    private alertCtrl: AlertController,
+    private estacionService: EstacionServicioDatosService,
+    private navCtrl: NavController,
+    private firma: FirmaEstacionServiceService,
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService
   ) {
     this.consultar();
     this.getEstacion();
@@ -464,7 +464,7 @@ export class PuntoSietePage implements OnInit {
       userPassword: '123',
       ownerPassword: '123456',
       permissions: {
-        printing: 'highResolution', //'lowResolution'
+        printing: 'highResolution', // 'lowResolution'
         modifying: false,
         copying: false,
         annotating: true,
@@ -472,7 +472,7 @@ export class PuntoSietePage implements OnInit {
         contentAccessibility: true,
         documentAssembly: true
       },
-      background: function(currentPage, pageSize) {
+      background(currentPage, pageSize) {
       return {
         image: `${marcaAgua}`, width: 300,height: 350, 
         absolutePosition: {x: 150, y: 160},opacity: 0.5}

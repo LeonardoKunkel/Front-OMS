@@ -1,5 +1,7 @@
 <ion-header no-border>
   <ion-toolbar >
+    <ion-icon slot="start" name="moon"></ion-icon>
+    <ion-toggle slot="start" [ngModel]="darkMode" (ionChange)="change()"></ion-toggle>
     <ion-buttons slot="end">
       <ion-button (click)="openCalendar()" color="primary">
         <ion-icon slot="start" name="calendar"></ion-icon>
@@ -7,96 +9,85 @@
       </ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
-      Procesos
+      Inicio
     </ion-title>
-  </ion-toolbar> <hr class="lineaN">
-  <ion-toolbar color="light">
-    <ion-segment (ionChange)="segmentChanged($event)" >
-      <ion-segment-button value="camera">
-        <label for="">Camara</label>
-        <ion-icon name="camera"></ion-icon>
-      </ion-segment-button>
-      <label for="Ayuda"></label>
-      <ion-segment-button value="help" (click)="abriAyuda()" checked>
-        <ion-icon name="help-circle"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="mapa" (click)="goToMapa()">
-        <label for="Mapa"></label>
-        <ion-icon name="map"></ion-icon>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar> 
-</ion-header><br>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <ion-item>
-       <ion-icon slot="start" name="moon"></ion-icon>
-      <ion-label>Modo Dark</ion-label>
-      <ion-toggle slot="end" [ngModel]="darkMode" (ionChange)="change()"></ion-toggle>
-    </ion-item>
-  </ion-list>
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button (click)="openModal()">
       Datos <br>ES
     </ion-fab-button>
   </ion-fab>
-  <div>
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title class="ion-text-center">OMS</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <h2>¿Que es?</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Molestias fuga quaerat ullam mollitia aperiam doloremque,
-                  alias dolorum nemo autem laborum fugiat minus perspiciatis
-                 numquam accusamus voluptatibus iure harum cupiditate maiores.
-                 <br>
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestias fuga quaerat ullam mollitia aperiam doloremque,
-                   alias dolorum nemo autem laborum fugiat minus perspiciatis
-                  numquam accusamus voluptatibus iure harum cupiditate maiores.
-              </p><br>
-              <h2>¿Cual es su proposito?</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Molestias fuga quaerat ullam mollitia aperiam doloremque,
-                  alias dolorum nemo autem laborum fugiat minus perspiciatis
-                 numquam accusamus voluptatibus iure harum cupiditate maiores.
-                 <br>
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestias fuga quaerat ullam mollitia aperiam doloremque,
-                   alias dolorum nemo autem laborum fugiat minus perspiciatis
-                  numquam accusamus voluptatibus iure harum cupiditate maiores.
-              </p><br>
-              <h2>Ventajas de tenerlo</h2>
-              <ol>
-                <li>Primera ventaja</li>
-                <li>Segunda ventaja</li>
-                <li>Tercera ventaja</li>
-                <li>Cuartaventaja</li>
-              </ol>
-              <h2>¿ A quienes beneficia?</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Molestias fuga quaerat ullam mollitia aperiam doloremque,
-                  alias dolorum nemo autem laborum fugiat minus perspiciatis
-                 numquam accusamus voluptatibus iure harum cupiditate maiores.
-                 <br>
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestias fuga quaerat ullam mollitia aperiam doloremque,
-                   alias dolorum nemo autem laborum fugiat minus perspiciatis
-                  numquam accusamus voluptatibus iure harum cupiditate maiores.
-              </p><br>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  <ion-grid fixed>
+    <ion-text>
+      <h2>Bienvenido a</h2>
+      <h1>Oil Management System</h1>
+    </ion-text>
+    <hr class="lineaN">
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card mode="ios">
+          <img src="../../../assets/Imagenes/1.png">
+          <ion-card-header>
+            <ion-card-title>¿Qué es?</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            OMS es un sistema digital para la solución completa a estaciones de
+            servicio y de abastecimiento.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card mode="ios">
+          <img src="../../../assets/Imagenes/4.jpg">
+          <ion-card-header>
+            <ion-card-title>¿Cuál es el propósito?</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Facilitar la administración de documentos y procesos para la integración
+            de todas las áreas con operaciones más eficientes.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card mode="ios">
+          <img src="../../../assets/Imagenes/3.png">
+          <ion-card-header>
+            <ion-card-title>Ventajas de usarlo</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li>
+                Integra procesos administrativos y operativos
+              </li>
+              <li>
+                Formatos personalizables
+              </li>
+              <li>
+                Reducción de tiempos de entrega
+              </li>
+              <li>
+                Ahorro de recursos
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card mode="ios">
+          <img src="../../../assets/Imagenes/despacho.jpg" style="height: 50%; width: 100%;">
+          <ion-card-header>
+            <ion-card-title>¿A quiénes beneficia?</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Este software está dirigido a las estaciones de servicio de hidrocarburos.
+            Operadores, adminitrativos y gerentes notarán la diferencia de implementar
+            el OMS
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

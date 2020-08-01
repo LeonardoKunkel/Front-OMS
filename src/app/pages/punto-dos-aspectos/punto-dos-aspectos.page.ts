@@ -173,7 +173,7 @@ export class PuntoDosAspectosPage implements OnInit {
     VT38: '',
     VT39: '',
   };
-  estacione:any[]=[];
+  estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
   iconoEstacion = null;
@@ -368,14 +368,14 @@ export class PuntoDosAspectosPage implements OnInit {
     let year = fecha.getFullYear();
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion;  
+    let firmaEstacion = this.firmaEstacion;
     let footer = this.myImage;
     let ddd = this.datosEstacion;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
       permissions: {
-        printing: 'highResolution', //'lowResolution'
+        printing: 'highResolution', // 'lowResolution'
         modifying: false,
         copying: false,
         annotating: true,
