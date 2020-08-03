@@ -302,9 +302,9 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
             widths: [400, 200, 100],
             body: [
               [
-                {text: `Fecha de evaluación: ${this.datos.fecha}`},
+                {text: `Fecha de evaluación: ${this.datos.fecha2}`},
                 {text: `Trimestre: `},
-                {text: `Año: ${this.datos.fecha}`}
+                {text: `Año: ${this.datos.fecha1}`}
               ]
             ]
           },
@@ -329,7 +329,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: 'Emisiones a la atmósfera', alignment: 'center', fontSize: 9},
                 {text: 'Licencia Ambiental única del sector Hidrocarburos', fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check1}`},
                 {},
               ],
@@ -337,7 +337,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: 'Residuos', alignment: 'center', fontSize: 9},
                 {text: 'Cédula de Operación anual del sector Hidrocarburos', fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check2}`},
                 {},
               ],
@@ -346,7 +346,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Autorización en materia de impacto Ambiental,
                         a través de una Manifestación de Impacto Ambiental (MIA)`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check3}`},
                 {},
               ],
@@ -355,7 +355,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Dictamen de la NOM-005-ASEA-2016 otrogado por una
                         unidad de verificación`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check4}`},
                 {},
               ],
@@ -364,7 +364,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Contar con su registro como generador de residuos
                         (manejo especial y/o peligrosos) ante la ASEA`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check5}`},
                 {},
               ],
@@ -374,7 +374,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         industrial, seguridad operativa y protección del medio ambiente
                         (SASISOPA), registrado ante la ASEA`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check6}`},
                 {},
               ],
@@ -386,7 +386,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Contar con Permiso de expendio de petrolíferos en
                         estaciones de servicio vigente`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check7}`},
                 {},
               ],
@@ -399,7 +399,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         que se disponga de espacios seguros para la realización de
                         las actividades de los trabajadores de acuerdo a la NOM-001-STPS-2008`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check8}`},
                 {},
               ],
@@ -409,7 +409,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-002-STPS-2010
                         le obligue a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check9}`},
                 {},
               ],
@@ -419,7 +419,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-005-STPS-1998
                         le obligue a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check10}`},
                 {},
               ],
@@ -429,7 +429,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-009-STPS-2011 le obligue
                         a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check11}`},
                 {},
               ],
@@ -439,7 +439,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         requerido para la realización de las actividades de acuerdo a
                         la NOM-017-STPS-2008`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check12}`},
                 {},
               ],
@@ -449,7 +449,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-020-STPS-2011
                         le obligue a elaborar o poseer, cuando esta así lo solicite`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check13}`},
                 {},
               ],
@@ -459,7 +459,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-022-STPS-2008
                         le obligue a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check14}`},
                 {},
               ],
@@ -469,7 +469,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-025-STPS-2008
                         le obligue a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check15}`},
                 {},
               ],
@@ -479,7 +479,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-026-STPS-2008
                         le obligue a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check16}`},
                 {},
               ],
@@ -488,7 +488,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Exhibir los documentos que esta NOM-029-STPS-2011 le obligue
                         a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check17}`},
                 {},
               ],
@@ -498,7 +498,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                         la información y documentación que esta NOM-017-STPS-2008
                         le obligue a elaborar o poseer`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check18}`},
                 {},
               ],
@@ -510,7 +510,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Cumplir con los parámetros de descarga de aguas residuales a
                         bienes nacionales mediante pruebas de laboratorio NOM-001-SEMARNAT-1996`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check19}`},
                 {},
               ],
@@ -519,7 +519,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Cumplir con los parámetros de descarga de aguas residuales a
                         bienes nacionales mediante pruebas de laboratorio NOM-002-SEMARNAT-1996`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check20}`},
                 {},
               ],
@@ -528,7 +528,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Tener Identificados y clasificados sus residuos peligrosos
                         NOM-052-SEMARNAT-1996`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check21}`},
                 {},
               ],
@@ -537,7 +537,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
                 {text: `Almacenar sus residuos peligrosos de acuerdo a las tablas de
                         incompatibilidad de la norma NOM-054-SEMARNAT-1993`, fontSize: 9, alignment: 'justify'},
                 {},
-                {},
+                {text: 'No', alignment: 'center'},
                 {text: `${this.datos2.check22}`},
                 {},
               ],

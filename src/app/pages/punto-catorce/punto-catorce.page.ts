@@ -11,10 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class PuntoCatorcePage implements OnInit {
 
-    myImage = null;
-    firmaEstacion = null;
-    iconoEstacion = null;
-    marcaAguaEstacion = null;
+  myImage = null;
+  firmaEstacion = null;
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
 
   constructor(
     private navCtrl: NavController,
