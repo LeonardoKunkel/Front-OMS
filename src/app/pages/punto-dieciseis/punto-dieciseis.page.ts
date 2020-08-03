@@ -1,6 +1,8 @@
+import { MarcaAguaServiceService } from './../../services/marca-agua-service.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-punto-dieciseis',
@@ -9,9 +11,20 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 })
 export class PuntoDieciseisPage implements OnInit {
 
-  constructor(private navCtrl: NavController, private pdfMaker: PdfMakerService) { }
+  myImage = null;
+  firmaEstacion = null;
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
+
+  constructor(
+    private navCtrl: NavController,
+    private pdfMaker: PdfMakerService,
+    private marca: MarcaAguaServiceService
+  ) { }
 
   ngOnInit() {
+    this.imagen64();
+    this.marcaAgua();
   }
 
   goPuntoProcedimiento() {
@@ -33,8 +46,48 @@ export class PuntoDieciseisPage implements OnInit {
     this.navCtrl.navigateForward('/punto-dieciseis-evidencia');
   }
 
+  marcaAgua() {
+    return this.marca.getMarcaAgua().subscribe((data: any) => {
+      // console.log(data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua);
+      this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+    });
+  }
+
+  imagen64() {
+    this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+      base64 => {
+        this.myImage = base64;
+      }
+    );
+  }
+
+  convertFileDataURLviaFileReader(url: string) {
+    return Observable.create(observer => {
+      const xhr: XMLHttpRequest = new XMLHttpRequest();
+      xhr.onload = function() {
+        const reader: FileReader = new FileReader();
+        reader.onloadend = function() {
+          observer.next(reader.result);
+          observer.complete();
+        };
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    });
+  }
+
   pdf() {
+    const footer = this.myImage;
+    const marcaAgua = this.marcaAguaEstacion;
     const dd = {
+      background(currentPage, pageSize) {
+        return {
+          image: `${marcaAgua}`, width: 290, height: 400,
+          absolutePosition: {x: 250, y: 120}, opacity: 0.4
+        };
+      },
       header: () => {
         return {
           table: {
@@ -54,7 +107,15 @@ export class PuntoDieciseisPage implements OnInit {
             headerRows: 1,
             widths: [700],
             body : [
-              [{}]
+              [
+                {
+                  image: `${footer}`,
+                  pageBreak: 'after',
+                  alignment: 'center',
+                  width: 510,
+                  height: 80
+                }
+              ]
             ]
           },
           layout : 'headerLineOnly',
@@ -99,31 +160,23 @@ export class PuntoDieciseisPage implements OnInit {
             widths: [25, 120, 210, 100, 50, 190],
             body: [
               [
-                {text: 'OBSERVACIÓN No.     ', colSpan: 2, bold: true},
+                {text: 'OBSERVACIÓN No.     ', colSpan: 2, bold: true, fontSize: 10},
                 {},
-                {text: 'DESCRIPCIÓN', colSpan: 4, bold: true},
+                {text: 'DESCRIPCIÓN', colSpan: 4, bold: true, fontSize: 10},
                 {},
                 {},
                 {}
               ],
               [
-                {text: 'No.', bold: true, alignment: 'center', fillColor: '#ddd'},
-                {text: 'DESCRIPCIÓN DE LA HIPÓTESIS', bold: true, alignment: 'center', fillColor: '#ddd'},
-                {text: 'ACCIÓN DE COMPROBACIÓN', bold: true, alignment: 'center', fillColor: '#ddd'},
-                {text: 'RESPONSABLE', bold: true, alignment: 'center', fillColor: '#ddd'},
-                {text: 'FECHA', bold: true, alignment: 'center', fillColor: '#ddd'},
-                {text: 'RESULTADOS', bold: true, alignment: 'center', fillColor: '#ddd'},
+                {text: 'No.', bold: true, alignment: 'center', fillColor: '#ddd', fontSize: 10},
+                {text: 'DESCRIPCIÓN DE LA HIPÓTESIS', bold: true, alignment: 'center', fillColor: '#ddd', fontSize: 10},
+                {text: 'ACCIÓN DE COMPROBACIÓN', bold: true, alignment: 'center', fillColor: '#ddd', fontSize: 10},
+                {text: 'RESPONSABLE', bold: true, alignment: 'center', fillColor: '#ddd', fontSize: 10},
+                {text: 'FECHA', bold: true, alignment: 'center', fillColor: '#ddd', fontSize: 10},
+                {text: 'RESULTADOS', bold: true, alignment: 'center', fillColor: '#ddd', fontSize: 10},
               ],
               [
-                {text: '1', alignment: 'center'},
-                {},
-                {},
-                {},
-                {},
-                {},
-              ],
-              [
-                {text: '2', alignment: 'center'},
+                {text: '1', alignment: 'center', fontSize: 10},
                 {},
                 {},
                 {},
@@ -131,7 +184,7 @@ export class PuntoDieciseisPage implements OnInit {
                 {},
               ],
               [
-                {text: '3', alignment: 'center'},
+                {text: '2', alignment: 'center', fontSize: 10},
                 {},
                 {},
                 {},
@@ -139,7 +192,7 @@ export class PuntoDieciseisPage implements OnInit {
                 {},
               ],
               [
-                {text: '4', alignment: 'center'},
+                {text: '3', alignment: 'center', fontSize: 10},
                 {},
                 {},
                 {},
@@ -147,7 +200,15 @@ export class PuntoDieciseisPage implements OnInit {
                 {},
               ],
               [
-                {text: '5', alignment: 'center'},
+                {text: '4', alignment: 'center', fontSize: 10},
+                {},
+                {},
+                {},
+                {},
+                {},
+              ],
+              [
+                {text: '5', alignment: 'center', fontSize: 10},
                 {},
                 {},
                 {},
@@ -164,37 +225,37 @@ export class PuntoDieciseisPage implements OnInit {
             body: [
               [
                 {text: `PERSONAL QUE PARTICIPA EN LA
-                        INVESTIGACIÓN CAUSA RAÍZ`, alignment: 'center', fillColor: '#ddd', bold: true, colSpan: 4},
+                        INVESTIGACIÓN CAUSA RAÍZ`, alignment: 'center', fillColor: '#ddd', bold: true, colSpan: 4, fontSize: 10},
                 {},
                 {},
                 {},
               ],
               [
-                {text: 'No.', alignment: 'center', bold: true},
-                {text: 'NOMBRE', alignment: 'center', bold: true},
-                {text: 'CARGA', alignment: 'center', bold: true},
-                {text: 'FIRMA', alignment: 'center', bold: true},
+                {text: 'No.', alignment: 'center', bold: true, fontSize: 10},
+                {text: 'NOMBRE', alignment: 'center', bold: true, fontSize: 10},
+                {text: 'CARGA', alignment: 'center', bold: true, fontSize: 10},
+                {text: 'FIRMA', alignment: 'center', bold: true, fontSize: 10},
               ],
               [
-                {text: '1', alignment: 'center', bold: true},
+                {text: '1', alignment: 'center', bold: true, fontSize: 10},
                 {},
                 {},
                 {}
               ],
               [
-                {text: '2', alignment: 'center', bold: true},
+                {text: '2', alignment: 'center', bold: true, fontSize: 10},
                 {},
                 {},
                 {}
               ],
               [
-                {text: '3', alignment: 'center', bold: true},
+                {text: '3', alignment: 'center', bold: true, fontSize: 10},
                 {},
                 {},
                 {}
               ],
               [
-                {text: '4', alignment: 'center', bold: true},
+                {text: '4', alignment: 'center', bold: true, fontSize: 10},
                 {},
                 {},
                 {}
@@ -211,7 +272,15 @@ export class PuntoDieciseisPage implements OnInit {
   }
 
   pdf2() {
+    const footer = this.myImage;
+    const marcaAgua = this.marcaAguaEstacion;
     const dd = {
+      background(currentPage, pageSize) {
+        return {
+          image: `${marcaAgua}`, width: 290, height: 400,
+          absolutePosition: {x: 170, y: 210}, opacity: 0.4
+        };
+      },
       header: () => {
         return {
           table: {
@@ -231,7 +300,14 @@ export class PuntoDieciseisPage implements OnInit {
             headerRows: 1,
             widths: [560],
             body : [
-              [{}]
+              [
+                {
+                  image: `${footer}`,
+                  pageBreak: 'after',
+                  width: 510,
+                  height: 80,
+                }
+              ]
             ]
           },
           layout : 'headerLineOnly',
