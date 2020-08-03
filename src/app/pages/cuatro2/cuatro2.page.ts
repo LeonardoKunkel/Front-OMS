@@ -21,226 +21,228 @@ export class Cuatro2Page implements OnInit {
     meta2,
     meta3
   };
-  data=[
+  data = [
     {
       name: 'Reducción en generacion de residuos peligrosos',
-      selected:false,
-      value:'Reducción en generacion de residuos peligrosos',
-      img:'../../../assets/Imagenes/Elemento 4/reducción en generacion de residuos-01.png',
-      met1:'Reducción en la fuente, separación y valorización de los residuos',
-      met2:'Implementación del esquema “Producción más limpia”',
-      meth3:'Extremar medidas de seguridad en el almacenamiento de los productos peligrosos para evitar derrames o escapes',
-      id:'residuosPeligrosos'
+      selected: false,
+      value: 'Reducción en generacion de residuos peligrosos',
+      img: '../../../assets/Imagenes/Elemento 4/reducción en generacion de residuos-01.png',
+      met1: 'Reducción en la fuente, separación y valorización de los residuos',
+      met2: 'Implementación del esquema “Producción más limpia”',
+      meth3: 'Extremar medidas de seguridad en el almacenamiento de los productos peligrosos para evitar derrames o escapes',
+      id: 'residuosPeligrosos'
     },
     {
       name: 'Reducción en el consumo de agua',
-      selected:false,
-      value:'Reducción en el consumo de agua',
-      img:'../../../assets/Imagenes/Elemento 4/reduccion de consumo de agua-01.png',
-      met1:'Reducir un 5% anual los residuos del vital liquido.',
-      met2:'Solventar las fugas.',
-      meth3:'Potencias sistema de limpieza en seco (barrer,aspirar).',
-      id:'consumoAgua'
+      selected: false,
+      value: 'Reducción en el consumo de agua',
+      img: '../../../assets/Imagenes/Elemento 4/reduccion de consumo de agua-01.png',
+      met1: 'Reducir un 5% anual los residuos del vital liquido.',
+      met2: 'Solventar las fugas.',
+      meth3: 'Potencias sistema de limpieza en seco (barrer,aspirar).',
+      id: 'consumoAgua'
     },
     {
       name: 'Reducción en el consumo de energia',
-      selected:false,
-      value:'Reducción en el consumo de energia',
-      img:'../../../assets/Imagenes/Elemento 4/reduccion de energia electrica-01-01.png',
-      met1:'Reducir un 5% anual los residuos del vital liquido.',
-      met2:'Solventar las fugas.',
-      meth3:'Potencias sistema de limpieza en seco (barrer,aspirar).',
-      id:'consumoEnergia'
+      selected: false,
+      value: 'Reducción en el consumo de energia',
+      img: '../../../assets/Imagenes/Elemento 4/reduccion de energia electrica-01-01.png',
+      met1: 'Reducir un 5% anual los residuos del vital liquido.',
+      met2: 'Solventar las fugas.',
+      meth3: 'Potencias sistema de limpieza en seco (barrer,aspirar).',
+      id: 'consumoEnergia'
     },
     {
       name: 'Cumplimiento al programa de mantenimiento',
-      selected:false,
-      value:'Cumplimiento al programa de mantenimiento',
-      img:'../../../assets/Imagenes/Elemento 4/cumplimiento programa de mantenimiento-01.png',
-      met1:'Reducir un 5% anual los residuos del vital liquido.',
-      met2:'Solventar las fugas.',
-      meth3:'Potencias sistema de limpieza en seco (barrer,aspirar).',
-      id:'programaMantenimiento'
+      selected: false,
+      value: 'Cumplimiento al programa de mantenimiento',
+      img: '../../../assets/Imagenes/Elemento 4/cumplimiento programa de mantenimiento-01.png',
+      met1: 'Reducir un 5% anual los residuos del vital liquido.',
+      met2: 'Solventar las fugas.',
+      meth3: 'Potencias sistema de limpieza en seco (barrer,aspirar).',
+      id: 'programaMantenimiento'
     },
     {
       name: 'Incrementar capacitaciones a los trabajadores',
-      selected:false,
-      value:'Incrementar capacitaciones a los trabajadores',
-      img:'../../../assets/Imagenes/Elemento 4/incrementar capacitaciones-01 (1).png',
-      met1:'Reducir un 5% anual los residuos del vital liquido.',
-      met2:'Solventar las fugas.',
-      meth3:'Potencias sistema de limpieza en seco (barrer,aspirar).',
-      id:'capacitacionesTrabajadores'
+      selected: false,
+      value: 'Incrementar capacitaciones a los trabajadores',
+      img: '../../../assets/Imagenes/Elemento 4/incrementar capacitaciones-01 (1).png',
+      met1: 'Reducir un 5% anual los residuos del vital liquido.',
+      met2: 'Solventar las fugas.',
+      meth3: 'Potencias sistema de limpieza en seco (barrer,aspirar).',
+      id: 'capacitacionesTrabajadores'
     },
     {
       name: 'Incrementar venta 5% anualmente',
-      selected:false,
-      value:'Incrementar venta 5% anualmente',
-      img:'../../../assets/Imagenes/Elemento 4/incrementar venta 10-01.png',
-      met1:'Reducir un 5% anual los residuos del vital liquido.',
-      met2:'Solventar las fugas.',
-      meth3:'Potencias sistema de limpieza en seco (barrer,aspirar).',
-      id:'ventaAnualmente'
+      selected: false,
+      value: 'Incrementar venta 5% anualmente',
+      img: '../../../assets/Imagenes/Elemento 4/incrementar venta 10-01.png',
+      met1: 'Reducir un 5% anual los residuos del vital liquido.',
+      met2: 'Solventar las fugas.',
+      meth3: 'Potencias sistema de limpieza en seco (barrer,aspirar).',
+      id: 'ventaAnualmente'
     },
-  ]
+  ];
 
-  generacionResiduosPeligrosos:any={
-    objetivo:'Reducción en la generación de residuos peligrosos',
-    proceso:'Acciones y medidas preventivas',
-    meta1:'Reducción en la fuente, separación y valorización de los residuos',
-    meta2:'Implementación del esquema “Producción más limpia”',
-    meta3:'Extremar medidas de seguridad en el almacenamiento de los productos peligrosos para evitar derrames o escapes',
-      a1:'Evitar clasificar materiales como desecho o residuo en tanto no haya concluido su vida útil o sea efectivo dada la concentración establecida en el principio activo',
-      a2:'Involucrar a todos los miembros de la Estación de Servicio que tienen contacto con los residuos peligrosos para que colaboren en la minimización de residuos.',
-      a3:'Adecuación de maquinaria y herramientas.Mantenimiento al cuarto de residuos peligrosos',
-      i1:'Reporte entregado por un tercero',
-      i2:'Reporte entregado por un tercero',
-      i3:'Reporte entregado por un tercero',
-      S1:'Bitácora de operación y mantenimiento',
-      S2:'Bitácora de operación y mantenimiento',
-      S3:'Bitácora de operación y mantenimiento',
-      fE1:'Trimestral',
-      fE2:'Trimestral',
-      fE3:'Trimestral',
-      cA1:'5%',
-      cA2:'5%',
-      cA3:'5%',
-  }
+  generacionResiduosPeligrosos: any = {
+    objetivo: 'Reducción en la generación de residuos peligrosos',
+    proceso: 'Acciones y medidas preventivas',
+    meta1: 'Reducción en la fuente, separación y valorización de los residuos',
+    meta2: 'Implementación del esquema “Producción más limpia”',
+    meta3: 'Extremar medidas de seguridad en el almacenamiento de los productos peligrosos para evitar derrames o escapes',
+    a1: `Evitar clasificar materiales como desecho o residuo en tanto no haya concluido su vida útil
+        o sea efectivo dada la concentración establecida en el principio activo`,
+    a2: `Involucrar a todos los miembros de la Estación de Servicio que tienen contacto con los
+        residuos peligrosos para que colaboren en la minimización de residuos.`,
+    a3: 'Adecuación de maquinaria y herramientas.Mantenimiento al cuarto de residuos peligrosos',
+    i1: 'Reporte entregado por un tercero',
+    i2: 'Reporte entregado por un tercero',
+    i3: 'Reporte entregado por un tercero',
+    S1: 'Bitácora de operación y mantenimiento',
+    S2: 'Bitácora de operación y mantenimiento',
+    S3: 'Bitácora de operación y mantenimiento',
+    fE1: 'Trimestral',
+    fE2: 'Trimestral',
+    fE3: 'Trimestral',
+    cA1: '5%',
+    cA2: '5%',
+    cA3: '5%',
+  };
 
-  reduccionConsumoAgua:any={
-    objetivo:'Reducción en el consumo de agua',
-    proceso:'Acciones y medidas correctivas',
-    meta1:'Reducción del 10% anual de los residuos del vital líquido',
-    meta2:'Solventar las fugas',
-    meta3:'Potencias sistemas de limpieza en seco (barrer, aspirar, etc)',
-      a1:'Monitorizar y analizar el consumo de agua',
-      a2:'Asignar al personal de mantenimiento en la atención y arreglo de las fugas en tuberías, filtración o evaporación de agua',
-      a3:'Obtención del equipo necesario (escobas y aspiradoras) e involucrar al personal en estas tareas.',
-      i1:'Reducción en el recibo de agua',
-      i2:'Reducción en el recibo de agua',
-      i3:'Reducción en el recibo de agua',
-      S1:'Bitácora de operación y mantenimiento.',
-      S2:'Bitácora de operación y mantenimiento.',
-      S3:'Bitácora de operación y mantenimiento.',
-      fE1:'Semestral',
-      fE2:'Semestral',
-      fE3:'Semestral',
-      cA1:'5%',
-      cA2:'5%',
-      cA3:'5%',
-  }
+  reduccionConsumoAgua: any = {
+    objetivo: 'Reducción en el consumo de agua',
+    proceso: 'Acciones y medidas correctivas',
+    meta1: 'Reducción del 10% anual de los residuos del vital líquido',
+    meta2: 'Solventar las fugas',
+    meta3: 'Potencias sistemas de limpieza en seco (barrer, aspirar, etc)',
+    a1: 'Monitorizar y analizar el consumo de agua',
+    a2: 'Asignar al personal de mantenimiento en la atención y arreglo de las fugas en tuberías, filtración o evaporación de agua',
+    a3: 'Obtención del equipo necesario (escobas y aspiradoras) e involucrar al personal en estas tareas.',
+    i1: 'Reducción en el recibo de agua',
+    i2: 'Reducción en el recibo de agua',
+    i3: 'Reducción en el recibo de agua',
+    S1: 'Bitácora de operación y mantenimiento.',
+    S2: 'Bitácora de operación y mantenimiento.',
+    S3: 'Bitácora de operación y mantenimiento.',
+    fE1: 'Semestral',
+    fE2: 'Semestral',
+    fE3: 'Semestral',
+    cA1: '5%',
+    cA2: '5%',
+    cA3: '5%',
+  };
 
-  reduccionConsumoEnergia:any={
-    objetivo:'Reducción en el consumo de energía eléctrica',
-    proceso:'Acciones y medidas correctivas',
-    meta1:'Reducción del 10% anual del consumo de energía',
-    meta2:'Aprovechar el punto máximo la luz natural',
-    meta3:'Usar bombillos ahorradores',
-      a1:'Monitorizar y analizar el consumo de energía eléctrica',
-      a2:'No encender bombillos durante periodos con luz natural',
-      a3:'Adquisición e instalación de bombillos de bajo consumo eléctrico.',
-      i1:'Reducción en el recibo de agua',
-      i2:'Reducción en el recibo de agua',
-      i3:'Reducción en el recibo de agua',
-      S1:'Bitácora de operación y mantenimiento',
-      S2:'Bitácora de operación y mantenimiento',
-      S3:'Bitácora de operación y mantenimiento',
-      fE1:'Semestral',
-      fE2:'Semestral',
-      fE3:'Semestral',
-      cA1:'5%',
-      cA2:'5%',
-      cA3:'5%',
-  }
+  reduccionConsumoEnergia: any = {
+    objetivo: 'Reducción en el consumo de energía eléctrica',
+    proceso: 'Acciones y medidas correctivas',
+    meta1: 'Reducción del 10% anual del consumo de energía',
+    meta2: 'Aprovechar el punto máximo la luz natural',
+    meta3: 'Usar bombillos ahorradores',
+    a1: 'Monitorizar y analizar el consumo de energía eléctrica',
+    a2: 'No encender bombillos durante periodos con luz natural',
+    a3: 'Adquisición e instalación de bombillos de bajo consumo eléctrico.',
+    i1: 'Reducción en el recibo de agua',
+    i2: 'Reducción en el recibo de agua',
+    i3: 'Reducción en el recibo de agua',
+    S1: 'Bitácora de operación y mantenimiento',
+    S2: 'Bitácora de operación y mantenimiento',
+    S3: 'Bitácora de operación y mantenimiento',
+    fE1: 'Semestral',
+    fE2: 'Semestral',
+    fE3: 'Semestral',
+    cA1: '5%',
+    cA2: '5%',
+    cA3: '5%',
+  };
 
-  cumplimientoProgramaMantenimiento:any={
-    objetivo:'Cumplimiento al programa de mantenimiento',
-    proceso:'Acciones y medidas correctivas',
-    meta1:'Reparación de equipo dañado',
-    meta2:'Planificación de mantenimiento preventivo periódicamente',
-    meta3:'Seguimiento puntual de la bitácora de operación y mantenimiento',
-      a1:'Cumplimiento del FS-20 Programa anual de mantenimiento',
-      a2:'Cumplimiento del FS-20 Programa anual de mantenimiento',
-      a3:'Cumplimiento del FS-20 Programa anual de mantenimiento',
-      i1:'Funcionamiento óptimo de la ES',
-      i2:'Reducción en el recibo de agua',
-      i3:'Reducción en el recibo de agua',
-      S1:'Bitácora de operación y mantenimiento',
-      S2:'Bitácora de operación y mantenimiento',
-      S3:'Bitácora de operación y mantenimiento',
-      fE1:'Semestral',
-      fE2:'Semestral',
-      fE3:'Semestral',
-      cA1:'80%',
-      cA2:'80%',
-      cA3:'80%',
-  }
+  cumplimientoProgramaMantenimiento: any = {
+    objetivo: 'Cumplimiento al programa de mantenimiento',
+    proceso: 'Acciones y medidas correctivas',
+    meta1: 'Reparación de equipo dañado',
+    meta2: 'Planificación de mantenimiento preventivo periódicamente',
+    meta3: 'Seguimiento puntual de la bitácora de operación y mantenimiento',
+      a1: 'Cumplimiento del FS-20 Programa anual de mantenimiento',
+      a2: 'Cumplimiento del FS-20 Programa anual de mantenimiento',
+      a3: 'Cumplimiento del FS-20 Programa anual de mantenimiento',
+      i1: 'Funcionamiento óptimo de la ES',
+      i2: 'Reducción en el recibo de agua',
+      i3: 'Reducción en el recibo de agua',
+      S1: 'Bitácora de operación y mantenimiento',
+      S2: 'Bitácora de operación y mantenimiento',
+      S3: 'Bitácora de operación y mantenimiento',
+      fE1: 'Semestral',
+      fE2: 'Semestral',
+      fE3: 'Semestral',
+      cA1: '80%',
+      cA2: '80%',
+      cA3: '80%',
+  };
 
-  incrementarCapacitacionTrabajadores:any={
-    objetivo:'Incrementar capacitación a los trabajadores',
-    proceso:'Acciones y medidas correctivas',
-    meta1:'Acciones y medidas correctivas',
-    meta2:'Cumplir con el programa anual de capacitación',
-    meta3:'Realizar la evaluación de resultados derivados de las capacitaciones',
-      a1:'Supervisar a los trabajadores y su desempeño analizando cómo pueden mejorar en el cumplimiento de sus actividades',
-      a2:'FS-17 Seguimiento del Programa anual de capacitación',
-      a3:'Verificar que los cursos hayan sido efectivos y evaluados',
-      i1:'Formato con necesidades detectadas',
-      i2:'Formato con programa de capacitación',
-      i3:'Certificados, diplomas, etc.',
-      S1:'FS-15 Detección de necesidades de capacitación',
-      S2:'Cumplimiento del formato',
-      S3:'Exámenes de evaluación firmados',
-      fE1:'Semestral',
-      fE2:'Semestral',
-      fE3:'Semestral',
-      cA1:'50%',
-      cA2:'50%',
-      cA3:'50%'
-  }
+  incrementarCapacitacionTrabajadores: any = {
+    objetivo: 'Incrementar capacitación a los trabajadores',
+    proceso: 'Acciones y medidas correctivas',
+    meta1: 'Acciones y medidas correctivas',
+    meta2: 'Cumplir con el programa anual de capacitación',
+    meta3: 'Realizar la evaluación de resultados derivados de las capacitaciones',
+    a1: 'Supervisar a los trabajadores y su desempeño analizando cómo pueden mejorar en el cumplimiento de sus actividades',
+    a2: 'FS-17 Seguimiento del Programa anual de capacitación',
+    a3: 'Verificar que los cursos hayan sido efectivos y evaluados',
+    i1: 'Formato con necesidades detectadas',
+    i2: 'Formato con programa de capacitación',
+    i3: 'Certificados, diplomas, etc.',
+    S1: 'FS-15 Detección de necesidades de capacitación',
+    S2: 'Cumplimiento del formato',
+    S3: 'Exámenes de evaluación firmados',
+    fE1: 'Semestral',
+    fE2: 'Semestral',
+    fE3: 'Semestral',
+    cA1: '50%',
+    cA2: '50%',
+    cA3: '50%'
+  };
 
-  incrementarVentas:any={
-    objetivo:'Incrementar ventas 5%',
-    proceso:'Acciones y medidas correctivas',
-    meta1:'Establecimiento de metas de venta diarias',
-    meta2:'Capacitación al personal que esta en contacto con los clientes para mejor atención',
-    meta3:'Implementar estrategias de marketing',
-      a1:'Supervisar a los trabajadores y su desempeño analizando cómo pueden mejorar en el cumplimiento de sus actividades',
-      a2:'Platicas, cursos y concientización del personal ',
-      a3:'Patrocinar la Estación de Servicio a través de redes sociales y publicidad',
-      i1:'Reducción de quejas',
-      i2:'Cursos, diplomas, certificados, minutas',
-      i3:'Mayor reconocimiento de la Estación de Servicio',
-      S1:'FS-06 Quejas y sugerencias',
-      S2:'FS-06 Quejas y sugerencias',
-      S3:'Servicio de publicidad contratados',
-      fE1:'Anual',
-      fE2:'Anual',
-      fE3:'Anual',
-      cA1:'5%',
-      cA2:'5%',
-      cA3:'5%',
-  }
-  nombreEstacion =null;
+  incrementarVentas: any = {
+    objetivo: 'Incrementar ventas 5%',
+    proceso: 'Acciones y medidas correctivas',
+    meta1: 'Establecimiento de metas de venta diarias',
+    meta2: 'Capacitación al personal que esta en contacto con los clientes para mejor atención',
+    meta3: 'Implementar estrategias de marketing',
+      a1: 'Supervisar a los trabajadores y su desempeño analizando cómo pueden mejorar en el cumplimiento de sus actividades',
+      a2: 'Platicas, cursos y concientización del personal ',
+      a3: 'Patrocinar la Estación de Servicio a través de redes sociales y publicidad',
+      i1: 'Reducción de quejas',
+      i2: 'Cursos, diplomas, certificados, minutas',
+      i3: 'Mayor reconocimiento de la Estación de Servicio',
+      S1: 'FS-06 Quejas y sugerencias',
+      S2: 'FS-06 Quejas y sugerencias',
+      S3: 'Servicio de publicidad contratados',
+      fE1: 'Anual',
+      fE2: 'Anual',
+      fE3: 'Anual',
+      cA1: '5%',
+      cA2: '5%',
+      cA3: '5%',
+  };
+  nombreEstacion = null;
   representanteTecnico = null;
   maximaAutorida = null;
-  estacione:any[]=[];
+  estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
-  datosEstacion:any={
-    calleNumero:'',
-    ciudad:'',
-    colonia:'',
-    correoElectronico:'',
-    cp:'',
-    estado:'',
-    gerenteEstacion:'',
-    maximaAutoridad:'',
-    nombreEstacionServicio:'',
-    representanteTecnico:'',
-    telefono:''
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
   };
 
 
@@ -249,8 +251,8 @@ export class Cuatro2Page implements OnInit {
   private objetivo: ObjetivosMetasService,
   public alertController: AlertController,
   public toast: ToastController,
-  private iconoService:IconoEstacionService,
-  private marcaService:MarcaAguaServiceService,
+  private iconoService: IconoEstacionService,
+  private marcaService: MarcaAguaServiceService,
   private firmaService: FirmaEstacionServiceService,
   private estacionService: EstacionServicioDatosService
   ) {
@@ -261,28 +263,28 @@ export class Cuatro2Page implements OnInit {
     this.getObjetivos();
     this.imagen64();
   }
-  getEstacion(){
-    this.estacionService.getEstacion().subscribe((data:any) =>{
-      //console.log(data.findEstacion[data.findEstacion.length -1]);
-      this.nombreEstacion = data.findEstacion[data.findEstacion.length -1].nombreEstacionServicio;
-      this.representanteTecnico = data.findEstacion[data.findEstacion.length -1].representanteTecnico;
-      this.maximaAutorida = data.findEstacion[data.findEstacion.length -1].maximaAutoridad;
-    })
+  getEstacion() {
+    this.estacionService.getEstacion().subscribe((data: any) => {
+      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.nombreEstacion = data.findEstacion[data.findEstacion.length - 1].nombreEstacionServicio;
+      this.representanteTecnico = data.findEstacion[data.findEstacion.length - 1].representanteTecnico;
+      this.maximaAutorida = data.findEstacion[data.findEstacion.length - 1].maximaAutoridad;
+    });
   }
-  imagen64(){
-      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
-        base64 =>{
-          this.myImage = base64;
-         // console.log(this.myImage);
-        }
-      )
+  imagen64() {
+    this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+      base64 => {
+        this.myImage = base64;
+       // console.log(this.myImage);
+      }
+    );
   }
-  convertFileDataURLviaFileReader(url: string){
-    return Observable.create(observer =>{
+  convertFileDataURLviaFileReader(url: string) {
+    return Observable.create(observer => {
       let xhr: XMLHttpRequest = new XMLHttpRequest();
-      xhr.onload = function(){
+      xhr.onload = function() {
         let reader: FileReader = new FileReader();
-        reader.onloadend = function(){
+        reader.onloadend = function() {
           observer.next(reader.result);
           observer.complete();
         };
@@ -291,33 +293,32 @@ export class Cuatro2Page implements OnInit {
       xhr.open('GET', url);
       xhr.responseType = 'blob';
       xhr.send();
-    })
+    });
   }
 
-  getFirma(){
-    this.firmaService.getFirmaEstacion().subscribe((data:any)=>{
-      //console.log(data.findFirma[data.findFirma.length-1].firma);
-      this.firmaEstacion = data.findFirma[data.findFirma.length-1].firma;
-    })
+  getFirma() {
+    this.firmaService.getFirmaEstacion().subscribe((data: any) => {
+      // console.log(data.findFirma[data.findFirma.length-1].firma);
+      this.firmaEstacion = data.findFirma[data.findFirma.length - 1].firma;
+    });
   }
 
-  getMarcaAgua(){
-    this.marcaService.getMarcaAgua().subscribe((data:any)=>{
-      //console.log(data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua);
+  getMarcaAgua() {
+    this.marcaService.getMarcaAgua().subscribe((data: any) => {
+      // console.log(data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua);
       this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
-    })
+    });
   }
 
-  getIcono(){
-    this.iconoService.getPolitica().subscribe((data:any) =>{
-      //console.log(data.findPolitica[data.findPolitica.length -1].imagen);
-      this.iconoEstacion = data.findPolitica[data.findPolitica.length -1].imagen;
-    })
+  getIcono() {
+    this.iconoService.getPolitica().subscribe((data: any) => {
+      // console.log(data.findPolitica[data.findPolitica.length -1].imagen);
+      this.iconoEstacion = data.findPolitica[data.findPolitica.length - 1].imagen;
+    });
   }
   ngOnInit() {
-    
-  }  
-  async alert(){
+  }
+  async alert() {
     const alert = await this.alertController.create({
       header: 'Confirmar!',
       message: 'Se enviara y guardara las metas seleccionadas, ademas se imprimira un documento de estas mismas.',
@@ -340,89 +341,87 @@ export class Cuatro2Page implements OnInit {
       ]
     });
 
-    await alert.present()
+    await alert.present();
 
   }
 
-  getObjetivos(){
-    this.objetivo.getObjetivo().subscribe((data:any)=>{
-      this.data[0].selected = data.findMetas[data.findMetas.length -1].reduccionGeneracionResiduos;
-      this.data[1].selected = data.findMetas[data.findMetas.length -1].reduccionConsumoAgua;
-      this.data[2].selected = data.findMetas[data.findMetas.length -1].reduccionConsumoEnergia;
-      this.data[3].selected = data.findMetas[data.findMetas.length -1].cumplimientoProgramaMantenimiento;
-      this.data[4].selected = data.findMetas[data.findMetas.length -1].incrementarCapacitaciones;
-      this.data[5].selected = data.findMetas[data.findMetas.length -1].incrementarVentaAnualmente;
+  getObjetivos() {
+    this.objetivo.getObjetivo().subscribe((data: any) => {
+      this.data[0].selected = data.findMetas[data.findMetas.length - 1].reduccionGeneracionResiduos;
+      this.data[1].selected = data.findMetas[data.findMetas.length - 1].reduccionConsumoAgua;
+      this.data[2].selected = data.findMetas[data.findMetas.length - 1].reduccionConsumoEnergia;
+      this.data[3].selected = data.findMetas[data.findMetas.length - 1].cumplimientoProgramaMantenimiento;
+      this.data[4].selected = data.findMetas[data.findMetas.length - 1].incrementarCapacitaciones;
+      this.data[5].selected = data.findMetas[data.findMetas.length - 1].incrementarVentaAnualmente;
     });
-    
   }
 
-  onClick(){
-    let uno = this.data[0].selected;
-    let dos = this.data[1].selected;
-    let tres = this.data[2].selected;
-    let cuatro = this.data[3].selected;
-    let cinco = this.data[4].selected;
-    let seis = this.data[5].selected;
-  
-      if (uno === true && dos === true && tres === true) {
-       //alert('123')
-     this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.reduccionConsumoEnergia);
-     }else if(uno === true && dos === true && cuatro === true){
-       //alert('124')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento);
-     }else if(uno === true && dos === true && cinco === true){
-       //alert('125')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores);
-     }else if(uno === true && dos === true && seis === true){
-       //alert('126')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoAgua,this.incrementarVentas);
-     }else if(uno === true && tres === true && cuatro === true){
-       //alert('134')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
-     }else if(uno === true && tres === true && cinco === true){
-       //alert('135')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
-     }else if(uno === true && tres === true && seis === true){
-       //alert('136')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.reduccionConsumoEnergia,this.incrementarVentas)
-     }else if(uno === true && cuatro === true && cinco=== true){
-       //alert('145')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
-     }else if(uno === true && cuatro=== true && seis === true){
-       //alert('146')
-       this.maquetacion(this.generacionResiduosPeligrosos,this.cumplimientoProgramaMantenimiento,this.incrementarVentas);
-     }else if(dos === true && tres === true && cuatro === true){
-       //alert('234')
-       this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento);
-     }else if(dos === true && tres === true && cinco === true){
-       //alert('235')
-       this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores);
-     }else if(dos === true && tres === true && seis === true){
-       //alert('236')
-       this.maquetacion(this.reduccionConsumoAgua,this.reduccionConsumoEnergia,this.incrementarVentas)
-     }else if(dos === true && cuatro === true && cinco === true){
-      //alert('245')
-       this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores)
-     }else if(dos === true && cuatro === true && seis === true){
-      //alert('246')
-       this.maquetacion(this.reduccionConsumoAgua,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
-     }else if(dos === true && cinco === true && seis === true){
+  onClick() {
+    const uno = this.data[0].selected;
+    const dos = this.data[1].selected;
+    const tres = this.data[2].selected;
+    const cuatro = this.data[3].selected;
+    const cinco = this.data[4].selected;
+    const seis = this.data[5].selected;
+
+    if (uno === true && dos === true && tres === true) {
+       // alert('123')
+     this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoAgua, this.reduccionConsumoEnergia);
+    } else if (uno === true && dos === true && cuatro === true) {
+       // alert('124')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoAgua, this.cumplimientoProgramaMantenimiento);
+    } else if (uno === true && dos === true && cinco === true) {
+       // alert('125')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoAgua, this.incrementarCapacitacionTrabajadores);
+    } else if (uno === true && dos === true && seis === true) {
+       // alert('126')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoAgua, this.incrementarVentas);
+    } else if (uno === true && tres === true && cuatro === true) {
+       // alert('134')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoEnergia, this.cumplimientoProgramaMantenimiento);
+    } else if (uno === true && tres === true && cinco === true) {
+       // alert('135')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoEnergia, this.incrementarCapacitacionTrabajadores);
+    } else if (uno === true && tres === true && seis === true) {
+       // alert('136')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.reduccionConsumoEnergia, this.incrementarVentas);
+    } else if (uno === true && cuatro === true && cinco === true) {
+      // alert('145')
+      this.maquetacion(this.generacionResiduosPeligrosos, this.cumplimientoProgramaMantenimiento, this.incrementarCapacitacionTrabajadores);
+    } else if (uno === true && cuatro === true && seis === true) {
+       // alert('146')
+       this.maquetacion(this.generacionResiduosPeligrosos, this.cumplimientoProgramaMantenimiento, this.incrementarVentas);
+    } else if (dos === true && tres === true && cuatro === true) {
+       // alert('234')
+       this.maquetacion(this.reduccionConsumoAgua, this.reduccionConsumoEnergia, this.cumplimientoProgramaMantenimiento);
+    } else if (dos === true && tres === true && cinco === true) {
+       // alert('235')
+       this.maquetacion(this.reduccionConsumoAgua, this.reduccionConsumoEnergia, this.incrementarCapacitacionTrabajadores);
+    } else if (dos === true && tres === true && seis === true) {
+       // alert('236')
+       this.maquetacion(this.reduccionConsumoAgua, this.reduccionConsumoEnergia, this.incrementarVentas);
+    } else if (dos === true && cuatro === true && cinco === true) {
+      // alert('245')
+       this.maquetacion(this.reduccionConsumoAgua, this.cumplimientoProgramaMantenimiento, this.incrementarCapacitacionTrabajadores);
+    } else if (dos === true && cuatro === true && seis === true) {
+      // alert('246')
+       this.maquetacion(this.reduccionConsumoAgua, this.cumplimientoProgramaMantenimiento, this.incrementarVentas);
+    } else if (dos === true && cinco === true && seis === true) {
       // alert('256')
-       this.maquetacion(this.reduccionConsumoAgua,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
-     }else if(tres === true && cuatro === true && cinco === true){
+       this.maquetacion(this.reduccionConsumoAgua, this.incrementarCapacitacionTrabajadores, this.incrementarVentas);
+    } else if (tres === true && cuatro === true && cinco === true) {
       // alert('345')
-       this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores);
-     }else if(tres=== true && cuatro === true && seis === true){
-       //alert('346')
-       this.maquetacion(this.reduccionConsumoEnergia,this.cumplimientoProgramaMantenimiento,this.incrementarVentas)
-     }else if(tres === true && cinco === true && seis === true){
-       //alert('356')
-       this.maquetacion(this.reduccionConsumoEnergia,this.incrementarCapacitacionTrabajadores,this.incrementarVentas);
-     }else if(cuatro === true && cinco === true && seis === true){
-       //alert('456')
-       this.maquetacion(this.cumplimientoProgramaMantenimiento,this.incrementarCapacitacionTrabajadores,this.incrementarVentas)
-     }
-      
+       this.maquetacion(this.reduccionConsumoEnergia, this.cumplimientoProgramaMantenimiento, this.incrementarCapacitacionTrabajadores);
+    } else if (tres === true && cuatro === true && seis === true) {
+       // alert('346')
+       this.maquetacion(this.reduccionConsumoEnergia, this.cumplimientoProgramaMantenimiento, this.incrementarVentas);
+    } else if (tres === true && cinco === true && seis === true) {
+       // alert('356')
+       this.maquetacion(this.reduccionConsumoEnergia, this.incrementarCapacitacionTrabajadores, this.incrementarVentas);
+    } else if (cuatro === true && cinco === true && seis === true) {
+      // alert('456')
+      this.maquetacion(this.cumplimientoProgramaMantenimiento, this.incrementarCapacitacionTrabajadores, this.incrementarVentas);
+    }
   }
 
   async showAlert(check) {
@@ -441,24 +440,24 @@ export class Cuatro2Page implements OnInit {
         cssClass: 'secondary',
         handler: (blah) => {
           console.log('Cancelado' + check);
-          if( check.value ==='Reducción en generacion de residuos peligrosos'){
+          if ( check.value === 'Reducción en generacion de residuos peligrosos') {
             this.data[0].selected = false;
-          }else if(check.value ==='Reducción en el consumo de agua'){
+          } else if (check.value === 'Reducción en el consumo de agua') {
             this.data[1].selected = false;
-          }else if(check.value ==='Reducción en el consumo de energia'){
+          } else if (check.value === 'Reducción en el consumo de energia') {
             this.data[2].selected = false;
-          }else if(check.value ==='Cumplimiento al programa de mantenimiento'){
+          } else if (check.value === 'Cumplimiento al programa de mantenimiento') {
             this.data[3].selected = false;
-          }else if(check.value ==='Incrementar capacitaciones a los trabajadores'){
+          } else if (check.value === 'Incrementar capacitaciones a los trabajadores') {
             this.data[4].selected = false;
-          }else if(check.value ==='Incrementar venta 5% anualmente'){
+          } else if (check.value === 'Incrementar venta 5% anualmente') {
             this.data[5].selected = false;
           }
         }
       }, {
         text: 'Ok',
         handler: (formData) => {
-          console.log(formData,"formDataAlert");
+          console.log(formData, 'formDataAlert');
 
         }
       }
@@ -468,18 +467,17 @@ export class Cuatro2Page implements OnInit {
     await alert.present();
   }
 
-  
   // Crear el post en la base de datos
-  consultarDatos(){
-    let dataBase:any={
+  consultarDatos() {
+    const dataBase: any = {
       reduccionGeneracionResiduos: this.data[0].selected,
-      reduccionConsumoAgua:this.data[1].selected,
-      reduccionConsumoEnergia:this.data[2].selected,
-      cumplimientoProgramaMantenimiento :this.data[3].selected,
-      incrementarCapacitaciones:this.data[4].selected,
-      incrementarVentaAnualmente:this.data[5].selected
-    }
-    //console.log(dataBase);
+      reduccionConsumoAgua: this.data[1].selected,
+      reduccionConsumoEnergia: this.data[2].selected,
+      cumplimientoProgramaMantenimiento: this.data[3].selected,
+      incrementarCapacitaciones: this.data[4].selected,
+      incrementarVentaAnualmente: this.data[5].selected
+    };
+    // console.log(dataBase);
     this.createMetaObjetivo(dataBase);
   }
   createMetaObjetivo(datillos) {
@@ -497,21 +495,21 @@ export class Cuatro2Page implements OnInit {
     toast.present();
   }
 
-  maquetacion(data1,data2,data3){
+  maquetacion(data1, data2, data3) {
     var fecha = new Date();
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion;  
+    let firmaEstacion = this.firmaEstacion;
     let footer = this.myImage;
     let ddd = this.datosEstacion;
     var dd = {
       userPassword: '123',
       ownerPassword: '123456',
       permissions: {
-        printing: 'highResolution', //'lowResolution'
+        printing: 'highResolution', // 'lowResolution'
         modifying: false,
         copying: false,
         annotating: true,
@@ -519,8 +517,8 @@ export class Cuatro2Page implements OnInit {
         contentAccessibility: true,
         documentAssembly: true
       },
-        
-      background: function(currentPage, pageSize) {
+
+      background(currentPage, pageSize) {
       return {
           image: `${marcaAgua}`,
           width: 300,
@@ -529,12 +527,13 @@ export class Cuatro2Page implements OnInit {
     },///////////////////////////////////////////////////////
     header: function(){
       return {
-        table:{
-            widths: [150,570],
-            heights: [30,10,10],
-            body:[
+        table: {
+            widths: [150, 570],
+            heights: [30, 10, 10],
+            body: [
                 [
                     {
+
                         image:`${iconoEstacion}`,
                         width: 65,
                         height: 80,

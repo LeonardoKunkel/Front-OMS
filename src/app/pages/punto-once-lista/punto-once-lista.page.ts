@@ -1,3 +1,5 @@
+import { FindPolitica } from './../../interfaces/PoliticaInterface';
+import { IconoEstacionService } from './../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
 import { EquipoCriticoService } from './../../services/Elemento 11/equipo-critico.service';
 import { Component, OnInit } from '@angular/core';
@@ -103,7 +105,8 @@ export class PuntoOnceListaPage implements OnInit {
     private alertCtrl: AlertController,
     private navCtrl: NavController,
     private eqCrit: EquipoCriticoService,
-    private marca: MarcaAguaServiceService
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService
   ) {
       this.checar();
       this.getOnce();
@@ -112,7 +115,14 @@ export class PuntoOnceListaPage implements OnInit {
   ngOnInit() {
     this.marcaAgua();
     this.imagen64();
+    // this.getIcono();
   }
+
+  // getIcono() {
+  //   return this.icono.getPolitica().subscribe((data: any) => {
+  //     this.iconoEstacion = data.FindPolitica[data.findPolitica.length - 1].imagen;
+  //   });
+  // }
 
   imagen64() {
     this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
@@ -163,8 +173,8 @@ export class PuntoOnceListaPage implements OnInit {
     this.crear();
     this.checar();
     const toast = await this.toast.create({
-        message: 'Datos guardados',
-        duration: 2000
+      message: 'Datos guardados',
+      duration: 2000
     });
     toast.present();
   }
@@ -369,6 +379,7 @@ export class PuntoOnceListaPage implements OnInit {
   pdf() {
     const marcaAgua = this.marcaAguaEstacion;
     const footer = this.myImage;
+    // const iconoEstacion = this.iconoEstacion;
     this.checar();
     const dd = {
       background(currentPage, pageSize) {
@@ -382,7 +393,15 @@ export class PuntoOnceListaPage implements OnInit {
           table: {
             widths: [740], heights: [50, 15, 15],
             body: [
-              [{text: ''}],
+              [
+                {
+                  // image: `${iconoEstacion}`,
+                  // width: 70,
+                  // height: 70,
+                  // alignment: 'center',
+                  // border: [true, true, false, true]
+                }
+              ],
               [{text: 'XI. INTEGRIDAD MECÁNICA', alignment: 'center', bold: true}],
               [{text: 'INFORMACIÓN DE LOS EQUIPOS', alignment: 'center', bold: true, fillColor: '#ddd'}],
             ]

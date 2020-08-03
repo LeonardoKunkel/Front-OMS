@@ -47,7 +47,7 @@ const routes: Routes = [
   {
     path: 'punto-tes',
     loadChildren: './pages/punto-tes/punto-tes.module#PuntoTesPageModule',
-    //canLoad: [AuthGuard]
+    // canLoad: [AuthGuard]
   },
   {
     path: 'punto-cuatro',
@@ -133,11 +133,6 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
-    path: 'punto-tres-lista',
-    loadChildren: './pages/punto-tres-lista/punto-tres-lista.module#PuntoTresListaPageModule' ,
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'punto-tres-evidencia',
     loadChildren: './pages/punto-tres-evidencia/punto-tres-evidencia.module#PuntoTresEvidenciaPageModule',
     // canLoad: [AuthGuard]
@@ -203,6 +198,11 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
+    path: 'simple',
+    loadChildren: './pages/simple/simple.module#SimplePageModule',
+    // canLoad: [AuthGuard]
+  },
+  {
     path: 'punto-diecisiete',
     loadChildren: './pages/punto-diecisiete/punto-diecisiete.module#PuntoDiecisietePageModule',
     // canLoad: [AuthGuard]
@@ -255,11 +255,6 @@ const routes: Routes = [
   {
     path: 'punto-trece',
     loadChildren: './pages/punto-trece/punto-trece.module#PuntoTrecePageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'punto-trece-acta',
-    loadChildren: './pages/punto-trece-acta/punto-trece-acta.module#PuntoTreceActaPageModule',
     // canLoad: [AuthGuard]
   },
   {
@@ -366,14 +361,6 @@ const routes: Routes = [
     loadChildren: './pages/estacion-servicio-model/estacion-servicio-model.module#EstacionServicioModelPageModule'
   },
   {
-    path: 'elemento16-hipotesis-recomendaciones',
-    loadChildren: './pages/elemento16-hipotesis-recomendaciones/elemento16-hipotesis-recomendaciones.module#Elemento16HipotesisRecomendacionesPageModule'
-  },
-  {
-    path: 'elemento16-entrevista',
-    loadChildren: './pages/elemento16-entrevista/elemento16-entrevista.module#Elemento16EntrevistaPageModule'
-  },
-  {
     path: 'elemento16-estadistica',
     loadChildren: './pages/elemento16-estadistica/elemento16-estadistica.module#Elemento16EstadisticaPageModule'
   },
@@ -442,20 +429,8 @@ const routes: Routes = [
     loadChildren: './pages/punto-quince-informe/punto-quince-informe.module#PuntoQuinceInformePageModule'
   },
   {
-    path: 'punto-catorce-programa',
-    loadChildren: './pages/punto-catorce-programa/punto-catorce-programa.module#PuntoCatorceProgramaPageModule'
-  },
-  {
-    path: 'punto-catorce-resultado',
-    loadChildren: './pages/punto-catorce-resultado/punto-catorce-resultado.module#PuntoCatorceResultadoPageModule'
-  },
-  {
     path: 'punto-catorce-evaluacion',
     loadChildren: './pages/punto-catorce-evaluacion/punto-catorce-evaluacion.module#PuntoCatorceEvaluacionPageModule'
-  },
-  {
-    path: 'punto-catorce-plan',
-    loadChildren: './pages/punto-catorce-plan/punto-catorce-plan.module#PuntoCatorcePlanPageModule'
   },
   {
     path: 'punto-catorce-evidencia',

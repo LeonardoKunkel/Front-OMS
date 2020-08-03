@@ -40,19 +40,19 @@ export class Tab1Page {
   openCalendar() {
     this.navCtlr.navigateForward('/calendar')
   }
-  
 
-  async openModal(){
+
+  async openModal() {
     const modal = await this.modalCtrl.create({
       component: EstacionServicioModelPage
     });
-    //console.log('Entraste al modal');
+    // console.log('Entraste al modal');
     return await modal.present();
-    
+
   }
 
-  change(){
+  change() {
     this.darkMode = !this.darkMode;
-      document.body.classList.toggle('dark');
+    document.body.classList.toggle('dark');
   }
 }
