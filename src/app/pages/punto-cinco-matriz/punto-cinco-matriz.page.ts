@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IonButton } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
+import { EstacionServicioDatosService } from '../../services/estacion-servicio-datos.service'
+import { ActivatedRoute } from '@angular/router';
+import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
+import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-punto-cinco-matriz',
@@ -8,15 +14,287 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./punto-cinco-matriz.page.scss'],
 })
 export class PuntoCincoMatrizPage implements OnInit {
- datos:any={
+  datos: any = {
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
+  iconoEstacion = null;
+  marcaAguaEstacion = null;
+  firmaEstacion = null;
+  lista : any[]=[];
+  myImage=null;
+  nombreEstacion:string
 
- }
+
   constructor(
     private pdfMaker: PdfMakerService,
-    ) { }
+    private estacionServicioDatos :EstacionServicioDatosService,
+    private route: ActivatedRoute,
+    private firma: FirmaEstacionServiceService,
+    private icono: IconoEstacionService,
+    private marcaAgua: MarcaAguaServiceService
+    ) {
+      this.onClick();
+      this.getIcono();
+      this.getFirma();
+      this.getMarcaAgua();
+      this.imagen64();
+     }
 
   ngOnInit() { 
   }
+  getIcono(){
+    this.icono.getPolitica().subscribe((data:any)=>{
+     // console.log(data.findPolitica[data.findPolitica.length -1].imagen);
+    this.iconoEstacion = data.findPolitica[data.findPolitica.length -1].imagen;
+    })
+  }
+  getFirma(){
+    this.firma.getFirmaEstacion().subscribe((data:any)=>{
+      // console.log(data.findFirma[data.findFirma.length -1].firma);
+      this.firmaEstacion = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  getMarcaAgua(){
+    this.marcaAgua.getMarcaAgua().subscribe((data:any)=>{
+      // console.log(data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua);
+      this.marcaAgua = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
+    })
+  }
+  onClick(){
+    this.estacionServicioDatos.getEstacion().subscribe((data:any) =>{
+      let datoConsultado = data.findEstacion.length -1;
+      let ff = data.findEstacion[datoConsultado];
+      this.datos = data.findEstacion[datoConsultado];
+       this.lista.push(ff);
+       return console.log(this.lista);
+      
+    })
+  }
+  imagen64(){
+      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+        base64 =>{
+          this.myImage = base64;
+         // console.log(this.myImage);
+        }
+      )
+  }
+  convertFileDataURLviaFileReader(url: string){
+    return Observable.create(observer =>{
+      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      xhr.onload = function(){
+        let reader: FileReader = new FileReader();
+        reader.onloadend = function(){
+          observer.next(reader.result);
+          observer.complete();
+        };
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    })
+  }
+  // define your function for generating rotated text
+writeRotatedText(text) {
+  var ctx, canvas = document.createElement('canvas');
+  // I am using predefined dimensions so either make this part of the arguments or change at will 
+  canvas.width = 36;
+  canvas.height = 270;
+  ctx = canvas.getContext('2d');
+  ctx.font = '36pt Arial';
+  ctx.save();
+  ctx.translate(36,270);
+  ctx.rotate(-0.5*Math.PI);
+  ctx.fillStyle = '#000';
+  ctx.fillText(text , 0, 0);
+  ctx.restore();
+  return canvas.toDataURL();
+};
+writeRotatedText2(text) {
+  var ctx, canvas = document.createElement('canvas');
+  // I am using predefined dimensions so either make this part of the arguments or change at will 
+  canvas.width = 36;
+  canvas.height = 270;
+  ctx = canvas.getContext('2d');
+  ctx.font = '36pt Arial';
+  ctx.save();
+  ctx.translate(36,270);
+  ctx.rotate(-0.5*Math.PI);
+  ctx.fillStyle = '#000';
+  ctx.fillText(text , 0, 0);
+  ctx.restore();
+  return canvas.toDataURL();
+};
+
+pdf2(){
+  let marca = this.marcaAgua;
+  let footer = this.myImage;
+  let iconoEstacion = this.iconoEstacion;
+  let nombreEstacion = this.datos.nombreEstacionServicio;
+  let firmaEstacion = this.firmaEstacion;
+  var fecha = new Date();
+  let day = fecha.getDate();
+  let month = fecha.getUTCMonth() + 1;
+  let year = fecha.getFullYear();
+  var dd = {
+      background: function(currentPage, pageSize) {
+      return {
+          image: `${marca}`, width: 300,height: 350, 
+          absolutePosition: {x: 150, y: 160},opacity: 0.5}
+    },
+    header: function(){
+      return {
+        table:{
+            widths: [150,400],
+            heights: [30,10,10],  
+            body:[
+                [
+                    {
+                        image:`${iconoEstacion}`,
+                    width: 65,
+                    height: 80,
+                    alignment:'center',
+                    border:[true,true,false,true],
+                    },{
+                        text:`{ddd.nombreEstacion}`,bold:true,fontSize:25,margin:[55,20],
+                    border:[false,true,true,true],
+                    }
+                ],[
+                    {
+                        text:'ANEXO DE SEGURIDAD PARA CONTRATISTAS',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                    },{
+                        
+                    }
+                    ],[
+                        {
+                          text:'XII. SEGURIDAD DE CONTRATISTAS',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                        },{
+                            
+                        }
+                        ]
+              ]
+        },margin: [22,15],
+        
+          layout:{
+            defaultBorder: false
+          }
+      };
+    },
+      footer: function(currentPage, pageCount){
+        return {
+            table:{
+          headerRows:1, 
+          widths: [510],
+               body : [
+               [{columns:[
+                   'Página' + currentPage.toString() + ' de ' + pageCount,
+                   {text:`P-SA-01 Rev.0, ${day}/${month}/${year}`,width: 180}
+                   ]}],
+               [{
+                image: `${footer}`,
+                pageBreak: 'after',
+                width: 510,
+                height: 60,
+                 },],
+               [''],
+                   ]
+             }, layout : 'headerLineOnly',
+            margin: [72,20],
+        };
+      },
+    content: [
+            {
+                table:{
+                    widths:[25,350,15,15,15,15,15,15,15],
+                    heights:[10,130,10],
+                    body:[
+                        [
+                            {image: this.writeRotatedText('ELEMENTO'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {text:'RESPONSABILIDAD',alignment:'left',bold:true,fillColor:'#a5c3dd',fontSize:15,border:[true,true,true,false]},
+                            {image: this.writeRotatedText('Dirección'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {image: this.writeRotatedText('Representante Técnico'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {image: this.writeRotatedText('Encargado'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {image: this.writeRotatedText('Jefe de piso'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {image: this.writeRotatedText('Despachadores'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {image: this.writeRotatedText('Personal de mantenimiento'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                            {image: this.writeRotatedText('Contratistas, Proveedores'), fit:[10,100], alignment: 'center',fillColor:'#a5c3dd',rowSpan:3},
+                        ],
+                        [
+                            {text:''},
+                            {
+                               canvas: [{ type: 'line', x1: -4, y1: 0, x2: 355, y2: 150, lineWidth: 3 }],bold:true,fillColor:'#a5c3dd',fonSize:10,border:[false,false,false,false]
+                            },
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                        ],
+                        [
+                            {text:''},
+                            {text:'DESCRIPCION',alignment:'right',bold:true,fillColor:'#a5c3dd',fontSize:15,border:[true,false,true,true]},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                            {text:''},
+                        ],
+                        ]
+                }
+            },
+            {text:'\n'},	    {
+             table: {
+                 widths: [230,230],
+                 heights: [10,30],
+                 body: [ [
+                         {
+                           image:`${firmaEstacion}`,
+                           fit:[100,30],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         },
+                         {
+                           text:'sampleImage.jpg',
+                           fit:[100,30],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         }],
+                    [
+                        {text:`Reviso\n{ddd.representanteTecnico}\nREPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true],fontSize:7},
+                        {text:`{ddd.maximaAutoridad}\nMÁXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true],fontSize:7}]
+                 ]
+            },      
+        layout:{
+          defaultBorder: false 
+        },
+        margin:[42,0]
+        }
+        ]
+     ,
+      pageSize: 'LETTER',
+      pageMargins: [22,150]
+    
+  }
+   this.pdfMaker.generate(dd,'hsbhbhs')
+}
+
+
+
+// use this body in a table definition
   // agregar(){
   //   console.log('Agregar input');
   //   var carta= document.getElementById('contenido');

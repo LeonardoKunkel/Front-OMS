@@ -118,11 +118,6 @@ const routes: Routes = [
      // canLoad: [AuthGuard]
   },
   {
-    path: 'punto-uno-politica',
-    loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'punto-uno-procedimiento',
     loadChildren: './pages/punto-uno-procedimiento/punto-uno-procedimiento.module#PuntoUnoProcedimientoPageModule',
     // canLoad: [AuthGuard]
@@ -191,12 +186,6 @@ const routes: Routes = [
     path: 'punto-siete-procedimiento',
     loadChildren: './pages/punto-siete-procedimiento/punto-siete-procedimiento.module#PuntoSieteProcedimientoPageModule',
     // canLoad: [AuthGuard]
-  },
-  {
-    path: 'registros-control',
-    loadChildren: './pages/registros-control/registros-control.module#RegistrosControlPageModule',
-    // canLoad: [AuthGuard]
-
   },
   {
     path: 'punto-ocho-menu',
