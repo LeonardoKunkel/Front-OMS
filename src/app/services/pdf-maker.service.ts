@@ -19,7 +19,7 @@ export class PdfMakerService {
       //VEr en la misma ventana
    //this.pdfObj.open({},window);
       //Abrir en otra ventana
-   this.pdfObj.open();
+   this.pdfObj.open({title});
       //Imprimir el pdf
     //this.pdfObj.print();
   }
