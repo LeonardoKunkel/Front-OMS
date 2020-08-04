@@ -15,6 +15,10 @@ export class FirmasPage implements OnInit {
   datos:any={
   firma:''
   }
+  
+  datos2:any={
+  firma:''
+  }
 
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'maxWidth': 1,
@@ -51,7 +55,31 @@ export class FirmasPage implements OnInit {
   }
 
   ngOnInit() {
+  } 
+
+  drawStart2() {
+    console.log('drawStart');
   }
+  drawComplete2() {
+    this.datos2.firma = this.signaturePad.toDataURL();
+    //console.log(this.signaturePad.toDataURL());
+    
+    
+  }
+  clear2() {
+    this.signaturePad.clear();
+  }
+  
+  async agregarFirma2() {
+    console.log('aceptar firma');
+    const toast = await this.toast.create({
+      message: 'Firma Guardada',
+      duration: 2000
+    });
+    this.postFirma(this.datos)
+    toast.present();
+  }
+
 
   postFirma(body){
     this.firmasService.postFirmaEstacion(body).subscribe((data:any) =>{

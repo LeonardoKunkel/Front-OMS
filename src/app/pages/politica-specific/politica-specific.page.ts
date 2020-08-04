@@ -95,7 +95,7 @@ export class PoliticaSpecificPage implements OnInit {
   }
   postPolitica(id:string){
     this.route.navigate(['/punto-uno-politica',{custom_id:id}])
-    this.close();
+    //this.close();
     
   }
 consulta(){
