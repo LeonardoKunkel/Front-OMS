@@ -7,6 +7,7 @@ import { FirmaEstacionServiceService } from '../../services/firma-estacion-servi
 import { IconoEstacionService } from '../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 
 @Component({
@@ -176,6 +177,7 @@ export class PuntoDosAspectosPage implements OnInit {
   estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
   datosEstacion:any={
@@ -199,7 +201,8 @@ export class PuntoDosAspectosPage implements OnInit {
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
     private icono : IconoEstacionService,
-    private datosEstacionService:EstacionServicioDatosService
+    private datosEstacionService:EstacionServicioDatosService,
+    private firmaRepresente : FirmaRepresentanteService
      ) {
        this.getDatosEstacion();
        this.getAspectos();
@@ -210,6 +213,7 @@ export class PuntoDosAspectosPage implements OnInit {
        this.getMarcaAgua();
        this.getFirma();
        this.getIcono();
+       this.getFirmaRepresentante();
      }
      getAspectos(){
        this.superAspectos.getAspectos().subscribe((data:any)=>{
@@ -239,6 +243,14 @@ export class PuntoDosAspectosPage implements OnInit {
        this.firma.getFirmaEstacion().subscribe((data:any) =>{
          //console.log(data);
          this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+       })
+     }
+     getFirmaRepresentante(){
+       this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+         //console.log(data);
+          this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+          //console.log(this.firmaRepresentante);
+         
        })
      }
      imagen64(){
@@ -371,6 +383,7 @@ export class PuntoDosAspectosPage implements OnInit {
     let firmaEstacion = this.firmaEstacion;
     let footer = this.myImage;
     let ddd = this.datosEstacion;
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -1566,7 +1579,7 @@ export class PuntoDosAspectosPage implements OnInit {
                  body: [
                      [
                          {
-                           text:'',
+                           image:`${firmaRepresentanteTecnico}`,
                            fit:[100,50],
                            alignment:'center',
                            border:[true,true,true,false]

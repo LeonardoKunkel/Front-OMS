@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 import { ToastController } from '@ionic/angular';
-import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 @Component({
-  selector: 'app-firmas',
-  templateUrl: './firmas.page.html',
-  styleUrls: ['./firmas.page.scss'],
+  selector: 'app-firma-represntante',
+  templateUrl: './firma-represntante.page.html',
+  styleUrls: ['./firma-represntante.page.scss'],
 })
-export class FirmasPage implements OnInit {
+export class FirmaRepresntantePage implements OnInit {
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
   
@@ -25,7 +25,7 @@ export class FirmasPage implements OnInit {
 
   constructor(
     public toast: ToastController,
-    private firmasService: FirmaEstacionServiceService
+    private firmasService: FirmaRepresentanteService
     ) { }
 
   drawStart() {
@@ -54,17 +54,17 @@ export class FirmasPage implements OnInit {
   }
 
   postFirma(body){
-    this.firmasService.postFirmaEstacion(body).subscribe((data:any) =>{
+    this.firmasService.postFirmaRepresentante(body).subscribe((data:any) =>{
       console.log(data);
+
       
     })
   }
 
   getFirmas(){
-    this.firmasService.getFirmaEstacion().subscribe((data:any) =>{
+    this.firmasService.getFirmaRepresentante().subscribe((data:any) =>{
       console.log(data);
       
     })
-  }
-
+}
 }
