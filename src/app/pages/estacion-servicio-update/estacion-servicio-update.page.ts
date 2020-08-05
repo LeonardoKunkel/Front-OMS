@@ -28,6 +28,9 @@ export class EstacionServicioUpdatePage implements OnInit {
   goFirmas() {
     this.navCtrl.navigateForward('/firmas');
   }
+  goFirmaRepresentante() {
+    this.navCtrl.navigateForward('/firma-represntante');
+  }
 
   getSpecificStation(id : string){
     this.estacionServive.getEstacionById(id).subscribe((data:any) =>{

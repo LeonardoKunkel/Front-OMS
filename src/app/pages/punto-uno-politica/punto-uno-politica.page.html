@@ -1,0 +1,45 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/punto-uno"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">POLÍTICA</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div>
+  <hr class="lineaN" />
+</div>
+<ion-content>
+  <p style="margin: 3%; text-align: justify;">Decidiste cambiar de política, por favor selecciona una de las siguientes opciones que aparecen.</p>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeLg="6" *ngFor ="let contacto of datos" style="margin: auto; display: block;" >
+        <ion-list>
+          <h2>Política 1</h2>
+          <ion-item >
+            <p style="text-align: justify;" #politica1> <b style="font-size: 20px;" >“{{contacto.nombreEstacionServicio}}”</b>  conscientes con la naturaleza de los peligros y aspectos ambientales asociados a las actividades propias de la instalación, trabajadores y contratistas estamos comprometidos en mejorar nuestro desempeño en materia de Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente, en todos los niveles de la organización, juntos orientamos nuestros esfuerzos para la evaluación, reducción y control de los riesgos e impactos ambientales, el cumplimiento normativo, mediante un proceso de mejora continua.
+            </p>
+          </ion-item>
+          <h2>Política 2</h2>
+          <ion-item>
+            <p style="text-align: justify;" #politica2 > <b style="font-size: 20px;" >“{{contacto.nombreEstacionServicio}}”</b> estamos comprometidos en todos los niveles de la organización con la seguridad de las instalaciones, los trabajadores, contratistas y medio ambiente, controlando los peligros, riesgos e impactos ambientales derivados de la operación normal de la estación, enfocándonos en el cumplimento de la normatividad y la mejora continua en materia Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente.
+            </p>
+          </ion-item>
+          <h2>Política 3</h2>
+          <ion-item>
+            <p style="text-align: justify;" #politica3>Considerando los peligros, riesgos e impactos ambientales que se generan en la operación de esta estación de servicio, en <b style="font-size: 20px;">“{{contacto.nombreEstacionServicio}}”</b> estamos comprometidos en todos los niveles de la organización en establecer los controles necesarios y buscar continuamente su mejora en materia de Seguridad Industrial, Seguridad Operativa y Protección del medio ambiente.
+            </p>
+          </ion-item>
+        </ion-list>
+        <ion-item color="primary">
+          <ion-label>Selecciona la politica</ion-label>
+          <ion-select placeholder="Seleccionar" (ionChange)="options(item)" [(ngModel)]="politicaResultado.politica">
+            <ion-select-option value="Política1">Política 1</ion-select-option>
+            <ion-select-option value="Política2">Política 2</ion-select-option>
+            <ion-select-option value="Política3">Política 3</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

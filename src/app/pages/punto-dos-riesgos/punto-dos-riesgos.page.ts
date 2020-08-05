@@ -7,6 +7,7 @@ import { FirmaEstacionServiceService } from '../../services/firma-estacion-servi
 import { IconoEstacionService } from '../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 
 
@@ -78,6 +79,7 @@ export class PuntoDosRiesgosPage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
   datosEstacion:any={
     calleNumero:'',
     ciudad:'',
@@ -100,7 +102,8 @@ export class PuntoDosRiesgosPage implements OnInit {
                private firma :FirmaEstacionServiceService,
                private marca : MarcaAguaServiceService,
                private icono : IconoEstacionService,
-               private datosEstacionService:EstacionServicioDatosService
+               private datosEstacionService:EstacionServicioDatosService,
+               private firmaRepresente : FirmaRepresentanteService
                 ) {
                   this.getDatosEstacion();
                   this.getRiesgos();
@@ -111,6 +114,7 @@ export class PuntoDosRiesgosPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
 
   getRiesgos(){
@@ -141,6 +145,14 @@ export class PuntoDosRiesgosPage implements OnInit {
     this.firma.getFirmaEstacion().subscribe((data:any) =>{
       //console.log(data);
       this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
     })
   }
   imagen64(){
@@ -610,6 +622,7 @@ export class PuntoDosRiesgosPage implements OnInit {
     let firmaEstacion = this.firmaEstacion;  
     let footer = this.myImage;
     let ddd = this.datosEstacion;
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -1112,7 +1125,7 @@ export class PuntoDosRiesgosPage implements OnInit {
                  body: [
                      [
                          {
-                           text:'',
+                           image:`${firmaRepresentanteTecnico}`,
                            fit:[100,50],
                            alignment:'center',
                            border:[true,true,true,false],
