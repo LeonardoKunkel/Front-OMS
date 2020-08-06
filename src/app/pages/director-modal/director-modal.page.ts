@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
-import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { DirectorServiceService } from '../../services/Elemento 6/director-service.service';
+import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 import { Observable } from 'rxjs';
 import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 
 @Component({
@@ -36,6 +37,7 @@ export class DirectorModalPage implements OnInit {
     personalCargo: ''
   };
   myImage = null;
+  firmaRepresentante = null;
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
@@ -47,7 +49,8 @@ export class DirectorModalPage implements OnInit {
     private estacionService: EstacionServicioDatosService,
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService
+    private icono : IconoEstacionService,
+    private firmaRepresente : FirmaRepresentanteService,
   ) { 
     this.getDirector();
     this.getStationService()
@@ -59,12 +62,21 @@ export class DirectorModalPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
 
   getDirector(){
     this.directorService.getDirector().subscribe((data:any) =>{
       this.datos = data.newDirector[data.newDirector.length - 1];
     });
+  }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
+    })
   }
 
   getStationService(){
@@ -149,6 +161,7 @@ export class DirectorModalPage implements OnInit {
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
 
 var dd = {
   userPassword: '123',
@@ -318,7 +331,7 @@ footer: function(currentPage, pageCount){
                body: [
                    [
                        {
-                         text:'',
+                         image:`${firmaRepresentanteTecnico}`,
                           fit:[100,50],
                           alignment:'center',
                           border:[true,true,true,false]
@@ -336,7 +349,7 @@ footer: function(currentPage, pageCount){
                   [
                       {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
                       {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                      {text:`FECHA DE APROBACIÓN:\nAgregar fecha "10/10/2018"`,alignment:'center',border:[true,false,true,true]}]
+                      {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
                ]
           },
 			layout:{

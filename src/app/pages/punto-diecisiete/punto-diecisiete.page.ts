@@ -8,7 +8,9 @@ import { NavController } from '@ionic/angular';
 })
 export class PuntoDiecisietePage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(
+    private navCtrl: NavController
+    ) { }
 
   ngOnInit() {
   }

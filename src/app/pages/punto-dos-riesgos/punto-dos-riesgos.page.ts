@@ -7,6 +7,7 @@ import { FirmaEstacionServiceService } from '../../services/firma-estacion-servi
 import { IconoEstacionService } from '../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 
 
@@ -78,27 +79,30 @@ export class PuntoDosRiesgosPage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
-  datosEstacion: any = {
-    calleNumero: '',
-    ciudad: '',
-    colonia: '',
-    correoElectronico: '',
-    cp: '',
-    estado: '',
-    gerenteEstacion: '',
-    maximaAutoridad: '',
-    nombreEstacionServicio: '',
-    representanteTecnico: '',
-    telefono: ''
+  firmaRepresentante = null;
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+
   };
 
   constructor( private pdfMaker: PdfMakerService,
                public toast: ToastController,
                private superRiesgos: RiesgosServiceService,
-               private firma: FirmaEstacionServiceService,
-               private marca: MarcaAguaServiceService,
-               private icono: IconoEstacionService,
-               private datosEstacionService: EstacionServicioDatosService
+               private firma :FirmaEstacionServiceService,
+               private marca : MarcaAguaServiceService,
+               private icono : IconoEstacionService,
+               private datosEstacionService:EstacionServicioDatosService,
+               private firmaRepresente : FirmaRepresentanteService
                 ) {
                   this.getDatosEstacion();
                   this.getRiesgos();
@@ -109,6 +113,7 @@ export class PuntoDosRiesgosPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
 
   getRiesgos() {
@@ -141,13 +146,23 @@ export class PuntoDosRiesgosPage implements OnInit {
       this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
     });
   }
-  imagen64() {
-    this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
-      base64 => {
-        this.myImage = base64;
-        // console.log(this.myImage);
-      }
-    );
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
+    })
+  }
+  imagen64(){
+ 
+      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+        base64 =>{
+          this.myImage = base64;
+          //console.log(this.myImage);
+        }
+        
+      )
   }
   convertFileDataURLviaFileReader(url: string) {
     return Observable.create(observer => {
@@ -597,15 +612,16 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
   pdf() {
-    const fecha = new Date();
-    const day = fecha.getDate();
-    const month = fecha.getUTCMonth() + 1;
-    const year = fecha.getFullYear();
-    const marcaAgua = this.marcaAguaEstacion;
-    const iconoEstacion = this.iconoEstacion;
-    const firmaEstacion = this.firmaEstacion;
-    const footer = this.myImage;
-    const ddd = this.datosEstacion;
+    var fecha = new Date();
+    let day = fecha.getDate();
+    let month = fecha.getUTCMonth() + 1;
+    let year = fecha.getFullYear();
+    let marcaAgua = this.marcaAguaEstacion;
+    let iconoEstacion = this.iconoEstacion;
+    let firmaEstacion = this.firmaEstacion;  
+    let footer = this.myImage;
+    let ddd = this.datosEstacion;
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -1119,56 +1135,41 @@ export class PuntoDosRiesgosPage implements OnInit {
           text: '\n\n'
         },
         {
-          table: {
-            widths: [200, 200, 140],
-            heights: [50, 30],
-            body: [
-              [
-                {
-                  text: '',
-                  fit: [100, 50],
-                  alignment: 'center',
-                  border: [true, true, true, false],
-                  pageBreak: 'before'
-                },
-                {
-                  image: `${firmaEstacion}`,
-                  fit: [100, 50],
-                  alignment: 'center',
-                  border: [true, true, true, false],
-                  pageBreak: 'before'
-                },
-                {
-                  text: '',
-                  fit: [100, 50],
-                  alignment: 'center',
-                  border: [true, true, true, false],
-                  pageBreak: 'before'
-                }
-              ],
-              [
-                {
-                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
-                  alignment: 'center',
-                  border: [true, false, true, true]
-                },
-                {
-                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
-                  alignment: 'center',
-                  border: [true, false, true, true]
-                },
-                {
-                  text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,
-                  alignment: 'center',
-                  border: [true, false, true, true]
-                }
-              ]
-            ]
-          },
-          layout: {
-            defaultBorder: false
-          },
-          margin: [85, 0]
+
+            table: {
+              widths: [200,200,140],
+              heights: [50,30],
+                 body: [
+                     [
+                         {
+                           image:`${firmaRepresentanteTecnico}`,
+                           fit:[100,50],
+                           alignment:'center',
+                           border:[true,true,true,false],
+                           pageBreak:'before'
+                         },{
+                           image:`${firmaEstacion}`,
+                           fit:[100,50],
+                           alignment:'center',
+                           border:[true,true,true,false],
+                           pageBreak:'before'
+                         },{
+                           text:'',
+                           fit:[100,50],
+                           alignment:'center',
+                           border:[true,true,true,false],
+                           pageBreak:'before'
+                         }],
+                    [
+                        {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
+                        {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
+                        {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
+                 ]
+            },
+        layout:{
+          defaultBorder: false
+        },
+        margin:[85,0]
         }
       ],
       pageOrientation: 'landscape',

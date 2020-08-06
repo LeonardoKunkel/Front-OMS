@@ -26,10 +26,8 @@
                 Informe de Auditoría (1ra Parte Enero-Junio) 
               </ion-card-title>
             </ion-card-header>
-            <ion-button
-            href="assets/docs/Elemento 15/FS-35 INFORME DE AUDITORÍA (1ra parte-junio).pdf"
-            shape="round"
-            download>
+            <ion-button (click)="pdf()" shape="round"
+            >
             Descargar formato
           </ion-button>
           </ion-card-content>
@@ -43,10 +41,7 @@
                 Informe de Auditoría (2da Parte Julio-Diciembre) 
               </ion-card-title>
             </ion-card-header>
-            <ion-button
-            href="assets/docs/Elemento 15/FS-35 INFORME DE AUDITORÍA (2da parte-diciembre).pdf"
-            shape="round"
-            download>
+            <ion-button (click)="pdf2()"shape="round">
             Descargar formato
           </ion-button>
           </ion-card-content>

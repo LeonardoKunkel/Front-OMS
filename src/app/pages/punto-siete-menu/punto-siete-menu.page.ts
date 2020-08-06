@@ -5,6 +5,7 @@ import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.ser
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 @Component({
   selector: 'app-punto-siete-menu',
@@ -27,6 +28,7 @@ export class PuntoSieteMenuPage implements OnInit {
   };
   myImage = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
 
@@ -38,7 +40,8 @@ export class PuntoSieteMenuPage implements OnInit {
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
     private icono : IconoEstacionService,
-    private datosEstacionService:EstacionServicioDatosService
+    private datosEstacionService:EstacionServicioDatosService,
+    private firmaRepresente : FirmaRepresentanteService,
     ) { 
       this.getDatosEstacion();
     }
@@ -50,11 +53,20 @@ export class PuntoSieteMenuPage implements OnInit {
       this.getMarcaAgua();
       this.getFirma();
       this.getIcono();
+      this.getFirmaRepresentante();
     }
     getDatosEstacion(){
       this.datosEstacionService.getEstacion().subscribe((data:any) =>{
         //console.log(data.findEstacion[data.findEstacion.length -1]);
         this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
+      })
+    }
+    getFirmaRepresentante(){
+      this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+        //console.log(data);
+         this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+         //console.log(this.firmaRepresentante);
+        
       })
     }
     getIcono(){
@@ -127,6 +139,7 @@ export class PuntoSieteMenuPage implements OnInit {
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
   var dd = {
     userPassword: '123',
     ownerPassword: '123456',
@@ -485,6 +498,7 @@ export class PuntoSieteMenuPage implements OnInit {
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
 
 var dd = {
   userPassword: '123',
@@ -743,7 +757,7 @@ footer: function(currentPage, pageCount){
                body: [
                    [
                        {
-                         text:' ',
+                         image:`${firmaRepresentanteTecnico}`,
                          fit:[100,50],
                          alignment:'center',
                          border:[true,true,true,false]

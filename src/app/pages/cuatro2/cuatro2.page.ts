@@ -5,7 +5,7 @@ import { AlertController, ToastController, IonCheckbox } from '@ionic/angular';
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
 import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
-
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 import { Observable } from 'rxjs';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 @Component({
@@ -223,12 +223,10 @@ export class Cuatro2Page implements OnInit {
       cA2: '5%',
       cA3: '5%',
   };
-  nombreEstacion = null;
-  representanteTecnico = null;
-  maximaAutorida = null;
   estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
   datosEstacion: any = {
@@ -254,22 +252,22 @@ export class Cuatro2Page implements OnInit {
   private iconoService: IconoEstacionService,
   private marcaService: MarcaAguaServiceService,
   private firmaService: FirmaEstacionServiceService,
-  private estacionService: EstacionServicioDatosService
+  private firmaRepresente : FirmaRepresentanteService,
+  private datosEstacionService: EstacionServicioDatosService
   ) {
-    this.getEstacion();
+    this.getDatosEstacion();
     this.getFirma();
+    this.getFirmaRepresentante();
     this.getMarcaAgua();
     this.getIcono();
     this.getObjetivos();
     this.imagen64();
   }
-  getEstacion() {
-    this.estacionService.getEstacion().subscribe((data: any) => {
-      // console.log(data.findEstacion[data.findEstacion.length -1]);
-      this.nombreEstacion = data.findEstacion[data.findEstacion.length - 1].nombreEstacionServicio;
-      this.representanteTecnico = data.findEstacion[data.findEstacion.length - 1].representanteTecnico;
-      this.maximaAutorida = data.findEstacion[data.findEstacion.length - 1].maximaAutoridad;
-    });
+  getDatosEstacion(){
+    this.datosEstacionService.getEstacion().subscribe((data:any) =>{
+      //console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
+    })
   }
   imagen64() {
     this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
@@ -302,6 +300,14 @@ export class Cuatro2Page implements OnInit {
       this.firmaEstacion = data.findFirma[data.findFirma.length - 1].firma;
     });
   }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
+    })
+  }
 
   getMarcaAgua() {
     this.marcaService.getMarcaAgua().subscribe((data: any) => {
@@ -324,7 +330,7 @@ export class Cuatro2Page implements OnInit {
       message: 'Se enviara y guardara las metas seleccionadas, ademas se imprimira un documento de estas mismas.',
       buttons: [
         {
-          text: 'Cancelar',
+          text: 'Cancelar', 
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -503,6 +509,7 @@ export class Cuatro2Page implements OnInit {
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
     let firmaEstacion = this.firmaEstacion;
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     let footer = this.myImage;
     let ddd = this.datosEstacion;
     var dd = {
@@ -676,7 +683,7 @@ export class Cuatro2Page implements OnInit {
                      body: [
                          [
                              {
-                               text:'',
+                               image:`${firmaRepresentanteTecnico}`,
                                fit:[100,50],
                                alignment:'center',
                                border:[true,true,true,false]

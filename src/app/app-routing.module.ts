@@ -197,6 +197,11 @@ const routes: Routes = [
     loadChildren: './pages/punto-evidencia/punto-evidencia.module#PuntoEvidenciaPageModule',
     // canLoad: [AuthGuard]
   },
+  // {
+  //   path: 'simple',
+  //   loadChildren: './pages/simple/simple.module#SimplePageModule',
+  //   // canLoad: [AuthGuard]
+  // },
   {
     path: 'punto-diecisiete',
     loadChildren: './pages/punto-diecisiete/punto-diecisiete.module#PuntoDiecisietePageModule',
@@ -482,11 +487,13 @@ const routes: Routes = [
   { path: 'estacion-servicio-update', loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule' },
   { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },
   { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
+  { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
+  { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
+
+
 
   // },
   // { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
-
-
 
 
 ];
@@ -497,4 +504,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
