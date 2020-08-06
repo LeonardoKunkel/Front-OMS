@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 @Component({
   selector: 'app-punto-siete',
@@ -121,6 +122,7 @@ export class PuntoSietePage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
 
 
   constructor(
@@ -132,6 +134,7 @@ export class PuntoSietePage implements OnInit {
     private navCtrl: NavController,
     private firma: FirmaEstacionServiceService,
     private marca: MarcaAguaServiceService,
+    private firmaRepresente : FirmaRepresentanteService,
     private icono: IconoEstacionService
   ) {
     this.consultar();
@@ -143,6 +146,7 @@ export class PuntoSietePage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
 
   getIcono() {
@@ -161,6 +165,14 @@ export class PuntoSietePage implements OnInit {
     this.firma.getFirmaEstacion().subscribe((data: any) => {
       this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
     });
+  }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
+    })
   }
 
   imagen64() {
@@ -452,7 +464,8 @@ export class PuntoSietePage implements OnInit {
   pdf() {
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion;  
+    let firmaEstacion = this.firmaEstacion; 
+    let firmaRepresentanteTecnico = this.firmaRepresentante; 
     let footer = this.myImage;
     let ddd = this.datosEstacion;
     var fecha = new Date();
@@ -817,16 +830,36 @@ export class PuntoSietePage implements OnInit {
           text: '\n\n'
         },
         {
-          table: {
-            widths: [277, 277],
-            heights: [50],
-            body: [
-              [
-                'REVISADO POR:\n\n\n\n Gamaliel Chavarría\nREPRESENTANTE TÉCNICO',
-                'APROBADO POR:\n\n\n\nSergio Lechuga\nMÁXIMA AUTORIDAD',
-              ]
-            ]
-          }
+            table: {
+                 widths: [200,200,140],
+                 heights: [50,30],
+                 body: [
+                     [
+                         {
+                           image:`${firmaRepresentanteTecnico}`,
+                            fit:[100,50],
+                            alignment:'center',
+                            border:[true,true,true,false]
+                         },{
+                           image:`${firmaEstacion}`,
+                           fit:[200,80],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         },{
+                          text:'',
+                            fit:[100,50],
+                            alignment:'center',
+                            border:[true,true,true,false]
+                         }],
+                    [
+                        {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
+                        {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
+                        {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
+                 ]
+            },
+        layout:{
+          defaultBorder: false
+        }
         }
       ],
       pageSize: 'LETTER',

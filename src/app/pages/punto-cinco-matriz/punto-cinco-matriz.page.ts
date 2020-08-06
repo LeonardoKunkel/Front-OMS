@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +15,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./punto-cinco-matriz.page.scss'],
 })
 export class PuntoCincoMatrizPage implements OnInit {
-  datos: any = {
+  datosEstacion:any={
     calleNumero:'',
     ciudad:'',
     colonia:'',
@@ -30,6 +31,7 @@ export class PuntoCincoMatrizPage implements OnInit {
   iconoEstacion = null;
   marcaAguaEstacion = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   lista : any[]=[];
   myImage=null;
   nombreEstacion:string
@@ -37,20 +39,28 @@ export class PuntoCincoMatrizPage implements OnInit {
 
   constructor(
     private pdfMaker: PdfMakerService,
-    private estacionServicioDatos :EstacionServicioDatosService,
+    private datosEstacionService:EstacionServicioDatosService,
+    private firmaRepresente : FirmaRepresentanteService,
     private route: ActivatedRoute,
     private firma: FirmaEstacionServiceService,
     private icono: IconoEstacionService,
     private marcaAgua: MarcaAguaServiceService
     ) {
-      this.onClick();
+      this.getDatosEstacion();
       this.getIcono();
       this.getFirma();
       this.getMarcaAgua();
       this.imagen64();
+      this.getFirmaRepresentante();
      }
 
   ngOnInit() { 
+  }
+  getDatosEstacion(){
+    this.datosEstacionService.getEstacion().subscribe((data:any) =>{
+      //console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
+    })
   }
   getIcono(){
     this.icono.getPolitica().subscribe((data:any)=>{
@@ -70,13 +80,11 @@ export class PuntoCincoMatrizPage implements OnInit {
       this.marcaAgua = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
     })
   }
-  onClick(){
-    this.estacionServicioDatos.getEstacion().subscribe((data:any) =>{
-      let datoConsultado = data.findEstacion.length -1;
-      let ff = data.findEstacion[datoConsultado];
-      this.datos = data.findEstacion[datoConsultado];
-       this.lista.push(ff);
-       return console.log(this.lista);
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
       
     })
   }
@@ -140,8 +148,9 @@ pdf2(){
   let marca = this.marcaAgua;
   let footer = this.myImage;
   let iconoEstacion = this.iconoEstacion;
-  let nombreEstacion = this.datos.nombreEstacionServicio;
+  let ddd = this.datosEstacion;
   let firmaEstacion = this.firmaEstacion;
+  let firmaRepresentanteTecnico = this.firmaRepresentante;
   var fecha = new Date();
   let day = fecha.getDate();
   let month = fecha.getUTCMonth() + 1;
@@ -166,18 +175,18 @@ pdf2(){
                     alignment:'center',
                     border:[true,true,false,true],
                     },{
-                        text:`{ddd.nombreEstacion}`,bold:true,fontSize:25,margin:[55,20],
+                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,margin:[55,20],
                     border:[false,true,true,true],
                     }
                 ],[
                     {
-                        text:'ANEXO DE SEGURIDAD PARA CONTRATISTAS',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
+                        text:'Matriz de Responsabilidades',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
                     },{
                         
                     }
                     ],[
                         {
-                          text:'XII. SEGURIDAD DE CONTRATISTAS',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
+                          text:'V. FUNCIONES RESPONSABILIDADES Y AUTORIDAD ',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
                         },{
                             
                         }
@@ -198,7 +207,7 @@ pdf2(){
                body : [
                [{columns:[
                    'Página' + currentPage.toString() + ' de ' + pageCount,
-                   {text:`P-SA-01 Rev.0, ${day}/${month}/${year}`,width: 180}
+                   {text:`FS-13 Rev.0, ${day}/${month}/${year}`,width: 180}
                    ]}],
                [{
                 image: `${footer}`,
@@ -252,15 +261,832 @@ pdf2(){
                             {text:''},
                             {text:''},
                             {text:''},
-                        ],
+                        ],[//////////////////////////////////////// aqui empieza
+	                        {text:'I.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:4},
+	                        {text:'Política',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Establecer la Política',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Comunicar la Política',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Evaluar la Política anualmente',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'II.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:6},
+	                        {text:'Identificación de Peligros y de aspectos ambientales para la Evaluación de los Riesgos e Impactos Ambientales.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Identificar los aspectos ambientales.',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Identificar los Riesgos',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Evaluar los aspectos ambientales',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Realizar el Análisis de Riesgo de la estación de Servicio',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'e. Comunicas los aspectos ambientales y los riesgos y medidas de control',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'III.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:3},
+	                        {text:'Requisitos Legales',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Identificar los requisitos legales',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Comunicar los requisitos legales',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'IV.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:5},
+	                        {text:'Objetivos Metas e indicadores.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Establecer los Objetivos y metas',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Diseñar los indicadores',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Elaborar programa de gestión de objetivos y metas',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Comunicar los objetivos',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9}
+	                   ],[
+	                        {text:'V.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:5},
+	                        {text:'Funciones, Responsabilidad y Autoridad.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9,pageBreak: "before"},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Establecer la estructura para implantar el SA',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Establecer funciones y responsabilidades',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Designar al Representante técnico',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Establecer los recursos para implantar el SA',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'VI.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:6},
+	                        {text:'Competencia, Capacitación y Entrenamiento',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Elaborar perfiles del puesto',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Detectar las Necesidades de Capacitación',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'A',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Elaborar programa de capacitación y entrenamiento',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Aplicar programa de capacitación',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'e. Evaluar la eficacia de la capacitación',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'VII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:5},
+	                        {text:'Comunicación, Participación y Consulta.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Comunicar la información relacionada con el SA',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'AE',fontSize:9},
+	                        {text:'RV',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Recibir las quejas y sugerencias, o solicitud de información del SA',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Participar en el SA mediante sugerencias o quejas.',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Atender y dar seguimiento a las quejas y sugerencias.',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'VIII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:3},
+	                        {text:'Control de Documentos y Registros.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Establecer los criterios para el control de documentos',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Mantener y resguardar documentos y registros',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'IX.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:3},
+	                        {text:'Mejores Prácticas y estándares.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Identificar las mejores prácticas y estándares',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Mantener actualizado el inventario de códigos y estándares',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'X.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:5},
+	                        {text:'Control de Actividades y Procesos.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Identificar los criterios para control de riesgos y aspectos ambientales',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Documentar los procedimientos para control de actividades y procesos',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Comunicar los controles de actividades y procesos a contratistas',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Aplicar Controles de aspectos ambientales y riesgos',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                   ],[
+
+	                        {text:'XI.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:5},
+	                        {text:'Integridad Mecánica y Aseguramiento de la Calidad.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Elaborar programa de mantenimiento preventivo',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Elaborar Listado de equipos críticos',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Desarrollar procedimientos de mantenimiento',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Cumplir programa de mantenimiento',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:4},
+	                        {text:'Seguridad de Contratistas.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Determinar la responsabilidad de contratistas',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Seleccionar contratistas',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Evaluar contratistas',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XIII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:5},
+	                        {text:'Preparación y Respuesta a Emergencias.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Identificar situaciones potenciales de emergencia',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Elaborar Planes de Respuesta de cada emergencia identificada',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Integrar Brigadas de emergencia',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'d. Planear, ejecutar y evaluar los simulacros de emergencias',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'XIV.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:4},
+	                        {text:'Monitoreo, verificación y evaluación.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Identificar operaciones a monitorear y medir.',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Evaluar cumplimiento de requisitos legales.',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Administrar hallazgos derivados del monitoreo del SA',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'A',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XV.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:4},
+	                        {text:'Auditorías',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Planificar, implementar y mantener un programa de auditorias',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Establecer criterios de competencia para selección de auditores',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Atender hallazgos de auditoría',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XVI.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:4},
+	                        {text:'Identificación de Peligros y de aspectos ambientales para la Evaluación de los Riesgos e Impactos Ambientales.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Registrar, reportar e investigar accidentes e incidentes',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                        {text:'I',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Atender recomendaciones originadas de la investigación de incidentes',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Elaborar Estadística de incidentes y accidentes',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XVII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:4},
+	                        {text:'Revisión de Resultados.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Preparar información para el informe de resultados',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Realizar Revisión de Resultados',fontSize:9},
+	                        {text:'AR',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'c. Atender acciones resultantes por desviaciones del SA',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XVIII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:3},
+	                        {text:'Informes de Desempeño.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Comunicar los Resultados del desempeño a todos los niveles',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Informar a la ASEA el desempeño del SA',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'XVIII.',fontSize:9,bold:true,fillColor:'#a5c3dd',rowSpan:3},
+	                        {text:'Informes de Desempeño.',fontSize:9,bold:true,fillColor:'#a5c3dd',colSpan:8},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'a. Comunicar los Resultados del desempeño a todos los niveles',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ],[
+	                        {text:'',fontSize:9},
+	                        {text:'b. Informar a la ASEA el desempeño del SA',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'R',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                        {text:'',fontSize:9},
+	                   ]
                         ]
                 }
             },
-            {text:'\n'},	    {
+            {text:'\nA: AUTORIDAD, R: RESPONSABILIDAD, I: INVOLUCRADO'},{ text:'\n' },{
              table: {
-                 widths: [230,230],
+                 widths: [200,200,110],
                  heights: [10,30],
                  body: [ [
+                         {
+                           image:`${firmaRepresentanteTecnico}`,
+                           fit:[100,30],
+                           alignment:'center',
+                           border:[true,true,true,false]
+                         },
                          {
                            image:`${firmaEstacion}`,
                            fit:[100,30],
@@ -268,20 +1094,21 @@ pdf2(){
                            border:[true,true,true,false]
                          },
                          {
-                           text:'sampleImage.jpg',
+                           text:'',
                            fit:[100,30],
                            alignment:'center',
                            border:[true,true,true,false]
                          }],
                     [
-                        {text:`Reviso\n{ddd.representanteTecnico}\nREPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true],fontSize:7},
-                        {text:`{ddd.maximaAutoridad}\nMÁXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true],fontSize:7}]
-                 ]
+                        {text:`Reviso\n${ddd.representanteTecnico}\nREPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true],fontSize:7},
+                        {text:`${ddd.maximaAutoridad}\nMÁXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true],fontSize:7},
+                        {text:`FECHA DE APROBACIÓN: \n ${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true],fontSize:7},
+                 ]]
             },      
         layout:{
           defaultBorder: false 
         },
-        margin:[42,0]
+        margin:[22,0]
         }
         ]
      ,
@@ -292,208 +1119,5 @@ pdf2(){
    this.pdfMaker.generate(dd,'hsbhbhs')
 }
 
-
-
-// use this body in a table definition
-  // agregar(){
-  //   console.log('Agregar input');
-  //   var carta= document.getElementById('contenido');
-  //   let caja = document.createElement("ion-button");
-  //   caja.type="button";
-  //   carta.appendChild(caja);
-  //   console.log(carta);
-  // }
-  
-  agregar(){
-    // var i;
-
-    // for(i = 0; i<=4; i++ ){
-    //     console.log(i);
-        
-    // }
-
-    console.log('Agregar input');
-     var txt_01 = document.createTextNode('Ingrese puesto');
-    let carta= document.getElementById('jj');
-    let caja = document.createElement("ion-input");
-    caja.type="text";
-    caja.id=''
-    carta.appendChild(txt_01);
-    carta.appendChild(caja);
-    
-  }
-  enviarForm(formulario){
-    console.log(this.datos);
-    
-  }
-  pdf(){
-    var dd = {
-      header: function(){
-        return {
-            table: {widths: [320, 20, 200],
-            heights: [15,10,10],
-  body: [
-  [{text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu',colSpan:3},{},{}],
-  [{text:'V. FUNCIONES, RESPONSABILIDAD Y AUTORIDAD',colSpan:3,alignment: 'center'},{},{}],
-  [{text:'MATRIZ DE RESPONSABILIDADES',colSpan:3,alignment: 'center',bold:true,fillColor: '#dddddd'},{},{}]
-  ]
-  }, margin: [22,20]
-        };
-      },
-      footer: function(){
-        return {
-            table:{
-     headerRows:1, 
-     widths: [510],
-               body : [
-               [''],
-               [''],
-               ['']
-                   ]
-          }, layout : 'headerLineOnly',
-            margin: [70,90]
-        };
-      },
-      
-      content:[
-         
-          {style: 'tableExample',
-  table: {
-     widths: [30,300,8,8,8,8,8,8,8],
-     
-    
-  body: [
-  [{text:'E\nL\nE\nM\nE\nN\nT\nO',fillColor: '#eeeeee'}, {text:'\n\n\n\n\n\n\n\n\n\n\n\nDESCRIPCION',alignment: 'center',fillColor: '#eeeeee',bold:true }, {text:'Direccion',fillColor: '#eeeeee'},{text:'Representante tecnico',fillColor: '#eeeeee'},{text:'Encargado',fillColor: '#eeeeee'},{text:'Jefe de piso',fillColor: '#eeeeee'},{text:'Despachadores',fillColor: '#eeeeee'},{text:'Personal de mantenimiento',fillColor: '#eeeeee'},{text:'Contratistas,Proveedores',fillColor: '#eeeeee'}],
-  [{text:'I',fillColor: '#eeeeee',rowSpan:4}, {text:'Politica',fillColor: '#eeeeee'}, {text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a.Establecer la Política'},{},{},{},{},{},{},{}],
-          [{},{text:'b. Comunicar la Política'},{},{},{},{},{},{},{}],
-          [{},{text:'c. Evaluar la Política anualmente'},{},{},{},{},{},{},{}],
-          //HAy que romper la pagina
-          [{text:'III',fillColor: '#eeeeee',rowSpan:6},{text:'Identificación de Peligros y de aspectos ambientales para la Evaluación de los Riesgos e Impactos Ambientales.',fillColor: '#eeeeee'},{fillColor: '#eeeeee',text:''},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'', pageBreak: "after" },{},{},{},{},{},{},{}],
-     [{},{text:'a.Identificar los aspectos ambientales.'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Identificar los Riesgos'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Evaluar los aspectos ambientales'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Realizar el Análisis de Riesgo de la estación de Servicio'},{},{},{},{},{},{},{}],
-  //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-  [{text:'III',fillColor: '#eeeeee',rowSpan:3},{text:'Requisitos Legales',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Identificar los requisitos legales'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Comunicar los requisitos legales'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'IV',fillColor: '#eeeeee',rowSpan:5},{text:'Objetivos Metas e indicadores.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Establecer los Objetivos y metas'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Diseñar los indicadores'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Elaborar programa de gestión de objetivos y metas'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Comunicar los objetivos'},{},{},{},{},{},{},{}],
-     //ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'V',fillColor: '#eeeeee',rowSpan:5},{text:'Funciones, Responsabilidad y Autoridad.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Establecer la estructura para implantar el SA'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Establecer funciones y responsabilidades'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Designar al Representante técnico'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Establecer los recursos para implantar el SA'},{},{},{},{},{},{},{}],
-     //ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'VI',fillColor: '#eeeeee',rowSpan:6},{text:'Competencia, Capacitación y Entrenamiento',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Elaborar perfiles del puesto'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Detectar las Necesidades de Capacitación'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Elaborar programa de capacitación y entrenamiento'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Aplicar programa de capacitación'},{},{},{},{},{},{},{}],
-     [{},{text:'e. Evaluar la eficacia de la capacitación'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{},{text:'', pageBreak: "after"},{},{},{},{},{},{},{}],
-     [{text:'VII',fillColor: '#eeeeee',rowSpan:5},{text:'Comunicación, Participación y Consulta.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Comunicar la información relacionada con el SA.'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Recibir las quejas y sugerencias, o solicitud de información del SA'},{},{},{},{},{},{},{}],
-     [{},{text:'c.Participar en el SA mediante sugerencias o quejas.'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Atender y dar seguimiento a las quejas y sugerencias.'},{},{},{},{},{},{},{}],
-     //ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'VIII',fillColor: '#eeeeee',rowSpan:5},{text:'Control de Documentos y Registros.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Comunicar la información relacionada con el SA'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Mantener y resguardar documentos y registros'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Participar en el SA mediante sugerencias o quejas.'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Atender y dar seguimiento a las quejas y sugerencias.'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'VIII',fillColor: '#eeeeee',rowSpan:3},{text:'Control de Documentos y Registros.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Establecer los criterios para el control de documentos'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Mantener y resguardar documentos y registros'},{},{},{},{},{},{},{}],
-                      //ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'IX',fillColor: '#eeeeee',rowSpan:3},{text:'Mejores Prácticas y estándares.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Identificar las mejores prácticas y estándares.'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Mantener actualizado el inventario de códigos y estándares'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'X',fillColor: '#eeeeee',rowSpan:5},{text:'Control de Actividades y Procesos.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-         [{},{text:'a. Identificar los criterios para control de riesgos y aspectos ambientales'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Documentar los procedimientos para control de actividades y procesos'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Comunicar los controles de actividades y procesos a contratistas'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Aplicar Controles de aspectos ambientales y riesgos'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{},{text:'', pageBreak: "after"},{},{},{},{},{},{},{}],
-     [{text:'XI',fillColor: '#eeeeee',rowSpan:5},{text:'Integridad Mecánica y Aseguramiento de la Calidad.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-         [{},{text:'a. Elaborar programa de mantenimiento preventivo'},{},{},{},{},{},{},{}],
-     [{},{text:'b.Elaborar Listado de equipos críticos'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Desarrollar procedimientos de mantenimiento'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Cumplir programa de mantenimiento'},{},{},{},{},{},{},{}],
-     //ccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'XII',fillColor: '#eeeeee',rowSpan:4},{text:'Seguridad de Contratistas.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Determinar la responsabilidad de contratistas.'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Seleccionar contratistas.'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Evaluar contratistas'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'XIII',fillColor: '#eeeeee',rowSpan:5},{text:'Preparación y Respuesta a Emergencias.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Identificar situaciones potenciales de emergencia'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Elaborar Planes de Respuesta de cada emergencia identificada'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Integrar Brigadas de emergencia'},{},{},{},{},{},{},{}],
-     [{},{text:'d. Planear, ejecutar y evaluar los simulacros de emergencias'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'XIV',fillColor: '#eeeeee',rowSpan:4},{text:'Monitoreo, verificación y evaluación.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Identificar operaciones a monitorear y medir.'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Evaluar cumplimiento de requisitos legales.'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Administrar hallazgos derivados del monitoreo del SA'},{},{},{},{},{},{},{}],
-                      //ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc	   
-     [{text:'XV',fillColor: '#eeeeee',rowSpan:4},{text:'Auditorías',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Planificar, implementar y mantener un programa de auditorias'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Establecer criterios de competencia para selección de auditores'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Atender hallazgos de auditoría'},{},{},{},{},{},{},{}],
-     //ccccccccccccccccccccccccccccccccccc
-     [{},{text:'', pageBreak: "after"},{},{},{},{},{},{},{}],
-     [{text:'XVI',fillColor: '#eeeeee',rowSpan:4},{text:'Investigación de Incidentes y Accidentes.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Registrar, reportar e investigar accidentes e incidentes'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Atender recomendaciones originadas de la investigación de incidentes'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Elaborar Estadística de incidentes y accidentes'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-     [{text:'XVII',fillColor: '#eeeeee',rowSpan:4},{text:'Revisión de Resultados.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Preparar información para el informe de resultados'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Realizar Revisión de Resultados'},{},{},{},{},{},{},{}],
-     [{},{text:'c. Atender acciones resultantes por desviaciones del SA'},{},{},{},{},{},{},{}],
-     //cccccccccccccccccccccccccccccccccccccccc
-     [{text:'XVII',fillColor: '#eeeeee',rowSpan:2},{text:'Informes de Desempeño.',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'},{text:'',fillColor: '#eeeeee'}],
-     [{},{text:'a. Comunicar los Resultados del desempeño a todos los niveles'},{},{},{},{},{},{},{}],
-     [{},{text:'b. Informar a la ASEA el desempeño del SA'},{},{},{},{},{},{},{}],
-     
-  ]
-  }
-  },
-  {
-     text:'\nA: AUTORIDAD, R: RESPONSABILIDAD, I: INVOLUCRADO\n'
-  },{text:'\n'},{ 
-     table: {
-         
-             //margin:[20,28],
-           heights: [50],
-           widths: [150,150,150],
-  body: [
-     
-  ['REVISADO POR:\n\n\n\n Roberto Muñoz Torres REPRESENTANTE TÉCNICO', 'APROBADO POR:\n\n\n\nFernando Bedoy Ruiz', 'FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"']
-  ]
-  }
-  }
-         
-          
-          ]
-     ,
-      pageSize: 'LETTER',
-      pageMargins: [72,150]
-  };
-  this.pdfMaker.generate(dd, 'V. Matriz de responsabilidad.pdf');
-  }
 
 }

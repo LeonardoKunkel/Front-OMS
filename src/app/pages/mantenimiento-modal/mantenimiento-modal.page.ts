@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 @Component({
   selector: 'app-mantenimiento-modal',
@@ -38,6 +39,7 @@ export class MantenimientoModalPage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
 
   constructor(
     private modalController: ModalController,
@@ -47,7 +49,8 @@ export class MantenimientoModalPage implements OnInit {
     private estacionService: EstacionServicioDatosService,
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService
+    private icono : IconoEstacionService,
+    private firmaRepresente : FirmaRepresentanteService,
     ) { 
       this.getMantenimiento();
       this.getStationService();
@@ -58,6 +61,7 @@ export class MantenimientoModalPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
   getIcono(){
     this.icono.getPolitica().subscribe((data:any)=>{
@@ -75,6 +79,14 @@ export class MantenimientoModalPage implements OnInit {
     this.firma.getFirmaEstacion().subscribe((data:any) =>{
       //console.log(data);
       this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
     })
   }
   imagen64(){
@@ -146,6 +158,7 @@ export class MantenimientoModalPage implements OnInit {
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
  var dd = {
   userPassword: '123',
   ownerPassword: '123456',
@@ -249,16 +262,36 @@ footer: function(currentPage, pageCount){
        },{
            text:'\n\n'
        },{
-           table:{
-                widths:[175,185,185],
-                heights:[50],
-                
-               body:[
-                [`REVISADO POR:\n\n\n\n ${ddd.representanteTecnico}\n\n REPRESENTANTE TÉCNICO`, `APROBADO POR:\n\n\n\n${ddd.maximaAutoridad}`, `FECHA DE APROBACIÓN:\n\n\n\nAgregar fecha "10/10/2018"`]
+        table: {
+             widths: [200,200,140],
+             heights: [50,30],
+             body: [
+                 [
+                     {
+                       image:`${firmaRepresentanteTecnico}`,
+                        fit:[100,50],
+                        alignment:'center',
+                        border:[true,true,true,false]
+                     },{
+                       image:`${firmaEstacion}`,
+                       fit:[200,80],
+                       alignment:'center',
+                       border:[true,true,true,false]
+                     },{
+                      text:'',
+                        fit:[100,50],
+                        alignment:'center',
+                        border:[true,true,true,false]
+                     }],
+                [
+                    {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
+                    {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
+                    {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
              ]
-           }
-           
-           
+        },
+    layout:{
+      defaultBorder: false
+    } 
        }
        
        

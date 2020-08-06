@@ -6,6 +6,7 @@ import { FirmaEstacionServiceService } from '../../services/firma-estacion-servi
 import { IconoEstacionService } from '../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class PuntoTesPage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
   datosEstacion:any={
     calleNumero:'',
     ciudad:'',
@@ -41,10 +43,12 @@ export class PuntoTesPage implements OnInit {
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
     private icono : IconoEstacionService,
-    private datosEstacionService:EstacionServicioDatosService
+    private datosEstacionService:EstacionServicioDatosService,
+    private firmaRepresente : FirmaRepresentanteService
     ) { }
 
     ngOnInit() {
+      this.getFirmaRepresentante();
       this.getDatosEstacion();
       this.imagen64();
       this.getMarcaAgua();
@@ -73,6 +77,14 @@ export class PuntoTesPage implements OnInit {
       this.firma.getFirmaEstacion().subscribe((data:any) =>{
         //console.log(data);
         this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+      })
+    }
+    getFirmaRepresentante(){
+      this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+        //console.log(data);
+         this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+         //console.log(this.firmaRepresentante);
+        
       })
     }
     imagen64(){
@@ -131,6 +143,7 @@ export class PuntoTesPage implements OnInit {
     let marcaAgua = this.marcaAguaEstacion;
     let iconoEstacion = this.iconoEstacion;
     let firmaEstacion = this.firmaEstacion;  
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     let footer = this.myImage;
     let ddd = this.datosEstacion;
     console.log('Descarga');// playground requires you to assign document definition to a variable called dd
@@ -422,7 +435,7 @@ export class PuntoTesPage implements OnInit {
                    body: [
                        [
                            {
-                             text:'',
+                             image:`${firmaRepresentanteTecnico}`,
                              fit:[100,50],
                              alignment:'center',
                              border:[true,true,true,false]

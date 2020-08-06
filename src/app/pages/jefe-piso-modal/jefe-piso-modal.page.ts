@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { FirmaEstacionServiceService } from 'src/app/services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
 import { IconoEstacionService } from 'src/app/services/iconosEstacion.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 @Component({
   selector: 'app-jefe-piso-modal',
@@ -38,6 +39,7 @@ export class JefePisoModalPage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
 
   constructor(
     private modalController: ModalController ,
@@ -47,7 +49,8 @@ export class JefePisoModalPage implements OnInit {
     private estacionService: EstacionServicioDatosService,
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService
+    private icono : IconoEstacionService,
+    private firmaRepresente : FirmaRepresentanteService,
     ) { 
       this.getJefe();
       this.getStationService()
@@ -58,6 +61,7 @@ export class JefePisoModalPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
   getIcono(){
     this.icono.getPolitica().subscribe((data:any)=>{
@@ -75,6 +79,14 @@ export class JefePisoModalPage implements OnInit {
     this.firma.getFirmaEstacion().subscribe((data:any) =>{
       //console.log(data);
       this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
+    })
+  }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
     })
   }
   imagen64(){
@@ -148,6 +160,7 @@ export class JefePisoModalPage implements OnInit {
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -325,7 +338,7 @@ export class JefePisoModalPage implements OnInit {
                body: [
                    [
                        {
-                         text:'',
+                         image:`${firmaRepresentanteTecnico}`,
                           fit:[100,50],
                           alignment:'center',
                           border:[true,true,true,false]
@@ -343,7 +356,7 @@ export class JefePisoModalPage implements OnInit {
                   [
                       {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
                       {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                      {text:`FECHA DE APROBACIÓN:\nAgregar fecha "10/10/2018"`,alignment:'center',border:[true,false,true,true]}]
+                      {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
                ]
           },
       layout:{
