@@ -1,3 +1,6 @@
+import { EstacionServicioDatosService } from './../../services/estacion-servicio-datos.service';
+import { IconoEstacionService } from './../../services/iconosEstacion.service';
+import { FirmaEstacionServiceService } from './../../services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from './../../services/marca-agua-service.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
@@ -15,16 +18,34 @@ export class PuntoCatorcePage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
+  };
 
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
-    private marca: MarcaAguaServiceService
-    ) { }
+    private marca: MarcaAguaServiceService,
+    private firma: FirmaEstacionServiceService,
+    private icono: IconoEstacionService,
+    private datosEstacionService: EstacionServicioDatosService
+    ) { this.getDatosEstacion(); }
 
   ngOnInit() {
     this.imagen64();
     this.marcaAgua();
+    this.getFirma();
+    this.getIcono();
   }
   goCatorceProcedimiento() {
     this.navCtrl.navigateForward('/punto-catorce-procedimiento');
@@ -48,6 +69,26 @@ export class PuntoCatorcePage implements OnInit {
 
   goCatorceEvidencia() {
     this.navCtrl.navigateForward('/punto-catorce-evidencia');
+  }
+
+  getDatosEstacion() {
+    this.datosEstacionService.getEstacion().subscribe((data: any) => {
+      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+    });
+  }
+  getIcono() {
+    this.icono.getPolitica().subscribe((data: any ) => {
+      console.log(data);
+      this.iconoEstacion =  data.findPolitica[data.findPolitica.length - 1].imagen;
+    });
+  }
+
+  getFirma() {
+    this.firma.getFirmaEstacion().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
+    });
   }
 
   marcaAgua() {
@@ -83,8 +124,15 @@ export class PuntoCatorcePage implements OnInit {
   }
 
   pdf() {
-    const footer = this.myImage;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
     const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
     const dd = {
       background(currentPage, pageSize) {
         return {
@@ -92,12 +140,24 @@ export class PuntoCatorcePage implements OnInit {
           absolutePosition: {x: 250, y: 120}, opacity: 0.4
         };
       },
-      header: () => {
+      header(currentPage, pageSize) {
         return {
           table: {
             widths: [740], heights: [50, 15, 15],
             body: [
-              [{text: ''}],
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                  border: [false, true, true, true],
+                }
+              ],
               [{text: 'XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN', alignment: 'center', bold: true}],
               [
                 {
@@ -112,12 +172,20 @@ export class PuntoCatorcePage implements OnInit {
             margin: [22, 15],
         };
       },
-      footer: () => {
+      footer(currentPage, pageCount) {
         return {
           table: {
             headerRows: 1,
             widths: [700],
             body : [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-29 Rev. 0,  ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
               [
                 {
                   image: `${footer}`,
@@ -544,8 +612,33 @@ export class PuntoCatorcePage implements OnInit {
             widths: [260, 260],
             body: [
               [
-                {text: 'REVISADO POR:\n\nGamaliel Chavarría\nREPRESENTANTE TÉCNICO', alignment: 'center', fontSize: 9},
-                {text: 'APROBADO POR: \n\nSergio Lechuga\nMÁXIMA AUTORIDAD', alignment: 'center', fontSize: 9}
+                {
+                  image: `${firmaEstacion}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                }
+              ],
+              [
+                {
+                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  fontSize: 9,
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
+                  alignment: 'center',
+                  fontSize: 9
+                }
               ]
             ]
           },
@@ -560,21 +653,40 @@ export class PuntoCatorcePage implements OnInit {
   }
 
   pdf2() {
-    const footer = this.myImage;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
     const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
     const dd = {
-      background(currentPage, pageSize) {
+      background() {
         return {
           image: `${marcaAgua}`, width: 290, height: 400,
           absolutePosition: {x: 250, y: 120}, opacity: 0.4
         };
       },
-      header: () => {
+      header() {
         return {
           table: {
             widths: [740], heights: [50, 15, 15],
             body: [
-              [{text: ''}],
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                  border: [false, true, true, true],
+                }
+              ],
               [{text: 'XIV. PREPARACIÓN Y RESPUESTA A EMERGENCIAS', alignment: 'center', bold: true}],
               [{text: 'RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO', alignment: 'center', bold: true, fillColor: '#ddd'}],
             ]
@@ -582,12 +694,20 @@ export class PuntoCatorcePage implements OnInit {
           margin: [22, 15],
         };
       },
-      footer: () => {
+      footer(currentPage, pageCount) {
         return {
           table: {
             headerRows: 1,
             widths: [700],
             body : [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-30 Rev. 0,  ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
               [
                 {
                   image: `${footer}`,
@@ -773,9 +893,47 @@ export class PuntoCatorcePage implements OnInit {
             widths: [241, 241, 241],
             body: [
               [
-                {text: 'REVISADO POR:\n\nGamaliel Chavarría\nREPRESENTANTE TÉCNICO', alignment: 'center', fontSize: 9},
-                {text: 'APROBADO POR: \n\nSergio Lechuga\nMÁXIMA AUTORIDAD', alignment: 'center', fontSize: 9},
-                {text: 'FECHA DE EVALUACIÓN:', alignment: 'center', fontSize: 9}
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  image: `${firmaEstacion}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                }
+              ],
+              [
+                {
+                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  border: [true, false, true, true],
+                  fontSize: 9
+                },
+                {
+                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
+                  alignment: 'center',
+                  border: [true, false, true, true],
+                  fontSize: 9
+                },
+                {
+                  text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,
+                  alignment: 'center',
+                  border: [true, false, true, true],
+                  fontSize: 9
+                }
               ]
             ]
           },
@@ -789,10 +947,17 @@ export class PuntoCatorcePage implements OnInit {
   }
 
   pdf3() {
-    const footer = this.myImage;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
     const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
     const dd = {
-      background(currentPage, pageSize) {
+      background() {
         return {
           image: `${marcaAgua}`, width: 290, height: 400,
           absolutePosition: {x: 250, y: 120}, opacity: 0.4
@@ -803,7 +968,19 @@ export class PuntoCatorcePage implements OnInit {
           table: {
             widths: [740], heights: [50, 15, 15],
             body: [
-              [{text: ''}],
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                  border: [false, true, true, true],
+                }
+              ],
               [{text: 'XIV. PREPARACIÓN Y RESPUESTA A EMERGENCIAS', alignment: 'center', bold: true}],
               [{text: 'PLAN DE ATENCIÓN A HALLAZGOS DERIVADOS DEL MONITOREO DEL S A', alignment: 'center', bold: true, fillColor: '#ddd'}],
             ]
@@ -811,12 +988,20 @@ export class PuntoCatorcePage implements OnInit {
           margin: [22, 15],
         };
       },
-      footer: () => {
+      footer(currentPage, pageCount) {
         return {
           table: {
             headerRows: 1,
             widths: [700],
             body : [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-09 Rev. 0,  ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
               [
                 {
                   image: `${footer}`,
@@ -959,9 +1144,44 @@ export class PuntoCatorcePage implements OnInit {
             widths: [241, 241, 241],
             body: [
               [
-                {text: 'REVISADO POR:\n\nGamaliel Chavarría\nREPRESENTANTE TÉCNICO', alignment: 'center', fontSize: 9},
-                {text: 'APROBADO POR: \n\nSergio Lechuga\nMÁXIMA AUTORIDAD', alignment: 'center', fontSize: 9},
-                {text: 'FECHA DE EVALUACIÓN:', alignment: 'center', fontSize: 9}
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  image: `${firmaEstacion}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                }
+              ],
+              [
+                {
+                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                }
               ]
             ]
           },
