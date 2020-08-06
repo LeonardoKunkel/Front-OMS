@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { Observable } from 'rxjs';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 @Component({
   selector: 'app-punto-ocho-menu',
@@ -15,11 +17,27 @@ export class PuntoOchoMenuPage implements OnInit {
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
+  datosEstacion:any={
+    calleNumero:'',
+    ciudad:'',
+    colonia:'',
+    correoElectronico:'',
+    cp:'',
+    estado:'',
+    gerenteEstacion:'',
+    maximaAutoridad:'',
+    nombreEstacionServicio:'',
+    representanteTecnico:'',
+    telefono:''
+  };
 
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
-    private marca: MarcaAguaServiceService
+    private marca: MarcaAguaServiceService,
+    private firmaRepresente : FirmaRepresentanteService,
+    private estacionService: EstacionServicioDatosService,
   ) { }
 
   ngOnInit() {

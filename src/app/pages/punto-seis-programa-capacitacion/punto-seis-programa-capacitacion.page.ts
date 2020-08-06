@@ -5,6 +5,7 @@ import { IconoEstacionService } from '../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from '../../services/marca-agua-service.service';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
 
 @Component({
   selector: 'app-punto-seis-programa-capacitacion',
@@ -14,6 +15,7 @@ import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio
 export class PuntoSeisProgramaCapacitacionPage implements OnInit {
   myImage = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
   datosEstacion:any={
@@ -35,7 +37,8 @@ export class PuntoSeisProgramaCapacitacionPage implements OnInit {
     private firma :FirmaEstacionServiceService,
     private marca : MarcaAguaServiceService,
     private icono : IconoEstacionService,
-    private datosEstacionService:EstacionServicioDatosService) { }
+    private datosEstacionService:EstacionServicioDatosService,
+    private firmaRepresente : FirmaRepresentanteService,) { }
 
   ngOnInit() {
     this.getDatosEstacion();
@@ -43,6 +46,7 @@ export class PuntoSeisProgramaCapacitacionPage implements OnInit {
     this.getMarcaAgua();
     this.getFirma();
     this.getIcono();
+    this.getFirmaRepresentante();
   }
   getDatosEstacion(){
     this.datosEstacionService.getEstacion().subscribe((data:any) =>{
@@ -68,6 +72,15 @@ export class PuntoSeisProgramaCapacitacionPage implements OnInit {
       this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
     })
   }
+  getFirmaRepresentante(){
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
+      //console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
+       //console.log(this.firmaRepresentante);
+      
+    })
+  }
+
   imagen64(){
  
       this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
@@ -105,6 +118,7 @@ export class PuntoSeisProgramaCapacitacionPage implements OnInit {
     let iconoEstacion = this.iconoEstacion;
     let firmaEstacion = this.firmaEstacion;  
     let footer = this.myImage;
+    let firmaRepresentanteTecnico = this.firmaRepresentante;
     let ddd = this.datosEstacion;// playground requires you to assign document definition to a variable called dd
 
     var dd = {
@@ -478,7 +492,7 @@ export class PuntoSeisProgramaCapacitacionPage implements OnInit {
                    body: [
                        [
                            {
-                             text:'',
+                             image:`${firmaRepresentanteTecnico}`,
                              fit:[100,50],
                              alignment:'center',
                              border:[true,true,true,false]
