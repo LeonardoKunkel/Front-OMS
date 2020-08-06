@@ -198,11 +198,6 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
-    path: 'simple',
-    loadChildren: './pages/simple/simple.module#SimplePageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'punto-diecisiete',
     loadChildren: './pages/punto-diecisiete/punto-diecisiete.module#PuntoDiecisietePageModule',
     // canLoad: [AuthGuard]

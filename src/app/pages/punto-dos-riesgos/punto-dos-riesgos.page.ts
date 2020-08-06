@@ -73,34 +73,32 @@ export class PuntoDosRiesgosPage implements OnInit {
     M17: '',
     M18: '',
   };
-  estacione:any[]=[];
+  estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
-  datosEstacion:any={
-    calleNumero:'',
-    ciudad:'',
-    colonia:'',
-    correoElectronico:'',
-    cp:'',
-    estado:'',
-    gerenteEstacion:'',
-    maximaAutoridad:'',
-    nombreEstacionServicio:'',
-    representanteTecnico:'',
-    telefono:''
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
   };
-
- 
 
   constructor( private pdfMaker: PdfMakerService,
                public toast: ToastController,
                private superRiesgos: RiesgosServiceService,
-               private firma :FirmaEstacionServiceService,
-               private marca : MarcaAguaServiceService,
-               private icono : IconoEstacionService,
-               private datosEstacionService:EstacionServicioDatosService
+               private firma: FirmaEstacionServiceService,
+               private marca: MarcaAguaServiceService,
+               private icono: IconoEstacionService,
+               private datosEstacionService: EstacionServicioDatosService
                 ) {
                   this.getDatosEstacion();
                   this.getRiesgos();
@@ -113,50 +111,48 @@ export class PuntoDosRiesgosPage implements OnInit {
     this.getIcono();
   }
 
-  getRiesgos(){
-    this.superRiesgos.getRiesgos().subscribe((data:any)=>{
-      //console.log(data.findRiesgos[data.findRiesgos.length -1]);
-      this.datos = data.findRiesgos[data.findRiesgos.length -1];
-    })
+  getRiesgos() {
+    this.superRiesgos.getRiesgos().subscribe((data: any) => {
+      // console.log(data.findRiesgos[data.findRiesgos.length -1]);
+      this.datos = data.findRiesgos[data.findRiesgos.length - 1];
+    });
   }
-  getDatosEstacion(){
-    this.datosEstacionService.getEstacion().subscribe((data:any) =>{
-      //console.log(data.findEstacion[data.findEstacion.length -1]);
-      this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
-    })
+  getDatosEstacion() {
+    this.datosEstacionService.getEstacion().subscribe((data: any) => {
+      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+    });
   }
-  getIcono(){
-    this.icono.getPolitica().subscribe((data:any)=>{
-     // console.log(data);
-      this.iconoEstacion =  data.findPolitica[data.findPolitica.length -1].imagen;
-    })
+  getIcono() {
+    this.icono.getPolitica().subscribe((data: any ) => {
+      console.log(data);
+      this.iconoEstacion =  data.findPolitica[data.findPolitica.length - 1].imagen;
+    });
   }
-  getMarcaAgua(){
-    this.marca.getMarcaAgua().subscribe((data:any)=>{
-      //console.log(data);
-      this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
-    })
+  getMarcaAgua() {
+    this.marca.getMarcaAgua().subscribe((data: any) => {
+      // console.log(data);
+      this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+    });
   }
-  getFirma(){
-    this.firma.getFirmaEstacion().subscribe((data:any) =>{
-      //console.log(data);
-      this.firmaEstacion =this.firma = data.findFirma[data.findFirma.length -1].firma;
-    })
+  getFirma() {
+    this.firma.getFirmaEstacion().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
+    });
   }
-  imagen64(){
- 
-      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
-        base64 =>{
-          this.myImage = base64;
-          //console.log(this.myImage);
-        }
-        
-      )
+  imagen64() {
+    this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+      base64 => {
+        this.myImage = base64;
+        // console.log(this.myImage);
+      }
+    );
   }
-  convertFileDataURLviaFileReader(url: string){
-    return Observable.create(observer =>{
+  convertFileDataURLviaFileReader(url: string) {
+    return Observable.create(observer => {
       let xhr: XMLHttpRequest = new XMLHttpRequest();
-      xhr.onload = function(){
+      xhr.onload = function() {
         let reader: FileReader = new FileReader();
         reader.onloadend = function(){
           observer.next(reader.result);
@@ -167,7 +163,7 @@ export class PuntoDosRiesgosPage implements OnInit {
       xhr.open('GET', url);
       xhr.responseType = 'blob';
       xhr.send();
-    })
+    });
   }
 
 
@@ -601,20 +597,20 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
   pdf() {
-    var fecha = new Date();
-    let day = fecha.getDate();
-    let month = fecha.getUTCMonth() + 1;
-    let year = fecha.getFullYear();
-    let marcaAgua = this.marcaAguaEstacion;
-    let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion;  
-    let footer = this.myImage;
-    let ddd = this.datosEstacion;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
+    const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
       permissions: {
-        printing: 'highResolution', //'lowResolution'
+        printing: 'highResolution', // 'lowResolution'
         modifying: false,
         copying: false,
         annotating: true,
@@ -622,74 +618,91 @@ export class PuntoDosRiesgosPage implements OnInit {
         contentAccessibility: true,
         documentAssembly: true
       },
-    
-      background: function(currentPage, pageSize) {
-      return {
+      background() {
+        return {
           image: `${marcaAgua}`,
           width: 300,
-          height: 370, 
-          absolutePosition: {x: 250, y: 140},opacity: 0.5}
-    },///////////////////////////////////////////////////////
-    header: function(){
-      return {
-        table:{
-            widths: [150,570],
-            heights: [30,10,10],
-            body:[
-                [
-                    {
-                        image:`${iconoEstacion}`,
-                        width: 45,
-                        height: 60,
-                    alignment:'center',
-                    border:[true,true,false,true],
-                    },{
-                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment: 'center', margin:[15,20],
-                    border:[false,true,true,true],
-                    }
-                ],[
-                    {
-                        text:'EVALUACIÓN DE ASPECTOS AMBIENTALES',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
-                    },{
-                        
-                    }
-                    ],[
-                        {
-                          text:'II. IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE IMPACTOS AMBIENTALES',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
-                        },{
-                            
-                        }
-                        ]
+          height: 370,
+          absolutePosition: {x: 250, y: 140}, opacity: 0.5
+        };
+      },
+      header() {
+        return {
+          table: {
+            widths: [150, 570],
+            heights: [30, 10, 10],
+            body: [
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                  border: [false, true, true, true],
+                }
+              ],
+              [
+                {
+                  text: 'EVALUACIÓN DE ASPECTOS AMBIENTALES',
+                  fontSize: 9,
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'II. IDENTIFICACIÓN DE PELIGROS Y DE ASPECTOS AMBIENTALES PARA LA EVALUACIÓN DE RIESGOS Y DE IMPACTOS AMBIENTALES',
+                  bold: true,
+                  alignment: 'center',
+                  colSpan: 2,
+                  fillColor: '#eeeeee',
+                  border: [true, true, true, true],
+                },
+                {}
               ]
-        },margin: [22,7],
-        
-          layout:{
+            ]
+          },
+          margin: [22, 7],
+          layout: {
             defaultBorder: false
           }
-      };
-    },
-    footer: function(currentPage, pageCount){
-      return {
-          table:{
-        headerRows:1, 
-        widths: [650],
-             body : [
-             [{columns:[
-                 'Página' + currentPage.toString() + ' de ' + pageCount,
-                 {text:`FS-09 Rev. 0,  ${day}/${month}/${year}`,width: 180}
-                 ]}],
-             [{
-              image: `${footer}`,
-              pageBreak: 'after',
-              width: 650,
-              height: 60,
-               },],
-             [''],
-                 ]
-           }, layout : 'headerLineOnly',
-          margin: [72,20],
-      };
-    },
+        };
+      },
+      footer(currentPage, pageCount) {
+        return {
+          table: {
+            headerRows: 1,
+            widths: [650],
+            body : [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-09 Rev. 0,  ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
+              [
+                {
+                  image: `${footer}`,
+                  pageBreak: 'after',
+                  width: 650,
+                  height: 60,
+                },
+              ],
+              [''],
+            ]
+          },
+          layout : 'headerLineOnly',
+          margin: [72, 20],
+        };
+      },
       ///////////////////////
       content: [
         {
@@ -1106,40 +1119,56 @@ export class PuntoDosRiesgosPage implements OnInit {
           text: '\n\n'
         },
         {
-            table: {
-              widths: [200,200,140],
-              heights: [50,30],
-                 body: [
-                     [
-                         {
-                           text:'',
-                           fit:[100,50],
-                           alignment:'center',
-                           border:[true,true,true,false],
-                           pageBreak:'before'
-                         },{
-                           image:`${firmaEstacion}`,
-                           fit:[100,50],
-                           alignment:'center',
-                           border:[true,true,true,false],
-                           pageBreak:'before'
-                         },{
-                           text:'',
-                           fit:[100,50],
-                           alignment:'center',
-                           border:[true,true,true,false],
-                           pageBreak:'before'
-                         }],
-                    [
-                        {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
-                        {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                        {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
-                 ]
-            },
-        layout:{
-          defaultBorder: false
-        },
-        margin:[85,0]
+          table: {
+            widths: [200, 200, 140],
+            heights: [50, 30],
+            body: [
+              [
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  image: `${firmaEstacion}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                }
+              ],
+              [
+                {
+                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                }
+              ]
+            ]
+          },
+          layout: {
+            defaultBorder: false
+          },
+          margin: [85, 0]
         }
       ],
       pageOrientation: 'landscape',

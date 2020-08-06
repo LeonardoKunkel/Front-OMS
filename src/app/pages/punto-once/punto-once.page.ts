@@ -1,3 +1,5 @@
+import { EstacionServicioDatosService } from './../../services/estacion-servicio-datos.service';
+import { FirmaEstacionServiceService } from './../../services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from './../../services/marca-agua-service.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
@@ -15,16 +17,32 @@ export class PuntoOncePage implements OnInit {
     firmaEstacion = null;
     iconoEstacion = null;
     marcaAguaEstacion = null;
+    datosEstacion: any = {
+        calleNumero: '',
+        ciudad: '',
+        colonia: '',
+        correoElectronico: '',
+        cp: '',
+        estado: '',
+        gerenteEstacion: '',
+        maximaAutoridad: '',
+        nombreEstacionServicio: '',
+        representanteTecnico: '',
+        telefono: ''
+    };
 
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
     private marca: MarcaAguaServiceService,
-  ) { }
+    private firma: FirmaEstacionServiceService,
+    private datosEstacionService: EstacionServicioDatosService
+  ) { this.getDatosEstacion(); }
 
   ngOnInit() {
     this.imagen64();
     this.marcaAgua();
+    this.getIcono();
   }
 
     goOnceProcedimiento() {
@@ -37,6 +55,27 @@ export class PuntoOncePage implements OnInit {
 
     goOnceEvidencia() {
         this.navCtrl.navigateForward('/punto-once-evidencia');
+    }
+
+    getIcono() {
+        this.marca.getMarcaAgua().subscribe((data: any) => {
+            // console.log(data);
+            this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+        });
+    }
+
+    getFirma() {
+        this.firma.getFirmaEstacion().subscribe((data: any) => {
+          // console.log(data);
+          this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
+        });
+    }
+
+    getDatosEstacion() {
+        this.datosEstacionService.getEstacion().subscribe((data: any) => {
+          // console.log(data.findEstacion[data.findEstacion.length -1]);
+          this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+        });
     }
 
     marcaAgua() {
@@ -76,8 +115,11 @@ export class PuntoOncePage implements OnInit {
         const marcaAgua = this.marcaAguaEstacion;
         const fecha = new Date();
         const day = fecha.getDate();
-        const month = fecha.getUTCMonth();
+        const month = fecha.getUTCMonth() + 1;
         const year = fecha.getFullYear();
+        const iconoEstacion = this.iconoEstacion;
+        const firmaEstacion = this.firmaEstacion;
+        const ddd = this.datosEstacion;
         const dd = {
             background(currentPage, pageSize) {
                 return {
@@ -90,7 +132,19 @@ export class PuntoOncePage implements OnInit {
                     table: {
                         widths: [560], heights: [50, 15, 15],
                         body: [
-                            [{text: ''}],
+                            [
+                                {
+                                    image: `${iconoEstacion}`,
+                                    width: 45,
+                                    height: 60,
+                                    alignment: 'center',
+                                    border: [true, true, false, true],
+                                },
+                                {
+                                    text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                                    border: [false, true, true, true],
+                                }
+                            ],
                             [{text: 'XI. INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD', alignment: 'center', bold: true}],
                             [{text: 'PLAN DE MANTENIMIENTO', alignment: 'center', bold: true, fillColor: '#ddd'}],
                         ]
@@ -98,20 +152,20 @@ export class PuntoOncePage implements OnInit {
                     margin: [22, 15],
                 };
             },
-            footer: () => {
+            footer(currentPage, pageCount) {
                 return {
                   table: {
                     headerRows: 1,
                     widths: [560],
                     body : [
-                        // [
-                        //     {
-                        //         columns: [
-                        //             'Página' + currentPage.toString() + ' de ' + pageCount,
-                        //             {text: `FS-20 Rev. 0, ${day}/${month}/${year}`, width: 180}
-                        //         ]
-                        //     }
-                        // ],
+                        [
+                            {
+                                columns: [
+                                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                                    {text: `FS-20 Rev. 0, ${day}/${month}/${year}`, width: 180}
+                                ]
+                            }
+                        ],
                         [
                             {
                                 image: `${footer}`,
@@ -376,15 +430,26 @@ export class PuntoOncePage implements OnInit {
                             ],
                             [
                                 {text: 'Tanque', bold: true, rowSpan: 16},
-                                {text: 'Contenedor de derrame conector recuperación de vapores', fontSize: 8, alignment: 'center', rowSpan: 3},
-                                {text: `Verificar que sea hermético y que no esté fracturado, que cuente con
-                                        tapa y empaque, el tubo del sensor con tapa y empaque`, fontSize: 8},
+                                {
+                                    text: 'Contenedor de derrame conector recuperación de vapores',
+                                    fontSize: 8,
+                                    alignment: 'center',
+                                    rowSpan: 3
+                                },
+                                {
+                                    text: `Verificar que sea hermético y que no esté fracturado, que cuente con
+                                            tapa y empaque, el tubo del sensor con tapa y empaque`,
+                                    fontSize: 8
+                                },
                                 {text: '30 días', fontSize: 8, alignment: 'center', rowSpan: 2}
                             ],
                             [
                                 {},
                                 {},
-                                {text: 'Verificar válvula check de 3" que cierre herméticamente, que cuente con su tapa y empaque.', fontSize: 8},
+                                {
+                                    text: 'Verificar válvula check de 3" que cierre herméticamente, que cuente con su tapa y empaque.',
+                                    fontSize: 8
+                                },
                                 {}
                             ],
                             [
@@ -402,7 +467,11 @@ export class PuntoOncePage implements OnInit {
                             [
                                 {},
                                 {},
-                                {text: `Verificar que las válvulas de presión y vació estén limpias, libres de obstrucciones y que mantengan su integridad mecánica.`, fontSize: 8},
+                                {
+                                    text: `Verificar que las válvulas de presión y vació estén limpias, libres de
+                                            obstrucciones y que mantengan su integridad mecánica.`,
+                                    fontSize: 8
+                                },
                                 {text: '120 días', fontSize: 8, alignment: 'center', rowSpan: 2}
                             ],
                             [
@@ -1521,9 +1590,40 @@ export class PuntoOncePage implements OnInit {
                         widths: [220, 220, 103],
                         body: [
                             [
-                                {text: 'REVISADO POR:\n\nGAMALIEL CHAVARRÍA\nREPRESENTANTE TÉCNICO', fontSize: 10, alignment: 'center'},
-                                {text: 'APROBADO POR:\n\nSERGIO LECHUGA\nMÁXIMA AUTORIDAD', fontSize: 10, alignment: 'center'},
-                                {text: 'FECHA DE APROVACIÓN:\n\n\n', fontSize: 10, alignment: 'center'},
+                                {
+                                    text: '',
+                                    fit: [100, 50],
+                                    alignment: 'center',
+                                    border: [true, true, true, false],
+                                    pageBreak: 'before'
+                                },
+                                {
+                                    image: `${firmaEstacion}`,
+                                    fit: [100, 50],
+                                    alignment: 'center',
+                                    border: [true, true, true, false],
+                                    pageBreak: 'before'
+                                },
+                                {
+                                    text: '',
+                                    fit: [100, 50],
+                                    alignment: 'center',
+                                    border: [true, true, true, false],
+                                    pageBreak: 'before'
+                                }
+                            ],
+                            [
+                                {
+                                    text: `REVISADO POR:\n\n${ddd.representanteTecnico}\nREPRESENTANTE TÉCNICO`,
+                                    fontSize: 10,
+                                    alignment: 'center'
+                                },
+                                {
+                                    text: `APROBADO POR:\n\n${ddd.maximaAutoridad}\nMÁXIMA AUTORIDAD`,
+                                    fontSize: 10,
+                                    alignment: 'center'
+                                },
+                                {text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`, fontSize: 10, alignment: 'center'},
                             ]
                         ]
                     }
@@ -1538,6 +1638,13 @@ export class PuntoOncePage implements OnInit {
     pdf2() {
         const footer = this.myImage;
         const marcaAgua = this.marcaAguaEstacion;
+        const fecha = new Date();
+        const day = fecha.getDate();
+        const month = fecha.getUTCMonth() + 1;
+        const year = fecha.getFullYear();
+        const iconoEstacion = this.iconoEstacion;
+        const firmaEstacion = this.firmaEstacion;
+        const ddd = this.datosEstacion;
         const dd = {
             background(currentPage, pageSize) {
                 return {
@@ -1550,7 +1657,19 @@ export class PuntoOncePage implements OnInit {
                     table: {
                         widths: [740], heights: [50, 15, 15],
                         body: [
-                            [{text: ''}],
+                            [
+                                {
+                                    image: `${iconoEstacion}`,
+                                    width: 45,
+                                    height: 60,
+                                    alignment: 'center',
+                                    border: [true, true, false, true],
+                                },
+                                {
+                                    text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                                    border: [false, true, true, true],
+                                }
+                            ],
                             [{text: 'XI. INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD', alignment: 'center', bold: true}],
                             [{text: 'PROGRAMA DE MANTENIMIENTO 2020', alignment: 'center', bold: true, fillColor: '#ddd'}],
                         ]
@@ -1572,12 +1691,20 @@ export class PuntoOncePage implements OnInit {
                     }
                 };
             },
-            footer: () => {
+            footer(currentPage, pageCount) {
                 return {
                   table: {
                     headerRows: 1,
                     widths: [700],
                     body : [
+                        [
+                            {
+                                columns: [
+                                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                                    {text: `FS-09 Rev. 0,  ${day}/${month}/${year}`, width: 180}
+                                ]
+                            }
+                        ],
                         [
                             {
                                 image: `${footer}`,
@@ -2859,8 +2986,26 @@ export class PuntoOncePage implements OnInit {
                         widths: [350, 350],
                         body: [
                             [
+                                {
+                                    image: `${firmaEstacion}`,
+                                    fit: [100, 50],
+                                    alignment: 'center',
+                                    border: [true, true, true, false],
+                                    pageBreak: 'before'
+                                },
+                                {
+                                    text: '',
+                                    fit: [100, 50],
+                                    alignment: 'center',
+                                    border: [true, true, true, false],
+                                    pageBreak: 'before'
+                                },
+                            ],
+                            [
                                 {text: '\n\nEncargado de la estación de servicio'},
-                                {text: 'Fecha:\n'}
+                            ],
+                            [
+                                {text: `Fecha:\n\n${day}/${month}/${year}`}
                             ]
                         ]
                     }
