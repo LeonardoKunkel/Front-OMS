@@ -10,19 +10,23 @@
   <hr class="linea">
 </div>
 <ion-content>
+  <p style="margin: 3%;">
+    A continuación presentamos el formato que la Dirección utilizará anualmente para
+    realizar la revisión del desempeño del sistema y determinar si los resultados obtenidos
+    de la implementación son coherentes con el compromiso de mejora continua.
+  </p>
   <ion-grid fixed>
-    <p>
-      A continuación presentamos el formato que la Dirección utilizará anualmente para
-      realizar la revisión del desempeño del sistema y determinar si los resultados obtenidos
-      de la implementación son coherentes con el compromiso de mejora continua.
-    </p>
+    <ion-row >
+      <ion-col size="12" sizeMd="6" sizeLg="4" style="margin: auto; display: block;" >
+        <ion-card>
+          <ion-card-content>
+            <img src="../../../assets/Imagenes/Elemento 17/informe revision para la direccion-01.png" style="width: 300px; height: auto; margin: auto; display: block;" alt="">
+            <ion-button (click)="pdf()" expand="block" fill="clear" shape="round">
+              Consultar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-  <ion-button (click)="pdf()" expand="block" fill="clear" shape="round">
-    Click me
-  </ion-button>
-  <!-- <embed
-  src="../../../assets/docs/Elemento 17/FS-37 INFORME DE REVISIÓN POR LA DIRECCIÓN.pdf"
-  type="application/pdf"
-  width="100%"
-  height="1200px"/> -->
 </ion-content>

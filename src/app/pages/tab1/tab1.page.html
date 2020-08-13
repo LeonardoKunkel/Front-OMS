@@ -3,6 +3,10 @@
     <ion-icon slot="start" name="moon"></ion-icon>
     <ion-toggle slot="start" [ngModel]="darkMode" (ionChange)="change()"></ion-toggle>
     <ion-buttons slot="end">
+      <ion-button (click)="openModal()" color="success">
+        <ion-icon name="repeat"></ion-icon>
+        Datos de la Estacion de servicio
+      </ion-button>
       <ion-button (click)="openCalendar()" color="primary">
         <ion-icon slot="start" name="calendar"></ion-icon>
         Calendario
@@ -12,21 +16,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="openModal()">
-      Datos <br>ES
-    </ion-fab-button>
-  </ion-fab>
+  <ion-text>
+    <h1 class="ion-text-center">Oil Management System</h1>
+  </ion-text>
+  <hr class="lineaN">
   <ion-grid fixed>
-    <ion-text>
-      <h2>Bienvenido a</h2>
-      <h1>Oil Management System</h1>
-    </ion-text>
-    <hr class="lineaN">
-    <ion-row>
-      <ion-col size="12" sizeMd="6" sizeLg="6">
+    <ion-row style="margin: auto; display: block;">
+      <ion-col size="6" sizeLg="4">
         <ion-card mode="ios">
-          <img src="../../../assets/Imagenes/1.png">
+          <img src="../../../assets/Imagenes/1.png" style=" width: 300px; height: auto; margin: auto; display: block;">
           <ion-card-header>
             <ion-card-title>¿Qué es?</ion-card-title>
           </ion-card-header>
@@ -35,10 +33,8 @@
             servicio y de abastecimiento.
           </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="6">
         <ion-card mode="ios">
-          <img src="../../../assets/Imagenes/4.jpg">
+          <img src="../../../assets/Imagenes/4.jpg" style=" width: 300px; height: auto; margin: auto; display: block;">
           <ion-card-header>
             <ion-card-title>¿Cuál es el propósito?</ion-card-title>
           </ion-card-header>
@@ -47,10 +43,8 @@
             de todas las áreas con operaciones más eficientes.
           </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="6">
         <ion-card mode="ios">
-          <img src="../../../assets/Imagenes/3.png">
+          <img src="../../../assets/Imagenes/3.png" style=" width: 300px; height: auto; margin: auto; display: block;">
           <ion-card-header>
             <ion-card-title>Ventajas de usarlo</ion-card-title>
           </ion-card-header>
@@ -71,10 +65,8 @@
             </ul>
           </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="6">
         <ion-card mode="ios">
-          <img src="../../../assets/Imagenes/despacho.jpg" style="height: 50%; width: 100%;">
+          <img src="../../../assets/Imagenes/despacho.jpg" style=" width: 300px; height: auto; margin: auto; display: block;">
           <ion-card-header>
             <ion-card-title>¿A quiénes beneficia?</ion-card-title>
           </ion-card-header>
