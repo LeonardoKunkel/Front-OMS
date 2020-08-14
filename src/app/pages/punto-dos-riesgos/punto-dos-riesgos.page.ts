@@ -80,29 +80,29 @@ export class PuntoDosRiesgosPage implements OnInit {
   iconoEstacion = null;
   marcaAguaEstacion = null;
   firmaRepresentante = null;
-  datosEstacion:any={
-    calleNumero:'',
-    ciudad:'',
-    colonia:'',
-    correoElectronico:'',
-    cp:'',
-    estado:'',
-    gerenteEstacion:'',
-    maximaAutoridad:'',
-    nombreEstacionServicio:'',
-    representanteTecnico:'',
-    telefono:''
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
 
   };
 
   constructor( private pdfMaker: PdfMakerService,
                public toast: ToastController,
                private superRiesgos: RiesgosServiceService,
-               private firma :FirmaEstacionServiceService,
-               private marca : MarcaAguaServiceService,
-               private icono : IconoEstacionService,
-               private datosEstacionService:EstacionServicioDatosService,
-               private firmaRepresente : FirmaRepresentanteService
+               private firma: FirmaEstacionServiceService,
+               private marca: MarcaAguaServiceService,
+               private icono: IconoEstacionService,
+               private datosEstacionService: EstacionServicioDatosService,
+               private firmaRepresente: FirmaRepresentanteService
                 ) {
                   this.getDatosEstacion();
                   this.getRiesgos();
@@ -146,30 +146,27 @@ export class PuntoDosRiesgosPage implements OnInit {
       this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
     });
   }
-  getFirmaRepresentante(){
-    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
-      //console.log(data);
-       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
-       //console.log(this.firmaRepresentante);
-      
-    })
+  getFirmaRepresentante() {
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length - 1].firma;
+      // console.log(this.firmaRepresentante);
+    });
   }
-  imagen64(){
- 
-      this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
-        base64 =>{
-          this.myImage = base64;
-          //console.log(this.myImage);
-        }
-        
-      )
+  imagen64() {
+    this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
+      base64 => {
+        this.myImage = base64;
+        // console.log(this.myImage);
+      }
+    );
   }
   convertFileDataURLviaFileReader(url: string) {
     return Observable.create(observer => {
-      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      const xhr: XMLHttpRequest = new XMLHttpRequest();
       xhr.onload = function() {
-        let reader: FileReader = new FileReader();
-        reader.onloadend = function(){
+        const reader: FileReader = new FileReader();
+        reader.onloadend = function() {
           observer.next(reader.result);
           observer.complete();
         };
@@ -182,7 +179,7 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
 
-  async enviarForm(formulario) {
+  async enviarForm() {
     console.log(this.datos);
 
     this.superRiesgos.crearRiesgos(this.datos).subscribe(data => {
@@ -612,16 +609,16 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
   pdf() {
-    var fecha = new Date();
-    let day = fecha.getDate();
-    let month = fecha.getUTCMonth() + 1;
-    let year = fecha.getFullYear();
-    let marcaAgua = this.marcaAguaEstacion;
-    let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion;  
-    let footer = this.myImage;
-    let ddd = this.datosEstacion;
-    let firmaRepresentanteTecnico = this.firmaRepresentante;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
+    const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
+    const firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
       userPassword: '123',
       ownerPassword: '123456',
@@ -639,13 +636,13 @@ export class PuntoDosRiesgosPage implements OnInit {
           image: `${marcaAgua}`,
           width: 300,
           height: 370,
-          absolutePosition: {x: 250, y: 140}, opacity: 0.5
+          absolutePosition: {x: 250, y: 140}, opacity: 0.4
         };
       },
       header() {
         return {
           table: {
-            widths: [150, 570],
+            widths: [150, 590],
             heights: [30, 10, 10],
             body: [
               [
@@ -1135,41 +1132,56 @@ export class PuntoDosRiesgosPage implements OnInit {
           text: '\n\n'
         },
         {
-
-            table: {
-              widths: [200,200,140],
-              heights: [50,30],
-                 body: [
-                     [
-                         {
-                           image:`${firmaRepresentanteTecnico}`,
-                           fit:[100,50],
-                           alignment:'center',
-                           border:[true,true,true,false],
-                           pageBreak:'before'
-                         },{
-                           image:`${firmaEstacion}`,
-                           fit:[100,50],
-                           alignment:'center',
-                           border:[true,true,true,false],
-                           pageBreak:'before'
-                         },{
-                           text:'',
-                           fit:[100,50],
-                           alignment:'center',
-                           border:[true,true,true,false],
-                           pageBreak:'before'
-                         }],
-                    [
-                        {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
-                        {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                        {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
-                 ]
-            },
-        layout:{
-          defaultBorder: false
-        },
-        margin:[85,0]
+          table: {
+            widths: [200, 200, 140],
+            heights: [50, 30],
+            body: [
+              [
+                {
+                  image: `${firmaRepresentanteTecnico}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  image: `${firmaEstacion}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                },
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false],
+                  pageBreak: 'before'
+                }
+              ],
+              [
+                {
+                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                }
+              ]
+            ]
+          },
+          layout: {
+            defaultBorder: false
+          },
+          margin: [85, 0]
         }
       ],
       pageOrientation: 'landscape',

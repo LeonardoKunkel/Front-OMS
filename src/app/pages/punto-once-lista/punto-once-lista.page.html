@@ -2,6 +2,12 @@
   <ion-toolbar>
   <ion-buttons slot="start">
     <ion-back-button defaultHref="/punto-once"></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="pdf()">
+        <ion-icon slot="start" name="print"></ion-icon>
+        IMPRIMIR
+      </ion-button>
+    </ion-buttons>
   </ion-buttons>
     <ion-title class="ion-text-center">Lista de Equipos Críticos</ion-title>
   </ion-toolbar>
@@ -11,8 +17,8 @@
 </div>
 <ion-content>
   <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="pdf()">
-      <ion-icon name="cloud-download"></ion-icon>
+    <ion-fab-button (click)="enviarForm()" type="submit" color="success">
+      <ion-icon name="cloud-upload"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <ion-grid fixed>
@@ -400,9 +406,6 @@
             </ion-row>
           </ion-card-content>
         </ion-card>
-        <ion-button (click)="enviarForm()" expand="full" shape="round" color="success">
-          Guardar datos
-        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

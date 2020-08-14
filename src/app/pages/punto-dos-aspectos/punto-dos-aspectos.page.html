@@ -2,12 +2,18 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-dos"></ion-back-button>
+      <ion-buttons slot="start">
+        <ion-button (click)="pdf()">
+          <ion-icon slot="start" name="print"></ion-icon>
+          IMPRIMIR
+        </ion-button>
+      </ion-buttons>
     </ion-buttons>
     <ion-title class="ion-text-center">Evaluación de aspectos ambientales</ion-title>
   </ion-toolbar><hr class="linea">
   <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="pdf()">
-      <ion-icon name="cloud-download"></ion-icon>
+    <ion-fab-button (click)="enviarForm()" type="submit" color="success">
+      <ion-icon name="cloud-upload"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-header>
@@ -1959,8 +1965,5 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-    <ion-button type="submit" expand="full" shape="round" color="success">
-      Guardar datos
-    </ion-button>
   </form>
 </ion-content>

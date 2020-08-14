@@ -139,7 +139,8 @@ export class PuntoDieciseisPage implements OnInit {
       header: () => {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 570],
+            heights: [30, 10, 10],
             body: [
               [
                 {
@@ -154,8 +155,23 @@ export class PuntoDieciseisPage implements OnInit {
                   border: [false, true, true, true],
                 }
               ],
-              [{text: 'XVI. INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES', alignment: 'center', bold: true}],
-              [{text: 'COMPROBACIÓN DE HIPÓTESIS DE TRABAJO', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  text: 'XVI. INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES',
+                  alignment: 'center',
+                  bold: true
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'COMPROBACIÓN DE HIPÓTESIS DE TRABAJO',
+                  alignment: 'center',
+                  bold: true,
+                  fillColor: '#ddd'
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15]
@@ -165,7 +181,7 @@ export class PuntoDieciseisPage implements OnInit {
         return {
           table: {
             headerRows: 1,
-            widths: [700],
+            widths: [650],
             body : [
               [
                 {
@@ -181,7 +197,7 @@ export class PuntoDieciseisPage implements OnInit {
                   pageBreak: 'after',
                   alignment: 'center',
                   width: 510,
-                  height: 80
+                  height: 60
                 }
               ]
             ]
@@ -359,7 +375,8 @@ export class PuntoDieciseisPage implements OnInit {
       header: () => {
         return {
           table: {
-            widths: [560], heights: [50, 15, 15],
+            widths: [150, 400],
+            heights: [50, 15, 15],
             body: [
               [
                 {
@@ -370,12 +387,33 @@ export class PuntoDieciseisPage implements OnInit {
                   border: [true, true, false, true],
                 },
                 {
-                  text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 25,
+                  alignment: 'center',
+                  margin: [15, 20],
                   border: [false, true, true, true],
                 }
               ],
-              [{text: 'XVI. INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES', alignment: 'center', bold: true}],
-              [{text: 'ENTREVISTA DE TESTIGOS PARA LA ICR', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  text: 'XVI. INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'ENTREVISTA DE TESTIGOS PARA LA ICR',
+                  alignment: 'center',
+                  bold: true,
+                  fillColor: '#ddd',
+                  colSpan: 2
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15]
@@ -385,7 +423,7 @@ export class PuntoDieciseisPage implements OnInit {
         return {
           table: {
             headerRows: 1,
-            widths: [560],
+            widths: [510],
             body : [
               [
                 {
@@ -400,7 +438,7 @@ export class PuntoDieciseisPage implements OnInit {
                   image: `${footer}`,
                   pageBreak: 'after',
                   width: 510,
-                  height: 80,
+                  height: 60,
                 }
               ]
             ]

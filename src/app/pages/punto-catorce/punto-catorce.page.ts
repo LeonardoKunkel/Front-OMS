@@ -143,7 +143,8 @@ export class PuntoCatorcePage implements OnInit {
       header(currentPage, pageSize) {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 590],
+            heights: [30, 10, 10],
             body: [
               [
                 {
@@ -158,25 +159,33 @@ export class PuntoCatorcePage implements OnInit {
                   border: [false, true, true, true],
                 }
               ],
-              [{text: 'XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN', alignment: 'center', bold: true}],
+              [
+                {
+                  text: 'XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2
+                }
+              ],
               [
                 {
                   text: `PROGRAMA DE MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO`,
                   alignment: 'center',
                   bold: true,
-                  fillColor: '#ddd'
+                  fillColor: '#ddd',
+                  colSpan: 2
                 }
               ],
             ]
           },
-            margin: [22, 15],
+          margin: [22, 15],
         };
       },
       footer(currentPage, pageCount) {
         return {
           table: {
             headerRows: 1,
-            widths: [700],
+            widths: [650],
             body : [
               [
                 {
@@ -190,11 +199,11 @@ export class PuntoCatorcePage implements OnInit {
                 {
                   image: `${footer}`,
                   pageBreak: 'after',
-                  alignment: 'center',
-                  width: 510,
-                  height: 80
+                  width: 650,
+                  height: 60
                 }
-              ]
+              ],
+              [''],
             ]
           },
           layout : 'headerLineOnly',
@@ -672,7 +681,8 @@ export class PuntoCatorcePage implements OnInit {
       header() {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 590],
+            heights: [30, 10, 10],
             body: [
               [
                 {
@@ -687,8 +697,25 @@ export class PuntoCatorcePage implements OnInit {
                   border: [false, true, true, true],
                 }
               ],
-              [{text: 'XIV. PREPARACIÓN Y RESPUESTA A EMERGENCIAS', alignment: 'center', bold: true}],
-              [{text: 'RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  text: 'XIV. PREPARACIÓN Y RESPUESTA A EMERGENCIAS',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'RESULTADO DEL MONITOREO Y MEDICIÓN DE PARÁMETROS DE DESEMPEÑO',
+                  alignment: 'center',
+                  bold: true,
+                  fillColor: '#ddd',
+                  colSpan: 2
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15],
@@ -698,7 +725,7 @@ export class PuntoCatorcePage implements OnInit {
         return {
           table: {
             headerRows: 1,
-            widths: [700],
+            widths: [650],
             body : [
               [
                 {
@@ -714,7 +741,7 @@ export class PuntoCatorcePage implements OnInit {
                   pageBreak: 'after',
                   alignment: 'center',
                   width: 510,
-                  height: 80
+                  height: 60
                 }
               ]
             ]
@@ -966,7 +993,8 @@ export class PuntoCatorcePage implements OnInit {
       header: () => {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 570],
+            heights: [30, 10, 10],
             body: [
               [
                 {
@@ -981,8 +1009,25 @@ export class PuntoCatorcePage implements OnInit {
                   border: [false, true, true, true],
                 }
               ],
-              [{text: 'XIV. PREPARACIÓN Y RESPUESTA A EMERGENCIAS', alignment: 'center', bold: true}],
-              [{text: 'PLAN DE ATENCIÓN A HALLAZGOS DERIVADOS DEL MONITOREO DEL S A', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  text: 'XIV. PREPARACIÓN Y RESPUESTA A EMERGENCIAS',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'PLAN DE ATENCIÓN A HALLAZGOS DERIVADOS DEL MONITOREO DEL S A',
+                  alignment: 'center',
+                  bold: true,
+                  fillColor: '#ddd',
+                  colSpan: 2
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15],
@@ -992,7 +1037,7 @@ export class PuntoCatorcePage implements OnInit {
         return {
           table: {
             headerRows: 1,
-            widths: [700],
+            widths: [650],
             body : [
               [
                 {
@@ -1008,7 +1053,7 @@ export class PuntoCatorcePage implements OnInit {
                   pageBreak: 'after',
                   alignment: 'center',
                   width: 510,
-                  height: 80,
+                  height: 60,
                 }
               ]
             ]
