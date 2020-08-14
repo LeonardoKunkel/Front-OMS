@@ -11,10 +11,10 @@ import { FirmaRepresentanteService } from 'src/app/services/firma-representante.
 export class FirmaRepresntantePage implements OnInit {
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
-  
-  datos:any={
-  firma:''
-  }
+
+  datos: any = {
+    firma: ''
+  };
 
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'maxWidth': 1,
@@ -33,9 +33,7 @@ export class FirmaRepresntantePage implements OnInit {
   }
   drawComplete() {
     this.datos.firma = this.signaturePad.toDataURL();
-    //console.log(this.signaturePad.toDataURL());
-    
-    
+    // console.log(this.signaturePad.toDataURL());
   }
   clear() {
     this.signaturePad.clear();
@@ -46,25 +44,22 @@ export class FirmaRepresntantePage implements OnInit {
       message: 'Firma Guardada',
       duration: 2000
     });
-    this.postFirma(this.datos)
+    this.postFirma(this.datos);
     toast.present();
   }
 
   ngOnInit() {
   }
 
-  postFirma(body){
-    this.firmasService.postFirmaRepresentante(body).subscribe((data:any) =>{
+  postFirma(body) {
+    this.firmasService.postFirmaRepresentante(body).subscribe((data: any) => {
       console.log(data);
-
-      
-    })
+    });
   }
 
-  getFirmas(){
-    this.firmasService.getFirmaRepresentante().subscribe((data:any) =>{
+  getFirmas() {
+    this.firmasService.getFirmaRepresentante().subscribe((data: any) => {
       console.log(data);
-      
-    })
-}
+    });
+  }
 }

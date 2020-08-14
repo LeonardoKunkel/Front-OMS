@@ -2,864 +2,865 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-dos"></ion-back-button>
+      <ion-buttons slot="start">
+        <ion-button (click)="pdf()">
+          <ion-icon slot="start" name="print"></ion-icon>
+          IMPRIMIR
+        </ion-button>
+      </ion-buttons>
     </ion-buttons>
     <ion-title class="ion-text-center">Evaluación de Riesgos</ion-title>
   </ion-toolbar><hr class="linea">
   <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="pdf()">
-      <ion-icon name="cloud-download"></ion-icon>
+    <ion-fab-button (click)="enviarForm()" type="submit" color="success">
+      <ion-icon name="cloud-upload"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-header>
 
 <ion-content>
-  <form #formulario="ngForm" (ngSubmit)="enviarForm(formulario)">
-    <ion-grid fixed>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <h3 class="ion-text-justify">Una vez identificados los riesgos, 
+          el Representante Técnico determina cuáles de dichos impactos son los que representan 
+          eventos o escenarios de riesgo, es decir, la carencia o pérdida de controles de ingeniería, 
+          bajo el siguiente criterio de evaluación:
+        </h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <h3>Nivel de Probabilidad de ocurrencia (Frecuencia)</h3>
+        <ul>
+          <li>1. | <b>Remota.</b> No se espera que ocurra durante la vida del proyecto.</li>
+          <li>2. | <b>Baja.</b> Se espera que ocurra no más de una vez durante la vida del proyecto.</li>
+          <li>3. | <b>Media.</b> Se espera que ocurra varias veces durante la vida de la estación de servicio.</li>
+          <li>4. | <b>Alta.</b> Se espera que ocurra más de una vez al año.</li>
+        </ul>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <h3>Nivel de Severidad de Consecuencia</h3>
+        <ul>
+          <li>4. | <b>Catastrófica.</b> Una o más fatalidades. Lesiones o fatalidades en la comunidad.</li>
+          <li>3. | <b>Grave.</b> Daño permanente en sección localizada del proceso o construcción. Accidentes incapacitantes u hospitalización.</li>
+          <li>2. | <b>Moderada.</b> Un accidente incapacitante. Múltiples lesionados.</li>
+          <li>1. | <b>Menor.</b> Respuesta a emergencia sin lesionados.</li>
+        </ul>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="4">
+        <h3>Categoría de Riesgo (Magnitud)</h3>
+        <ul>
+          <li>I. | <b>INACEPTABLE.</b> No se puede reducir el trabajo hasta reducir el riesgo.</li>
+          <li>II. | <b>INDESEABLE.</b> No comenzar trabajo hasta reducir y controlar el riesgo</li>
+          <li>III. | <b>MODERADO.</b> Establecer medidas para implantarse en un tiempo determinado</li>
+          <li>IV. | <b>ACEPTABLE.</b> Considerar soluciones o mejoras para asegurar la eficacia de las medidas de control</li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div>
+    <hr class="linea">
+  </div>
+  <ion-slides>
+    <ion-slide>
       <ion-row>
-        <ion-col size="12">
-          <h3 class="ion-text-justify">Una vez identificados los riesgos, 
-            el Representante Técnico determina cuáles de dichos impactos son los que representan 
-            eventos o escenarios de riesgo, es decir, la carencia o pérdida de controles de ingeniería, 
-            bajo el siguiente criterio de evaluación:
-          </h3>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Arribo de autotanque a la Estación de servicio.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Maniobra dentro de la estación.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Golpe a instalaciones u otros vehículos o atropellamiento a otras personas.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F1"
+                [(ngModel)]="datos.F1"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C1"
+                [(ngModel)]="datos.C1"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M1 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Conexión e inicio de la descarga de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame o fuga durante la conexión y/o operación de llenado de tanque de almacenamiento.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F2"
+                [(ngModel)]="datos.F2"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C2"
+                [(ngModel)]="datos.C2"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M2 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Descarga de producto por autotanque.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Deslizamiento de autotanque, con desprendimiento de la manguera de descarga en ambos extremos.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame de producto.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number" 
+                min="1" 
+                max="4"
+                name="F3"
+                [(ngModel)]="datos.F3"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number" 
+                min="1" 
+                max="4"
+                name="C3"
+                [(ngModel)]="datos.C3"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M3 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Descarga de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Incendio durante el llenado del tanque de almacenamiento.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F4"
+                [(ngModel)]="datos.F4"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C4"
+                [(ngModel)]="datos.C4"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M4 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Descarga de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Indendio en tubos de venteo durante el llenado del tanque de almacenamiento.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F5"
+                [(ngModel)]="datos.F5"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C5"
+                [(ngModel)]="datos.C5"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M5 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Descarga de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Nivel de producto en tanques es erróneo.</li>
+                  <li class="ion-text-left">Conexión a tanque diferente.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Sobrellenado de tanque de almacenamiento.</li>
+                  <li class="ion-text-left">Derrrame de producto al realizar la desconexión.</li>
+                </ul>
+              </h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F6"
+                [(ngModel)]="datos.F6"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C6"
+                [(ngModel)]="datos.C6"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M6 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
       </ion-row>
+    </ion-slide>
+
+    <ion-slide>
       <ion-row>
         <ion-col size="12" sizeMd="6" sizeLg="4">
-          <h3>Nivel de Probabilidad de ocurrencia (Frecuencia)</h3>
-          <ul>
-            <li>1. | <b>Remota.</b> No se espera que ocurra durante la vida del proyecto.</li>
-            <li>2. | <b>Baja.</b> Se espera que ocurra no más de una vez durante la vida del proyecto.</li>
-            <li>3. | <b>Media.</b> Se espera que ocurra varias veces durante la vida de la estación de servicio.</li>
-            <li>4. | <b>Alta.</b> Se espera que ocurra más de una vez al año.</li>
-          </ul>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Término de la descarga de producto y desconexión.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame o fuga durante la desconexión al término de la descarga.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F7"
+                [(ngModel)]="datos.F7"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="C7"
+                [(ngModel)]="datos.C7"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M7 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
         <ion-col size="12" sizeMd="6" sizeLg="4">
-          <h3>Nivel de Severidad de Consecuencia</h3>
-          <ul>
-            <li>4. | <b>Catastrófica.</b> Una o más fatalidades. Lesiones o fatalidades en la comunidad.</li>
-            <li>3. | <b>Grave.</b> Daño permanente en sección localizada del proceso o construcción. Accidentes incapacitantes u hospitalización.</li>
-            <li>2. | <b>Moderada.</b> Un accidente incapacitante. Múltiples lesionados.</li>
-            <li>1. | <b>Menor.</b> Respuesta a emergencia sin lesionados.</li>
-          </ul>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Salida de autotanque a la estación de Servicio.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame de producto o fuga durante el despacho de producto a vehículos.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="F8"
+                [(ngModel)]="datos.F8"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="C8"
+                [(ngModel)]="datos.C8"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M8 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
         <ion-col size="12" sizeMd="6" sizeLg="4">
-          <h3>Categoría de Riesgo (Magnitud)</h3>
-          <ul>
-            <li>I. | <b>INACEPTABLE.</b> No se puede reducir el trabajo hasta reducir el riesgo.</li>
-            <li>II. | <b>INDESEABLE.</b> No comenzar trabajo hasta reducir y controlar el riesgo</li>
-            <li>III. | <b>MODERADO.</b> Establecer medidas para implantarse en un tiempo determinado</li>
-            <li>IV. | <b>ACEPTABLE.</b> Considerar soluciones o mejoras para asegurar la eficacia de las medidas de control</li>
-          </ul>
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Despacho de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame de producto o fuga durante el despacho de producto a vehículos.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="F9"
+                [(ngModel)]="datos.F9"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="C9"
+                [(ngModel)]="datos.C9"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M9 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Despacho de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2 class="ion-text-left">
+                Distracción o mala intención del conductor del vehículo.
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>
+                Derrame por desprendimiento de manguera de despacho de combustible por desplazamiento de vehículo.
+              </h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F10"
+                [(ngModel)]="datos.F10"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C10"
+                [(ngModel)]="datos.C10"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M10 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Despacho de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2 class="ion-text-left">
+                Distracción o mala intención del conductor del vehículo.
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame por derribo del dispensario por automóvil o camión y no opera la válvula shut-off.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F11"
+                [(ngModel)]="datos.F11"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="C11"
+                [(ngModel)]="datos.C11"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M11 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card size="12" sizeMd="12" sizeLg="6">
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Despacho de producto.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Incendio en el área de despacho, por derribo de dispensario o desprendimiento de manguera.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="F12"
+                [(ngModel)]="datos.F12"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="C12"
+                [(ngModel)]="datos.C12"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M12 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
       </ion-row>
-    </ion-grid>
-    <div>
-      <hr class="linea">
-    </div>
-    <ion-slides>
-      <ion-slide>
-        <ion-row>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Arribo de autotanque a la Estación de servicio.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Maniobra dentro de la estación.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Golpe a instalaciones u otros vehículos o atropellamiento a otras personas.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F1"
-                  [(ngModel)]="datos.F1"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C1"
-                  [(ngModel)]="datos.C1"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M1 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Conexión e inicio de la descarga de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame o fuga durante la conexión y/o operación de llenado de tanque de almacenamiento.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F2"
-                  [(ngModel)]="datos.F2"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C2"
-                  [(ngModel)]="datos.C2"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M2 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Descarga de producto por autotanque.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Deslizamiento de autotanque, con desprendimiento de la manguera de descarga en ambos extremos.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame de producto.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number" 
-                  min="1" 
-                  max="4"
-                  name="F3"
-                  [(ngModel)]="datos.F3"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number" 
-                  min="1" 
-                  max="4"
-                  name="C3"
-                  [(ngModel)]="datos.C3"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M3 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Descarga de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Incendio durante el llenado del tanque de almacenamiento.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F4"
-                  [(ngModel)]="datos.F4"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C4"
-                  [(ngModel)]="datos.C4"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M4 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Descarga de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Indendio en tubos de venteo durante el llenado del tanque de almacenamiento.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F5"
-                  [(ngModel)]="datos.F5"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C5"
-                  [(ngModel)]="datos.C5"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M5 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Descarga de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Nivel de producto en tanques es erróneo.</li>
-                    <li class="ion-text-left">Conexión a tanque diferente.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Sobrellenado de tanque de almacenamiento.</li>
-                    <li class="ion-text-left">Derrrame de producto al realizar la desconexión.</li>
-                  </ul>
-                </h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F6"
-                  [(ngModel)]="datos.F6"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C6"
-                  [(ngModel)]="datos.C6"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M6 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
+    </ion-slide>
 
-      <ion-slide>
-        <ion-row>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Término de la descarga de producto y desconexión.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame o fuga durante la desconexión al término de la descarga.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F7"
-                  [(ngModel)]="datos.F7"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="C7"
-                  [(ngModel)]="datos.C7"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M7 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Salida de autotanque a la estación de Servicio.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame de producto o fuga durante el despacho de producto a vehículos.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="F8"
-                  [(ngModel)]="datos.F8"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="C8"
-                  [(ngModel)]="datos.C8"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M8 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Despacho de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame de producto o fuga durante el despacho de producto a vehículos.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="F9"
-                  [(ngModel)]="datos.F9"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="C9"
-                  [(ngModel)]="datos.C9"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M9 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Despacho de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2 class="ion-text-left">
-                  Distracción o mala intención del conductor del vehículo.
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>
-                  Derrame por desprendimiento de manguera de despacho de combustible por desplazamiento de vehículo.
-                </h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F10"
-                  [(ngModel)]="datos.F10"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C10"
-                  [(ngModel)]="datos.C10"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M10 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Despacho de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2 class="ion-text-left">
-                  Distracción o mala intención del conductor del vehículo.
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame por derribo del dispensario por automóvil o camión y no opera la válvula shut-off.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F11"
-                  [(ngModel)]="datos.F11"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="C11"
-                  [(ngModel)]="datos.C11"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M11 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card size="12" sizeMd="12" sizeLg="6">
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Despacho de producto.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Incendio en el área de despacho, por derribo de dispensario o desprendimiento de manguera.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="F12"
-                  [(ngModel)]="datos.F12"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="C12"
-                  [(ngModel)]="datos.C12"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M12 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
+    <ion-slide>
+      <ion-row>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Ejecución de trabajos de mantenimiento.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>Derrame o fuga durante la ejecución de trabajos de mantenimiento.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="F13"
+                [(ngModel)]="datos.F13"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="0" 
+                max="4"
+                name="C13"
+                [(ngModel)]="datos.C13"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M13 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card size="12" sizeMd="12" sizeLg="6">
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Operación normal.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                Trampa de combustibles con hidrocarburos.
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2>
+                Incendio en trampa de Combustibles.
+              </h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F14"
+                [(ngModel)]="datos.F14"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C14"
+                [(ngModel)]="datos.C14"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M14 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card size="12" sizeMd="12" sizeLg="6">
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Operación normal.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2 class="ion-text-left">
+                Vandalismo.
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2 class="ion-text-left">Incendio en área de despacho.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F15"
+                [(ngModel)]="datos.F15"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C15"
+                [(ngModel)]="datos.C15"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M15 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Instalaciones eléctricas en operación.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2>
+                <ul>
+                  <li class="ion-text-left">Equipos en mal estado.</li>
+                  <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
+                </ul>
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2 class="ion-text-left">Incendio en instalaciones eléctricas.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F16"
+                [(ngModel)]="datos.F16"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C16"
+                [(ngModel)]="datos.C16"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M16 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Operación normal.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2 class="ion-text-left">
+                Sismo de magnitud considerable.
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2 class="ion-text-left">Contaminación de subsuelo y mantos freáticos por fuga o derrame de combustible.</h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F17"
+                [(ngModel)]="datos.F17"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C17"
+                [(ngModel)]="datos.C17"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M17 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" sizeMd="6" sizeLg="4">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-subtitle>Actividad</ion-card-subtitle>
+              <ion-card-title>Operación normal.</ion-card-title>
+              <hr class="linea1">
+              <ion-card-subtitle>Peligro</ion-card-subtitle>
+              <h2 class="ion-text-left">
+                Inundación.
+              </h2>
+              <br>
+              <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
+              <h2 class="ion-text-left">
+                Contaminación de subsuelo y mantos freáticos por fuga o derrame de combustible.
+              </h2>
+              <hr class="linea1">
+              <ion-item>
+                <ion-label>Frecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="F18"
+                [(ngModel)]="datos.F18"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Consecuencia:</ion-label>
+                <ion-input 
+                placeholder="Selecciona"
+                type="number"  
+                min="1" 
+                max="4"
+                name="C18"
+                [(ngModel)]="datos.C18"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Magnitud: {{ this.datos.M18 }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
 
-      <ion-slide>
-        <ion-row>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Ejecución de trabajos de mantenimiento.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
+    <ion-slide>
+      <ion-row>
+        <ion-col size="12" >
+          <ion-card>
+            <ion-card-content>
+              <div>
                 <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
+                  Una vez seleccionados los valores de los riesgos, dé click en el botón 
+                  "Enviar datos" para que estos sean guardados. Posteriormente de click en 
+                  "Imprimir" para descargr el formato con los valores plasmados.
                 </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>Derrame o fuga durante la ejecución de trabajos de mantenimiento.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="F13"
-                  [(ngModel)]="datos.F13"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="0" 
-                  max="4"
-                  name="C13"
-                  [(ngModel)]="datos.C13"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M13 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card size="12" sizeMd="12" sizeLg="6">
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Operación normal.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  Trampa de combustibles con hidrocarburos.
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2>
-                  Incendio en trampa de Combustibles.
-                </h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F14"
-                  [(ngModel)]="datos.F14"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C14"
-                  [(ngModel)]="datos.C14"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M14 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card size="12" sizeMd="12" sizeLg="6">
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Operación normal.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2 class="ion-text-left">
-                  Vandalismo.
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2 class="ion-text-left">Incendio en área de despacho.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F15"
-                  [(ngModel)]="datos.F15"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C15"
-                  [(ngModel)]="datos.C15"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M15 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Instalaciones eléctricas en operación.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2>
-                  <ul>
-                    <li class="ion-text-left">Equipos en mal estado.</li>
-                    <li class="ion-text-left">Falta de conocimiento o de conciencia del personal.</li>
-                  </ul>
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2 class="ion-text-left">Incendio en instalaciones eléctricas.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F16"
-                  [(ngModel)]="datos.F16"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C16"
-                  [(ngModel)]="datos.C16"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M16 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Operación normal.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2 class="ion-text-left">
-                  Sismo de magnitud considerable.
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2 class="ion-text-left">Contaminación de subsuelo y mantos freáticos por fuga o derrame de combustible.</h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F17"
-                  [(ngModel)]="datos.F17"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C17"
-                  [(ngModel)]="datos.C17"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M17 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" sizeMd="6" sizeLg="4">
-            <ion-card>
-              <ion-card-content>
-                <ion-card-subtitle>Actividad</ion-card-subtitle>
-                <ion-card-title>Operación normal.</ion-card-title>
-                <hr class="linea1">
-                <ion-card-subtitle>Peligro</ion-card-subtitle>
-                <h2 class="ion-text-left">
-                  Inundación.
-                </h2>
-                <br>
-                <ion-card-subtitle>Riesgo asociado</ion-card-subtitle>
-                <h2 class="ion-text-left">
-                  Contaminación de subsuelo y mantos freáticos por fuga o derrame de combustible.
-                </h2>
-                <hr class="linea1">
-                <ion-item>
-                  <ion-label>Frecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="F18"
-                  [(ngModel)]="datos.F18"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Consecuencia:</ion-label>
-                  <ion-input 
-                  placeholder="Selecciona"
-                  type="number"  
-                  min="1" 
-                  max="4"
-                  name="C18"
-                  [(ngModel)]="datos.C18"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Magnitud: {{ this.datos.M18 }}</ion-label>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-row>
-          <ion-col size="12" >
-            <ion-card>
-              <ion-card-content>
-                <div>
-                  <h2>
-                    Una vez seleccionados los valores de los riesgos, dé click en el botón 
-                    "Enviar datos" para que estos sean guardados. Posteriormente de click en 
-                    "Imprimir" para descargr el formato con los valores plasmados.
-                  </h2>
-                </div>
-                <br>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
-    </ion-slides>
-    <ion-button type="submit" expand="full" shape="round" color="success">
-      Guardar datos
-    </ion-button>
-  </form>
+              </div>
+              <br>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

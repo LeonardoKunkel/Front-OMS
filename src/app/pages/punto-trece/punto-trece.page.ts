@@ -132,7 +132,8 @@ export class PuntoTrecePage implements OnInit {
       header: () => {
         return {
           table: {
-            widths: [560], heights: [50, 15, 15],
+            widths: [150, 400],
+            heights: [30, 10, 10],
             body: [
               [
                 {
@@ -151,16 +152,20 @@ export class PuntoTrecePage implements OnInit {
                 {
                   text: 'XIII. PREPARACIÓN Y RESPUESTA A EMERGENCIAS',
                   alignment: 'center',
-                  bold: true
-                }
+                  bold: true,
+                  colSpan: 2
+                },
+                {}
               ],
               [
                 {
                   text: 'ACTA DE CONFORMACIÓN DE LAS BRIGADAS DE RESPUESTA A EMERGENCIAS',
                   alignment: 'center',
                   bold: true,
-                  fillColor: '#ddd'
-                }
+                  fillColor: '#ddd',
+                  colSpan: 2
+                },
+                {}
               ],
             ]
           },
@@ -171,7 +176,7 @@ export class PuntoTrecePage implements OnInit {
         return {
           table: {
             headerRows: 1,
-            widths: [560],
+            widths: [510],
             body : [
               [
                 {
@@ -186,7 +191,7 @@ export class PuntoTrecePage implements OnInit {
                   image: `${footer}`,
                   pageBreak: 'after',
                   width: 510,
-                  height: 80,
+                  height: 60,
                 }
               ]
             ]
@@ -196,10 +201,15 @@ export class PuntoTrecePage implements OnInit {
         };
       },
       content: [
-        {text: `En la ciudad de xxxxxxx, Estado de xxxxxxxx siendo las doce horas del día x de xxxxx de 2019 se reúnen en el inmueble ubicado
-                en A. o calle, No. Colonia, C.P. 00000,  que ocupa la Estación de servicio XXXXXXXX. con objeto de conformar formalmente las
-                Brigadas de Respuesta a Emergencia de conformidad con los preceptos legales aplicables. El desempeño de estas comisiones
-                no significa nuevo nombramiento o cambio de las condiciones de la relación laboral con la empresa, por considerarse una obligación para el trabajador, sin representar remuneración alguna.\n\n`, fontSize: 10},
+        {
+          text: `En la ciudad de xxxxxxx, Estado de xxxxxxxx siendo las doce horas del día x de xxxxx de
+                2019 se reúnen en el inmueble ubicado en A. o calle, No. Colonia, C.P. 00000,  que ocupa la
+                Estación de servicio XXXXXXXX. con objeto de conformar formalmente las Brigadas de Respuesta
+                a Emergencia de conformidad con los preceptos legales aplicables. El desempeño de estas comisiones
+                no significa nuevo nombramiento o cambio de las condiciones de la relación laboral con la empresa,
+                por considerarse una obligación para el trabajador, sin representar remuneración alguna.\n\n`,
+          fontSize: 10
+        },
         {text: '1. Conformación de las Brigadas', bold: true},
         {text: `Las Brigadas de Respuesta a Emergencias son grupos de personas organizadas y capacitadas en una o varias actividades para la respuesta a emergencias como es combate contra incendio, primeros auxilios, búsqueda y rescate de personas, entre otros; los cuales serán responsables de realizarlas de manera preventiva o ante la eventualidad de un alto riesgo, emergencia, siniestro o desastre, dentro del ámbito de la empresa, orientada a la salvaguarda de las personas, sus bienes y entorno, están organizadas por un coordinador de brigada.
                 En función de las situaciones potenciales de emergencia identificas y los requisitos legales aplicables, se conforman las siguientes Brigadas de Respuesta a Emergencia:\n\n`, fontSize: 10},

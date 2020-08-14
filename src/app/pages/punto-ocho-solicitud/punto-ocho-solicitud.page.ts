@@ -13,18 +13,18 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
   styleUrls: ['./punto-ocho-solicitud.page.scss'],
 })
 export class PuntoOchoSolicitudPage implements OnInit {
-  datosEstacion:any={
-    calleNumero:'',
-    ciudad:'',
-    colonia:'',
-    correoElectronico:'',
-    cp:'',
-    estado:'',
-    gerenteEstacion:'',
-    maximaAutoridad:'',
-    nombreEstacionServicio:'',
-    representanteTecnico:'',
-    telefono:''
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
   };
   myImage = null;
   firmaRepresentante = null;
@@ -34,10 +34,10 @@ export class PuntoOchoSolicitudPage implements OnInit {
 
   constructor(
     private estacionService: EstacionServicioDatosService,
-    private firma :FirmaEstacionServiceService,
-    private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService,
-    private firmaRepresente : FirmaRepresentanteService,
+    private firma: FirmaEstacionServiceService,
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService,
+    private firmaRepresente: FirmaRepresentanteService,
     private pdfMaker: PdfMakerService,
     ) { }
 
@@ -49,32 +49,31 @@ export class PuntoOchoSolicitudPage implements OnInit {
     this.getFirmaRepresentante();
     this.getStationService();
   }
-  getFirmaRepresentante(){
-    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
-      //console.log(data);
-       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
-       //console.log(this.firmaRepresentante);
-      
-    })
+  getFirmaRepresentante() {
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length - 1].firma;
+      // console.log(this.firmaRepresentante);
+    });
   }
 
-  getStationService(){
-    this.estacionService.getEstacion().subscribe((data:any) =>{
-      let datoConsultado = data.findEstacion.length -1;
+  getStationService() {
+    this.estacionService.getEstacion().subscribe((data: any) => {
+      const datoConsultado = data.findEstacion.length - 1;
       this.datosEstacion = data.findEstacion[datoConsultado];
+    });
+}
+getIcono() {
+  this.icono.getPolitica().subscribe((data: any) => {
+   // console.log(data);
+    this.iconoEstacion =  data.findPolitica[data.findPolitica.length - 1].imagen;
   });
 }
-getIcono(){
-  this.icono.getPolitica().subscribe((data:any)=>{
-   // console.log(data);
-    this.iconoEstacion =  data.findPolitica[data.findPolitica.length -1].imagen;
-  })
-}
 getMarcaAgua(){
-  this.marca.getMarcaAgua().subscribe((data:any)=>{
-    //console.log(data);
-    this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length -1].marcaAgua;
-  })
+  this.marca.getMarcaAgua().subscribe((data: any) => {
+    // console.log(data);
+    this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+  });
 }
 getFirma(){
   this.firma.getFirmaEstacion().subscribe((data:any) =>{

@@ -134,7 +134,7 @@ export class PuntoSietePage implements OnInit {
     private navCtrl: NavController,
     private firma: FirmaEstacionServiceService,
     private marca: MarcaAguaServiceService,
-    private firmaRepresente : FirmaRepresentanteService,
+    private firmaRepresente: FirmaRepresentanteService,
     private icono: IconoEstacionService
   ) {
     this.consultar();
@@ -166,13 +166,12 @@ export class PuntoSietePage implements OnInit {
       this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
     });
   }
-  getFirmaRepresentante(){
-    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
-      //console.log(data);
-       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
-       //console.log(this.firmaRepresentante);
-      
-    })
+  getFirmaRepresentante() {
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length - 1].firma;
+       // console.log(this.firmaRepresentante);
+    });
   }
 
   imagen64() {
@@ -462,16 +461,16 @@ export class PuntoSietePage implements OnInit {
   }
 
   pdf() {
-    let marcaAgua = this.marcaAguaEstacion;
-    let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion; 
-    let firmaRepresentanteTecnico = this.firmaRepresentante; 
-    let footer = this.myImage;
-    let ddd = this.datosEstacion;
-    var fecha = new Date();
-    let day = fecha.getDate();
-    let month = fecha.getUTCMonth() + 1;
-    let year = fecha.getFullYear();
+    const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const firmaRepresentanteTecnico = this.firmaRepresentante;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
     this.checar();
     const dd = {
       userPassword: '123',
@@ -486,70 +485,92 @@ export class PuntoSietePage implements OnInit {
         documentAssembly: true
       },
       background(currentPage, pageSize) {
-      return {
-        image: `${marcaAgua}`, width: 300,height: 350, 
-        absolutePosition: {x: 150, y: 160},opacity: 0.5}
-    },
-    header: () => {
-      return {
-        table:{
-            widths: [150,400],
-            heights: [30,10,10],
-            body:[
-                [
-                    {
-                        image:`${iconoEstacion}`,
-                        width: 45,
-                        height: 60,
-                        alignment:'center',
-                        border:[true,true,false,true],
-                    },{
-                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:17,alignment: 'center', margin:[0,15],
-                    border:[false,true,true,true],
-                    }
-                ],[
-                    {
-                        text:'LISTA DE COMUNICACIÓN',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
-                    },{
-                        
-                    }
-                    ],[
-                        {
-                          text:'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
-                        },{
-                            
-                        }
-                        ]
+        return {
+          image: `${marcaAgua}`, width: 300, height: 350,
+          absolutePosition: {x: 150, y: 160}, opacity: 0.5
+        };
+      },
+      header: () => {
+        return {
+          table: {
+            widths: [150, 400],
+            heights: [30, 10, 10],
+            body: [
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 17,
+                  alignment: 'center',
+                  margin: [0, 15],
+                  border: [false, true, true, true],
+                }
+              ],
+              [
+                {
+                  text: 'LISTA DE COMUNICACIÓN',
+                  fontSize: 9,
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'VII. COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA',
+                  bold: true,
+                  alignment: 'center',
+                  colSpan: 2,
+                  fillColor: '#eeeeee',
+                  border: [true, true, true, true],
+                },
+                {}
               ]
-        },margin: [22,25],
-        
-          layout:{
+            ]
+          },
+          margin: [22, 25],
+          layout: {
             defaultBorder: false
           }
-      };
-    },
-    footer: function(currentPage, pageCount){
-      return {
-          table:{
-        headerRows:1, 
-        widths: [510],
-             body : [
-             [{columns:[
-                 'Página ' + currentPage.toString() + ' de ' + pageCount,
-                 {text:`FS-14 Rev., ${day}/${month}/${year}`,width: 180}
-                 ]}],
-             [{
-              image: `${footer}`,
-              pageBreak: 'after',
-              width: 510,
-              height: 60,
-               },],
-             [''],
-                 ]
-           }, layout : 'headerLineOnly',
-          margin: [72,20],
-      };
-    },
+        };
+      },
+      footer(currentPage, pageCount) {
+        return {
+          table: {
+            headerRows: 1,
+            widths: [510],
+            body : [
+              [
+                {
+                  columns: [
+                    'Página ' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-14 Rev., ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
+              [
+                {
+                  image: `${footer}`,
+                  pageBreak: 'after',
+                  width: 510,
+                  height: 60,
+                },
+              ],
+              [''],
+            ]
+          },
+          layout : 'headerLineOnly',
+          margin: [72, 20],
+        };
+      },
       content: [
         {
           table: {

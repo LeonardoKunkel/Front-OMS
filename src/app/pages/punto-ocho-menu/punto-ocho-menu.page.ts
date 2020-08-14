@@ -1,4 +1,3 @@
-import { EstacionServicioDatosService } from './../../services/estacion-servicio-datos.service';
 import { IconoEstacionService } from './../../services/iconosEstacion.service';
 import { FirmaEstacionServiceService } from './../../services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from './../../services/marca-agua-service.service';
@@ -21,18 +20,18 @@ export class PuntoOchoMenuPage implements OnInit {
   iconoEstacion = null;
   marcaAguaEstacion = null;
   firmaRepresentante = null;
-  datosEstacion:any={
-    calleNumero:'',
-    ciudad:'',
-    colonia:'',
-    correoElectronico:'',
-    cp:'',
-    estado:'',
-    gerenteEstacion:'',
-    maximaAutoridad:'',
-    nombreEstacionServicio:'',
-    representanteTecnico:'',
-    telefono:''
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
   };
 
   constructor(
@@ -140,7 +139,8 @@ export class PuntoOchoMenuPage implements OnInit {
       header: () => {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 570],
+            heights: [50, 15, 15],
             body: [
               [
                 {
@@ -155,8 +155,25 @@ export class PuntoOchoMenuPage implements OnInit {
                   border: [false, true, true, true],
                 }
               ],
-              [{text: 'VIII. CONTROL DE DOCUMENTOS Y REGISTROS', alignment: 'center', bold: true}],
-              [{text: 'LISTA DE DISTRIBUCIÓN DE DOCUMENTOS', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  text: 'VIII. CONTROL DE DOCUMENTOS Y REGISTROS',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'LISTA DE DISTRIBUCIÓN DE DOCUMENTOS',
+                  alignment: 'center',
+                  bold: true,
+                  fillColor: '#ddd',
+                  colSpan: 2
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15],
@@ -166,7 +183,7 @@ export class PuntoOchoMenuPage implements OnInit {
         return {
           table: {
             headerRows: 1,
-            widths: [700],
+            widths: [650],
             body : [
               [
                 {
@@ -181,8 +198,8 @@ export class PuntoOchoMenuPage implements OnInit {
                   image: `${footer}`,
                   pageBreak: 'after',
                   alignment: 'center',
-                  width: 510,
-                  height: 80
+                  width: 650,
+                  height: 60
                 }
               ]
             ]
@@ -532,5 +549,435 @@ export class PuntoOchoMenuPage implements OnInit {
       pageMargins: [22, 120]
     };
     this.pdfMaker.generate(dd, 'Lista de Distribución');
+  }
+
+  pdf2() {
+    const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    // const firmaEstacion = this.firmaEstacion;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
+    const firmaRepresentanteTecnico = this.firmaRepresentante;
+    const dd = {
+      background(currentPage, pageSize) {
+        return {
+          image: `${marcaAgua}`, width: 300, height: 350,
+          absolutePosition: {x: 150, y: 160}, opacity: 0.5
+        };
+      },
+      header() {
+        return {
+          table: {
+            widths: [150, 400],
+            heights: [30, 10, 10],
+            body: [
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 65,
+                  height: 80,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 20,
+                  margin: [55, 20],
+                  border: [false, true, true, true],
+                }
+              ],
+              [
+                {
+                  text: 'SOLICITUD DE CAMBIOS',
+                  fontSize: 9,
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'VIII. CONTROL DE DOCUMENTOS',
+                  bold: true,
+                  alignment: 'center',
+                  colSpan: 2,
+                  fillColor: '#eeeeee',
+                  border: [true, true, true, true],
+                },
+                {}
+              ]
+            ]
+          },
+          margin: [22, 15],
+          layout: {
+            defaultBorder: false
+          }
+        };
+      },
+      footer(currentPage, pageCount) {
+        return {
+          table: {
+            headerRows: 1,
+            widths: [510],
+            body : [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `P-SA-01 Rev.0, ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
+              [
+                {
+                  image: `${footer}`,
+                  pageBreak: 'after',
+                  width: 510,
+                  height: 60,
+                },
+              ],
+              [''],
+            ]
+          },
+          layout: 'headerLineOnly',
+          margin: [72, 20],
+        };
+      },
+      content: [
+        {
+          table: {
+            widths: [120, 230, 90, 90],
+            body: [
+              [
+                {
+                  text: `CODIFICACIÓN`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7
+                },
+                {},
+                {
+                  text: `FECHA DE SOLICITUD`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7
+                },
+                {}
+              ],
+              [
+                {
+                  text: `NOMBRE DEL DOCUMENTO`,
+                  bold:  true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7
+                },
+                {
+                  text: '',
+                  colSpan: 3
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: `ELEMENTO DEL SISTEMA`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7
+                },
+                {
+                  text: '',
+                  colSpan: 3
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: `NOMBRE DEL SOLICITANTE`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7
+                },
+                {},
+                {
+                  text: `PUESTO`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7
+                },
+                {}
+              ]
+            ]
+          }
+        },
+        {text: '\n'},
+        {
+          table: {
+            widths: [255, 10, 255, 10],
+            body: [
+              [
+                {
+                  text: `TIPO DE DOCUMENTO`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 9,
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: `PROCEDIMIENTO DE SISTEMA`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                },
+                {
+                  text: `PROCEDIMIENTO ESPECÍFICO`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                }
+              ],
+              [
+                {
+                  text: `FORMATO DE SISTEMA`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                },
+                {
+                  text: `FORMATO OPERATIVO`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                }
+              ],
+              [
+                {
+                  text: `ORIGEN DEL CAMBIO`,
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 9,
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: `SUGERENCIA`, fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                },
+                {
+                  text: `HALLAZGO DE AUDITORÍA`, fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                }
+              ],
+              [
+                {
+                  text: `RECOMENDACIÓN ICR`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                },
+                {
+                  text: `ACCIÓN DE MEJORA`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                }
+              ],
+              [
+                {
+                  text: `CAMBIO DE TECNOLOGÍA`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                },
+                {
+                  text: `CAMBIO EN EL PROCESO`,
+                  fontSize: 7
+                },
+                {
+                  text: ``,
+                  fontSize: 8
+                }
+              ],
+            ]
+          }
+        },
+        {text: '\n'},
+        {
+          table: {
+            widths: [255, 10, 255, 10],
+            heights: [10, 40, 10, 40, 10, 10, 10, 40],
+            body: [
+              [
+                {
+                  text: 'ESTADO ACTUAL',
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7,
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: '',
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'CAMBIO PROPUESTO',
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7,
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: '',
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'RESULTADO DE LA EVALUACIÓN',
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7,
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: `ACEPTADA`,
+                  fontSize: 7
+                },
+                {},
+                {
+                  text: `ACEPTADA`,
+                  fontSize: 7
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'MOTIVO DE LA ACEPTACIÓN O RECHAZO',
+                  bold: true,
+                  fillColor: '#a5c3dd',
+                  fontSize: 7,
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+              [
+                {
+                  text: '',
+                  colSpan: 4
+                },
+                {},
+                {},
+                {}
+              ],
+            ]
+          }
+        },
+        {text: '\n'},
+        {
+          table: {
+            widths: [360, 185],
+            heights: [30, 30],
+            body: [
+              [
+                // {
+                //   image: `${firmaRepresentanteTecnico}`,
+                //   fit: [100, 50],
+                //   alignment: 'center',
+                //   border: [true, true, true, false]
+                // },
+                {
+                  text: ' ',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false]
+                }
+              ],
+              [
+                {
+                  text: `EVALÚA:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  border: [true, false, true, true],
+                  fontSize: 7
+                },
+                {
+                  text: `FECHA \n ${day}/${month}/${year}`,
+                  alignment: 'center',
+                  border: [true, false, true, true],
+                  fontSize: 7
+                }
+              ]
+            ]
+          },
+          layout: {
+            defaultBorder: false
+          },
+          margin: [3, 0]
+        }
+      ],
+      pageSize: 'LETTER',
+      pageMargins: [22, 150]
+    };
+    this.pdfMaker.generate(dd, 'sssss');
   }
 }

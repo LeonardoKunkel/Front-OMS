@@ -1,3 +1,4 @@
+import { IconoEstacionService } from './../../services/iconosEstacion.service';
 import { EstacionServicioDatosService } from './../../services/estacion-servicio-datos.service';
 import { FirmaEstacionServiceService } from './../../services/firma-estacion-service.service';
 import { MarcaAguaServiceService } from './../../services/marca-agua-service.service';
@@ -13,10 +14,6 @@ import { Observable } from 'rxjs';
 })
 export class PuntoOncePage implements OnInit {
 
-    myImage = null;
-    firmaEstacion = null;
-    iconoEstacion = null;
-    marcaAguaEstacion = null;
     datosEstacion: any = {
         calleNumero: '',
         ciudad: '',
@@ -30,19 +27,25 @@ export class PuntoOncePage implements OnInit {
         representanteTecnico: '',
         telefono: ''
     };
+    myImage = null;
+    firmaEstacion = null;
+    iconoEstacion = null;
+    marcaAguaEstacion = null;
 
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
     private marca: MarcaAguaServiceService,
     private firma: FirmaEstacionServiceService,
-    private datosEstacionService: EstacionServicioDatosService
+    private datosEstacionService: EstacionServicioDatosService,
+    private icono: IconoEstacionService
   ) { this.getDatosEstacion(); }
 
   ngOnInit() {
     this.imagen64();
     this.marcaAgua();
     this.getIcono();
+    this.getFirma();
   }
 
     goOnceProcedimiento() {
@@ -58,9 +61,12 @@ export class PuntoOncePage implements OnInit {
     }
 
     getIcono() {
-        this.marca.getMarcaAgua().subscribe((data: any) => {
-            // console.log(data);
-            this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+        // this.marca.getMarcaAgua().subscribe((data: any) => {
+        //     // console.log(data);
+        //     this.marcaAguaEstacion = data.findMarcaAgua[data.findMarcaAgua.length - 1].marcaAgua;
+        // });
+        this.icono.getPolitica().subscribe((data: any) => {
+            this.iconoEstacion =  data.findPolitica[data.findPolitica.length - 1].imagen;
         });
     }
 
@@ -113,24 +119,27 @@ export class PuntoOncePage implements OnInit {
     pdf() {
         const footer = this.myImage;
         const marcaAgua = this.marcaAguaEstacion;
+        const iconoEstacion = this.iconoEstacion;
+        const firmaEstacion = this.firmaEstacion;
+        const ddd = this.datosEstacion;
         const fecha = new Date();
         const day = fecha.getDate();
         const month = fecha.getUTCMonth() + 1;
         const year = fecha.getFullYear();
-        const iconoEstacion = this.iconoEstacion;
-        const firmaEstacion = this.firmaEstacion;
-        const ddd = this.datosEstacion;
         const dd = {
             background(currentPage, pageSize) {
                 return {
-                    image: `${marcaAgua}`, width: 290, height: 400,
+                    image: `${marcaAgua}`,
+                    width: 290,
+                    height: 400,
                     absolutePosition: {x: 170, y: 210}, opacity: 0.4
                 };
             },
-            header: () => {
+            header() {
                 return {
                     table: {
-                        widths: [560], heights: [50, 15, 15],
+                        widths: [150, 400],
+                        heights: [30, 10, 10],
                         body: [
                             [
                                 {
@@ -141,12 +150,33 @@ export class PuntoOncePage implements OnInit {
                                     border: [true, true, false, true],
                                 },
                                 {
-                                    text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                                    text: `${ddd.nombreEstacionServicio}`,
+                                    bold: true,
+                                    fontSize: 17,
+                                    alignment: 'center',
+                                    margin: [0, 15],
                                     border: [false, true, true, true],
                                 }
                             ],
-                            [{text: 'XI. INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD', alignment: 'center', bold: true}],
-                            [{text: 'PLAN DE MANTENIMIENTO', alignment: 'center', bold: true, fillColor: '#ddd'}],
+                            [
+                                {
+                                    text: 'XI. INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD',
+                                    alignment: 'center',
+                                    bold: true,
+                                    colSpan: 2
+                                },
+                                {}
+                            ],
+                            [
+                                {
+                                    text: 'PLAN DE MANTENIMIENTO',
+                                    alignment: 'center',
+                                    bold: true,
+                                    fillColor: '#ddd',
+                                    colSpan: 2
+                                },
+                                {}
+                            ],
                         ]
                     },
                     margin: [22, 15],
@@ -154,28 +184,28 @@ export class PuntoOncePage implements OnInit {
             },
             footer(currentPage, pageCount) {
                 return {
-                  table: {
-                    headerRows: 1,
-                    widths: [560],
-                    body : [
-                        [
-                            {
-                                columns: [
-                                    'Página' + currentPage.toString() + ' de ' + pageCount,
-                                    {text: `FS-20 Rev. 0, ${day}/${month}/${year}`, width: 180}
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                image: `${footer}`,
-                                pageBreak: 'after',
-                                width: 510,
-                                height: 80,
-                            }
+                    table: {
+                        headerRows: 1,
+                        widths: [510],
+                        body : [
+                            [
+                                {
+                                    columns: [
+                                        'Página ' + currentPage.toString() + ' de ' + pageCount,
+                                        {text: `FS-20 Rev. 0, ${day}/${month}/${year}`, width: 180}
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    image: `${footer}`,
+                                    pageBreak: 'after',
+                                    width: 510,
+                                    height: 60,
+                                }
+                            ]
                         ]
-                    ]
-                  },
+                    },
                   layout : 'headerLineOnly',
                   margin: [50, 20]
                 };
@@ -378,11 +408,10 @@ export class PuntoOncePage implements OnInit {
                                     alignment: 'center',
                                     fontSize: 8,
                                     rowSpan: 3,
-                                    pageBreak: 'before'
                                 },
                                 {text: `Verificar que sea hermético y que no esté fracturado, que cuente con
-                                        tapa y empaque, el tubo del sensor con tapa y empaque`, fontSize: 8, pageBreak: 'before'},
-                                {text: '30 días', alignment: 'center', fontSize: 8, rowSpan: 3, pageBreak: 'before'}
+                                        tapa y empaque, el tubo del sensor con tapa y empaque`, fontSize: 8},
+                                {text: '30 días', alignment: 'center', fontSize: 8, rowSpan: 3}
                             ],
                             [
                                 {},
@@ -483,13 +512,23 @@ export class PuntoOncePage implements OnInit {
                             [
                                 {},
                                 {text: 'Equipo sistema de control de inventarios', fontSize: 8, alignment: 'center', rowSpan: 3},
-                                {text: `Obtener un reporte impreso de los datos de los tanques que la consola del equipo señale, respecto a nivel de producto y agua`, fontSize: 8},
+                                {
+                                    text:
+                                        `Obtener un reporte impreso de los datos de los tanques que la consola
+                                        del equipo señale, respecto a nivel de producto y agua`,
+                                    fontSize: 8
+                                },
                                 {text: '30 días', fontSize: 8, alignment: 'center', rowSpan: 3}
                             ],
                             [
                                 {},
                                 {},
-                                {text: `Se verifica que el equipo del sistema de control de inventarios identifique correctamente el tanque de almacenamiento.`, fontSize: 8},
+                                {
+                                    text:
+                                        `Se verifica que el equipo del sistema de control de inventarios identifique
+                                        correctamente el tanque de almacenamiento.`,
+                                    fontSize: 8
+                                },
                                 {}
                             ],
                             [
@@ -500,8 +539,18 @@ export class PuntoOncePage implements OnInit {
                             ],
                             [
                                 {},
-                                {text: 'Pozos de observación', fontSize: 8, alignment: 'center', rowSpan: 5},
-                                {text: `Verifica que el sello que se localiza alrededor del tubo, en la parte superior del pozo sea hermético y no presente filtraciones`, fontSize: 8},
+                                {
+                                    text: 'Pozos de observación',
+                                    fontSize: 8,
+                                    alignment: 'center',
+                                    rowSpan: 5
+                                },
+                                {
+                                    text:
+                                        `Verifica que el sello que se localiza alrededor del tubo, en la parte superior
+                                        del pozo sea hermético y no presente filtraciones`,
+                                    fontSize: 8
+                                },
                                 {text: '30 días', fontSize: 8, alignment: 'center', rowSpan: 3}
                             ],
                             [
@@ -1655,7 +1704,7 @@ export class PuntoOncePage implements OnInit {
             header: () => {
                 return {
                     table: {
-                        widths: [740], heights: [50, 15, 15],
+                        widths: [150, 583], heights: [30, 10, 10],
                         body: [
                             [
                                 {
@@ -1670,52 +1719,68 @@ export class PuntoOncePage implements OnInit {
                                     border: [false, true, true, true],
                                 }
                             ],
-                            [{text: 'XI. INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD', alignment: 'center', bold: true}],
-                            [{text: 'PROGRAMA DE MANTENIMIENTO 2020', alignment: 'center', bold: true, fillColor: '#ddd'}],
+                            [
+                                {
+                                    text: 'XI. INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD',
+                                    alignment: 'center',
+                                    bold: true,
+                                    colSpan: 2
+                                },
+                                {}
+                            ],
+                            [
+                                {
+                                    text: 'PROGRAMA DE MANTENIMIENTO 2020',
+                                    alignment: 'center',
+                                    bold: true,
+                                    fillColor: '#ddd',
+                                    colSpan: 2
+                                },
+                                {}
+                            ],
                         ]
                     },
-                    margin: [22, 15],
-                    layout: {
-                        hLineWidth: function (i, node) {
-                            return (i === 0 || i === node.table.body.length) ? 2 : 1;
-                        },
-                        vLineWidth: function (i, node) {
-                            return (i === 0 || i === node.table.widths.length) ? 2 : 1;
-                        },
-                        hLineColor: function (i, node) {
-                            return (i === 0 || i === node.table.body.length) ? 'black' : 'gray';
-                        },
-                        vLineColor: function (i, node) {
-                            return (i === 0 || i === node.table.widths.length) ? 'black' : 'gray';
-                        },
-                    }
+                    margin: [22, 7],
+                    // layout: {
+                    //     hLineWidth: function (i, node) {
+                    //         return (i === 0 || i === node.table.body.length) ? 2 : 1;
+                    //     },
+                    //     vLineWidth: function (i, node) {
+                    //         return (i === 0 || i === node.table.widths.length) ? 2 : 1;
+                    //     },
+                    //     hLineColor: function (i, node) {
+                    //         return (i === 0 || i === node.table.body.length) ? 'black' : 'gray';
+                    //     },
+                    //     vLineColor: function (i, node) {
+                    //         return (i === 0 || i === node.table.widths.length) ? 'black' : 'gray';
+                    //     },
+                    // }
                 };
             },
             footer(currentPage, pageCount) {
                 return {
-                  table: {
-                    headerRows: 1,
-                    widths: [700],
-                    body : [
-                        [
-                            {
-                                columns: [
-                                    'Página' + currentPage.toString() + ' de ' + pageCount,
-                                    {text: `FS-09 Rev. 0,  ${day}/${month}/${year}`, width: 180}
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                image: `${footer}`,
-                                pageBreak: 'after',
-                                alignment: 'center',
-                                width: 510,
-                                height: 80,
-                            }
+                    table: {
+                        headerRows: 1,
+                        widths: [740],
+                        body : [
+                            [
+                                {
+                                    columns: [
+                                        'Página ' + currentPage.toString() + ' de ' + pageCount,
+                                        {text: `FS-20 Rev. 0, ${day}/${month}/${year}`, width: 180}
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    image: `${footer}`,
+                                    pageBreak: 'after',
+                                    width: 510,
+                                    height: 60,
+                                }
+                            ]
                         ]
-                    ]
-                  },
+                    },
                   layout : 'headerLineOnly',
                   margin: [50, 20]
                 };
@@ -1982,7 +2047,7 @@ export class PuntoOncePage implements OnInit {
                             ],
                             [
                                 {},
-                                {text: 'Calibración',},
+                                {text: 'Calibración'},
                                 {text: 'anual', fontSize: 9},
                                 {text: '', fillColor: '#ddd'},
                                 {text: '', fillColor: '#ddd'},
@@ -2111,7 +2176,8 @@ export class PuntoOncePage implements OnInit {
                             ],
                             [
                                 {},
-                                {text: 'Pruebas de hermeticidad',},
+                                {text: 'Pruebas de hermeticidad'
+                                },
                                 {text: 'anual', fontSize: 9},
                                 {},
                                 {},
@@ -2981,35 +3047,35 @@ export class PuntoOncePage implements OnInit {
                     }
                 },
                 {text: '\n\n'},
-                {
-                    table: {
-                        widths: [350, 350],
-                        body: [
-                            [
-                                {
-                                    image: `${firmaEstacion}`,
-                                    fit: [100, 50],
-                                    alignment: 'center',
-                                    border: [true, true, true, false],
-                                    pageBreak: 'before'
-                                },
-                                {
-                                    text: '',
-                                    fit: [100, 50],
-                                    alignment: 'center',
-                                    border: [true, true, true, false],
-                                    pageBreak: 'before'
-                                },
-                            ],
-                            [
-                                {text: '\n\nEncargado de la estación de servicio'},
-                            ],
-                            [
-                                {text: `Fecha:\n\n${day}/${month}/${year}`}
-                            ]
-                        ]
-                    }
-                }
+                // {
+                //     table: {
+                //         widths: [300, 300],
+                //         body: [
+                //             [
+                //                 {
+                //                     image: `${firmaEstacion}`,
+                //                     fit: [100, 50],
+                //                     alignment: 'center',
+                //                     border: [true, true, true, false],
+                //                     pageBreak: 'before'
+                //                 },
+                //                 {
+                //                     text: '',
+                //                     fit: [100, 50],
+                //                     alignment: 'center',
+                //                     border: [true, true, true, false],
+                //                     pageBreak: 'before'
+                //                 },
+                //             ],
+                //             [
+                //                 {text: '\n\nEncargado de la estación de servicio'},
+                //             ],
+                //             [
+                //                 {text: `Fecha:\n\n${day}/${month}/${year}`}
+                //             ]
+                //         ]
+                //     }
+                // }
             ],
             pageOrientation: 'landscape',
             pageSize: 'LETTER',
