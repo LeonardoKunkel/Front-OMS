@@ -6,7 +6,7 @@ import { NavController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { Observable } from 'rxjs';
 import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
-import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+//import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 @Component({
   selector: 'app-punto-ocho-menu',
@@ -37,11 +37,11 @@ export class PuntoOchoMenuPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
-    private marca: MarcaAguaServiceService,
-    private icono: IconoEstacionService,
-    private firmaRepresente: FirmaRepresentanteService,
-    private estacionService: EstacionServicioDatosService,
-    private firma: FirmaEstacionServiceService
+    private datosEstacionService: EstacionServicioDatosService,
+    private firma :FirmaEstacionServiceService,
+    private marca : MarcaAguaServiceService,
+    private icono : IconoEstacionService,
+    private firmaRepresente : FirmaRepresentanteService
   ) { }
 
   ngOnInit() {
@@ -68,7 +68,7 @@ export class PuntoOchoMenuPage implements OnInit {
   }
 
   getDatosEstacion() {
-    this.estacionService.getEstacion().subscribe((data: any) => {
+    this.datosEstacionService.getEstacion().subscribe((data: any) => {
       // console.log(data.findEstacion[data.findEstacion.length -1]);
       this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
     });

@@ -1,7 +1,7 @@
 export let single = [
     {
         name: ' Punto Uno',
-        value: 100
+        value: 1000
     },
     {
         name: 'Punto2',
