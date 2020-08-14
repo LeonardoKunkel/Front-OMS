@@ -8,23 +8,24 @@
 </ion-header>
 
 <ion-content>
+  <p style="margin: 3%;">
+    Derivado del análisis realizado a la Estación de Servicio, se concluye que si bien,
+    existen riesgos latentes y con un alto nivel de riesgos, se cuenta con las medidas
+    preventivas para poder seguir operando de manera regular. 
+    Se recomienda dar un cumplimiento del programa de mantenimiento más riguroso, teniendo
+    especial atención a válvulas y dispositivos de alarmas.
+  </p>
   <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12">
+    <ion-row >
+      <ion-col size="12" sizeLg="6" style="margin: auto; display: block;">
         <ion-card class="carta">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              De click en el siguiente botón para descargar el formato FS-10 Resultado del análisis de riesgos.
+            </ion-card-title>
+          </ion-card-header>
           <ion-card-content>
-            <ion-card-header>
-              <ion-card-title>
-                Derivado del análisis realizado a la Estación de Servicio, se concluye que si bien,
-                existen riesgos latentes y con un alto nivel de riesgos, se cuenta con las medidas
-                preventivas para poder seguir operando de manera regular. 
-                Se recomienda dar un cumplimiento del programa de mantenimiento más riguroso, teniendo
-                especial atención a válvulas y dispositivos de alarmas.
-              </ion-card-title>
-              <ion-card-title>
-                De click en el siguiente botón para descargar el formato FS-10 Resultado del análisis de riesgos.
-              </ion-card-title>
-            </ion-card-header>
+            <img src="../../../assets/Imagenes/punto2/2-10.png" alt="" style="width: 300px; height: auto; margin: auto; display: block;">
             <ion-button (click)="pdf()" expand="block" shape="round">
               Descargar
             </ion-button>
