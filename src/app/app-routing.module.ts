@@ -499,6 +499,15 @@ const routes: Routes = [
     path: 'firma-represntante',
     loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule'
   },
+  {
+    path: 'calendario',
+    loadChildren: './pages/calendario/calendario.module#CalendarioPageModule'
+  },
+  {
+    path: 'cal-modal',
+    loadChildren: './pages/cal-modal/cal-modal.module#CalModalPageModule'
+  },
+
 
 
 
