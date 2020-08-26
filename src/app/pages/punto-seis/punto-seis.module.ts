@@ -26,9 +26,24 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntoSeisPage, DirectorModalPage,RepresentanteModalPage,EncargadoModalPage,JefePisoModalPage,DespachadoresModalPage,
-  MantenimientoModalPage,ContratistasModalPage],
-  entryComponents:[DirectorModalPage,RepresentanteModalPage,EncargadoModalPage,JefePisoModalPage,DespachadoresModalPage,
-    MantenimientoModalPage,ContratistasModalPage]
+  declarations: [
+    PuntoSeisPage,
+    DirectorModalPage,
+    RepresentanteModalPage,
+    EncargadoModalPage,
+    JefePisoModalPage,
+    DespachadoresModalPage,
+    MantenimientoModalPage,
+    ContratistasModalPage
+  ],
+  entryComponents: [
+    DirectorModalPage,
+    RepresentanteModalPage,
+    EncargadoModalPage,
+    JefePisoModalPage,
+    DespachadoresModalPage,
+    MantenimientoModalPage,
+    ContratistasModalPage
+  ]
 })
 export class PuntoSeisPageModule {}
