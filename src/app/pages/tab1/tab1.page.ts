@@ -2,7 +2,7 @@ import { AyudaPage } from './../ayuda/ayuda.page';
 import { EstacionServicioModelPage } from '../estacion-servicio-model/estacion-servicio-model.page';
 import { Component } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
-import { CalendarPage } from '../calendar/calendar.page';
+// import { CalendarPage } from '../calendar/calendar.page';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class Tab1Page {
   }
 
   openCalendar() {
-    this.navCtlr.navigateForward('/calendar')
+    this.navCtlr.navigateForward('/calendario');
   }
 
 

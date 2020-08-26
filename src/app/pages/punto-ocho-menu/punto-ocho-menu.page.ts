@@ -6,7 +6,7 @@ import { NavController } from '@ionic/angular';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { Observable } from 'rxjs';
 import { FirmaRepresentanteService } from 'src/app/services/firma-representante.service';
-//import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
+import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio-datos.service';
 
 @Component({
   selector: 'app-punto-ocho-menu',
@@ -38,10 +38,10 @@ export class PuntoOchoMenuPage implements OnInit {
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
     private datosEstacionService: EstacionServicioDatosService,
-    private firma :FirmaEstacionServiceService,
-    private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService,
-    private firmaRepresente : FirmaRepresentanteService
+    private firma: FirmaEstacionServiceService,
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService,
+    private firmaRepresente: FirmaRepresentanteService
   ) { }
 
   ngOnInit() {
@@ -593,16 +593,6 @@ export class PuntoOchoMenuPage implements OnInit {
               ],
               [
                 {
-                  text: 'SOLICITUD DE CAMBIOS',
-                  fontSize: 9,
-                  alignment: 'center',
-                  colSpan: 2,
-                  border: [true, true, true, true],
-                },
-                {}
-              ],
-              [
-                {
                   text: 'VIII. CONTROL DE DOCUMENTOS',
                   bold: true,
                   alignment: 'center',
@@ -611,7 +601,17 @@ export class PuntoOchoMenuPage implements OnInit {
                   border: [true, true, true, true],
                 },
                 {}
-              ]
+              ],
+              [
+                {
+                  text: 'SOLICITUD DE CAMBIOS',
+                  fontSize: 9,
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15],

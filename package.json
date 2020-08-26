@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "^0.13.0",
     "@angular/animations": "^8.2.7",
     "@angular/common": "^7.2.2",
     "@angular/core": "^7.2.2",
@@ -44,6 +45,7 @@
     "@swimlane/ngx-datatable": "^16.0.3",
     "alife-file-to-base64": "0.0.4",
     "angular2-signaturepad": "^2.11.0",
+    "chart.js": "^2.9.3",
     "com-badrit-base64": "^0.2.0",
     "cordova-android": "8.1.0",
     "cordova-plugin-camera": "4.1.0",
@@ -55,7 +57,6 @@
     "cordova-plugin-filepath": "^1.5.8",
     "cordova-plugin-geolocation": "4.0.2",
     "core-js": "^2.5.4",
-    "ionic2-calendar": "^0.5.6",
     "ng2-charts": "^2.3.0",
     "ngx-image-cropper": "^3.1.9",
     "ngx-socket-io": "^2.1.1",
@@ -66,7 +67,6 @@
   },
   "devDependencies": {
     "@angular-devkit/architect": "^0.901.4",
-    "@angular-devkit/build-angular": "^0.13.0",
     "@angular-devkit/core": "~7.3.8",
     "@angular-devkit/schematics": "~7.3.8",
     "@angular/cli": "~7.3.8",

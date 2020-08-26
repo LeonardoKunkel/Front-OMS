@@ -35,7 +35,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 
 @NgModule({
-  declarations: [AppComponent],   
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -50,8 +50,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     BrowserAnimationsModule,
     NgxChartsModule,
     EstacionServicioModelPageModule,
-    AlifeFileToBase64Module
-    
+    AlifeFileToBase64Module,
   ],
   providers: [
     StatusBar,
