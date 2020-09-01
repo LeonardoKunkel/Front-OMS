@@ -69,7 +69,7 @@ export class GraficaBarrasPage implements OnInit {
             ],
             datasets: [{
                 label: '% de progreso de implementacion del SASISOPA',
-                data: [100, dd, 20, 3, 5, 2, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, ],
+                data: [100, 30, 20, 3, 5, 2, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, ],
                 backgroundColor: [
                    'rgba(239, 239, 239, 0.2)',
                     'rgba(255, 99, 132, 0.2)',

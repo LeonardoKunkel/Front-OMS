@@ -1,7 +1,9 @@
+
+
 <ion-grid fixed>
   <ion-row>
     <div *ngFor="let photo of photos">
-      <ion-col size="12" sizeLg="3" style="margin: auto; display: block; " >
+      <ion-col size="12" sizeLg="3">
         <ion-card style="width: 200px; height: 300px; background-color: rgb(205, 218, 218);">
           <ion-card-header>
             <ion-card-title class="ion-text-center">{{photo.title}}</ion-card-title>
@@ -9,13 +11,14 @@
           </ion-card-header>
           <ion-card-content>
             <img src="http://localhost:3000/{{photo.path}}" style="text-align: center; display: block; width: 200px; height: auto;">
+            <!-- <a href="http://localhost:3000/{{photo.path}}" download="{{filename}}"> Descarga</a> -->
           </ion-card-content>
         </ion-card>
         <br>
         <ion-card style="width: 200px; height: 60px; background-color: rgb(205, 218, 218);">
           <ion-card-content>
             <p> {{photo.description}}</p>
-            <ion-button (click)="onClick(photo._id)" expand="block" fill="clear" shape="round">
+            <ion-button (click)="delete(photo._id)" expand="block" fill="clear" shape="round">
               Delete
             </ion-button>
           </ion-card-content>
@@ -24,18 +27,3 @@
     </div>
   </ion-row>
 </ion-grid>
-<!-- <p>
-  kjsnxksjx jhbsjhsjhvxjgsxvhgxsv
-</p>
-<div class="row">
-  <div class="col-md-4 p-4" *ngFor="let photo of photos">
-    <p>
-      gugugugug {{photo.description}}
-    </p>
-    <p>
-      {{photo.path}}
-    </p>
-    <img src="http://localhost:3000/{{photo.path}}" alt="">
-    <img src="http://localhost:3000/Evidencias/c8a47bcd-a331-4aa3-92d3-29236371f1e7.png" alt=""> -->
-  <!-- </div>
-</div> -->

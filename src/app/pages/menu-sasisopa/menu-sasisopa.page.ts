@@ -12,6 +12,9 @@ export class MenuSasisopaPage implements OnInit {
 
   ngOnInit() {
   }
+  goGrafica(){
+    this.navCtrl.navigateForward('/grafica-barras')
+  }
   goPuntoUno() {
     this.navCtrl.navigateForward('/punto-uno');
   }

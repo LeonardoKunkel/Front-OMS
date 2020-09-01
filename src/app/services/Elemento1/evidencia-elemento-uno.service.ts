@@ -17,6 +17,10 @@ export class EvidenciaElementoUnoService {
     fd.append('title',title);
     fd.append('description',description);
     fd.append('image',photo);
-    return this.http.post('http://localhost:3000/img/create',fd)
+    return this.http.post('http://localhost:3000/img/create',fd);
+  }
+
+  deletePhoto(id:string){
+    return this.http.delete(`http://localhost:3000/img/${id}`);
   }
 }

@@ -488,8 +488,9 @@ const routes: Routes = [
   { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },
   { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
   { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
-  { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
+  { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
 
+  
 
 
   // },

@@ -7,33 +7,34 @@ import { EvidenciaElementoUnoService } from 'src/app/services/Elemento1/evidenci
   styleUrls: ['./photo-list.component.scss'],
 })
 export class PhotoListComponent implements OnInit {
+  idImage :String = '';
   photos = [];
   constructor(
     private evidenciaService: EvidenciaElementoUnoService
   ) { }
 
   ngOnInit() {
-    // this.evidenciaService.getPhoto().subscribe((data:any)=>{
-    //   // console.log(data.imagenes,'listaPage');
-    //   // this.photos = data.imagenes;
-    //   // console.log(this.photos,'fotos');
+
+
+    this.evidenciaService.getImages().subscribe((data:any)=>{
+      //console.log(data,'imagenes ');
       
-      
-    // }
-    // )
-    this.evidenciaService.getPhoto().subscribe((data:any)=>{
      // console.log(data.imagenes);
-        this.photos = data.imagenes;
-        console.log(this.photos,'fotos');
+         this.photos = data.imagenes;
+         console.log(this.photos,'fotos');
       
     })
   }
 
-  onClick(id){
-    this.evidenciaService.deleteImage(id).subscribe((data:any)=>{
+
+  delete(id:string){
+    let idPhotho = id;
+    this.evidenciaService.deletePhoto(idPhotho).subscribe((data:any)=>{
       console.log(data);
       
     })
+    
   }
+
 
 }
