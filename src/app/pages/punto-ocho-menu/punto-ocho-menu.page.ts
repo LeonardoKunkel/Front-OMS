@@ -37,11 +37,11 @@ export class PuntoOchoMenuPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private pdfMaker: PdfMakerService,
-   // private datosEstacionService: EstacionServicioDatosService,
-    private firma :FirmaEstacionServiceService,
-    private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService,
-    private firmaRepresente : FirmaRepresentanteService
+    private datosEstacionService: EstacionServicioDatosService,
+    private firma: FirmaEstacionServiceService,
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService,
+    private firmaRepresente: FirmaRepresentanteService
   ) { }
 
   ngOnInit() {
@@ -593,16 +593,6 @@ export class PuntoOchoMenuPage implements OnInit {
               ],
               [
                 {
-                  text: 'SOLICITUD DE CAMBIOS',
-                  fontSize: 9,
-                  alignment: 'center',
-                  colSpan: 2,
-                  border: [true, true, true, true],
-                },
-                {}
-              ],
-              [
-                {
                   text: 'VIII. CONTROL DE DOCUMENTOS',
                   bold: true,
                   alignment: 'center',
@@ -611,7 +601,17 @@ export class PuntoOchoMenuPage implements OnInit {
                   border: [true, true, true, true],
                 },
                 {}
-              ]
+              ],
+              [
+                {
+                  text: 'SOLICITUD DE CAMBIOS',
+                  fontSize: 9,
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
             ]
           },
           margin: [22, 15],

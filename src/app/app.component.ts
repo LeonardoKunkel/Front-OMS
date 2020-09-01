@@ -13,20 +13,19 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault(); 
+      this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.checkDarkTheme();
     });
   }
 
-  checkDarkTheme(){
+  checkDarkTheme() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     if (prefersDark.matches) {
       document.body.classList.toggle('dark');

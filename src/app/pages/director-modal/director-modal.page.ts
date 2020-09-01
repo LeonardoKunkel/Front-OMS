@@ -16,18 +16,18 @@ import { FirmaRepresentanteService } from 'src/app/services/firma-representante.
   styleUrls: ['./director-modal.page.scss'],
 })
 export class DirectorModalPage implements OnInit {
-  datosEstacion:any={
-    calleNumero:'',
-    ciudad:'',
-    colonia:'',
-    correoElectronico:'',
-    cp:'',
-    estado:'',
-    gerenteEstacion:'',
-    maximaAutoridad:'',
-    nombreEstacionServicio:'',
-    representanteTecnico:'',
-    telefono:''
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
   };
   datos: any = {
     requerimientosFisicos: '',
@@ -47,14 +47,13 @@ export class DirectorModalPage implements OnInit {
     private directorService: DirectorServiceService,
     public toast: ToastController,
     private estacionService: EstacionServicioDatosService,
-    private firma :FirmaEstacionServiceService,
-    private marca : MarcaAguaServiceService,
-    private icono : IconoEstacionService,
-    private firmaRepresente : FirmaRepresentanteService,
-  ) { 
+    private firma: FirmaEstacionServiceService,
+    private marca: MarcaAguaServiceService,
+    private icono: IconoEstacionService,
+    private firmaRepresente: FirmaRepresentanteService,
+  ) {
     this.getDirector();
-    this.getStationService()
-    
+    this.getStationService();
   }
 
   ngOnInit() {
@@ -65,21 +64,20 @@ export class DirectorModalPage implements OnInit {
     this.getFirmaRepresentante();
   }
 
-  getDirector(){
-    this.directorService.getDirector().subscribe((data:any) =>{
+  getDirector() {
+    this.directorService.getDirector().subscribe((data: any) => {
       this.datos = data.newDirector[data.newDirector.length - 1];
     });
   }
-  getFirmaRepresentante(){
-    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
-      //console.log(data);
-       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
-       //console.log(this.firmaRepresentante);
-      
-    })
+  getFirmaRepresentante() {
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data: any) => {
+      // console.log(data);
+       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length - 1].firma;
+       // console.log(this.firmaRepresentante);
+    });
   }
 
-  getStationService(){
+  getStationService() {
     this.estacionService.getEstacion().subscribe((data:any) =>{
       let datoConsultado = data.findEstacion.length -1;
       this.datosEstacion = data.findEstacion[datoConsultado];
