@@ -67,12 +67,12 @@ export class PuntoOchoMenuPage implements OnInit {
     this.navCtrl.navigateForward('/punto-ocho-solicitud');
   }
 
-  getDatosEstacion() {
-    this.datosEstacionService.getEstacion().subscribe((data: any) => {
-      // console.log(data.findEstacion[data.findEstacion.length -1]);
-      this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
-    });
-  }
+  // getDatosEstacion() {
+  //   this.datosEstacionService.getEstacion().subscribe((data: any) => {
+  //     // console.log(data.findEstacion[data.findEstacion.length -1]);
+  //     this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+  //   });
+  // }
   getIcono() {
     this.icono.getPolitica().subscribe((data: any ) => {
       console.log(data);

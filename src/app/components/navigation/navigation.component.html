@@ -1,0 +1,14 @@
+
+<ion-content>
+  <form (submit)="uploadPhoto(title, description)">
+    <ion-card>
+      <p>Upload a photo</p>
+      <ion-input type="text" placeholder="Awesome Input" #title></ion-input>
+      <ion-textarea #description> </ion-textarea>
+      <input type="file" (change)="onPhotoSelected($event)" #photoInput>
+      <img [src]="photoSelected || '../../../assets/Imagenes/no hay imagen.png'" style="width: 30%; display: block; margin: auto;" alt="No image" (click)="photoInput.click()">
+      
+      <button class="btn btn-primary btn-block"> Upload</button>
+    </ion-card>
+  </form>
+</ion-content> 

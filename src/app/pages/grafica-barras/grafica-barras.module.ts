@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PuntoUnoEvidenciaPage } from './punto-uno-evidencia.page';
-import {PhotoListComponent} from '../../components/photo-list/photo-list.component';
+import { GraficaBarrasPage } from './grafica-barras.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PuntoUnoEvidenciaPage
+    component: GraficaBarrasPage
   }
 ];
 
@@ -22,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntoUnoEvidenciaPage,PhotoListComponent],
+  declarations: [GraficaBarrasPage]
 })
-export class PuntoUnoEvidenciaPageModule {}
+export class GraficaBarrasPageModule {}

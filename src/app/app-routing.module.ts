@@ -15,6 +15,11 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
+    path: 'calendar',
+    loadChildren: './pages/calendar/calendar.module#CalendarPageModule',
+    // canLoad: [AuthGuard]
+  },
+  {
     path: 'menu-sasisopa',
     loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule',
     // canLoad: [AuthGuard]
@@ -479,28 +484,14 @@ const routes: Routes = [
     path: 'punto-ocho-distribucion',
     loadChildren: './pages/punto-ocho-distribucion/punto-ocho-distribucion.module#PuntoOchoDistribucionPageModule'
   },
-  {
-    path: 'estacion-servicio-update',
-    loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule'
-  },
-  {
-    path: 'politica-specific',
-    loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule'
-  },
-  {
-    path: 'iconos-estacion',
-    loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule'
-  },
-  {
-    path: 'punto-uno-politica',
-    loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule'
-  },
-  {
-    path: 'firma-represntante',
-    loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule'
-  },
-
-
+  { path: 'estacion-servicio-update', loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule' },
+  { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },
+  { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
+  { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
+  { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
+  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
+  // },
+  // { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
 
 
 ];
