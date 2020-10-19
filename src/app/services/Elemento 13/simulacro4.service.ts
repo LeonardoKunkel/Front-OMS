@@ -8,15 +8,15 @@ export class Simulacro4Service {
 
   constructor( private httpClient: HttpClient ) { }
 
-  crearSimulacro(datos) {
+  crearSimulacro4(datos) {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Authorization': token
     });
-    return this.httpClient.post('http://localhost:3000/simulacro4/create', datos, { headers });
+    return this.httpClient.post('http://localhost:3000/simulacro4/create', datos, {headers});
   }
 
-  getSimulacro() {
+  getSimulacro4() {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Authorization': token

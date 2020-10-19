@@ -1,13 +1,14 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-buttons>
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/punto-doce"></ion-back-button>
-      <ion-button (click)="pdf()" fill="clear" shape="round" slot="end" horizontal="end">
-        Print
+      <ion-button (click)="pdf()">
+        <ion-icon slot="start" name="print"></ion-icon>
+        IMPRIMIR
       </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">CARTA RESPONSIVA CONTRATISTAS</ion-title>
-  </ion-toolbar>
+    <ion-title class="ion-text-center">Carta Responsiva para Contratistas</ion-title>
+  </ion-toolbar><hr class="linea">
 </ion-header>
 
 <ion-content> 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef ,QueryList, ViewChildren} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, QueryList, ViewChildren} from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { ObjetivosMetasService } from '../../services/Elemento 4/objetivos-metas.service';
 import { AlertController, ToastController, IonCheckbox } from '@ionic/angular';
@@ -15,7 +15,7 @@ import { EstacionServicioDatosService } from 'src/app/services/estacion-servicio
 })
 export class Cuatro2Page implements OnInit {
 
-  objetivos: String;
+  objetivos: string;
   datos: {
     meta1,
     meta2,
@@ -252,7 +252,7 @@ export class Cuatro2Page implements OnInit {
   private iconoService: IconoEstacionService,
   private marcaService: MarcaAguaServiceService,
   private firmaService: FirmaEstacionServiceService,
-  private firmaRepresente : FirmaRepresentanteService,
+  private firmaRepresente: FirmaRepresentanteService,
   private datosEstacionService: EstacionServicioDatosService
   ) {
     this.getDatosEstacion();
@@ -263,11 +263,11 @@ export class Cuatro2Page implements OnInit {
     this.getObjetivos();
     this.imagen64();
   }
-  getDatosEstacion(){
-    this.datosEstacionService.getEstacion().subscribe((data:any) =>{
-      //console.log(data.findEstacion[data.findEstacion.length -1]);
-      this.datosEstacion = data.findEstacion[data.findEstacion.length -1];
-    })
+  getDatosEstacion() {
+    this.datosEstacionService.getEstacion().subscribe((data: any) => {
+      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+    });
   }
   imagen64() {
     this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
@@ -279,9 +279,9 @@ export class Cuatro2Page implements OnInit {
   }
   convertFileDataURLviaFileReader(url: string) {
     return Observable.create(observer => {
-      let xhr: XMLHttpRequest = new XMLHttpRequest();
+      const xhr: XMLHttpRequest = new XMLHttpRequest();
       xhr.onload = function() {
-        let reader: FileReader = new FileReader();
+        const reader: FileReader = new FileReader();
         reader.onloadend = function() {
           observer.next(reader.result);
           observer.complete();
@@ -300,13 +300,12 @@ export class Cuatro2Page implements OnInit {
       this.firmaEstacion = data.findFirma[data.findFirma.length - 1].firma;
     });
   }
-  getFirmaRepresentante(){
-    this.firmaRepresente.getFirmaRepresentante().subscribe((data:any) =>{
-      //console.log(data);
-       this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length -1].firma;
-       //console.log(this.firmaRepresentante);
-      
-    })
+  getFirmaRepresentante() {
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length - 1].firma;
+      // console.log(this.firmaRepresentante);
+    });
   }
 
   getMarcaAgua() {
@@ -330,7 +329,7 @@ export class Cuatro2Page implements OnInit {
       message: 'Se enviara y guardara las metas seleccionadas, ademas se imprimira un documento de estas mismas.',
       buttons: [
         {
-          text: 'Cancelar', 
+          text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
@@ -502,17 +501,17 @@ export class Cuatro2Page implements OnInit {
   }
 
   maquetacion(data1, data2, data3) {
-    var fecha = new Date();
-    let day = fecha.getDate();
-    let month = fecha.getUTCMonth() + 1;
-    let year = fecha.getFullYear();
-    let marcaAgua = this.marcaAguaEstacion;
-    let iconoEstacion = this.iconoEstacion;
-    let firmaEstacion = this.firmaEstacion;
-    let firmaRepresentanteTecnico = this.firmaRepresentante;
-    let footer = this.myImage;
-    let ddd = this.datosEstacion;
-    var dd = {
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
+    const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
+    const firmaRepresentanteTecnico = this.firmaRepresentante;
+    const footer = this.myImage;
+    const ddd = this.datosEstacion;
+    const dd = {
       userPassword: '123',
       ownerPassword: '123456',
       permissions: {
@@ -524,198 +523,763 @@ export class Cuatro2Page implements OnInit {
         contentAccessibility: true,
         documentAssembly: true
       },
-
       background(currentPage, pageSize) {
-      return {
+        return {
           image: `${marcaAgua}`,
           width: 300,
-          height: 370, 
-          absolutePosition: {x: 250, y: 140},opacity: 0.5}
-    },///////////////////////////////////////////////////////
-    header: function(){
-      return {
-        table: {
+          height: 370,
+          absolutePosition: {x: 250, y: 140},
+          opacity: 0.5
+        };
+      },
+      header() {
+        return {
+          table: {
             widths: [150, 570],
             heights: [30, 10, 10],
             body: [
-                [
-                    {
+              [
+                {
 
-                        image:`${iconoEstacion}`,
-                        width: 65,
-                        height: 80,
-                    alignment:'center',
-                    border:[true,true,false,true],
-                    },{
-                        text:`${ddd.nombreEstacionServicio}`,bold:true,fontSize:25,alignment: 'rigth', margin:[15,20],
-                    border:[false,true,true,true],
-                    }
-                ],[
-                    {
-                        text:'Objetivos, metas e indicadores',fontSize:9,alignment: 'center',colSpan:2,border:[true,true,true,true],
-                    },{
-                        
-                    }
-                    ],[
-                        {
-                          text:'IV. Objetivos, metas e indicadores',bold:true,alignment: 'center',colSpan:2,fillColor:'#eeeeee',border:[true,true,true,true],
-                        },{
-                            
-                        }
-                        ]
+                  image: `${iconoEstacion}`,
+                  width: 65,
+                  height: 80,
+                  alignment: 'center',
+                  border: [true, true, false, true],
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 25,
+                  alignment: 'rigth',
+                  margin: [15, 20],
+                  border: [false, true, true, true],
+                }
+              ],
+              [
+                {
+                  text: 'Objetivos, metas e indicadores',
+                  fontSize: 9,
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
+              [
+                {
+                  text: 'IV. Objetivos, metas e indicadores',
+                  bold: true,
+                  alignment: 'center',
+                  colSpan: 2,
+                  fillColor: '#eeeeee',
+                  border: [true, true, true, true],
+                },
+                {}
               ]
-        },margin: [22,7],
-        
-          layout:{
+            ]
+          },
+          margin: [22, 7],
+          layout: {
             defaultBorder: false
           }
-      };
-    },
-    footer: function(currentPage, pageCount){
-      return {
-          table:{
-        headerRows:1, 
-        widths: [650],
-             body : [
-             [{columns:[
-                 'Página' + currentPage.toString() + ' de ' + pageCount,
-                 {text:`FS-12 Rev. 0, ${day}/${month}/${year}`,width: 180}
-                 ]}],
-             [{
-              image: `${footer}`,
-              pageBreak: 'after',
-              width: 650,
-              height: 60,
-               },],
-             [''],
-                 ]
-           }, layout : 'headerLineOnly',
-          margin: [72,20],
-      };
-    },    
-        content:[
-            //primera tabla
-            {
-                table:{
-                    widths: [110,460,70,70],
-                    body:[
-                        [{text:'OBJETIVO ',fontSize:12,	fillColor: '#dddddd'},{text:`${data1.objetivo}`,colSpan:3,fontSize:12},{},{}],
-                        [{text:'PROCESO',fontSize:12,	fillColor: '#dddddd'},{text:`${data1.proceso}`,colSpan:3,fontSize:12},{text:''},{}],
-                        [{text:'RESPONSABLE',fontSize:12,	fillColor: '#dddddd'},{text:'Representante Técnico',fontSize:12},{text:'PERIODO',fontSize:12,	fillColor: '#dddddd'},{text:'Anual',fontSize:12}]
-                        ]
+        };
+      },
+      footer(currentPage, pageCount) {
+        return {
+          table: {
+            headerRows: 1,
+            widths: [650],
+            body : [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-12 Rev. 0, ${day}/${month}/${year}`, width: 180}
+                  ]
                 }
-            },
-            {text:'\n'},
-            {
-                table:{
-                    widths: [15,170,180,75,90,94,74],
-                    heights:[10,25,25,25],
-                    body:[
-                          
-                        [{text:'No.',fontSize:12,fillColor: '#dddddd',alignment:'center',bold:true},{text:'METAS',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'ACTIVIDAD',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'INDICADOR',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'SOPORTE',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'FRECUENCIA DE EVALUACIÓN',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'CRITERIO DE ACEPTACIÓN',fontSize:11,	fillColor: '#dddddd',alignment:'center',bold:true}],
-                        [{text:'1'},{text:`${data1.meta1}`,fontSize:12,},{text:`${data1.a1}`,fontSize:12,},{text:`${data1.i1}`,fontSize:12,},{text:`${data1.S1}`,fontSize:12,},{text:`${data1.fE1}`,fontSize:12},{text:`${data1.cA1}`,fontSize:12,}],
-                        [{text:'2'},{text:`${data1.meta2}`,fontSize:12,},{text:`${data1.a2}`,fontSize:12,},{text:`${data1.i2}`,fontSize:12,},{text:`${data1.S2}`,fontSize:12,},{text:`${data1.fE2}`,fontSize:12,},{text:`${data1.cA2}`,fontSize:12,}],
-                        [{text:'3'},{text:`${data1.meta3}`,fontSize:12,},{text:`${data1.a3}`,fontSize:12,},{text:`${data1.i3}`,fontSize:12,},{text:`${data1.S3}`,fontSize:12,},{text:`${data1.fE3}`,fontSize:12,},{text:`${data1.cA3}`,fontSize:12,}] 
-                        ]
-                }
-             ,pageBreak:'after'
-            
-               
-            },
-                    //Segunda tabla
-            {  
-              
-                  table:{
-                      widths: [110,460,70,70],
-                      body:[
-                          [{text:'OBJETIVO ',fontSize:12,	fillColor: '#dddddd'},{text:`${data2.objetivo}`,colSpan:3,fontSize:12},{},{}],
-                          [{text:'PROCESO',fontSize:12,	fillColor: '#dddddd'},{text:`${data2.proceso}`,colSpan:3,fontSize:12},{text:''},{}],
-                          [{text:'RESPONSABLE',fontSize:12,	fillColor: '#dddddd'},{text:'Representante Técnico',fontSize:12},{text:'PERIODO',fontSize:12,	fillColor: '#dddddd'},{text:'Anual',fontSize:12}]
-                          ]
-                  }
-              },
-              {text:'\n'},
-              {
-                  table:{
-                      widths: [15,170,180,75,90,94,74],
-                      heights:[10,25,25,25],
-                      body:[
-                            
-                          [{text:'No.',fontSize:12,fillColor: '#dddddd',alignment:'center',bold:true},{text:'METAS',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'ACTIVIDAD',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'INDICADOR',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'SOPORTE',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'FRECUENCIA DE EVALUACIÓN',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'CRITERIO DE ACEPTACIÓN',fontSize:11,	fillColor: '#dddddd',alignment:'center',bold:true}],
-                          [{text:'1'},{text:`${data2.meta1}`,fontSize:12,},{text:`${data2.a1}`,fontSize:12,},{text:`${data2.i1}`,fontSize:12,},{text:`${data2.S1}`,fontSize:12,},{text:`${data2.fE1}`,fontSize:12},{text:`${data2.cA1}`,fontSize:12,}],
-                          [{text:'2'},{text:`${data2.meta2}`,fontSize:12,},{text:`${data2.a2}`,fontSize:12,},{text:`${data2.i2}`,fontSize:12,},{text:`${data2.S2}`,fontSize:12,},{text:`${data2.fE2}`,fontSize:12,},{text:`${data2.cA2}`,fontSize:12,}],
-                          [{text:'3'},{text:`${data2.meta3}`,fontSize:12,},{text:`${data2.a3}`,fontSize:12,},{text:`${data2.i3}`,fontSize:12,},{text:`${data2.S3}`,fontSize:12,},{text:`${data2.fE3}`,fontSize:12,},{text:`${data2.cA3}`,fontSize:12,}] 
-                          ]
-                  },pageBreak:'after'
-                
-            },
-                    // Tercera tabla
-            {
-              
-                  table:{
-                      widths: [110,460,70,70],
-                      body:[
-                          [{text:'OBJETIVO ',fontSize:12,	fillColor: '#dddddd'},{text:`${data3.objetivo}`,colSpan:3,fontSize:12},{},{}],
-                          [{text:'PROCESO',fontSize:12,	fillColor: '#dddddd'},{text:`${data3.proceso}`,colSpan:3,fontSize:12},{text:''},{}],
-                          [{text:'RESPONSABLE',fontSize:12,	fillColor: '#dddddd'},{text:'Representante Técnico',fontSize:12},{text:'PERIODO',fontSize:12,	fillColor: '#dddddd'},{text:'Anual',fontSize:12}]
-                          ]
-                  }
-              },
-              {text:'\n'},
-              {
-                  table:{
-                      widths: [15,170,180,75,90,94,74],
-                      heights:[10,25,25,25],
-                      body:[
-                            
-                          [{text:'No.',fontSize:12,fillColor: '#dddddd',alignment:'center',bold:true},{text:'METAS',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'ACTIVIDAD',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'INDICADOR',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'SOPORTE',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'FRECUENCIA DE EVALUACIÓN',fontSize:12,	fillColor: '#dddddd',alignment:'center',bold:true},{text:'CRITERIO DE ACEPTACIÓN',fontSize:11,	fillColor: '#dddddd',alignment:'center',bold:true}],
-                          [{text:'1'},{text:`${data3.meta1}`,fontSize:12,},{text:`${data3.a1}`,fontSize:12,},{text:`${data3.i1}`,fontSize:12,},{text:`${data3.S1}`,fontSize:12,},{text:`${data3.fE1}`,fontSize:12},{text:`${data3.cA1}`,fontSize:12,}],
-                          [{text:'2'},{text:`${data3.meta2}`,fontSize:12,},{text:`${data3.a2}`,fontSize:12,},{text:`${data3.i2}`,fontSize:12,},{text:`${data3.S2}`,fontSize:12,},{text:`${data3.fE2}`,fontSize:12,},{text:`${data3.cA2}`,fontSize:12,}],
-                          [{text:'3'},{text:`${data3.meta3}`,fontSize:12,},{text:`${data3.a3}`,fontSize:12,},{text:`${data3.i3}`,fontSize:12,},{text:`${data3.S3}`,fontSize:12,},{text:`${data3.fE3}`,fontSize:12,},{text:`${data3.cA3}`,fontSize:12,}] 
-                          ]
-                  }
-                
-            },{text:'\n\n',pageBreak:'after'},
-            {
-                table: {
-                  widths: [200,200,140],
-                  heights: [50,30],
-                     body: [
-                         [
-                             {
-                               image:`${firmaRepresentanteTecnico}`,
-                               fit:[100,50],
-                               alignment:'center',
-                               border:[true,true,true,false]
-                             },{
-                               image:`${firmaEstacion}`,
-                               fit:[100,50],
-                               alignment:'center',
-                               border:[true,true,true,false]
-                             },{
-                               text:'',
-                               fit:[100,50],
-                               alignment:'center',
-                               border:[true,true,true,false]
-                             }],
-                        [
-                            {text:`REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,alignment:'center',border:[true,false,true,true]},
-                            {text:`APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,alignment:'center',border:[true,false,true,true]},
-                            {text:`FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,alignment:'center',border:[true,false,true,true]}]
-                     ]
+              ],
+              [
+                {
+                  image: `${footer}`,
+                  pageBreak: 'after',
+                  width: 650,
+                  height: 60,
                 },
-            layout:{
-              defaultBorder: false
-            },
-            margin:[85,0]
-            }
+              ],
+              [''],
             ]
-       ,
-       pageOrientation: 'landscape',
-        pageSize: 'LETTER',
-        pageMargins: [22,130]
+          },
+          layout : 'headerLineOnly',
+          margin: [72, 20],
+        };
+      },
+      content: [
+        // primera tabla
+        {
+          table: {
+            widths: [110, 460, 70, 70],
+            body: [
+              [
+                {
+                  text: 'OBJETIVO ',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: `${data1.objetivo}`,
+                  colSpan: 3,
+                  fontSize: 12
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'PROCESO',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: `${data1.proceso}`,
+                  colSpan: 3,
+                  fontSize: 12
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'RESPONSABLE',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: 'Representante Técnico',
+                  fontSize: 12
+                },
+                {
+                  text: 'PERIODO',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: 'Anual',
+                  fontSize: 12
+                }
+              ]
+            ]
+          }
+        },
+        {text: '\n'},
+        {
+          table: {
+            widths: [15, 170, 180, 75, 90, 94, 74],
+            heights: [10, 25, 25, 25],
+            body: [
+              [
+                {
+                  text: 'No.',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'METAS',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'ACTIVIDAD',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'INDICADOR',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'SOPORTE',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'FRECUENCIA DE EVALUACIÓN',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'CRITERIO DE ACEPTACIÓN',
+                  fontSize: 11,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                }
+              ],
+              [
+                {
+                  text: '1'
+                },
+                {
+                  text: `${data1.meta1}`,
+                  fontSize: 12,
+                },
+                {
+                  text: `${data1.a1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.i1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.S1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.fE1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.cA1}`,
+                  fontSize: 12
+                }
+              ],
+              [
+                {
+                  text: '2'
+                },
+                {
+                  text: `${data1.meta2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.a2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.i2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.S2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.fE2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.cA2}`,
+                  fontSize: 12
+                }
+              ],
+              [
+                {
+                  text: '3'
+                },
+                {
+                  text: `${data1.meta3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.a3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.i3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.S3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.fE3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data1.cA3}`,
+                  fontSize: 12
+                }
+              ]
+            ]
+          },
+          pageBreak: 'after'
+        },
+        // Segunda tabla
+        {
+          table: {
+            widths: [110, 460, 70, 70],
+            body: [
+              [
+                {
+                  text: 'OBJETIVO ',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: `${data2.objetivo}`,
+                  colSpan: 3,
+                  fontSize: 12
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'PROCESO',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: `${data2.proceso}`,
+                  colSpan: 3,
+                  fontSize: 12
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'RESPONSABLE',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: 'Representante Técnico',
+                  fontSize: 12
+                },
+                {
+                  text: 'PERIODO',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: 'Anual',
+                  fontSize: 12
+                }
+              ]
+            ]
+          }
+        },
+        {text: '\n'},
+        {
+          table: {
+            widths: [15, 170, 180, 75, 90, 94, 74],
+            heights: [10, 25, 25, 25],
+            body: [
+              [
+                {
+                  text: 'No.',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'METAS',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'ACTIVIDAD',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'INDICADOR',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'SOPORTE',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'FRECUENCIA DE EVALUACIÓN',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'CRITERIO DE ACEPTACIÓN',
+                  fontSize: 11,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                }
+              ],
+              [
+                {
+                  text: '1'
+                },
+                {
+                  text: `${data2.meta1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.a1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.i1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.S1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.fE1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.cA1}`,
+                  fontSize: 12
+                }],
+              [
+                {
+                  text: '2'
+                },
+                {
+                  text: `${data2.meta2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.a2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.i2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.S2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.fE2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.cA2}`,
+                  fontSize: 12
+                }],
+              [
+                {
+                  text: '3'
+                },
+                {
+                  text: `${data2.meta3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.a3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.i3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.S3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.fE3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data2.cA3}`,
+                  fontSize: 12
+                }
+              ]
+            ]
+          },
+          pageBreak: 'after'
+        },
+        // Tercera tabla
+        {
+          table: {
+            widths: [110, 460, 70, 70],
+            body: [
+              [
+                {
+                  text: 'OBJETIVO ',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: `${data3.objetivo}`,
+                  colSpan: 3,
+                  fontSize: 12
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'PROCESO',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: `${data3.proceso}`,
+                  colSpan: 3,
+                  fontSize: 12
+                },
+                {},
+                {}
+              ],
+              [
+                {
+                  text: 'RESPONSABLE',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: 'Representante Técnico',
+                  fontSize: 12
+                },
+                {
+                  text: 'PERIODO',
+                  fontSize: 12,
+                  fillColor: '#dddddd'
+                },
+                {
+                  text: 'Anual',
+                  fontSize: 12
+                }
+              ]
+            ]
+          }
+        },
+        {text: '\n'},
+        {
+          table: {
+            widths: [15, 170, 180, 75, 90, 94, 74],
+            heights: [10, 25, 25, 25],
+            body: [
+              [
+                {
+                  text: 'No.',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'METAS',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'ACTIVIDAD',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'INDICADOR',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'SOPORTE',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'FRECUENCIA DE EVALUACIÓN',
+                  fontSize: 12,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                },
+                {
+                  text: 'CRITERIO DE ACEPTACIÓN',
+                  fontSize: 11,
+                  fillColor: '#dddddd',
+                  alignment: 'center',
+                  bold: true
+                }
+              ],
+              [
+                {
+                  text: '1'
+                },
+                {
+                  text: `${data3.meta1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.a1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.i1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.S1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.fE1}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.cA1}`,
+                  fontSize: 12
+                }
+              ],
+              [
+                {
+                  text: '2'
+                },
+                {
+                  text: `${data3.meta2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.a2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.i2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.S2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.fE2}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.cA2}`,
+                  fontSize: 1,
+                }
+              ],
+              [
+                {
+                  text: '3'
+                },
+                {
+                  text: `${data3.meta3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.a3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.i3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.S3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.fE3}`,
+                  fontSize: 12
+                },
+                {
+                  text: `${data3.cA3}`,
+                  fontSize: 1,
+                }
+              ]
+            ]
+          }
+        },
+        {text: '\n\n', pageBreak: 'after'},
+        {
+          table: {
+            widths: [200, 200, 140],
+            heights: [50, 30],
+            body: [
+              [
+                {
+                  image: `${firmaRepresentanteTecnico}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false]
+                },
+                {
+                  image: `${firmaEstacion}`,
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false]
+                },
+                {
+                  text: '',
+                  fit: [100, 50],
+                  alignment: 'center',
+                  border: [true, true, true, false]
+                }
+              ],
+              [
+                {
+                  text: `REVISADO POR:\n ${ddd.representanteTecnico} \n REPRESENTANTE TÉCNICO`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `APROBADO POR:\n${ddd.maximaAutoridad}\nMAXIMA AUTORIDAD`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                },
+                {
+                  text: `FECHA DE APROBACIÓN:\n${day}/${month}/${year}`,
+                  alignment: 'center',
+                  border: [true, false, true, true]
+                }
+              ]
+            ]
+          },
+          layout: {
+            defaultBorder: false
+          },
+          margin: [85, 0]
+        }
+      ],
+      pageOrientation: 'landscape',
+      pageSize: 'LETTER',
+      pageMargins: [22, 130]
     };
-    this.pdfMaker.generate(dd,'Objetivos metas e indicadores');
+    this.pdfMaker.generate(dd, 'Objetivos metas e indicadores');
 
   }
 

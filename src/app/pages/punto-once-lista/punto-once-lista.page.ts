@@ -1,3 +1,6 @@
+import { FirmaRepresentanteService } from './../../services/firma-representante.service';
+import { FirmaEstacionServiceService } from './../../services/firma-estacion-service.service';
+import { EstacionServicioDatosService } from './../../services/estacion-servicio-datos.service';
 import { FindPolitica } from './../../interfaces/PoliticaInterface';
 import { IconoEstacionService } from './../../services/iconosEstacion.service';
 import { MarcaAguaServiceService } from 'src/app/services/marca-agua-service.service';
@@ -93,37 +96,80 @@ export class PuntoOnceListaPage implements OnInit {
     check27: '',
     check28: '',
   };
+
+  estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
+  };
 
 
   constructor(
     private pdfMaker: PdfMakerService,
     public toast: ToastController,
-    private alertCtrl: AlertController,
-    private navCtrl: NavController,
     private eqCrit: EquipoCriticoService,
     private marca: MarcaAguaServiceService,
-    private icono: IconoEstacionService
+    private icono: IconoEstacionService,
+    private datosEstacionService: EstacionServicioDatosService,
+    private firma: FirmaEstacionServiceService,
+    private firmaRepresente: FirmaRepresentanteService
   ) {
       this.checar();
+      this.getDatosEstacion();
       this.getOnce();
     }
 
   ngOnInit() {
     this.marcaAgua();
     this.imagen64();
-    // this.getIcono();
+    this.getFirma();
+    this.getIcono();
+    this.getFirmaRepresentante();
   }
-
-  // getIcono() {
-  //   return this.icono.getPolitica().subscribe((data: any) => {
-  //     this.iconoEstacion = data.FindPolitica[data.findPolitica.length - 1].imagen;
-  //   });
-  // }
-
+  getOnce() {
+    this.eqCrit.getOnce().subscribe((data: any) => {
+      console.log(data.findOnce[data.findOnce.length - 1]);
+      this.datos = data.findOnce[data.findOnce.length - 1];
+    });
+  }
+  getDatosEstacion() {
+    this.datosEstacionService.getEstacion().subscribe((data: any) => {
+      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+    });
+  }
+  getIcono() {
+    return this.icono.getPolitica().subscribe((data: any) => {
+      this.iconoEstacion = data.FindPolitica[data.findPolitica.length - 1].imagen;
+    });
+  }
+  getFirma() {
+    this.firma.getFirmaEstacion().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
+    });
+  }
+  getFirmaRepresentante() {
+    this.firmaRepresente.getFirmaRepresentante().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaRepresentante = data.findFirmaRepresentante[data.findFirmaRepresentante.length - 1].firma;
+      // console.log(this.firmaRepresentante);
+    });
+  }
   imagen64() {
     this.convertFileDataURLviaFileReader(`../../../assets/FondosEstilos/copyright_footer-07.png`).subscribe(
       base64 => {
@@ -153,13 +199,6 @@ export class PuntoOnceListaPage implements OnInit {
       xhr.open('GET', url);
       xhr.responseType = 'blob';
       xhr.send();
-    });
-  }
-
-  getOnce() {
-    this.eqCrit.getOnce().subscribe((data: any) => {
-      console.log(data.findOnce[data.findOnce.length - 1]);
-      this.datos = data.findOnce[data.findOnce.length - 1];
     });
   }
 
@@ -377,56 +416,115 @@ export class PuntoOnceListaPage implements OnInit {
   }
 
   pdf() {
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
     const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
     const footer = this.myImage;
-    // const iconoEstacion = this.iconoEstacion;
+    const ddd = this.datosEstacion;
+    const firmaRepresentanteTecnico = this.firmaRepresentante;
     this.checar();
     const dd = {
-      background(currentPage, pageSize) {
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution',
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
+      background() {
         return {
-          image: `${marcaAgua}`, width: 290, height: 400,
-          absolutePosition: {x: 250, y: 120}, opacity: 0.5
+          image: `${marcaAgua}`,
+          width: 290,
+          height: 400,
+          absolutePosition: {x: 250, y: 120},
+          opacity: 0.5
         };
       },
-      header: () => {
+      header() {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 570],
+            heights: [30, 10, 10],
             body: [
               [
                 {
-                  // image: `${iconoEstacion}`,
-                  // width: 70,
-                  // height: 70,
-                  // alignment: 'center',
-                  // border: [true, true, false, true]
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'center',
+                  border: [true, true, false, true]
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 25,
+                  alignment: 'center',
+                  margin: [15, 20],
+                  border: [false, true, true, true],
                 }
               ],
-              [{text: 'XI. INTEGRIDAD MECÁNICA', alignment: 'center', bold: true}],
-              [{text: 'INFORMACIÓN DE LOS EQUIPOS', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  text: 'XI. INTEGRIDAD MECÁNICA',
+                  alignment: 'center',
+                  colSpan: 2,
+                  border: [true, true, true, true],
+                }
+              ],
+              [
+                {
+                  text: 'INFORMACIÓN DE LOS EQUIPOS',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2,
+                  fillColor: '#ddd',
+                  border: [true, true, true, true],
+                },
+                {}
+              ],
             ]
           },
-          margin: [22, 15]
+          margin: [22, 7],
+          layout: {
+            defaultBorder: false
+          }
         };
       },
-      footer: () => {
+      footer(currentPage, pageCount) {
         return {
           table: {
             headerRows: 1,
-            widths: [700],
-            body : [
+            widths: [650],
+            body: [
+              [
+                {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-22 Rev.0, ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
               [
                 {
                   image: `${footer}`,
-                  width: 510,
-                  height: 80,
+                  width: 650,
+                  height: 60,
                   alignment: 'center'
                 }
-              ]
+              ],
+              ['']
             ]
           },
           layout : 'headerLineOnly',
-          margin: [50, 20]
+          margin: [72, 20]
         };
       },
       content: [
