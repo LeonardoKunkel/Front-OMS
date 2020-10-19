@@ -4,6 +4,7 @@ import { PdfMakerService } from 'src/app/services/pdf-maker.service';
 import { PoliticaService } from 'src/app/services/Elemento1/politica.service';
 import { EstacionServicioDatosService } from '../../services/estacion-servicio-datos.service';
 import { ActivatedRoute } from '@angular/router';
+import { SelecionPoliticaGraficaService } from 'src/app/services/Elemento1/selecion-politica-grafica.service';
 
 @Component({
 selector: 'app-punto-uno-politica',
@@ -29,6 +30,9 @@ export class PuntoUnoPoliticaPage implements OnInit {
   politicaResultado:any={
     politica:''
   }
+  valorGraph : any ={
+    selecionPolitica :null
+  } 
 
 constructor(
   public alertController: AlertController,
@@ -36,7 +40,8 @@ constructor(
   private politicaService: PoliticaService,
   private estacionServicioService: EstacionServicioDatosService,
   private route: ActivatedRoute,
-  private navCtrl: NavController
+  private navCtrl: NavController,
+  private graph : SelecionPoliticaGraficaService
 ) {
 }
 
@@ -69,18 +74,43 @@ async presentAlert() {
     cssClass: 'my-custom-class',
     header: 'Confirmar!',
     message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
+    inputs:[
+      {
+        name: 'radioButton',
+        type: 'radio',
+        label: 'Checkbox 1',
+        value: '50',
+        checked: false
+      }
+    ],
     buttons: [{
       text:'Entendido',
       role:'Ok',
       cssClass:'secondary',
       handler: (blah) =>{
-        //console.log('Boton ok');
+        if(blah === '50'){
+          this.valorGraph.selecionPolitica = 50;
+          this.postGraph(this.valorGraph);
+          console.log(this.valorGraph);
+        }else{
+          this.valorGraph.selecionPolitica = 0;
+          this.postGraph(this.valorGraph);
+          console.log(this.valorGraph);
+        }
+        //console.log(blah);
         this.politicaNav();
       }
-    }]
+    }],
+    backdropDismiss: false
   });
 
   await alert.present();
+}
+
+postGraph(value){
+  this.graph.postPoliticaGrafica(value).subscribe((data:any)=>{
+    console.log(data);
+  })
 }
 
 getStationSpecific(id:string){

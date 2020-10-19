@@ -14,11 +14,11 @@ const routes: Routes = [
     loadChildren: './pages/mapa/mapa.module#MapaPageModule',
     // canLoad: [AuthGuard]
   },
-  {
-    path: 'calendar',
-    loadChildren: './pages/calendar/calendar.module#CalendarPageModule',
-    // canLoad: [AuthGuard]
-  },
+  // {
+  //   path: 'calendar',
+  //   loadChildren: './pages/calendar/calendar.module#CalendarPageModule',
+  //   // canLoad: [AuthGuard]
+  // },
   {
     path: 'menu-sasisopa',
     loadChildren: './pages/menu-sasisopa/menu-sasisopa.module#MenuSasisopaPageModule',
@@ -75,36 +75,6 @@ const routes: Routes = [
   {
     path: 'punto-once',
     loadChildren: './pages/punto-once/punto-once.module#PuntoOncePageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'pdf-im01',
-    loadChildren: './pages/pdf-im01/pdf-im01.module#PdfIM01PageModule' ,
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'pdf-im02',
-    loadChildren: './pages/pdf-im02/pdf-im02.module#PdfIM02PageModule' ,
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'pdf-im03',
-    loadChildren: './pages/pdf-im03/pdf-im03.module#PdfIM03PageModule' ,
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'pdf-im04',
-    loadChildren: './pages/pdf-im04/pdf-im04.module#PdfIM04PageModule' ,
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'pdf-im05',
-    loadChildren: './pages/pdf-im05/pdf-im05.module#PdfIM05PageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
-    path: 'pdf-im11',
-    loadChildren: './pages/pdf-im11/pdf-im11.module#PdfIM11PageModule',
     // canLoad: [AuthGuard]
   },
   {
@@ -490,6 +460,8 @@ const routes: Routes = [
   { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
   { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
   { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
+  //{ path: 'evidencia-mostrar-model', loadChildren: './pages/evidencia-mostrar-model/evidencia-mostrar-model.module#EvidenciaMostrarModelPageModule' },
+
   // },
   // { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
 

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PuntoUnoEvidenciaPage } from './punto-uno-evidencia.page';
 import {PhotoListComponent} from '../../components/photo-list/photo-list.component';
-
+import { EvidenciaMostrarModelPage } from '../evidencia-mostrar-model/evidencia-mostrar-model.page'
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntoUnoEvidenciaPage,PhotoListComponent],
+  declarations: [PuntoUnoEvidenciaPage,PhotoListComponent,EvidenciaMostrarModelPage],
+  entryComponents:[EvidenciaMostrarModelPage]
 })
 export class PuntoUnoEvidenciaPageModule {}

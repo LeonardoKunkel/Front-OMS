@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PdfIM02Page } from './pdf-im02.page';
-
+import { EvidenciaMostrarModelPage } from './evidencia-mostrar-model.page';
+import { PhotoListComponent } from '../../components/photo-list/photo-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: PdfIM02Page
+    component: EvidenciaMostrarModelPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PdfIM02Page]
+  declarations: [EvidenciaMostrarModelPage,PhotoListComponent]
 })
-export class PdfIM02PageModule {}
+export class EvidenciaMostrarModelPageModule {}
