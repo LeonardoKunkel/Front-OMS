@@ -16,11 +16,15 @@ export class EvidenciaElementoUnoService {
     const fd = new FormData();
     fd.append('title',title);
     fd.append('description',description);
-    fd.append('image',photo);
-    return this.http.post('http://localhost:3000/img/create',fd);
+    fd.append('myfile',photo);
+    return this.http.post('http://localhost:3000/evidencePhotoElement1/create',fd);
   }
 
   deletePhoto(id:string){
     return this.http.delete(`http://localhost:3000/img/${id}`);
+  }
+
+  dowloadPhoto(name:String){
+    return this.http.get(`http://localhost:3000/download/${name}`);
   }
 }

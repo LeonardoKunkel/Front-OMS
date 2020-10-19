@@ -1,16 +1,55 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/punto-dos"></ion-back-button>
+      <ion-back-button defaultHref="/punto-diecisiete"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">Evidencia</ion-title>
   </ion-toolbar>
 </ion-header>
-<div>
-  <hr class="lineaN">
-</div>
 
 <ion-content [fullscreen]="true">
+  <ion-grid fixed >
+    <ion-row style="display: block; margin: auto;">
+      <ion-col size="12" sizeLg="4">
+        <ion-card>
+          <ion-card-content>
+            <p style="text-align: justify; margin: 3%;">
+              Lorem ipsum dolor sit amet, consectetur adipisicing 
+              elit. Dolorum, soluta aliquid sunt itaque at repudia
+              ndae ad ullam facere iure veniam saepe, inventore ear
+              um quasi dignissimos asperiores consectetur laboriosa
+              m quos non?
+            </p>
+            <form (submit)="uploadPhoto(title, description)">
+              <ion-item>
+                <ion-label position="floating">Titulo</ion-label>
+                <ion-input type="text" #title required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Descripcion </ion-label>
+                <ion-input type="text" required #description></ion-input>
+              </ion-item>
+              <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+              <ion-card-content>
+                <img [src]="photoSelected || '../../../assets/Imagenes/no hay imagen.png'" style="width: 30%; display: block; margin: auto;" alt="No image" (click)="photoInput.click()">
+              </ion-card-content>
+              <ion-button type="submit" class="btn btn-primary btn-block" expand="block" fill="clear" shape="round">
+                Subir
+              </ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+
+
+
 <ion-card color="light">
   <ion-card-content>
     <p style="margin: 3%; text-align: justify;">

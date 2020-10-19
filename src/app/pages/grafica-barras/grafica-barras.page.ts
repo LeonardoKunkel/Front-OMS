@@ -17,6 +17,7 @@ export class GraficaBarrasPage implements OnInit {
     private elementoUnoGrafica: SelecionPoliticaGraficaService
   ) { 
     this.getElementoUNoGrafica();
+    this.elementoDos();
   }
   ngOnInit() {
     this.ref.detectChanges();
@@ -32,12 +33,24 @@ export class GraficaBarrasPage implements OnInit {
     this.elementoUnoGrafica.getPoliticaGrafica().subscribe((data:any)=>{
       //console.log(data.findPoliticaGrafica[data.findPoliticaGrafica.length -1].selecionPolitica);
       this.elementoUno = data.findPoliticaGrafica[data.findPoliticaGrafica.length -1].selecionPolitica;
-      //this.elementoUno = '60';
+    })
+  } 
+
+  elementoDos(){
+    this.elementoUnoGrafica.getElemento2().subscribe((data:any)=>{
+      console.log(data);
     })
   }
-  // check(){
-  //   this.generateCart();
-  // } 
+
+  postElemento2(){
+    
+    let newAspectosGraph = {
+      aspectosGrafica:60
+    }
+    this.elementoUnoGrafica.createElemento2(newAspectosGraph).subscribe((data:any)=>{
+      console.log(data);
+    })
+  }
 
 
   generateCart(){
@@ -69,7 +82,7 @@ export class GraficaBarrasPage implements OnInit {
             ],
             datasets: [{
                 label: '% de progreso de implementacion del SASISOPA',
-                data: [100, 30, 20, 3, 5, 2, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, ],
+                data: [100, this.elementoUno, 20, 3, 5, 2, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, ],
                 backgroundColor: [
                    'rgba(239, 239, 239, 0.2)',
                     'rgba(255, 99, 132, 0.2)',

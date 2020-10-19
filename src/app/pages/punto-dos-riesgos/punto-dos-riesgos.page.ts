@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController, AlertController } from '@ionic/angular';
 import { RiesgosServiceService } from 'src/app/services/Elemento 2/riesgos-service.service';
 import { Observable } from 'rxjs';
 import { FirmaEstacionServiceService } from '../../services/firma-estacion-service.service';
@@ -17,6 +17,10 @@ import { FirmaRepresentanteService } from 'src/app/services/firma-representante.
   styleUrls: ['./punto-dos-riesgos.page.scss'],
 })
 export class PuntoDosRiesgosPage implements OnInit {
+
+  valorGraph:any={
+    selecionPolitica :null
+  }
 
   datos: any = {
     F1: '',
@@ -102,7 +106,10 @@ export class PuntoDosRiesgosPage implements OnInit {
                private marca: MarcaAguaServiceService,
                private icono: IconoEstacionService,
                private datosEstacionService: EstacionServicioDatosService,
-               private firmaRepresente: FirmaRepresentanteService
+               private firmaRepresente: FirmaRepresentanteService,
+               private navCtrl : NavController,
+               public alertController: AlertController,
+
                 ) {
                   this.getDatosEstacion();
                   this.getRiesgos();
@@ -607,6 +614,45 @@ export class PuntoDosRiesgosPage implements OnInit {
         break;
     }
   }
+
+  async presentAlert() {
+    
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirmar!',
+      message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
+      inputs:[
+        {
+          name: 'radioButton',
+          type: 'radio',
+          label: 'Acepto',
+          value: '50',
+          checked: false
+        }
+      ],
+      buttons: [{
+        text:'Entendido',
+        role:'Ok',
+        cssClass:'secondary',
+        handler: (blah) =>{
+          if(blah === '50'){
+            this.valorGraph.selecionPolitica = 50;
+            //this.postGraph(this.valorGraph);
+            console.log(this.valorGraph);
+          }else{
+            this.valorGraph.selecionPolitica = 0;
+            //this.postGraph(this.valorGraph);
+            console.log(this.valorGraph);
+          }
+          this.navCtrl.navigateForward('/punto-dos');
+        }
+      }],
+      backdropDismiss: false
+    });
+  
+    await alert.present();
+  }
+  
 
   pdf() {
     const fecha = new Date();

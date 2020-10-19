@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, AlertController, NavController } from '@ionic/angular';
 import { AspectosServiceService } from 'src/app/services/Elemento 2/aspectos-service.service';
 import { Observable } from 'rxjs';
 import { FirmaEstacionServiceService } from '../../services/firma-estacion-service.service';
@@ -16,6 +16,9 @@ import { FirmaRepresentanteService } from 'src/app/services/firma-representante.
   styleUrls: ['./punto-dos-aspectos.page.scss'],
 })
 export class PuntoDosAspectosPage implements OnInit {
+  valorGraph:any={
+    selecionPolitica :null
+  }
   datos: any = {
     F1: '',
     F2: '',
@@ -235,6 +238,7 @@ export class PuntoDosAspectosPage implements OnInit {
   };
 
   constructor(
+    public alertController: AlertController,
     private pdfMaker: PdfMakerService,
     public toast: ToastController,
     private superAspectos: AspectosServiceService,
@@ -242,7 +246,8 @@ export class PuntoDosAspectosPage implements OnInit {
     private marca: MarcaAguaServiceService,
     private icono: IconoEstacionService,
     private datosEstacionService: EstacionServicioDatosService,
-    private firmaRepresente: FirmaRepresentanteService
+    private firmaRepresente: FirmaRepresentanteService,
+    private navCtrl : NavController
      ) {
        this.getDatosEstacion();
        this.getAspectos();
@@ -318,13 +323,14 @@ export class PuntoDosAspectosPage implements OnInit {
   }
 
   async enviarForm(formulario) {
-    console.log(this.datos);
+    
 
     const toast = await this.toast.create({
       message: 'Datos guardados',
       duration: 2000
     });
     toast.present();
+    //this.presentAlert()
 
     const valortotal1 = this.datos.F1 + this.datos.N1 + this.datos.M1;
     this.datos.VT1 = valortotal1;
@@ -536,6 +542,44 @@ export class PuntoDosAspectosPage implements OnInit {
     });
   }
 
+  async presentAlert() {
+    
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirmar!',
+      message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
+      inputs:[
+        {
+          name: 'radioButton',
+          type: 'radio',
+          label: 'Acepto',
+          value: '50',
+          checked: false
+        }
+      ],
+      buttons: [{
+        text:'Entendido',
+        role:'Ok',
+        cssClass:'secondary',
+        handler: (blah) =>{
+          if(blah === '50'){
+            this.valorGraph.selecionPolitica = 50;
+            //this.postGraph(this.valorGraph);
+            console.log(this.valorGraph);
+          }else{
+            this.valorGraph.selecionPolitica = 0;
+            //this.postGraph(this.valorGraph);
+            console.log(this.valorGraph);
+          }
+          this.navCtrl.navigateForward('/punto-dos');
+        }
+      }],
+      backdropDismiss: false
+    });
+  
+    await alert.present();
+  }
+  
   pdf() {
     const fecha = new Date();
     const day = fecha.getDate();

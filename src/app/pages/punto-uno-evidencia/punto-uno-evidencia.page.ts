@@ -1,12 +1,11 @@
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController, NavController } from '@ionic/angular';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 //import { File } from '@ionic-native/file/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { EvidenciaElementoUnoService } from '../../services/Elemento1/evidencia-elemento-uno.service';
-import { EvidenciaDocumentUnoService } from 'src/app/services/Elemento1/evidencia-document-uno.service';
-
+import {EvidenceElement1PhotoService } from '../../services/EvidencesServices/evidence-element1-photo.service';
+import { EvidenciaMostrarModelPage } from '../evidencia-mostrar-model/evidencia-mostrar-model.page';
 @Component({
   selector: 'app-punto-uno-evidencia',
   templateUrl: './punto-uno-evidencia.page.html',
@@ -16,18 +15,20 @@ export class PuntoUnoEvidenciaPage implements OnInit {
 
   photoSelected: string | ArrayBuffer;
   file : File;
-
   foto: any;
   uploadedFiles: Array <File>;
+  photos  = [];
   constructor(private camera: Camera,
      private platform: Platform, 
-     private document: DocumentViewer, 
-    // private file: File, 
+     private document: DocumentViewer,
      private transfer: FileTransfer,
-     private _uploadService:EvidenciaElementoUnoService,
+     private _uploadService:EvidenceElement1PhotoService,
+     private modalCtrl : ModalController,
+     private navCtrl : NavController
      ) { }
 
   ngOnInit() {
+    this.getPhoto();
   }
 
   abrirArchivos() {
@@ -62,13 +63,17 @@ export class PuntoUnoEvidenciaPage implements OnInit {
     }).then(imagenData => this.foto = 'data:image/jpeg;base64' + imagenData );
   }
 
-
-
-
+  getPhoto(){
+    this._uploadService.getImages().subscribe((data:any) =>{
+      this.photos = data.images;
+      console.log(this.photos);
+    })
+  }
 
   uploadPhoto(title: HTMLInputElement, description: HTMLInputElement){
     this._uploadService.uploadImage(title.value, description.value, this.file).subscribe(data => console.log(data));
-   }
+    this.navCtrl.navigateForward('/punto-uno');
+  }
   
    onPhotoSelected(event): void{
     if(event.target.files && event.target.files[0]){
@@ -80,12 +85,11 @@ export class PuntoUnoEvidenciaPage implements OnInit {
     }
    }
   
-
- 
-
-
- 
-
- 
-
+   async openModal(){
+    const modal = await this.modalCtrl.create({
+      component: EvidenciaMostrarModelPage
+    });
+    return await modal.present();
+  }
 }
+

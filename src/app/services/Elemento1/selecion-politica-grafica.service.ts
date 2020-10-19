@@ -24,4 +24,22 @@ export class SelecionPoliticaGraficaService {
     });
     return this.httpClient.get('http://localhost:3000/seleccionPoliticaGrafica/');
   }
+
+  getElemento2(){
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
+    return this.httpClient.get('http://localhost:3000/listadoAspectosGraficaRuta');
+  }
+
+  createElemento2(data){
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post('http://localhost:3000/listadoAspectosGraficaRuta/create',data)
+  }
+
 }
