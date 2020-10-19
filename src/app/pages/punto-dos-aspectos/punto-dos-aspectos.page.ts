@@ -173,7 +173,47 @@ export class PuntoDosAspectosPage implements OnInit {
     VT37: '',
     VT38: '',
     VT39: '',
+    AAS1: '',
+    AAS2: '',
+    AAS3: '',
+    AAS4: '',
+    AAS5: '',
+    AAS6: '',
+    AAS7: '',
+    AAS8: '',
+    AAS9: '',
+    AAS10: '',
+    AAS11: '',
+    AAS12: '',
+    AAS13: '',
+    AAS14: '',
+    AAS15: '',
+    AAS16: '',
+    AAS17: '',
+    AAS18: '',
+    AAS19: '',
+    AAS20: '',
+    AAS21: '',
+    AAS22: '',
+    AAS23: '',
+    AAS24: '',
+    AAS25: '',
+    AAS26: '',
+    AAS27: '',
+    AAS28: '',
+    AAS29: '',
+    AAS30: '',
+    AAS31: '',
+    AAS32: '',
+    AAS33: '',
+    AAS34: '',
+    AAS35: '',
+    AAS36: '',
+    AAS37: '',
+    AAS38: '',
+    AAS39: '',
   };
+
   estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
@@ -217,7 +257,7 @@ export class PuntoDosAspectosPage implements OnInit {
   }
   getAspectos() {
     this.superAspectos.getAspectos().subscribe((data: any) => {
-      // console.log(data.findAspectos[data.findAspectos.length -1]);
+      // console.log(data.findAspectos[data.findAspectos.length - 1]);
       this.datos = data.findAspectos[data.findAspectos.length - 1];
     });
   }
@@ -279,10 +319,6 @@ export class PuntoDosAspectosPage implements OnInit {
 
   async enviarForm(formulario) {
     console.log(this.datos);
-
-    this.superAspectos.crearAspectos(this.datos).subscribe(data => {
-      console.log(data);
-    });
 
     const toast = await this.toast.create({
       message: 'Datos guardados',
@@ -368,6 +404,136 @@ export class PuntoDosAspectosPage implements OnInit {
     this.datos.VT38 = valortotal38;
     const valortotal39 = this.datos.F39 + this.datos.N39 + this.datos.M39;
     this.datos.VT39 = valortotal39;
+
+    const conteo = [
+      valortotal1,
+      valortotal2,
+      valortotal3,
+      valortotal4,
+      valortotal5,
+      valortotal6,
+      valortotal7,
+      valortotal8,
+      valortotal9,
+      valortotal10,
+      valortotal11,
+      valortotal12,
+      valortotal13,
+      valortotal14,
+      valortotal15,
+      valortotal16,
+      valortotal17,
+      valortotal18,
+      valortotal19,
+      valortotal20,
+      valortotal21,
+      valortotal22,
+      valortotal23,
+      valortotal24,
+      valortotal25,
+      valortotal26,
+      valortotal27,
+      valortotal28,
+      valortotal29,
+      valortotal30,
+      valortotal31,
+      valortotal32,
+      valortotal33,
+      valortotal34,
+      valortotal35,
+      valortotal36,
+      valortotal37,
+      valortotal38,
+      valortotal39,
+    ];
+
+    const top12 = conteo.sort(function (a, b) { return b - a; }).slice(0, 12);
+    console.log(top12);
+    const ultimo = top12[top12.length - 1];
+    console.log(ultimo);
+
+    const aspectoSig1 = valortotal1 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS1 = aspectoSig1;
+    const aspectoSig2 = valortotal2 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS2 = aspectoSig2;
+    const aspectoSig3 = valortotal3 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS3 = aspectoSig3;
+    const aspectoSig4 = valortotal4 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS4 = aspectoSig4;
+    const aspectoSig5 = valortotal5 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS5 = aspectoSig5;
+    const aspectoSig6 = valortotal6 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS6 = aspectoSig6;
+    const aspectoSig7 = valortotal7 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS7 = aspectoSig7;
+    const aspectoSig8 = valortotal8 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS8 = aspectoSig8;
+    const aspectoSig9 = valortotal9 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS9 = aspectoSig9;
+    const aspectoSig10 = valortotal10 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS10 = aspectoSig10;
+    const aspectoSig11 = valortotal11 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS11 = aspectoSig11;
+    const aspectoSig12 = valortotal12 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS12 = aspectoSig12;
+    const aspectoSig13 = valortotal13 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS13 = aspectoSig13;
+    const aspectoSig14 = valortotal14 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS14 = aspectoSig14;
+    const aspectoSig15 = valortotal15 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS15 = aspectoSig15;
+    const aspectoSig16 = valortotal16 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS16 = aspectoSig16;
+    const aspectoSig17 = valortotal17 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS17 = aspectoSig17;
+    const aspectoSig18 = valortotal18 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS18 = aspectoSig18;
+    const aspectoSig19 = valortotal19 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS19 = aspectoSig19;
+    const aspectoSig20 = valortotal20 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS20 = aspectoSig20;
+    const aspectoSig21 = valortotal21 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS21 = aspectoSig21;
+    const aspectoSig22 = valortotal22 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS22 = aspectoSig22;
+    const aspectoSig23 = valortotal23 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS23 = aspectoSig23;
+    const aspectoSig24 = valortotal24 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS24 = aspectoSig24;
+    const aspectoSig25 = valortotal25 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS25 = aspectoSig25;
+    const aspectoSig26 = valortotal26 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS26 = aspectoSig26;
+    const aspectoSig27 = valortotal27 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS27 = aspectoSig27;
+    const aspectoSig28 = valortotal28 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS28 = aspectoSig28;
+    const aspectoSig29 = valortotal29 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS29 = aspectoSig29;
+    const aspectoSig30 = valortotal30 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS30 = aspectoSig30;
+    const aspectoSig31 = valortotal31 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS31 = aspectoSig31;
+    const aspectoSig32 = valortotal32 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS32 = aspectoSig32;
+    const aspectoSig33 = valortotal33 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS33 = aspectoSig33;
+    const aspectoSig34 = valortotal34 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS34 = aspectoSig34;
+    const aspectoSig35 = valortotal35 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS35 = aspectoSig35;
+    const aspectoSig36 = valortotal36 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS36 = aspectoSig36;
+    const aspectoSig37 = valortotal37 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS37 = aspectoSig37;
+    const aspectoSig38 = valortotal38 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS38 = aspectoSig38;
+    const aspectoSig39 = valortotal39 >= ultimo ? 'Si' : 'No';
+    this.datos.AAS39 = aspectoSig39;
+
+    this.superAspectos.crearAspectos(this.datos).subscribe(data => {
+      console.log(data);
+    });
   }
 
   pdf() {
@@ -393,12 +559,13 @@ export class PuntoDosAspectosPage implements OnInit {
         contentAccessibility: true,
         documentAssembly: true
       },
-      background(currentPage, pageSize) {
+      background() {
         return {
           image: `${marcaAgua}`,
           width: 300,
           height: 370,
-          absolutePosition: {x: 250, y: 140}, opacity: 0.5
+          absolutePosition: {x: 250, y: 140},
+          opacity: 0.5
         };
       },
       header() {
@@ -458,7 +625,7 @@ export class PuntoDosAspectosPage implements OnInit {
           table: {
             headerRows: 1,
             widths: [650],
-            body : [
+            body: [
               [
                 {
                   columns: [
@@ -568,7 +735,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N1}`, fontSize: 7},
                 {text: `${this.datos.M1}`, fontSize: 7},
                 {text: `${this.datos.VT1}`, fontSize: 7},
-                {text: '', fontSize: 7},
+                {text: `${this.datos.AAS1}`, fontSize: 7},
                 {text: 'Licencia Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 7},
                 {text: '', fontSize: 8},
@@ -591,7 +758,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N2}`, fontSize: 8},
                 {text: `${this.datos.M2}`, fontSize: 8},
                 {text: `${this.datos.VT2}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS2}`, fontSize: 8},
                 {text: 'Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -614,7 +781,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N3}`, fontSize: 8},
                 {text: `${this.datos.M3}`, fontSize: 8},
                 {text: `${this.datos.VT3}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS3}`, fontSize: 8},
                 {text: 'Licencia Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -638,7 +805,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N4}`, fontSize: 8},
                 {text: `${this.datos.M4}`, fontSize: 8},
                 {text: `${this.datos.VT4}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS4}`, fontSize: 8},
                 {text: 'Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -661,7 +828,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N5}`, fontSize: 8},
                 {text: `${this.datos.M5}`, fontSize: 8},
                 {text: `${this.datos.VT5}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS5}`, fontSize: 8},
                 {text: 'Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -684,7 +851,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N6}`, fontSize: 8},
                 {text: `${this.datos.M6}`, fontSize: 8},
                 {text: `${this.datos.VT6}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS6}`, fontSize: 8},
                 {text: 'Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -707,7 +874,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N7}`, fontSize: 8},
                 {text: `${this.datos.M7}`, fontSize: 8},
                 {text: `${this.datos.VT7}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS7}`, fontSize: 8},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -730,7 +897,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N8}`, fontSize: 8},
                 {text: `${this.datos.M8}`, fontSize: 8},
                 {text: `${this.datos.VT8}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS8}`, fontSize: 8},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -753,7 +920,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N9}`, fontSize: 8},
                 {text: `${this.datos.M9}`, fontSize: 8},
                 {text: `${this.datos.VT9}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS9}`, fontSize: 8},
                 {text: 'Licencia Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -776,7 +943,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N10}`, fontSize: 8},
                 {text: `${this.datos.M10}`, fontSize: 8},
                 {text: `${this.datos.VT10}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS10}`, fontSize: 8},
                 {text: 'Licencia Ambiental Única(LAU)', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -799,7 +966,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N11}`, fontSize: 8},
                 {text: `${this.datos.M11}`, fontSize: 8},
                 {text: `${this.datos.VT11}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS11}`, fontSize: 8},
                 {text: 'NOM-138-SEMARNAT/SSA1-2012,', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -822,7 +989,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N12}`, fontSize: 8},
                 {text: `${this.datos.M12}`, fontSize: 8},
                 {text: `${this.datos.VT12}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS12}`, fontSize: 8},
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -845,7 +1012,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N13}`, fontSize: 8},
                 {text: `${this.datos.M13}`, fontSize: 8},
                 {text: `${this.datos.VT13}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS13}`, fontSize: 8},
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -868,7 +1035,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N14}`, fontSize: 8},
                 {text: `${this.datos.M14}`, fontSize: 8},
                 {text: `${this.datos.VT14}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS14}`, fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -891,7 +1058,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N15}`, fontSize: 8},
                 {text: `${this.datos.M15}`, fontSize: 8},
                 {text: `${this.datos.VT15}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS15}`, fontSize: 8},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -914,7 +1081,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N16}`, fontSize: 8},
                 {text: `${this.datos.M16}`, fontSize: 8},
                 {text: `${this.datos.VT16}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS16}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -937,7 +1104,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N17}`, fontSize: 8},
                 {text: `${this.datos.M17}`, fontSize: 8},
                 {text: `${this.datos.VT17}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS17}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -960,7 +1127,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N18}`, fontSize: 8},
                 {text: `${this.datos.M18}`, fontSize: 8},
                 {text: `${this.datos.VT18}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS18}`, fontSize: 8},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1006,7 +1173,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N19}`, fontSize: 8},
                 {text: `${this.datos.M19}`, fontSize: 8},
                 {text: `${this.datos.VT19}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS19}`, fontSize: 8},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: 'X', fontSize: 8},
@@ -1029,7 +1196,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N20}`, fontSize: 8},
                 {text: `${this.datos.M20}`, fontSize: 8},
                 {text: `${this.datos.VT20}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS20}`, fontSize: 8},
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1052,7 +1219,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N21}`, fontSize: 8},
                 {text: `${this.datos.M21}`, fontSize: 8},
                 {text: `${this.datos.VT21}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS21}`, fontSize: 8},
                 {text: 'NOM-002-SEMARNAT-1996', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1075,7 +1242,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N22}`, fontSize: 8},
                 {text: `${this.datos.M22}`, fontSize: 8},
                 {text: `${this.datos.VT22}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS22}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1098,7 +1265,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N23}`, fontSize: 8},
                 {text: `${this.datos.M23}`, fontSize: 8},
                 {text: `${this.datos.VT23}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS23}`, fontSize: 8},
                 {text: 'Ley de aguas Nacionales (LAN) 2012', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1121,7 +1288,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N24}`, fontSize: 8},
                 {text: `${this.datos.M24}`, fontSize: 8},
                 {text: `${this.datos.VT24}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS24}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1144,7 +1311,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N25}`, fontSize: 8},
                 {text: `${this.datos.M25}`, fontSize: 8},
                 {text: `${this.datos.VT25}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS25}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1167,7 +1334,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N26}`, fontSize: 8},
                 {text: `${this.datos.M26}`, fontSize: 8},
                 {text: `${this.datos.VT26}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS26}`, fontSize: 8},
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1213,7 +1380,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N27}`, fontSize: 8},
                 {text: `${this.datos.M27}`, fontSize: 8},
                 {text: `${this.datos.VT27}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS27}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1236,7 +1403,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N28}`, fontSize: 8},
                 {text: `${this.datos.M28}`, fontSize: 8},
                 {text: `${this.datos.VT28}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS28}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1259,7 +1426,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N29}`, fontSize: 8},
                 {text: `${this.datos.M29}`, fontSize: 8},
                 {text: `${this.datos.VT29}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS29}`, fontSize: 8},
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1305,7 +1472,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N30}`, fontSize: 8},
                 {text: `${this.datos.M30}`, fontSize: 8},
                 {text: `${this.datos.VT30}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS30}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1328,7 +1495,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N31}`, fontSize: 8},
                 {text: `${this.datos.M31}`, fontSize: 8},
                 {text: `${this.datos.VT31}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS31}`, fontSize: 8},
                 {text: 'Ley del servicio público de Energía Eléctrica', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1351,7 +1518,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N32}`, fontSize: 8},
                 {text: `${this.datos.M32}`, fontSize: 8},
                 {text: `${this.datos.VT32}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS32}`, fontSize: 8},
                 {text: 'Ley de aguas Nacionales (LAN) 2012', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1374,7 +1541,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N33}`, fontSize: 8},
                 {text: `${this.datos.M33}`, fontSize: 8},
                 {text: `${this.datos.VT33}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS33}`, fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1420,7 +1587,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N34}`, fontSize: 8},
                 {text: `${this.datos.M34}`, fontSize: 8},
                 {text: `${this.datos.VT34}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS34}`, fontSize: 8},
                 {text: 'Ley del servicio público de energía eléctrica', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1443,7 +1610,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N35}`, fontSize: 8},
                 {text: `${this.datos.M35}`, fontSize: 8},
                 {text: `${this.datos.VT35}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS35}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1466,7 +1633,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N36}`, fontSize: 8},
                 {text: `${this.datos.M36}`, fontSize: 8},
                 {text: `${this.datos.VT36}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS36}`, fontSize: 8},
                 {text: '(LAU) Licencia Ambiental Única', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1489,7 +1656,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N37}`, fontSize: 8},
                 {text: `${this.datos.M37}`, fontSize: 8},
                 {text: `${this.datos.VT37}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS37}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1535,7 +1702,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N38}`, fontSize: 8},
                 {text: `${this.datos.M38}`, fontSize: 8},
                 {text: `${this.datos.VT38}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS38}`, fontSize: 8},
                 {text: 'Ley del servicio público de energía eléctrica', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},
@@ -1558,7 +1725,7 @@ export class PuntoDosAspectosPage implements OnInit {
                 {text: `${this.datos.N39}`, fontSize: 8},
                 {text: `${this.datos.M39}`, fontSize: 8},
                 {text: `${this.datos.VT39}`, fontSize: 8},
-                {text: '', fontSize: 8},
+                {text: `${this.datos.AAS39}`, fontSize: 8},
                 {text: 'NOM-052-SEMARNAT-2005', fontSize: 8},
                 {text: '', fontSize: 8},
                 {text: '', fontSize: 8},

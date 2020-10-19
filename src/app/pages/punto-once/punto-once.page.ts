@@ -127,12 +127,24 @@ export class PuntoOncePage implements OnInit {
         const month = fecha.getUTCMonth() + 1;
         const year = fecha.getFullYear();
         const dd = {
+            userPassword: '123',
+            ownerPassword: '123456',
+            permissions: {
+                printing: 'highResolution',
+                modifying: false,
+                copying: false,
+                annotating: true,
+                fillingForms: true,
+                contentAccessibility: true,
+                documentAssembly: true
+            },
             background(currentPage, pageSize) {
                 return {
                     image: `${marcaAgua}`,
                     width: 290,
                     height: 400,
-                    absolutePosition: {x: 170, y: 210}, opacity: 0.4
+                    absolutePosition: {x: 170, y: 210},
+                    opacity: 0.4
                 };
             },
             header() {
@@ -1695,6 +1707,17 @@ export class PuntoOncePage implements OnInit {
         const firmaEstacion = this.firmaEstacion;
         const ddd = this.datosEstacion;
         const dd = {
+            userPassword: '123',
+            ownerPassword: '123456',
+            permissions: {
+                printing: 'highResolution',
+                modifying: false,
+                copying: false,
+                annotating: true,
+                fillingForms: true,
+                contentAccessibility: true,
+                documentAssembly: true
+            },
             background(currentPage, pageSize) {
                 return {
                     image: `${marcaAgua}`, width: 290, height: 400,
@@ -1704,7 +1727,8 @@ export class PuntoOncePage implements OnInit {
             header: () => {
                 return {
                     table: {
-                        widths: [150, 583], heights: [30, 10, 10],
+                        widths: [150, 583],
+                        heights: [30, 10, 10],
                         body: [
                             [
                                 {
@@ -1715,7 +1739,11 @@ export class PuntoOncePage implements OnInit {
                                     border: [true, true, false, true],
                                 },
                                 {
-                                    text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                                    text: `${ddd.nombreEstacionServicio}`,
+                                    bold: true,
+                                    fontSize: 25,
+                                    alignment: 'center',
+                                    margin: [15, 20],
                                     border: [false, true, true, true],
                                 }
                             ],

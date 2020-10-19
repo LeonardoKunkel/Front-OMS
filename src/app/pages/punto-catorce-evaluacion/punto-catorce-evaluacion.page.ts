@@ -1,3 +1,6 @@
+import { FirmaEstacionServiceService } from './../../services/firma-estacion-service.service';
+import { IconoEstacionService } from './../../services/iconosEstacion.service';
+import { EstacionServicioDatosService } from './../../services/estacion-servicio-datos.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { PdfMakerService } from 'src/app/services/pdf-maker.service';
@@ -37,7 +40,8 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
     check19: false,
     check20: false,
     check21: false,
-    check22: false
+    check22: false,
+    trimestre: ''
   };
 
   datos2: any = {
@@ -66,21 +70,63 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
   };
 
   myImage = null;
+  firmaEstacion = null;
+  iconoEstacion = null;
   marcaAguaEstacion = null;
+  firmaRepresentante = null;
+  datosEstacion: any = {
+    calleNumero: '',
+    ciudad: '',
+    colonia: '',
+    correoElectronico: '',
+    cp: '',
+    estado: '',
+    gerenteEstacion: '',
+    maximaAutoridad: '',
+    nombreEstacionServicio: '',
+    representanteTecnico: '',
+    telefono: ''
+  };
 
   constructor(
     private pdfMaker: PdfMakerService,
     public toast: ToastController,
     private evalReqLeg: EvaluacionCatorceService,
     private marca: MarcaAguaServiceService,
+    private datosEstacionService: EstacionServicioDatosService,
+    private icono: IconoEstacionService,
+    private firma: FirmaEstacionServiceService
   ) {
     this.consultar();
     this.cambiar();
+    this.getFirma();
+    this.getIcono();
+    this.getDatosEstacion();
   }
 
   ngOnInit() {
     this.imagen64();
     this.marcaAgua();
+  }
+
+  getDatosEstacion() {
+    this.datosEstacionService.getEstacion().subscribe((data: any) => {
+      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
+    });
+  }
+  getIcono() {
+    this.icono.getPolitica().subscribe((data: any ) => {
+      console.log(data);
+      this.iconoEstacion =  data.findPolitica[data.findPolitica.length - 1].imagen;
+    });
+  }
+
+  getFirma() {
+    this.firma.getFirmaEstacion().subscribe((data: any) => {
+      // console.log(data);
+      this.firmaEstacion = this.firma = data.findFirma[data.findFirma.length - 1].firma;
+    });
   }
 
   imagen64() {
@@ -253,11 +299,29 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
   }
 
   pdf() {
+    const fecha = new Date();
+    const day = fecha.getDate();
+    const month = fecha.getUTCMonth() + 1;
+    const year = fecha.getFullYear();
     const marcaAgua = this.marcaAguaEstacion;
+    const iconoEstacion = this.iconoEstacion;
+    const firmaEstacion = this.firmaEstacion;
     const footer = this.myImage;
+    const ddd = this.datosEstacion;
     this.cambiar();
     const dd = {
-      background(currentPage, pageSize) {
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', // 'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
+      background() {
         return {
           image: `${marcaAgua}`, width: 290, height: 400,
           absolutePosition: {x: 250, y: 120}, opacity: 0.5
@@ -266,17 +330,50 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
       header: () => {
         return {
           table: {
-            widths: [740], heights: [50, 15, 15],
+            widths: [150, 581],
+            heights: [30, 10, 10],
             body: [
-              [{text: ''}],
-              [{text: 'XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN', alignment: 'center', bold: true}],
-              [{text: 'EVALUACIÓN DEL CUMPLIMIENTO DE REQUISITOS LEGALES', alignment: 'center', bold: true, fillColor: '#ddd'}],
+              [
+                {
+                  image: `${iconoEstacion}`,
+                  width: 45,
+                  height: 60,
+                  alignment: 'left',
+                  border: [true, true, false, false],
+                  margin: [10, 0]
+                },
+                {
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 15,
+                  alignment: 'center',
+                  margin: [0, 15],
+                  border: [false, true, true, true]
+                }
+              ],
+              [
+                {
+                  text: 'XIV. MONITOREO, VERIFICACIÓN Y EVALUACIÓN',
+                  alignment: 'center',
+                  bold: true,
+                  colSpan: 2
+                }
+              ],
+              [
+                {
+                  text: 'EVALUACIÓN DEL CUMPLIMIENTO DE REQUISITOS LEGALES',
+                  alignment: 'center',
+                  bold: true,
+                  fillColor: '#ddd',
+                  colSpan: 2
+                }
+              ],
             ]
           },
           margin: [22, 15]
         };
       },
-      footer: () => {
+      footer(currentPage, pageCount) {
         return {
           table: {
             headerRows: 1,
@@ -284,9 +381,17 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
             body : [
               [
                 {
+                  columns: [
+                    'Página' + currentPage.toString() + ' de ' + pageCount,
+                    {text: `FS-31 Rev.0, ${day}/${month}/${year}`, width: 180}
+                  ]
+                }
+              ],
+              [
+                {
                   image: `${footer}`,
                   width: 510,
-                  height: 80,
+                  height: 60,
                   alignment: 'center'
                 }
               ]
@@ -303,7 +408,7 @@ export class PuntoCatorceEvaluacionPage implements OnInit {
             body: [
               [
                 {text: `Fecha de evaluación: ${this.datos.fecha2}`},
-                {text: `Trimestre: `},
+                {text: `Trimestre: ${this.datos.trimestre}`},
                 {text: `Año: ${this.datos.fecha1}`}
               ]
             ]

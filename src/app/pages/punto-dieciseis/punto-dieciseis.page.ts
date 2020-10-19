@@ -130,7 +130,18 @@ export class PuntoDieciseisPage implements OnInit {
     const footer = this.myImage;
     const ddd = this.datosEstacion;
     const dd = {
-      background(currentPage, pageSize) {
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', // 'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
+      background() {
         return {
           image: `${marcaAgua}`, width: 290, height: 400,
           absolutePosition: {x: 250, y: 120}, opacity: 0.4
@@ -366,13 +377,24 @@ export class PuntoDieciseisPage implements OnInit {
     const footer = this.myImage;
     const ddd = this.datosEstacion;
     const dd = {
-      background(currentPage, pageSize) {
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', // 'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
+      background() {
         return {
           image: `${marcaAgua}`, width: 290, height: 400,
           absolutePosition: {x: 170, y: 210}, opacity: 0.4
         };
       },
-      header: () => {
+      header() {
         return {
           table: {
             widths: [150, 400],

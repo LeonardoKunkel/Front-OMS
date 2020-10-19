@@ -14,8 +14,10 @@ import { Observable } from 'rxjs';
 })
 export class PuntoTrecePage implements OnInit {
 
+  estacione: any[] = [];
   myImage = null;
   firmaEstacion = null;
+  firmaRepresentante = null;
   iconoEstacion = null;
   marcaAguaEstacion = null;
   datosEstacion: any = {
@@ -62,7 +64,7 @@ export class PuntoTrecePage implements OnInit {
 
   getDatosEstacion() {
     this.datosEstacionService.getEstacion().subscribe((data: any) => {
-      // console.log(data.findEstacion[data.findEstacion.length -1]);
+      // console.log(data.findEstacion[data.findEstacion.length - 1]);
       this.datosEstacion = data.findEstacion[data.findEstacion.length - 1];
     });
   }
@@ -123,13 +125,27 @@ export class PuntoTrecePage implements OnInit {
     const footer = this.myImage;
     const ddd = this.datosEstacion;
     const dd = {
+      userPassword: '123',
+      ownerPassword: '123456',
+      permissions: {
+        printing: 'highResolution', // 'lowResolution'
+        modifying: false,
+        copying: false,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true,
+        documentAssembly: true
+      },
       background() {
         return {
-          image: `${marcaAgua}`, width: 290, height: 400,
-          absolutePosition: {x: 170, y: 210}, opacity: 0.4
+          image: `${marcaAgua}`,
+          width: 290,
+          height: 400,
+          absolutePosition: {x: 170, y: 210},
+          opacity: 0.4
         };
       },
-      header: () => {
+      header() {
         return {
           table: {
             widths: [150, 400],
@@ -144,7 +160,11 @@ export class PuntoTrecePage implements OnInit {
                   border: [true, true, false, true],
                 },
                 {
-                  text: `${ddd.nombreEstacionServicio}`, bold: true, fontSize: 25, alignment: 'center', margin: [15, 20],
+                  text: `${ddd.nombreEstacionServicio}`,
+                  bold: true,
+                  fontSize: 17,
+                  alignment: 'center',
+                  margin: [0, 15],
                   border: [false, true, true, true],
                 }
               ],
@@ -211,8 +231,17 @@ export class PuntoTrecePage implements OnInit {
           fontSize: 10
         },
         {text: '1. Conformación de las Brigadas', bold: true},
-        {text: `Las Brigadas de Respuesta a Emergencias son grupos de personas organizadas y capacitadas en una o varias actividades para la respuesta a emergencias como es combate contra incendio, primeros auxilios, búsqueda y rescate de personas, entre otros; los cuales serán responsables de realizarlas de manera preventiva o ante la eventualidad de un alto riesgo, emergencia, siniestro o desastre, dentro del ámbito de la empresa, orientada a la salvaguarda de las personas, sus bienes y entorno, están organizadas por un coordinador de brigada.
-                En función de las situaciones potenciales de emergencia identificas y los requisitos legales aplicables, se conforman las siguientes Brigadas de Respuesta a Emergencia:\n\n`, fontSize: 10},
+        {
+          text:
+            `Las Brigadas de Respuesta a Emergencias son grupos de personas organizadas y capacitadas en una o varias actividades para
+            la respuesta a emergencias como es combate contra incendio, primeros auxilios, búsqueda y rescate de personas, entre otros;
+            los cuales serán responsables de realizarlas de manera preventiva o ante la eventualidad de un alto riesgo, emergencia,
+            siniestro o desastre, dentro del ámbito de la empresa, orientada a la salvaguarda de las personas, sus bienes y entorno,
+            están organizadas por un coordinador de brigada.
+            En función de las situaciones potenciales de emergencia identificas y los requisitos legales aplicables, se conforman las
+            siguientes Brigadas de Respuesta a Emergencia:\n\n`,
+          fontSize: 10
+        },
         {
           type: 'lower-alpha',
           fontSize: 10,

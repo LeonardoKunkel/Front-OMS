@@ -114,7 +114,7 @@
                 </ion-item>
                 <ion-item>
                     <ion-label>Fecha y hora</ion-label>
-                    <ion-datetime name="fecha" [(ngModel)]='datos2.fecha' display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+                    <ion-datetime name="fecha" [(ngModel)]="datos2.fecha" display-format="DD.MM.YYYY HH:mm"></ion-datetime>
                 </ion-item>
                 <ion-item>
                     <ion-label >Descripción del escenario</ion-label><br>
@@ -177,7 +177,7 @@
             </ion-item>
             <ion-item>
                 <ion-label>Aviso previo</ion-label>
-                <ion-select name='aviso' [(ngModel)]='datos3.aviso' placeholder="¿Cuenta con aviso previo?">
+                <ion-select name='aviso' [(ngModel)]="datos3.aviso" placeholder="¿Cuenta con aviso previo?">
                     <ion-select-option value="Si">Si</ion-select-option>
                     <ion-select-option value="No">No</ion-select-option>
                 </ion-select>
