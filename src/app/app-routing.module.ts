@@ -459,7 +459,8 @@ const routes: Routes = [
   { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
   { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
   { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
-  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
+  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },  { path: 'cal-modal', loadChildren: './pages/cal-modal/cal-modal.module#CalModalPageModule' },
+
   //{ path: 'evidencia-mostrar-model', loadChildren: './pages/evidencia-mostrar-model/evidencia-mostrar-model.module#EvidenciaMostrarModelPageModule' },
 
   // },
