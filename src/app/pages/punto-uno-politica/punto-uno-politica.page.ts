@@ -78,7 +78,7 @@ async presentAlert() {
       {
         name: 'radioButton',
         type: 'radio',
-        label: 'Checkbox 1',
+        label: 'Entendido',
         value: '50',
         checked: false
       }

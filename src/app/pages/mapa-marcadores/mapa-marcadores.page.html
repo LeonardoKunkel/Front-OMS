@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="add()">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Agregar
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Registrar gasolineras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-button (click)="findMe()" expand="block" fill="clear" shape="round">
+    Mi ubicacion
+  </ion-button> -->
+ <div id="map" ></div>
+</ion-content>
