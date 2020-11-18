@@ -198,11 +198,6 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
-    path: 'popover1',
-    loadChildren: './pages/popover1/popover1.module#Popover1PageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'punto-doce',
     loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule',
     // canLoad: [AuthGuard]
@@ -454,18 +449,29 @@ const routes: Routes = [
     path: 'punto-ocho-distribucion',
     loadChildren: './pages/punto-ocho-distribucion/punto-ocho-distribucion.module#PuntoOchoDistribucionPageModule'
   },
-  { path: 'estacion-servicio-update', loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule' },
-  { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },
-  { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
-  { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
-  { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
-  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
-
-  //{ path: 'evidencia-mostrar-model', loadChildren: './pages/evidencia-mostrar-model/evidencia-mostrar-model.module#EvidenciaMostrarModelPageModule' },
-
-  // },
-  // { path: 'punto-dieciseis-evidencia', loadChildren: './pages/punto-dieciseis-evidencia/punto-dieciseis-evidencia.module#PuntoDieciseisEvidenciaPageModule' },
-
+  {
+    path: 'estacion-servicio-update',
+    loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule'
+  },
+  {
+    path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule'
+  },
+  {
+    path: 'iconos-estacion',
+    loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule'
+  },
+  {
+    path: 'punto-uno-politica',
+    loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule'
+  },
+  {
+    path: 'firma-represntante',
+    loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule'
+  },
+  {
+    path: 'grafica-barras',
+    loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule'
+  },
 
 ];
 @NgModule({
