@@ -27,7 +27,7 @@ export class Tab1Page {
   }
 
   goToMapa() {
-    this.navCtlr.navigateForward('/simple');
+    this.navCtlr.navigateForward('/mapa-marcadores');
   }
 
   async abriAyuda() {

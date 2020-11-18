@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dissmis()">
+        <ion-icon slot="end" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Registar una gasolinera</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle class="ion-text-center">Llena los campos</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Nombre:</ion-label>
+      <ion-input type="text" name="nombre" [(ngModel)]="datos.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Permiso:</ion-label>
+      <ion-input type="text" name="permiso" [(ngModel)]="datos.permiso"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Latitud:</ion-label>
+      <ion-input type="number" name="latitud" [(ngModel)]="datos.latitud"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Longitud:</ion-label>
+      <ion-input type="number" name="longitud" [(ngModel)]="datos.longitud"></ion-input>
+    </ion-item>
+    <ion-button (click)="enviar()" expand="block" fill="clear" shape="round">
+       Enviar
+    </ion-button>
+  </ion-card-content>
+</ion-card>
+</ion-content>

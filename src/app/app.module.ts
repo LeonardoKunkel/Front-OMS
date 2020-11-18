@@ -1,4 +1,4 @@
-// import { Geolocation } from '@ionic-native/geolocation';
+//import { Geolocation } from '@ionic-native/geolocation';
 import { ProcedimientoCincoPageModule } from './pages/procedimiento-cinco/procedimiento-cinco.module';
 import { AyudaPageModule } from './pages/ayuda/ayuda.module';
 import { NgModule } from '@angular/core';
@@ -63,8 +63,8 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     DocumentViewer,
     FilePath,
     FileChooser,
-    Base64
-    // Geolocation
+    Base64,
+    Geolocation
   ],
   bootstrap: [AppComponent]
 })
