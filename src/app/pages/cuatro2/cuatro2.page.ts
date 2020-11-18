@@ -512,17 +512,6 @@ export class Cuatro2Page implements OnInit {
     const footer = this.myImage;
     const ddd = this.datosEstacion;
     const dd = {
-      userPassword: '123',
-      ownerPassword: '123456',
-      permissions: {
-        printing: 'highResolution', // 'lowResolution'
-        modifying: false,
-        copying: false,
-        annotating: true,
-        fillingForms: true,
-        contentAccessibility: true,
-        documentAssembly: true
-      },
       background(currentPage, pageSize) {
         return {
           image: `${marcaAgua}`,

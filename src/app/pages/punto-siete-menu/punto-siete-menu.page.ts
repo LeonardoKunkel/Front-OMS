@@ -140,19 +140,7 @@ export class PuntoSieteMenuPage implements OnInit {
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
     let firmaRepresentanteTecnico = this.firmaRepresentante;
-  var dd = {
-    userPassword: '123',
-    ownerPassword: '123456',
-    permissions: {
-      printing: 'highResolution', //'lowResolution'
-      modifying: false,
-      copying: false,
-      annotating: true,
-      fillingForms: true,
-      contentAccessibility: true,
-      documentAssembly: true
-    },
-        
+    var dd = {
       background: function(currentPage, pageSize) {
       return {
         image: `${marcaAgua}`, width: 300,height: 350, 
@@ -501,18 +489,6 @@ export class PuntoSieteMenuPage implements OnInit {
     let firmaRepresentanteTecnico = this.firmaRepresentante;
 
 var dd = {
-  userPassword: '123',
-  ownerPassword: '123456',
-  permissions: {
-    printing: 'highResolution', //'lowResolution'
-    modifying: false,
-    copying: false,
-    annotating: true,
-    fillingForms: true,
-    contentAccessibility: true,
-    documentAssembly: true
-  },
-    
   background: function(currentPage, pageSize) {
   return {
     image: `${marcaAgua}`,

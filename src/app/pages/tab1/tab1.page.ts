@@ -38,7 +38,7 @@ export class Tab1Page {
   }
 
   openCalendar() {
-    this.navCtlr.navigateForward('/calendario');
+    this.navCtlr.navigateForward('/');
   }
 
 

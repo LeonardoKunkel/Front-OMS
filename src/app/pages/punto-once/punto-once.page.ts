@@ -127,17 +127,6 @@ export class PuntoOncePage implements OnInit {
         const month = fecha.getUTCMonth() + 1;
         const year = fecha.getFullYear();
         const dd = {
-            userPassword: '123',
-            ownerPassword: '123456',
-            permissions: {
-                printing: 'highResolution',
-                modifying: false,
-                copying: false,
-                annotating: true,
-                fillingForms: true,
-                contentAccessibility: true,
-                documentAssembly: true
-            },
             background(currentPage, pageSize) {
                 return {
                     image: `${marcaAgua}`,
@@ -1707,17 +1696,6 @@ export class PuntoOncePage implements OnInit {
         const firmaEstacion = this.firmaEstacion;
         const ddd = this.datosEstacion;
         const dd = {
-            userPassword: '123',
-            ownerPassword: '123456',
-            permissions: {
-                printing: 'highResolution',
-                modifying: false,
-                copying: false,
-                annotating: true,
-                fillingForms: true,
-                contentAccessibility: true,
-                documentAssembly: true
-            },
             background(currentPage, pageSize) {
                 return {
                     image: `${marcaAgua}`, width: 290, height: 400,

@@ -149,23 +149,6 @@ export class PuntoTesPage implements OnInit {
     console.log('Descarga');// playground requires you to assign document definition to a variable called dd
 
     var dd = {
-      info: {
-      title: 'sirve los titulos',
-      author: 'john doe',
-      subject: 'subject of document',
-      keywords: 'keywords for document',
-      },
-      userPassword: '123',
-      ownerPassword: '123456',
-      permissions: {
-        printing: 'highResolution', //'lowResolution'
-        modifying: false,
-        copying: false,
-        annotating: true,
-        fillingForms: true,
-        contentAccessibility: true,
-        documentAssembly: true
-      },
       background: function(currentPage, pageSize) {
       return {
           image: `${marcaAgua}`,

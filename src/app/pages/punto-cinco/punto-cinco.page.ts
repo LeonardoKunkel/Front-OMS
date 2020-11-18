@@ -147,27 +147,16 @@ export class PuntoCincoPage implements OnInit {
 
 
   pdf() {
-    let marca = this.marcaAgua;
-    let footer = this.myImage;
-    let iconoEstacion = this.iconoEstacion;
-    let nombreEstacion = this.datos.nombreEstacionServicio;
-    let firmaEstacion = this.firmaEstacion;
-    var fecha = new Date();
+    const marca = this.marcaAgua;
+    const footer = this.myImage;
+    const iconoEstacion = this.iconoEstacion;
+    const nombreEstacion = this.datos.nombreEstacionServicio;
+    const firmaEstacion = this.firmaEstacion;
+    const fecha = new Date();
     let day = fecha.getDate();
     let month = fecha.getUTCMonth() + 1;
     let year = fecha.getFullYear();
     const dd = {
-      userPassword: '123',
-      ownerPassword: '123456',
-      permissions: {
-        printing: 'highResolution', //'lowResolution'
-        modifying: false,
-        copying: false,
-        annotating: true,
-        fillingForms: true,
-        contentAccessibility: true,
-        documentAssembly: true
-      },
       background: function(currentPage, pageSize) {
       return {
           image: `${marca}`, width: 300,height: 350, 

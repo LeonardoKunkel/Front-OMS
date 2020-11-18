@@ -18,9 +18,9 @@ import { FirmaRepresentanteService } from 'src/app/services/firma-representante.
 })
 export class PuntoDosRiesgosPage implements OnInit {
 
-  valorGraph:any={
-    selecionPolitica :null
-  }
+  valorGraph: any = {
+    selecionPolitica: null
+  };
 
   datos: any = {
     F1: '',
@@ -107,7 +107,7 @@ export class PuntoDosRiesgosPage implements OnInit {
                private icono: IconoEstacionService,
                private datosEstacionService: EstacionServicioDatosService,
                private firmaRepresente: FirmaRepresentanteService,
-               private navCtrl : NavController,
+               private navCtrl: NavController,
                public alertController: AlertController,
 
                 ) {
@@ -616,12 +616,11 @@ export class PuntoDosRiesgosPage implements OnInit {
   }
 
   async presentAlert() {
-    
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Confirmar!',
       message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
-      inputs:[
+      inputs: [
         {
           name: 'radioButton',
           type: 'radio',
@@ -649,10 +648,9 @@ export class PuntoDosRiesgosPage implements OnInit {
       }],
       backdropDismiss: false
     });
-  
     await alert.present();
   }
-  
+
 
   pdf() {
     const fecha = new Date();
@@ -666,17 +664,6 @@ export class PuntoDosRiesgosPage implements OnInit {
     const ddd = this.datosEstacion;
     const firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
-      userPassword: '123',
-      ownerPassword: '123456',
-      permissions: {
-        printing: 'highResolution', // 'lowResolution'
-        modifying: false,
-        copying: false,
-        annotating: true,
-        fillingForms: true,
-        contentAccessibility: true,
-        documentAssembly: true
-      },
       background() {
         return {
           image: `${marcaAgua}`,

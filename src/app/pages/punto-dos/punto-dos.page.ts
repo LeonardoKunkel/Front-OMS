@@ -12,7 +12,7 @@ export class PuntoDosPage implements OnInit {
 
   puntoDos: any[] = [];
 
-  puntodos:any = {
+  puntodos: any = {
     compresor: false,
     hidroneumatico: false,
     palantaEmergencia: false,

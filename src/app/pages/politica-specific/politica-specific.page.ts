@@ -17,8 +17,8 @@ import { MarcaAguaServiceService } from '../../services/marca-agua-service.servi
   styleUrls: ['./politica-specific.page.scss'],
 })
 export class PoliticaSpecificPage implements OnInit {
-  datos:any[]=[];
-  politicas:any=[];
+  datos: any[] = [];
+  politicas: any = [];
   estacione:any[]=[];
   firma:string;
   marcaAgua:String;
@@ -139,11 +139,6 @@ pdf(){
   let year = fecha.getFullYear();
 
   var dd = {
-    userPassword:'123',
-    ownerPassword: '123456',
-    permissions:{
-      printing:'lowResolution'
-    },  
     background: function(currentPage, pageSize) {
     return {
         image: `${marca}`, width: 300,height: 350, 
