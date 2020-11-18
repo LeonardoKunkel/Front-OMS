@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   }
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
               private navCtrl: NavController,
               private uiService: UiService) { }
 

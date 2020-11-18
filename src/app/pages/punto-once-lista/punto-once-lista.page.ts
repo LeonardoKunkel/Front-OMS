@@ -428,17 +428,6 @@ export class PuntoOnceListaPage implements OnInit {
     const firmaRepresentanteTecnico = this.firmaRepresentante;
     this.checar();
     const dd = {
-      userPassword: '123',
-      ownerPassword: '123456',
-      permissions: {
-        printing: 'highResolution',
-        modifying: false,
-        copying: false,
-        annotating: true,
-        fillingForms: true,
-        contentAccessibility: true,
-        documentAssembly: true
-      },
       background() {
         return {
           image: `${marcaAgua}`,

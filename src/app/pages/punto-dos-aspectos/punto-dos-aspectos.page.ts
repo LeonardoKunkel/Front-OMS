@@ -247,7 +247,7 @@ export class PuntoDosAspectosPage implements OnInit {
     private icono: IconoEstacionService,
     private datosEstacionService: EstacionServicioDatosService,
     private firmaRepresente: FirmaRepresentanteService,
-    private navCtrl : NavController
+    private navCtrl: NavController
      ) {
        this.getDatosEstacion();
        this.getAspectos();
@@ -323,7 +323,6 @@ export class PuntoDosAspectosPage implements OnInit {
   }
 
   async enviarForm(formulario) {
-    
 
     const toast = await this.toast.create({
       message: 'Datos guardados',
@@ -542,44 +541,44 @@ export class PuntoDosAspectosPage implements OnInit {
     });
   }
 
-  async presentAlert() {
-    
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Confirmar!',
-      message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
-      inputs:[
-        {
-          name: 'radioButton',
-          type: 'radio',
-          label: 'Acepto',
-          value: '50',
-          checked: false
-        }
-      ],
-      buttons: [{
-        text:'Entendido',
-        role:'Ok',
-        cssClass:'secondary',
-        handler: (blah) =>{
-          if(blah === '50'){
-            this.valorGraph.selecionPolitica = 50;
-            //this.postGraph(this.valorGraph);
-            console.log(this.valorGraph);
-          }else{
-            this.valorGraph.selecionPolitica = 0;
-            //this.postGraph(this.valorGraph);
-            console.log(this.valorGraph);
-          }
-          this.navCtrl.navigateForward('/punto-dos');
-        }
-      }],
-      backdropDismiss: false
-    });
-  
-    await alert.present();
-  }
-  
+  // async presentAlert() {
+
+  //   const alert = await this.alertController.create({
+  //     cssClass: 'my-custom-class',
+  //     header: 'Confirmar!',
+  //     message: '<strong>Deberas divulgar esta politica con todos tus empleados</strong>!!!',
+  //     inputs:[
+  //       {
+  //         name: 'radioButton',
+  //         type: 'radio',
+  //         label: 'Acepto',
+  //         value: '50',
+  //         checked: false
+  //       }
+  //     ],
+  //     buttons: [{
+  //       text:'Entendido',
+  //       role:'Ok',
+  //       cssClass:'secondary',
+  //       handler: (blah) =>{
+  //         if(blah === '50'){
+  //           this.valorGraph.selecionPolitica = 50;
+  //           //this.postGraph(this.valorGraph);
+  //           console.log(this.valorGraph);
+  //         }else{
+  //           this.valorGraph.selecionPolitica = 0;
+  //           //this.postGraph(this.valorGraph);
+  //           console.log(this.valorGraph);
+  //         }
+  //         this.navCtrl.navigateForward('/punto-dos');
+  //       }
+  //     }],
+  //     backdropDismiss: false
+  //   });
+
+  //   await alert.present();
+  // }
+
   pdf() {
     const fecha = new Date();
     const day = fecha.getDate();
@@ -592,17 +591,6 @@ export class PuntoDosAspectosPage implements OnInit {
     const ddd = this.datosEstacion;
     const firmaRepresentanteTecnico = this.firmaRepresentante;
     const dd = {
-      userPassword: '123',
-      ownerPassword: '123456',
-      permissions: {
-        printing: 'highResolution', // 'lowResolution'
-        modifying: false,
-        copying: false,
-        annotating: true,
-        fillingForms: true,
-        contentAccessibility: true,
-        documentAssembly: true
-      },
       background() {
         return {
           image: `${marcaAgua}`,

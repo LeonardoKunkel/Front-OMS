@@ -198,11 +198,6 @@ const routes: Routes = [
     // canLoad: [AuthGuard]
   },
   {
-    path: 'popover1',
-    loadChildren: './pages/popover1/popover1.module#Popover1PageModule',
-    // canLoad: [AuthGuard]
-  },
-  {
     path: 'punto-doce',
     loadChildren: './pages/punto-doce/punto-doce.module#PuntoDocePageModule',
     // canLoad: [AuthGuard]
@@ -459,8 +454,10 @@ const routes: Routes = [
   { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
   { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
   { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
-  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },  { path: 'mapa-marcadores', loadChildren: './pages/mapa-marcadores/mapa-marcadores.module#MapaMarcadoresPageModule' },
+  { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
+  { path: 'mapa-marcadores', loadChildren: './pages/mapa-marcadores/mapa-marcadores.module#MapaMarcadoresPageModule' },
   { path: 'gasolinera', loadChildren: './pages/gasolinera/gasolinera.module#GasolineraPageModule' },
+
 
   //{ path: 'evidencia-mostrar-model', loadChildren: './pages/evidencia-mostrar-model/evidencia-mostrar-model.module#EvidenciaMostrarModelPageModule' },
 
