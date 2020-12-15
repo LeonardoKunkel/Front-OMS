@@ -10,7 +10,7 @@ export class FirmaRepresentanteService {
     private httpClient: HttpClient
   ) { }
 
-  postFirmaRepresentante(body){
+  postFirmaRepresentante(body) {
     const token = localStorage.getItem('token');
     // const headers = new HttpHeaders({
     //   Authorization: token

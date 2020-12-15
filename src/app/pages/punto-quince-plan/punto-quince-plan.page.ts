@@ -14,7 +14,7 @@ import { FirmaRepresentanteService } from 'src/app/services/firma-representante.
   styleUrls: ['./punto-quince-plan.page.scss'],
 })
 export class PuntoQuincePlanPage implements OnInit {
-  datosEstacion:any={
+  datosEstacion: any = {
     calleNumero:'',
     ciudad:'',
     colonia:'',

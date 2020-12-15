@@ -10,26 +10,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EstacionServicioModelPage implements OnInit {
 
-  estacion:any[] = [];
+  estacion: any[] = [];
 
   constructor(
     private modalCtrl: ModalController,
-    private estacionServicioService:EstacionServicioDatosService,
+    private estacionServicioService: EstacionServicioDatosService,
     private route: Router,
     private navCtrl: NavController
     ) {
       this.consultarDatos();
      }
 
-  consultarDatos(){
-    this.estacionServicioService.getEstacion().subscribe((data:any) =>{
+  consultarDatos() {
+    this.estacionServicioService.getEstacion().subscribe((data: any) => {
       this.estacion = data.findEstacion;
-      //console.log(this.estacion);
-    })
+      // console.log(this.estacion);
+    });
   }
 
-  updateEstacion( id :string){
-    this.route.navigate(['/estacion-servicio-update',{custom_id: id}]);
+  updateEstacion( id: string) {
+    this.route.navigate(['/estacion-servicio-update', {custom_id: id}]);
     this.dismiss();
   }
 

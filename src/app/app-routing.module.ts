@@ -354,10 +354,6 @@ const routes: Routes = [
     loadChildren: './pages/punto-ocho-procedimiento/punto-ocho-procedimiento.module#PuntoOchoProcedimientoPageModule'
   },
   {
-    path: 'firmas',
-    loadChildren: './pages/firmas/firmas.module#FirmasPageModule'
-  },
-  {
     path: 'punto-catorce-procedimiento',
     loadChildren: './pages/punto-catorce-procedimiento/punto-catorce-procedimiento.module#PuntoCatorceProcedimientoPageModule'
   },
@@ -451,12 +447,11 @@ const routes: Routes = [
   },
   { path: 'estacion-servicio-update', loadChildren: './pages/estacion-servicio-update/estacion-servicio-update.module#EstacionServicioUpdatePageModule' },
   { path: 'politica-specific', loadChildren: './pages/politica-specific/politica-specific.module#PoliticaSpecificPageModule' },
-  { path: 'iconos-estacion', loadChildren: './pages/iconos-estacion/iconos-estacion.module#IconosEstacionPageModule' },
   { path: 'punto-uno-politica', loadChildren: './pages/punto-uno-politica/punto-uno-politica.module#PuntoUnoPoliticaPageModule' },
-  { path: 'firma-represntante', loadChildren: './pages/firma-represntante/firma-represntante.module#FirmaRepresntantePageModule' },
   { path: 'grafica-barras', loadChildren: './pages/grafica-barras/grafica-barras.module#GraficaBarrasPageModule' },
   { path: 'mapa-marcadores', loadChildren: './pages/mapa-marcadores/mapa-marcadores.module#MapaMarcadoresPageModule' },
   { path: 'gasolinera', loadChildren: './pages/gasolinera/gasolinera.module#GasolineraPageModule' },
+
 
 
   //{ path: 'evidencia-mostrar-model', loadChildren: './pages/evidencia-mostrar-model/evidencia-mostrar-model.module#EvidenciaMostrarModelPageModule' },

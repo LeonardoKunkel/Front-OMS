@@ -590,6 +590,7 @@ export class PuntoDosAspectosPage implements OnInit {
     const footer = this.myImage;
     const ddd = this.datosEstacion;
     const firmaRepresentanteTecnico = this.firmaRepresentante;
+    console.log(firmaRepresentanteTecnico);
     const dd = {
       background() {
         return {

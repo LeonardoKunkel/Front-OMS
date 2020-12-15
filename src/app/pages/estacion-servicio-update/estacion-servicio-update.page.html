@@ -1,19 +1,13 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/main/tabs/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Actualizacion de los datos de la estación de servicio</ion-title>
+    <ion-title class="ion-text-center">Actualización de los datos de la estación de servicio</ion-title>
   </ion-toolbar>
-  <ion-fab vertical="top" horizontal="end" slot="fixed" >
-    <ion-fab-button (click)="iconEstacion()">
-      <ion-icon name="images"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-button (click)="goFirmas()">
-      <ion-icon name="create"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-button (click)="goFirmaRepresentante()">
-      <ion-icon name="create">Representante</ion-icon>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button type="submit">
+      <ion-icon name="save"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-header>
@@ -22,7 +16,7 @@
   <form (ngSubmit)="update(form)" #form= "ngForm">
     <ion-card>
       <ion-card-header>
-        <ion-card-subtitle class="ion-text-justify">Bienvenido al apartado donde puedes realizar los cambios de los datos generales de la estación de servicio, ademas puedes ingresar la firma electrónica y el logo de la estación de servicio con ayuda de los botones que se ubican en la parte posterior derecha.</ion-card-subtitle>
+        <ion-card-subtitle class="ion-text-center">Bienvenido al apartado donde puedes realizar los cambios de los datos generales de la estación de servicio, además puedes ingresar la firma electrónica y el logo de la estación de servicio.</ion-card-subtitle>
         <ion-grid fixed>
           <ion-row>
             <ion-col size="12" sizeLg="6">
@@ -43,21 +37,21 @@
                 <ion-input name = "colonia" [(ngModel)] = "datos.colonia"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position = "floating">Calle y numero de ubicación</ion-label>
+                <ion-label position = "floating">Calle y número de ubicación</ion-label>
                 <ion-input name="calleNumero" [(ngModel)] = "datos.calleNumero"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position = "floating">Codigo postal</ion-label>
+                <ion-label position = "floating">Código postal</ion-label>
                 <ion-input name="cp" [(ngModel)] = "datos.cp"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col size="12" sizeLg="6">
               <ion-item>
-                <ion-label position = "floating">Correo electronico</ion-label>
+                <ion-label position = "floating">Correo electrónico</ion-label>
                 <ion-input name="correoElectronico" [(ngModel)] = "datos.correoElectronico"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position = "floating">Telefono de la estacion de servicio</ion-label>
+                <ion-label position = "floating">Teléfono de la estación de servicio</ion-label>
                 <ion-input name="telefono" [(ngModel)] = "datos.telefono"></ion-input>
               </ion-item>
               <ion-item>
@@ -65,11 +59,11 @@
                 <ion-input name="gerenteEstacion" [(ngModel)] = "datos.gerenteEstacion"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position = "floating">Nombre del representante tecnico</ion-label>
+                <ion-label position = "floating">Nombre del representante técnico</ion-label>
                 <ion-input name="representanteTecnico" [(ngModel)] = "datos.representanteTecnico"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position = "floating">Nombre de la Maxima autoridad de la estación</ion-label>
+                <ion-label position = "floating">Nombre de la Máxima autoridad de la estación</ion-label>
                 <ion-input name="maximaAutoridad" [(ngModel)] = "datos.maximaAutoridad"></ion-input>
               </ion-item>
             </ion-col>
@@ -77,9 +71,85 @@
         </ion-grid>
       </ion-card-header>
     </ion-card>
+    <ion-row>
+      <ion-col size="12">
+        <p style="text-align: justify;" class="ion-text-center">
+          Este apartado es  importante debido  a que debes de poner el icono de tu estación de servicio ademas de tu marca de agua.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Icono</ion-card-title>
+            <ion-card-subtitle>Icono: 310 X461 pixeles.</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput></ion-input>
+              <img [src]="fotoSeleccionada || '../../../assets/Imagenes/Elemento 1/1_politica.png'" style="width: 30%; display: block; margin: auto;" alt="No image">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Marca de agua</ion-card-title>
+            <ion-card-subtitle>Marca de agua: 310 X461 pixeles.</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="file" class="d-none" (change)="onPhotoSelected2($event)" #photoInput2></ion-input>
+              <img [src]="fotoSeleccionada2 || '../../../assets/Imagenes/Elemento 1/1_politica.png'" style="width: 30%; display: block; margin: auto;" alt="No image">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p style="text-align: justify;" class="ion-text-center">
+          En este apartado debes agregar la firma electrónica, de la máxima autoridad y el gerente de la estación de servicio, esta firma se implementara a toda la documentación, donde sea requerida en el proceso de implementación del SASISOPA.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider>
+              <ion-label>Firma de la máxima autoridad</ion-label>
+            </ion-item-divider>
+            <signature-pad class="signature-pad" class="canvas"
+              [options]="signaturePadOptions"
+              (onBeginEvent)="drawStart()" 
+              (onEndEvent)="drawComplete()">
+            </signature-pad>
+            <hr class="linea">
+          </ion-card-content>
+        </ion-card>
+        <ion-button (click)="clear()" color="danger"> Borrar </ion-button>
+        <ion-button (click)="agregarFirma()"> Guardar </ion-button>
+      </ion-col>
+      <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-card>
+          <ion-card-content>
+            <ion-item-divider>
+              <ion-label>Firma del representante legal</ion-label>
+            </ion-item-divider>
+            <signature-pad class="signature-pad" class="canvas"
+              [options]="signaturePadOptions"
+              (onBeginEvent)="drawStart2()" 
+              (onEndEvent)="drawComplete2()">
+            </signature-pad>
+            <hr class="linea">
+          </ion-card-content>
+        </ion-card>
+        <ion-button (click)="clear2()" color="danger"> Borrar </ion-button>
+        <ion-button (click)="agregarFirma2()"> Guardar </ion-button>
+      </ion-col>
+    </ion-row>
     <ion-button type="submit" expand="block" fill="clear" shape="round">
       <ion-icon name="save-outline" slot="start"></ion-icon>
-      Guardar
+      Guardar datos
     </ion-button>
   </form>
 </ion-content>

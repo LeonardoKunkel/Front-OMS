@@ -22,8 +22,8 @@ export class Tab1Page {
     this.darkMode = prefersDark.matches;
   }
 
-  segmentChanged(event){
-    console.log(event); 
+  segmentChanged(event) {
+    console.log(event);
   }
 
   goToMapa() {
@@ -36,11 +36,6 @@ export class Tab1Page {
     });
     return await modal.present();
   }
-
-  openCalendar() {
-    this.navCtlr.navigateForward('/');
-  }
-
 
   async openModal() {
     const modal = await this.modalCtrl.create({
