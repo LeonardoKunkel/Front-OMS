@@ -11,7 +11,7 @@ export class EquipoCriticoService {
   crearOnce(datos) {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-    'Authorization': token
+      Authorization: token
     });
     return this.httpClient.post('http://localhost:3000/equipoCritico/create', datos, { headers });
   }

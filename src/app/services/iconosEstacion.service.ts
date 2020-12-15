@@ -15,7 +15,6 @@ export class IconoEstacionService {
     // });
     return this.http.post<any>('http://localhost:3000/iconosEstacion/create', body);
   }
-  
 
   getPolitica() {
     const token = localStorage.getItem('token');
@@ -24,6 +23,4 @@ export class IconoEstacionService {
     // });
     return this.http.get('http://localhost:3000/iconosEstacion/');
   }
-
-
 }

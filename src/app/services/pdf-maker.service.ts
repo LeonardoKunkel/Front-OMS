@@ -8,7 +8,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class PdfMakerService {
 
-  pdfObj=null;
+  pdfObj = null;
 
   constructor() { }
 

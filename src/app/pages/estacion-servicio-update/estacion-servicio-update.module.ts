@@ -5,8 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SignaturePadModule } from 'angular2-signaturepad';
+
 import { EstacionServicioUpdatePage } from './estacion-servicio-update.page';
-import { IconosEstacionPage } from '../iconos-estacion/iconos-estacion.page';
+// import { IconosEstacionPage } from '../iconos-estacion/iconos-estacion.page';
 const routes: Routes = [
   {
     path: '',
@@ -19,9 +21,12 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SignaturePadModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EstacionServicioUpdatePage,IconosEstacionPage],
-  entryComponents:[IconosEstacionPage]
+  declarations: [
+    EstacionServicioUpdatePage,
+  ],
+  // entryComponents: []
 })
 export class EstacionServicioUpdatePageModule {}

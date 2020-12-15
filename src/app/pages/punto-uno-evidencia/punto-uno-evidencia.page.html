@@ -19,16 +19,16 @@
   <ion-card mode="ios" style="width: 600px; height: auto; margin: auto; display: block;">
     <ion-card-content>
       <p style="margin: 3%; text-align: justify;">
-        Cuando haya leido el procedimiento y haber realizado lo correspondiente de cada elemento que esta situado en el SASISOPA
-        deberas subir una evidencia que justifique que hayas hecho lo solicitado en el procedimiento.
+        Cuando haya leído el procedimiento y haber realizado lo correspondiente de cada elemento que esta situado en el SASISOPA
+        deberás subir una evidencia que justifique que hayas hecho lo solicitado en el procedimiento.
        </p>
       <form (submit)="uploadPhoto(title, description)">
         <ion-item>
-          <ion-label position="floating">Titulo</ion-label>
+          <ion-label position="floating">Título</ion-label>
           <ion-input type="text" #title required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Descripcion </ion-label>
+          <ion-label position="floating">Descripción </ion-label>
           <ion-input type="text" required #description></ion-input>
         </ion-item>
         <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
